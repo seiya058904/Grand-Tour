@@ -1,0 +1,262 @@
+{
+  "source": "/mnt/data/Grand-Tour-V12/grand-tour-v12.html",
+  "sha256": "6d271fd7caff6d405b3e588e998d53b79d7852a489544d78f17f1dbd97b3f469",
+  "checks": [
+    {
+      "name": "V12 retains storage key and schema V9",
+      "pass": true
+    },
+    {
+      "name": "V11 road snapshot import preserves every physical field and RNG",
+      "pass": true
+    },
+    {
+      "name": "TT unchanged production trajectory, stage 1",
+      "pass": true
+    },
+    {
+      "name": "TT unchanged production trajectory, stage 16",
+      "pass": true
+    },
+    {
+      "name": "Road snapshot resume is deterministic with optional seam/response state",
+      "pass": true
+    },
+    {
+      "name": "Moderate gap requires persistence; capture requires close physical contact",
+      "pass": true
+    },
+    {
+      "name": "Coherent accelerating separation recognised within 1.2s",
+      "pass": true,
+      "detail": {
+        "gapMetres": 10,
+        "relativeSpeed": 2,
+        "recognitionSeconds": 1.2
+      }
+    },
+    {
+      "name": "Climbing-speed 4.4m paceline can rejoin, not remain separate forever",
+      "pass": true
+    },
+    {
+      "name": "Brief transient gap does not flicker group identity",
+      "pass": true
+    },
+    {
+      "name": "Largest fragment retains UID when a small break leaves its front",
+      "pass": true
+    },
+    {
+      "name": "All 184 riders accounted for across many groups and terminal statuses",
+      "pass": true,
+      "detail": {
+        "racing": 180,
+        "finished": 1,
+        "exited": 2,
+        "dns": 1,
+        "total": 184,
+        "assigned": 180,
+        "groups": 21,
+        "closed": true
+      }
+    },
+    {
+      "name": "Finished rider leaves groups in the same simulation tick",
+      "pass": true
+    },
+    {
+      "name": "Several GC teams organise pursuit of a real separated GC threat",
+      "pass": true,
+      "detail": [
+        {
+          "team": 1,
+          "target": 0,
+          "worker": 33
+        },
+        {
+          "team": 2,
+          "target": 0,
+          "worker": 41
+        },
+        {
+          "team": 3,
+          "target": 0,
+          "worker": 15
+        },
+        {
+          "team": 4,
+          "target": 0,
+          "worker": null
+        }
+      ]
+    },
+    {
+      "name": "Harmless early break is not treated as a GC threat",
+      "pass": true
+    },
+    {
+      "name": "Response wheel assignment queues nearer responders instead of all targeting leader",
+      "pass": true,
+      "detail": [
+        [
+          "1",
+          {
+            "target": 9,
+            "root": 0,
+            "entryLane": 2.8,
+            "at": 50,
+            "until": 63,
+            "gc": true
+          }
+        ],
+        [
+          "3",
+          {
+            "target": 6,
+            "root": 0,
+            "entryLane": 2.8,
+            "at": 50,
+            "until": 63,
+            "gc": true
+          }
+        ],
+        [
+          "6",
+          {
+            "target": 1,
+            "root": 0,
+            "entryLane": 2.8,
+            "at": 50,
+            "until": 63,
+            "gc": true
+          }
+        ],
+        [
+          "9",
+          {
+            "target": 0,
+            "root": 0,
+            "entryLane": 2.8,
+            "at": 50,
+            "until": 63,
+            "gc": true
+          }
+        ],
+        [
+          "59",
+          {
+            "target": 3,
+            "root": 0,
+            "entryLane": 2.8,
+            "at": 50,
+            "until": 63,
+            "gc": true
+          }
+        ]
+      ]
+    },
+    {
+      "name": "Relevant riders contest sprint without pulling all GC helpers away",
+      "pass": true,
+      "detail": [
+        {
+          "id": 12,
+          "role": "Puncheur",
+          "team": 9
+        },
+        {
+          "id": 13,
+          "role": "Sprinter",
+          "team": 9
+        },
+        {
+          "id": 15,
+          "role": "Sprinter",
+          "team": 3
+        },
+        {
+          "id": 16,
+          "role": "Sprinter",
+          "team": 10
+        },
+        {
+          "id": 50,
+          "role": "Sprinter",
+          "team": 4
+        },
+        {
+          "id": 153,
+          "role": "Sprinter",
+          "team": 19
+        }
+      ]
+    },
+    {
+      "name": "Relevant riders contest kom without pulling all GC helpers away",
+      "pass": true,
+      "detail": [
+        {
+          "id": 2,
+          "role": "GC",
+          "team": 0
+        },
+        {
+          "id": 4,
+          "role": "Climber",
+          "team": 5
+        },
+        {
+          "id": 7,
+          "role": "Climber",
+          "team": 6
+        },
+        {
+          "id": 11,
+          "role": "Climber",
+          "team": 1
+        },
+        {
+          "id": 25,
+          "role": "GC",
+          "team": 2
+        },
+        {
+          "id": 100,
+          "role": "Puncheur",
+          "team": 12
+        }
+      ]
+    },
+    {
+      "name": "Floating role is separate from team job; protected GC and working helper are distinct",
+      "pass": true
+    },
+    {
+      "name": "Highest priority actual status wins over a generic attacking label",
+      "pass": true
+    },
+    {
+      "name": "Sparse label budgets and all fixed slots remain non-overlapping",
+      "pass": true
+    },
+    {
+      "name": "Minimum dwell survives a new ordinary candidate but explicit inspection wins",
+      "pass": true
+    },
+    {
+      "name": "Depth decluttering has no physical or RNG effect and never shifts progress",
+      "pass": true,
+      "detail": {
+        "riders": 184,
+        "maxDepthOffset": 1.08
+      }
+    },
+    {
+      "name": "Classification, physiology, fatigue and podium award planning unchanged",
+      "pass": true
+    }
+  ],
+  "passed": 23,
+  "failed": 0
+}

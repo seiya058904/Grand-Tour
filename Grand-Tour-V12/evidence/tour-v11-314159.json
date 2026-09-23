@@ -1,0 +1,5062 @@
+{
+  "source": "/mnt/data/grand-tour-v11.html",
+  "policy": "standard-GC-v2: public controls once/sec; feed <70%; TT slope pacing; road/TTT follow; last-climb initiative; late GC response; GC does not contest ordinary flat sprint.",
+  "seed": 314159,
+  "stages": [
+    {
+      "stage": 1,
+      "type": "TTT",
+      "seed": 314159,
+      "simSeconds": 409.55,
+      "worldSeconds": 1679.0253274119602,
+      "wallMs": 2312,
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 23,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -2.68
+          },
+          {
+            "at": 1,
+            "wind": -2.48
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 184,
+      "finishers": 184,
+      "OTL": 0,
+      "DNF": 0,
+      "DNS": 0,
+      "player": {
+        "status": "FINISHED",
+        "place": 1,
+        "time": 1523.336328308686,
+        "energy": 84.92162955159752,
+        "fatigue": 4.500345126204897,
+        "meanDraft": 0.18428919658857557
+      },
+      "stageTop10": [
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 1523.336328308686
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 1527.1637632834845
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 1527.317785034835
+        },
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 1528.3080841629514
+        },
+        {
+          "id": 30,
+          "name": "Nils Politt",
+          "role": "Allround",
+          "time": 1531.9570340939608
+        },
+        {
+          "id": 17,
+          "name": "Victor Campenaerts",
+          "role": "TT",
+          "time": 1533.3655773946798
+        },
+        {
+          "id": 14,
+          "name": "Quinn Simmons",
+          "role": "Allround",
+          "time": 1534.1077638463394
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 1534.1199165255516
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 1536.1441360774302
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 1537.8438589704447
+        }
+      ],
+      "podium": [
+        {
+          "teamId": 0,
+          "time": 1523.336328308686
+        },
+        {
+          "teamId": 1,
+          "time": 1527.1637632834845
+        },
+        {
+          "teamId": 3,
+          "time": 1527.317785034835
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 1523
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 1527
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 1527
+        },
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 1528
+        },
+        {
+          "id": 30,
+          "name": "Nils Politt",
+          "role": "Allround",
+          "time": 1531
+        },
+        {
+          "id": 17,
+          "name": "Victor Campenaerts",
+          "role": "TT",
+          "time": 1533
+        },
+        {
+          "id": 14,
+          "name": "Quinn Simmons",
+          "role": "Allround",
+          "time": 1534
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 1534
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 1536
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 1537
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 0,
+          "evening": 6.380205424872417
+        },
+        {
+          "role": "Climber",
+          "morning": 0,
+          "evening": 6.193022505897635
+        },
+        {
+          "role": "Puncheur",
+          "morning": 0,
+          "evening": 6.58992533109345
+        },
+        {
+          "role": "TT",
+          "morning": 0,
+          "evening": 5.045846386887386
+        },
+        {
+          "role": "Sprinter",
+          "morning": 0,
+          "evening": 4.303629666574047
+        },
+        {
+          "role": "Allround",
+          "morning": 0,
+          "evening": 6.6749431067794776
+        }
+      ],
+      "attacks": 0,
+      "chases": 0,
+      "rotations": 371,
+      "breakAttempts": 0,
+      "breakWinner": false,
+      "meanGroups": 3.825,
+      "draftSeconds": 265.050000000026,
+      "mountain": null
+    },
+    {
+      "stage": 2,
+      "type": "Hilly",
+      "seed": 322350,
+      "simSeconds": 427.6,
+      "worldSeconds": 16515.464804848354,
+      "wallMs": 7496,
+      "conditions": {
+        "version": 1,
+        "kind": "rain",
+        "temperature": 18,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -3.38
+          },
+          {
+            "at": 1,
+            "wind": -3.25
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 184,
+      "finishers": 184,
+      "OTL": 0,
+      "DNF": 0,
+      "DNS": 0,
+      "player": {
+        "status": "FINISHED",
+        "place": 16,
+        "time": 16283.324762658318,
+        "energy": 72.50966984810209,
+        "fatigue": 6.574744451962852,
+        "meanDraft": 0.3259434453322169
+      },
+      "stageTop10": [
+        {
+          "id": 73,
+          "name": "Fred Wright",
+          "role": "Allround",
+          "time": 16277.094717632934
+        },
+        {
+          "id": 144,
+          "name": "Benjamin Thomas",
+          "role": "TT",
+          "time": 16278.170390150739
+        },
+        {
+          "id": 165,
+          "name": "Krists Neilands",
+          "role": "Allround",
+          "time": 16278.333222894466
+        },
+        {
+          "id": 135,
+          "name": "Simone Velasco",
+          "role": "Puncheur",
+          "time": 16278.392886759599
+        },
+        {
+          "id": 171,
+          "name": "Alexandre Delettre",
+          "role": "Allround",
+          "time": 16278.421256227104
+        },
+        {
+          "id": 106,
+          "name": "Yannis Voisard",
+          "role": "Climber",
+          "time": 16278.433646017633
+        },
+        {
+          "id": 161,
+          "name": "Lewis Askey",
+          "role": "Allround",
+          "time": 16278.769232898781
+        },
+        {
+          "id": 173,
+          "name": "Mathis Le Berre",
+          "role": "Allround",
+          "time": 16279.247784040093
+        },
+        {
+          "id": 12,
+          "name": "Mathieu van der Poel",
+          "role": "Puncheur",
+          "time": 16281.72384832194
+        },
+        {
+          "id": 81,
+          "name": "Silvan Dillier",
+          "role": "Allround",
+          "time": 16282.37384666001
+        }
+      ],
+      "podium": [
+        {
+          "id": 73,
+          "time": 16277.094717632934
+        },
+        {
+          "id": 144,
+          "time": 16278.170390150739
+        },
+        {
+          "id": 165,
+          "time": 16278.333222894466
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 17804
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 17808
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 17808
+        },
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 17809
+        },
+        {
+          "id": 30,
+          "name": "Nils Politt",
+          "role": "Allround",
+          "time": 17812
+        },
+        {
+          "id": 17,
+          "name": "Victor Campenaerts",
+          "role": "TT",
+          "time": 17814
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 17815
+        },
+        {
+          "id": 14,
+          "name": "Quinn Simmons",
+          "role": "Allround",
+          "time": 17815
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 17817
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 17818
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 0,
+          "evening": 10.015020837472502
+        },
+        {
+          "role": "Climber",
+          "morning": 0,
+          "evening": 11.988580057053198
+        },
+        {
+          "role": "Puncheur",
+          "morning": 0,
+          "evening": 11.761782079861238
+        },
+        {
+          "role": "TT",
+          "morning": 0,
+          "evening": 9.45488980647034
+        },
+        {
+          "role": "Sprinter",
+          "morning": 0,
+          "evening": 11.500514205149006
+        },
+        {
+          "role": "Allround",
+          "morning": 0,
+          "evening": 10.52192930630583
+        }
+      ],
+      "attacks": 33,
+      "chases": 0,
+      "rotations": 182,
+      "breakAttempts": 2,
+      "breakWinner": true,
+      "meanGroups": 2.6904761904761907,
+      "draftSeconds": 368.8500000000496,
+      "mountain": null
+    },
+    {
+      "stage": 3,
+      "type": "Mountain",
+      "seed": 330541,
+      "simSeconds": 734.0500000000001,
+      "worldSeconds": 20684.055553168702,
+      "wallMs": 9582,
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 23,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -3.29
+          },
+          {
+            "at": 1,
+            "wind": -3.31
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 184,
+      "finishers": 184,
+      "OTL": 0,
+      "DNF": 0,
+      "DNS": 0,
+      "player": {
+        "status": "FINISHED",
+        "place": 12,
+        "time": 20113.10237915354,
+        "energy": 78.67860536024348,
+        "fatigue": 11.794215091621464,
+        "meanDraft": 0.21279670531874817
+      },
+      "stageTop10": [
+        {
+          "id": 91,
+          "name": "Ilan Van Wilder",
+          "role": "GC",
+          "time": 20111.311422654682
+        },
+        {
+          "id": 8,
+          "name": "Tom Pidcock",
+          "role": "Puncheur",
+          "time": 20111.53355607229
+        },
+        {
+          "id": 64,
+          "name": "Georg Steinhauser",
+          "role": "Climber",
+          "time": 20111.655348024695
+        },
+        {
+          "id": 27,
+          "name": "Michael Storer",
+          "role": "Climber",
+          "time": 20111.753208344897
+        },
+        {
+          "id": 74,
+          "name": "Egan Bernal",
+          "role": "GC",
+          "time": 20111.762801561614
+        },
+        {
+          "id": 158,
+          "name": "Lennert Van Eetvelt",
+          "role": "GC",
+          "time": 20111.80592919915
+        },
+        {
+          "id": 7,
+          "name": "Richard Carapaz",
+          "role": "Climber",
+          "time": 20111.89417100444
+        },
+        {
+          "id": 114,
+          "name": "Tobias Johannessen",
+          "role": "GC",
+          "time": 20111.959615640015
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 20112.085918029232
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 20112.432577558415
+        }
+      ],
+      "podium": [
+        {
+          "id": 91,
+          "time": 20111.311422654682
+        },
+        {
+          "id": 8,
+          "time": 20111.53355607229
+        },
+        {
+          "id": 64,
+          "time": 20111.655348024695
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 37915
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 37919
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 37919
+        },
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 37920
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 37926
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 37928
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 37929
+        },
+        {
+          "id": 121,
+          "name": "Cian Uijtdebroeks",
+          "role": "GC",
+          "time": 37930
+        },
+        {
+          "id": 2,
+          "name": "Isaac Del Toro",
+          "role": "GC",
+          "time": 37930
+        },
+        {
+          "id": 19,
+          "name": "Adam Yates",
+          "role": "Climber",
+          "time": 37930
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 0,
+          "evening": 21.788136039783293
+        },
+        {
+          "role": "Climber",
+          "morning": 0.7971307510384363,
+          "evening": 28.631323311664108
+        },
+        {
+          "role": "Puncheur",
+          "morning": 0.9664091554988692,
+          "evening": 22.86434182911561
+        },
+        {
+          "role": "TT",
+          "morning": 0.41979430406191415,
+          "evening": 15.903196888058787
+        },
+        {
+          "role": "Sprinter",
+          "morning": 0.3652739707049855,
+          "evening": 15.627238295402778
+        },
+        {
+          "role": "Allround",
+          "morning": 1.1516391888025286,
+          "evening": 17.80718347050997
+        }
+      ],
+      "attacks": 29,
+      "chases": 0,
+      "rotations": 238,
+      "breakAttempts": 4,
+      "breakWinner": false,
+      "meanGroups": 7.191780821917808,
+      "draftSeconds": 477.65000000007433,
+      "mountain": null
+    },
+    {
+      "stage": 4,
+      "type": "Hilly",
+      "seed": 338732,
+      "simSeconds": 456,
+      "worldSeconds": 17776.285401443376,
+      "wallMs": 6713,
+      "conditions": {
+        "version": 1,
+        "kind": "rain",
+        "temperature": 18,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -2.74
+          },
+          {
+            "at": 1,
+            "wind": -2.94
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 184,
+      "finishers": 184,
+      "OTL": 0,
+      "DNF": 0,
+      "DNS": 0,
+      "player": {
+        "status": "FINISHED",
+        "place": 3,
+        "time": 17449.404825887428,
+        "energy": 73.08679620733182,
+        "fatigue": 9.93862606398524,
+        "meanDraft": 0.23912784872427464
+      },
+      "stageTop10": [
+        {
+          "id": 23,
+          "name": "Romain Grégoire",
+          "role": "Puncheur",
+          "time": 17449.28545295573
+        },
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 17449.367472919188
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 17449.404825887428
+        },
+        {
+          "id": 74,
+          "name": "Egan Bernal",
+          "role": "GC",
+          "time": 17449.411796627748
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 17449.480560934655
+        },
+        {
+          "id": 114,
+          "name": "Tobias Johannessen",
+          "role": "GC",
+          "time": 17449.63296350775
+        },
+        {
+          "id": 59,
+          "name": "Antonio Tiberi",
+          "role": "GC",
+          "time": 17449.677838150714
+        },
+        {
+          "id": 96,
+          "name": "Michael Matthews",
+          "role": "Sprinter",
+          "time": 17449.735601538356
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 17449.82221617709
+        },
+        {
+          "id": 181,
+          "name": "Stefano Oldani",
+          "role": "Puncheur",
+          "time": 17449.877550831963
+        }
+      ],
+      "podium": [
+        {
+          "id": 23,
+          "time": 17449.28545295573
+        },
+        {
+          "id": 1,
+          "time": 17449.367472919188
+        },
+        {
+          "id": 0,
+          "time": 17449.404825887428
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 55360
+        },
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 55363
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 55368
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 55368
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 55375
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 55377
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 55378
+        },
+        {
+          "id": 121,
+          "name": "Cian Uijtdebroeks",
+          "role": "GC",
+          "time": 55379
+        },
+        {
+          "id": 2,
+          "name": "Isaac Del Toro",
+          "role": "GC",
+          "time": 55379
+        },
+        {
+          "id": 19,
+          "name": "Adam Yates",
+          "role": "Climber",
+          "time": 55379
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 7.827263872928064,
+          "evening": 21.95911525913212
+        },
+        {
+          "role": "Climber",
+          "morning": 15.796267205493876,
+          "evening": 34.11741855223974
+        },
+        {
+          "role": "Puncheur",
+          "morning": 10.213166835146001,
+          "evening": 27.9009162440252
+        },
+        {
+          "role": "TT",
+          "morning": 3.112399936313789,
+          "evening": 15.550005185325423
+        },
+        {
+          "role": "Sprinter",
+          "morning": 2.817148341560707,
+          "evening": 16.863967659108273
+        },
+        {
+          "role": "Allround",
+          "morning": 4.92855972433596,
+          "evening": 19.42953275690362
+        }
+      ],
+      "attacks": 29,
+      "chases": 11,
+      "rotations": 194,
+      "breakAttempts": 3,
+      "breakWinner": false,
+      "meanGroups": 3.7777777777777777,
+      "draftSeconds": 363.1500000000483,
+      "mountain": null
+    },
+    {
+      "stage": 5,
+      "type": "Flat",
+      "seed": 346923,
+      "simSeconds": 310.05,
+      "worldSeconds": 13120.517474095115,
+      "wallMs": 5914,
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 23,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -0.38
+          },
+          {
+            "at": 0.5,
+            "wind": -1.11
+          },
+          {
+            "at": 1,
+            "wind": -0.04
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 184,
+      "finishers": 184,
+      "OTL": 0,
+      "DNF": 0,
+      "DNS": 0,
+      "player": {
+        "status": "FINISHED",
+        "place": 18,
+        "time": 13094.556660238199,
+        "energy": 83.37968736215498,
+        "fatigue": 2.2955803264685852,
+        "meanDraft": 0.33880655215523486
+      },
+      "stageTop10": [
+        {
+          "id": 15,
+          "name": "Mads Pedersen",
+          "role": "Sprinter",
+          "time": 13092.086491683456
+        },
+        {
+          "id": 153,
+          "name": "Arnaud De Lie",
+          "role": "Sprinter",
+          "time": 13092.118836163989
+        },
+        {
+          "id": 50,
+          "name": "Olav Kooij",
+          "role": "Sprinter",
+          "time": 13092.490265835053
+        },
+        {
+          "id": 54,
+          "name": "Phil Bauhaus",
+          "role": "Sprinter",
+          "time": 13092.534742120102
+        },
+        {
+          "id": 93,
+          "name": "Pascal Ackermann",
+          "role": "Sprinter",
+          "time": 13092.539967248422
+        },
+        {
+          "id": 16,
+          "name": "Tim Merlier",
+          "role": "Sprinter",
+          "time": 13092.605431981832
+        },
+        {
+          "id": 147,
+          "name": "Pavel Bittner",
+          "role": "Sprinter",
+          "time": 13092.63556451264
+        },
+        {
+          "id": 120,
+          "name": "Søren Wærenskjold",
+          "role": "Sprinter",
+          "time": 13092.643294651789
+        },
+        {
+          "id": 150,
+          "name": "Niklas Märkl",
+          "role": "Sprinter",
+          "time": 13093.142883402206
+        },
+        {
+          "id": 60,
+          "name": "Vlad van Mechelen",
+          "role": "Sprinter",
+          "time": 13093.368670881242
+        }
+      ],
+      "podium": [
+        {
+          "id": 15,
+          "time": 13092.086491683456
+        },
+        {
+          "id": 153,
+          "time": 13092.118836163989
+        },
+        {
+          "id": 50,
+          "time": 13092.490265835053
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 68452
+        },
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 68455
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 68460
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 68460
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 68467
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 68469
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 68470
+        },
+        {
+          "id": 121,
+          "name": "Cian Uijtdebroeks",
+          "role": "GC",
+          "time": 68471
+        },
+        {
+          "id": 19,
+          "name": "Adam Yates",
+          "role": "Climber",
+          "time": 68471
+        },
+        {
+          "id": 15,
+          "name": "Mads Pedersen",
+          "role": "Sprinter",
+          "time": 68471
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 7.830004720029069,
+          "evening": 13.314878264682813
+        },
+        {
+          "role": "Climber",
+          "morning": 20.738760090990663,
+          "evening": 29.11645725906198
+        },
+        {
+          "role": "Puncheur",
+          "morning": 14.820176272331372,
+          "evening": 22.470943099463547
+        },
+        {
+          "role": "TT",
+          "morning": 3.5540198660407207,
+          "evening": 10.594937756239858
+        },
+        {
+          "role": "Sprinter",
+          "morning": 3.887296800059735,
+          "evening": 15.130226729206903
+        },
+        {
+          "role": "Allround",
+          "morning": 7.156693577622442,
+          "evening": 14.503788553259154
+        }
+      ],
+      "attacks": 16,
+      "chases": 0,
+      "rotations": 160,
+      "breakAttempts": 2,
+      "breakWinner": false,
+      "meanGroups": 1.7419354838709677,
+      "draftSeconds": 283.9000000000303,
+      "mountain": null
+    },
+    {
+      "stage": 6,
+      "type": "Mountain",
+      "seed": 355114,
+      "simSeconds": 1060.4,
+      "worldSeconds": 19956.25484463991,
+      "wallMs": 17582,
+      "conditions": {
+        "version": 1,
+        "kind": "hot",
+        "temperature": 33,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -1.25
+          },
+          {
+            "at": 0.5,
+            "wind": 0.09
+          },
+          {
+            "at": 1,
+            "wind": 0.45
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 184,
+      "finishers": 182,
+      "OTL": 2,
+      "DNF": 0,
+      "DNS": 0,
+      "player": {
+        "status": "FINISHED",
+        "place": 8,
+        "time": 16914.121525884864,
+        "energy": 78.62260386692672,
+        "fatigue": 18.09669213080347,
+        "meanDraft": 0.16581725390329008
+      },
+      "stageTop10": [
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 16911.921328323067
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 16912.343960526072
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 16912.35321818686
+        },
+        {
+          "id": 121,
+          "name": "Cian Uijtdebroeks",
+          "role": "GC",
+          "time": 16912.369981295866
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 16912.371740939903
+        },
+        {
+          "id": 74,
+          "name": "Egan Bernal",
+          "role": "GC",
+          "time": 16913.04012704891
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 16913.489903450438
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 16914.121525884864
+        },
+        {
+          "id": 114,
+          "name": "Tobias Johannessen",
+          "role": "GC",
+          "time": 16915.934788802035
+        },
+        {
+          "id": 39,
+          "name": "Jai Hindley",
+          "role": "GC",
+          "time": 16916.0358386831
+        }
+      ],
+      "podium": [
+        {
+          "id": 1,
+          "time": 16911.921328323067
+        },
+        {
+          "id": 3,
+          "time": 16912.343960526072
+        },
+        {
+          "id": 22,
+          "time": 16912.35321818686
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 85356
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 85363
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 85371
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 85371
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 85376
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 85377
+        },
+        {
+          "id": 121,
+          "name": "Cian Uijtdebroeks",
+          "role": "GC",
+          "time": 85382
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 85384
+        },
+        {
+          "id": 74,
+          "name": "Egan Bernal",
+          "role": "GC",
+          "time": 85386
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 85387
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 2.1993329303156672,
+          "evening": 34.933444782657595
+        },
+        {
+          "role": "Climber",
+          "morning": 15.292971924990768,
+          "evening": 48.8628859554753
+        },
+        {
+          "role": "Puncheur",
+          "morning": 10.285914905751445,
+          "evening": 34.067598383694715
+        },
+        {
+          "role": "TT",
+          "morning": 2.749050035850448,
+          "evening": 19.064113064277908
+        },
+        {
+          "role": "Sprinter",
+          "morning": 2.8589496583460696,
+          "evening": 17.137269867041102
+        },
+        {
+          "role": "Allround",
+          "morning": 4.409137450850944,
+          "evening": 22.781421880928796
+        }
+      ],
+      "attacks": 43,
+      "chases": 13,
+      "rotations": 199,
+      "breakAttempts": 5,
+      "breakWinner": false,
+      "meanGroups": 18.40566037735849,
+      "draftSeconds": 579.7500000000205,
+      "mountain": null
+    },
+    {
+      "stage": 7,
+      "type": "Flat",
+      "seed": 363305,
+      "simSeconds": 337.8,
+      "worldSeconds": 15231.285200568658,
+      "wallMs": 9423,
+      "conditions": {
+        "version": 1,
+        "kind": "cloud",
+        "temperature": 23,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -0.33
+          },
+          {
+            "at": 0.5,
+            "wind": -1.42
+          },
+          {
+            "at": 1,
+            "wind": -1.42
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 182,
+      "finishers": 182,
+      "OTL": 0,
+      "DNF": 0,
+      "DNS": 2,
+      "player": {
+        "status": "FINISHED",
+        "place": 22,
+        "time": 15186.55592940637,
+        "energy": 82.950204936585,
+        "fatigue": 6.376678364650528,
+        "meanDraft": 0.34097035411658616
+      },
+      "stageTop10": [
+        {
+          "id": 120,
+          "name": "Søren Wærenskjold",
+          "role": "Sprinter",
+          "time": 15182.433164587901
+        },
+        {
+          "id": 15,
+          "name": "Mads Pedersen",
+          "role": "Sprinter",
+          "time": 15182.588469798311
+        },
+        {
+          "id": 147,
+          "name": "Pavel Bittner",
+          "role": "Sprinter",
+          "time": 15183.389024004271
+        },
+        {
+          "id": 150,
+          "name": "Niklas Märkl",
+          "role": "Sprinter",
+          "time": 15183.788295481174
+        },
+        {
+          "id": 24,
+          "name": "Biniam Girmay",
+          "role": "Sprinter",
+          "time": 15184.730780163678
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 15184.914960174072
+        },
+        {
+          "id": 14,
+          "name": "Quinn Simmons",
+          "role": "Allround",
+          "time": 15185.001120633271
+        },
+        {
+          "id": 50,
+          "name": "Olav Kooij",
+          "role": "Sprinter",
+          "time": 15185.091027470646
+        },
+        {
+          "id": 115,
+          "name": "Jonas Abrahamsen",
+          "role": "Allround",
+          "time": 15185.208971185006
+        },
+        {
+          "id": 60,
+          "name": "Vlad van Mechelen",
+          "role": "Sprinter",
+          "time": 15185.21855162457
+        }
+      ],
+      "podium": [
+        {
+          "id": 120,
+          "time": 15182.433164587901
+        },
+        {
+          "id": 15,
+          "time": 15182.588469798311
+        },
+        {
+          "id": 147,
+          "time": 15183.389024004271
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 100538
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 100545
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 100553
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 100553
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 100558
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 100559
+        },
+        {
+          "id": 121,
+          "name": "Cian Uijtdebroeks",
+          "role": "GC",
+          "time": 100564
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 100566
+        },
+        {
+          "id": 74,
+          "name": "Egan Bernal",
+          "role": "GC",
+          "time": 100568
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 100569
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 21.428965459934272,
+          "evening": 28.871345538983093
+        },
+        {
+          "role": "Climber",
+          "morning": 36.393888879625266,
+          "evening": 45.509408149307966
+        },
+        {
+          "role": "Puncheur",
+          "morning": 21.55810509703766,
+          "evening": 32.45518259279202
+        },
+        {
+          "role": "TT",
+          "morning": 6.6789693291979155,
+          "evening": 15.166694539591253
+        },
+        {
+          "role": "Sprinter",
+          "morning": 4.131711284717072,
+          "evening": 16.955836873211997
+        },
+        {
+          "role": "Allround",
+          "morning": 10.219320905559227,
+          "evening": 20.975457097311608
+        }
+      ],
+      "attacks": 16,
+      "chases": 2,
+      "rotations": 162,
+      "breakAttempts": 2,
+      "breakWinner": false,
+      "meanGroups": 2.1515151515151514,
+      "draftSeconds": 299.0500000000337,
+      "mountain": null
+    },
+    {
+      "stage": 8,
+      "type": "Flat",
+      "seed": 371496,
+      "simSeconds": 375.8,
+      "worldSeconds": 16576.687481460052,
+      "wallMs": 8922,
+      "conditions": {
+        "version": 1,
+        "kind": "hot",
+        "temperature": 33,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -1.86
+          },
+          {
+            "at": 1,
+            "wind": -1.01
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 182,
+      "finishers": 181,
+      "OTL": 0,
+      "DNF": 1,
+      "DNS": 2,
+      "player": {
+        "status": "FINISHED",
+        "place": 7,
+        "time": 16072.655901774719,
+        "energy": 76.60493128210167,
+        "fatigue": 5.751646139202059,
+        "meanDraft": 0.24455529764633885
+      },
+      "stageTop10": [
+        {
+          "id": 93,
+          "name": "Pascal Ackermann",
+          "role": "Sprinter",
+          "time": 16070.62057199211
+        },
+        {
+          "id": 50,
+          "name": "Olav Kooij",
+          "role": "Sprinter",
+          "time": 16071.03270820415
+        },
+        {
+          "id": 120,
+          "name": "Søren Wærenskjold",
+          "role": "Sprinter",
+          "time": 16071.199087346524
+        },
+        {
+          "id": 153,
+          "name": "Arnaud De Lie",
+          "role": "Sprinter",
+          "time": 16071.297217703916
+        },
+        {
+          "id": 16,
+          "name": "Tim Merlier",
+          "role": "Sprinter",
+          "time": 16071.355260903762
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 16072.599760088995
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 16072.655901774719
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 16073.08196921424
+        },
+        {
+          "id": 94,
+          "name": "Luke Durbridge",
+          "role": "TT",
+          "time": 16073.330036225396
+        },
+        {
+          "id": 99,
+          "name": "Mauro Schmid",
+          "role": "Puncheur",
+          "time": 16073.474126007726
+        }
+      ],
+      "podium": [
+        {
+          "id": 93,
+          "time": 16070.62057199211
+        },
+        {
+          "id": 50,
+          "time": 16071.03270820415
+        },
+        {
+          "id": 120,
+          "time": 16071.199087346524
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 116608
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 116615
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 116623
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 116623
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 116628
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 116629
+        },
+        {
+          "id": 121,
+          "name": "Cian Uijtdebroeks",
+          "role": "GC",
+          "time": 116634
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 116636
+        },
+        {
+          "id": 74,
+          "name": "Egan Bernal",
+          "role": "GC",
+          "time": 116638
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 116639
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 14.386445083722908,
+          "evening": 22.445361091780434
+        },
+        {
+          "role": "Climber",
+          "morning": 31.618567621958846,
+          "evening": 42.20230455045636
+        },
+        {
+          "role": "Puncheur",
+          "morning": 20.538951274167392,
+          "evening": 31.429891393080368
+        },
+        {
+          "role": "TT",
+          "morning": 5.115943228162576,
+          "evening": 12.583143190865728
+        },
+        {
+          "role": "Sprinter",
+          "morning": 4.485768627399335,
+          "evening": 17.163261593756907
+        },
+        {
+          "role": "Allround",
+          "morning": 9.457098841260494,
+          "evening": 19.979992827594877
+        }
+      ],
+      "attacks": 14,
+      "chases": 2,
+      "rotations": 138,
+      "breakAttempts": 2,
+      "breakWinner": false,
+      "meanGroups": 2.1621621621621623,
+      "draftSeconds": 304.2000000000349,
+      "mountain": null
+    },
+    {
+      "stage": 9,
+      "type": "Hilly",
+      "seed": 379687,
+      "simSeconds": 365.6,
+      "worldSeconds": 12702.431327719323,
+      "wallMs": 8338,
+      "conditions": {
+        "version": 1,
+        "kind": "cloud",
+        "temperature": 23,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 1.25
+          },
+          {
+            "at": 0.5,
+            "wind": 0.11
+          },
+          {
+            "at": 1,
+            "wind": 0.3
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 181,
+      "finishers": 178,
+      "OTL": 0,
+      "DNF": 3,
+      "DNS": 3,
+      "player": {
+        "status": "FINISHED",
+        "place": 10,
+        "time": 12470.120848900366,
+        "energy": 69.17202540458422,
+        "fatigue": 8.282964714748333,
+        "meanDraft": 0.2609152768325144
+      },
+      "stageTop10": [
+        {
+          "id": 23,
+          "name": "Romain Grégoire",
+          "role": "Puncheur",
+          "time": 12468.772893157975
+        },
+        {
+          "id": 140,
+          "name": "Jenthe Biermans",
+          "role": "Allround",
+          "time": 12468.793987797872
+        },
+        {
+          "id": 102,
+          "name": "Marco Haller",
+          "role": "Allround",
+          "time": 12468.940082585716
+        },
+        {
+          "id": 110,
+          "name": "Lorenzo Germani",
+          "role": "Allround",
+          "time": 12468.950552223096
+        },
+        {
+          "id": 179,
+          "name": "Alex Molenaar",
+          "role": "Allround",
+          "time": 12468.981893574473
+        },
+        {
+          "id": 170,
+          "name": "Joris Delbove",
+          "role": "Allround",
+          "time": 12469.21070171044
+        },
+        {
+          "id": 87,
+          "name": "Valentin Paret Peintre",
+          "role": "Climber",
+          "time": 12469.529185937989
+        },
+        {
+          "id": 59,
+          "name": "Antonio Tiberi",
+          "role": "GC",
+          "time": 12469.59098963781
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 12469.789414188723
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 12470.120848900366
+        }
+      ],
+      "podium": [
+        {
+          "id": 23,
+          "time": 12468.772893157975
+        },
+        {
+          "id": 140,
+          "time": 12468.793987797872
+        },
+        {
+          "id": 102,
+          "time": 12468.940082585716
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 129076
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 129083
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 129091
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 129091
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 129096
+        },
+        {
+          "id": 121,
+          "name": "Cian Uijtdebroeks",
+          "role": "GC",
+          "time": 129102
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 129104
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 129106
+        },
+        {
+          "id": 74,
+          "name": "Egan Bernal",
+          "role": "GC",
+          "time": 129106
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 129107
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 9.221463083815134,
+          "evening": 21.198792854585484
+        },
+        {
+          "role": "Climber",
+          "morning": 27.843653679220107,
+          "evening": 39.761268347077
+        },
+        {
+          "role": "Puncheur",
+          "morning": 19.374304383836623,
+          "evening": 31.574080886005625
+        },
+        {
+          "role": "TT",
+          "morning": 3.730723757198055,
+          "evening": 13.839755901089406
+        },
+        {
+          "role": "Sprinter",
+          "morning": 4.865071080517192,
+          "evening": 16.480539820541317
+        },
+        {
+          "role": "Allround",
+          "morning": 8.734158916958886,
+          "evening": 20.13639060927687
+        }
+      ],
+      "attacks": 42,
+      "chases": 1,
+      "rotations": 156,
+      "breakAttempts": 6,
+      "breakWinner": false,
+      "meanGroups": 2.7777777777777777,
+      "draftSeconds": 292.4000000000322,
+      "mountain": null
+    },
+    {
+      "stage": 10,
+      "type": "Mountain",
+      "seed": 387878,
+      "simSeconds": 746.9000000000001,
+      "worldSeconds": 16179.785016738962,
+      "wallMs": 12055,
+      "conditions": {
+        "version": 1,
+        "kind": "hot",
+        "temperature": 33,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.44
+          },
+          {
+            "at": 0.5,
+            "wind": 1.35
+          },
+          {
+            "at": 1,
+            "wind": -0.11
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 178,
+      "finishers": 169,
+      "OTL": 9,
+      "DNF": 0,
+      "DNS": 6,
+      "player": {
+        "status": "FINISHED",
+        "place": 10,
+        "time": 13597.990369173442,
+        "energy": 74.4920034284211,
+        "fatigue": 13.35336281069216,
+        "meanDraft": 0.16988189887028374
+      },
+      "stageTop10": [
+        {
+          "id": 114,
+          "name": "Tobias Johannessen",
+          "role": "GC",
+          "time": 13595.664064472945
+        },
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 13596.441527011199
+        },
+        {
+          "id": 59,
+          "name": "Antonio Tiberi",
+          "role": "GC",
+          "time": 13596.444417852508
+        },
+        {
+          "id": 158,
+          "name": "Lennert Van Eetvelt",
+          "role": "GC",
+          "time": 13597.018624191916
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 13597.192309290063
+        },
+        {
+          "id": 74,
+          "name": "Egan Bernal",
+          "role": "GC",
+          "time": 13597.202522374404
+        },
+        {
+          "id": 119,
+          "name": "Torstein Træen",
+          "role": "Climber",
+          "time": 13597.233045340252
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 13597.28872347309
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 13597.316778530212
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 13597.990369173442
+        }
+      ],
+      "podium": [
+        {
+          "id": 114,
+          "time": 13595.664064472945
+        },
+        {
+          "id": 1,
+          "time": 13596.441527011199
+        },
+        {
+          "id": 59,
+          "time": 13596.444417852508
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 142665
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 142678
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 142686
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 142686
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 142691
+        },
+        {
+          "id": 114,
+          "name": "Tobias Johannessen",
+          "role": "GC",
+          "time": 142697
+        },
+        {
+          "id": 121,
+          "name": "Cian Uijtdebroeks",
+          "role": "GC",
+          "time": 142697
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 142699
+        },
+        {
+          "id": 74,
+          "name": "Egan Bernal",
+          "role": "GC",
+          "time": 142701
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 142701
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 1.489520169897013,
+          "evening": 24.05002202835227
+        },
+        {
+          "role": "Climber",
+          "morning": 8.54557887189643,
+          "evening": 32.27071858869785
+        },
+        {
+          "role": "Puncheur",
+          "morning": 5.638564577641314,
+          "evening": 21.45021788911644
+        },
+        {
+          "role": "TT",
+          "morning": 0.40308554927494483,
+          "evening": 13.812605206906646
+        },
+        {
+          "role": "Sprinter",
+          "morning": 0,
+          "evening": 11.910264597426547
+        },
+        {
+          "role": "Allround",
+          "morning": 1.277752975203234,
+          "evening": 16.143887028820558
+        }
+      ],
+      "attacks": 35,
+      "chases": 7,
+      "rotations": 189,
+      "breakAttempts": 5,
+      "breakWinner": false,
+      "meanGroups": 13.405405405405405,
+      "draftSeconds": 416.10000000006033,
+      "mountain": null
+    },
+    {
+      "stage": 11,
+      "type": "Flat",
+      "seed": 396069,
+      "simSeconds": 399.75,
+      "worldSeconds": 15414.980507824233,
+      "wallMs": 9032,
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 23,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -1.34
+          },
+          {
+            "at": 0.5,
+            "wind": -1.78
+          },
+          {
+            "at": 1,
+            "wind": -1.79
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 169,
+      "finishers": 160,
+      "OTL": 7,
+      "DNF": 2,
+      "DNS": 15,
+      "player": {
+        "status": "FINISHED",
+        "place": 57,
+        "time": 14411.191601949524,
+        "energy": 80.43811069848024,
+        "fatigue": 3.023314338111734,
+        "meanDraft": 0.2873273517560777
+      },
+      "stageTop10": [
+        {
+          "id": 120,
+          "name": "Søren Wærenskjold",
+          "role": "Sprinter",
+          "time": 14406.357905587136
+        },
+        {
+          "id": 93,
+          "name": "Pascal Ackermann",
+          "role": "Sprinter",
+          "time": 14406.38652886149
+        },
+        {
+          "id": 54,
+          "name": "Phil Bauhaus",
+          "role": "Sprinter",
+          "time": 14406.469952485706
+        },
+        {
+          "id": 15,
+          "name": "Mads Pedersen",
+          "role": "Sprinter",
+          "time": 14407.471986143843
+        },
+        {
+          "id": 16,
+          "name": "Tim Merlier",
+          "role": "Sprinter",
+          "time": 14407.801688380396
+        },
+        {
+          "id": 50,
+          "name": "Olav Kooij",
+          "role": "Sprinter",
+          "time": 14407.804292073652
+        },
+        {
+          "id": 12,
+          "name": "Mathieu van der Poel",
+          "role": "Puncheur",
+          "time": 14408.321199154598
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 14408.579972799995
+        },
+        {
+          "id": 59,
+          "name": "Antonio Tiberi",
+          "role": "GC",
+          "time": 14408.658495715732
+        },
+        {
+          "id": 114,
+          "name": "Tobias Johannessen",
+          "role": "GC",
+          "time": 14408.716709809256
+        }
+      ],
+      "podium": [
+        {
+          "id": 120,
+          "time": 14406.357905587136
+        },
+        {
+          "id": 93,
+          "time": 14406.38652886149
+        },
+        {
+          "id": 54,
+          "time": 14406.469952485706
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 157071
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 157084
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 157092
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 157092
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 157097
+        },
+        {
+          "id": 114,
+          "name": "Tobias Johannessen",
+          "role": "GC",
+          "time": 157103
+        },
+        {
+          "id": 121,
+          "name": "Cian Uijtdebroeks",
+          "role": "GC",
+          "time": 157103
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 157105
+        },
+        {
+          "id": 74,
+          "name": "Egan Bernal",
+          "role": "GC",
+          "time": 157107
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 157107
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 10.05087295741313,
+          "evening": 17.14008266432723
+        },
+        {
+          "role": "Climber",
+          "morning": 21.07734099871654,
+          "evening": 31.00170296589166
+        },
+        {
+          "role": "Puncheur",
+          "morning": 10.591845170285508,
+          "evening": 21.79651537335409
+        },
+        {
+          "role": "TT",
+          "morning": 2.5905283001626107,
+          "evening": 10.449049614912358
+        },
+        {
+          "role": "Sprinter",
+          "morning": 0.8951405639844575,
+          "evening": 12.657424825674747
+        },
+        {
+          "role": "Allround",
+          "morning": 4.801305248012579,
+          "evening": 15.39986180828037
+        }
+      ],
+      "attacks": 21,
+      "chases": 1,
+      "rotations": 175,
+      "breakAttempts": 3,
+      "breakWinner": false,
+      "meanGroups": 2.5128205128205128,
+      "draftSeconds": 304.750000000035,
+      "mountain": null
+    },
+    {
+      "stage": 12,
+      "type": "Flat",
+      "seed": 404260,
+      "simSeconds": 396.65000000000003,
+      "worldSeconds": 16362.553986069786,
+      "wallMs": 7922,
+      "conditions": {
+        "version": 1,
+        "kind": "cloud",
+        "temperature": 23,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -0.86
+          },
+          {
+            "at": 0.5,
+            "wind": -1.36
+          },
+          {
+            "at": 1,
+            "wind": -1.89
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 160,
+      "finishers": 159,
+      "OTL": 0,
+      "DNF": 1,
+      "DNS": 24,
+      "player": {
+        "status": "FINISHED",
+        "place": 46,
+        "time": 15494.58261006779,
+        "energy": 80.65834859579122,
+        "fatigue": 6.0279355138261925,
+        "meanDraft": 0.28461142478478507
+      },
+      "stageTop10": [
+        {
+          "id": 50,
+          "name": "Olav Kooij",
+          "role": "Sprinter",
+          "time": 15489.4808673175
+        },
+        {
+          "id": 174,
+          "name": "Anthony Turgis",
+          "role": "Allround",
+          "time": 15490.835723508422
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 15491.321020403037
+        },
+        {
+          "id": 12,
+          "name": "Mathieu van der Poel",
+          "role": "Puncheur",
+          "time": 15491.419680592098
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 15491.424691631191
+        },
+        {
+          "id": 166,
+          "name": "Jake Stewart",
+          "role": "Sprinter",
+          "time": 15491.591464527652
+        },
+        {
+          "id": 15,
+          "name": "Mads Pedersen",
+          "role": "Sprinter",
+          "time": 15492.300133805957
+        },
+        {
+          "id": 51,
+          "name": "Aurélien Paret Peintre",
+          "role": "Climber",
+          "time": 15492.357826544818
+        },
+        {
+          "id": 129,
+          "name": "Sergio Higuita",
+          "role": "Puncheur",
+          "time": 15492.42022585546
+        },
+        {
+          "id": 49,
+          "name": "Daan Hoole",
+          "role": "TT",
+          "time": 15492.472853748253
+        }
+      ],
+      "podium": [
+        {
+          "id": 50,
+          "time": 15489.4808673175
+        },
+        {
+          "id": 174,
+          "time": 15490.835723508422
+        },
+        {
+          "id": 6,
+          "time": 15491.321020403037
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 172560
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 172573
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 172577
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 172581
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 172586
+        },
+        {
+          "id": 114,
+          "name": "Tobias Johannessen",
+          "role": "GC",
+          "time": 172592
+        },
+        {
+          "id": 121,
+          "name": "Cian Uijtdebroeks",
+          "role": "GC",
+          "time": 172592
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 172594
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 172596
+        },
+        {
+          "id": 74,
+          "name": "Egan Bernal",
+          "role": "GC",
+          "time": 172596
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 3.9826648597698324,
+          "evening": 13.471209528501774
+        },
+        {
+          "role": "Climber",
+          "morning": 16.23770937077101,
+          "evening": 29.03260582766307
+        },
+        {
+          "role": "Puncheur",
+          "morning": 10.494423573932487,
+          "evening": 23.28750616831587
+        },
+        {
+          "role": "TT",
+          "morning": 0.9754671643336316,
+          "evening": 10.707014399139183
+        },
+        {
+          "role": "Sprinter",
+          "morning": 1.1232337285453309,
+          "evening": 17.1274618665875
+        },
+        {
+          "role": "Allround",
+          "morning": 4.289454697418551,
+          "evening": 17.380127604125647
+        }
+      ],
+      "attacks": 29,
+      "chases": 2,
+      "rotations": 156,
+      "breakAttempts": 5,
+      "breakWinner": false,
+      "meanGroups": 2.4615384615384617,
+      "draftSeconds": 308.80000000003594,
+      "mountain": null
+    },
+    {
+      "stage": 13,
+      "type": "Hilly",
+      "seed": 412451,
+      "simSeconds": 423.70000000000005,
+      "worldSeconds": 19491.232441494747,
+      "wallMs": 8922,
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 23,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -1.23
+          },
+          {
+            "at": 0.5,
+            "wind": -2.75
+          },
+          {
+            "at": 1,
+            "wind": -2.31
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 159,
+      "finishers": 159,
+      "OTL": 0,
+      "DNF": 0,
+      "DNS": 25,
+      "player": {
+        "status": "FINISHED",
+        "place": 34,
+        "time": 19359.718521352803,
+        "energy": 66.28598545592118,
+        "fatigue": 9.672378110490131,
+        "meanDraft": 0.31594165033792887
+      },
+      "stageTop10": [
+        {
+          "id": 61,
+          "name": "Kasper Asgreen",
+          "role": "TT",
+          "time": 19356.162742334905
+        },
+        {
+          "id": 163,
+          "name": "Marco Frigo",
+          "role": "Climber",
+          "time": 19356.413518123834
+        },
+        {
+          "id": 182,
+          "name": "Jakub Otruba",
+          "role": "TT",
+          "time": 19356.415504051518
+        },
+        {
+          "id": 158,
+          "name": "Lennert Van Eetvelt",
+          "role": "GC",
+          "time": 19356.440768051118
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 19357.382712817718
+        },
+        {
+          "id": 59,
+          "name": "Antonio Tiberi",
+          "role": "GC",
+          "time": 19357.450599212458
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 19357.48614032124
+        },
+        {
+          "id": 181,
+          "name": "Stefano Oldani",
+          "role": "Puncheur",
+          "time": 19357.65223768568
+        },
+        {
+          "id": 48,
+          "name": "Cees Bol",
+          "role": "Sprinter",
+          "time": 19358.023932502423
+        },
+        {
+          "id": 174,
+          "name": "Anthony Turgis",
+          "role": "Allround",
+          "time": 19358.082316314118
+        }
+      ],
+      "podium": [
+        {
+          "id": 61,
+          "time": 19356.162742334905
+        },
+        {
+          "id": 163,
+          "time": 19356.413518123834
+        },
+        {
+          "id": 182,
+          "time": 19356.415504051518
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 191916
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 191929
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 191933
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 191937
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 191942
+        },
+        {
+          "id": 114,
+          "name": "Tobias Johannessen",
+          "role": "GC",
+          "time": 191948
+        },
+        {
+          "id": 121,
+          "name": "Cian Uijtdebroeks",
+          "role": "GC",
+          "time": 191948
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 191950
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 191952
+        },
+        {
+          "id": 74,
+          "name": "Egan Bernal",
+          "role": "GC",
+          "time": 191952
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 3.0527374603186574,
+          "evening": 15.69281245596837
+        },
+        {
+          "role": "Climber",
+          "morning": 15.658991582341784,
+          "evening": 31.12263397756838
+        },
+        {
+          "role": "Puncheur",
+          "morning": 10.946882876954065,
+          "evening": 25.83975666327646
+        },
+        {
+          "role": "TT",
+          "morning": 1.3141278836415518,
+          "evening": 14.07133660886435
+        },
+        {
+          "role": "Sprinter",
+          "morning": 4.334406581759524,
+          "evening": 19.897359596578095
+        },
+        {
+          "role": "Allround",
+          "morning": 5.608652847462412,
+          "evening": 20.54542364290823
+        }
+      ],
+      "attacks": 30,
+      "chases": 0,
+      "rotations": 172,
+      "breakAttempts": 5,
+      "breakWinner": true,
+      "meanGroups": 2.7142857142857144,
+      "draftSeconds": 366.7500000000491,
+      "mountain": {
+        "count": 54,
+        "lowClimbSprinters": [
+          120
+        ],
+        "front": [
+          {
+            "id": 1,
+            "role": "GC",
+            "climb": 95
+          },
+          {
+            "id": 2,
+            "role": "GC",
+            "climb": 96
+          },
+          {
+            "id": 4,
+            "role": "Climber",
+            "climb": 96
+          },
+          {
+            "id": 5,
+            "role": "GC",
+            "climb": 92
+          },
+          {
+            "id": 6,
+            "role": "GC",
+            "climb": 94
+          },
+          {
+            "id": 9,
+            "role": "GC",
+            "climb": 98
+          },
+          {
+            "id": 11,
+            "role": "Climber",
+            "climb": 94
+          },
+          {
+            "id": 18,
+            "role": "GC",
+            "climb": 91
+          },
+          {
+            "id": 19,
+            "role": "Climber",
+            "climb": 94
+          },
+          {
+            "id": 21,
+            "role": "GC",
+            "climb": 91
+          },
+          {
+            "id": 25,
+            "role": "GC",
+            "climb": 95
+          },
+          {
+            "id": 27,
+            "role": "Climber",
+            "climb": 92
+          },
+          {
+            "id": 30,
+            "role": "Allround",
+            "climb": 78
+          },
+          {
+            "id": 31,
+            "role": "Allround",
+            "climb": 77
+          },
+          {
+            "id": 33,
+            "role": "TT",
+            "climb": 76
+          },
+          {
+            "id": 36,
+            "role": "Climber",
+            "climb": 88
+          },
+          {
+            "id": 37,
+            "role": "TT",
+            "climb": 85
+          },
+          {
+            "id": 39,
+            "role": "GC",
+            "climb": 93
+          },
+          {
+            "id": 43,
+            "role": "GC",
+            "climb": 91
+          },
+          {
+            "id": 44,
+            "role": "Puncheur",
+            "climb": 84
+          },
+          {
+            "id": 45,
+            "role": "Allround",
+            "climb": 81
+          },
+          {
+            "id": 46,
+            "role": "Climber",
+            "climb": 88
+          },
+          {
+            "id": 56,
+            "role": "TT",
+            "climb": 71
+          },
+          {
+            "id": 61,
+            "role": "TT",
+            "climb": 77
+          },
+          {
+            "id": 74,
+            "role": "GC",
+            "climb": 92
+          },
+          {
+            "id": 75,
+            "role": "GC",
+            "climb": 91
+          },
+          {
+            "id": 79,
+            "role": "TT",
+            "climb": 78
+          },
+          {
+            "id": 81,
+            "role": "Allround",
+            "climb": 75
+          },
+          {
+            "id": 82,
+            "role": "Allround",
+            "climb": 74
+          },
+          {
+            "id": 97,
+            "role": "TT",
+            "climb": 72
+          },
+          {
+            "id": 98,
+            "role": "TT",
+            "climb": 85
+          },
+          {
+            "id": 99,
+            "role": "Puncheur",
+            "climb": 84
+          },
+          {
+            "id": 100,
+            "role": "Puncheur",
+            "climb": 86
+          },
+          {
+            "id": 105,
+            "role": "Allround",
+            "climb": 75
+          },
+          {
+            "id": 109,
+            "role": "Allround",
+            "climb": 82
+          },
+          {
+            "id": 111,
+            "role": "Climber",
+            "climb": 89
+          },
+          {
+            "id": 114,
+            "role": "GC",
+            "climb": 92
+          },
+          {
+            "id": 115,
+            "role": "Allround",
+            "climb": 75
+          },
+          {
+            "id": 117,
+            "role": "Climber",
+            "climb": 85
+          },
+          {
+            "id": 120,
+            "role": "Sprinter",
+            "climb": 70
+          },
+          {
+            "id": 121,
+            "role": "GC",
+            "climb": 91
+          },
+          {
+            "id": 122,
+            "role": "Climber",
+            "climb": 87
+          },
+          {
+            "id": 123,
+            "role": "Climber",
+            "climb": 85
+          },
+          {
+            "id": 126,
+            "role": "TT",
+            "climb": 80
+          },
+          {
+            "id": 127,
+            "role": "Climber",
+            "climb": 86
+          },
+          {
+            "id": 133,
+            "role": "Climber",
+            "climb": 87
+          },
+          {
+            "id": 152,
+            "role": "Allround",
+            "climb": 85
+          },
+          {
+            "id": 158,
+            "role": "GC",
+            "climb": 91
+          },
+          {
+            "id": 163,
+            "role": "Climber",
+            "climb": 86
+          },
+          {
+            "id": 173,
+            "role": "Allround",
+            "climb": 76
+          },
+          {
+            "id": 175,
+            "role": "Allround",
+            "climb": 77
+          },
+          {
+            "id": 179,
+            "role": "Allround",
+            "climb": 81
+          },
+          {
+            "id": 181,
+            "role": "Puncheur",
+            "climb": 79
+          },
+          {
+            "id": 182,
+            "role": "TT",
+            "climb": 79
+          }
+        ]
+      }
+    },
+    {
+      "stage": 14,
+      "type": "Mountain",
+      "seed": 420642,
+      "simSeconds": 1269.45,
+      "worldSeconds": 17523.006703904,
+      "wallMs": 15314,
+      "conditions": {
+        "version": 1,
+        "kind": "cloud",
+        "temperature": 23,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -2.18
+          },
+          {
+            "at": 0.5,
+            "wind": -1.5
+          },
+          {
+            "at": 1,
+            "wind": -2.61
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 159,
+      "finishers": 155,
+      "OTL": 3,
+      "DNF": 1,
+      "DNS": 25,
+      "player": {
+        "status": "FINISHED",
+        "place": 6,
+        "time": 15107.395543026098,
+        "energy": 68.38947907989973,
+        "fatigue": 14.532073292157818,
+        "meanDraft": 0.16418758733766986
+      },
+      "stageTop10": [
+        {
+          "id": 2,
+          "name": "Isaac Del Toro",
+          "role": "GC",
+          "time": 15105.35006352486
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 15105.513945936435
+        },
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 15106.068766318002
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 15106.777380001568
+        },
+        {
+          "id": 75,
+          "name": "Thymen Arensman",
+          "role": "GC",
+          "time": 15107.38291571199
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 15107.395543026098
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 15107.681963085812
+        },
+        {
+          "id": 59,
+          "name": "Antonio Tiberi",
+          "role": "GC",
+          "time": 15107.687195653963
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 15107.940727125035
+        },
+        {
+          "id": 18,
+          "name": "Matteo Jorgenson",
+          "role": "GC",
+          "time": 15108.087838856893
+        }
+      ],
+      "podium": [
+        {
+          "id": 2,
+          "time": 15105.35006352486
+        },
+        {
+          "id": 6,
+          "time": 15105.513945936435
+        },
+        {
+          "id": 1,
+          "time": 15106.068766318002
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 207017
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 207032
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 207034
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 207042
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 207047
+        },
+        {
+          "id": 2,
+          "name": "Isaac Del Toro",
+          "role": "GC",
+          "time": 207049
+        },
+        {
+          "id": 114,
+          "name": "Tobias Johannessen",
+          "role": "GC",
+          "time": 207053
+        },
+        {
+          "id": 121,
+          "name": "Cian Uijtdebroeks",
+          "role": "GC",
+          "time": 207053
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 207057
+        },
+        {
+          "id": 74,
+          "name": "Egan Bernal",
+          "role": "GC",
+          "time": 207057
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 3.3916657203616736,
+          "evening": 35.807016254821505
+        },
+        {
+          "role": "Climber",
+          "morning": 18.111879657386957,
+          "evening": 50.5992868082506
+        },
+        {
+          "role": "Puncheur",
+          "morning": 13.70614882539846,
+          "evening": 36.2243702228545
+        },
+        {
+          "role": "TT",
+          "morning": 2.8389890578802848,
+          "evening": 20.42373959002381
+        },
+        {
+          "role": "Sprinter",
+          "morning": 6.771381655032484,
+          "evening": 19.802406477237664
+        },
+        {
+          "role": "Allround",
+          "morning": 8.264229078226508,
+          "evening": 26.504338714792564
+        }
+      ],
+      "attacks": 40,
+      "chases": 10,
+      "rotations": 269,
+      "breakAttempts": 3,
+      "breakWinner": false,
+      "meanGroups": 23,
+      "draftSeconds": 674.0999999999347,
+      "mountain": {
+        "count": 10,
+        "lowClimbSprinters": [],
+        "front": [
+          {
+            "id": 0,
+            "role": "GC",
+            "climb": 99
+          },
+          {
+            "id": 1,
+            "role": "GC",
+            "climb": 95
+          },
+          {
+            "id": 2,
+            "role": "GC",
+            "climb": 96
+          },
+          {
+            "id": 6,
+            "role": "GC",
+            "climb": 94
+          },
+          {
+            "id": 9,
+            "role": "GC",
+            "climb": 98
+          },
+          {
+            "id": 18,
+            "role": "GC",
+            "climb": 91
+          },
+          {
+            "id": 25,
+            "role": "GC",
+            "climb": 95
+          },
+          {
+            "id": 39,
+            "role": "GC",
+            "climb": 93
+          },
+          {
+            "id": 43,
+            "role": "GC",
+            "climb": 91
+          },
+          {
+            "id": 75,
+            "role": "GC",
+            "climb": 91
+          }
+        ]
+      }
+    },
+    {
+      "stage": 15,
+      "type": "Mountain",
+      "seed": 428833,
+      "simSeconds": 1012.6,
+      "worldSeconds": 20680.179814635976,
+      "wallMs": 13740,
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 23,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -2.27
+          },
+          {
+            "at": 0.5,
+            "wind": -2.95
+          },
+          {
+            "at": 1,
+            "wind": -2.44
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 155,
+      "finishers": 150,
+      "OTL": 1,
+      "DNF": 4,
+      "DNS": 29,
+      "player": {
+        "status": "FINISHED",
+        "place": 3,
+        "time": 17983.366626934352,
+        "energy": 72.49865131883821,
+        "fatigue": 12.915336759947223,
+        "meanDraft": 0.13374406665616095
+      },
+      "stageTop10": [
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 17982.66886522487
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 17983.246160597904
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 17983.366626934352
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 17983.760562266816
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 17985.337053211828
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 17986.02105578111
+        },
+        {
+          "id": 91,
+          "name": "Ilan Van Wilder",
+          "role": "GC",
+          "time": 17989.887940370765
+        },
+        {
+          "id": 42,
+          "name": "Maxim Van Gils",
+          "role": "Puncheur",
+          "time": 18009.77612895656
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 18010.813311743113
+        },
+        {
+          "id": 18,
+          "name": "Matteo Jorgenson",
+          "role": "GC",
+          "time": 18010.938006129225
+        }
+      ],
+      "podium": [
+        {
+          "id": 1,
+          "time": 17982.66886522487
+        },
+        {
+          "id": 9,
+          "time": 17983.246160597904
+        },
+        {
+          "id": 0,
+          "time": 17983.366626934352
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 224989
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 225012
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 225017
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 225018
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 225032
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 225039
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 225068
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 225070
+        },
+        {
+          "id": 74,
+          "name": "Egan Bernal",
+          "role": "GC",
+          "time": 225079
+        },
+        {
+          "id": 114,
+          "name": "Tobias Johannessen",
+          "role": "GC",
+          "time": 225081
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 22.308698125633722,
+          "evening": 44.52997361712782
+        },
+        {
+          "role": "Climber",
+          "morning": 37.68009819164165,
+          "evening": 59.24296007262286
+        },
+        {
+          "role": "Puncheur",
+          "morning": 24.296257134393986,
+          "evening": 41.740029098657836
+        },
+        {
+          "role": "TT",
+          "morning": 8.36997623592051,
+          "evening": 25.441416552469963
+        },
+        {
+          "role": "Sprinter",
+          "morning": 6.368242076039094,
+          "evening": 22.90756341430527
+        },
+        {
+          "role": "Allround",
+          "morning": 14.426744053639428,
+          "evening": 34.59757758554276
+        }
+      ],
+      "attacks": 33,
+      "chases": 5,
+      "rotations": 253,
+      "breakAttempts": 5,
+      "breakWinner": false,
+      "meanGroups": 10.415841584158416,
+      "draftSeconds": 377.2500000000515,
+      "mountain": {
+        "count": 6,
+        "lowClimbSprinters": [],
+        "front": [
+          {
+            "id": 0,
+            "role": "GC",
+            "climb": 99
+          },
+          {
+            "id": 1,
+            "role": "GC",
+            "climb": 95
+          },
+          {
+            "id": 3,
+            "role": "GC",
+            "climb": 95
+          },
+          {
+            "id": 6,
+            "role": "GC",
+            "climb": 94
+          },
+          {
+            "id": 9,
+            "role": "GC",
+            "climb": 98
+          },
+          {
+            "id": 22,
+            "role": "GC",
+            "climb": 91
+          }
+        ]
+      }
+    },
+    {
+      "stage": 16,
+      "type": "ITT",
+      "seed": 437024,
+      "simSeconds": 326.55,
+      "worldSeconds": 2257.6923595110193,
+      "wallMs": 1888,
+      "conditions": {
+        "version": 1,
+        "kind": "cloud",
+        "temperature": 23,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -3.72
+          },
+          {
+            "at": 0.5,
+            "wind": -2.59
+          },
+          {
+            "at": 1,
+            "wind": -2.54
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 150,
+      "finishers": 150,
+      "OTL": 0,
+      "DNF": 0,
+      "DNS": 34,
+      "player": {
+        "status": "FINISHED",
+        "place": 1,
+        "time": 2199.040031365665,
+        "energy": 76.83332097528074,
+        "fatigue": 0,
+        "meanDraft": 0
+      },
+      "stageTop10": [
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 2199.040031365665
+        },
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 2205.7106604387986
+        },
+        {
+          "id": 29,
+          "name": "Brandon McNulty",
+          "role": "TT",
+          "time": 2206.5642051338236
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 2207.169816651
+        },
+        {
+          "id": 10,
+          "name": "Filippo Ganna",
+          "role": "TT",
+          "time": 2208.5633595031304
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 2209.6476743086855
+        },
+        {
+          "id": 76,
+          "name": "Tobias Foss",
+          "role": "TT",
+          "time": 2211.6207843491356
+        },
+        {
+          "id": 79,
+          "name": "Joshua Tarling",
+          "role": "TT",
+          "time": 2212.029668643
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 2213.379413314937
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 2213.7131971280032
+        }
+      ],
+      "podium": [
+        {
+          "id": 0,
+          "time": 2199.040031365665
+        },
+        {
+          "id": 1,
+          "time": 2205.7106604387986
+        },
+        {
+          "id": 29,
+          "time": 2206.5642051338236
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 227194
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 227211
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 227226
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 227231
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 227252
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 227258
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 227275
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 227283
+        },
+        {
+          "id": 2,
+          "name": "Isaac Del Toro",
+          "role": "GC",
+          "time": 227310
+        },
+        {
+          "id": 75,
+          "name": "Thymen Arensman",
+          "role": "GC",
+          "time": 227316
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 11.071013733830892,
+          "evening": 12.87723977137949
+        },
+        {
+          "role": "Climber",
+          "morning": 23.0123804687959,
+          "evening": 25.502259714442726
+        },
+        {
+          "role": "Puncheur",
+          "morning": 12.94188194175589,
+          "evening": 15.308727453672722
+        },
+        {
+          "role": "TT",
+          "morning": 2.1318258805085115,
+          "evening": 4.0024835325259085
+        },
+        {
+          "role": "Sprinter",
+          "morning": 0,
+          "evening": 2.3821619547213113
+        },
+        {
+          "role": "Allround",
+          "morning": 7.260912686614848,
+          "evening": 9.535213456743625
+        }
+      ],
+      "attacks": 0,
+      "chases": 0,
+      "rotations": 0,
+      "breakAttempts": 0,
+      "breakWinner": false,
+      "meanGroups": 2.46875,
+      "draftSeconds": 0,
+      "mountain": null
+    },
+    {
+      "stage": 17,
+      "type": "Flat",
+      "seed": 445215,
+      "simSeconds": 362.55,
+      "worldSeconds": 14778.689164322905,
+      "wallMs": 6351,
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 23,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 1.06
+          },
+          {
+            "at": 0.5,
+            "wind": 1.11
+          },
+          {
+            "at": 1,
+            "wind": 1.34
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 150,
+      "finishers": 150,
+      "OTL": 0,
+      "DNF": 0,
+      "DNS": 34,
+      "player": {
+        "status": "FINISHED",
+        "place": 9,
+        "time": 13445.989505478292,
+        "energy": 79.34694673399797,
+        "fatigue": 5.885161296484889,
+        "meanDraft": 0.2732714563146323
+      },
+      "stageTop10": [
+        {
+          "id": 15,
+          "name": "Mads Pedersen",
+          "role": "Sprinter",
+          "time": 13443.817771932536
+        },
+        {
+          "id": 120,
+          "name": "Søren Wærenskjold",
+          "role": "Sprinter",
+          "time": 13444.067230855924
+        },
+        {
+          "id": 96,
+          "name": "Michael Matthews",
+          "role": "Sprinter",
+          "time": 13445.136057888056
+        },
+        {
+          "id": 60,
+          "name": "Vlad van Mechelen",
+          "role": "Sprinter",
+          "time": 13445.320477675896
+        },
+        {
+          "id": 114,
+          "name": "Tobias Johannessen",
+          "role": "GC",
+          "time": 13445.67357883606
+        },
+        {
+          "id": 74,
+          "name": "Egan Bernal",
+          "role": "GC",
+          "time": 13445.70201618122
+        },
+        {
+          "id": 59,
+          "name": "Antonio Tiberi",
+          "role": "GC",
+          "time": 13445.717601084321
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 13445.858922875028
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 13445.989505478292
+        },
+        {
+          "id": 26,
+          "name": "Magnus Cort Nielsen",
+          "role": "Allround",
+          "time": 13446.10047452278
+        }
+      ],
+      "podium": [
+        {
+          "id": 15,
+          "time": 13443.817771932536
+        },
+        {
+          "id": 120,
+          "time": 13444.067230855924
+        },
+        {
+          "id": 96,
+          "time": 13445.136057888056
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 240637
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 240654
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 240669
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 240674
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 240695
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 240701
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 240718
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 240726
+        },
+        {
+          "id": 2,
+          "name": "Isaac Del Toro",
+          "role": "GC",
+          "time": 240753
+        },
+        {
+          "id": 75,
+          "name": "Thymen Arensman",
+          "role": "GC",
+          "time": 240759
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 3.9343923712996998,
+          "evening": 12.017782702094133
+        },
+        {
+          "role": "Climber",
+          "morning": 12.051339719266215,
+          "evening": 21.913590780101718
+        },
+        {
+          "role": "Puncheur",
+          "morning": 6.4147368925565145,
+          "evening": 18.19047077066926
+        },
+        {
+          "role": "TT",
+          "morning": 0.2133947140938258,
+          "evening": 9.0195528765715
+        },
+        {
+          "role": "Sprinter",
+          "morning": 0,
+          "evening": 12.672151930050697
+        },
+        {
+          "role": "Allround",
+          "morning": 3.124311145704443,
+          "evening": 14.571388386445458
+        }
+      ],
+      "attacks": 25,
+      "chases": 0,
+      "rotations": 142,
+      "breakAttempts": 3,
+      "breakWinner": false,
+      "meanGroups": 2.2777777777777777,
+      "draftSeconds": 263.60000000002566,
+      "mountain": null
+    },
+    {
+      "stage": 18,
+      "type": "Mountain",
+      "seed": 453406,
+      "simSeconds": 1010.9000000000001,
+      "worldSeconds": 18637.742235862836,
+      "wallMs": 13078,
+      "conditions": {
+        "version": 1,
+        "kind": "cloud",
+        "temperature": 23,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -0.34
+          },
+          {
+            "at": 0.5,
+            "wind": -0.11
+          },
+          {
+            "at": 1,
+            "wind": 0.84
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 150,
+      "finishers": 147,
+      "OTL": 3,
+      "DNF": 0,
+      "DNS": 34,
+      "player": {
+        "status": "FINISHED",
+        "place": 4,
+        "time": 15930.30742772756,
+        "energy": 82.0479592046693,
+        "fatigue": 13.9742059323747,
+        "meanDraft": 0.15513499284818383
+      },
+      "stageTop10": [
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 15929.350526351605
+        },
+        {
+          "id": 158,
+          "name": "Lennert Van Eetvelt",
+          "role": "GC",
+          "time": 15929.837954991646
+        },
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 15930.23931772206
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 15930.30742772756
+        },
+        {
+          "id": 74,
+          "name": "Egan Bernal",
+          "role": "GC",
+          "time": 15931.701130248903
+        },
+        {
+          "id": 114,
+          "name": "Tobias Johannessen",
+          "role": "GC",
+          "time": 15936.975052591795
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 15937.964557947154
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 15938.88737302697
+        },
+        {
+          "id": 39,
+          "name": "Jai Hindley",
+          "role": "GC",
+          "time": 15939.728232717016
+        },
+        {
+          "id": 18,
+          "name": "Matteo Jorgenson",
+          "role": "GC",
+          "time": 15940.73416037631
+        }
+      ],
+      "podium": [
+        {
+          "id": 9,
+          "time": 15929.350526351605
+        },
+        {
+          "id": 158,
+          "time": 15929.837954991646
+        },
+        {
+          "id": 1,
+          "time": 15930.23931772206
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 256562
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 256583
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 256593
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 256619
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 256631
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 256652
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 256662
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 256675
+        },
+        {
+          "id": 74,
+          "name": "Egan Bernal",
+          "role": "GC",
+          "time": 256693
+        },
+        {
+          "id": 114,
+          "name": "Tobias Johannessen",
+          "role": "GC",
+          "time": 256696
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 3.064322685254524,
+          "evening": 26.820325790850916
+        },
+        {
+          "role": "Climber",
+          "morning": 10.253279056297409,
+          "evening": 40.56285842763522
+        },
+        {
+          "role": "Puncheur",
+          "morning": 6.068710417938681,
+          "evening": 26.27073088270138
+        },
+        {
+          "role": "TT",
+          "morning": 0.7366254433607851,
+          "evening": 17.27008241861374
+        },
+        {
+          "role": "Sprinter",
+          "morning": 1.163077916351885,
+          "evening": 14.703955707044027
+        },
+        {
+          "role": "Allround",
+          "morning": 3.7758776096508964,
+          "evening": 23.591548133908944
+        }
+      ],
+      "attacks": 39,
+      "chases": 7,
+      "rotations": 196,
+      "breakAttempts": 5,
+      "breakWinner": false,
+      "meanGroups": 13.445544554455445,
+      "draftSeconds": 462.85000000007096,
+      "mountain": {
+        "count": 5,
+        "lowClimbSprinters": [],
+        "front": [
+          {
+            "id": 0,
+            "role": "GC",
+            "climb": 99
+          },
+          {
+            "id": 1,
+            "role": "GC",
+            "climb": 95
+          },
+          {
+            "id": 9,
+            "role": "GC",
+            "climb": 98
+          },
+          {
+            "id": 74,
+            "role": "GC",
+            "climb": 92
+          },
+          {
+            "id": 158,
+            "role": "GC",
+            "climb": 91
+          }
+        ]
+      }
+    },
+    {
+      "stage": 19,
+      "type": "Mountain",
+      "seed": 461597,
+      "simSeconds": 1011.9000000000001,
+      "worldSeconds": 13962.568170823155,
+      "wallMs": 11779,
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 23,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -0.39
+          },
+          {
+            "at": 0.5,
+            "wind": -0.6
+          },
+          {
+            "at": 1,
+            "wind": -0.61
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 147,
+      "finishers": 144,
+      "OTL": 0,
+      "DNF": 3,
+      "DNS": 37,
+      "player": {
+        "status": "FINISHED",
+        "place": 3,
+        "time": 11859.243020622553,
+        "energy": 77.21647847159872,
+        "fatigue": 12.107093252358267,
+        "meanDraft": 0.1771520205656874
+      },
+      "stageTop10": [
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 11858.810872060109
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 11859.214246752163
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 11859.243020622553
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 11859.330466009766
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 11906.169139515721
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 11907.221938420551
+        },
+        {
+          "id": 2,
+          "name": "Isaac Del Toro",
+          "role": "GC",
+          "time": 11907.742880542824
+        },
+        {
+          "id": 39,
+          "name": "Jai Hindley",
+          "role": "GC",
+          "time": 11908.309169733167
+        },
+        {
+          "id": 34,
+          "name": "Bruno Armirail",
+          "role": "TT",
+          "time": 11909.144325214807
+        },
+        {
+          "id": 5,
+          "name": "Mattias Skjelmose",
+          "role": "GC",
+          "time": 11909.382177328893
+        }
+      ],
+      "podium": [
+        {
+          "id": 1,
+          "time": 11858.810872060109
+        },
+        {
+          "id": 9,
+          "time": 11859.214246752163
+        },
+        {
+          "id": 0,
+          "time": 11859.243020622553
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 268410
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 268437
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 268445
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 268477
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 268548
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 268566
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 268568
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 268582
+        },
+        {
+          "id": 74,
+          "name": "Egan Bernal",
+          "role": "GC",
+          "time": 268600
+        },
+        {
+          "id": 2,
+          "name": "Isaac Del Toro",
+          "role": "GC",
+          "time": 268607
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 12.856675083316617,
+          "evening": 36.83986637640407
+        },
+        {
+          "role": "Climber",
+          "morning": 27.35498079519603,
+          "evening": 54.33803755049952
+        },
+        {
+          "role": "Puncheur",
+          "morning": 11.831740056958939,
+          "evening": 30.6878730130956
+        },
+        {
+          "role": "TT",
+          "morning": 5.332195132782157,
+          "evening": 17.37689463860517
+        },
+        {
+          "role": "Sprinter",
+          "morning": 2.5936387313310116,
+          "evening": 10.612874553384488
+        },
+        {
+          "role": "Allround",
+          "morning": 10.535861205446553,
+          "evening": 27.369123914911146
+        }
+      ],
+      "attacks": 39,
+      "chases": 5,
+      "rotations": 179,
+      "breakAttempts": 7,
+      "breakWinner": false,
+      "meanGroups": 18.84158415841584,
+      "draftSeconds": 505.5500000000807,
+      "mountain": {
+        "count": 4,
+        "lowClimbSprinters": [],
+        "front": [
+          {
+            "id": 0,
+            "role": "GC",
+            "climb": 99
+          },
+          {
+            "id": 1,
+            "role": "GC",
+            "climb": 95
+          },
+          {
+            "id": 6,
+            "role": "GC",
+            "climb": 94
+          },
+          {
+            "id": 9,
+            "role": "GC",
+            "climb": 98
+          }
+        ]
+      }
+    },
+    {
+      "stage": 20,
+      "type": "Mountain",
+      "seed": 469788,
+      "simSeconds": 1491.1000000000001,
+      "worldSeconds": 18548.20411580797,
+      "wallMs": 16007,
+      "conditions": {
+        "version": 1,
+        "kind": "cloud",
+        "temperature": 23,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 1.43
+          },
+          {
+            "at": 0.5,
+            "wind": 0.7
+          },
+          {
+            "at": 1,
+            "wind": 1.71
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 144,
+      "finishers": 126,
+      "OTL": 13,
+      "DNF": 5,
+      "DNS": 40,
+      "player": {
+        "status": "FINISHED",
+        "place": 2,
+        "time": 15586.297141762076,
+        "energy": 70.93406750219366,
+        "fatigue": 15.087840486176392,
+        "meanDraft": 0.10795062665183754
+      },
+      "stageTop10": [
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 15586.123896388042
+        },
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 15586.297141762076
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 15586.34497561015
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 15587.14529889242
+        },
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 15630.478051972774
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 15634.843579329312
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 15635.752131233154
+        },
+        {
+          "id": 29,
+          "name": "Brandon McNulty",
+          "role": "TT",
+          "time": 15637.866231951795
+        },
+        {
+          "id": 2,
+          "name": "Isaac Del Toro",
+          "role": "GC",
+          "time": 16119.932219559436
+        },
+        {
+          "id": 18,
+          "name": "Matteo Jorgenson",
+          "role": "GC",
+          "time": 16127.70711007472
+        }
+      ],
+      "podium": [
+        {
+          "id": 9,
+          "time": 15586.123896388042
+        },
+        {
+          "id": 0,
+          "time": 15586.297141762076
+        },
+        {
+          "id": 6,
+          "time": 15586.34497561015
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 284017
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 284021
+        },
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 284040
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 284059
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 284168
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 284200
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 284202
+        },
+        {
+          "id": 29,
+          "name": "Brandon McNulty",
+          "role": "TT",
+          "time": 284424
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 284678
+        },
+        {
+          "id": 2,
+          "name": "Isaac Del Toro",
+          "role": "GC",
+          "time": 284726
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 22.987888092670133,
+          "evening": 58.31197980088005
+        },
+        {
+          "role": "Climber",
+          "morning": 39.970983420483854,
+          "evening": 65.6949246341924
+        },
+        {
+          "role": "Puncheur",
+          "morning": 18.324313658719536,
+          "evening": 39.10908318817216
+        },
+        {
+          "role": "TT",
+          "morning": 6.615836249104192,
+          "evening": 24.28324401602237
+        },
+        {
+          "role": "Sprinter",
+          "morning": 0.8126835022176652,
+          "evening": 13.31102846735176
+        },
+        {
+          "role": "Allround",
+          "morning": 15.089722513187462,
+          "evening": 34.68869552026626
+        }
+      ],
+      "attacks": 24,
+      "chases": 2,
+      "rotations": 233,
+      "breakAttempts": 3,
+      "breakWinner": false,
+      "meanGroups": 37.81208053691275,
+      "draftSeconds": 561.1000000000374,
+      "mountain": {
+        "count": 4,
+        "lowClimbSprinters": [],
+        "front": [
+          {
+            "id": 0,
+            "role": "GC",
+            "climb": 99
+          },
+          {
+            "id": 6,
+            "role": "GC",
+            "climb": 94
+          },
+          {
+            "id": 9,
+            "role": "GC",
+            "climb": 98
+          },
+          {
+            "id": 43,
+            "role": "GC",
+            "climb": 91
+          }
+        ]
+      }
+    },
+    {
+      "stage": 21,
+      "type": "Flat",
+      "seed": 477979,
+      "simSeconds": 299.55,
+      "worldSeconds": 7374.087807557996,
+      "wallMs": 4134,
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 23,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 2.96
+          },
+          {
+            "at": 0.5,
+            "wind": 2.34
+          },
+          {
+            "at": 1,
+            "wind": 2.9
+          }
+        ],
+        "source": "本作模拟",
+        "legacy": false
+      },
+      "starting": 126,
+      "finishers": 118,
+      "OTL": 8,
+      "DNF": 0,
+      "DNS": 58,
+      "player": {
+        "status": "FINISHED",
+        "place": 28,
+        "time": 6251.893830597915,
+        "energy": 83.03534544613917,
+        "fatigue": 0.10000279967218617,
+        "meanDraft": 0.2922079219540242
+      },
+      "stageTop10": [
+        {
+          "id": 15,
+          "name": "Mads Pedersen",
+          "role": "Sprinter",
+          "time": 6248.251740348757
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 6249.195155236184
+        },
+        {
+          "id": 138,
+          "name": "Piet Allegaert",
+          "role": "Sprinter",
+          "time": 6249.27514405057
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 6249.33205435675
+        },
+        {
+          "id": 144,
+          "name": "Benjamin Thomas",
+          "role": "TT",
+          "time": 6249.6394262910835
+        },
+        {
+          "id": 44,
+          "name": "Toms Skujins",
+          "role": "Puncheur",
+          "time": 6249.883221779076
+        },
+        {
+          "id": 59,
+          "name": "Antonio Tiberi",
+          "role": "GC",
+          "time": 6250.0730415181315
+        },
+        {
+          "id": 130,
+          "name": "Davide Ballerini",
+          "role": "Sprinter",
+          "time": 6250.239375570483
+        },
+        {
+          "id": 91,
+          "name": "Ilan Van Wilder",
+          "role": "GC",
+          "time": 6250.281313229192
+        },
+        {
+          "id": 150,
+          "name": "Niklas Märkl",
+          "role": "Sprinter",
+          "time": 6250.375018077988
+        }
+      ],
+      "podium": [
+        {
+          "id": 15,
+          "time": 6248.251740348757
+        },
+        {
+          "id": 43,
+          "time": 6249.195155236184
+        },
+        {
+          "id": 138,
+          "time": 6249.27514405057
+        }
+      ],
+      "gcTop10": [
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 290265
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 290269
+        },
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 290288
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 290307
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 290410
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 290448
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 290450
+        },
+        {
+          "id": 29,
+          "name": "Brandon McNulty",
+          "role": "TT",
+          "time": 290672
+        },
+        {
+          "id": 22,
+          "name": "Ben O’Connor",
+          "role": "GC",
+          "time": 290926
+        },
+        {
+          "id": 2,
+          "name": "Isaac Del Toro",
+          "role": "GC",
+          "time": 290974
+        }
+      ],
+      "fatigue": [
+        {
+          "role": "GC",
+          "morning": 45.34554652554219,
+          "evening": 49.72617357551625
+        },
+        {
+          "role": "Climber",
+          "morning": 55.635036285728866,
+          "evening": 59.835211914117394
+        },
+        {
+          "role": "Puncheur",
+          "morning": 25.627362092922358,
+          "evening": 30.727757143583993
+        },
+        {
+          "role": "TT",
+          "morning": 11.994496900337081,
+          "evening": 16.406020278528988
+        },
+        {
+          "role": "Sprinter",
+          "morning": 0.9622868012182691,
+          "evening": 7.99175263727676
+        },
+        {
+          "role": "Allround",
+          "morning": 19.20006593976905,
+          "evening": 23.923783937247894
+        }
+      ],
+      "attacks": 18,
+      "chases": 5,
+      "rotations": 73,
+      "breakAttempts": 5,
+      "breakWinner": false,
+      "meanGroups": 2.2758620689655173,
+      "draftSeconds": 214.70000000001457,
+      "mountain": null
+    }
+  ],
+  "roleWins": {
+    "Allround": 1,
+    "GC": 9,
+    "Puncheur": 2,
+    "Sprinter": 7,
+    "TT": 1
+  },
+  "errors": []
+}

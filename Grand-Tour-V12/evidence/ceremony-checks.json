@@ -1,0 +1,1355 @@
+{
+  "source": "/mnt/data/work-v12/grand-tour-v11.html",
+  "sha256": "6d271fd7caff6d405b3e588e998d53b79d7852a489544d78f17f1dbd97b3f469",
+  "environment": "Headless Chromium Linux; actual HTML/Canvas/DOM; memory Storage adapter. Fixtures use genuine V11 baseline prior stages, actual V12 Race.tick for the tested stage; prior simulation fast-forward disclosed. Ceremony itself normal RAF.",
+  "checks": [
+    {
+      "name": "road player actually finished",
+      "pass": true,
+      "detail": {
+        "complete": false,
+        "player": "FINISHED",
+        "finished": 86,
+        "remaining": 98,
+        "t": 282.2
+      }
+    },
+    {
+      "name": "road stays on race, not Results",
+      "pass": true,
+      "detail": {
+        "screen": "race",
+        "phase": "finish",
+        "settlements": 0
+      }
+    },
+    {
+      "name": "remaining field uses finish settlement, not Results",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "road saves before ceremony",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "road controls disabled / existing rectangle",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "road deep frozen result and classifications",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "road duplicate callbacks do not settle twice",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "road immutable during winner",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "road immutable during yellow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "road immutable during green",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "road immutable during polka",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "road immutable during white",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "road immutable during complete",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "road reaches Results",
+      "pass": true,
+      "detail": {
+        "seen": [
+          "winner",
+          "yellow",
+          "green",
+          "polka",
+          "white",
+          "complete"
+        ],
+        "plan": [
+          "winner",
+          "yellow",
+          "green",
+          "polka",
+          "white",
+          "complete"
+        ]
+      }
+    },
+    {
+      "name": "road result unchanged across transition",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "road simulation / RNG / clock remain frozen",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "road exactly one settlement after callbacks and skip",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "road no fabricated combativity or daily team award",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "road repeated completed callbacks do not re-open",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ITT player actually finished",
+      "pass": true,
+      "detail": {
+        "complete": true,
+        "player": "FINISHED",
+        "finished": 184,
+        "remaining": 0,
+        "t": 339.1
+      }
+    },
+    {
+      "name": "ITT stays on race, not Results",
+      "pass": true,
+      "detail": {
+        "screen": "race",
+        "phase": "finish",
+        "settlements": 1
+      }
+    },
+    {
+      "name": "ITT saves before ceremony",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ITT controls disabled / existing rectangle",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ITT deep frozen result and classifications",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ITT duplicate callbacks do not settle twice",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ITT immutable during winner",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ITT reaches Results",
+      "pass": true,
+      "detail": {
+        "seen": [
+          "winner"
+        ],
+        "plan": [
+          "winner",
+          "yellow",
+          "green",
+          "white",
+          "complete"
+        ]
+      }
+    },
+    {
+      "name": "ITT result unchanged across transition",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ITT simulation / RNG / clock remain frozen",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ITT exactly one settlement after callbacks and skip",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ITT no fabricated combativity or daily team award",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ITT repeated completed callbacks do not re-open",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "ITT existing Tour untouched",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TTT player actually finished",
+      "pass": true,
+      "detail": {
+        "complete": true,
+        "player": "FINISHED",
+        "finished": 184,
+        "remaining": 0,
+        "t": 409.55
+      }
+    },
+    {
+      "name": "TTT stays on race, not Results",
+      "pass": true,
+      "detail": {
+        "screen": "race",
+        "phase": "finish",
+        "settlements": 1
+      }
+    },
+    {
+      "name": "TTT saves before ceremony",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TTT controls disabled / existing rectangle",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TTT deep frozen result and classifications",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TTT duplicate callbacks do not settle twice",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TTT immutable during team-stage",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TTT immutable during yellow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TTT immutable during green",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TTT immutable during polka",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TTT immutable during white",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TTT immutable during complete",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TTT reaches Results",
+      "pass": true,
+      "detail": {
+        "seen": [
+          "team-stage",
+          "yellow",
+          "green",
+          "polka",
+          "white",
+          "complete"
+        ],
+        "plan": [
+          "team-stage",
+          "yellow",
+          "green",
+          "polka",
+          "white",
+          "complete"
+        ]
+      }
+    },
+    {
+      "name": "TTT result unchanged across transition",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TTT simulation / RNG / clock remain frozen",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TTT exactly one settlement after callbacks and skip",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TTT no fabricated combativity or daily team award",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TTT winner is team, not individual",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "TTT repeated completed callbacks do not re-open",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final player actually finished",
+      "pass": true,
+      "detail": {
+        "complete": true,
+        "player": "FINISHED",
+        "finished": 111,
+        "remaining": 0,
+        "t": 306.5
+      }
+    },
+    {
+      "name": "final stays on race, not Results",
+      "pass": true,
+      "detail": {
+        "screen": "race",
+        "phase": "finish",
+        "settlements": 1
+      }
+    },
+    {
+      "name": "final saves before ceremony",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final controls disabled / existing rectangle",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final deep frozen result and classifications",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final duplicate callbacks do not settle twice",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final immutable during winner",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final immutable during gc-final",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final immutable during yellow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final immutable during green",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final immutable during polka",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final immutable during white",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final immutable during team-final",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final immutable during complete",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final reaches Results",
+      "pass": true,
+      "detail": {
+        "seen": [
+          "winner",
+          "gc-final",
+          "yellow",
+          "green",
+          "polka",
+          "white",
+          "team-final",
+          "complete"
+        ],
+        "plan": [
+          "winner",
+          "gc-final",
+          "yellow",
+          "green",
+          "polka",
+          "white",
+          "team-final",
+          "complete"
+        ]
+      }
+    },
+    {
+      "name": "final result unchanged across transition",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final simulation / RNG / clock remain frozen",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final exactly one settlement after callbacks and skip",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final no fabricated combativity or daily team award",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final final GC and team champions",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final repeated completed callbacks do not re-open",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final-320 player actually finished",
+      "pass": true,
+      "detail": {
+        "complete": true,
+        "player": "FINISHED",
+        "finished": 111,
+        "remaining": 0,
+        "t": 306.5
+      }
+    },
+    {
+      "name": "final-320 stays on race, not Results",
+      "pass": true,
+      "detail": {
+        "screen": "race",
+        "phase": "finish",
+        "settlements": 1
+      }
+    },
+    {
+      "name": "final-320 saves before ceremony",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final-320 controls disabled / existing rectangle",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final-320 deep frozen result and classifications",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final-320 duplicate callbacks do not settle twice",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final-320 immutable during winner",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final-320 immutable during gc-final",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final-320 immutable during yellow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final-320 reaches Results",
+      "pass": true,
+      "detail": {
+        "seen": [
+          "winner",
+          "gc-final",
+          "yellow"
+        ],
+        "plan": [
+          "winner",
+          "gc-final",
+          "yellow",
+          "green",
+          "polka",
+          "white",
+          "team-final",
+          "complete"
+        ]
+      }
+    },
+    {
+      "name": "final-320 result unchanged across transition",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final-320 simulation / RNG / clock remain frozen",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final-320 exactly one settlement after callbacks and skip",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final-320 no fabricated combativity or daily team award",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final-320 final GC and team champions",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "final-320 repeated completed callbacks do not re-open",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reduced player actually finished",
+      "pass": true,
+      "detail": {
+        "complete": true,
+        "player": "FINISHED",
+        "finished": 184,
+        "remaining": 0,
+        "t": 307.65000000000003
+      }
+    },
+    {
+      "name": "reduced stays on race, not Results",
+      "pass": true,
+      "detail": {
+        "screen": "race",
+        "phase": "finish",
+        "settlements": 1
+      }
+    },
+    {
+      "name": "reduced saves before ceremony",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reduced controls disabled / existing rectangle",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reduced deep frozen result and classifications",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reduced duplicate callbacks do not settle twice",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reduced immutable during winner",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reduced reaches Results",
+      "pass": true,
+      "detail": {
+        "seen": [
+          "winner"
+        ],
+        "plan": [
+          "winner",
+          "yellow",
+          "green",
+          "polka",
+          "white",
+          "complete"
+        ]
+      }
+    },
+    {
+      "name": "reduced result unchanged across transition",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reduced simulation / RNG / clock remain frozen",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reduced exactly one settlement after callbacks and skip",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reduced no fabricated combativity or daily team award",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reduced motion retains ceremony",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reduced repeated completed callbacks do not re-open",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "reduced existing Tour untouched",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "tour mid-ceremony refresh resumes Results",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "tour refresh does not change ledger or scoring",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "tour pending pointer consumed after recovery",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "single mid-ceremony refresh resumes Results",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "single refresh does not change ledger or scoring",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "single pending pointer consumed after recovery",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "failed save blocks presentation, preserves one ledger commit",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "retry writes same result without recalculation",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "application console errors absent",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "cases": [
+    {
+      "name": "road",
+      "viewport": [
+        1600,
+        1000
+      ],
+      "stage": 5,
+      "mode": "tour",
+      "normalRAFCeremonySeconds": 20.456920364000098,
+      "skip": false,
+      "reducedMotion": false,
+      "plan": {
+        "final": false,
+        "beats": [
+          {
+            "kind": "winner",
+            "title": "赛段冠军",
+            "en": "STAGE 05 WINNER",
+            "ids": [
+              166
+            ],
+            "value": "03:33:32",
+            "seconds": 3.8,
+            "start": 1.6,
+            "end": 5.4
+          },
+          {
+            "kind": "yellow",
+            "title": "黄衫 · 总成绩领先者",
+            "en": "GRAND TOUR · CLASSIFICATION LEADER",
+            "ids": [
+              0
+            ],
+            "value": "18:56:12",
+            "seconds": 3.2,
+            "start": 5.4,
+            "end": 8.600000000000001
+          },
+          {
+            "kind": "green",
+            "title": "绿衫 · 积分领先者",
+            "en": "GRAND TOUR · CLASSIFICATION LEADER",
+            "ids": [
+              166
+            ],
+            "value": "70 分",
+            "seconds": 3,
+            "start": 8.600000000000001,
+            "end": 11.600000000000001
+          },
+          {
+            "kind": "polka",
+            "title": "圆点衫 · 山地领先者",
+            "en": "GRAND TOUR · CLASSIFICATION LEADER",
+            "ids": [
+              32
+            ],
+            "value": "12 分",
+            "seconds": 3,
+            "start": 11.600000000000001,
+            "end": 14.600000000000001
+          },
+          {
+            "kind": "white",
+            "title": "白衫 · 青年领先者",
+            "en": "GRAND TOUR · CLASSIFICATION LEADER",
+            "ids": [
+              6
+            ],
+            "value": "18:56:20",
+            "seconds": 3,
+            "start": 14.600000000000001,
+            "end": 17.6
+          },
+          {
+            "kind": "complete",
+            "title": "赛段完成。",
+            "en": "STAGE 05 · COMPLETED",
+            "ids": [],
+            "seconds": 1.8,
+            "start": 17.6,
+            "end": 19.400000000000002
+          }
+        ],
+        "duration": 20.400000000000002,
+        "intro": 1.6,
+        "outro": 1
+      },
+      "seen": [
+        "winner",
+        "yellow",
+        "green",
+        "polka",
+        "white",
+        "complete"
+      ]
+    },
+    {
+      "name": "ITT",
+      "viewport": [
+        1600,
+        1000
+      ],
+      "stage": 16,
+      "mode": "single",
+      "normalRAFCeremonySeconds": 4.1785497739999755,
+      "skip": true,
+      "reducedMotion": false,
+      "plan": {
+        "final": false,
+        "beats": [
+          {
+            "kind": "winner",
+            "title": "赛段冠军",
+            "en": "STAGE 16 WINNER",
+            "ids": [
+              0
+            ],
+            "value": "00:36:39",
+            "seconds": 3.8,
+            "start": 1.6,
+            "end": 5.4
+          },
+          {
+            "kind": "yellow",
+            "title": "黄衫 · 总成绩领先者",
+            "en": "SINGLE STAGE · CLASSIFICATION LEADER",
+            "ids": [
+              0
+            ],
+            "value": "00:36:39",
+            "seconds": 3.2,
+            "start": 5.4,
+            "end": 8.600000000000001
+          },
+          {
+            "kind": "green",
+            "title": "绿衫 · 积分领先者",
+            "en": "SINGLE STAGE · CLASSIFICATION LEADER",
+            "ids": [
+              0
+            ],
+            "value": "20 分",
+            "seconds": 3,
+            "start": 8.600000000000001,
+            "end": 11.600000000000001
+          },
+          {
+            "kind": "white",
+            "title": "白衫 · 青年领先者",
+            "en": "SINGLE STAGE · CLASSIFICATION LEADER",
+            "ids": [
+              6
+            ],
+            "value": "00:36:48",
+            "seconds": 3,
+            "start": 11.600000000000001,
+            "end": 14.600000000000001
+          },
+          {
+            "kind": "complete",
+            "title": "赛段完成。",
+            "en": "STAGE 16 · COMPLETED",
+            "ids": [],
+            "seconds": 1.8,
+            "start": 14.600000000000001,
+            "end": 16.400000000000002
+          }
+        ],
+        "duration": 17.400000000000002,
+        "intro": 1.6,
+        "outro": 1
+      },
+      "seen": [
+        "winner"
+      ]
+    },
+    {
+      "name": "TTT",
+      "viewport": [
+        390,
+        844
+      ],
+      "stage": 1,
+      "mode": "tour",
+      "normalRAFCeremonySeconds": 20.406264067000166,
+      "skip": false,
+      "reducedMotion": false,
+      "plan": {
+        "final": false,
+        "beats": [
+          {
+            "kind": "team-stage",
+            "title": "赛段获胜车队",
+            "en": "STAGE 01 · WINNING TEAM",
+            "teamId": 0,
+            "ids": [
+              0,
+              30,
+              2,
+              19,
+              29
+            ],
+            "value": "00:25:23",
+            "seconds": 3.8,
+            "start": 1.6,
+            "end": 5.4
+          },
+          {
+            "kind": "yellow",
+            "title": "黄衫 · 总成绩领先者",
+            "en": "GRAND TOUR · CLASSIFICATION LEADER",
+            "ids": [
+              0
+            ],
+            "value": "00:25:23",
+            "seconds": 3.2,
+            "start": 5.4,
+            "end": 8.600000000000001
+          },
+          {
+            "kind": "green",
+            "title": "绿衫 · 积分领先者",
+            "en": "GRAND TOUR · CLASSIFICATION LEADER",
+            "ids": [
+              28
+            ],
+            "value": "0 分",
+            "seconds": 3,
+            "start": 8.600000000000001,
+            "end": 11.600000000000001
+          },
+          {
+            "kind": "polka",
+            "title": "圆点衫 · 山地领先者",
+            "en": "GRAND TOUR · CLASSIFICATION LEADER",
+            "ids": [
+              0
+            ],
+            "value": "0 分",
+            "seconds": 3,
+            "start": 11.600000000000001,
+            "end": 14.600000000000001
+          },
+          {
+            "kind": "white",
+            "title": "白衫 · 青年领先者",
+            "en": "GRAND TOUR · CLASSIFICATION LEADER",
+            "ids": [
+              6
+            ],
+            "value": "00:25:27",
+            "seconds": 3,
+            "start": 14.600000000000001,
+            "end": 17.6
+          },
+          {
+            "kind": "complete",
+            "title": "赛段完成。",
+            "en": "STAGE 01 · COMPLETED",
+            "ids": [],
+            "seconds": 1.8,
+            "start": 17.6,
+            "end": 19.400000000000002
+          }
+        ],
+        "duration": 20.400000000000002,
+        "intro": 1.6,
+        "outro": 1
+      },
+      "seen": [
+        "team-stage",
+        "yellow",
+        "green",
+        "polka",
+        "white",
+        "complete"
+      ]
+    },
+    {
+      "name": "final",
+      "viewport": [
+        1600,
+        1000
+      ],
+      "stage": 21,
+      "mode": "tour",
+      "normalRAFCeremonySeconds": 30.4069946730001,
+      "skip": false,
+      "reducedMotion": false,
+      "plan": {
+        "final": true,
+        "beats": [
+          {
+            "kind": "winner",
+            "title": "赛段冠军",
+            "en": "STAGE 21 WINNER",
+            "ids": [
+              150
+            ],
+            "value": "01:39:49",
+            "seconds": 3.5,
+            "start": 1.6,
+            "end": 5.1
+          },
+          {
+            "kind": "gc-final",
+            "title": "最终总成绩领奖台",
+            "en": "GENERAL CLASSIFICATION · FINAL",
+            "ids": [
+              0,
+              9,
+              1
+            ],
+            "seconds": 6,
+            "start": 5.1,
+            "end": 11.1
+          },
+          {
+            "kind": "yellow",
+            "title": "黄衫 · 总成绩冠军",
+            "en": "GRAND TOUR · CLASSIFICATION CHAMPION",
+            "ids": [
+              0
+            ],
+            "value": "80:33:26",
+            "seconds": 3,
+            "start": 11.1,
+            "end": 14.1
+          },
+          {
+            "kind": "green",
+            "title": "绿衫 · 积分冠军",
+            "en": "GRAND TOUR · CLASSIFICATION CHAMPION",
+            "ids": [
+              15
+            ],
+            "value": "271 分",
+            "seconds": 3,
+            "start": 14.1,
+            "end": 17.1
+          },
+          {
+            "kind": "polka",
+            "title": "圆点衫 · 山地冠军",
+            "en": "GRAND TOUR · CLASSIFICATION CHAMPION",
+            "ids": [
+              9
+            ],
+            "value": "111 分",
+            "seconds": 3,
+            "start": 17.1,
+            "end": 20.1
+          },
+          {
+            "kind": "white",
+            "title": "白衫 · 青年冠军",
+            "en": "GRAND TOUR · CLASSIFICATION CHAMPION",
+            "ids": [
+              6
+            ],
+            "value": "80:34:08",
+            "seconds": 3,
+            "start": 20.1,
+            "end": 23.1
+          },
+          {
+            "kind": "team-final",
+            "title": "最终车队总成绩冠军",
+            "en": "GRAND TOUR · TEAM CLASSIFICATION",
+            "teamId": 2,
+            "ids": [
+              1,
+              25,
+              37,
+              39,
+              42
+            ],
+            "value": "241:56:35",
+            "seconds": 4,
+            "start": 23.1,
+            "end": 27.1
+          },
+          {
+            "kind": "complete",
+            "title": "环法完成。",
+            "en": "21 STAGES. ONE GRAND TOUR.",
+            "ids": [],
+            "seconds": 2,
+            "start": 27.1,
+            "end": 29.1
+          }
+        ],
+        "duration": 30.1,
+        "intro": 1.6,
+        "outro": 1
+      },
+      "seen": [
+        "winner",
+        "gc-final",
+        "yellow",
+        "green",
+        "polka",
+        "white",
+        "team-final",
+        "complete"
+      ]
+    },
+    {
+      "name": "final-320",
+      "viewport": [
+        320,
+        740
+      ],
+      "stage": 21,
+      "mode": "tour",
+      "normalRAFCeremonySeconds": 12.554248332999805,
+      "skip": true,
+      "reducedMotion": false,
+      "plan": {
+        "final": true,
+        "beats": [
+          {
+            "kind": "winner",
+            "title": "赛段冠军",
+            "en": "STAGE 21 WINNER",
+            "ids": [
+              150
+            ],
+            "value": "01:39:49",
+            "seconds": 3.5,
+            "start": 1.6,
+            "end": 5.1
+          },
+          {
+            "kind": "gc-final",
+            "title": "最终总成绩领奖台",
+            "en": "GENERAL CLASSIFICATION · FINAL",
+            "ids": [
+              0,
+              9,
+              1
+            ],
+            "seconds": 6,
+            "start": 5.1,
+            "end": 11.1
+          },
+          {
+            "kind": "yellow",
+            "title": "黄衫 · 总成绩冠军",
+            "en": "GRAND TOUR · CLASSIFICATION CHAMPION",
+            "ids": [
+              0
+            ],
+            "value": "80:33:26",
+            "seconds": 3,
+            "start": 11.1,
+            "end": 14.1
+          },
+          {
+            "kind": "green",
+            "title": "绿衫 · 积分冠军",
+            "en": "GRAND TOUR · CLASSIFICATION CHAMPION",
+            "ids": [
+              15
+            ],
+            "value": "271 分",
+            "seconds": 3,
+            "start": 14.1,
+            "end": 17.1
+          },
+          {
+            "kind": "polka",
+            "title": "圆点衫 · 山地冠军",
+            "en": "GRAND TOUR · CLASSIFICATION CHAMPION",
+            "ids": [
+              9
+            ],
+            "value": "111 分",
+            "seconds": 3,
+            "start": 17.1,
+            "end": 20.1
+          },
+          {
+            "kind": "white",
+            "title": "白衫 · 青年冠军",
+            "en": "GRAND TOUR · CLASSIFICATION CHAMPION",
+            "ids": [
+              6
+            ],
+            "value": "80:34:08",
+            "seconds": 3,
+            "start": 20.1,
+            "end": 23.1
+          },
+          {
+            "kind": "team-final",
+            "title": "最终车队总成绩冠军",
+            "en": "GRAND TOUR · TEAM CLASSIFICATION",
+            "teamId": 2,
+            "ids": [
+              1,
+              25,
+              37,
+              39,
+              42
+            ],
+            "value": "241:56:35",
+            "seconds": 4,
+            "start": 23.1,
+            "end": 27.1
+          },
+          {
+            "kind": "complete",
+            "title": "环法完成。",
+            "en": "21 STAGES. ONE GRAND TOUR.",
+            "ids": [],
+            "seconds": 2,
+            "start": 27.1,
+            "end": 29.1
+          }
+        ],
+        "duration": 30.1,
+        "intro": 1.6,
+        "outro": 1
+      },
+      "seen": [
+        "winner",
+        "gc-final",
+        "yellow"
+      ]
+    },
+    {
+      "name": "reduced",
+      "viewport": [
+        390,
+        844
+      ],
+      "stage": 5,
+      "mode": "single",
+      "normalRAFCeremonySeconds": 4.080130669000027,
+      "skip": true,
+      "reducedMotion": true,
+      "plan": {
+        "final": false,
+        "beats": [
+          {
+            "kind": "winner",
+            "title": "赛段冠军",
+            "en": "STAGE 05 WINNER",
+            "ids": [
+              24
+            ],
+            "value": "03:34:04",
+            "seconds": 3.8,
+            "start": 1.6,
+            "end": 5.4
+          },
+          {
+            "kind": "yellow",
+            "title": "黄衫 · 总成绩领先者",
+            "en": "SINGLE STAGE · CLASSIFICATION LEADER",
+            "ids": [
+              24
+            ],
+            "value": "03:33:54",
+            "seconds": 3.2,
+            "start": 5.4,
+            "end": 8.600000000000001
+          },
+          {
+            "kind": "green",
+            "title": "绿衫 · 积分领先者",
+            "en": "SINGLE STAGE · CLASSIFICATION LEADER",
+            "ids": [
+              24
+            ],
+            "value": "70 分",
+            "seconds": 3,
+            "start": 8.600000000000001,
+            "end": 11.600000000000001
+          },
+          {
+            "kind": "polka",
+            "title": "圆点衫 · 山地领先者",
+            "en": "SINGLE STAGE · CLASSIFICATION LEADER",
+            "ids": [
+              75
+            ],
+            "value": "2 分",
+            "seconds": 3,
+            "start": 11.600000000000001,
+            "end": 14.600000000000001
+          },
+          {
+            "kind": "white",
+            "title": "白衫 · 青年领先者",
+            "en": "SINGLE STAGE · CLASSIFICATION LEADER",
+            "ids": [
+              50
+            ],
+            "value": "03:34:04",
+            "seconds": 3,
+            "start": 14.600000000000001,
+            "end": 17.6
+          },
+          {
+            "kind": "complete",
+            "title": "赛段完成。",
+            "en": "STAGE 05 · COMPLETED",
+            "ids": [],
+            "seconds": 1.8,
+            "start": 17.6,
+            "end": 19.400000000000002
+          }
+        ],
+        "duration": 20.400000000000002,
+        "intro": 1.6,
+        "outro": 1
+      },
+      "seen": [
+        "winner"
+      ]
+    }
+  ],
+  "errors": [],
+  "passed": 113,
+  "failed": 0
+}
