@@ -1,0 +1,26 @@
+# Legacy build kept locally until the official version is ready
+/grand-tour.html
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Dependencies and generated output
+node_modules/
+/dist/
+/build/
+/coverage/
+
+# Logs and temporary files
+*.log
+*.tmp
+
+# Operating system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor settings
+.vscode/
+.idea/
