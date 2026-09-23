@@ -1,4 +1,5 @@
-# Legacy build kept locally until the official version is ready
+# Legacy build kept locally until the official version is ready.
+# Remove this rule before adding the official build if it reuses this path.
 /grand-tour.html
 
 # Local environment and secrets
