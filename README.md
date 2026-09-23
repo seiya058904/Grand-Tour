@@ -4,7 +4,7 @@ An unofficial road-cycling grand-tour racing game in development.
 
 ## Status
 
-This repository is being prepared for the official version. It currently contains project information only; no official game source or playable build has been published.
+The official version has not been published yet. This repository currently contains project information only; no official game source or playable build has been published.
 
 The existing legacy HTML build is intentionally kept out of this repository. The official version will be added when it is ready.
 
