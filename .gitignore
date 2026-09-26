@@ -24,3 +24,10 @@ desktop.ini
 # Editor settings
 .vscode/
 .idea/
+
+# Python bytecode
+__pycache__/
+*.py[cod]
+
+# Local historical release packages
+/Grand-Tour History version/
