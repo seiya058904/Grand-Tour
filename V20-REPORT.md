@@ -30,4 +30,4 @@ Released 2026-09-27. Open `Grand-Tour-V20.html` directly to play; it is a self-c
 
 No complete continuous 21-stage Tour or physical-phone/Safari acceptance was performed. V20 is the canonical source of truth. The one-off `build_v20.py` and its patch fragments lived in the local Codex visualization workspace, reference machine-specific paths, and were not retained as a supported build chain; no generated-build reproducibility is claimed.
 
-Artifact: `Grand-Tour-V20.html`, internal build version 200, 1,738,562 bytes, SHA-256 `3d9174c6c75e4150a91ff4a49408694d7d4de93678a5ac00f8dc353223bab1b2`.
+Artifact: `Grand-Tour-V20.html`, release marker `data-build="2000"`, internal build version 200, 1,738,562 bytes, SHA-256 `3d7d013d61c6d01459a8d3185fb4ff2b30983a4a172245190d858311325e2581`.
