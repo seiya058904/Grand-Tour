@@ -1,5 +1,8 @@
 # Grand Tour
 
+<img width="1672" height="941" alt="ChatGPT 图像 2026年9月27日 22_46_18" src="https://github.com/user-attachments/assets/300cdadc-19bd-47db-8b60-7d4928db8afa" />
+
+
 An unofficial, self-contained browser game about professional road-cycling stage racing.
 
 [**Play Grand Tour V20**](https://seiya058904.github.io/Grand-Tour/) · [Open the playable file](Grand-Tour-V20.html)
