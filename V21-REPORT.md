@@ -9,7 +9,7 @@
 **HTML 本身就是完整源码与运行成品，没有独立生成脚本，也没有遗漏的外部资源目录。** `index.html` 只跳转 V21；README、交接文档和运行标记一致。原版 V20、V19 及其报告原样保留，原 README、AI-HANDOFF、校验单保存在 `previous-version/`。本包不包含附件本来就没有的 Git 历史或其他历史版本。
 
 - 原版 V20 SHA-256：`3d7d013d61c6d01459a8d3185fb4ff2b30983a4a172245190d858311325e2581`
-- 当前 V21 SHA-256：`dd60b57c0bf53042231848d3d0e4730f26a742d824e60c44379dfdbe6f6228b1`
+- 当前 V21 SHA-256：`6651a9e81b018ac1c7d2eb6dfdcc58b4c0a89347408e4434c19f633264787c5f`
 - 包内完整文件校验清单：`SHA256SUMS.txt`。
 
 ## 2. 实际升级
@@ -24,7 +24,7 @@
 
 ### HUD、Race Centre 与移动端
 
-统一石墨色／环法金的界面层级。功率与 W/kg 合并，附短时间真实功率轨迹；耐力、爆发储备和尾流分层。电台移出比赛画布，不再盖住车群或名字。操作按钮、悬停对比度、焦点样式和标签间距同步调整。
+统一石墨色／环法金的界面层级。功率与 W/kg 合并，附短时间真实功率轨迹；耐力、爆发储备和尾流分层。电台采用双层呈现：画布中央是按比赛事件触发、带主题冷却与重复消息节流的精简动态弹窗；画布下方保留更密集、信息更完整的车队播报面板。中央弹窗出现时只短暂淡化其覆盖范围内的车手标签。操作按钮、悬停对比度、焦点样式和标签间距同步调整。
 
 移动端优先呈现比赛、关键数据与操作；Race Centre 是同一个 DOM 面板在桌面／移动容器中移动，不是两份状态视图。修复媒体规则优先级导致的窄屏画布宽度问题；320 px 宽度下，指标改为两行，避免四列挤压。TTT 信息显示根据实际队列、接轮者和尾流计算，不用固定的“轮换有序”文案掩盖失序。
 
@@ -84,6 +84,7 @@ Browser 插件未提供，使用 Playwright + **Chromium 144.0.7559.96 / Linux h
 | 天气 | 自然生成的雨天 Seed 1，雨景和滚阻修正都来自实际条件 |
 | 终点／领奖／成绩 | 近终点真实冲刺与压车、领奖开启、2×播放后暂停、查看 184 行结果、下一站 |
 | 移动端 | 390×844、320×740、768×560，画布非零、页面无横溢；Race Centre 唯一实例 |
+| 电台双层显示 | 1440×1000 桌面、390×844 窄屏：中央事件弹窗、下方详细播报独立更新；暂停保持、淡出、标签避让、无横溢 |
 | Reduced Motion | 390×844 实际交互、固定镜头、CSS 动效约束 |
 | 控制台 | 上述最终运行未捕获应用 pageerror |
 
@@ -106,7 +107,7 @@ V21 身体缓存限制为 256 项，功率轨迹最多 61 点；天气细节沿�
 
 ## 6. Not verified
 
-首次云端验证环境禁止 `file://` 导航。随后补做了 Windows 隔离 Chromium 原生文件烟测（390×844，Chromium 151.0.7922.34）：通过 `file://` 加载最终 HTML，Build 2100、Canvas 正常、无 fatal error 或 pageerror；测试专用 localStorage 标记在关闭并重开同一临时浏览器配置后仍可读取。原始结果见 `evidence/native-file-smoke.json`。
+初版 V21 曾补做 Windows 隔离 Chromium 原生文件烟测（390×844，Chromium 151.0.7922.34）：当时通过 `file://` 加载，Build 2100、Canvas 正常、无 fatal error 或 pageerror；测试专用 localStorage 标记关闭并重开同一临时浏览器配置后仍可读取。原始结果见 `evidence/native-file-smoke.json`，对应初版源码 SHA-256 `dd60b57c0bf53042231848d3d0e4730f26a742d824e60c44379dfdbe6f6228b1`。本次电台修正使用 Playwright 1.63 / Chromium，通过原 HTML 注入与测试内存 Storage 验证最终源码；这不是新版本的 `file://` 烟测。
 
 该烟测确认了本机 Chromium 的文件导航与存储机制；**没有通过游戏 UI 生成真实环法存档并验证它跨浏览器重启恢复，也没有实际桌面双击验收**。原生应用存档的跨重启持久性仍未验证。
 
@@ -118,4 +119,4 @@ V21 身体缓存限制为 256 项，功率轨迹最多 61 点；天气细节沿�
 
 `tests/static_verify.py --manifest` 检查交付完整性、版本、JavaScript 语法、历史文件和校验单。浏览器脚本见 README；附加场景使用 `finish_motion_verify.py`、`downhill_verify.py`，性能使用 `performance_probe.py`。云端模式均加 `--injected`；默认模式保留真正的本地文件打开测试路径。
 
-`evidence/main/` 含主验证 JSON、四场原始物理采样与截图；`extended/` 含跟轮、跨赛段、TTT 对照、雨景与响应式；`finish/` 含终点退场／领奖；`downhill/` 含自然下坡；`performance.json` 为最终源码的短实时采样。所有最终验证 JSON 的 SHA-256 指向本报告中的同一份 V21 HTML。
+`evidence/main/` 含主验证 JSON、四场原始物理采样与截图；`extended/` 含跟轮、跨赛段、TTT 对照、雨景与响应式；`finish/` 含终点退场／领奖；`downhill/` 含自然下坡；`performance.json` 为初版 V21 的短实时采样。本报告原有的主赛、扩展、终点、下坡和性能证据对应初版 V21（SHA-256 `dd60b57c0bf53042231848d3d0e4730f26a742d824e60c44379dfdbe6f6228b1`）；中央电台恢复后另以 `tests/radio_overlay_verify.py` 对最终 HTML 做桌面、窄屏、暂停、减少动态效果、弹窗淡出及下方详细面板保留验证，证据见 `evidence/radio/`。`evidence/static-verification.json` 与 `SHA256SUMS.txt` 对应本报告当前列出的最终源码。
