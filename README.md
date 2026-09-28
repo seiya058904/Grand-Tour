@@ -5,13 +5,13 @@
 
 An unofficial, self-contained browser game about professional road-cycling stage racing.
 
-[**Play Grand Tour V21**](https://seiya058904.github.io/Grand-Tour/) · [Open the playable file](Grand-Tour-V21.html)
+[**Play Grand Tour V22 locally**](Grand-Tour-V22.html) · [Hosted game](https://seiya058904.github.io/Grand-Tour/)
 
 ## Current version
 
-V21 is the current release, rebuilt from the V20 HTML baseline. It selectively carries forward verified V21 race, rider-animation, and power-display work while retaining V20 colors, Recovery/Threshold button behavior, physics, stage data, and save schema. The standalone game needs no installation, build step, external libraries, or network connection. See [V21-REPORT.md](V21-REPORT.md) for the exact scope and validation limits.
+V22 is the current local build, based on the runnable V21 at `cf7f21a`. It refines HUD hierarchy, responsive controls, rider nameplates, Race Centre, preparation and interface transitions, and fixes attack-button contrast. The audited race engine, 21-stage data and V9 save format are retained. The standalone game needs no installation, build step, external libraries, or network connection. See [V22-REPORT.md](V22-REPORT.md) for the exact scope and validation limits. V22 has not been pushed or deployed by this local task; the hosted link may show an earlier version.
 
-The standalone V21 playable is published at the repository root. [Grand-Tour-V21-Final.zip](Grand-Tour-V21-Final.zip) contains the full handoff, test scripts, current regression evidence, and SHA-256 manifest. V20, V19, and V18.3.1 remain available as historical versions. Earlier historical packages remain in the local-only Grand-Tour History version folder.
+The standalone V22 playable is at the repository root. [Grand-Tour-V22-Final.zip](Grand-Tour-V22-Final.zip) contains the playable, tests, reports, baseline/final evidence and a SHA-256 manifest. Reproducible checks are documented in [tests/v22/README.md](tests/v22/README.md). V21 (including its original final ZIP), V20, V19, and V18.3.1 remain unchanged as historical versions. Earlier historical packages remain in the local-only Grand-Tour History version folder.
 
 ## Previous playable
 
