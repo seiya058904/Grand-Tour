@@ -9,9 +9,9 @@ An unofficial, self-contained browser game about professional road-cycling stage
 
 ## Current version
 
-V21 is the current release. It includes the frozen 2026 stage profiles and runs from one HTML file. The game needs no installation, build step, external libraries, or network connection. Progress is stored in browser-local storage.
+V21 is the current release, rebuilt from the V20 HTML baseline. It selectively carries forward verified V21 race, rider-animation, and power-display work while retaining V20 colors, Recovery/Threshold button behavior, physics, stage data, and save schema. The standalone game needs no installation, build step, external libraries, or network connection. See [V21-REPORT.md](V21-REPORT.md) for the exact scope and validation limits.
 
-The standalone V21 playable is published at the repository root. V20, V19, and V18.3.1 remain available as historical versions. The full historical packages and validation materials remain in the local-only Grand-Tour History version folder.
+The standalone V21 playable is published at the repository root. [Grand-Tour-V21-Final.zip](Grand-Tour-V21-Final.zip) contains the full handoff, test scripts, current regression evidence, and SHA-256 manifest. V20, V19, and V18.3.1 remain available as historical versions. Earlier historical packages remain in the local-only Grand-Tour History version folder.
 
 ## Previous playable
 

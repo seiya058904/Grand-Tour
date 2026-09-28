@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Grand Tour V21. Canonical editable, self-contained source. No build step. -->
+<!-- Grand Tour V21 · V20 baseline with selected verified improvements · self-contained source -->
 <html lang="zh-CN" data-build="2100">
 <head>
 <meta charset="utf-8">
@@ -527,74 +527,11 @@ body{background:var(--bg)}
 }
 
 
-/* V21 / GRAPHITE & TOUR GOLD. One hierarchy, no new dashboard. */
-:root{--bg:#10191e;--panel:#17232a;--surface:#1c2c33;--line:#33474f;--text:#f1f2e8;--muted:#a5b7b9;--yellow:#f0d273;--good:#b5d2bc;--warn:#e8ac80}
-body{background:var(--bg);color:var(--text);font-variant-numeric:tabular-nums}
-.app{max-width:1536px}.topbar{border-bottom-color:#344850;padding-top:13px;padding-bottom:13px}
-.logo-mark{filter:none}.build-stamp{letter-spacing:.16em;color:var(--muted)}
-.menu-hero{padding-top:46px;padding-bottom:44px}.hero-copy{color:#b8c8c8}.hero-scene{border:1px solid #496169;border-radius:4px;box-shadow:0 26px 70px #0004}
-.hero-title{letter-spacing:-.065em}.hero-title .yellow{letter-spacing:-.045em}
-.btn{background:#17272e;border-color:#3b535c;border-radius:3px;color:var(--text);transition:background .16s,border-color .16s,transform .16s}
-.btn:hover{background:#253940;border-color:#8ca8aa}.btn:active{transform:translateY(1px)}
-.btn.primary{background:var(--yellow);border-color:var(--yellow);color:#18222a}.btn.primary:hover{background:#ffe5a0}
-.btn.quiet{background:transparent}.btn:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--yellow);outline-offset:3px}
-#raceScreen .race-heading{padding:17px 0 14px;align-items:center}#raceScreen .race-heading h2{font-size:22px;letter-spacing:-.035em}#raceScreen .race-heading p{margin-top:6px;color:#a1b6b9;font-size:11px}
-#raceScreen .stage-badge{background:var(--yellow);color:#18252b;border-radius:2px;padding:5px 8px;letter-spacing:.15em}#raceScreen .race-layout{grid-template-columns:minmax(0,1fr) 344px;gap:24px}
-#raceScreen .metrics{grid-template-columns:1.1fr 1.65fr .85fr 1fr 1.35fr;padding:15px 0 13px;border-top-color:#42585e;border-bottom-color:#42585e;gap:0}
-#raceScreen .metric{padding-left:16px;border-color:#34474e;min-width:0}#raceScreen .metric:first-child{padding-left:0}#raceScreen .metric-label{font-size:10px;letter-spacing:.055em;color:#acbbba}#raceScreen .metric-value{font-size:30px;line-height:1.22;font-weight:550;letter-spacing:-.055em}#raceScreen .metric-value em{font-size:10px;letter-spacing:0;margin-left:4px;color:#a8b8b9}#raceScreen .metric.compact .metric-value{font-size:22px;line-height:1.65}
-.metric-power{position:relative;isolation:isolate;overflow:hidden}.power-secondary{font-size:10px;letter-spacing:0;color:#b9c5bf;margin-left:10px;white-space:nowrap}.power-history{position:absolute;inset:auto 7px 2px auto;width:72%;height:22px;pointer-events:none;z-index:-1;opacity:.21}.power-history path{fill:none;stroke:var(--yellow);stroke-width:1.6;vector-effect:non-scaling-stroke}
-#raceScreen .tactic-strip{min-height:31px;padding:8px 0;font-size:11px;color:#cbd4cd;border:none;background:transparent}#raceScreen .tactic-strip .tactic-plan{border-color:var(--yellow)}
-.canvas-wrap{border-radius:4px;border:1px solid #657d80;box-shadow:0 12px 35px #0002;overflow:hidden;isolation:isolate}
-#raceScreen .canvas-wrap{height:clamp(330px,40vh,490px)}
-#raceScreen .view-chip{background:#172a32ed;color:#eff0e2;backdrop-filter:none;border:1px solid #76878b80;font-size:10px;border-radius:2px;top:12px;left:12px;letter-spacing:.04em;box-shadow:0 2px 8px #0001}
-#raceScreen .remaining-chip{background:#f4eed9f5;border:0;border-left:3px solid #a99c6c;border-radius:2px;top:12px;right:12px;padding:8px 11px;box-shadow:0 2px 10px #0001}#raceScreen .remaining-chip strong{font-size:27px;font-weight:650;letter-spacing:-.05em;color:#26353c}#raceScreen .remaining-chip small{font-size:9px;color:#526069}
-#raceScreen .remaining-chip[data-finale="true"]{background:var(--yellow);border-left-color:#293b44}#raceScreen .remaining-chip[data-finale="true"] strong{color:#17242b;font-size:31px}#raceScreen .remaining-chip[data-finale="true"] small{color:#26383d}
-#raceScreen .view-bottom{pointer-events:none;color:#f0efde}#raceScreen .view-bottom span{background:#182c34df;border-radius:2px;border:1px solid #96aca550}
-#raceScreen .energy-row{padding:13px 0 10px;gap:22px;border:0}#raceScreen .gauge{height:4px;border-radius:1px;background:#34484d}#raceScreen .gauge span{background:#c3d6bd;border-radius:1px}#raceScreen .gauge.secondary span{background:var(--yellow)}#raceScreen .gauge-description{font-size:10px;margin-top:5px;color:#9dafb0}#raceScreen .gauge-head{font-size:10px;color:#c5d2cb}#raceScreen .draft-stat strong{font-size:23px;color:#a9d4cc}
-#raceScreen .control-panel{padding-top:9px;border-top-color:#364c53}#raceScreen .control-topline{font-size:11px;margin-bottom:9px;color:#b8c9c7}#raceScreen .effort-grid{gap:6px}#raceScreen .effort-button{min-height:54px;padding:9px;border-radius:3px;background:#17272e;border:1px solid #3b535c;font-size:13px;color:#dee5da}#raceScreen .effort-button small{font-size:10px;color:#acbcb8}#raceScreen .effort-button.active{background:#344c50;border-color:#d5d8ae}#raceScreen .burst-button{background:#2a3030;border-color:#a38c4a;color:var(--yellow)}#raceScreen .burst-button:hover{background:#49402b}#raceScreen #attackButton.attacking,#raceScreen #attackButton.attacking:hover:not(:disabled){background:#f0d273!important;color:#17242b!important;border-color:#f0d273!important;box-shadow:none}#raceScreen .action-row .btn{min-height:40px}#raceScreen .follow-panel{background:transparent;border:0;border-top:1px solid #2d4249;padding:11px 0}.follow-description{color:#acbfc0}
-#liveDesk{background:var(--panel);border:1px solid #3d555c;border-radius:4px;box-shadow:none}.desk-heading{padding:20px 16px 16px;background:transparent}.desk-heading h2{font-size:23px;letter-spacing:-.035em}.desk-tabs,.desk-tools,.desk-caption{background:transparent;border-color:#30464d}.desk-tabs button{color:#a8bdbb}.desk-tabs button.active{background:#2b4147;color:var(--yellow);border-bottom-color:var(--yellow)}
-#deskContent{background:transparent}.situation-card{background:#1d3037;padding:18px 16px;border:none;border-top:1px solid #405860;border-bottom:1px solid #405860}.situation-card>strong{font-size:25px;line-height:1.25;letter-spacing:-.045em;color:#efdfa8}.situation-reading{font-size:12px;line-height:1.85;color:#c3d0c9}.situation-eyebrow{font-size:10px;color:#9db4b6;letter-spacing:.11em}.situation-group{background:#162830;border:1px solid #3a5359;border-radius:2px}.situation-group.own{background:#2f4648;border-color:#8c986f}.situation-group i{background:#e7d08155}.group-total{font-size:10px;color:#9ab0b2}.situation-gaps{background:transparent;border-color:#40595f}
-.near-table td,.desk-table td{border-color:#2c424a}.near-table tr.player,.desk-table tr.player{background:#31453f}.desk-tools input{background:#111f26;color:var(--text);border-color:#3d565d}.desk-tabs{gap:0}.desk-note{color:#93aab0;background:#172830}
-.timeline-block,.team-radio,.group-board,.gc-tracker{border-color:#374e54;background:transparent}.dialog{background:#18282f;border-color:#526c72;border-radius:5px;box-shadow:0 25px 100px #0008}.dialog-backdrop{background:#071014bc;backdrop-filter:blur(5px)}
-.ratings,.prep-facts,.prep-note,.prep-weather{border-color:#3d555c}.results-table th,.results-table td{border-color:#354b52}.result-metrics{border-color:#4b6265}.podium-card{background:#1c2e35;border-color:#465f66}.podium-card.winner{background:#353e37;border-color:#cab267}.result-hero{border-bottom:1px solid #465f66}.result-hero h1{letter-spacing:-.055em}
-@media(min-width:1100px) and (max-height:900px){#raceScreen .canvas-wrap{height:340px}.topbar{padding-top:9px;padding-bottom:9px}#raceScreen .race-heading{padding:12px 0}#raceScreen .metrics{padding:10px 0}#raceScreen .metric-value{font-size:28px}#raceScreen .energy-row{padding:10px 0 8px}}
-@media(max-width:1100px){#raceScreen .race-layout{grid-template-columns:minmax(0,1fr) 310px;gap:16px}#raceScreen .metric{padding-left:9px}#raceScreen .metric-value{font-size:26px}.power-secondary{font-size:9px;margin-left:5px}#raceScreen .metric.compact .metric-value{font-size:18px}#raceScreen .metric-label{font-size:9px}#raceScreen .metrics{grid-template-columns:1fr 1.4fr .8fr .9fr 1.2fr}}
-@media(max-width:800px){#raceScreen .race-layout{grid-template-columns:minmax(0,1fr)}#raceScreen .metrics{grid-template-columns:1.1fr 1.45fr .8fr .9fr 1.25fr}#raceScreen .race-heading h2{font-size:20px}#raceScreen .canvas-wrap{height:380px}}
-@media(max-width:590px){.topbar{padding-top:10px;padding-bottom:10px}#raceScreen .race-heading{padding:13px 0 11px;gap:9px}#raceScreen .race-heading h2{font-size:17px}#raceScreen .race-heading p{font-size:9px;line-height:1.6}#raceScreen .race-commands{gap:5px}#raceScreen .race-commands .btn{font-size:10px;min-height:35px;padding:7px 9px}#raceScreen .stage-badge{font-size:8px;padding:4px 6px}#raceScreen .metrics{grid-template-columns:1fr 1.6fr .75fr .9fr;padding:12px 0 10px;row-gap:0}#raceScreen .metric{padding-left:8px}#raceScreen .metric-label{font-size:9px;letter-spacing:0}#raceScreen .metric-value{font-size:25px}#raceScreen .metric.compact .metric-value{font-size:21px;line-height:1.4}#raceScreen .metric:last-child{display:none}.power-secondary{display:block;position:absolute;right:7px;bottom:2px;font-size:8px}.metric-power .metric-value{padding-bottom:0}.power-history{width:100%;height:17px;bottom:0}#raceScreen .metric-value em{font-size:8px;margin-left:2px}
-#raceScreen .canvas-wrap{height:330px}.canvas-wrap{border-radius:3px}#raceScreen .view-chip{top:8px;left:8px;font-size:8px;padding:5px 6px;max-width:54%}#raceScreen .remaining-chip{top:8px;right:8px;padding:6px 8px}#raceScreen .remaining-chip strong{font-size:22px}#raceScreen .remaining-chip small{font-size:8px}#raceScreen .remaining-chip[data-finale="true"] strong{font-size:25px}#raceScreen .tactic-strip{font-size:10px;padding:7px 0;min-height:28px}#raceScreen .tactic-strip span:last-child{font-size:9px}
-#raceScreen .energy-row{gap:13px;padding:12px 0 10px}#raceScreen .gauge-head{font-size:9px}#raceScreen .gauge-description{font-size:9px}#raceScreen .draft-stat strong{font-size:21px}#raceScreen .control-topline{font-size:10px}#raceScreen .effort-button{min-height:54px;font-size:11px}#raceScreen .effort-button small{font-size:9px}#raceScreen .action-row .btn{min-height:43px}#raceScreen .follow-panel{padding:10px 0}#raceScreen .follow-panel strong{font-size:11px}.wheel-choice{min-height:36px}.mobile-centre-button{background:#273b43;color:var(--text);border-color:#4d6970;min-height:43px}.mobile-data-dialog{border-radius:10px 10px 0 0}.situation-card>strong{font-size:24px}.menu-hero{padding:26px 0}.hero-scene{box-shadow:none}.hero-copy{font-size:14px}.hero-title{line-height:1.05}
-}
-@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;scroll-behavior:auto!important}.btn:active{transform:none}}
-
-
-#raceCanvas{height:100%;width:100%}
-#raceScreen .view-chip{background:#172a32ed;color:#eff0e2}
-#raceScreen .view-chip .weather-badge{background:#2b454e;color:#e4e7d7}
-#raceScreen .gauge:not(.low) span{background:#c3d6bd}#raceScreen .gauge.secondary:not(.low) span{background:var(--yellow)}
-#raceScreen .effort-button{background:#192b33;border-color:#425c64}#raceScreen .effort-button.active{background:#344c50;border-color:#d5d8ae}#raceScreen .burst-button{background:#37372d;border-color:#bba45d;color:var(--yellow)}
-#raceScreen .action-row .btn{background:#1c3038}#raceScreen #draftButton.active{background:#354c48;border-color:#aabd9e}
-#raceScreen .desk-areas button.active{background:#2b4147;border-bottom-color:var(--yellow);color:#eddda5}
-#raceScreen .desk-tabs button.active{background:#38483e;color:#f0d273}
-#raceScreen .desk-table tr.me td{background:#30483f}
-@media(max-width:590px){
- #raceScreen .race-main>.canvas-wrap{order:1}#raceScreen .race-main>.metrics{order:2}#raceScreen .race-main>.energy-row{order:3}
- #raceScreen .race-main>.control-panel{order:4}#raceScreen .race-main>.tactic-strip{order:6}#raceScreen .race-main>.follow-panel{order:7}
- #raceScreen .metrics{grid-template-columns:1fr 1.6fr .75fr .9fr}
- #raceScreen .metric{display:block}#raceScreen .metric:last-child{display:none}
- #raceScreen .metric-power .power-secondary{position:static;display:inline-block;font-size:8px;margin-left:3px}
- #raceScreen .metric-value{font-size:24px}#raceScreen .metric.compact .metric-value{font-size:21px}
- #raceScreen .view-chip .label-hint,#raceScreen .view-chip .inspect-hint{display:none}
- #raceScreen .race-main>.mobile-race-centre-button{order:8}
-}
-
-/* A 320 px phone needs two readable telemetry rows, not four squeezed cells. */
-@media(max-width:360px){
- #raceScreen .metrics{grid-template-columns:1fr 1.45fr;row-gap:12px}
- #raceScreen .metric:nth-child(odd){padding-left:0;border-left:0}
- #raceScreen .metric:nth-child(even){padding-left:12px;border-left:1px solid #34474e}
- #raceScreen .metric-label{font-size:10px}
- #raceScreen .metric-value,#raceScreen .metric.compact .metric-value{font-size:24px;line-height:1.3}
-}
+/* V21 power hierarchy; retain the V20 color tokens and effort-button rules. */
+.metric-power{position:relative;isolation:isolate;overflow:hidden}.power-secondary{font-size:10px;letter-spacing:0;color:var(--muted);margin-left:10px;white-space:nowrap}.power-history{position:absolute;inset:auto 7px 2px auto;width:72%;height:22px;pointer-events:none;z-index:-1;opacity:.20}.power-history path{fill:none;stroke:var(--yellow);stroke-width:1.6;vector-effect:non-scaling-stroke}
+.racing .metrics{grid-template-columns:1.1fr 1.65fr .85fr .9fr 1fr}
+@media(max-width:590px){.racing .metrics{grid-template-columns:1.15fr 1.08fr .9fr .9fr}.racing .metric:nth-child(5){grid-column:3/5;border-left:1px solid #35463b;padding-left:9px}.racing .metric:nth-child(5) .metric-value{font-size:19px}}
+@media(max-width:360px){.racing .metrics{grid-template-columns:1fr 1fr}.racing .metric:nth-child(5){grid-column:1/3;border:0;padding-left:0}}
 </style>
 
 
@@ -628,7 +565,7 @@ body{background:var(--bg);color:var(--text);font-variant-numeric:tabular-nums}
 <div id="fatalError" class="error-box" hidden></div>
 <main>
 <section id="homeScreen" aria-label="主菜单">
-<div class="menu-hero"><div><span class="build-stamp">V21 · EVERY WATT, EVERY WHEEL · 离线单机</span><h1 class="hero-title">环法<span class="yellow">GRAND TOUR</span></h1><p class="hero-copy">风向变了，集团正在提速。<br>你是波加查。读懂每一次轮换，<br>把最后的力量，留给决定胜负的一刻。</p><div class="hero-actions"><button class="btn primary" id="newTour">开始环法 <span aria-hidden="true">↗</span></button><button class="btn" id="chooseStage">选择赛段</button><button class="btn quiet" id="homeHistory">环法档案</button><button class="btn" id="continueTour" hidden>继续环法</button></div><div class="home-save-tools"><button class="btn quiet small" id="homeExportSave">导出环法存档</button><button class="btn quiet small" id="homeImportSave">导入存档</button></div><p id="saveSummary" class="muted" style="font-size:11px;margin-top:17px;min-height:17px"></p></div><div class="hero-scene"><canvas id="heroCanvas" aria-label="公路自行车山地骑行插画"></canvas><div class="hero-index">21</div><div class="hero-location">ALPE D’HUEZ / THE FINAL CLIMB</div></div></div>
+<div class="menu-hero"><div><span class="build-stamp">V21 · THE LIVING RACE · 离线单机</span><h1 class="hero-title">环法<span class="yellow">GRAND TOUR</span></h1><p class="hero-copy">风向变了，集团正在提速。<br>你是波加查。读懂每一次轮换，<br>把最后的力量，留给决定胜负的一刻。</p><div class="hero-actions"><button class="btn primary" id="newTour">开始环法 <span aria-hidden="true">↗</span></button><button class="btn" id="chooseStage">选择赛段</button><button class="btn quiet" id="homeHistory">环法档案</button><button class="btn" id="continueTour" hidden>继续环法</button></div><div class="home-save-tools"><button class="btn quiet small" id="homeExportSave">导出环法存档</button><button class="btn quiet small" id="homeImportSave">导入存档</button></div><p id="saveSummary" class="muted" style="font-size:11px;margin-top:17px;min-height:17px"></p></div><div class="hero-scene"><canvas id="heroCanvas" aria-label="公路自行车山地骑行插画"></canvas><div class="hero-index">21</div><div class="hero-location">ALPE D’HUEZ / THE FINAL CLIMB</div></div></div>
 <div class="tour-facts"><div class="tour-fact"><strong>21</strong><span>完整赛段</span></div><div class="tour-fact"><strong>3,246</strong><span>公里 · 逐段合计</span></div><div class="tour-fact"><strong>184</strong><span>模拟车手</span></div><div class="tour-fact"><strong>01</strong><span>由你掌控</span></div></div>
 <div class="section-heading"><h2>从这里，开始骑行。</h2><span class="muted" style="font-size:12px">所有赛段直接开放</span></div><div id="featuredStages" class="feature-stages"></div>
 <footer class="footnote"><span>真实路线基础 · 简化地形 · 规则驱动 AI · 独立非官方作品</span><span>↑ ↓ 调节输出 &nbsp; / &nbsp; D 跟车 &nbsp; / &nbsp; SPACE 进攻 &nbsp; / &nbsp; F 补给</span></footer>
@@ -638,8 +575,8 @@ body{background:var(--bg);color:var(--text);font-variant-numeric:tabular-nums}
 <div class="race-heading"><div><h2><span class="stage-badge" id="raceStage">STAGE 01</span><span id="raceRoute"></span></h2><p id="raceSubheading"></p></div><div class="race-commands"><button class="btn small gc-command" id="raceGC" aria-label="查看比赛数据">比赛数据</button><button class="btn small quiet" id="quickFinishButton" type="button" title="高速模拟到本赛段结束，然后播放正常领奖动画">快速完赛</button><button class="btn small" id="pauseButton">Ⅱ 暂停</button></div></div>
 <div class="race-layout"><div class="race-main">
 <div class="metrics"><div class="metric"><span class="metric-label">SPEED / 速度</span><div class="metric-value"><span id="hudSpeed">0.0</span><em>km/h</em></div></div><div class="metric metric-power"><span class="metric-label">POWER / 功率</span><div class="metric-value yellow"><span id="hudPower">0</span><em>W</em><span class="power-secondary"><span id="hudWkg">0.0</span> W/kg</span></div><svg class="power-history" viewBox="0 0 120 22" aria-label="最近十二秒的实际功率趋势" role="img"><path id="powerHistoryV21" d="M0 21H120"/></svg></div><div class="metric"><span class="metric-label">GRADIENT / 坡度</span><div class="metric-value"><span id="hudGrade">0.0</span><em>%</em></div></div><div class="metric compact"><span class="metric-label" id="positionLabel">STAGE / 赛段名次</span><div class="metric-value"><span id="hudPosition">1</span><em>/ 184</em></div></div><div class="metric compact"><span class="metric-label" id="gapLabel">GC / 对手领先 ≈</span><div class="metric-value" id="hudGap">+00:00</div></div></div>
-<div class="tactic-strip"><span id="teamObjective">UAE 保护主将</span><span id="gcSituation">GC 安全</span></div><div class="canvas-wrap"><canvas id="raceCanvas" tabindex="0" aria-keyshortcuts="ArrowUp ArrowDown D F P Space" aria-label="公路自行车比赛；姓名旁箭头可点名跟车"></canvas><div id="finishStatus" class="finish-status" role="status" hidden></div><div id="raceRadioV17" class="race-radio-v17" role="status" aria-live="polite" aria-atomic="true" aria-hidden="true"><span class="radio-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 14V10a5 5 0 0 1 10 0v4M7 11H5v6h3v-6Zm10 0h2v6h-3v-6ZM17 18c0 2-2 3-5 3"/><path d="M10 21h2"/></svg></span><div class="radio-message"><header><span id="raceRadioCategory">车队电台</span><small id="raceRadioSource">UAE</small></header><p id="raceRadioText"></p></div></div>
-
+<div class="tactic-strip"><span id="teamObjective">UAE 保护主将</span><span id="gcSituation">GC 安全</span></div><div class="canvas-wrap"><canvas id="raceCanvas" tabindex="0" aria-keyshortcuts="ArrowUp ArrowDown D F P Space" aria-label="公路自行车比赛；姓名旁箭头可点名跟车"></canvas><div id="finishStatus" class="finish-status" role="status" hidden></div>
+<div id="raceRadioV17" class="race-radio-v17" role="status" aria-live="polite" aria-atomic="true" aria-hidden="true"><span class="radio-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 14V10a5 5 0 0 1 10 0v4M7 11H5v6h3v-6Zm10 0h2v6h-3v-6ZM17 18c0 2-2 3-5 3"/><path d="M10 21h2"/></svg></span><div class="radio-message"><header><span id="raceRadioCategory">车队电台</span><small id="raceRadioSource">UAE</small></header><p id="raceRadioText"></p></div></div>
 <div id="riderActionLayer" class="rider-action-layer" aria-label="前方车手跟车按钮"></div><div class="view-chip"><span class="dot"></span><span id="viewType">ROAD RACE</span><span id="raceLiveState" class="hud-live">进行中</span><span id="hudWeather" class="weather-chip" title="本作模拟天气，不是当日实况"></span><span class="inspect-hint">悬停查看 · 单击锁定 · 箭头跟车</span></div><div class="remaining-chip"><strong id="hudRemaining">0.0 KM</strong><small>参考里程 / 剩余</small></div><div class="view-bottom"><span id="hudClock">00:00:00</span><span id="hudElevation">0 M ALT.</span></div></div>
 <section class="follow-panel" id="followPanel" aria-label="跟车状态与选轮">
  <div class="follow-status"><span class="follow-dot" id="followDot"></span><div><strong id="followTitle">自动选轮</strong><span id="followDescription">正在寻找前轮</span></div><button id="autoWheelButton" class="subtle-button" type="button">自动选轮</button></div>
@@ -674,7 +611,7 @@ body{background:var(--bg);color:var(--text);font-variant-numeric:tabular-nums}
 <div class="dialog-backdrop" id="prepBackdrop" hidden><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="prepHeading"><div class="dialog-head"><h2 id="prepHeading">出发前。</h2><button class="close" data-close="prepBackdrop" aria-label="关闭">×</button></div><div class="dialog-body"><div class="prep-grid"><div><div class="prep-stage-index" id="prepStageIndex"></div><h3 class="prep-route" id="prepRoute"></h3><p class="prep-note" id="prepNote"></p><p class="prep-weather" id="prepWeather"></p><div class="prep-facts" id="prepFacts"></div><canvas id="prepProfile" class="prep-profile" aria-label="赛段海拔预览"></canvas></div><div><p class="rider-picker-label">你的车手 · UAE 唯一受保护主将</p><h3 class="fixed-rider-name">塔代伊·波加查 <span>Tadej Pogačar</span></h3><div class="rider-preview"><canvas id="riderPreview" aria-label="所选车手的矢量形象"></canvas><div class="rider-preview-info" id="riderPreviewInfo"></div></div><div id="riderRatings" class="ratings"></div><p class="rating-note">所有评分、体重、FTP、CdA 均为游戏设计近似，不是官方生理数据。名单与出生年按 ASO 2026；能力是游戏估计。</p></div></div><div class="prep-footer"><p id="prepFooterText"></p><button class="btn primary" id="startRace">上路，开始比赛 ↗</button></div></div></div></div>
 <div class="dialog-backdrop" id="helpBackdrop" hidden><div class="dialog" role="dialog" aria-modal="true" aria-labelledby="helpHeading"><div class="dialog-head"><h2 id="helpHeading">找到你的节奏。</h2><button class="close" data-close="helpBackdrop" aria-label="关闭">×</button></div><div class="dialog-body"><div class="how-grid"><div class="help-section"><h3>三个选择，保持简单</h3><p><b class="yellow">恢复 / 耐力：</b>轻松骑，恢复爆发。<b class="yellow">阈值：</b>按当前可持续功率骑。<b class="yellow">进攻：</b>短促峰值后回落；最后 1 km 变成更高、更短的终点冲刺。</p><div class="key-row"><span class="key">↑ / ↓</span><span>手动调节输出。</span></div><div class="key-row"><span class="key">SPACE</span><span>发动 / 取消进攻。</span></div><div class="key-row"><span class="key">D</span><span>开关自动跟车。姓名旁箭头可指定前轮；选中不等于已经获得尾流。</span></div><div class="key-row"><span class="key">F</span><span>补给：5 秒后开始吸收，逐渐恢复耐力，不回满 W′。</span></div><div class="key-row"><span class="key">P / ESC</span><span>暂停。输入框、表格、标签和播放器内的按键不会操纵骑手。</span></div></div><div class="help-section"><h3>先看局势，再决定进攻</h3><p>Race Centre 分为<b>实时赛况、赛道、榜单、车手与车队、环法档案</b>。实时页回答你在哪个集团、前后集团差多少；赛道页突出下一个积分点。</p><p>姓名、箭头和前轮列表共享同一个目标。先接近、横向对齐，再获得减阻；追轮耗费实际功率和爆发储备。ITT 禁跟车，TTT 只允许本队。</p><p>冻结表格只冻结数字，比赛仍继续。打开车手资料会暂停，关闭后回到原来的暂停状态。一级标签可用左右键切换。</p><p>领骑结束、掉队和退赛不同。副将仍按自己的能力骑到终点；不按固定人数强制淘汰。</p></div></div>
 <div class="help-note"><b class="yellow">两种时间，不把近轮差乘几十倍。</b>车轮、瓦数、动作、AI、W′和操作使用 0.05 秒固定步长的模拟时间。赛事时钟根据领跑前沿的参考路线进度与实际速度累积省略路程用时；每个计时点首次有人通过时记录省略路程的时间补偿。相邻到达间隔不超过 3 秒时保留原始轮差；更长的空路间隔才逐渐补入省略路程用时。因此四小时赛段不会把 1 秒前轮差变成 40 秒，远远掉队仍可能损失数分钟并超时。终点后的赛事时钟继续采用同一到达间隔规则；正式成绩、GC 和关门线统一使用赛事秒。这是短赛程的计时约定，不是连续四小时赛事或 GPS 重放；未过点的集团差距始终标记为实时估算。</div>
-<details id="dataDetails"><summary>数据来源、时间与模型边界</summary><p><span class="source-badge official">官方参考</span> 路线名称、号码、名单和分类爬坡点沿用附件数据。规则依据 <a href="https://storage-aso.lequipe.fr/ASO/cycling_tdf/tdf26-reglement.pdf" target="_blank" rel="noopener noreferrer">ASO 2026 竞赛规程</a>；本版保留 V20 的团计、车队总榜、奖励秒等规则实现；未重新联网核验规程。没有逐人重新核验全部 184 个出生年。</p><p><span class="source-badge sim">本作模拟</span> FTP、体重、CdA、能力、疲劳、风和天气均为设计值，不是车手私人实测或当天实况。<span class="source-badge estimate">实时估算</span> 表示未通过同一计时点时按位置、速度推算的秒差和虚拟 GC。赛段完成后的榜单才是本局正式结果。</p><p><b>路线口径：</b>21 站依据 2026 ASO 官方 Profile 的标注与主要峰谷固定简化，总里程 3,246.0 km。不按赛段类型或 D+ 生成地形。官方 D+ 单独显示，简化剖面积分不强制吻合。图中未标注的小尺度地形是手工近似，不是 GPX 或逐像素描摹。旧版进行中的存档保留该段历史坐标，下一新赛段使用本版 Profile。</p><p><b>分类：</b>公路赛按 1 秒 / 指定赛段 3 秒间隔划分同组整秒；前三名奖励 10 / 6 / 4 秒。ITT / TTT 无奖励秒。ITT 的百分之一秒、名次和及最近一站名次用于 GC 同秒判定。四衫顺序黄 → 绿 → 圆点 → 白，画面穿着根据上一站结果；虚拟榜不改变当前穿着。</p><p><b>TTT：</b>赛段领奖台按各队首名车手时间；个人 GC 使用每人自己的时间。车队总榜每站加总前三人的分类时间，不扣个人奖励秒；同分依三人名次和、最佳名次，累计依各站车队名次次数和最佳个人 GC。少于三人退出车队榜。这三个榜不混用。</p><p><b>积分歧义：</b>规程的途中冲刺文字称 15 人，但列出的积分只有 14 档。本作沿用列出的 14 个数，不补造第 15 档。白衫沿用附件 2001 年及以后出生的年度资格标签；缺少完整生日的边界不能进一步细分。</p><p><b>物理：</b>风进入空气相对速度，尾流只减少 CdA，不抵消重力。山区气压较低，空气阻力自然下降。108 km/h 是设计安全上限，轻雨 / 高山小雪略收紧上限，不代表下坡自动达到该速度。普通山地进攻不必超过 1000 W；冲刺峰值更高，但不会全程维持。</p><p><b>生理尺度：</b>W′、短爆发、功率响应、补给吸收和冷却使用模拟秒；耐力长程消耗使用参考公里，赛后负荷使用参考路程暴露。HC / 1 类山地长坡保留最低可骑时长，避免长坡被压缩成一次爆发就能跨越；平路和计时赛长度不因这项调校改变。这是明确分工的简化模型，不是运动训练处方。供给每次最多恢复 16 点耐力、渐进吸收；相同车队身份没有额外生理加成。</p><p><b>轻天气：</b>晴、多云、轻雨、炎热和极低概率高山小雪由赛段种子生成。风在 2–4 个锚点间平滑变化，只考虑纵向分量，不模拟横风梯队。轻雨增加少量滚阻，热天略增耐力负荷；不增加摔车、伤病、器材、服装或经营系统。</p><p><b>存档：</b>V8 新环法使用赛事时间。导入 V4/V7 时保留旧版游戏秒账本并明确标记，不能从没有保存的历史速度凭空恢复小时级旧成绩。新旧时间不会混算；原存储键不覆盖。刷新、导入、导出和后续赛段使用同一 Tour seed。独立重玩使用原 seed、当前模型和新鲜体力，不改写原环法，不宣称是历史录像。</p><p><b>运行：</b>单 HTML 离线运行，不请求字体、音乐或 CDN。音乐由你本地选择，不上传；刷新后需重新选择。减弱动态效果只减视觉，不减慢比赛。画面“自动 / 完整 / 轻量”只影响绘图细节，不影响物理与结果。</p><p><b>量级参考：</b><a href="https://www.letour.fr/en/rankings" target="_blank" rel="noopener noreferrer">官方 2026 最终分类</a>用于检查总时间量级，不硬编码冠军或结果。短时功率量级参考 <a href="https://pubmed.ncbi.nlm.nih.gov/26252551/" target="_blank" rel="noopener noreferrer">职业公路冲刺研究</a>；研究样本不等于每位运动员的能力。</p><p><b>V9 修复与打磨：</b>姓名牌采用持续位置、惯性和柔和避让，不以零重叠删除核心人物。比赛正式结算并保存后，在独立领奖舞台中依次展示赛段冠军与实际分类领先者，再进入结果页；可暂停、调速、切换项目或从结果页重播，刷新不会重复计分。当前没有可信的敢斗奖评选，所以不虚构该奖项。长坡可骑区间适度延长，低爬坡属性在持续上坡中的功率保持能力下降；均为通用游戏调校，不是运动员实测，也不指定任何姓名夺冠。导入中的 V8 比赛保留旧赛道坐标，下一个新赛段采用新版。</p></details><div style="display:flex;justify-content:flex-end;margin-top:22px"><button class="btn primary" data-close="helpBackdrop">返回游戏</button></div></div></div></div>
+<details id="dataDetails"><summary>数据来源、时间与模型边界</summary><p><span class="source-badge official">官方参考</span> 路线名称、号码、名单和分类爬坡点沿用附件数据。规则依据 <a href="https://storage-aso.lequipe.fr/ASO/cycling_tdf/tdf26-reglement.pdf" target="_blank" rel="noopener noreferrer">ASO 2026 竞赛规程</a>；本轮复核了团计、车队总榜、奖励秒等条款。没有逐人重新核验全部 184 个出生年。</p><p><span class="source-badge sim">本作模拟</span> FTP、体重、CdA、能力、疲劳、风和天气均为设计值，不是车手私人实测或当天实况。<span class="source-badge estimate">实时估算</span> 表示未通过同一计时点时按位置、速度推算的秒差和虚拟 GC。赛段完成后的榜单才是本局正式结果。</p><p><b>路线口径：</b>21 站依据 2026 ASO 官方 Profile 的标注与主要峰谷固定简化，总里程 3,246.0 km。不按赛段类型或 D+ 生成地形。官方 D+ 单独显示，简化剖面积分不强制吻合。图中未标注的小尺度地形是手工近似，不是 GPX 或逐像素描摹。旧版进行中的存档保留该段历史坐标，下一新赛段使用本版 Profile。</p><p><b>分类：</b>公路赛按 1 秒 / 指定赛段 3 秒间隔划分同组整秒；前三名奖励 10 / 6 / 4 秒。ITT / TTT 无奖励秒。ITT 的百分之一秒、名次和及最近一站名次用于 GC 同秒判定。四衫顺序黄 → 绿 → 圆点 → 白，画面穿着根据上一站结果；虚拟榜不改变当前穿着。</p><p><b>TTT：</b>赛段领奖台按各队首名车手时间；个人 GC 使用每人自己的时间。车队总榜每站加总前三人的分类时间，不扣个人奖励秒；同分依三人名次和、最佳名次，累计依各站车队名次次数和最佳个人 GC。少于三人退出车队榜。这三个榜不混用。</p><p><b>积分歧义：</b>规程的途中冲刺文字称 15 人，但列出的积分只有 14 档。本作沿用列出的 14 个数，不补造第 15 档。白衫沿用附件 2001 年及以后出生的年度资格标签；缺少完整生日的边界不能进一步细分。</p><p><b>物理：</b>风进入空气相对速度，尾流只减少 CdA，不抵消重力。山区气压较低，空气阻力自然下降。108 km/h 是设计安全上限，轻雨 / 高山小雪略收紧上限，不代表下坡自动达到该速度。普通山地进攻不必超过 1000 W；冲刺峰值更高，但不会全程维持。</p><p><b>生理尺度：</b>W′、短爆发、功率响应、补给吸收和冷却使用模拟秒；耐力长程消耗使用参考公里，赛后负荷使用参考路程暴露。HC / 1 类山地长坡保留最低可骑时长，避免长坡被压缩成一次爆发就能跨越；平路和计时赛长度不因这项调校改变。这是明确分工的简化模型，不是运动训练处方。供给每次最多恢复 16 点耐力、渐进吸收；相同车队身份没有额外生理加成。</p><p><b>轻天气：</b>晴、多云、轻雨、炎热和极低概率高山小雪由赛段种子生成。风在 2–4 个锚点间平滑变化，只考虑纵向分量，不模拟横风梯队。轻雨增加少量滚阻，热天略增耐力负荷；不增加摔车、伤病、器材、服装或经营系统。</p><p><b>存档：</b>V8 新环法使用赛事时间。导入 V4/V7 时保留旧版游戏秒账本并明确标记，不能从没有保存的历史速度凭空恢复小时级旧成绩。新旧时间不会混算；原存储键不覆盖。刷新、导入、导出和后续赛段使用同一 Tour seed。独立重玩使用原 seed、当前模型和新鲜体力，不改写原环法，不宣称是历史录像。</p><p><b>运行：</b>单 HTML 离线运行，不请求字体、音乐或 CDN。音乐由你本地选择，不上传；刷新后需重新选择。减弱动态效果只减视觉，不减慢比赛。画面“自动 / 完整 / 轻量”只影响绘图细节，不影响物理与结果。</p><p><b>量级参考：</b><a href="https://www.letour.fr/en/rankings" target="_blank" rel="noopener noreferrer">官方 2026 最终分类</a>用于检查总时间量级，不硬编码冠军或结果。短时功率量级参考 <a href="https://pubmed.ncbi.nlm.nih.gov/26252551/" target="_blank" rel="noopener noreferrer">职业公路冲刺研究</a>；研究样本不等于每位运动员的能力。</p><p><b>V9 修复与打磨：</b>姓名牌采用持续位置、惯性和柔和避让，不以零重叠删除核心人物。比赛正式结算并保存后，在独立领奖舞台中依次展示赛段冠军与实际分类领先者，再进入结果页；可暂停、调速、切换项目或从结果页重播，刷新不会重复计分。当前没有可信的敢斗奖评选，所以不虚构该奖项。长坡可骑区间适度延长，低爬坡属性在持续上坡中的功率保持能力下降；均为通用游戏调校，不是运动员实测，也不指定任何姓名夺冠。导入中的 V8 比赛保留旧赛道坐标，下一个新赛段采用新版。</p></details><div style="display:flex;justify-content:flex-end;margin-top:22px"><button class="btn primary" data-close="helpBackdrop">返回游戏</button></div></div></div></div>
 <div class="dialog-backdrop" id="pauseBackdrop" hidden><div class="dialog small-dialog" role="dialog" aria-modal="true" aria-labelledby="pauseHeading"><div class="dialog-head"><h2 id="pauseHeading">比赛已暂停。</h2><button class="close" data-close="pauseBackdrop" aria-label="继续比赛">×</button></div><div class="dialog-body"><p class="pause-info" id="pauseInfo"></p><div class="save-transfer"><button class="btn small" id="exportSave">导出环法存档</button><button class="btn small" id="importSave">导入存档</button><input id="saveFile" type="file" accept=".json,application/json" hidden><p>迁移到另一份 HTML 前，可先导出备份。导入会询问确认。</p></div><div class="pause-actions"><button class="btn primary" id="resumeRace">继续比赛</button><button class="btn" id="pauseHelp">查看玩法</button><button class="btn" id="saveAndHome">保存并返回主菜单</button></div></div></div></div>
 <div class="dialog-backdrop" id="riderBackdrop" hidden><div class="dialog small-dialog" role="dialog" aria-modal="true" aria-labelledby="riderHeading"><div class="dialog-head"><h2 id="riderHeading">车手资料</h2><button class="close" data-close="riderBackdrop" aria-label="关闭车手资料">×</button></div><div class="dialog-body" id="riderCardBody"></div></div></div><div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 
@@ -1769,8 +1706,6 @@ class Race {
   return clamp((kind==='protect'?29:16)+strength*2+(reserve-.6)*4+(health-.6)*3,8,34);
  }
  finishKickWindow(r){
-  // Kinematics use playable metres. The HUD/profile use reference metres;
-  // do not divide a compressed reference distance by physical rider speed.
   const seconds=Math.max(0,this.stage.length-r.x)/Math.max(3,r.v);
   return {seconds,lead:clamp(Physiology.burstDuration(r,true)*.92+1,8,13.5)};
  }
@@ -1996,19 +1931,17 @@ class Race {
   }
   head=this.riders[v.order[0]];plan.workerId=head?.id??null;plan.reliefId=v.pending?.to??null;plan.chain=v.order.slice();
   if(head){
-   const cp=Physics.sustainable(head),turn=Math.max(2,v.until-this.t),reserve=Math.max(0,head.w-head.d.wCapacity*(head.tttFinalTurn?.035:.18));
-   const nominal=head.id===leader.id?cp*1.035:cp*(1.38+v.pressure*.23+(head.tttFinalTurn?.12:0));
-   const watts=Math.min(Physiology.availablePeak(head),nominal,cp+reserve/turn);
-   let want=Physics.equilibrium(watts,head.d.mass+8,Physics.cda(head,this.stage),head.grade,head.alt,head.wind,head.rolling,head.speedCap);
-   // An intact relay waits through physical spacing, not by placing riders.
-   // A merge intentionally leaves two wheel lengths before the captain.
-   if(!v.launched&&progress<.88){
-    for(let i=1;i<v.order.length;i++){
-     const a=this.riders[v.order[i-1]],b=this.riders[v.order[i]],space=a.x-b.x;
-     const slot=b.id===leader.id&&v.mergeId!==null?gap*2:gap;
-     if(space>slot+4&&b.v<head.v+.4)want=Math.min(want,Math.max(4,b.v-clamp((space-slot-4)*.085,0,1.2)));
+    const cp=Physics.sustainable(head),turn=Math.max(2,v.until-this.t),reserve=Math.max(0,head.w-head.d.wCapacity*(head.tttFinalTurn?.035:.18));
+    const nominal=head.id===leader.id?cp*1.035:cp*(1.38+v.pressure*.23+(head.tttFinalTurn?.12:0));
+    const watts=Math.min(Physiology.availablePeak(head),nominal,cp+reserve/turn);
+    let want=Physics.equilibrium(watts,head.d.mass+8,Physics.cda(head,this.stage),head.grade,head.alt,head.wind,head.rolling,head.speedCap);
+    if(!v.launched&&progress<.88){
+     for(let i=1;i<v.order.length;i++){
+      const a=this.riders[v.order[i-1]],b=this.riders[v.order[i]],space=a.x-b.x;
+      const slot=b.id===leader.id&&v.mergeId!==null?gap*2:gap;
+      if(space>slot+4&&b.v<head.v+.4)want=Math.min(want,Math.max(4,b.v-clamp((space-slot-4)*.085,0,1.2)));
+     }
     }
-   }
    if(head.grade<-.03)want=Math.min(want,24);
    v.pace+=clamp(want-v.pace,-dt*.72,dt*(this.t<30?.24:.42));
   }
@@ -2027,8 +1960,7 @@ class Race {
    const li=v.order.indexOf(leader.id),tail=this.riders[v.order[Math.max(0,li-1)]];if(!tail)return cp*.9;
    const target=tail.id===leader.id?leader.x+gap:tail.x-gap,cap=v.reserves.includes(r.id)&&r.w>r.d.wCapacity*.30?lerp(1.85,1.60,pressure):lerp(1.85,1.30,pressure);
    r.aiState=v.mergeId===r.id?'rejoin':'recover';r.lane=v.mergeId===r.id&&v.mergeReady?base:base+.95;
-   // Do not invoke the ordinary reversed-wheel escape while still outside.
-   // Only engage the wheel controller after the physical merge slot is open.
+   // Do not enter the ordinary wheel controller until the physical merge slot is open.
    if(v.mergeId===r.id&&tail.id!==leader.id&&v.mergeReady)return this.followWheel(r,tail,Math.min(cap,1.42),gap,r.lane);
    if(v.mergeId!==r.id&&r.x>tail.x+8)return this.followPower(r,Math.max(3,tail.v-1.5),r.x,1.35);
    return this.followPower(r,tail.v,target,cap);
@@ -2883,7 +2815,7 @@ function paintBike(ctx,wheel,player,tt,lod=false){
  for(const wx of [-25,25]){
   ctx.strokeStyle=lod?'#3c5146':'#202a2b';ctx.lineWidth=lod?2.0:tt?3.8:2.9;ctx.beginPath();ctx.arc(wx,0,12.8,0,Math.PI*2);ctx.stroke();
   if(!lod){ctx.strokeStyle='#e2e5d5';ctx.lineWidth=.65;ctx.beginPath();ctx.arc(wx,0,11.4,0,Math.PI*2);ctx.stroke();}
-  for(let j=0;j<(lod||wheel===null?0:3);j++){const a=wheel+j*Math.PI/3;pathStroke(ctx,[[wx+Math.cos(a)*10.8,Math.sin(a)*10.8],[wx-Math.cos(a)*10.8,-Math.sin(a)*10.8]],'#a1b2a4',.60);}
+  for(let j=0;j<(lod?0:3);j++){const a=wheel+j*Math.PI/3;pathStroke(ctx,[[wx+Math.cos(a)*10.8,Math.sin(a)*10.8],[wx-Math.cos(a)*10.8,-Math.sin(a)*10.8]],'#a1b2a4',.60);}
   circle(ctx,wx,0,1.4,'#e2e5d8');
  }
  if(!lod)pathStroke(ctx,[[-25,0],[-12,-25],[-2,-2],[-25,0]],'#253b3b',3.6);
@@ -2894,16 +2826,11 @@ function paintBike(ctx,wheel,player,tt,lod=false){
  pathStroke(ctx,[[-25,0],[-2,-2]],'#ccd0b9',.6);circle(ctx,-2,-2,3.3,'#99ada6');circle(ctx,-2,-2,1.7,'#273935');
  pathStroke(ctx,[[-8,-18],[-5,-10]],'#eeeede',3);pathStroke(ctx,[[8,-20],[5,-12]],player?'#c65a45':'#c4c8b9',2.8);
 }
-function cachedBike(ctx,phase,player,tt,lod=false,speed=0){
- const key='v21:'+Number(player)+':'+Number(tt);let c=BikeSprites.get(key);
- if(!c){c=document.createElement('canvas');c.width=176;c.height=122;const g=c.getContext('2d');g.scale(2,2);g.translate(44,43);paintBike(g,null,player,tt,false);BikeSprites.set(key,c);}
- // Spokes disappear into a fine optical disk with real road speed, never
- // quantize into a reverse-spinning or stationary cached wheel.
- ctx.save();ctx.strokeStyle='#b9c8ca';ctx.lineWidth=.55;ctx.globalAlpha=clamp(.66-Math.abs(speed)*.035,.13,.66);ctx.beginPath();
- for(const wx of [-25,25])for(let j=0;j<3;j++){const a=phase+j*Math.PI/3,dx=Math.cos(a)*10.8,dy=Math.sin(a)*10.8;ctx.moveTo(wx+dx,dy);ctx.lineTo(wx-dx,-dy);}ctx.stroke();ctx.restore();
+function cachedBike(ctx,phase,player,tt,lod=false){
+ const f=lod?0:Math.floor(((phase%(Math.PI*2)+Math.PI*2)%(Math.PI*2))/(Math.PI*2)*24),key=f+':'+(+player)+':'+(+tt)+':'+(+lod);let c=BikeSprites.get(key);
+ if(!c){c=document.createElement('canvas');c.width=176;c.height=122;const g=c.getContext('2d');g.scale(2,2);g.translate(44,43);paintBike(g,f*Math.PI*2/24,player,tt,lod);BikeSprites.set(key,c);}
  ctx.drawImage(c,-44,-43,88,61);
 }
-
 /* Cached, code-native scenery. Noise keys are independent of Race.rng. */
 const SceneArt={trees:new Map(),roadTiles:new WeakMap(),
  tree(c,x,y,size,kind='broad',tone=1){
@@ -3066,9 +2993,9 @@ function cachedCyclistBody(ctx,color,phase,isPlayer,tt,jersey,m){
 function drawCyclist(ctx,x,y,scale,color,phase,attack=false,isPlayer=false,tt=false,jersey=null,motion=null){
  const m=motion||{stand:attack?1:0,tuck:tt?1:0,coast:0,signal:0,load:1,wheel:phase*2},stand=m.stand||0;
  ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);ctx.lineCap='round';ctx.lineJoin='round';
- const sway=(reducedMotion?0:Math.sin(phase))*stand*(.028+(m.sprint||0)*.026)*clamp((m.load??1)-.4,.3,1.3);ctx.transform(1,0,sway,1,-12.8*sway,0);
+ const sway=(reducedMotion?0:Math.sin(phase))*stand*(.034+(m.sprint||0)*.018);ctx.transform(1,0,sway,1,-12.8*sway,0);
  /* Keep wheel rendering invariant across focus/hover. Body LOD may still reduce pose detail, but the bicycle always keeps the full dark tyre, inner rim and spokes so dense pelotons do not flash from teal partial wheels to full wheels on hover. */
- cachedBike(ctx,m.wheel??phase*2,isPlayer,tt,false,m.speed||0);
+ cachedBike(ctx,m.wheel??phase*2,isPlayer,tt,false);
  if(!m.lod||scale>1.35||isPlayer||m.focused)paintCyclistBody(ctx,color,phase,isPlayer,tt,jersey,m);else cachedCyclistBody(ctx,color,phase,isPlayer,tt,jersey,m);
  ctx.restore();
 }
@@ -3081,8 +3008,8 @@ function sceneNoise(n){const x=Math.sin(n*127.13+39.71)*43758.5453;return x-Math
 /* V19 atmosphere is a read-only presentation palette. Rain never enters the
    model; sky, distance and asphalt share the actual seeded weather condition. */
 const RaceLightV20={
- sun:{sky:'#83acbd',horizon:'#ece6cb',roadTop:'#68757c',roadMid:'#43535d',roadNear:'#2b3d47',haze:'#e7e8cb'},
- cloud:{sky:'#9aadb8',horizon:'#d3dcd4',roadTop:'#64717b',roadMid:'#4c5b66',roadNear:'#334852',haze:'#cbd8d3'},
+ sun:{sky:'#94b9c4',horizon:'#f0e6c9',roadTop:'#71776e',roadMid:'#535e58',roadNear:'#344642',haze:'#e7e8cb'},
+ cloud:{sky:'#a7b9bd',horizon:'#d3dcd4',roadTop:'#68746e',roadMid:'#586761',roadNear:'#40534d',haze:'#cbd8d3'},
  rain:{sky:'#829ba5',horizon:'#bdcbd0',roadTop:'#576a70',roadMid:'#475d63',roadNear:'#354c52',haze:'#becdd2'},
  hot:{sky:'#c9d2c1',horizon:'#eee0b9',roadTop:'#7a7b6a',roadMid:'#656b59',roadNear:'#495547',haze:'#e7d7b4'}
 };
@@ -3191,7 +3118,7 @@ const RaceArtV20={
 function drawScenery(ctx,w,h,stage,s,motion,time,riders,player,hero=false,view=null){
  const scenicMotion=reducedMotion?0:motion,weather=hero?'sun':view?.race.conditions.kind||'sun',light=RaceLightV20[weather]||RaceLightV20.cloud;
  const env=stage.environment,mountain=['alps','pyrenees','massif','vosges'].includes(env),city=['city','paris'].includes(env),lake=env==='lake';
- const lens=hero?1:view?.lens??1,anchor=w*(hero?.40:view?.cameraAnchor??.40),scaleX=(stage.type==='TTT'?Math.min(w<550?9:18,w/42):(w<550?11:18.5))*lens,roadY=h*(hero?.79:.68),roadWidth=hero?(h<300?59:75):(w<550?104:clamp(h*.37,104,147))*lens,grade=hero?.06:(player.grade||0),slopeLimit=hero?.085:Math.min(.085,Math.max(.014,(h-roadY-roadWidth*.68-7)/Math.max(anchor,w-anchor))),slope=clamp(grade*.72,-slopeLimit,slopeLimit),ground=x=>roadY-(x-anchor)*slope;
+ const lens=hero?1:view?.lens??1,anchor=w*(hero?.40:view?.cameraAnchor??.40),scaleX=(stage.type==='TTT'?Math.min(w<550?9:18,w/42):(w<550?11:18.5))*lens,roadY=h*(hero?.79:.68),roadWidth=(hero?(h<300?59:75):(w<550?104:clamp(h*.37,104,147)))*lens,grade=hero?.06:(player.grade||0),slopeLimit=hero?.085:Math.min(.085,Math.max(.014,(h-roadY-roadWidth*.68-7)/Math.max(anchor,w-anchor))),slope=clamp(grade*.72,-slopeLimit,slopeLimit),ground=x=>roadY-(x-anchor)*slope;
  if(view)view.projection={anchor,scaleX,roadY,roadWidth,playerX:s,lens};
  const sky=ctx.createLinearGradient(0,0,0,h*.70);sky.addColorStop(0,hero?(mountain?'#b7cccf':'#c7d5cd'):light.sky);sky.addColorStop(.72,hero?(mountain?'#e1e4d8':'#ebe9d7'):light.horizon);sky.addColorStop(1,hero?'#e3e5d3':light.horizon);ctx.fillStyle=sky;ctx.fillRect(0,0,w,h);
  if(weather==='sun'||weather==='hot')circle(ctx,w*.79,h*.21,h*.055,weather==='hot'?'#f5e7be':'#f7f1d7');
@@ -3218,7 +3145,7 @@ function drawScenery(ctx,w,h,stage,s,motion,time,riders,player,hero=false,view=n
    }
   };
 
-ridge(0,env==='massif'?'#c1c5a3':env==='vosges'?'#b5c6ac':env==='pyrenees'?'#bfc9b7':mountain?'#b0c3c7':'#bbcab6',mountain?h*.31:h*.055,mountain?.58:.54);ridge(1,env==='massif'?'#a4b384':env==='vosges'?'#86a485':env==='pyrenees'?'#96a78e':mountain?'#7f9ea5':'#a1b492',mountain?h*.25:h*.075,mountain?.65:.62);ridge(2,env==='massif'?'#879b6d':env==='vosges'?'#638566':env==='pyrenees'?'#6e876c':mountain?'#567e86':'#7d9b7b',mountain?h*.14:h*.06,.72);
+ridge(0,env==='massif'?'#c1c5a3':env==='vosges'?'#b5c6ac':env==='pyrenees'?'#bfc9b7':mountain?'#bbccc6':'#bdcbb2',mountain?h*.31:h*.055,mountain?.58:.54);ridge(1,env==='massif'?'#a4b384':env==='vosges'?'#86a485':env==='pyrenees'?'#96a78e':mountain?'#91aca1':'#a6ba96',mountain?h*.25:h*.075,mountain?.65:.62);ridge(2,env==='massif'?'#879b6d':env==='vosges'?'#638566':env==='pyrenees'?'#6e876c':mountain?'#72917b':'#8ba780',mountain?h*.14:h*.06,.72);
  if(lake){ctx.fillStyle='#8bb1b1';ctx.fillRect(0,h*.435,w,h*.20);ctx.strokeStyle='#c8d7caaa';for(let i=0;i<9;i++){const xx=((i*163-scenicMotion*.22)%(w+100)+(w+100))%(w+100);pathStroke(ctx,[[xx,h*(.45+i*.016)],[xx+90,h*(.45+i*.016)]],'#d0dcd180',.75);}}
  ctx.fillStyle=mountain?'#98a282':'#b3bc8d';ctx.beginPath();ctx.moveTo(0,h*.68);for(let x=0;x<=w+30;x+=60)ctx.lineTo(x,h*.67+Math.sin((x+scenicMotion*.4)/390)*h*.028);ctx.lineTo(w,h);ctx.lineTo(0,h);ctx.closePath();ctx.fill();
  if(!mountain&&!lake){const fieldOff=scenicMotion*.10,span=w/4;for(let i=Math.floor(fieldOff/span)-1;i<Math.ceil((fieldOff+w)/span)+1;i++){const x=i*span-fieldOff;ctx.fillStyle=['#abb58c','#a5b687','#c3c399','#94ac86','#b9bf97'][((i%5)+5)%5];ctx.beginPath();ctx.moveTo(x,h*.48);ctx.lineTo(x+w*.30,h*.49);ctx.lineTo(x+w*.45,h*.62);ctx.lineTo(x-w*.10,h*.62);ctx.closePath();ctx.fill();pathStroke(ctx,[[x,h*.48],[x-w*.10,h*.62]],'#d8d6af',.7);}}
@@ -3263,7 +3190,7 @@ ridge(0,env==='massif'?'#c1c5a3':env==='vosges'?'#b5c6ac':env==='pyrenees'?'#bfc
    const interpolated=hero?r.x:v?.world??r.renderX??r.x,playerX=s;
    const x=anchor+(interpolated-playerX)*scaleX;if(x< -80||x>w+80)continue;
    const y=ground(x)+(hero?(z/2-2.5)*(h<300?6:8):(z-5)*roadWidth*.083);
-   const scale=(w<550?.77:1.02)*(hero?1.25*(.91+z*.018):.73+z*.047)*lens;
+   const scale=(w<550?.77:1.02)*(hero?1.25*(.91+z*.018):.78+z*.033)*lens;
    drawn.push({r,x,y,scale,z,v,opacity:hero?1:roadActorOpacityV21(r,time)});
   }
   drawn.sort((a,b)=>a.z-b.z||a.r.id-b.r.id);
@@ -3279,7 +3206,7 @@ ridge(0,env==='massif'?'#c1c5a3':env==='vosges'?'#b5c6ac':env==='pyrenees'?'#bfc
   for(const o of drawn)if(o.r.id===player.id){ctx.save();ctx.globalAlpha=.9;const yy=o.y+17*o.scale;pathStroke(ctx,[[o.x-9,yy],[o.x+9,yy]],'#d8bc41',2);ctx.restore();}
   for(const o of drawn){const {r,x,y,scale,v}=o,attack=isAttacking(r,time),phase=v?.phase??time*1.4*Math.PI*2+r.id*.73;
    ctx.save();ctx.globalAlpha=o.opacity;ctx.translate(x,y);ctx.rotate(-Math.atan(slope));// Opaque silhouettes: a nearer jersey occludes the bicycle behind it.
-   const pose=v?{stand:v.stand,tuck:v.tuck,coast:v.coast,signal:v.signal,load:v.load,sprint:v.sprint,climb:v.climb,fatigueDrop:v.fatigueDrop,surge:v.surge,celebrate:v.celebrate,lunge:v.lunge,identity:r.id,speed:r.v,focused:v.priority>=3,wheel:v.world/.34,lod:!hero&&!stage.isTT&&v.priority<3&&(RenderBudget.low()||o.z<3&&Math.abs(r.x-player.x)>18)}:null;
+   const pose=v?{stand:v.stand,tuck:v.tuck,coast:v.coast,signal:v.signal,load:v.load,sprint:v.sprint,climb:v.climb,fatigueDrop:v.fatigueDrop,surge:v.surge,celebrate:v.celebrate,lunge:v.lunge,identity:r.id,focused:v.priority>=3,wheel:v.world/.34,lod:!hero&&!stage.isTT&&v.priority<3&&(RenderBudget.low()||o.z<3&&Math.abs(r.x-player.x)>18)}:null;
    drawCachedCyclist(ctx,scale,r.d.color,phase,attack,r.id===player.id,stage.isTT,r.jersey,pose);ctx.restore();
   }
   // A few readable wheel sprays, only on nearby focused riders at real speed.
@@ -3507,8 +3434,33 @@ class RaceView{
   // draft or anything used by the simulation. No selection cap or per-slot cull.
   for(const r of active){let v=this.riders.get(r.id);if(!v){v={id:r.id,r,z:race.stage.type==='TTT'?5:1+(5-clamp(r.drawLane,0,5.9))*1.48,target:0,phase:r.id*.73,cadence:84,stand:0,tuck:0,coast:0,signal:0,passSide:0,passUntil:0};v.target=v.z;this.riders.set(r.id,v);}v.r=r;v.world=r.finishedTime!==null?r.x:lerp(r.prevX??r.x,r.x,this.alpha??1);}
   const list=active.map(r=>this.riders.get(r.id)).sort((a,b)=>a.world-b.world||a.id-b.id);
-  for(const v of list){const r=v.r,base=1+(5-clamp(r.drawLane,0,5.9))*1.48;
-   v.target=clamp(race.stage.type==='TTT'?5+clamp(r.drawLane-r.d.teamId%6,0,1)*2:base,.4,9.55);v.physicalDepth=v.target;
+  if(initial||time-this.laneTargetsAt>.16){this.laneTargetsAt=time;
+   for(const v of list){
+    const r=v.r,plan=race.teams[r.d.teamId],small=r.smallLineUid===race.groups[r.groupId]?.uid?race.groups[r.groupId]?.line:null,q=race.stage.type==='TTT'?plan.relay:small||plan.paceline;
+    const tt=race.stage.type==='TTT',base=tt?5:1+(5-clamp(r.drawLane,0,5.9))*1.48;
+    const member=small?small.order.includes(r.id):plan.chain.includes(r.id),bypass=q?.pending?.from===r.id||q?.returning?.includes(r.id)&&(q.mergeId!==r.id||q.mergeReady===false)||r.spent||q?.incoming===r.id;
+    // Follow physical lane changes in a single consistent projection. A train
+    // shares a centre line. Other riders keep their own fixed slight stagger.
+    let preferred=tt?5+clamp(r.drawLane-plan.teamId%6,0,1)*2.0:base;
+     // No longitudinal overtaking offset: the on-screen progress is physical.
+    v.previousTarget=v.target;v.target=clamp(preferred,.4,9.55);v.physicalDepth=v.target;
+   }
+   if(!race.stage.isTT){
+    // V13 final peloton packing: visual overlap is intentionally allowed.
+    // One to three near-coincident riders may share silhouette space so a dense
+    // bunch reads as a stable body instead of constantly fanning left/right.
+    // Only a genuine 4+ rider pile-up receives a strong screen-depth response.
+    // This remains presentation-only: x/lane/drawLane/draft/frontId are untouched.
+    const placed=[];
+    for(const v of list){
+     while(placed.length&&v.world-placed[0].world>3.0)placed.shift();
+     const base=v.physicalDepth,stable=clamp(base+(sceneNoise(v.id+173)-.5)*.14,.4,9.55),sign=sceneNoise(v.id+811)>.5?1:-1;
+     const held=clamp(v.previousTarget,Math.max(.4,stable-.90),Math.min(9.55,stable+.90));
+     const options=[held,stable,stable+sign*.38,stable-sign*.38,stable+sign*.68,stable-sign*.68,stable+sign*.90,stable-sign*.90].map(z=>clamp(z,.4,9.55));
+     const score=z=>{let gentle=0,pile=0;for(const f of placed){const dx=Math.abs(v.world-f.world),longitudinal=1-clamp(dx/3,0,1),dz=Math.abs(z-f.target);gentle+=Math.pow(Math.max(0,.16-dz),2)*.7*longitudinal;if(dz<.24)pile+=longitudinal;}const overload=Math.max(0,pile-2.05);return overload*overload*14+gentle+Math.abs(z-stable)*.20+Math.abs(z-v.z)*.055+(Math.abs(z-held)>.30?.025:0);};
+     const best=options.reduce((a,b)=>score(a)<=score(b)?a:b);v.target=score(held)<=score(best)+.08?held:best;placed.push(v);
+    }
+   }
   }
   for(const v of list){const r=v.r,load=r.finishedTime!==null?0:r.power/Math.max(1,Physics.sustainable(r)),attack=isAttacking(r,race.t),tt=race.stage.isTT;
    const climbing=r.grade>.045&&load>.92,sprinting=r.aiState==='sprint'||r.attackKind==='sprint'&&r.attackUntil>race.t;
@@ -3517,9 +3469,8 @@ class RaceView{
    const stand=tt?0:sprinting&&load>1.02?.94:attack&&load>1.08?.88:torque*.82;
    const tuck=stand<.35?(tt?1:r.grade<-.025&&r.v>11?.96:r.v>15&&load<1?.40:0):0,coast=load<.12?1:0;
    const rpm=r.finishedTime!==null?0:Physiology.cadence(r);
-   v.z=v.target; // Lane changes must remain visible when they physically happen.
-   if(initial){v.stand=stand;v.tuck=tuck;v.coast=coast;v.cadence=rpm;}
-   else{settlePoseV21(v,'stand',stand,dt,9);settlePoseV21(v,'tuck',tuck,dt,8);settlePoseV21(v,'coast',coast,dt,10);v.cadence=lerp(v.cadence,rpm,1-Math.exp(-dt*5));v.phase=(v.phase+v.cadence/60*Math.PI*2*dt)%(Math.PI*2);}
+   if(initial){v.z=v.target;v.stand=stand;v.tuck=tuck;v.coast=coast;v.cadence=rpm;}
+   else{const laneEase=tt?4.2:3.0,laneRate=tt?.90:.60;v.z+=clamp((v.target-v.z)*(1-Math.exp(-dt*laneEase)),-dt*laneRate,dt*laneRate);settlePoseV21(v,'stand',stand,dt,9);settlePoseV21(v,'tuck',tuck,dt,8);settlePoseV21(v,'coast',coast,dt,10);v.cadence=lerp(v.cadence,rpm,1-Math.exp(-dt*5));v.phase=(v.phase+v.cadence/60*Math.PI*2*dt)%(Math.PI*2);}
    const plan=race.teams[r.d.teamId],queue=race.stage.type==='TTT'?plan.relay:race.groups[r.groupId]?.line||plan.paceline,peeling=race.signalTurn(queue,r.id)||r.aiState==='peel'&&queue?.pending&&race.t-queue.pending.at<1.0;
    v.signal=lerp(v.signal,peeling?1:0,initial?1:1-Math.exp(-dt*4));v.load=load;
     v.surge=lerp(v.surge||0,clamp(r.lastAcceleration||0,-1.5,1.5),initial?1:1-Math.exp(-dt*3));
@@ -4153,12 +4104,6 @@ function drawLandmarksV17(ctx,w,h,stage,s,anchor,scaleX,ground,roadWidth,race,ti
  if(!race||stage.isTT)return;
  ctx.save();
  const localPlayer=s;
- const flame=anchor+(race.course.toLocal(stage.reference.length-1000)-s)*scaleX;
- if(flame>-70&&flame<w+70){const y=ground(flame)-roadWidth*.44;
-  pathStroke(ctx,[[flame,y],[flame,y-77]],'#eee8d3',2.8);
-  ctx.fillStyle='#b94f43';ctx.beginPath();ctx.moveTo(flame-1,y-77);ctx.lineTo(flame+31,y-77);ctx.lineTo(flame+15,y-54);ctx.lineTo(flame-1,y-77);ctx.fill();
-  ctx.fillStyle='#f4ecda';ctx.fillRect(flame-11,y-48,40,19);ctx.fillStyle='#35474d';ctx.font='700 10px '+CONFIG_FONT;ctx.textAlign='center';ctx.fillText('1 KM',flame+9,y-35);
- }
  for(const c of race.checkpoints){
   if(!['kom','sprint'].includes(c.kind))continue;
   for(const ahead of [1000,0]){
@@ -4998,7 +4943,7 @@ function situationGapV20(race,target){
 }
 function groupSituation(race){
  const p=race.player;
- if(race.stage.isTT){const team=race.teams[p.d.teamId],q=team.relay,head=race.riders[q?.order?.[0]],left=Math.max(0,race.stage.reference.length-race.routeX(p));return `<div class="situation-card"><span class="situation-eyebrow">${race.stage.type==='TTT'?'TEAM TIME TRIAL':'INDIVIDUAL TIME TRIAL'}</span><strong>${race.stage.type==='TTT'?(q?.pending?'交棒进行中':head?.id===p.id?'你正在领骑':p.draft>.06?'接在队友的尾流里':'正在建立队列'):'与自己的节奏较量。'}</strong><p class="situation-reading">${race.stage.type==='TTT'?`${head?escapeHTML(displayName(head)):'本队'} 正在领骑 · ${q?.order?.length||0} 人在接力队列`:'禁用跟车减阻；地形、功率与储备决定速度。'}</p><div class="situation-gaps"><span>剩余参考里程<b>${formatDistance(left)}</b></span><span>爆发储备<b>${Math.round(p.w/p.d.wCapacity*100)}%</b></span></div><p class="group-total">排名使用同点计时；画面位置不代表分批出发的名次。</p></div>`;}
+ if(race.stage.isTT){const team=race.teams[p.d.teamId],q=team.relay,head=race.riders[q?.order?.[0]],left=Math.max(0,race.stage.reference.length-race.routeX(p));return `<div class="situation-card"><span class="situation-eyebrow">${race.stage.type==='TTT'?'TEAM TIME TRIAL':'INDIVIDUAL TIME TRIAL'}</span><strong>${race.stage.type==='TTT'?'轮换有序，计时独立。':'与自己的节奏较量。'}</strong><p class="situation-reading">${race.stage.type==='TTT'?`${head?escapeHTML(displayName(head)):'本队'} 正在领骑 · ${q?.order?.length||0} 人在接力队列`:'禁用跟车减阻；地形、功率与储备决定速度。'}</p><div class="situation-gaps"><span>剩余参考里程<b>${formatDistance(left)}</b></span><span>爆发储备<b>${Math.round(p.w/p.d.wCapacity*100)}%</b></span></div><p class="group-total">排名使用同点计时；画面位置不代表分批出发的名次。</p></div>`;}
  const groups=race.groups,own=groups.findIndex(g=>g.ids.includes(p.id)),g=groups[own];if(!g)return '<div class="course-next">你已结束本赛段。正式结果将在全场结算后显示。</div>';
  const front=own>0?groups[own-1]:null,back=groups[own+1],account=fieldAccounting(race),threat=race.riders[race.gcThreat?.id],left=race.stage.reference.length-race.routeX(p);
  const target=threat||race.riders[front?.ids.at(-1)]||race.riders[back?.ids[0]],reserve=p.w/p.d.wCapacity;
@@ -5145,9 +5090,7 @@ function updateRaceSidebar(r){
  $('gcSituation').classList.toggle('threat',Boolean(r.gcThreat));
 }
 
-// FINISHED is a terminal simulation state: the engine stops at the line.
-// Retire that actor into the results/ceremony presentation, never invent run-out
-// distance or let completed riders stack indefinitely in the racing field.
+// Completed riders stay at their actual finish coordinate and fade only from the road layer.
 function roadActorOpacityV21(r,time){
  if(r.status!=='FINISHED'||!Number.isFinite(r.finishedTime))return 1;
  if(reducedMotion)return 0;
@@ -5752,7 +5695,7 @@ const Ceremony={
  start(){const f=App.finishFlow;if(!f?.snapshot||f.phase==='ceremony')return;f.phase='ceremony';f.elapsed=0;f.last=performance.now();$('ceremonySaveActions').hidden=true;$('finishStatus').hidden=true;CeremonyPlayer.mount(f);this.announce('赛后领奖开始。比赛成绩已经固化，动画不改变结果。');},
  announce(text){if($('ceremonyCaption').textContent===text)return;$('ceremonyCaption').textContent=text;$('ceremonyCanvas').setAttribute('aria-label',text);},
  retrySave(){const f=App.finishFlow;if(!f||f.phase!=='save-blocked')return;if(persist()){f.saved=true;f.phase='finish';CeremonyPlayer.unmount();$('ceremonyLayer').hidden=true;$('ceremonySaveActions').hidden=true;}else this.drawBlocked();},
- exportAndContinue(){const f=App.finishFlow;if(!f||f.phase!=='save-blocked')return;downloadJSON(SaveCodec.encode(Store),'grand-tour-v21-unsaved-backup.json');f.exported=true;f.phase='finish';CeremonyPlayer.unmount();$('ceremonySaveActions').hidden=true;$('ceremonyLayer').hidden=true;toast('已发起备份下载；浏览器内保存仍未成功。请保留下载文件，不要直接关闭页面。');},
+ exportAndContinue(){const f=App.finishFlow;if(!f||f.phase!=='save-blocked')return;downloadJSON(SaveCodec.encode(Store),'grand-tour-v16-unsaved-backup.json');f.exported=true;f.phase='finish';CeremonyPlayer.unmount();$('ceremonySaveActions').hidden=true;$('ceremonyLayer').hidden=true;toast('已发起备份下载；浏览器内保存仍未成功。请保留下载文件，不要直接关闭页面。');},
  advance(now){
   const f=App.finishFlow;if(!f)return;
   if(f.phase==='save-blocked'){this.drawBlocked();return;}
@@ -6183,8 +6126,6 @@ Object.assign(Race.prototype,{
   const reaction=this.flags.sprintReactions?.[r.id],respond=reaction&&reaction.at<=this.t&&reaction.kind!=='FINAL_LEADOUT_STARTED'&&this.t-reaction.at<2&&left<1050;
   const released=q?.launched||attached&&q.pending?.from===f?.id&&Math.abs(f.drawLane-this.trainBase(plan,q))>.45;
   const kick=this.finishKickWindow(r);
-  // The front of the race commits at a sustainable time-to-line, not a fixed
-  // 520 m. Reaction contagion may not spend a 12 s burst a kilometre out.
   const timelyResponse=respond&&left<=600&&kick.seconds<=kick.lead*1.12;
   const stalled=attached&&(f.v<r.v-.55||f.lastAcceleration<-.55||f.w<f.d.wCapacity*.06);
   const force=left<=450&&kick.seconds<=kick.lead;
@@ -6230,7 +6171,7 @@ Object.assign(Race.prototype,{
    }else{
     const ctx=this.groupContext(p),rank=ctx.rank.get(p.id)||1,plan=this.teams[p.d.teamId];
     const tactical=['leadout','gc-chase','sprint-chase','mountain'].includes(plan.objective)&&plan.chain.includes(p.id);
-    if(rank===1&&!tactical&&p.sprintStarted===null){p.assistWheel=-1;p.brake=0;this.followState='searching';this.followReason='已到集团最前 · 轻收功率让轮，保持前列而不长期吃风';return this.followPower(p,Math.max(3,Math.min(ctx.pace,p.v)-.18),p.x,1.03);}
+    if(rank===1&&!tactical&&p.sprintStarted===null){p.assistWheel=-1;p.brake=0;this.followState='searching';this.followReason='已到集团最前 · 轻收功率让轮，保持前列而不长期吃风';return Physics.sustainable(p)*.84;}
    }
   }
   return V183Original.playerIntent.call(this);
@@ -6322,7 +6263,7 @@ window.addEventListener('orientationchange',redrawProfilesV181);
 /* Opt-in test API: absent during normal play. It exercises the production
    engine and UI; no test library, network request or runtime dependency. */
 if(TEST_MODE){
- window.__TOUR_TEST__={profileGeometryV181,profilePositionV181,drawProfile,courseProfileV181,diagnosticsV181,inspectGroupContextV181,V16_STAGE_DATA,V17_STAGE_DATA,V18_STAGE_DATA,V181_STAGE_DATA,flowMemoryV18,CeremonyPlayer,QuickFinish,quickFinishStage,CeremonyGeometry,SceneArt,MobileCentre,raceInsights,gapTrend,teamSituation,RiderHover,riderRoleLabel,riderAction,fieldAccounting,riderRelationLabel,CeremonyStage,Ceremony,LabelMotion,freezePresentation,beginResults,initializeRace,Perf,RenderBudget,riderAttributes,openHistory,backHistory,showArchiveResult,replayHistory,derivedHistory,gcChange,inspectRider,setDeskGroup,renderPodium,renderClassification,Weather,RaceTiming,TeamClassification,SaveCodec,seedForStage,normalizeRecord,TEST_MODE,Music,requestWheel,updateFollowUI,drawSlipstream,App,Store:()=>Store,Race,Physics,STAGE_DATA,RIDER_DATA,CONFIG,CyclistRigV21,settlePoseV21,RaceDirector,CompactCourse,SimulationClock,Classification,Fatigue,RACE_RULES,Physiology,TimeLimits,Desk,isRacing,drawRiderLabels,drawScenery,setDeskTab,updateDesk,clock:()=>raceClock,
+ window.__TOUR_TEST__={CyclistRigV21,settlePoseV21,updatePowerHistoryV21,profileGeometryV181,profilePositionV181,drawProfile,courseProfileV181,diagnosticsV181,inspectGroupContextV181,V16_STAGE_DATA,V17_STAGE_DATA,V18_STAGE_DATA,V181_STAGE_DATA,flowMemoryV18,CeremonyPlayer,QuickFinish,quickFinishStage,CeremonyGeometry,SceneArt,MobileCentre,raceInsights,gapTrend,teamSituation,RiderHover,riderRoleLabel,riderAction,fieldAccounting,riderRelationLabel,CeremonyStage,Ceremony,LabelMotion,freezePresentation,beginResults,initializeRace,Perf,RenderBudget,riderAttributes,openHistory,backHistory,showArchiveResult,replayHistory,derivedHistory,gcChange,inspectRider,setDeskGroup,renderPodium,renderClassification,Weather,RaceTiming,TeamClassification,SaveCodec,seedForStage,normalizeRecord,TEST_MODE,Music,requestWheel,updateFollowUI,drawSlipstream,App,Store:()=>Store,Race,Physics,STAGE_DATA,RIDER_DATA,CONFIG,RaceDirector,CompactCourse,SimulationClock,Classification,Fatigue,RACE_RULES,Physiology,TimeLimits,Desk,isRacing,drawRiderLabels,drawScenery,setDeskTab,updateDesk,clock:()=>raceClock,
   start:(stage,id=0,mode='single')=>{if(mode==='tour'&&!Store.tour)Store.tour={id:'test-tour',playerId:0,seedBase:2026001,seedOrigin:'test',results:[]};initializeRace(new Race(stage,id,mode,mode==='tour'&&stage>0?Store.tour.results[stage-1]:null));},
   step:(count=1,autoplay=false)=>{for(let i=0;i<count&&!App.race.complete;i++)App.race.tick(autoplay);if(!isRacing(App.race.player)){if(App.race.complete)finalizeRace();else beginResults();}else{updateHud(true);drawRace();}return {t:App.race.t,complete:App.race.complete,playerX:App.race.player.x,finished:App.race.finishedCount};},
   save:saveActive,reloadStore:loadStore,totals:totalsForTour,rank:rankingFor,finalize:finalizeRace,navigate,updateHud,drawRace,
