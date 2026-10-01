@@ -33,7 +33,7 @@ python tests/v23/static_verify.py --manifest
 
 `--injected` 只供不支持本地文件的受限环境诊断，不作为本版本离线运行或持久化验收证据。性能结果仅代表所记录环境的一次短采样，不能外推到真实手机。
 
-颁奖迭代以 V22 舞台为基线。`sequence_verify.py` 另从完整环法存档打开第 18 站档案，检查四种领骑衫穿着、各章节选中状态、GC 入场/穿着和最后持续举杯；421 个连续姿态检查双肘朝向、抬杯连续性、固定臂长（按深度投影）和双手握柄。包内 `verification/racing-baseline/` 是颁奖迭代前的比赛与性能证据；`verification/ceremony-scope.json` 记录比赛代码保持一致的逐段校验。本轮重跑范围见报告，不能把旧 JSON 的源文件哈希当作当前 HTML 哈希。
+颁奖迭代以 V22 舞台为基线。`sequence_verify.py` 另从完整环法存档打开第 18 站档案，检查四种领骑衫穿着、各章节选中状态、GC 入场/穿着和最后持续举杯；421 个连续姿态检查双肘朝向、抬杯连续性、固定臂长（按深度投影）和双手握柄。包内 `verification/racing-baseline/` 是颁奖迭代前的比赛与性能证据；证据来源与适用范围见 `verification/VERIFICATION-PROVENANCE.md`。本轮重跑范围见报告，不能把旧 JSON 的源文件哈希当作当前 HTML 哈希。
 
 ## V23 多页面存储回归（Issues #2 / #3）
 
