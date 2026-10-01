@@ -34,3 +34,17 @@ python tests/v23/static_verify.py --manifest
 `--injected` 只供不支持本地文件的受限环境诊断，不作为本版本离线运行或持久化验收证据。性能结果仅代表所记录环境的一次短采样，不能外推到真实手机。
 
 颁奖迭代以 V22 舞台为基线。`sequence_verify.py` 另从完整环法存档打开第 18 站档案，检查四种领骑衫穿着、各章节选中状态、GC 入场/穿着和最后持续举杯；421 个连续姿态检查双肘朝向、抬杯连续性、固定臂长（按深度投影）和双手握柄。包内 `verification/racing-baseline/` 是颁奖迭代前的比赛与性能证据；`verification/ceremony-scope.json` 记录比赛代码保持一致的逐段校验。本轮重跑范围见报告，不能把旧 JSON 的源文件哈希当作当前 HTML 哈希。
+
+## V23 多页面存储回归（Issues #2 / #3）
+
+```sh
+node tests/v23/storage-ownership.cjs
+# 在另一个终端从仓库根目录启动 python -m http.server 4187
+python tests/v23/storage-browser.py
+```
+
+进度提交在同一 Web Lock 内读取最新存档，比较本页已加载/已提交的进度指纹与 revision；设置仅合并本次字段，不接管其他页面的进度。无 Web Locks 时，同步回退保护顺序发生的陈旧写入，不保证跨进程完全同时写入的原子性。导入和恢复须保留备份，冲突后本页仍保留可导出的内存进度。
+
+关闭页面前先捕获最新比赛快照；异步提交未完成或保存失败/冲突时请求浏览器离开确认。请取消离开、等待保存或先导出。忽略浏览器警告、强制结束进程，以及系统未发送生命周期事件时，不能保证保存最后一刻的进度。
+
+仅修复 V23；默认 index.html / V22 与历史 HTML 不变，仍可能写相同的 tour-cycling-2026-cinematic-v10 键。这些旧写入者不遵守新协议，无法由新 V23 严格控制。未发现本仓库 V23/index 注册 service worker 或 PWA 缓存；更新时关闭旧页面并备份，不假设旧代码已自动失效。
