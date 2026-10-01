@@ -1,0 +1,37 @@
+name: V23 regression verification
+on:
+  pull_request:
+    paths: ['Grand-Tour-V23.html', 'tests/v23/**', '.github/workflows/v23-verify.yml']
+permissions:
+  contents: read
+jobs:
+  v23:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright==1.55.0
+      - run: python -m playwright install --with-deps chromium
+      - run: |
+          mkdir -p /tmp/gt-evidence
+          python tests/v23/static_verify.py --out /tmp/gt-evidence/static.json
+          node tests/v23/focused.cjs Grand-Tour-V23.html Grand-Tour-V22.html /tmp/gt-evidence/focused.json
+          node tests/v23/storage-ownership.cjs
+          node tests/v23/tour-simulation.cjs Grand-Tour-V23.html /tmp/gt-evidence/tour.json 314159
+      - run: |
+          python -m http.server 4187 > /tmp/gt-evidence/server.log 2>&1 &
+          python tests/v23/storage-browser.py
+          python tests/v23/browser_verify.py --out /tmp/gt-evidence/browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v23-verification
+          path: /tmp/gt-evidence

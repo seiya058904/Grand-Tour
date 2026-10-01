@@ -1667,9 +1667,9 @@ class Race {
   return found.sort((a,b)=>Number(b.direct)-Number(a.direct)||b.stageGain-a.stageGain)[0]||null;
  }
  gcSituation(){
-  const p=this.player,ledger=this.prior?.season?.gcTimes,own=ledger?.[0]??0;
-  const rivals=this.riders.filter(r=>(isRacing(r)||r.status==='FINISHED')&&r.d.teamId!==0&&(this.gcIds.includes(r.id)||(ledger&&ledger[r.id]-own<20))).map(r=>({id:r.id,stageGain:-timingDifference(this,r,p),priorGap:ledger?ledger[r.id]-own:null}));
-  return {rivals,ahead:rivals.filter(r=>r.stageGain>2.8),threat:this.threatFor(this.teams[0])};
+  const p=this.player,ledger=this.prior?.season?.gcTimes,own=ledger?.[0]??0,threat=this.threatFor(this.teams[0]);
+  const rivals=this.riders.filter(r=>(isRacing(r)||r.status==='FINISHED')&&r.d.teamId!==0&&(this.gcIds.includes(r.id)||r.id===threat?.id||(ledger&&ledger[r.id]-own<20))).map(r=>({id:r.id,stageGain:-timingDifference(this,r,p),priorGap:ledger?ledger[r.id]-own:null}));
+  return {rivals,ahead:rivals.filter(r=>r.stageGain>2.8),threat};
  }
  startAttack(r,kind='attack'){
   if(!isRacing(r)||r.attacks>=r.attackLimit||this.t<r.nextAttack||r.w<r.d.wCapacity*.38||r.energy<35||r.fatigue>43||r.spent||r.grupetto)return false;
@@ -2929,7 +2929,7 @@ const SaveCodec={
  },
  compactSnapshot(input){const s=cloneSave(input);s.auditSummary=summarizeAudit(s.audit);delete s.audit;return s;},
  encode(store,{diagnostics=false}={}){
-  const out={version:9,pendingCeremony:store.pendingCeremony?{mode:store.pendingCeremony.mode,stage:store.pendingCeremony.stage,seed:store.pendingCeremony.seed,...(store.pendingCeremony.mode==='tour'?{tourId:store.pendingCeremony.tourId}:{record:Object.fromEntries(this.recordFields.filter(k=>store.pendingCeremony.record[k]!==undefined).map(k=>[k,store.pendingCeremony.record[k]]))})}:null,tour:store.tour?{id:store.tour.id,playerId:0,seedBase:store.tour.seedBase,seedOrigin:store.tour.seedOrigin||'created',timeModel:store.tour.timeModel||store.tour.results[0]?.timeModel||'race-world-v1',results:store.tour.results.map(r=>{const saved={};for(const k of this.recordFields)if(r[k]!==undefined)saved[k]=r[k];if(diagnostics&&r.audit)saved.audit=r.audit;return saved;})}:null,active:store.active?(diagnostics?store.active:this.compactSnapshot(store.active)):null,settings:store.settings||{}};
+  const out={version:9,progressRevision:store.progressRevision||0,pendingCeremony:store.pendingCeremony?{mode:store.pendingCeremony.mode,stage:store.pendingCeremony.stage,seed:store.pendingCeremony.seed,...(store.pendingCeremony.mode==='tour'?{tourId:store.pendingCeremony.tourId}:{record:Object.fromEntries(this.recordFields.filter(k=>store.pendingCeremony.record[k]!==undefined).map(k=>[k,store.pendingCeremony.record[k]]))})}:null,tour:store.tour?{id:store.tour.id,playerId:0,seedBase:store.tour.seedBase,seedOrigin:store.tour.seedOrigin||'created',timeModel:store.tour.timeModel||store.tour.results[0]?.timeModel||'race-world-v1',results:store.tour.results.map(r=>{const saved={};for(const k of this.recordFields)if(r[k]!==undefined)saved[k]=r[k];if(diagnostics&&r.audit)saved.audit=r.audit;return saved;})}:null,active:store.active?(diagnostics?store.active:this.compactSnapshot(store.active)):null,settings:store.settings||{}};
   return cloneSave(out);
  },
  migrateStore(input){
@@ -2957,7 +2957,8 @@ const SaveCodec={
    r.prior=r.stageIndex>0?{season:results[r.stageIndex-1].season,timeModel:results[r.stageIndex-1].timeModel}:null;
    if(r.prior)saveCheck(r.riders.every(x=>r.prior.season.active[x.id]!==false||x.status==='DNS'),'进行中比赛恢复了已退出的车手');active=r.snapshot();
   }catch(e){if(!recover)throw e;issues.push('进行中比赛无法恢复：'+e.message);}}
-  const store={version:9,pendingCeremony:null,tour:s.tour?{id:typeof s.tour.id==='string'?s.tour.id:'recovered-tour',playerId:0,seedBase:s.tour.seedBase,seedOrigin:s.tour.seedOrigin||'created',timeModel:s.tour.timeModel,results}:null,active,settings:{labelDensity:['calm','standard','player'].includes(s.settings?.labelDensity)?s.settings.labelDensity:'calm',musicVolume:Number.isFinite(s.settings?.musicVolume)?clamp(s.settings.musicVolume,0,1):.55,quality:['auto','full','low'].includes(s.settings?.quality)?s.settings.quality:'auto'}};
+  saveCheck(s.progressRevision===undefined||Number.isSafeInteger(s.progressRevision)&&s.progressRevision>=0,'进度版本无效');
+  const store={version:9,progressRevision:s.progressRevision||0,pendingCeremony:null,tour:s.tour?{id:typeof s.tour.id==='string'?s.tour.id:'recovered-tour',playerId:0,seedBase:s.tour.seedBase,seedOrigin:s.tour.seedOrigin||'created',timeModel:s.tour.timeModel,results}:null,active,settings:{labelDensity:['calm','standard','player'].includes(s.settings?.labelDensity)?s.settings.labelDensity:'calm',musicVolume:Number.isFinite(s.settings?.musicVolume)?clamp(s.settings.musicVolume,0,1):.55,quality:['auto','full','low'].includes(s.settings?.quality)?s.settings.quality:'auto'}};
   if(s.pendingCeremony){try{const p=s.pendingCeremony;saveCheck(['tour','single'].includes(p.mode)&&Number.isInteger(p.stage)&&p.stage>=0&&p.stage<21&&validSeed(p.seed),'领奖恢复索引无效');
    if(p.mode==='tour'){saveCheck(store.tour&&p.tourId===store.tour.id&&p.stage===results.length-1&&results[p.stage]?.seed===p.seed,'领奖与环法成绩不一致');store.pendingCeremony={mode:'tour',tourId:p.tourId,stage:p.stage,seed:p.seed};}
    else {const record=normalizeRecord(p.record,p.stage,null);saveCheck(record.seed===p.seed,'领奖与单站种子不一致');store.pendingCeremony={mode:'single',stage:p.stage,seed:p.seed,record};}
@@ -2971,9 +2972,11 @@ function backupBeforeNewTour(){
  if(App.blockStoreWrite&&App.recoveryRaw===null&&!Store.tour){toast('浏览器存储不可用：本次仅会话可玩，可随时导出进度；不会写回未知的旧存档。');return true;}
  if(!window.confirm('新环法会替换当前进度。系统将先备份旧存档；取消可保留当前环法。继续吗？'))return false;
  try{
-  const raw=App.blockStoreWrite?App.recoveryRaw:JSON.stringify(SaveCodec.encode(Store));
+  const raw=localStorage.getItem(CONFIG.saveKey);
+  if(progressStamp(raw)!==savedProgress||App.blockStoreWrite&&raw!==App.recoveryRaw){storageWarning('当前存档已改变或读取失败。请先导出本页进度并重新载入，再创建新环法。');return false;}
   if(raw)localStorage.setItem(CONFIG.saveKey+'-before-new-tour',raw);
-  App.blockStoreWrite=false;App.recoveryRaw=null;return true;
+  if(App.blockStoreWrite){App.backedUpRecoveryRaw=raw;App.blockStoreWrite=false;}
+  return true;
  }catch(e){toast('旧存档无法备份，未创建新环法。请先导出存档或释放浏览器存储空间。');return false;}
 }
 
@@ -4801,7 +4804,9 @@ SceneArt.crowd=function(c,w,ground,rw,motion,scaleX,stage,time,low){
 };
 
 const App={screen:'home',race:null,prep:null,result:null,resultMode:'single',resultsTab:'stage',motion:0,heroMotion:0,modalStack:[],modalOwner:null,lastFocus:new Map(),hudAt:0,profileAt:0,sideAt:0,noticeSerial:-1,noticeDeadline:0,saveAt:0,testingFreeze:false,storageHealthy:true,seedBase:2026001};
-let Store={version:CONFIG.saveVersion,tour:null,active:null,settings:{}};
+let Store={version:CONFIG.saveVersion,progressRevision:0,tour:null,active:null,settings:{}};
+let savedProgress=null,saveQueue=Promise.resolve(),storeEpoch=0,savePending=0;
+function progressStamp(raw){if(!raw)return null;try{const s=JSON.parse(raw);return JSON.stringify([s?.progressRevision||0,s?.tour??null,s?.active??null,s?.pendingCeremony??null]);}catch{return raw;}}
 let toastTimer=0;
 function toast(message){$('toast').textContent=message;$('toast').hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>$('toast').hidden=true,4200);}
 function storageWarning(message){App.storageHealthy=false;$('storageWarning').textContent=message;$('storageWarning').hidden=false;}
@@ -4826,14 +4831,15 @@ function normalizeRecord(input,index,prior){
 }
 
 function loadStore(){
+ storeEpoch++;
  let raw=null,fromLegacy=false;
  try{
-  raw=localStorage.getItem(CONFIG.saveKey);
+  raw=localStorage.getItem(CONFIG.saveKey);savedProgress=progressStamp(raw);
   if(!raw){raw=localStorage.getItem('tour-cycling-2026-refined-v9')||localStorage.getItem('tour-cycling-2026-race-centre-v8')||localStorage.getItem('tour-cycling-2026-foundation-v7')||localStorage.getItem(LEGACY_SAVE_KEY);fromLegacy=Boolean(raw);}
   if(!raw)return;
   const {store,issues}=SaveCodec.decode(JSON.parse(raw),{recover:true});
   // Back up before publishing a recovered in-memory store or allowing writes.
-  if(issues.length)localStorage.setItem(CONFIG.saveKey+'-recovery-backup',raw);
+  if(issues.length){localStorage.setItem(CONFIG.saveKey+'-recovery-backup',raw);App.backedUpRecoveryRaw=raw;}
   Store=store;App.seedBase=Store.tour?.seedBase??2026001;App.blockStoreWrite=false;
   if(issues.length)storageWarning(issues.join('；')+'。原数据已备份。');
   else if(fromLegacy){$('storageWarning').textContent='旧档已安全载入 V12；保留原有成绩、时间口径与 V10 比赛规则，旧存储键未覆盖。';$('storageWarning').hidden=false;}
@@ -4843,14 +4849,49 @@ function loadStore(){
 }
 
 
-function persist(){
- if(App.blockStoreWrite)return false;
- try{localStorage.setItem(CONFIG.saveKey,JSON.stringify(SaveCodec.encode(Store)));if(App.saveFailureShown){storageWarning('存档写入已恢复，当前环法进度已保存。');App.saveFailureShown=false;App.storageHealthy=true;}return true;}
- catch(e){if(!App.saveFailureShown)storageWarning('存档写入失败：可能是存储权限或容量限制。当前比赛仍可游玩，但刷新或关闭后可能丢失进度。');App.saveFailureShown=true;return false;}
+// A page owns only the progress it loaded or successfully committed. Settings
+// never adopt another page's progress revision. Locks serialize cooperating V23
+// pages; the synchronous fallback detects sequential stale writes, not races
+// between separate browser processes (localStorage has no compare-and-swap).
+function persist(settingsPatch=null,replacement=null,backupKey=null){
+ const candidate=SaveCodec.encode(replacement||Store),patch=settingsPatch?cloneSave(settingsPatch):null,epoch=storeEpoch;
+ const commit=()=>{
+  if(epoch!==storeEpoch)return false;
+  try{
+   const raw=localStorage.getItem(CONFIG.saveKey),stamp=progressStamp(raw);
+   const explicitRecovery=Boolean(replacement&&backupKey&&raw===App.recoveryRaw);
+   if(App.blockStoreWrite&&!explicitRecovery)return false;
+   let latest=null;
+   try{latest=raw?SaveCodec.decode(JSON.parse(raw),{recover:true}):null;}catch(e){if(!explicitRecovery&&raw!==App.backedUpRecoveryRaw)throw e;}
+   if(latest?.issues.length&&(patch||raw!==App.backedUpRecoveryRaw&&!explicitRecovery))throw new Error('最新存档需要恢复，请先重新载入并备份');
+   if(!patch&&stamp!==savedProgress){
+    App.saveConflict=true;storageWarning('另一页面已更新进度，本页未覆盖它。请先导出本页进度，再重新载入页面；关闭旧版本页面后继续。');return false;
+   }
+   const next=patch?(raw?JSON.parse(raw):candidate):candidate;
+   next.settings=replacement?candidate.settings:{...(latest?.store.settings||Store.settings),...(patch||{})};
+   if(!patch)next.progressRevision=Math.max(candidate.progressRevision||0,latest?.store.progressRevision||0)+1;
+   if(backupKey&&raw)localStorage.setItem(CONFIG.saveKey+backupKey,raw);
+   const encoded=JSON.stringify(next);localStorage.setItem(CONFIG.saveKey,encoded);
+   if(!patch){savedProgress=progressStamp(encoded);Store.progressRevision=next.progressRevision;App.saveConflict=false;if(replacement)storeEpoch++;}
+   if(App.saveFailureShown){storageWarning('存档写入已恢复。');App.saveFailureShown=false;App.storageHealthy=true;}
+   return true;
+  }catch(e){storageWarning('存档未保存：'+e.message+'。当前页面进度保留，可导出备份后重试。');App.saveFailureShown=true;return false;}
+ };
+ const locks=window.navigator?.locks;
+ if(!locks?.request)return commit();
+ savePending++;
+ const pending=saveQueue.then(()=>locks.request(CONFIG.saveKey+'-write',commit)).catch(e=>{storageWarning('存档锁失败：'+e.message+'。请导出本页进度或重试。');App.saveFailureShown=true;return false;});
+ saveQueue=pending.then(()=>{savePending--;});return pending;
 }
 function saveActive(){
- if(App.race&&App.race.mode==='tour'&&!App.race.recorded){Store.active=App.race.snapshot();persist();}
+ if(App.race&&App.race.mode==='tour'&&!App.race.recorded){Store.active=App.race.snapshot();return persist();}
+ return true;
 }
+function beforeUnloadSave(e){
+ if(App.race&&App.race.mode==='tour'&&!App.race.recorded){Store.active=App.race.snapshot();if(progressStamp(JSON.stringify(SaveCodec.encode(Store)))!==savedProgress)persist();}
+ if(savePending||App.saveConflict||App.saveFailureShown){e.preventDefault();e.returnValue='';}
+}
+function afterPersist(result,done){if(result&&typeof result.then==='function')return result.then(done);return done(result);}
 function totalsForTour(){
  const total=new Float64Array(RIDER_DATA.length);if(Store.tour)for(const record of Store.tour.results)for(let i=0;i<total.length;i++)total[i]+=(record.gcTimes||record.times)[i];
  return Array.from(total);
@@ -4976,9 +5017,9 @@ function startPreparedRace(){
  if(!App.prep)return;const {index,mode}=App.prep;
  if(mode==='tour'&&!backupBeforeNewTour())return;
  const base=App.prep.seedBase;
- if(mode==='tour'){Store.tour={id:`tour-${Date.now()}`,playerId:0,seedBase:base,seedOrigin:'created',timeModel:'race-world-v1',results:[]};Store.active=null;App.seedBase=base;}
+ if(mode==='tour'){storeEpoch++;Store.tour={id:`tour-${Date.now()}`,playerId:0,seedBase:base,seedOrigin:'created',timeModel:'race-world-v1',results:[]};Store.active=null;App.seedBase=base;}
  const race=new Race(index,0,mode,null,seedForStage(base,index));initializeRace(race);
- if(mode==='tour')saveActive();else persist();
+ if(mode==='tour')saveActive();
 }
 
 function continueTour(){
@@ -5219,7 +5260,7 @@ function bindDesk(){
  $('deskMe').addEventListener('click',()=>{setDeskTab('nearby');$('deskContent').querySelector('.me')?.scrollIntoView({block:'nearest',behavior:'smooth'});});
  document.addEventListener('click',e=>{const person=e.target.closest('[data-rider]');if(person)inspectRider(Number(person.dataset.rider));if(e.target.closest('[data-open-history]'))openHistory();const replay=e.target.closest('[data-replay]');if(replay)replayHistory(Number(replay.dataset.replay));const detail=e.target.closest('[data-archive-detail]');if(detail)showArchiveResult(Number(detail.dataset.archiveDetail));});
  $('riderCardBody').addEventListener('click',e=>{const b=e.target.closest('[data-card-follow]');if(b){const id=Number(b.dataset.cardFollow);closeDialog('riderBackdrop');requestWheel(id);}});
- $('labelDensity').addEventListener('change',()=>{Store.settings.labelDensity=$('labelDensity').value;persist();if(App.race){viewFor(App.race).labelDensity=null;drawRace();}});
+ $('labelDensity').addEventListener('change',()=>{Store.settings.labelDensity=$('labelDensity').value;persist({labelDensity:Store.settings.labelDensity});if(App.race){viewFor(App.race).labelDensity=null;drawRace();}});
  for(const id of ['jerseyStrip','resultJerseys'])$(id).addEventListener('click',e=>{const b=e.target.closest('[data-jersey]');if(!b)return;if(App.screen==='race')setDeskTab(b.dataset.jersey);else renderClassification(b.dataset.jersey==='yellow'?'gc':b.dataset.jersey);});
  $('resultExtraTabs').addEventListener('click',e=>{const b=e.target.closest('[data-result-tab]');if(b)renderClassification(b.dataset.resultTab);});
  $('homeHistory').addEventListener('click',openHistory);$('historyBack').addEventListener('click',backHistory);
@@ -5938,7 +5979,7 @@ const Ceremony={
  },
  start(){const f=App.finishFlow;if(!f?.snapshot||f.phase==='ceremony')return;f.phase='ceremony';f.elapsed=0;f.last=performance.now();$('ceremonySaveActions').hidden=true;$('finishStatus').hidden=true;CeremonyPlayer.mount(f);this.announce('赛后领奖开始。比赛成绩已经固化，动画不改变结果。');},
  announce(text){if($('ceremonyCaption').textContent===text)return;$('ceremonyCaption').textContent=text;$('ceremonyCanvas').setAttribute('aria-label',text);},
- retrySave(){const f=App.finishFlow;if(!f||f.phase!=='save-blocked')return;if(persist()){f.saved=true;f.phase='finish';CeremonyPlayer.unmount();$('ceremonyLayer').hidden=true;$('ceremonySaveActions').hidden=true;}else this.drawBlocked();},
+ retrySave(){const f=App.finishFlow;if(!f||f.phase!=='save-blocked')return;return afterPersist(persist(),saved=>{if(App.finishFlow!==f)return;if(saved){f.saved=true;f.phase='finish';CeremonyPlayer.unmount();$('ceremonyLayer').hidden=true;$('ceremonySaveActions').hidden=true;}else this.drawBlocked();});},
  exportAndContinue(){const f=App.finishFlow;if(!f||f.phase!=='save-blocked')return;downloadJSON(SaveCodec.encode(Store),'grand-tour-v16-unsaved-backup.json');f.exported=true;f.phase='finish';CeremonyPlayer.unmount();$('ceremonySaveActions').hidden=true;$('ceremonyLayer').hidden=true;toast('已发起备份下载；浏览器内保存仍未成功。请保留下载文件，不要直接关闭页面。');},
  advance(now){
   const f=App.finishFlow;if(!f)return;
@@ -6016,7 +6057,7 @@ function finalizeRace(){
  }
  r.recorded=true;App.finishFlow.settleCount++;
  Store.pendingCeremony={mode:r.mode,stage:r.stageIndex,seed:r.seed,...(r.mode==='tour'?{tourId:Store.tour.id}:{record})};
- Ceremony.prepare(record,persist());
+ const flow=App.finishFlow;flow.phase='saving';return afterPersist(persist(),saved=>{if(App.finishFlow===flow&&App.race===r)Ceremony.prepare(record,saved);});
 }
 
 function showResults(ready){
@@ -6089,7 +6130,7 @@ function bindInputs(){
  $('pauseHelp').addEventListener('click',()=>openHelp());$('saveAndHome').addEventListener('click',()=>navigate('home'));
  $('raceGC').addEventListener('click',()=>MobileCentre.open(MobileCentre.mobile?null:'gc'));
  MobileCentre.init();
-  bindDesk();bindFollowUI();bindMusic();bindSaveTransfer();$('visualQuality').value=Store.settings.quality||'auto';$('visualQuality').addEventListener('change',()=>{Store.settings.quality=$('visualQuality').value;persist();});
+  bindDesk();bindFollowUI();bindMusic();bindSaveTransfer();$('visualQuality').value=Store.settings.quality||'auto';$('visualQuality').addEventListener('change',()=>{Store.settings.quality=$('visualQuality').value;persist({quality:Store.settings.quality});});
  $('effortButtons').addEventListener('click',e=>{const b=e.target.closest('[data-effort]');if(b)setEffort(Number(b.dataset.effort));});
  $('draftButton').addEventListener('click',requestDraft);$('feedButton').addEventListener('click',requestFeed);$('attackButton').addEventListener('click',requestAttack);
  $('nextStage').addEventListener('click',nextStage);$('retryStage').addEventListener('click',retryStage);$('resultHome').addEventListener('click',()=>navigate('home'));
@@ -6111,6 +6152,7 @@ function bindInputs(){
   else if(!e.repeat){if(e.code==='Space')requestAttack();else if(e.key.toLowerCase()==='d')requestDraft();else if(e.key.toLowerCase()==='f')requestFeed();else if(e.key.toLowerCase()==='p'||e.key==='Escape')pauseRace();}
  });
  document.addEventListener('visibilitychange',()=>{if(document.hidden&&QuickFinish.running)QuickFinish.cancel();if(App.finishFlow)App.finishFlow.last=performance.now();if(document.hidden&&App.screen==='race'&&App.race&&!App.race.paused)pauseRace();lastFrame=performance.now();});
+ window.addEventListener('beforeunload',beforeUnloadSave);
  window.addEventListener('pagehide',saveActive);
  window.addEventListener('resize',()=>{if(App.finishFlow?.phase==='ceremony')Ceremony.draw(App.finishFlow);if(App.screen==='race'){drawRace();updateHud(true);}else drawHero();if(!$('prepBackdrop').hidden){drawProfile($('prepProfile'),STAGE_DATA[App.prep.index]);updateRiderPreview();}});
 }
@@ -6284,7 +6326,7 @@ function bindMusic(){
  $('musicImport').addEventListener('click',()=>$('musicFiles').click());$('musicFiles').addEventListener('change',e=>{Music.add(Array.from(e.target.files||[]));e.target.value='';});
  $('musicNext').addEventListener('click',()=>Music.next(1));$('musicPrevious').addEventListener('click',()=>Music.next(-1));
  $('musicList').addEventListener('click',e=>{const b=e.target.closest('[data-track]');if(b)Music.select(Number(b.dataset.track),true);});
- $('musicVolume').addEventListener('input',e=>Music.setVolume(Number(e.target.value)/100));$('musicVolume').addEventListener('change',persist);
+ $('musicVolume').addEventListener('input',e=>Music.setVolume(Number(e.target.value)/100));$('musicVolume').addEventListener('change',()=>persist({musicVolume:Store.settings.musicVolume}));
  $('musicRepeat').addEventListener('click',()=>{Music.repeat=!Music.repeat;Music.render();});$('musicClear').addEventListener('click',()=>Music.clear());
  $('musicSeek').addEventListener('input',e=>{const a=Music.audio[Music.slot];if(a&&Number.isFinite(a.duration))a.currentTime=a.duration*Number(e.target.value)/1000;});
  document.addEventListener('pointerdown',e=>{if(!$('musicPanel').hidden&&!e.target.closest('#musicDock')){$('musicPanel').hidden=true;$('musicOpen').setAttribute('aria-expanded','false');}});
@@ -6306,8 +6348,7 @@ function bindSaveTransfer(){
  $('saveFile').addEventListener('change',async e=>{const file=e.target.files?.[0];e.target.value='';if(!file)return;
   try{if(file.size>20*1024*1024)throw new Error('文件超过 20 MB');const {store:data,issues}=SaveCodec.decode(JSON.parse(await file.text()));saveCheck(data.tour||data.pendingCeremony,'存档中没有环法进度或已保存的赛段结果');
 if(!window.confirm('导入将替换当前环法进度，并备份旧存档。是否继续？'))return;
-   const old=localStorage.getItem(CONFIG.saveKey);if(old)localStorage.setItem(CONFIG.saveKey+'-before-import',old);
-   localStorage.setItem(CONFIG.saveKey,JSON.stringify(SaveCodec.encode(data)));App.race=null;closeDialogs();loadStore();$('labelDensity').value=Store.settings.labelDensity;Music.setVolume(Store.settings.musicVolume);$('musicVolume').value=Math.round(Store.settings.musicVolume*100);$('visualQuality').value=Store.settings.quality||'auto';if(!Ceremony.recover()){showScreen('home');toast(issues.length?'存档已导入；'+issues.join('；'):'存档已导入，点击“继续环法”。');}
+   if(!await persist(null,data,'-before-import'))throw new Error('保存失败或进度已被其他页面更新，请先导出本页并重新载入');App.race=null;closeDialogs();loadStore();$('labelDensity').value=Store.settings.labelDensity;Music.setVolume(Store.settings.musicVolume);$('musicVolume').value=Math.round(Store.settings.musicVolume*100);$('visualQuality').value=Store.settings.quality||'auto';if(!Ceremony.recover()){showScreen('home');toast(issues.length?'存档已导入；'+issues.join('；'):'存档已导入，点击“继续环法”。');}
   }catch(err){toast('导入未完成：'+err.message+'；当前进度未被清空。');}
  });
 }
