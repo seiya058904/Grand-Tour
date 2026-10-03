@@ -2312,6 +2312,7 @@ followEligibility(id,retaining=false){
    if(!f||id===0)return {ok:false,reason:'请选择前方车手'};
    if(!isRacing(f))return {ok:false,reason:'目标已过线或退出比赛'};
    if(this.stage.type==='TTT'&&f.d.teamId!==p.d.teamId)return {ok:false,reason:'团体计时只能跟随本队车手'};
+   if(this.stage.type==='TTT'&&(f.tttDone||f.spent))return {ok:false,reason:'目标已结束领骑任务，正在退到领袖身后'};
    const gap=f.x-p.x;
    if(gap<(retaining?-5:.6))return {ok:false,reason:'目标已在你身后'};
    if(gap>(retaining?85:65))return {ok:false,reason:'目标太远，先自行缩小距离'};
