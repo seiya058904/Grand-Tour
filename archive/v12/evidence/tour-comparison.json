@@ -1,0 +1,193 @@
+{
+  "method": "Two paired complete 21-stage tours per version, seeds 314159 and 271828. Same standard-GC-v2 public input controller, player ID 0, once per simulation second. Not a fully autonomous all-AI benchmark. No forced ranking or modified roster.",
+  "finalHTMLSHA256": "6d271fd7caff6d405b3e588e998d53b79d7852a489544d78f17f1dbd97b3f469",
+  "simulationBuildNote": "Tours ran on the final gameplay core. Afterwards only groupSituation() and updateDesk() UI strings/accounting markup changed. No simulation or input-policy change.",
+  "results": [
+    {
+      "seed": 314159,
+      "stagesEach": 21,
+      "v11GCInTop10": 9,
+      "v12GCInTop10": 9,
+      "v11Finishers": 118,
+      "v12Finishers": 142,
+      "v12Top10": [
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 289972
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 290052
+        },
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 290100
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 290249
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 290289
+        },
+        {
+          "id": 29,
+          "name": "Brandon McNulty",
+          "role": "TT",
+          "time": 290293
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 290336
+        },
+        {
+          "id": 18,
+          "name": "Matteo Jorgenson",
+          "role": "GC",
+          "time": 290365
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 290380
+        },
+        {
+          "id": 2,
+          "name": "Isaac Del Toro",
+          "role": "GC",
+          "time": 290435
+        }
+      ],
+      "keyRiderPlaces": {
+        "0": 1,
+        "9": 2,
+        "1": 3,
+        "6": 5
+      },
+      "v11StageWinnerRoles": {
+        "Allround": 1,
+        "GC": 9,
+        "Puncheur": 2,
+        "Sprinter": 7,
+        "TT": 1
+      },
+      "v12StageWinnerRoles": {
+        "GC": 14,
+        "Allround": 1,
+        "Sprinter": 4,
+        "Climber": 1
+      },
+      "errors": []
+    },
+    {
+      "seed": 271828,
+      "stagesEach": 21,
+      "v11GCInTop10": 8,
+      "v12GCInTop10": 10,
+      "v11Finishers": 144,
+      "v12Finishers": 104,
+      "v12Top10": [
+        {
+          "id": 0,
+          "name": "Tadej Pogačar",
+          "role": "GC",
+          "time": 266613
+        },
+        {
+          "id": 1,
+          "name": "Remco Evenepoel",
+          "role": "GC",
+          "time": 266867
+        },
+        {
+          "id": 6,
+          "name": "Juan Ayuso",
+          "role": "GC",
+          "time": 266987
+        },
+        {
+          "id": 9,
+          "name": "Jonas Vingegaard",
+          "role": "GC",
+          "time": 267026
+        },
+        {
+          "id": 25,
+          "name": "Florian Lipowitz",
+          "role": "GC",
+          "time": 267030
+        },
+        {
+          "id": 43,
+          "name": "Derek James Gee",
+          "role": "GC",
+          "time": 267043
+        },
+        {
+          "id": 3,
+          "name": "Paul Seixas",
+          "role": "GC",
+          "time": 267117
+        },
+        {
+          "id": 5,
+          "name": "Mattias Skjelmose",
+          "role": "GC",
+          "time": 267145
+        },
+        {
+          "id": 114,
+          "name": "Tobias Johannessen",
+          "role": "GC",
+          "time": 267164
+        },
+        {
+          "id": 2,
+          "name": "Isaac Del Toro",
+          "role": "GC",
+          "time": 267171
+        }
+      ],
+      "keyRiderPlaces": {
+        "0": 1,
+        "9": 4,
+        "1": 2,
+        "6": 3
+      },
+      "v11StageWinnerRoles": {
+        "Climber": 2,
+        "Allround": 2,
+        "Sprinter": 7,
+        "GC": 8,
+        "TT": 1
+      },
+      "v12StageWinnerRoles": {
+        "Allround": 2,
+        "GC": 12,
+        "Sprinter": 5,
+        "Climber": 1
+      },
+      "errors": []
+    }
+  ],
+  "limitations": [
+    "Two seeds are exploratory, not statistical validation.",
+    "The controlled player can influence standings; its first place is not an unbiased all-AI result.",
+    "Total finishers vary materially; the full-field attrition distribution is not certified realistic.",
+    "V12 flat-stage sprinter winners: 4/7 and 5/7; no scripted sprint or GC winner."
+  ]
+}

@@ -5,11 +5,11 @@ from playwright.async_api import async_playwright
 ROOT=Path(__file__).resolve().parents[2]
 async def main(args):
  args.out.mkdir(parents=True,exist_ok=True)
- report={'errors':[],'source_sha256':hashlib.sha256((ROOT/'Grand-Tour-V22.html').read_bytes()).hexdigest()}
+ report={'errors':[],'source_sha256':hashlib.sha256((ROOT/'archive/v22/Grand-Tour-V22.html').read_bytes()).hexdigest()}
  async with async_playwright() as pw:
   b=await pw.chromium.launch(headless=True);p=await b.new_page(viewport={'width':1440,'height':1000})
   p.on('pageerror',lambda e:report['errors'].append(str(e)));p.on('dialog',lambda d:d.accept())
-  await p.goto((ROOT/'Grand-Tour-V22.html').as_uri()+'?test');await p.locator('#saveFile').set_input_files(str(args.tour.resolve()))
+  await p.goto((ROOT/'archive/v22/Grand-Tour-V22.html').as_uri()+'?test');await p.locator('#saveFile').set_input_files(str(args.tour.resolve()))
   await p.wait_for_function('Store.tour?.results.length===21');await p.locator('#continueTour').click();await p.wait_for_timeout(500)
   report['result']=await p.evaluate("({screen:App.screen,title:$('resultTitle').textContent,stages:Store.tour.results.length,gc:Classification.gcOrder(Store.tour.results.at(-1).season).slice(0,3)})")
   assert report['result']['screen']=='results'

@@ -15,7 +15,7 @@ ROOT = Path(__file__).resolve().parents[2]
 
 async def main(args):
     out = Path(args.out); out.mkdir(parents=True, exist_ok=True)
-    source = ROOT/'Grand-Tour-V22.html'
+    source = ROOT/'archive/v22/Grand-Tour-V22.html'
     report = {'sha256': hashlib.sha256(source.read_bytes()).hexdigest(), 'checks': {}, 'errors': [], 'mode': 'injected-memory-storage' if args.injected else 'native-file'}
     def record(name, result):
         report['checks'][name] = result
@@ -25,7 +25,7 @@ async def main(args):
     async with async_playwright() as pw:
         exe = shutil.which('chromium')
         browser = await pw.chromium.launch(**({'executable_path': exe} if exe else {}), headless=True, args=['--no-sandbox'])
-        async def load(name='Grand-Tour-V22.html', width=1440, height=1000):
+        async def load(name='archive/v22/Grand-Tour-V22.html', width=1440, height=1000):
             ctx = await browser.new_context(viewport={'width': width, 'height': height}, device_scale_factor=1)
             p = await ctx.new_page(); p.on('pageerror', lambda e: report['errors'].append(str(e)))
             if args.injected:
@@ -53,7 +53,7 @@ async def main(args):
         # Compare the same seeded physical TTT, not independently authored data.
         comparison={}
         for version in ['V20','V22']:
-            vc,vp=await load('Grand-Tour-'+version+'.html')
+            vc,vp=await load('archive/'+version.lower()+'/Grand-Tour-'+version+'.html')
             comparison[version]=await vp.evaluate("""()=>{const r=new Race(0,0,'single',null,2026001),a=[];for(let i=0;i<2400;i++){r.tick();if(i%100===0&&r.t>10){const q=r.teams[0].relay;a.push({count:q.order.length,returning:q.returning.length,maxGap:Math.max(0,...q.order.slice(1).map((id,i)=>r.riders[q.order[i]].x-r.riders[id].x))});}}return{seconds:120,samples:a.length,meanQueue:a.reduce((s,a)=>s+a.count,0)/a.length,meanReturning:a.reduce((s,a)=>s+a.returning,0)/a.length,maxPairGap:Math.max(...a.map(a=>a.maxGap)),rotations:r.audit.rotations.filter(a=>a.team===0).length}}""")
             await vc.close()
         comparison['pass']=comparison['V22']['maxPairGap']<comparison['V20']['maxPairGap'] and comparison['V22']['meanQueue']>comparison['V20']['meanQueue']

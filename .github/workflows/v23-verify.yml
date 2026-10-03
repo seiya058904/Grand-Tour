@@ -2,9 +2,9 @@ name: Grand Tour regression verification
 on:
   push:
     branches: [main]
-    paths: ['Grand-Tour-V23.html', 'Grand-Tour-V24.html', 'Grand-Tour-V24-Final.zip', 'index.html', 'tests/v23/**', 'tests/v24/**', '.github/workflows/v23-verify.yml']
+    paths: ['archive/v22/Grand-Tour-V22.html', 'archive/v23/Grand-Tour-V23.html', 'Grand-Tour-V24.html', 'Grand-Tour-V24-Final.zip', 'index.html', 'tests/v22/**', 'tests/v23/**', 'tests/v24/**', '.github/workflows/v23-verify.yml']
   pull_request:
-    paths: ['Grand-Tour-V23.html', 'Grand-Tour-V24.html', 'Grand-Tour-V24-Final.zip', 'index.html', 'tests/v23/**', 'tests/v24/**', '.github/workflows/v23-verify.yml']
+    paths: ['archive/v22/Grand-Tour-V22.html', 'archive/v23/Grand-Tour-V23.html', 'Grand-Tour-V24.html', 'Grand-Tour-V24-Final.zip', 'index.html', 'tests/v22/**', 'tests/v23/**', 'tests/v24/**', '.github/workflows/v23-verify.yml']
 permissions:
   contents: read
 jobs:
@@ -26,10 +26,10 @@ jobs:
       - run: |
           mkdir -p /tmp/gt-evidence
           python tests/v23/static_verify.py --out /tmp/gt-evidence/static.json
-          node tests/v23/focused.cjs Grand-Tour-V23.html Grand-Tour-V22.html /tmp/gt-evidence/focused.json
+          node tests/v23/focused.cjs archive/v23/Grand-Tour-V23.html archive/v22/Grand-Tour-V22.html /tmp/gt-evidence/focused.json
           node tests/v23/storage-ownership.cjs
-          node tests/v23/ttt-wheel.cjs Grand-Tour-V23.html /tmp/gt-evidence/ttt-wheel.json
-          node tests/v23/tour-simulation.cjs Grand-Tour-V23.html /tmp/gt-evidence/tour.json 314159
+          node tests/v23/ttt-wheel.cjs archive/v23/Grand-Tour-V23.html /tmp/gt-evidence/ttt-wheel.json
+          node tests/v23/tour-simulation.cjs archive/v23/Grand-Tour-V23.html /tmp/gt-evidence/tour.json 314159
       - run: |
           python -m http.server 4187 > /tmp/gt-evidence/server.log 2>&1 &
           python tests/v23/storage-browser.py
@@ -59,11 +59,11 @@ jobs:
         run: |
           mkdir -p /tmp/gt-v24-evidence
           python tests/v24/static_verify.py --out /tmp/gt-v24-evidence/static.json
-          node tests/v24/core-parity.cjs Grand-Tour-V23.html Grand-Tour-V24.html /tmp/gt-v24-evidence/core-parity.json
-          node tests/v24/focused.cjs Grand-Tour-V24.html Grand-Tour-V22.html /tmp/gt-v24-evidence/focused.json
+          node tests/v24/core-parity.cjs archive/v23/Grand-Tour-V23.html Grand-Tour-V24.html /tmp/gt-v24-evidence/core-parity.json
+          node tests/v24/focused.cjs Grand-Tour-V24.html archive/v22/Grand-Tour-V22.html /tmp/gt-v24-evidence/focused.json
           node tests/v23/storage-ownership.cjs Grand-Tour-V24.html
           node tests/v23/ttt-wheel.cjs Grand-Tour-V24.html /tmp/gt-v24-evidence/ttt-wheel.json
-          node tests/v23/tour-simulation.cjs Grand-Tour-V23.html /tmp/gt-v24-evidence/baseline.json 314159
+          node tests/v23/tour-simulation.cjs archive/v23/Grand-Tour-V23.html /tmp/gt-v24-evidence/baseline.json 314159
           node tests/v23/tour-simulation.cjs Grand-Tour-V24.html /tmp/gt-v24-evidence/v24.json 314159
           node <<'JS'
           const fs = require('node:fs'), assert = require('node:assert/strict');

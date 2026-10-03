@@ -61,7 +61,7 @@ async def main(args):
   check('reduced_motion',await p.evaluate("({pass:reducedMotion&&$('prepBackdrop').getAnimations().length===0&&$('prepBackdrop').querySelector('.dialog').getAnimations().length===0})"))
   await p.keyboard.press('Escape');check('reduced_exit',{'pass':await p.locator('#prepBackdrop').is_hidden()})
   # Import a V22 save through the same file control available to the player.
-  old=await browser.new_page();await old.goto((ROOT/'Grand-Tour-V22.html').as_uri()+'?test')
+  old=await browser.new_page();await old.goto((ROOT/'archive/v22/Grand-Tour-V22.html').as_uri()+'?test')
   legacy=await old.evaluate("""()=>{App.testingFreeze=true;Store.tour={id:'v22-native-qa',playerId:0,seedBase:2026001,seedOrigin:'test',timeModel:'race-world-v1',results:[]};initializeRace(new Race(0,0,'tour',null,2026001));for(let i=0;i<500;i++)App.race.tick();saveActive();return{data:localStorage.getItem(CONFIG.saveKey),physical:JSON.stringify(App.race.riders.map(r=>[r.x,r.v,r.power,r.energy,r.w])),t:App.race.t}}""")
   await old.close();p.on('dialog',lambda d:d.accept())
   await p.locator('#saveFile').set_input_files({'name':'v22-save.json','mimeType':'application/json','buffer':legacy['data'].encode()})

@@ -17,13 +17,13 @@ class Inventory(HTMLParser):
  def handle_data(self,data):
   if self.in_script:self.scripts[-1]+=data
 def main(args):
- src=ROOT/'Grand-Tour-V23.html';text=src.read_text(encoding='utf-8');old=(ROOT/'Grand-Tour-V22.html').read_text(encoding='utf-8')
+ src=ROOT/'archive/v23/Grand-Tour-V23.html';text=src.read_text(encoding='utf-8');old=(ROOT/'archive/v22/Grand-Tour-V22.html').read_text(encoding='utf-8')
  inv=Inventory();inv.feed(text)
  checks={
   'markers':'data-build="2300"' in text and 'buildVersion:230' in text and '<title>环法 · Grand Tour V23' in text,
   'unique_dom_ids':len(inv.ids)==len(set(inv.ids)),
   'offline_assets':not inv.remote,
-  'v22_original':hashlib.sha256((ROOT/'Grand-Tour-V22.html').read_bytes()).hexdigest()=='5535d7658d64ab40b0b8d2e9f5d869419c244412e399264f6daadf49ccf42eab',
+  'v22_original':hashlib.sha256((ROOT/'archive/v22/Grand-Tour-V22.html').read_bytes()).hexdigest()=='5535d7658d64ab40b0b8d2e9f5d869419c244412e399264f6daadf49ccf42eab',
   'route_data_unchanged':all(line in text for line in old.splitlines() if line.startswith(('const OFFICIAL_PROFILE_DATA_V182=','const V181_STAGE_DATA=','const STAGE_DATA='))),
   'no_external_font_css':not re.search(r'@import\s+|url\([\'"]?https?://',text[:text.index('</style>')]),
  }

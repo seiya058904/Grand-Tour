@@ -1,1 +1,4 @@
-/Grand-Tour-V18.3.1.html text eol=lf
+/archive/v18.3.1/Grand-Tour-V18.3.1.html text eol=lf
+# Preserve the released CRLF bytes while retaining the original Git blobs.
+/archive/v19/Grand-Tour-V19.html text eol=crlf
+/archive/v21/Grand-Tour-V21.html text eol=crlf

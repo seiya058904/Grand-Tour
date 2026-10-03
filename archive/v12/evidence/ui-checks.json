@@ -1,0 +1,721 @@
+{
+  "environment": "Browser plugin absent. Actual Chromium DOM/Canvas in about:blank via explicit memory Storage adapter; browser navigation to localhost is blocked. Fixed production seed, 120 actual engine ticks; no rider relocation, no labels mocked. Tests use true pointer/keyboard/button events.",
+  "sha256": "6d271fd7caff6d405b3e588e998d53b79d7852a489544d78f17f1dbd97b3f469",
+  "checks": [
+    {
+      "name": "1600: correct page, meaningful Canvas, no error overlay",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1600: no page horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1600: hard cap includes fading cards",
+      "pass": true,
+      "detail": {
+        "maximum": 4,
+        "budget": 4
+      }
+    },
+    {
+      "name": "1600: every label inside canvas and zero pair overlap",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1600: unchanged scene does not rotate names or slots",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1600: player always retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Before/after use identical production seed, time and rider count",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1600: detailed mode still strictly capped",
+      "pass": true,
+      "detail": {
+        "labels": 5,
+        "budget": 5
+      }
+    },
+    {
+      "name": "1600: player-only really has one name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1600: actual pointer resolves rider and updates useful details",
+      "pass": true,
+      "detail": {
+        "pointerTarget": {
+          "id": 33,
+          "x": 735.1912026961664,
+          "y": 524.8427237999431,
+          "eligible": true
+        },
+        "selected": 33,
+        "details": "阿菲尼\nVISMA · 副将 / 计时专家\n护送主将\n其他车队\n前方 14 m\n资料\n×\n\n保总成绩 · 耐力 98% · 爆发 100%"
+      }
+    },
+    {
+      "name": "1600: focused exception is exactly two cards",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1600: 20 small pointer jitters retain same target",
+      "pass": true,
+      "detail": [
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33
+      ]
+    },
+    {
+      "name": "1600: click pins detail when pointer leaves canvas",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1600: Escape clears pin and focus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1600: empty canvas expires hover instead of self-renewing",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1600: all annotation interactions leave simulation and RNG unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1600: focus details open real rider modal and pause race",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1600: closing details resumes previous running state",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1600: at least one valid wheel action remains reachable",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1600: label arrow sets real selectedWheel",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "1600: focused transition never breaks cap or collision rule",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390: correct page, meaningful Canvas, no error overlay",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390: no page horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390: hard cap includes fading cards",
+      "pass": true,
+      "detail": {
+        "maximum": 2,
+        "budget": 2
+      }
+    },
+    {
+      "name": "390: every label inside canvas and zero pair overlap",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390: unchanged scene does not rotate names or slots",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390: player always retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390: detailed mode still strictly capped",
+      "pass": true,
+      "detail": {
+        "labels": 2,
+        "budget": 2
+      }
+    },
+    {
+      "name": "390: player-only really has one name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390: actual pointer resolves rider and updates useful details",
+      "pass": true,
+      "detail": {
+        "pointerTarget": {
+          "id": 33,
+          "x": 307.5811059476322,
+          "y": 575.8145903646707,
+          "eligible": true
+        },
+        "selected": 33,
+        "details": "阿菲尼\nVISMA · 副将 / 计时专家\n护送主将\n其他车队\n前方 14 m\n资料\n×\n\n保总成绩 · 耐力 98% · 爆发 100%"
+      }
+    },
+    {
+      "name": "390: focused exception is exactly two cards",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390: 20 small pointer jitters retain same target",
+      "pass": true,
+      "detail": [
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33,
+        33
+      ]
+    },
+    {
+      "name": "390: click pins detail when pointer leaves canvas",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390: Escape clears pin and focus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390: empty canvas expires hover instead of self-renewing",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390: all annotation interactions leave simulation and RNG unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390: focus details open real rider modal and pause race",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390: closing details resumes previous running state",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390: at least one valid wheel action remains reachable",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390: label arrow sets real selectedWheel",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390: focused transition never breaks cap or collision rule",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "320: correct page, meaningful Canvas, no error overlay",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "320: no page horizontal overflow",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "320: hard cap includes fading cards",
+      "pass": true,
+      "detail": {
+        "maximum": 2,
+        "budget": 2
+      }
+    },
+    {
+      "name": "320: every label inside canvas and zero pair overlap",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "320: unchanged scene does not rotate names or slots",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "320: player always retained",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "320: detailed mode still strictly capped",
+      "pass": true,
+      "detail": {
+        "labels": 2,
+        "budget": 2
+      }
+    },
+    {
+      "name": "320: player-only really has one name",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "320: actual pointer resolves rider and updates useful details",
+      "pass": true,
+      "detail": {
+        "pointerTarget": {
+          "id": 48,
+          "x": 269.9410878543418,
+          "y": 562.935280695189,
+          "eligible": true
+        },
+        "selected": 48,
+        "details": "博尔\nDECATHLON · 副将 / 冲刺手\n护送主将\n其他车队\n前方 13 m\n资料\n×\n\n组织冲刺 · 耐力 98% · 爆发 100%"
+      }
+    },
+    {
+      "name": "320: focused exception is exactly two cards",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "320: 20 small pointer jitters retain same target",
+      "pass": true,
+      "detail": [
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48,
+        48
+      ]
+    },
+    {
+      "name": "320: click pins detail when pointer leaves canvas",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "320: Escape clears pin and focus",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "320: empty canvas expires hover instead of self-renewing",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "320: all annotation interactions leave simulation and RNG unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "320: focus details open real rider modal and pause race",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "320: closing details resumes previous running state",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "320: at least one valid wheel action remains reachable",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "320: label arrow sets real selectedWheel",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "320: focused transition never breaks cap or collision rule",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "390 touch: tap pins a rider without a stale synthetic hover",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Production build exposes no test API",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "Production home → choose stage → preparation → running race works",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "name": "No application console errors or uncaught exceptions",
+      "pass": true,
+      "detail": []
+    }
+  ],
+  "viewports": [
+    {
+      "viewport": [
+        1600,
+        1000
+      ],
+      "productionState": {
+        "seed": 2058765,
+        "time": 6,
+        "riders": 184
+      },
+      "calm": {
+        "canvas": [
+          1134,
+          368
+        ],
+        "labels": 4,
+        "budget": 4,
+        "overlaps": 0,
+        "overlapArea": 0,
+        "ids": [
+          1,
+          33,
+          66,
+          0
+        ],
+        "boxes": [
+          {
+            "id": 1,
+            "x": 199,
+            "y": 64,
+            "w": 179,
+            "h": 43,
+            "opacity": 1
+          },
+          {
+            "id": 33,
+            "x": 756,
+            "y": 64,
+            "w": 179,
+            "h": 43,
+            "opacity": 1
+          },
+          {
+            "id": 66,
+            "x": 570.3333333333334,
+            "y": 64,
+            "w": 179,
+            "h": 43,
+            "opacity": 1
+          },
+          {
+            "id": 0,
+            "x": 384.66666666666663,
+            "y": 64,
+            "w": 179,
+            "h": 43,
+            "opacity": 1
+          }
+        ],
+        "inspect": null,
+        "pinned": null,
+        "focus": "靠近车手，查看角色与状态。\n单击锁定 · 箭头跟车 · Esc 取消",
+        "ridersVisible": 148,
+        "inside": true
+      }
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "productionState": {
+        "seed": 2058765,
+        "time": 6,
+        "riders": 184
+      },
+      "calm": {
+        "canvas": [
+          364,
+          308
+        ],
+        "labels": 2,
+        "budget": 2,
+        "overlaps": 0,
+        "overlapArea": 0,
+        "ids": [
+          66,
+          0
+        ],
+        "boxes": [
+          {
+            "id": 66,
+            "x": 184,
+            "y": 57,
+            "w": 168,
+            "h": 43,
+            "opacity": 1
+          },
+          {
+            "id": 0,
+            "x": 12,
+            "y": 57,
+            "w": 168,
+            "h": 43,
+            "opacity": 1
+          }
+        ],
+        "inspect": null,
+        "pinned": null,
+        "focus": "靠近车手，查看角色与状态。\n单击锁定 · 箭头跟车 · Esc 取消",
+        "ridersVisible": 114,
+        "inside": true
+      }
+    },
+    {
+      "viewport": [
+        320,
+        740
+      ],
+      "productionState": {
+        "seed": 2058765,
+        "time": 6,
+        "riders": 184
+      },
+      "calm": {
+        "canvas": [
+          294,
+          308
+        ],
+        "labels": 2,
+        "budget": 2,
+        "overlaps": 0,
+        "overlapArea": 0,
+        "ids": [
+          66,
+          0
+        ],
+        "boxes": [
+          {
+            "id": 66,
+            "x": 149,
+            "y": 57,
+            "w": 133,
+            "h": 43,
+            "opacity": 1
+          },
+          {
+            "id": 0,
+            "x": 12,
+            "y": 57,
+            "w": 133,
+            "h": 43,
+            "opacity": 1
+          }
+        ],
+        "inspect": null,
+        "pinned": null,
+        "focus": "靠近车手，查看角色与状态。\n单击锁定 · 箭头跟车 · Esc 取消",
+        "ridersVisible": 97,
+        "inside": true
+      }
+    }
+  ],
+  "errors": [],
+  "beforeState": {
+    "seed": 2058765,
+    "time": 6,
+    "riders": 184
+  },
+  "before": {
+    "canvas": [
+      1134,
+      368
+    ],
+    "labels": 4,
+    "budget": 4,
+    "overlaps": 0,
+    "overlapArea": 0,
+    "ids": [
+      1,
+      33,
+      66,
+      0
+    ],
+    "boxes": [
+      {
+        "id": 1,
+        "x": 387.16666666666663,
+        "y": 64,
+        "w": 174,
+        "h": 36,
+        "opacity": 1
+      },
+      {
+        "id": 33,
+        "x": 572.8333333333334,
+        "y": 108,
+        "w": 174,
+        "h": 36,
+        "opacity": 1
+      },
+      {
+        "id": 66,
+        "x": 201.5,
+        "y": 108,
+        "w": 174,
+        "h": 36,
+        "opacity": 1
+      },
+      {
+        "id": 0,
+        "x": 387.16666666666663,
+        "y": 108,
+        "w": 174,
+        "h": 36,
+        "opacity": 1
+      }
+    ],
+    "inspect": null,
+    "pinned": null,
+    "focus": "靠近车手，查看角色与状态。\n单击锁定 · 箭头跟车 · Esc 取消",
+    "ridersVisible": 148,
+    "inside": true
+  },
+  "after": {
+    "canvas": [
+      1134,
+      368
+    ],
+    "labels": 4,
+    "budget": 4,
+    "overlaps": 0,
+    "overlapArea": 0,
+    "ids": [
+      1,
+      33,
+      66,
+      0
+    ],
+    "boxes": [
+      {
+        "id": 1,
+        "x": 199,
+        "y": 64,
+        "w": 179,
+        "h": 43,
+        "opacity": 1
+      },
+      {
+        "id": 33,
+        "x": 756,
+        "y": 64,
+        "w": 179,
+        "h": 43,
+        "opacity": 1
+      },
+      {
+        "id": 66,
+        "x": 570.3333333333334,
+        "y": 64,
+        "w": 179,
+        "h": 43,
+        "opacity": 1
+      },
+      {
+        "id": 0,
+        "x": 384.66666666666663,
+        "y": 64,
+        "w": 179,
+        "h": 43,
+        "opacity": 1
+      }
+    ],
+    "inspect": null,
+    "pinned": null,
+    "focus": "靠近车手，查看角色与状态。\n单击锁定 · 箭头跟车 · Esc 取消",
+    "ridersVisible": 148,
+    "inside": true
+  },
+  "passed": 65,
+  "failed": 0
+}

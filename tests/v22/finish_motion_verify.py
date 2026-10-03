@@ -11,7 +11,7 @@ from browser_verify import STORAGE
 ROOT=Path(__file__).resolve().parents[2]
 async def main(args):
     out=Path(args.out);out.mkdir(parents=True,exist_ok=True)
-    src=ROOT/'Grand-Tour-V22.html';report={'sha256':hashlib.sha256(src.read_bytes()).hexdigest(),'mode':'injected-memory-storage' if args.injected else 'native-file','errors':[]}
+    src=ROOT/'archive/v22/Grand-Tour-V22.html';report={'sha256':hashlib.sha256(src.read_bytes()).hexdigest(),'mode':'injected-memory-storage' if args.injected else 'native-file','errors':[]}
     async with async_playwright() as pw:
         exe=shutil.which('chromium');browser=await pw.chromium.launch(**({'executable_path':exe} if exe else {}),headless=True,args=['--no-sandbox'])
         p=await browser.new_page(viewport={'width':1440,'height':1000});p.on('pageerror',lambda e:report['errors'].append(str(e)))

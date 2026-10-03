@@ -37,7 +37,7 @@ GEOMETRY=r"""()=>{
 }"""
 async def main(args):
  out=args.out.resolve();out.mkdir(parents=True,exist_ok=True)
- source=ROOT/'Grand-Tour-V23.html'
+ source=ROOT/'archive/v23/Grand-Tour-V23.html'
  report={'source_sha256':hashlib.sha256(source.read_bytes()).hexdigest(),'tour':str(args.tour),'errors':[],'console':[],'checks':{},'screenshots':[]}
  def check(name,data):
   report['checks'][name]=data

@@ -1,0 +1,66 @@
+{
+  "version": 12,
+  "source": "grand-tour-v12.html",
+  "sourceSHA256": "6d271fd7caff6d405b3e588e998d53b79d7852a489544d78f17f1dbd97b3f469",
+  "sourceBytes": 487797,
+  "sourceLines": 3431,
+  "baselineSHA256": "50cfb34f2620d58a2ddfcd38fe119e2195ca69445742bea42a8a56a6e10ad079",
+  "suites": [
+    {
+      "name": "定向核心 / V11 兼容",
+      "file": "v12-focused.json",
+      "passed": 23,
+      "failed": 0,
+      "evidenceSHA256": "8bbe63b9e627a14874bcc6b4d319b4f063e80bf24fb3aa072013756ab6322e6c"
+    },
+    {
+      "name": "既有物理、存档、计时与结算回归",
+      "file": "core-checks.json",
+      "passed": 37,
+      "failed": 0,
+      "evidenceSHA256": "fbc09bd575dc4a4930d1da89f6e324c71b6e69a3fb372c036e1919a0d150bc92"
+    },
+    {
+      "name": "真实浏览器交互与三种宽度",
+      "file": "ui-checks.json",
+      "passed": 65,
+      "failed": 0,
+      "evidenceSHA256": "6a4f9aed0919e9c691343eb3eacd58719a551172faf8de17255a645774da54cd"
+    },
+    {
+      "name": "正常推进中的标签稳定性",
+      "file": "motion-checks.json",
+      "passed": 13,
+      "failed": 0,
+      "evidenceSHA256": "f9fc4e7e1e46df326e599b5961411e17530fa660f6bc101b9b8736924166f9d3"
+    },
+    {
+      "name": "领奖生命周期、恢复与结算只执行一次",
+      "file": "ceremony-checks.json",
+      "passed": 113,
+      "failed": 0,
+      "evidenceSHA256": "18e0b1f28c64ca8f3d459a6cb23bbb78a7de1824fe35b166a98b595334e4b00d"
+    },
+    {
+      "name": "自然场景最终截图及人数闭合",
+      "file": "visual-evidence.json",
+      "passed": 4,
+      "failed": 0,
+      "evidenceSHA256": "12245e537fbcd26d44f3d8171b27e2e2a5944bfbeeacef6bdb7c1dc6a35bc8e4"
+    }
+  ],
+  "namedChecks": 255,
+  "failed": 0,
+  "video": {
+    "file": "Grand-Tour-V12-finish-ceremony.mp4",
+    "pass": true,
+    "seconds": 31.8,
+    "sha256": "3f2601dbcb459a85c8772ee69bf91dabddfb5f5d0b09042473b1e34c348e73b1",
+    "actualFrames": 705,
+    "errors": []
+  },
+  "tourComparison": "tour-comparison.json",
+  "legacyThresholdUpdate": "One legacy test intentionally updated: a 24m moderate gap requires split persistence and a 5m contact requires merge persistence. Old 50m mandatory-delay / 10m merge rule is superseded, not silently ignored.",
+  "environment": "Linux Chromium, Node.js. Browser plugin absent. Direct file navigation blocked by ERR_BLOCKED_BY_ADMINISTRATOR; real HTML loaded into about:blank with explicit memory Storage. No Windows native localStorage, physical Android, Firefox/Safari, or GPU performance certification.",
+  "presentationAcceptance": "Candidate for human playtest; no subjective 8/10 sign-off."
+}

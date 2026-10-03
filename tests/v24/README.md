@@ -2,12 +2,12 @@
 
 游戏只需打开 `Grand-Tour-V24.html` 或 `index.html`。下列命令用于工程复核，需要 Node.js、Python 和已安装 Chromium 的 Python Playwright。测试使用隔离资料，不接触玩家的浏览器存档。
 
-从仓库或解压包根目录运行；先创建自己的输出目录。`$evidence` 是该目录的绝对路径。
+下列命令从仓库根目录运行，历史基线位于 `archive/`。V24 封板 ZIP 保持原始字节和内部目录，解压后请使用包内原有验证指南（基线 HTML 在包根目录）。先在仓库外或忽略的 `output/` 下创建输出目录；`$evidence` 是该目录的绝对路径。
 
 ```powershell
 python tests/v24/static_verify.py --out "$evidence/static.json"
-node tests/v24/core-parity.cjs Grand-Tour-V23.html Grand-Tour-V24.html "$evidence/core-parity.json"
-node tests/v24/focused.cjs Grand-Tour-V24.html Grand-Tour-V22.html "$evidence/focused.json"
+node tests/v24/core-parity.cjs archive/v23/Grand-Tour-V23.html Grand-Tour-V24.html "$evidence/core-parity.json"
+node tests/v24/focused.cjs Grand-Tour-V24.html archive/v22/Grand-Tour-V22.html "$evidence/focused.json"
 python tests/v24/browser_verify.py --out "$evidence/browser"
 python tests/v24/presentation_verify.py --out "$evidence/ui"
 node tests/v23/ttt-wheel.cjs Grand-Tour-V24.html "$evidence/ttt-wheel.json"
@@ -21,11 +21,11 @@ node tests/v23/storage-ownership.cjs Grand-Tour-V24.html
 ## 多种子与完整巡回赛
 
 ```powershell
-node tests/v23/tour-simulation.cjs Grand-Tour-V23.html "$evidence/baseline-tour.json" 314159
+node tests/v23/tour-simulation.cjs archive/v23/Grand-Tour-V23.html "$evidence/baseline-tour.json" 314159
 node tests/v23/tour-simulation.cjs Grand-Tour-V24.html "$evidence/v24-tour.json" 314159
-node tests/v24/race-audit.cjs Grand-Tour-V23.html "$evidence/baseline-audit.json" - "$evidence/baseline-tour-tour.json"
+node tests/v24/race-audit.cjs archive/v23/Grand-Tour-V23.html "$evidence/baseline-audit.json" - "$evidence/baseline-tour-tour.json"
 node tests/v24/race-audit.cjs Grand-Tour-V24.html "$evidence/v24-audit.json" "$evidence/baseline-audit.json" "$evidence/baseline-tour-tour.json"
-node tests/v24/tactics_probe.cjs Grand-Tour-V23.html "$evidence/tactics.json"
+node tests/v24/tactics_probe.cjs archive/v23/Grand-Tour-V23.html "$evidence/tactics.json"
 ```
 
 `race-audit.cjs` 对三个种子 × 第 1/3/5/7/16/19/21 站逐场比较整个结果 JSON 的 SHA-256，包含成绩和 AI 审计。第 19 站承接真实第 18 站成绩；其他场景是明确的新建单站条件。每 60 个模拟秒对原始/紧凑快照继续推进 50 步并比较物理状态。生成的 `scenes/` 全部来自自然比赛。

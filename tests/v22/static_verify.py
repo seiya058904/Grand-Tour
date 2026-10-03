@@ -17,15 +17,15 @@ class Inventory(HTMLParser):
  def handle_data(self,data):
   if self.in_script:self.scripts[-1]+=data
 def main(args):
- src=ROOT/'Grand-Tour-V22.html';text=src.read_text(encoding='utf-8');old=(ROOT/'Grand-Tour-V21.html').read_text(encoding='utf-8')
+ src=ROOT/'archive/v22/Grand-Tour-V22.html';text=src.read_text(encoding='utf-8');old=(ROOT/'archive/v21/Grand-Tour-V21.html').read_text(encoding='utf-8')
  inv=Inventory();inv.feed(text)
  checks={
   'markers':'data-build="2200"' in text and 'buildVersion:220' in text and '<title>环法 · Grand Tour V22' in text,
   'index':'./Grand-Tour-V22.html' in (ROOT/'index.html').read_text(encoding='utf-8'),
   'unique_dom_ids':len(inv.ids)==len(set(inv.ids)),
   'offline_assets':not inv.remote,
-  'v21_original':hashlib.sha256((ROOT/'Grand-Tour-V21.html').read_bytes()).hexdigest()=='b33b017dd0b1692f4dc16d0470b58fb1c417b65a03a69ce49c925daa60a762cf',
-  'v20_original':hashlib.sha256((ROOT/'Grand-Tour-V20.html').read_bytes()).hexdigest()=='3d7d013d61c6d01459a8d3185fb4ff2b30983a4a172245190d858311325e2581',
+  'v21_original':hashlib.sha256((ROOT/'archive/v21/Grand-Tour-V21.html').read_bytes()).hexdigest()=='b33b017dd0b1692f4dc16d0470b58fb1c417b65a03a69ce49c925daa60a762cf',
+  'v20_original':hashlib.sha256((ROOT/'archive/v20/Grand-Tour-V20.html').read_bytes()).hexdigest()=='3d7d013d61c6d01459a8d3185fb4ff2b30983a4a172245190d858311325e2581',
   'core_engine_and_save_unchanged':text[text.index('const clamp='):text.index('function fitCanvas')]==old[old.index('const clamp='):old.index('function fitCanvas')],
   'route_data_unchanged':all(line in text for line in old.splitlines() if line.startswith(('const OFFICIAL_PROFILE_DATA_V182=','const V181_STAGE_DATA=','const STAGE_DATA='))),
   'no_external_font_css':not re.search(r'@import\s+|url\([\'"]?https?://',text[:text.index('</style>')]),

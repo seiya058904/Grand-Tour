@@ -4,7 +4,7 @@ from playwright.async_api import async_playwright
 sys.stdout.reconfigure(encoding='utf8')
 ROOT=Path(__file__).resolve().parents[2]
 async def main(args):
- out=args.out;out.mkdir(parents=True,exist_ok=True);src=ROOT/'Grand-Tour-V23.html'
+ out=args.out;out.mkdir(parents=True,exist_ok=True);src=ROOT/'archive/v23/Grand-Tour-V23.html'
  report={'sha256':hashlib.sha256(src.read_bytes()).hexdigest(),'mode':'native offline; real wall-clock input/playback at 1x','flows':[],'windows':[],'errors':[]}
  async with async_playwright() as pw:
   b=await pw.chromium.launch(headless=True);c=await b.new_context(viewport={'width':1440,'height':1000},record_video_dir=str(out/'video'),record_video_size={'width':1440,'height':1000});await c.set_offline(True)

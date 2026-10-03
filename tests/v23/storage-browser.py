@@ -13,7 +13,7 @@ async def main():
    if not locks: await ctx.add_init_script("Object.defineProperty(navigator,'locks',{value:undefined})")
    a=await ctx.new_page();b=await ctx.new_page()
    for p in [a,b]:p.on('pageerror',lambda e:errors.append(str(e)))
-   url='http://127.0.0.1:4187/Grand-Tour-V23.html?test'
+   url='http://127.0.0.1:4187/archive/v23/Grand-Tour-V23.html?test'
    await a.goto(url);await a.evaluate('App.testingFreeze=true')
    await a.locator('#newTour').click();await a.locator('#startRace').click();await a.evaluate('saveQueue')
    await b.goto(url);await b.evaluate('App.testingFreeze=true');await b.locator('#continueTour').click()

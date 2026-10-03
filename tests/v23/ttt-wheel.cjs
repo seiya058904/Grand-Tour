@@ -2,7 +2,7 @@
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const { loadEngine } = require('./engine-loader.cjs');
-const file = process.argv[2] || 'Grand-Tour-V23.html';
+const file = process.argv[2] || 'archive/v23/Grand-Tour-V23.html';
 const { engine: E } = loadEngine(file, false);
 const reports = [];
 for (const seed of [314159, 12345]) for (const mode of ['auto', 'early', 'late', 'restore-auto']) {

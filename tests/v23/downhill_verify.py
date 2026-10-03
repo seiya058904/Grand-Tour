@@ -10,7 +10,7 @@ from playwright.async_api import async_playwright
 from browser_verify import STORAGE
 ROOT=Path(__file__).resolve().parents[2]
 async def main(args):
-    out=Path(args.out);out.mkdir(parents=True,exist_ok=True);src=ROOT/'Grand-Tour-V23.html'
+    out=Path(args.out);out.mkdir(parents=True,exist_ok=True);src=ROOT/'archive/v23/Grand-Tour-V23.html'
     report={'sha256':hashlib.sha256(src.read_bytes()).hexdigest(),'mode':'injected-memory-storage' if args.injected else 'native-file','errors':[]}
     async with async_playwright() as pw:
         exe=shutil.which('chromium');b=await pw.chromium.launch(**({'executable_path':exe} if exe else {}),headless=True,args=['--no-sandbox']);p=await b.new_page(viewport={'width':1440,'height':1000});p.on('pageerror',lambda e:report['errors'].append(str(e)))

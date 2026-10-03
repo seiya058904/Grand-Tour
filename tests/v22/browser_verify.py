@@ -78,8 +78,8 @@ async def main(args):
     check('next_stage',await p.evaluate("({index:App.prep.index,visible:!document.querySelector('#prepBackdrop').hidden})"))
     await p.evaluate('closeDialogs();App.race=null;App.finishFlow=null;showScreen("home")')
   check('tour_storage_roundtrip',await p.evaluate("""()=>{Store.tour={id:'v21-qa',playerId:0,seedBase:2026001,seedOrigin:'test',timeModel:'race-world-v1',results:[]};initializeRace(new Race(0,0,'tour',null,seedForStage(2026001,0)));for(let i=0;i<300;i++)App.race.tick();const original=App.race;saveActive();if(!JSON.parse(localStorage.getItem(CONFIG.saveKey)).active)throw Error('storage backing');App.race=null;loadStore();continueTour();const restored=App.race;const immediate=original.riders.every((r,i)=>['x','v','power','energy','w','drawLane'].every(k=>r[k]===restored.riders[i][k]))&&original.rng.state===restored.rng.state;for(let i=0;i<200;i++){original.tick();restored.tick();}const equal=stableJSON(SaveCodec.compactSnapshot(original.snapshot()))===stableJSON(SaveCodec.compactSnapshot(restored.snapshot()));if(!equal||!immediate)throw Error('storage roundtrip');return{pass:equal,immediate,continuedTicks:200,t:restored.t}}"""))
-  if (ROOT/'Grand-Tour-V20.html').exists():
-   bc,bp=await load(source=ROOT/'Grand-Tour-V20.html')
+  if (ROOT/'archive/v20/Grand-Tour-V20.html').exists():
+   bc,bp=await load(source=ROOT/'archive/v20/Grand-Tour-V20.html')
    legacy=await bp.evaluate("""()=>{const r=new Race(4,0,'tour',null,123456);for(let i=0;i<500;i++)r.tick();return r.snapshot()}""")
    check('v20_import',await p.evaluate("""s=>{const r=Race.restore(s);const exact=r.riders.every((p,i)=>p.x===s.riders[i].x&&p.w===s.riders[i].w&&p.energy===s.riders[i].energy)&&r.rng.state===s.rngState;if(!exact)throw Error('legacy');for(let i=0;i<20;i++)r.tick();return{exact,continued:true,pass:true}}""",legacy));await bc.close()
   for reduced in [False,True]:
@@ -95,4 +95,4 @@ async def main(args):
  (out/'verification.json').write_text(json.dumps(report,ensure_ascii=False,indent=2), encoding='utf-8');print('COMPLETE',report['pass'],flush=True)
  if not report['pass']:raise SystemExit(1)
 if __name__=='__main__':
- ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--source',type=Path,default=ROOT/'Grand-Tour-V22.html');ap.add_argument('--out',default='/tmp/grand-tour-v22-qa');ap.add_argument('--chromium');ap.add_argument('--injected',action='store_true');args=ap.parse_args();args.source=args.source.resolve();asyncio.run(main(args))
+ ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--source',type=Path,default=ROOT/'archive/v22/Grand-Tour-V22.html');ap.add_argument('--out',default='/tmp/grand-tour-v22-qa');ap.add_argument('--chromium');ap.add_argument('--injected',action='store_true');args=ap.parse_args();args.source=args.source.resolve();asyncio.run(main(args))

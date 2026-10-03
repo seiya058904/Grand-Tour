@@ -9,7 +9,7 @@ ROOT=Path(__file__).resolve().parents[2]
 CONTRAST="""el=>{const s=getComputedStyle(el),nums=c=>c.match(/[\\d.]+/g).slice(0,3).map(Number),lum=c=>nums(c).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4}).reduce((a,v,i)=>a+v*[.2126,.7152,.0722][i],0),a=lum(s.color),b=lum(s.backgroundColor);return{color:s.color,background:s.backgroundColor,ratio:(Math.max(a,b)+.05)/(Math.min(a,b)+.05)}}"""
 async def main(args):
  out=args.out.resolve();out.mkdir(parents=True,exist_ok=True)
- report={'source_sha256':hashlib.sha256((ROOT/'Grand-Tour-V22.html').read_bytes()).hexdigest(),'checks':{},'errors':[],'console':[]}
+ report={'source_sha256':hashlib.sha256((ROOT/'archive/v22/Grand-Tour-V22.html').read_bytes()).hexdigest(),'checks':{},'errors':[],'console':[]}
  def check(name,data):
   report['checks'][name]=data
   (out/'presentation.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
@@ -21,7 +21,7 @@ async def main(args):
   p=await ctx.new_page();p.on('pageerror',lambda e:report['errors'].append(str(e)))
   p.on('console',lambda m:report['console'].append(m.text) if m.type in ['error','warning'] else None)
   await ctx.set_offline(True)
-  await p.goto((ROOT/'Grand-Tour-V22.html').as_uri()+'?test')
+  await p.goto((ROOT/'archive/v22/Grand-Tour-V22.html').as_uri()+'?test')
   await p.evaluate('App.testingFreeze=true')
   check('offline_identity',{'pass':await p.title()=='环法 · Grand Tour V22 · 公路自行车竞赛游戏' and await p.locator('#newTour').is_visible()})
   await p.locator('#chooseStage').click();await p.locator('button[data-stage="4"]').click()
@@ -61,7 +61,7 @@ async def main(args):
   check('reduced_motion',await p.evaluate("({pass:reducedMotion&&$('prepBackdrop').getAnimations().length===0&&$('prepBackdrop').querySelector('.dialog').getAnimations().length===0})"))
   await p.keyboard.press('Escape');check('reduced_exit',{'pass':await p.locator('#prepBackdrop').is_hidden()})
   # Import a V21 save through the same file control available to the player.
-  old=await browser.new_page();await old.goto((ROOT/'Grand-Tour-V21.html').as_uri()+'?test')
+  old=await browser.new_page();await old.goto((ROOT/'archive/v21/Grand-Tour-V21.html').as_uri()+'?test')
   legacy=await old.evaluate("""()=>{App.testingFreeze=true;Store.tour={id:'v21-native-qa',playerId:0,seedBase:2026001,seedOrigin:'test',timeModel:'race-world-v1',results:[]};initializeRace(new Race(0,0,'tour',null,2026001));for(let i=0;i<500;i++)App.race.tick();saveActive();return{data:localStorage.getItem(CONFIG.saveKey),physical:JSON.stringify(App.race.riders.map(r=>[r.x,r.v,r.power,r.energy,r.w])),t:App.race.t}}""")
   await old.close();p.on('dialog',lambda d:d.accept())
   await p.locator('#saveFile').set_input_files({'name':'v21-save.json','mimeType':'application/json','buffer':legacy['data'].encode()})
@@ -70,11 +70,11 @@ async def main(args):
   await ctx.close();await browser.close()
   # A fresh on-disk profile owned by this test, never the user's browser profile.
   profile=out/'profile';persistent=await pw.chromium.launch_persistent_context(str(profile),headless=True)
-  q=await persistent.new_page();await q.goto((ROOT/'Grand-Tour-V22.html').as_uri()+'?test');await q.evaluate('App.testingFreeze=true')
+  q=await persistent.new_page();await q.goto((ROOT/'archive/v22/Grand-Tour-V22.html').as_uri()+'?test');await q.evaluate('App.testingFreeze=true')
   q.on('dialog',lambda d:d.accept());await q.locator('#saveFile').set_input_files({'name':'v21-save.json','mimeType':'application/json','buffer':legacy['data'].encode()})
   await q.wait_for_function("Store.tour?.id==='v21-native-qa'");await persistent.close()
   persistent=await pw.chromium.launch_persistent_context(str(profile),headless=True)
-  q=await persistent.new_page();await q.goto((ROOT/'Grand-Tour-V22.html').as_uri()+'?test');await q.evaluate('App.testingFreeze=true');await q.locator('#continueTour').click()
+  q=await persistent.new_page();await q.goto((ROOT/'archive/v22/Grand-Tour-V22.html').as_uri()+'?test');await q.evaluate('App.testingFreeze=true');await q.locator('#continueTour').click()
   check('process_restart_persistence',await q.evaluate("""s=>({pass:App.race.t===s.t&&JSON.stringify(App.race.riders.map(r=>[r.x,r.v,r.power,r.energy,r.w]))===s.physical,t:App.race.t})""",legacy))
   await persistent.close()
  report['pass']=not report['errors'] and not report['console'];check('console',{'pass':report['pass'],'errors':report['errors'],'warnings':report['console']})

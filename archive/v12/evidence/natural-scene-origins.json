@@ -1,0 +1,102 @@
+[
+  {
+    "stage": 5,
+    "time": 81.05000000000001,
+    "groups": [
+      {
+        "kind": "BREAKAWAY",
+        "count": 11,
+        "front": 952.832017516988,
+        "uid": 5
+      },
+      {
+        "kind": "PELOTON",
+        "count": 169,
+        "front": 896.3193490873306,
+        "uid": 1
+      },
+      {
+        "kind": "GRUPETTO",
+        "count": 2,
+        "front": 832.0790785775762,
+        "uid": 3
+      },
+      {
+        "kind": "GRUPETTO",
+        "count": 1,
+        "front": 821.0448330505736,
+        "uid": 6
+      },
+      {
+        "kind": "GRUPETTO",
+        "count": 1,
+        "front": 814.234334499879,
+        "uid": 4
+      }
+    ],
+    "account": {
+      "racing": 184,
+      "finished": 0,
+      "exited": 0,
+      "dns": 0,
+      "total": 184,
+      "assigned": 184,
+      "groups": 5,
+      "closed": true
+    },
+    "policy": "Normal engine ticks, default follow, feed below65. No coordinate editing."
+  },
+  {
+    "stage": 19,
+    "time": 26.05,
+    "groups": [
+      {
+        "kind": "SOLO",
+        "count": 1,
+        "front": 181.07077415030645,
+        "uid": 3
+      },
+      {
+        "kind": "SOLO",
+        "count": 1,
+        "front": 178.16596532549352,
+        "uid": 4
+      },
+      {
+        "kind": "SOLO",
+        "count": 1,
+        "front": 176.87360429881767,
+        "uid": 5
+      },
+      {
+        "kind": "CHASE",
+        "count": 2,
+        "front": 175.1954211449839,
+        "uid": 6
+      },
+      {
+        "kind": "SOLO",
+        "count": 1,
+        "front": 172.41326515604635,
+        "uid": 2
+      },
+      {
+        "kind": "PELOTON",
+        "count": 178,
+        "front": 166.41089266409088,
+        "uid": 1
+      }
+    ],
+    "account": {
+      "racing": 184,
+      "finished": 0,
+      "exited": 0,
+      "dns": 0,
+      "total": 184,
+      "assigned": 184,
+      "groups": 6,
+      "closed": true
+    },
+    "policy": "Normal engine ticks, default follow, feed below65. No coordinate editing."
+  }
+]

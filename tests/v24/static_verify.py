@@ -5,7 +5,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'v23'))
 from static_verify import Inventory
 ROOT=Path(__file__).resolve().parents[2]
 def main(a):
- src=ROOT/'Grand-Tour-V24.html';old=ROOT/'Grand-Tour-V23.html';text=src.read_text(encoding='utf8');baseline=old.read_text(encoding='utf8');inv=Inventory();inv.feed(text)
+ src=ROOT/'Grand-Tour-V24.html';old=ROOT/'archive/v23/Grand-Tour-V23.html';text=src.read_text(encoding='utf8');baseline=old.read_text(encoding='utf8');inv=Inventory();inv.feed(text)
  # This range includes the constructor, fixed-step integrator and original AI.
  def core(s):return s[s.index('class Race {'):s.index('/* ENVIRONMENT')]
  checks={'version':'data-build="2400"' in text and 'buildVersion:240' in text and '<title>环法 · Grand Tour V24' in text,

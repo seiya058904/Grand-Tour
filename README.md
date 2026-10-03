@@ -15,7 +15,9 @@ V24 is the current official build and the default entry at `index.html`. It refi
 - [Validation guide](tests/v24/README.md)
 - [Continuous regression checks](https://github.com/seiya058904/Grand-Tour/actions/workflows/v23-verify.yml)
 
-V23, V22, V21, V20, V19 and V18.3.1 remain available as historical builds. V12 is in [Grand-Tour-V12](Grand-Tour-V12/grand-tour-v12.html).
+Historical HTML, reports and retained V12 evidence are in [archive/](archive/README.md), grouped by version. V21/V22/V23 Final ZIPs are recoverable from Git history; the archive index includes exact recovery instructions and hashes.
+
+The root contains the current V24 HTML, Final ZIP and report, `index.html`, README, [repository rules](AGENTS.md), necessary configuration, `.github/`, `tests/` and `archive/`. Test outputs belong outside the repository or in ignored `output/`.
 
 ## About
 

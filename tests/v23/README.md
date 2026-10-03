@@ -6,12 +6,12 @@
 $evidence = Join-Path $env:TEMP 'grand-tour-v23-checks'
 New-Item -ItemType Directory -Force -Path $evidence | Out-Null
 python tests/v23/static_verify.py --out "$evidence/static.json"
-node tests/v23/focused.cjs Grand-Tour-V23.html Grand-Tour-V22.html "$evidence/focused.json"
+node tests/v23/focused.cjs archive/v23/Grand-Tour-V23.html archive/v22/Grand-Tour-V22.html "$evidence/focused.json"
 python tests/v23/browser_verify.py --out "$evidence/browser"
 python tests/v23/presentation_verify.py --out "$evidence/ui"
 python tests/v23/finish_motion_verify.py --out "$evidence/finish"
 python tests/v23/downhill_verify.py --out "$evidence/downhill"
-node tests/v23/tour-simulation.cjs Grand-Tour-V23.html "$evidence/tour.json" 314159
+node tests/v23/tour-simulation.cjs archive/v23/Grand-Tour-V23.html "$evidence/tour.json" 314159
 python tests/v23/sequence_verify.py --record "$evidence/browser/stage-05-physical.json" --tour "$evidence/tour-tour.json" --out "$evidence/sequence" --play
 node tests/v23/showcase.cjs "$evidence/showcase" "$evidence/tour-tour.json"
 python tests/v23/live_play_verify.py --evidence "$evidence/showcase" --out "$evidence/live"
@@ -47,4 +47,4 @@ python tests/v23/storage-browser.py
 
 关闭页面前先捕获最新比赛快照；异步提交未完成或保存失败/冲突时请求浏览器离开确认。请取消离开、等待保存或先导出。忽略浏览器警告、强制结束进程，以及系统未发送生命周期事件时，不能保证保存最后一刻的进度。
 
-V23 是当前正式版本，默认 index.html 已指向 V23。V22 与其他历史 HTML 保留不变，仍可能写相同的 tour-cycling-2026-cinematic-v10 键。这些旧写入者不遵守新协议，无法由新 V23 严格控制。未发现本仓库 V23/index 注册 service worker 或 PWA 缓存；更新时关闭旧页面并备份，不假设旧代码已自动失效。
+V23 现为 `archive/v23/` 中的历史基线，当前正式版本为 V24，根目录 `index.html` 指向 V24。上述命令从仓库根目录运行；恢复的 V23 ZIP 应使用包内原始指南与脚本。V22 与其他历史 HTML 保留不变，仍可能写相同的 tour-cycling-2026-cinematic-v10 键。这些旧写入者不遵守新协议，无法由新 V23 严格控制。未发现本仓库 V23/index 注册 service worker 或 PWA 缓存；更新时关闭旧页面并备份，不假设旧代码已自动失效。

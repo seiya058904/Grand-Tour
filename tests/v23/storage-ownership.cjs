@@ -2,7 +2,7 @@
 // Real HTML engine/codec and UI callbacks; only DOM, storage and lock scheduling
 // are doubles. A naturally completed TTT result is used, not a fabricated ledger.
 const assert=require('node:assert/strict'),fs=require('node:fs'),{loadEngine}=require('./engine-loader.cjs');
-const file=process.argv[2]||'Grand-Tour-V23.html',html=fs.readFileSync(file,'utf8');
+const file=process.argv[2]||'archive/v23/Grand-Tour-V23.html',html=fs.readFileSync(file,'utf8');
 function shared(locks){const data=new Map();let failRead=false,failWrite=false,failLock=false,queue=Promise.resolve();const storage={getItem:k=>{if(failRead)throw Error('read unavailable');return data.get(k)||null},setItem:(k,v)=>{if(failWrite)throw Error('quota');data.set(k,String(v))}};return {data,storage,failure:(r,w,l=false)=>{failRead=r;failWrite=w;failLock=l},locks:locks?{request:(_,fn)=>{if(failLock)return Promise.reject(Error('lock unavailable'));const next=queue.then(fn);queue=next.catch(()=>{});return next}}:null}}
 function page(sh){const p=loadEngine(file,false);Object.assign(p.engine.localStorage,sh.storage);p.sandbox.window.navigator={locks:sh.locks};p.engine.loadStore();return p}
 function setting(p,id,field,value){const start=html.indexOf("$('"+id+"').addEventListener('change',()=>{");assert(start>=0);let i=html.indexOf('{',start),depth=1,j=i+1;for(;depth;j++){if(html[j]==='{')depth++;if(html[j]==='}')depth--;}const code=html.slice(i+1,j-1);const node={value};let result;new Function('Store','$','persist','App','viewFor','drawRace',code)(p.engine.Store(),()=>node,(...args)=>result=p.engine.persist(...args),{race:null},()=>{},()=>{});return result}

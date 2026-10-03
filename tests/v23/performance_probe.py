@@ -16,7 +16,7 @@ async def main(args):
         browser=await pw.chromium.launch(**({'executable_path':exe} if exe else {}),headless=True,args=['--no-sandbox'])
         report['browser']=browser.version
         for version in ['V22','V23']:
-            src=ROOT/('Grand-Tour-'+version+'.html')
+            src=ROOT/'archive'/version.lower()/('Grand-Tour-'+version+'.html')
             ctx=await browser.new_context(viewport={'width':1440,'height':1000},device_scale_factor=1)
             p=await ctx.new_page();errors=[];p.on('pageerror',lambda e:errors.append(str(e)))
             if args.injected:

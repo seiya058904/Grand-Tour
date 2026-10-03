@@ -1,6 +1,6 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),{loadEngine}=require('./engine-loader.cjs');
-const root=path.resolve(__dirname,'../..'),out=path.resolve(process.argv[2]),tourPath=process.argv[3],E=loadEngine(path.join(root,'Grand-Tour-V23.html')).engine;
+const root=path.resolve(__dirname,'../..'),out=path.resolve(process.argv[2]),tourPath=process.argv[3],E=loadEngine(path.join(root,'archive/v23/Grand-Tour-V23.html')).engine;
 fs.mkdirSync(out,{recursive:true});
 const report={source:'current V23 production Race.tick; natural state, no rider/clock edits',snapshots:[]};
 function save(r,name,reason){const s=r.snapshot();s.mode='tour';fs.writeFileSync(path.join(out,name+'-snapshot.json'),JSON.stringify(s));report.snapshots.push({name,stage:r.stageIndex+1,t:r.t,seed:r.seed,reason});console.log(name,r.t,reason);}

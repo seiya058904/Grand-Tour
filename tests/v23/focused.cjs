@@ -1,6 +1,6 @@
 'use strict';
 const fs=require('node:fs'),path=require('node:path'),assert=require('node:assert/strict'),crypto=require('node:crypto'),{loadEngine}=require('./engine-loader.cjs');
-const file=process.argv[2]||path.join(__dirname,'../../Grand-Tour-V23.html'),baseline=process.argv[3],out=process.argv[4]||path.join(require('node:os').tmpdir(),'grand-tour-v23-focused.json'),E=loadEngine(file).engine,O=baseline?loadEngine(baseline).engine:null;
+const file=process.argv[2]||path.join(__dirname,'../../archive/v23/Grand-Tour-V23.html'),baseline=process.argv[3],out=process.argv[4]||path.join(require('node:os').tmpdir(),'grand-tour-v23-focused.json'),E=loadEngine(file).engine,O=baseline?loadEngine(baseline).engine:null;
 const checks=[];function test(name,fn){try{checks.push({name,pass:true,detail:fn()});console.log('PASS',name)}catch(e){checks.push({name,pass:false,error:e.stack});console.log('FAIL',name,e.message)}fs.writeFileSync(out,JSON.stringify({source:file,sha256:crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex'),checks,passed:checks.filter(c=>c.pass).length,failed:checks.filter(c=>!c.pass).length},null,2));}
 const tick=(r,n)=>{for(let i=0;i<n&&!r.complete;i++)r.tick()},plain=o=>JSON.parse(JSON.stringify(o));
 const physical=r=>r.riders.map(x=>({id:x.id,x:x.x,v:x.v,energy:x.energy,w:x.w,draft:x.draft,lane:x.lane,drawLane:x.drawLane}));

@@ -11,7 +11,7 @@ async def main(a):
   for scene in ['peloton','climb','leadout']:
    snap=json.loads((a.scenes/(scene+'-snapshot.json')).read_text(encoding='utf8'))
    for version in ['V23','V24','V24','V23']:
-    src=ROOT/('Grand-Tour-'+version+'.html');c=await b.new_context(viewport={'width':1440,'height':1000},device_scale_factor=1);await c.set_offline(True);p=await c.new_page();errors=[];p.on('pageerror',lambda e:errors.append(str(e)))
+    src=(ROOT if version=='V24' else ROOT/'archive'/version.lower())/('Grand-Tour-'+version+'.html');c=await b.new_context(viewport={'width':1440,'height':1000},device_scale_factor=1);await c.set_offline(True);p=await c.new_page();errors=[];p.on('pageerror',lambda e:errors.append(str(e)))
     await p.goto(src.as_uri()+'?test');await p.evaluate('''s=>{App.testingFreeze=true;App.blockStoreWrite=true;Store.settings.quality='full';initializeRace(Race.restore(s));App.testingFreeze=false}''',snap)
     await p.wait_for_timeout(1500);await p.evaluate('Perf.start()');await p.wait_for_timeout(5000)
     data=await p.evaluate('''()=>{const stat=a=>{const b=a.slice().sort((x,y)=>x-y);return{n:b.length,p50:b[Math.floor((b.length-1)*.5)]||0,p95:b[Math.floor((b.length-1)*.95)]||0,p99:b[Math.floor((b.length-1)*.99)]||0,max:b.at(-1)||0,over33:a.filter(x=>x>33.34).length,over50:a.filter(x=>x>50).length}};return{...Perf.summary(),frames:stat(Perf.frames),cpu:stat(Perf.cpu),quality:Store.settings.quality,effectiveLow:RenderBudget.low()}}''')

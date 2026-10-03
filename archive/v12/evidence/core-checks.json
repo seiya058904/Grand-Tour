@@ -1,0 +1,435 @@
+{
+  "passed": 37,
+  "failed": 0,
+  "checks": [
+    {
+      "name": "21 seed derivatives and uint32 boundaries",
+      "status": "PASS"
+    },
+    {
+      "name": "determinism and mid-stage restore 1",
+      "status": "PASS",
+      "detail": {
+        "snapshotBytes": 430183
+      }
+    },
+    {
+      "name": "determinism and mid-stage restore 5",
+      "status": "PASS",
+      "detail": {
+        "snapshotBytes": 412558
+      }
+    },
+    {
+      "name": "determinism and mid-stage restore 16",
+      "status": "PASS",
+      "detail": {
+        "snapshotBytes": 403860
+      }
+    },
+    {
+      "name": "determinism and mid-stage restore 19",
+      "status": "PASS",
+      "detail": {
+        "snapshotBytes": 466596
+      }
+    },
+    {
+      "name": "production diagnostics not persisted or saved into records",
+      "status": "PASS"
+    },
+    {
+      "name": "V7 migration preserves positions, RNG and explicit legacy clock",
+      "status": "PASS"
+    },
+    {
+      "name": "V4 fixture migration keeps seed and original untouched",
+      "status": "PASS"
+    },
+    {
+      "name": "corrupted input, prototype keys and future versions rejected",
+      "status": "PASS"
+    },
+    {
+      "name": "physical benchmark: mass/CdA/power/grade/draft/wind 576 cases",
+      "status": "PASS",
+      "detail": {
+        "cases": 576
+      }
+    },
+    {
+      "name": "draft reduces air only, not gravity; no artificial leader penalty",
+      "status": "PASS"
+    },
+    {
+      "name": "108 km/h is a safety ceiling, not a free downhill target",
+      "status": "PASS"
+    },
+    {
+      "name": "wind deterministic separate stream / 2–4 zones / smooth transitions",
+      "status": "PASS",
+      "detail": {
+        "weatherKinds": [
+          "hot",
+          "snow"
+        ]
+      }
+    },
+    {
+      "name": "weather effects small: rain rolling, hot load, mountains-only rare snow",
+      "status": "PASS"
+    },
+    {
+      "name": "TT formula sensitivity, not individual-name nerfs",
+      "status": "PASS",
+      "detail": [
+        {
+          "id": 0,
+          "tt": 89,
+          "ftp": 414.96999999999997,
+          "cda": 0.27090000000000003,
+          "kmh": 50.59144087554887
+        },
+        {
+          "id": 0,
+          "tt": 94,
+          "ftp": 418.46999999999997,
+          "cda": 0.25270000000000004,
+          "kmh": 51.889943739864975
+        },
+        {
+          "id": 0,
+          "tt": 99,
+          "ftp": 421.96999999999997,
+          "cda": 0.23970000000000002,
+          "kmh": 52.934819258283824
+        },
+        {
+          "id": 10,
+          "tt": 95,
+          "ftp": 424.38,
+          "cda": 0.26770000000000005,
+          "kmh": 50.799245899077505
+        },
+        {
+          "id": 10,
+          "tt": 100,
+          "ftp": 427.88,
+          "cda": 0.25730000000000003,
+          "kmh": 51.59829645836726
+        },
+        {
+          "id": 10,
+          "tt": 100,
+          "ftp": 427.88,
+          "cda": 0.25730000000000003,
+          "kmh": 51.59829645836726
+        },
+        {
+          "id": 13,
+          "tt": 68,
+          "ftp": 316.225,
+          "cda": 0.29900000000000004,
+          "kmh": 44.230076843407005
+        },
+        {
+          "id": 13,
+          "tt": 73,
+          "ftp": 319.725,
+          "cda": 0.2912,
+          "kmh": 44.782409670297056
+        },
+        {
+          "id": 13,
+          "tt": 78,
+          "ftp": 323.225,
+          "cda": 0.28340000000000004,
+          "kmh": 45.34998492104933
+        },
+        {
+          "id": 33,
+          "tt": 92,
+          "ftp": 403.29999999999995,
+          "cda": 0.27330000000000004,
+          "kmh": 49.590374891180545
+        },
+        {
+          "id": 33,
+          "tt": 97,
+          "ftp": 406.79999999999995,
+          "cda": 0.26030000000000003,
+          "kmh": 50.52458152687177
+        },
+        {
+          "id": 33,
+          "tt": 100,
+          "ftp": 408.9,
+          "cda": 0.25510000000000005,
+          "kmh": 50.945500964764506
+        },
+        {
+          "id": 79,
+          "tt": 93,
+          "ftp": 407.71000000000004,
+          "cda": 0.26960000000000006,
+          "kmh": 50.027892257552594
+        },
+        {
+          "id": 79,
+          "tt": 98,
+          "ftp": 411.21000000000004,
+          "cda": 0.25660000000000005,
+          "kmh": 50.9801066913642
+        },
+        {
+          "id": 79,
+          "tt": 100,
+          "ftp": 412.61,
+          "cda": 0.25400000000000006,
+          "kmh": 51.20892357034609
+        }
+      ]
+    },
+    {
+      "name": "team identity does not boost physiology",
+      "status": "PASS"
+    },
+    {
+      "name": "climb sensitivity beats heavy sprinter on 8% steady state",
+      "status": "PASS",
+      "detail": {
+        "gcKmh": 22.062116843182594,
+        "sprinterKmh": 15.686654139775783
+      }
+    },
+    {
+      "name": "separate ordinary/mountain/sprint power-duration curves",
+      "status": "PASS",
+      "detail": {
+        "mountainPeak": 816.0165,
+        "ordinaryPeak": 1233.28,
+        "sprintPeak": 1819.86
+      }
+    },
+    {
+      "name": "TT follow prohibitions and physical/recommended layers",
+      "status": "PASS"
+    },
+    {
+      "name": "named follow 5m: acquire without teleport / free W′",
+      "status": "PASS"
+    },
+    {
+      "name": "named follow 10m: acquire without teleport / free W′",
+      "status": "PASS"
+    },
+    {
+      "name": "named follow 20m: acquire without teleport / free W′",
+      "status": "PASS"
+    },
+    {
+      "name": "lateral shift and speed surge explain acquiring/limited without fabricated shelter",
+      "status": "PASS"
+    },
+    {
+      "name": "changing explicit target and rear grace do not brake toward rear",
+      "status": "PASS"
+    },
+    {
+      "name": "front source uses multiple physically aligned wheels; ITT never drafts",
+      "status": "PASS"
+    },
+    {
+      "name": "small group 3 ordered line/relay and no placement writes",
+      "status": "PASS",
+      "detail": {
+        "members": 3,
+        "stablePredecessors": true,
+        "playerCanRotate": true
+      }
+    },
+    {
+      "name": "small group 5 ordered line/relay and no placement writes",
+      "status": "PASS",
+      "detail": {
+        "members": 5,
+        "stablePredecessors": true,
+        "playerCanRotate": true
+      }
+    },
+    {
+      "name": "small group 8 ordered line/relay and no placement writes",
+      "status": "PASS",
+      "detail": {
+        "members": 8,
+        "stablePredecessors": true,
+        "playerCanRotate": true
+      }
+    },
+    {
+      "name": "small group 12 ordered line/relay and no placement writes",
+      "status": "PASS",
+      "detail": {
+        "members": 12,
+        "stablePredecessors": true,
+        "playerCanRotate": true
+      }
+    },
+    {
+      "name": "V12 moderate 24m split and close 5m merge require hysteresis",
+      "status": "PASS"
+    },
+    {
+      "name": "near wheel time exact; empty-road separation increases smoothly",
+      "status": "PASS"
+    },
+    {
+      "name": "finish world clock and cutoff use identical scale; long stragglers OTL",
+      "status": "PASS"
+    },
+    {
+      "name": "classification road group times / 10-6-4 bonuses / TT own times",
+      "status": "PASS"
+    },
+    {
+      "name": "team GC three own classification times; fewer than three excluded",
+      "status": "PASS"
+    },
+    {
+      "name": "seeded complete flat stage: world hours, ordering, no double point awards",
+      "status": "PASS",
+      "detail": {
+        "winnerSeconds": 13900.46181412235,
+        "finished": 184,
+        "cutoff": {
+          "winner": 120,
+          "time": 13900.46181412235,
+          "average": 40.997199058596976,
+          "percent": 0.07,
+          "deadline": 14873.494141110914,
+          "timeModel": "race-world-v1"
+        }
+      }
+    },
+    {
+      "name": "TT quarter splits persist; checkpoint/finish same-clock identity",
+      "status": "PASS",
+      "detail": {
+        "recordedSplitEntries": 552
+      }
+    },
+    {
+      "name": "clock accepts all elapsed without speed cheats; paused clock does not tick",
+      "status": "PASS"
+    }
+  ],
+  "extra": {
+    "ttSensitivity": [
+      {
+        "id": 0,
+        "tt": 89,
+        "ftp": 414.96999999999997,
+        "cda": 0.27090000000000003,
+        "kmh": 50.59144087554887
+      },
+      {
+        "id": 0,
+        "tt": 94,
+        "ftp": 418.46999999999997,
+        "cda": 0.25270000000000004,
+        "kmh": 51.889943739864975
+      },
+      {
+        "id": 0,
+        "tt": 99,
+        "ftp": 421.96999999999997,
+        "cda": 0.23970000000000002,
+        "kmh": 52.934819258283824
+      },
+      {
+        "id": 10,
+        "tt": 95,
+        "ftp": 424.38,
+        "cda": 0.26770000000000005,
+        "kmh": 50.799245899077505
+      },
+      {
+        "id": 10,
+        "tt": 100,
+        "ftp": 427.88,
+        "cda": 0.25730000000000003,
+        "kmh": 51.59829645836726
+      },
+      {
+        "id": 10,
+        "tt": 100,
+        "ftp": 427.88,
+        "cda": 0.25730000000000003,
+        "kmh": 51.59829645836726
+      },
+      {
+        "id": 13,
+        "tt": 68,
+        "ftp": 316.225,
+        "cda": 0.29900000000000004,
+        "kmh": 44.230076843407005
+      },
+      {
+        "id": 13,
+        "tt": 73,
+        "ftp": 319.725,
+        "cda": 0.2912,
+        "kmh": 44.782409670297056
+      },
+      {
+        "id": 13,
+        "tt": 78,
+        "ftp": 323.225,
+        "cda": 0.28340000000000004,
+        "kmh": 45.34998492104933
+      },
+      {
+        "id": 33,
+        "tt": 92,
+        "ftp": 403.29999999999995,
+        "cda": 0.27330000000000004,
+        "kmh": 49.590374891180545
+      },
+      {
+        "id": 33,
+        "tt": 97,
+        "ftp": 406.79999999999995,
+        "cda": 0.26030000000000003,
+        "kmh": 50.52458152687177
+      },
+      {
+        "id": 33,
+        "tt": 100,
+        "ftp": 408.9,
+        "cda": 0.25510000000000005,
+        "kmh": 50.945500964764506
+      },
+      {
+        "id": 79,
+        "tt": 93,
+        "ftp": 407.71000000000004,
+        "cda": 0.26960000000000006,
+        "kmh": 50.027892257552594
+      },
+      {
+        "id": 79,
+        "tt": 98,
+        "ftp": 411.21000000000004,
+        "cda": 0.25660000000000005,
+        "kmh": 50.9801066913642
+      },
+      {
+        "id": 79,
+        "tt": 100,
+        "ftp": 412.61,
+        "cda": 0.25400000000000006,
+        "kmh": 51.20892357034609
+      }
+    ]
+  }
+}

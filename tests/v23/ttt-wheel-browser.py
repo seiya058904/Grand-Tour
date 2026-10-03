@@ -18,7 +18,7 @@ async def main(out):
             for restore_auto in [False, True]:
                 page = await browser.new_page(viewport={"width": 1440, "height": 1000})
                 page.on("pageerror", lambda error: errors.append(str(error)))
-                await page.goto((ROOT / "Grand-Tour-V23.html").as_uri() + "?test")
+                await page.goto((ROOT / "archive/v23/Grand-Tour-V23.html").as_uri() + "?test")
                 await page.evaluate("""seed => {
                     App.testingFreeze = true;
                     initializeRace(new Race(0, 0, 'tour', null, seed));

@@ -1,4 +1,4 @@
-# Exclude the previous legacy HTML build; the V12 build lives in its own folder.
+# Exclude the previous legacy HTML build; V12 is retained in archive/v12/.
 /grand-tour.html
 
 # Local environment and secrets
@@ -11,6 +11,15 @@ node_modules/
 /dist/
 /build/
 /coverage/
+/output/
+/.playwright-cli/
+/test-results/
+/playwright-report/
+/blob-report/
+/screenshots/
+/evidence/
+/verification/
+.codebase-memory/
 
 # Logs and temporary files
 *.log
@@ -31,3 +40,5 @@ __pycache__/
 
 # Local historical release packages
 /Grand-Tour History version/
+/Grand-Tour-V*-Final.zip
+!/Grand-Tour-V24-Final.zip
