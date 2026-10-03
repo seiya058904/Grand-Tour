@@ -47,4 +47,4 @@ python tests/v23/storage-browser.py
 
 关闭页面前先捕获最新比赛快照；异步提交未完成或保存失败/冲突时请求浏览器离开确认。请取消离开、等待保存或先导出。忽略浏览器警告、强制结束进程，以及系统未发送生命周期事件时，不能保证保存最后一刻的进度。
 
-仅修复 V23；默认 index.html / V22 与历史 HTML 不变，仍可能写相同的 tour-cycling-2026-cinematic-v10 键。这些旧写入者不遵守新协议，无法由新 V23 严格控制。未发现本仓库 V23/index 注册 service worker 或 PWA 缓存；更新时关闭旧页面并备份，不假设旧代码已自动失效。
+V23 是当前正式版本，默认 index.html 已指向 V23。V22 与其他历史 HTML 保留不变，仍可能写相同的 tour-cycling-2026-cinematic-v10 键。这些旧写入者不遵守新协议，无法由新 V23 严格控制。未发现本仓库 V23/index 注册 service worker 或 PWA 缓存；更新时关闭旧页面并备份，不假设旧代码已自动失效。
