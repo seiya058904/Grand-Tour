@@ -4,17 +4,17 @@
 
 An unofficial, self-contained road-cycling stage-racing game.
 
-[Play V23 locally](Grand-Tour-V23.html) · [Play V23 online](https://seiya058904.github.io/Grand-Tour/)
+[Play V24 locally](Grand-Tour-V24.html) · [Existing online site](https://seiya058904.github.io/Grand-Tour/)
 
-## V23
+## V24
 
-V23 is the current build. The standalone HTML runs offline without installation or external libraries and retains the V9 save format.
+V24 is the current local delivery. It refines riding motion, regional scenery, camera framing and race information while retaining the V23 simulation and V9 saves. The standalone HTML runs offline without installation or external libraries. This iteration has not been pushed or deployed.
 
-- [Release report](V23-REPORT.md)
-- [Download the complete V23 package](Grand-Tour-V23-Final.zip)
-- [Validation guide](tests/v23/README.md)
+- [Iteration and verification report](V24-REPORT.md)
+- [Download the complete V24 package](Grand-Tour-V24-Final.zip)
+- [Validation guide](tests/v24/README.md)
 
-V22, V21, V20, V19 and V18.3.1 remain available as historical builds. V12 is in [Grand-Tour-V12](Grand-Tour-V12/grand-tour-v12.html).
+V23, V22, V21, V20, V19 and V18.3.1 remain available as historical builds. V12 is in [Grand-Tour-V12](Grand-Tour-V12/grand-tour-v12.html).
 
 ## About
 
