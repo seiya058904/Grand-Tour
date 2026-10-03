@@ -1,7 +1,10 @@
-name: V23 regression verification
+name: Grand Tour regression verification
 on:
+  push:
+    branches: [main]
+    paths: ['Grand-Tour-V23.html', 'Grand-Tour-V24.html', 'Grand-Tour-V24-Final.zip', 'index.html', 'tests/v23/**', 'tests/v24/**', '.github/workflows/v23-verify.yml']
   pull_request:
-    paths: ['Grand-Tour-V23.html', 'tests/v23/**', '.github/workflows/v23-verify.yml']
+    paths: ['Grand-Tour-V23.html', 'Grand-Tour-V24.html', 'Grand-Tour-V24-Final.zip', 'index.html', 'tests/v23/**', 'tests/v24/**', '.github/workflows/v23-verify.yml']
 permissions:
   contents: read
 jobs:
@@ -11,7 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
@@ -37,3 +40,47 @@ jobs:
         with:
           name: v23-verification
           path: /tmp/gt-evidence
+  v24:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright==1.55.0
+      - run: python -m playwright install --with-deps chromium
+      - name: Verify V24 core, saves and complete Tour parity
+        run: |
+          mkdir -p /tmp/gt-v24-evidence
+          python tests/v24/static_verify.py --out /tmp/gt-v24-evidence/static.json
+          node tests/v24/core-parity.cjs Grand-Tour-V23.html Grand-Tour-V24.html /tmp/gt-v24-evidence/core-parity.json
+          node tests/v24/focused.cjs Grand-Tour-V24.html Grand-Tour-V22.html /tmp/gt-v24-evidence/focused.json
+          node tests/v23/storage-ownership.cjs Grand-Tour-V24.html
+          node tests/v23/ttt-wheel.cjs Grand-Tour-V24.html /tmp/gt-v24-evidence/ttt-wheel.json
+          node tests/v23/tour-simulation.cjs Grand-Tour-V23.html /tmp/gt-v24-evidence/baseline.json 314159
+          node tests/v23/tour-simulation.cjs Grand-Tour-V24.html /tmp/gt-v24-evidence/v24.json 314159
+          node <<'JS'
+          const fs = require('node:fs'), assert = require('node:assert/strict');
+          const read = name => JSON.parse(fs.readFileSync('/tmp/gt-v24-evidence/' + name, 'utf8'));
+          assert.deepEqual(read('v24-tour.json'), read('baseline-tour.json'));
+          console.log('PASS all 21 stages and complete V9 Tour store match V23');
+          JS
+      - name: Verify V24 browser, presentation and offline package
+        run: |
+          python -m http.server 4187 --bind 127.0.0.1 > /tmp/gt-v24-evidence/server.log 2>&1 &
+          python tests/v24/storage-browser.py --out /tmp/gt-v24-evidence/storage
+          python tests/v24/browser_verify.py --out /tmp/gt-v24-evidence/browser
+          python tests/v24/presentation_verify.py --out /tmp/gt-v24-evidence/ui
+          python tests/v24/sequence_verify.py --record /tmp/gt-v24-evidence/browser/stage-05-physical.json --tour /tmp/gt-v24-evidence/v24-tour.json --out /tmp/gt-v24-evidence/sequence
+          python tests/v24/package_verify.py Grand-Tour-V24-Final.zip --out /tmp/gt-v24-evidence/package
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: v24-verification
+          path: /tmp/gt-v24-evidence

@@ -64,3 +64,9 @@ python tests/v24/package_verify.py Grand-Tour-V24-Final.zip --out "$evidence/pac
 包内 `verification/VERIFICATION-PROVENANCE.md` 记录每份证据的源文件哈希和适用范围。旧版 HTML 仅作为可离线复核的基线，游戏入口始终为 V24。
 
 `package_verify.py` 的 ZIP 参数可使用下载文件的绝对路径；输出目录必须不存在。它校验 ZIP 的 CRC、完整清单和游戏字节，然后在新浏览器中打开解压后的离线入口，操作比赛与移动布局。
+
+## 发布回归
+
+`.github/workflows/v23-verify.yml` 保留 V23 回归，并新增 V24 任务。相关文件的 pull request 与 `main` 推送均执行 V24 静态检查、14 组核心签名、35 项定向回归、TTT/存档所有权、两版完整 21 站 Tour 存档对照、浏览器比赛、移动布局、领奖几何和交付 ZIP 的离线试玩。性能采样和完整 1× 领奖播放在本地单独运行。
+
+当前官方入口为根目录 `index.html`，跳转到 `Grand-Tour-V24.html`；GitHub Pages 从 `main` 根目录发布。发布后还需核对对应提交的 Actions/Pages 状态、线上 HTML/ZIP 哈希，并在实际网站复核入口、比赛控件及同源 V23 存档续玩。
