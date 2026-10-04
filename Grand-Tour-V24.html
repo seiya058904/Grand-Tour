@@ -2782,6 +2782,7 @@ followPlayerWheel(f,explicit=false,gap=4.4){
    if(typeof r.breakCandidate==='boolean')base.breakCandidate=r.breakCandidate;else delete base.breakCandidate;
    if(typeof r.waiting==='boolean')base.waiting=r.waiting;if(Number.isFinite(r.brake))base.brake=r.brake;
   }
+  validateFinishState(s,race.stage.length);
   saveCheck(s.finishedCount===s.riders.filter(r=>r.status==='FINISHED').length&&s.complete===s.riders.every(r=>r.status!=='RACING'),'完赛状态不一致');saveCheck(s.riders.every(r=>['RACING','FINISHED','OTL','DNF','DNS'].includes(r.status)),'无效参赛状态');
   if(s.prior!==null){validateSeason(s.prior.season);s.prior.season.leaders=Classification.leaders(s.prior.season);}
   validateShape(race.audit,s.audit,'审计数据');
@@ -2917,6 +2918,18 @@ const TeamClassification={
    ======================================================================== */
 // Persistent data is untrusted. It may be truncated, hand-edited, or from a failed write.
 function saveCheck(ok,message){if(!ok)throw new Error(message);}
+function validateFinishState(s,length){
+ const finished=[];
+ for(const r of s.riders){
+  if(r.status==='FINISHED'){
+   saveCheck(Number.isFinite(r.finishedTime)&&r.finishedTime>0&&r.finishedTime<15000&&r.finishedTime<=s.t+1e-7&&Number.isFinite(r.finishRaceTime)&&r.finishRaceTime>0&&r.finishRaceTime<172800&&r.finishRaceTime<=s.timing.elapsed+1e-7&&Math.abs(r.x-length)<.01,'完赛状态与计时或终点不一致');
+   if(s.timeModel==='legacy-sim')saveCheck(Math.abs(r.finishRaceTime-r.finishedTime)<1e-7,'旧版完赛时间口径不一致');
+   finished.push(r);
+  }else saveCheck(r.finishedTime===null&&r.finishRaceTime===null,'未完赛车手含完赛时间');
+ }
+ finished.sort((a,b)=>a.finishedTime-b.finishedTime||a.id-b.id);
+ for(let i=1;i<finished.length;i++)saveCheck(finished[i].finishRaceTime>=finished[i-1].finishRaceTime-1e-7,'赛事时间与实际过线顺序冲突');
+}
 function cloneSave(value){
  let nodes=0;function check(x,depth){saveCheck(++nodes<1000000&&depth<30,'存档过大或嵌套过深');
   if(typeof x==='number')saveCheck(Number.isFinite(x),'存档包含无效数字');
@@ -6228,7 +6241,7 @@ function beginResults(){
 function finalizeRace(){
  const r=App.race;if(!r||!r.complete||r.recorded)return;
  if(!App.finishFlow)Ceremony.enterFinish(r);
- const record=r.result();App.result=record;App.resultMode=r.mode;
+ const record=r.result();normalizeRecord(record,r.stageIndex,r.prior);App.result=record;App.resultMode=r.mode;
  if(r.mode==='tour'){
   if(!Store.tour||Store.tour.playerId!==r.playerId)throw new Error('Tour identity mismatch');
   if(r.stageIndex!==Store.tour.results.length)throw new Error('A recorded Tour stage cannot be duplicated or skipped');

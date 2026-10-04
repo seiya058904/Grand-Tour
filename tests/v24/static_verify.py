@@ -6,12 +6,14 @@ from static_verify import Inventory
 ROOT=Path(__file__).resolve().parents[2]
 def main(a):
  src=ROOT/'Grand-Tour-V24.html';old=ROOT/'archive/v23/Grand-Tour-V23.html';text=src.read_text(encoding='utf8');baseline=old.read_text(encoding='utf8');inv=Inventory();inv.feed(text)
- # This range includes the constructor, fixed-step integrator and original AI.
+ # GT-01 exempts only this restore-boundary call, not integrator/AI/timing code.
+ boundary='  validateFinishState(s,race.stage.length);\n'
  def core(s):return s[s.index('class Race {'):s.index('/* ENVIRONMENT')]
  checks={'version':'data-build="2400"' in text and 'buildVersion:240' in text and '<title>环法 · Grand Tour V24' in text,
   'main_v23_original':hashlib.sha256(old.read_bytes()).hexdigest()=='9d59a207b8b7a88fdeb0a24978e28074f241498610f25ebae043d68839bb0d89',
   'unique_dom_ids':len(inv.ids)==len(set(inv.ids)), 'offline_assets':not inv.remote,
-  'race_class_identical':core(text)==core(baseline),
+  'finish_restore_guard':core(text).count(boundary)==1 and 'function validateFinishState(s,length)' in text,
+  'race_class_identical_except_restore_guard':core(text).replace(boundary,'')==core(baseline),
   'route_data_identical':all(line in text for line in baseline.splitlines() if line.startswith(('const OFFICIAL_PROFILE_DATA_V182=','const V181_STAGE_DATA=','const STAGE_DATA='))),
   'no_remote_css':not re.search(r'@import\s+|url\([\'"]?https?://',text[:text.index('</style>')])}
  with tempfile.TemporaryDirectory(prefix='grand-tour-v24-syntax-') as td:

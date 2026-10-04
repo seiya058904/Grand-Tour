@@ -8,6 +8,8 @@
 python tests/v24/static_verify.py --out "$evidence/static.json"
 node tests/v24/core-parity.cjs archive/v23/Grand-Tour-V23.html Grand-Tour-V24.html "$evidence/core-parity.json"
 node tests/v24/focused.cjs Grand-Tour-V24.html archive/v22/Grand-Tour-V22.html "$evidence/focused.json"
+node tests/v24/save-finish-boundary.cjs Grand-Tour-V24.html "$evidence/save-finish-boundary.json"
+python tests/v24/save-finish-browser.py --out "$evidence/save-finish-browser"
 python tests/v24/browser_verify.py --out "$evidence/browser"
 python tests/v24/presentation_verify.py --out "$evidence/ui"
 node tests/v23/ttt-wheel.cjs Grand-Tour-V24.html "$evidence/ttt-wheel.json"
@@ -15,6 +17,8 @@ node tests/v23/storage-ownership.cjs Grand-Tour-V24.html
 ```
 
 保留 V23 的公共测试工具和真实故障快照，不复制第二套比赛引擎。35 项定向回归包含自然终点冲刺的姿态/标签与呼吸相位连续性。浏览器检查覆盖 504 个路线坐标、6144 个骑行骨架姿态、全部 21 站开局、四类完整比赛、真实离线文件、V9 恢复和移动布局。
+
+GT-01 保存边界回归从正常生产脚本自然模拟至首次完赛和完整赛段，检查非法完成状态的严格拒绝、恢复模式、V4/V7/V8 迁移、V22/V23 实际快照、结算前校验和保存后重载。浏览器回归在无 `?test` 的生产入口通过真实文件控件导入合法/损坏档，检查 canonical 和两份既存备份未被错误导入覆盖，完成第 1 站后刷新并继续第 2 站，覆盖桌面和 390 宽度。核心签名只豁免 `Race.restore` 中精确的一行 `validateFinishState` 调用；其余完整比赛类、物理、AI、计时和编解码签名仍须与 V23 相同。原封板 ZIP 保留历史交付字节；验证修复候选包时把外部候选 ZIP 的路径传给 `package_verify.py`，不要把历史包的旧证据当作本地修复的验证。
 
 实际两个页面的进度所有权测试需要先从根目录运行 `python -m http.server 4187 --bind 127.0.0.1`，再运行 `python tests/v24/storage-browser.py --out "$evidence/storage-browser"`。本轮只回归 #2/#3/#6，未重做已关闭问题。
 
@@ -56,12 +60,16 @@ python tests/v24/sequence_verify.py --record "$evidence/browser/stage-05-physica
 python tests/v24/performance_probe.py --scenes "$evidence/scenes" --out "$evidence/performance.json"
 # 解压后的交付包附完整清单：
 python tests/v24/static_verify.py --manifest
-python tests/v24/package_verify.py Grand-Tour-V24-Final.zip --out "$evidence/package-check"
+# 本地修复候选；不覆盖历史 Grand-Tour-V24-Final.zip：
+python tests/v24/build_candidate.py --out "$evidence/Grand-Tour-V24-candidate.zip"
+python tests/v24/package_verify.py "$evidence/Grand-Tour-V24-candidate.zip" --out "$evidence/package-check"
 ```
 
 性能使用同机全画质 1440×1000、DPR 1、三种自然场景，每种按 V23/V24/V24/V23 顺序采样，分别报告 p95/p99/max、超过 33/50 ms 的帧、CPU 与模拟欠账。不要同时运行其他测试；结果不能外推到真实手机。
 
 包内 `verification/VERIFICATION-PROVENANCE.md` 记录每份证据的源文件哈希和适用范围。旧版 HTML 仅作为可离线复核的基线，游戏入口始终为 V24。
+
+`build_candidate.py` 先校验历史封板包的 CRC、全清单和全部哈希，再仅更新当前游戏、本轮必要回归脚本及包内清单，并补入逐字节相同的 archive 基线路径与 `verification/local-fix/PROVENANCE.json`。输出必须是仓库外的新路径；相同输入的候选 ZIP 字节确定，不扫描工作区目录或收集机器环境资料。候选内旧报告和旧截图保持原字节，其旧 PASS 不能作为修复验证。
 
 `package_verify.py` 的 ZIP 参数可使用下载文件的绝对路径；输出目录必须不存在。它校验 ZIP 的 CRC、完整清单和游戏字节，然后在新浏览器中打开解压后的离线入口，操作比赛与移动布局。
 
