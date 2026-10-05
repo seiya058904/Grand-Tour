@@ -40,7 +40,18 @@ async def main(args):
   check('pause_clock',await p.evaluate("({pass:App.race.paused,owner:App.modalOwner})"))
   await p.locator('#resumeRace').click();await p.wait_for_timeout(180)
   check('close_focus',await p.evaluate("({pass:document.querySelector('#pauseBackdrop').hidden&&!App.race.paused&&document.activeElement.id==='pauseButton',focus:document.activeElement.id})"))
-  check('interrupted_exit',await p.evaluate("""async()=>{for(let i=0;i<5;i++){openDialog('pauseBackdrop');closeDialog('pauseBackdrop');openDialog('pauseBackdrop');await new Promise(r=>setTimeout(r,160));if($('pauseBackdrop').hidden||!App.race.paused||App.modalStack.length!==1)throw Error('stale close');closeDialog('pauseBackdrop');}await new Promise(r=>setTimeout(r,180));return{pass:$('pauseBackdrop').hidden&&!App.race.paused&&!document.querySelector('.shell').inert}}"""))
+  check('interrupted_exit',await p.evaluate("""async()=>{
+   for(let i=0;i<5;i++){openDialog('pauseBackdrop');closeDialog('pauseBackdrop');openDialog('pauseBackdrop');await new Promise(r=>setTimeout(r,160));if($('pauseBackdrop').hidden||!App.race.paused||App.modalStack.length!==1)throw Error('stale close');closeDialog('pauseBackdrop');}
+   const backdrop=$('pauseBackdrop'),shell=document.querySelector('.shell');
+   if(App.race.paused||shell.inert||App.modalStack.length)throw Error('close retained modal state');
+   const animation=backdrop.getAnimations()[0];
+   if(animation)await new Promise((resolve,reject)=>{
+    const deadline=setTimeout(()=>reject(Error('close animation did not finish')),500);
+    animation.addEventListener('finish',()=>{clearTimeout(deadline);resolve();},{once:true});
+    animation.addEventListener('cancel',()=>{clearTimeout(deadline);reject(Error('close animation cancelled'));},{once:true});
+   });
+   return{pass:backdrop.hidden&&!App.race.paused&&!shell.inert,hidden:backdrop.hidden,paused:App.race.paused,inert:shell.inert,stack:[...App.modalStack]};
+  }"""))
   await p.locator('#pauseButton').click();await p.locator('#pauseHelp').click();await p.keyboard.press('Escape');await p.wait_for_timeout(180)
   check('nested_modal',await p.evaluate("({pass:App.race.paused&&App.modalStack.join()==='pauseBackdrop'&&document.activeElement.id==='pauseHelp'})"))
   await p.keyboard.press('Escape');await p.wait_for_timeout(200)
