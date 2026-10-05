@@ -37,8 +37,10 @@ async def main(args):
       valid=json.loads(raw);valid['tour']['id']='browser-finish-valid'
       await page.evaluate("localStorage.setItem(CONFIG.saveKey+'-before-import','preexisting-import-backup');localStorage.setItem(CONFIG.saveKey+'-recovery-backup','preexisting-recovery-backup')")
       case={'width':width,'height':height,'natural':state,'rejected':[]};report['cases'].append(case)
-      for field in ['finishedTime','finishRaceTime']:
-       corrupt=json.loads(json.dumps(valid));corrupt['tour']['id']='browser-finish-invalid';corrupt['active']['riders'][state['first']][field]=None
+      for field in ['finishedTime','finishRaceTime','lastFinishWorld']:
+       corrupt=json.loads(json.dumps(valid));corrupt['tour']['id']='browser-finish-invalid'
+       if field=='lastFinishWorld':corrupt['active']['timing'][field]=1
+       else:corrupt['active']['riders'][state['first']][field]=None
        await page.evaluate("$('toast').textContent=''")
        count=len(dialogs)
        await page.locator('#saveFile').set_input_files({'name':'invalid-'+field+'.json','mimeType':'application/json','buffer':json.dumps(corrupt).encode()})
