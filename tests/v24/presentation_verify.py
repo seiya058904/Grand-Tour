@@ -7,6 +7,19 @@ from pathlib import Path
 from playwright.async_api import async_playwright
 ROOT=Path(__file__).resolve().parents[2]
 CONTRAST="""el=>{const s=getComputedStyle(el),nums=c=>c.match(/[\\d.]+/g).slice(0,3).map(Number),lum=c=>nums(c).map(v=>{v/=255;return v<=.04045?v/12.92:((v+.055)/1.055)**2.4}).reduce((a,v,i)=>a+v*[.2126,.7152,.0722][i],0),a=lum(s.color),b=lum(s.backgroundColor);return{color:s.color,background:s.backgroundColor,ratio:(Math.max(a,b)+.05)/(Math.min(a,b)+.05)}}"""
+WAIT_NATIVE_EXIT="""async backdrop=>{
+ const animation=backdrop.hidden?null:InterfaceMotionV22.animations.get(backdrop);
+ const state=()=>({hidden:backdrop.hidden,paused:App.race.paused,inert:document.querySelector('.shell').inert,focus:document.activeElement.id,stack:[...App.modalStack],animation:animation?{playState:animation.playState,currentTime:animation.currentTime,startTime:animation.startTime,duration:animation.effect.getTiming().duration}:null});
+ if(animation)await new Promise((resolve,reject)=>{
+  let deadline;
+  const cleanup=()=>{clearTimeout(deadline);animation.removeEventListener('finish',finish);animation.removeEventListener('cancel',cancel);};
+  const fail=reason=>{cleanup();reject(Error(reason+' '+JSON.stringify(state())));};
+  const finish=()=>{cleanup();resolve();},cancel=()=>fail('close animation cancelled');
+  animation.addEventListener('finish',finish);animation.addEventListener('cancel',cancel);
+  deadline=setTimeout(()=>fail('close animation did not finish'),500);
+ });
+ return state();
+}"""
 async def main(args):
  out=args.out.resolve();out.mkdir(parents=True,exist_ok=True)
  report={'source_sha256':hashlib.sha256((ROOT/'Grand-Tour-V24.html').read_bytes()).hexdigest(),'checks':{},'errors':[],'console':[]}
@@ -23,6 +36,7 @@ async def main(args):
   await ctx.set_offline(True)
   await p.goto((ROOT/'Grand-Tour-V24.html').as_uri()+'?test')
   await p.evaluate('App.testingFreeze=true')
+  await p.evaluate('()=>{window.waitForNativeExit='+WAIT_NATIVE_EXIT+';}')
   check('offline_identity',{'pass':await p.title()=='环法 · Grand Tour V24 · 公路自行车竞赛游戏' and await p.locator('#newTour').is_visible()})
   await p.locator('#chooseStage').click();await p.locator('button[data-stage="4"]').click()
   await p.wait_for_timeout(300);await p.screenshot(path=str(out/'preparation.png'))
@@ -38,19 +52,14 @@ async def main(args):
   # Capture both sides of the exit, then interrupt closing with an immediate reopen.
   await p.locator('#pauseButton').click();await p.wait_for_timeout(300)
   check('pause_clock',await p.evaluate("({pass:App.race.paused,owner:App.modalOwner})"))
-  await p.locator('#resumeRace').click();await p.wait_for_timeout(180)
-  check('close_focus',await p.evaluate("({pass:document.querySelector('#pauseBackdrop').hidden&&!App.race.paused&&document.activeElement.id==='pauseButton',focus:document.activeElement.id})"))
+  await p.locator('#resumeRace').click()
+  check('close_focus',await p.evaluate("""async()=>{const state=await waitForNativeExit($('pauseBackdrop'));return{...state,pass:state.hidden&&!state.paused&&state.focus==='pauseButton'}}"""))
   check('interrupted_exit',await p.evaluate("""async()=>{
    for(let i=0;i<5;i++){openDialog('pauseBackdrop');closeDialog('pauseBackdrop');openDialog('pauseBackdrop');await new Promise(r=>setTimeout(r,160));if($('pauseBackdrop').hidden||!App.race.paused||App.modalStack.length!==1)throw Error('stale close');closeDialog('pauseBackdrop');}
    const backdrop=$('pauseBackdrop'),shell=document.querySelector('.shell');
    if(App.race.paused||shell.inert||App.modalStack.length)throw Error('close retained modal state');
-   const animation=backdrop.getAnimations()[0];
-   if(animation)await new Promise((resolve,reject)=>{
-    const deadline=setTimeout(()=>reject(Error('close animation did not finish')),500);
-    animation.addEventListener('finish',()=>{clearTimeout(deadline);resolve();},{once:true});
-    animation.addEventListener('cancel',()=>{clearTimeout(deadline);reject(Error('close animation cancelled'));},{once:true});
-   });
-   return{pass:backdrop.hidden&&!App.race.paused&&!shell.inert,hidden:backdrop.hidden,paused:App.race.paused,inert:shell.inert,stack:[...App.modalStack]};
+   const state=await waitForNativeExit(backdrop);
+   return{...state,pass:state.hidden&&!state.paused&&!state.inert};
   }"""))
   await p.locator('#pauseButton').click();await p.locator('#pauseHelp').click();await p.keyboard.press('Escape');await p.wait_for_timeout(180)
   check('nested_modal',await p.evaluate("({pass:App.race.paused&&App.modalStack.join()==='pauseBackdrop'&&document.activeElement.id==='pauseHelp'})"))
