@@ -2929,6 +2929,33 @@ function validateFinishState(s,length){
  }
  finished.sort((a,b)=>a.finishedTime-b.finishedTime||a.id-b.id);
  for(let i=1;i<finished.length;i++)saveCheck(finished[i].finishRaceTime>=finished[i-1].finishRaceTime-1e-7,'赛事时间与实际过线顺序冲突');
+ // A terminal checkpoint ledger survives OTL, whose rider finish fields are cleared.
+ // Validate anchors against that ledger; never reconstruct them from FINISHED alone.
+ const ledgers=s.checkpoints.filter(c=>Math.abs(c.x-length)<1e-7).map(c=>c.order),hits=ledgers[0]||[],t=s.timing;
+ const same=(a,b)=>Number.isFinite(a)&&Number.isFinite(b)&&Math.abs(a-b)<1e-7;
+ for(const ledger of ledgers){
+  saveCheck(ledger.length===hits.length&&ledger.every((h,i)=>h.id===hits[i].id&&same(h.simTime,hits[i].simTime)&&same(h.time,hits[i].time)),'终点过点账本不一致');
+  for(let i=1;i<ledger.length;i++)saveCheck(ledger[i].simTime>=ledger[i-1].simTime-1e-7&&ledger[i].time>=ledger[i-1].time-1e-7,'终点过点计时顺序冲突');
+ }
+ if(ledgers.length)for(const r of finished){const hit=hits.find(h=>h.id===r.id);saveCheck(hit&&same(hit.simTime,r.finishedTime)&&same(hit.time,r.finishRaceTime),'完赛时间与终点过点账本不一致');}
+ if(s.timeModel==='race-world-v1'){
+  const first=hits[0]||(finished[0]&&{simTime:finished[0].finishedTime,time:finished[0].finishRaceTime}),last=hits.at(-1);
+  saveCheck(first?same(t.finishSim,first.simTime)&&same(t.finishSim+t.finishOffset,first.time):t.finishSim===null&&t.finishOffset===null,'终点锚点与过点账本不一致');
+  if(ledgers.length)saveCheck(last?same(t.lastFinishSim,last.simTime)&&same(t.lastFinishWorld,last.time):t.lastFinishSim===null&&t.lastFinishWorld===null,'末次完赛锚点与过点账本不一致');
+  if(first){
+   const latest=finished.at(-1),r=finished.find(r=>same(r.finishedTime,t.lastFinishSim));
+   saveCheck(latest,'终点过点账本缺少已完赛车手');
+   saveCheck(t.lastFinishSim>=latest.finishedTime-1e-7&&t.lastFinishWorld>=latest.finishRaceTime-1e-7&&(r?same(t.lastFinishWorld,r.finishRaceTime):s.riders.some(r=>r.status==='OTL'&&Math.abs(r.x-length)<.01&&r.exitAt>=t.lastFinishSim-1e-7)),'末次完赛锚点与车手状态不一致');
+   // Many road/TT courses have no terminal checkpoint. The world clock is
+   // still derived from the last arrival, including a cleared OTL crossing.
+   const gap=RaceTiming.gap({timeModel:s.timeModel,stage:{length,reference:STAGE_DATA[s.stageIndex]}},s.t-t.lastFinishSim);
+   saveCheck(same(t.elapsed,t.lastFinishWorld+gap),'末次完赛锚点与赛事时钟不一致');
+  }else saveCheck(t.lastFinishSim===null&&t.lastFinishWorld===null,'未过线比赛含末次完赛锚点');
+ }else if(t.lastFinishSim!==null){
+  // V4/V7 migration recreates legacy anchors from surviving finish fields;
+  // a later legal OTL crossing may therefore remain only in the ledger.
+  saveCheck(same(t.lastFinishWorld,t.lastFinishSim)&&(!ledgers.length||hits.some(h=>same(h.simTime,t.lastFinishSim)&&same(h.time,t.lastFinishWorld))),'旧版完赛锚点与过点账本不一致');
+ }
 }
 function cloneSave(value){
  let nodes=0;function check(x,depth){saveCheck(++nodes<1000000&&depth<30,'存档过大或嵌套过深');

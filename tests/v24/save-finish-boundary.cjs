@@ -31,6 +31,14 @@ const invalid=[
  ['RACING with physical finish time',s=>s.riders[racing.id].finishedTime=1],
  ['RACING with world finish time',s=>s.riders[racing.id].finishRaceTime=1]
 ];
+invalid.push(
+ ['last finish world anchor moved backwards',s=>s.timing.lastFinishWorld=1],
+ ['last finish world anchor moved forwards',s=>s.timing.lastFinishWorld+=.01],
+ ['last finish physical anchor changed',s=>s.timing.lastFinishSim-=.01],
+ ['first finish anchor changed',s=>s.timing.finishOffset-=.01],
+ ['finish checkpoint world time disagrees',s=>s.checkpoints.find(c=>c.x===finished.x).order[0].time-=.01],
+ ['finish checkpoint physical time disagrees',s=>s.checkpoints.find(c=>c.x===finished.x).order[0].simTime-=.01]
+);
 for(const [name,mutate]of invalid)test('strict rejection / recovery: '+name,()=>{
  const input=plain(valid);mutate(input.active);const bytes=JSON.stringify(input);
  assert.throws(()=>E.SaveCodec.decode(input),'strict import must reject impossible finish state');
@@ -59,7 +67,48 @@ test('V4 / V7 / V8 legacy-sim active schema migration retains legal finish times
   assert.throws(()=>E.SaveCodec.decode(corrupt),'legacy migration cannot invent missing finish times');
  }
 });
+test('OTL crossing retains its ledger anchor after rider finish fields are cleared',()=>{
+ for(const timeModel of ['race-world-v1','legacy-sim']){
+  const r=advance(new E.Race(0,0,'tour',null,314159,{timeModel}),r=>r.finishedCount>=2);
+  const ledger=r.checkpoints.find(c=>Math.abs(c.x-r.stage.length)<1e-7).order,first=ledger[0],last=ledger.at(-1);
+  // Exercise the production late-arrival path with a cutoff between measured crossings.
+  r.cutoff.deadline=(first.time+last.time)/2;r.cutoff.percent=r.cutoff.deadline/r.cutoff.time-1;
+  r.updateAttrition(0);r.tick();r.relations();
+  const s=r.snapshot(),late=s.riders[last.id];
+  assert.equal(late.status,'OTL');assert.equal(late.finishedTime,null);assert.equal(late.finishRaceTime,null);
+  assert.equal(s.timing.lastFinishWorld,last.time);assert(s.timing.lastFinishWorld>Math.max(...s.riders.filter(x=>x.status==='FINISHED').map(x=>x.finishRaceTime)));
+  for(const active of [s,E.SaveCodec.compactSnapshot(s)]){
+   assert.equal(E.SaveCodec.decode(store(active)).issues.length,0);
+   assert.deepEqual(state(E.Race.restore(active).snapshot()),state(s));
+  }
+  if(timeModel==='legacy-sim'){
+   const legacy=plain(s);legacy.engineVersion=7;delete legacy.timing;delete legacy.timeModel;delete legacy.conditions;delete legacy.gapCredits;delete legacy.breakGroupUid;
+   for(const x of legacy.riders)for(const key of ['finishRaceTime','wind','rolling','climate','speedCap'])delete x[key];
+   for(const c of legacy.checkpoints){delete c.timeOffset;for(const h of c.order)delete h.simTime;}
+   for(const e of legacy.events)delete e.raceTime;
+   const migrated=E.SaveCodec.decode(store(legacy,7));assert.equal(migrated.issues.length,0);
+   assert(migrated.store.active.timing.lastFinishWorld<last.time,'legacy migration uses surviving finished fields while preserving the later OTL ledger');
+  }
+ }
+});
 const complete=advance(E.Race.restore(snapshot),r=>r.complete),completeSnapshot=complete.snapshot();
+test('courses without a terminal checkpoint retain legal anchors and reject single-field damage',()=>{
+ for(const stage of [1,15]){
+  const r=advance(new E.Race(stage,0,'tour',null,314159),r=>r.finishedCount>0),s=r.snapshot();
+  assert(!s.checkpoints.some(c=>Math.abs(c.x-r.stage.length)<1e-7));
+  assert.deepEqual(state(E.Race.restore(s).snapshot()),state(s));
+  for(const field of ['lastFinishWorld','lastFinishSim','finishOffset']){
+   const broken=plain(s);broken.timing[field]-=1;
+   assert.throws(()=>E.Race.restore(broken),field+' must be checked without a terminal checkpoint');
+  }
+  advance(r,r=>r.finishedCount>=2);
+  const first=r.riders.filter(x=>x.status==='FINISHED').sort((a,b)=>a.finishedTime-b.finishedTime)[0];
+  r.cutoff.deadline=(first.finishRaceTime+r.timing.lastFinishWorld)/2;r.cutoff.percent=r.cutoff.deadline/r.cutoff.time-1;
+  r.updateAttrition(0);r.tick();r.relations();
+  const cleared=r.snapshot();assert(cleared.riders.some(x=>x.status==='OTL'&&x.x===r.stage.length));
+  assert.deepEqual(state(E.Race.restore(cleared).snapshot()),state(cleared),'OTL anchor survives without a terminal checkpoint');
+ }
+});
 test('active completed snapshot rejects reversed world finish order',()=>{
  const s=plain(completeSnapshot),order=s.riders.filter(r=>r.status==='FINISHED').sort((a,b)=>a.finishedTime-b.finishedTime||a.id-b.id);
  order[1].finishRaceTime=order[0].finishRaceTime-1;
