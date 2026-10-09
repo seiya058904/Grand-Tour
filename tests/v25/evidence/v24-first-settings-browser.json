@@ -1,0 +1,79 @@
+{
+  "source": "/workspace/scratch/018887db1a18/grand-tour-v25/Grand-Tour-V24.html",
+  "sourceSHA256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+  "production_query": true,
+  "browser_path": "Browser plugin not available; Python Playwright",
+  "cases": [
+    {
+      "name": "fresh page settings -> first tour -> refresh -> continue",
+      "locks": false,
+      "width": 1440,
+      "pass": false,
+      "failure": "另一页面已更新进度，本页未覆盖它。请先导出本页进度，再重新载入页面；关闭旧版本页面后继续。",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings-browser.py\", line 85, in case\n    row.update(await fn())\n               ^^^^^^^^^^\n  File \"/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings-browser.py\", line 107, in same_page\n    assert state['stored']['tour'] is not None, state['warning']\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 另一页面已更新进度，本页未覆盖它。请先导出本页进度，再重新载入页面；关闭旧版本页面后继续。\n"
+    },
+    {
+      "name": "fresh page settings -> first tour -> refresh -> continue",
+      "locks": false,
+      "width": 390,
+      "pass": false,
+      "failure": "另一页面已更新进度，本页未覆盖它。请先导出本页进度，再重新载入页面；关闭旧版本页面后继续。",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings-browser.py\", line 85, in case\n    row.update(await fn())\n               ^^^^^^^^^^\n  File \"/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings-browser.py\", line 107, in same_page\n    assert state['stored']['tour'] is not None, state['warning']\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 另一页面已更新进度，本页未覆盖它。请先导出本页进度，再重新载入页面；关闭旧版本页面后继续。\n"
+    },
+    {
+      "name": "two empty pages merge settings before claiming progress",
+      "locks": false,
+      "width": 1440,
+      "pass": false,
+      "failure": "first owner failed after two initial settings changes",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings-browser.py\", line 85, in case\n    row.update(await fn())\n               ^^^^^^^^^^\n  File \"/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings-browser.py\", line 132, in two_pages\n    assert json.loads(before)['tour'] is not None, 'first owner failed after two initial settings changes'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: first owner failed after two initial settings changes\n"
+    },
+    {
+      "name": "legacy-key load -> settings -> continue -> save",
+      "locks": false,
+      "width": 1440,
+      "pass": false,
+      "failure": "legacy settings-first promotion caused a self-conflict",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings-browser.py\", line 85, in case\n    row.update(await fn())\n               ^^^^^^^^^^\n  File \"/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings-browser.py\", line 169, in legacy_page\n    assert not state['conflict'], 'legacy settings-first promotion caused a self-conflict'\n           ^^^^^^^^^^^^^^^^^^^^^\nAssertionError: legacy settings-first promotion caused a self-conflict\n"
+    },
+    {
+      "name": "fresh page settings -> first tour -> refresh -> continue",
+      "locks": true,
+      "width": 1440,
+      "pass": false,
+      "failure": "另一页面已更新进度，本页未覆盖它。请先导出本页进度，再重新载入页面；关闭旧版本页面后继续。",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings-browser.py\", line 85, in case\n    row.update(await fn())\n               ^^^^^^^^^^\n  File \"/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings-browser.py\", line 107, in same_page\n    assert state['stored']['tour'] is not None, state['warning']\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 另一页面已更新进度，本页未覆盖它。请先导出本页进度，再重新载入页面；关闭旧版本页面后继续。\n"
+    },
+    {
+      "name": "fresh page settings -> first tour -> refresh -> continue",
+      "locks": true,
+      "width": 390,
+      "pass": false,
+      "failure": "另一页面已更新进度，本页未覆盖它。请先导出本页进度，再重新载入页面；关闭旧版本页面后继续。",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings-browser.py\", line 85, in case\n    row.update(await fn())\n               ^^^^^^^^^^\n  File \"/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings-browser.py\", line 107, in same_page\n    assert state['stored']['tour'] is not None, state['warning']\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 另一页面已更新进度，本页未覆盖它。请先导出本页进度，再重新载入页面；关闭旧版本页面后继续。\n"
+    },
+    {
+      "name": "two empty pages merge settings before claiming progress",
+      "locks": true,
+      "width": 1440,
+      "pass": false,
+      "failure": "first owner failed after two initial settings changes",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings-browser.py\", line 85, in case\n    row.update(await fn())\n               ^^^^^^^^^^\n  File \"/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings-browser.py\", line 132, in two_pages\n    assert json.loads(before)['tour'] is not None, 'first owner failed after two initial settings changes'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: first owner failed after two initial settings changes\n"
+    },
+    {
+      "name": "legacy-key load -> settings -> continue -> save",
+      "locks": true,
+      "width": 1440,
+      "pass": false,
+      "failure": "legacy settings-first promotion caused a self-conflict",
+      "traceback": "Traceback (most recent call last):\n  File \"/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings-browser.py\", line 85, in case\n    row.update(await fn())\n               ^^^^^^^^^^\n  File \"/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings-browser.py\", line 169, in legacy_page\n    assert not state['conflict'], 'legacy settings-first promotion caused a self-conflict'\n           ^^^^^^^^^^^^^^^^^^^^^\nAssertionError: legacy settings-first promotion caused a self-conflict\n"
+    }
+  ],
+  "errors": [],
+  "console": [],
+  "externalRequests": [],
+  "browser": "141.0.7390.37",
+  "passed": 0,
+  "failed": 8,
+  "pass": false
+}

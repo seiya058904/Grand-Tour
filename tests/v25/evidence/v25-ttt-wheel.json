@@ -1,0 +1,98 @@
+[
+  {
+    "seed": 314159,
+    "mode": "auto",
+    "complete": true,
+    "player": "FINISHED",
+    "otl": 0,
+    "invalidSeconds": 0,
+    "stallSeconds": 0,
+    "normalFollowSteps": 0,
+    "restored": false,
+    "resumed": false
+  },
+  {
+    "seed": 314159,
+    "mode": "early",
+    "complete": true,
+    "player": "FINISHED",
+    "otl": 0,
+    "invalidSeconds": 0,
+    "stallSeconds": 0,
+    "normalFollowSteps": 3983,
+    "restored": true,
+    "resumed": false
+  },
+  {
+    "seed": 314159,
+    "mode": "late",
+    "complete": true,
+    "player": "FINISHED",
+    "otl": 0,
+    "invalidSeconds": 0,
+    "stallSeconds": 0,
+    "normalFollowSteps": 3139,
+    "restored": true,
+    "resumed": false
+  },
+  {
+    "seed": 314159,
+    "mode": "restore-auto",
+    "complete": true,
+    "player": "FINISHED",
+    "otl": 0,
+    "invalidSeconds": 0,
+    "stallSeconds": 0,
+    "normalFollowSteps": 741,
+    "restored": true,
+    "resumed": true
+  },
+  {
+    "seed": 12345,
+    "mode": "auto",
+    "complete": true,
+    "player": "FINISHED",
+    "otl": 0,
+    "invalidSeconds": 0,
+    "stallSeconds": 0,
+    "normalFollowSteps": 0,
+    "restored": false,
+    "resumed": false
+  },
+  {
+    "seed": 12345,
+    "mode": "early",
+    "complete": true,
+    "player": "FINISHED",
+    "otl": 0,
+    "invalidSeconds": 0,
+    "stallSeconds": 0,
+    "normalFollowSteps": 4301,
+    "restored": true,
+    "resumed": false
+  },
+  {
+    "seed": 12345,
+    "mode": "late",
+    "complete": true,
+    "player": "FINISHED",
+    "otl": 0,
+    "invalidSeconds": 0,
+    "stallSeconds": 0,
+    "normalFollowSteps": 3760,
+    "restored": true,
+    "resumed": false
+  },
+  {
+    "seed": 12345,
+    "mode": "restore-auto",
+    "complete": true,
+    "player": "FINISHED",
+    "otl": 0,
+    "invalidSeconds": 0,
+    "stallSeconds": 0,
+    "normalFollowSteps": 741,
+    "restored": true,
+    "resumed": true
+  }
+]

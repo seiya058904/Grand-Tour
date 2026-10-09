@@ -1,0 +1,15 @@
+{
+  "source_sha256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+  "checks": {
+    "version": true,
+    "main_v23_original": true,
+    "unique_dom_ids": true,
+    "offline_assets": true,
+    "finish_restore_guard": true,
+    "race_class_identical_except_restore_guard": true,
+    "route_data_identical": true,
+    "no_remote_css": true,
+    "javascript_syntax": true
+  },
+  "pass": true
+}

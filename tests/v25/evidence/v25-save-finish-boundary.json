@@ -1,0 +1,119 @@
+{
+  "source": "Grand-Tour-V25.html",
+  "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "checks": [
+    {
+      "name": "production loader uses normal save path",
+      "pass": true
+    },
+    {
+      "name": "normal first-finish raw and compact saves retain exact state",
+      "pass": true,
+      "detail": {
+        "t": 270.5,
+        "finishedId": 0,
+        "simTime": 270.4570784159428,
+        "worldTime": 1458.3677737070711
+      }
+    },
+    {
+      "name": "strict rejection / recovery: FINISHED with missing physical time",
+      "pass": true
+    },
+    {
+      "name": "strict rejection / recovery: FINISHED with zero physical time",
+      "pass": true
+    },
+    {
+      "name": "strict rejection / recovery: FINISHED with future physical time",
+      "pass": true
+    },
+    {
+      "name": "strict rejection / recovery: FINISHED with missing world time",
+      "pass": true
+    },
+    {
+      "name": "strict rejection / recovery: FINISHED with zero world time",
+      "pass": true
+    },
+    {
+      "name": "strict rejection / recovery: FINISHED with future world time",
+      "pass": true
+    },
+    {
+      "name": "strict rejection / recovery: FINISHED before the finish line",
+      "pass": true
+    },
+    {
+      "name": "strict rejection / recovery: RACING with physical finish time",
+      "pass": true
+    },
+    {
+      "name": "strict rejection / recovery: RACING with world finish time",
+      "pass": true
+    },
+    {
+      "name": "strict rejection / recovery: last finish world anchor moved backwards",
+      "pass": true
+    },
+    {
+      "name": "strict rejection / recovery: last finish world anchor moved forwards",
+      "pass": true
+    },
+    {
+      "name": "strict rejection / recovery: last finish physical anchor changed",
+      "pass": true
+    },
+    {
+      "name": "strict rejection / recovery: first finish anchor changed",
+      "pass": true
+    },
+    {
+      "name": "strict rejection / recovery: finish checkpoint world time disagrees",
+      "pass": true
+    },
+    {
+      "name": "strict rejection / recovery: finish checkpoint physical time disagrees",
+      "pass": true
+    },
+    {
+      "name": "V22 and V23 actual first-finish snapshots remain compatible",
+      "pass": true
+    },
+    {
+      "name": "V4 / V7 / V8 legacy-sim active schema migration retains legal finish times",
+      "pass": true
+    },
+    {
+      "name": "OTL crossing retains its ledger anchor after rider finish fields are cleared",
+      "pass": true
+    },
+    {
+      "name": "courses without a terminal checkpoint retain legal anchors and reject single-field damage",
+      "pass": true
+    },
+    {
+      "name": "active completed snapshot rejects reversed world finish order",
+      "pass": true
+    },
+    {
+      "name": "natural full stage, active restore and recorded save round trip",
+      "pass": true,
+      "detail": {
+        "simSeconds": 382.85,
+        "finished": 184,
+        "OTL": 0
+      }
+    },
+    {
+      "name": "settlement validates result before changing progress or recording race",
+      "pass": true
+    },
+    {
+      "name": "normal production settlement persists strict-decodable result once",
+      "pass": true
+    }
+  ],
+  "passed": 25,
+  "failed": 0
+}

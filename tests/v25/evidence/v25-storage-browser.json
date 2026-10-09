@@ -1,0 +1,323 @@
+{
+  "source": "/workspace/scratch/018887db1a18/grand-tour-v25/Grand-Tour-V25.html",
+  "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "production_query": true,
+  "browser_path": "Browser plugin not available; Python Playwright",
+  "cases": [
+    {
+      "name": "fresh page settings -> first tour -> refresh -> continue",
+      "locks": false,
+      "width": 1440,
+      "firstSave": true,
+      "refreshContinue": true,
+      "riders": 184,
+      "pass": true
+    },
+    {
+      "name": "fresh page settings -> first tour -> refresh -> continue",
+      "locks": false,
+      "width": 390,
+      "firstSave": true,
+      "refreshContinue": true,
+      "riders": 184,
+      "pass": true
+    },
+    {
+      "name": "two empty pages merge settings before claiming progress",
+      "locks": false,
+      "width": 1440,
+      "oneProgressOwner": true,
+      "staleSaveRejected": true,
+      "settingsMergedWithoutAdoption": true,
+      "pass": true
+    },
+    {
+      "name": "legacy-key load -> settings -> continue -> save",
+      "locks": false,
+      "width": 1440,
+      "legacyTourRetained": true,
+      "saveAfterPromotion": true,
+      "legacyBytesUnchanged": true,
+      "pass": true
+    },
+    {
+      "name": "strict import protection and damaged-active reload recovery",
+      "locks": false,
+      "width": 1440,
+      "rejected": [
+        {
+          "file": "active-cutoff",
+          "toast": "导入未完成：关门线账本损坏；当前进度未被清空。",
+          "protected": {
+            "canonical": true,
+            "importBackup": true,
+            "recoveryBackup": true
+          },
+          "confirmationDialogs": 0
+        },
+        {
+          "file": "active-migration-seed",
+          "toast": "导入未完成：比赛种子无效；当前进度未被清空。",
+          "protected": {
+            "canonical": true,
+            "importBackup": true,
+            "recoveryBackup": true
+          },
+          "confirmationDialogs": 0
+        },
+        {
+          "file": "historical-cutoff",
+          "toast": "导入未完成：关门线与过线成绩不一致；当前进度未被清空。",
+          "protected": {
+            "canonical": true,
+            "importBackup": true,
+            "recoveryBackup": true
+          },
+          "confirmationDialogs": 0
+        }
+      ],
+      "recovered": {
+        "stages": 1,
+        "active": null,
+        "settings": {
+          "labelDensity": "standard",
+          "musicVolume": 0.31,
+          "quality": "full"
+        },
+        "canonicalUntouched": true,
+        "recoveryBackupExact": true,
+        "importBackupUntouched": true,
+        "blocked": false,
+        "warning": "进行中比赛无法恢复：比赛种子无效。原数据已备份。"
+      },
+      "continued": {
+        "stage": 1,
+        "seed": 322350,
+        "stages": 1,
+        "issues": []
+      },
+      "pass": true
+    },
+    {
+      "name": "strict import protection and damaged-active reload recovery",
+      "locks": false,
+      "width": 390,
+      "rejected": [
+        {
+          "file": "active-cutoff",
+          "toast": "导入未完成：关门线账本损坏；当前进度未被清空。",
+          "protected": {
+            "canonical": true,
+            "importBackup": true,
+            "recoveryBackup": true
+          },
+          "confirmationDialogs": 0
+        },
+        {
+          "file": "active-migration-seed",
+          "toast": "导入未完成：比赛种子无效；当前进度未被清空。",
+          "protected": {
+            "canonical": true,
+            "importBackup": true,
+            "recoveryBackup": true
+          },
+          "confirmationDialogs": 0
+        },
+        {
+          "file": "historical-cutoff",
+          "toast": "导入未完成：关门线与过线成绩不一致；当前进度未被清空。",
+          "protected": {
+            "canonical": true,
+            "importBackup": true,
+            "recoveryBackup": true
+          },
+          "confirmationDialogs": 0
+        }
+      ],
+      "recovered": {
+        "stages": 1,
+        "active": null,
+        "settings": {
+          "labelDensity": "standard",
+          "musicVolume": 0.31,
+          "quality": "full"
+        },
+        "canonicalUntouched": true,
+        "recoveryBackupExact": true,
+        "importBackupUntouched": true,
+        "blocked": false,
+        "warning": "进行中比赛无法恢复：比赛种子无效。原数据已备份。"
+      },
+      "continued": {
+        "stage": 1,
+        "seed": 322350,
+        "stages": 1,
+        "issues": []
+      },
+      "pass": true
+    },
+    {
+      "name": "fresh page settings -> first tour -> refresh -> continue",
+      "locks": true,
+      "width": 1440,
+      "firstSave": true,
+      "refreshContinue": true,
+      "riders": 184,
+      "pass": true
+    },
+    {
+      "name": "fresh page settings -> first tour -> refresh -> continue",
+      "locks": true,
+      "width": 390,
+      "firstSave": true,
+      "refreshContinue": true,
+      "riders": 184,
+      "pass": true
+    },
+    {
+      "name": "two empty pages merge settings before claiming progress",
+      "locks": true,
+      "width": 1440,
+      "oneProgressOwner": true,
+      "staleSaveRejected": true,
+      "settingsMergedWithoutAdoption": true,
+      "pass": true
+    },
+    {
+      "name": "legacy-key load -> settings -> continue -> save",
+      "locks": true,
+      "width": 1440,
+      "legacyTourRetained": true,
+      "saveAfterPromotion": true,
+      "legacyBytesUnchanged": true,
+      "pass": true
+    },
+    {
+      "name": "strict import protection and damaged-active reload recovery",
+      "locks": true,
+      "width": 1440,
+      "rejected": [
+        {
+          "file": "active-cutoff",
+          "toast": "导入未完成：关门线账本损坏；当前进度未被清空。",
+          "protected": {
+            "canonical": true,
+            "importBackup": true,
+            "recoveryBackup": true
+          },
+          "confirmationDialogs": 0
+        },
+        {
+          "file": "active-migration-seed",
+          "toast": "导入未完成：比赛种子无效；当前进度未被清空。",
+          "protected": {
+            "canonical": true,
+            "importBackup": true,
+            "recoveryBackup": true
+          },
+          "confirmationDialogs": 0
+        },
+        {
+          "file": "historical-cutoff",
+          "toast": "导入未完成：关门线与过线成绩不一致；当前进度未被清空。",
+          "protected": {
+            "canonical": true,
+            "importBackup": true,
+            "recoveryBackup": true
+          },
+          "confirmationDialogs": 0
+        }
+      ],
+      "recovered": {
+        "stages": 1,
+        "active": null,
+        "settings": {
+          "labelDensity": "standard",
+          "musicVolume": 0.31,
+          "quality": "full"
+        },
+        "canonicalUntouched": true,
+        "recoveryBackupExact": true,
+        "importBackupUntouched": true,
+        "blocked": false,
+        "warning": "进行中比赛无法恢复：比赛种子无效。原数据已备份。"
+      },
+      "continued": {
+        "stage": 1,
+        "seed": 322350,
+        "stages": 1,
+        "issues": []
+      },
+      "pass": true
+    },
+    {
+      "name": "strict import protection and damaged-active reload recovery",
+      "locks": true,
+      "width": 390,
+      "rejected": [
+        {
+          "file": "active-cutoff",
+          "toast": "导入未完成：关门线账本损坏；当前进度未被清空。",
+          "protected": {
+            "canonical": true,
+            "importBackup": true,
+            "recoveryBackup": true
+          },
+          "confirmationDialogs": 0
+        },
+        {
+          "file": "active-migration-seed",
+          "toast": "导入未完成：比赛种子无效；当前进度未被清空。",
+          "protected": {
+            "canonical": true,
+            "importBackup": true,
+            "recoveryBackup": true
+          },
+          "confirmationDialogs": 0
+        },
+        {
+          "file": "historical-cutoff",
+          "toast": "导入未完成：关门线与过线成绩不一致；当前进度未被清空。",
+          "protected": {
+            "canonical": true,
+            "importBackup": true,
+            "recoveryBackup": true
+          },
+          "confirmationDialogs": 0
+        }
+      ],
+      "recovered": {
+        "stages": 1,
+        "active": null,
+        "settings": {
+          "labelDensity": "standard",
+          "musicVolume": 0.31,
+          "quality": "full"
+        },
+        "canonicalUntouched": true,
+        "recoveryBackupExact": true,
+        "importBackupUntouched": true,
+        "blocked": false,
+        "warning": "进行中比赛无法恢复：比赛种子无效。原数据已备份。"
+      },
+      "continued": {
+        "stage": 1,
+        "seed": 322350,
+        "stages": 1,
+        "issues": []
+      },
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "console": [],
+  "externalRequests": [],
+  "fixtureSHA256": {
+    "natural-first-finish.json": "e7c6d486e6f669fe0e01351e5ebf64e70569efd7689b8beb805c6588e1a1f07c",
+    "natural-second-stage-save.json": "88f181db6c7ef296b986dbcccaa4a910ceee16dbbb8a6c827e85b2319a608af9"
+  },
+  "browser": "141.0.7390.37",
+  "passed": 12,
+  "failed": 0,
+  "pass": true
+}

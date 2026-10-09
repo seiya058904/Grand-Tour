@@ -1,0 +1,451 @@
+{
+  "source": "/workspace/scratch/018887db1a18/grand-tour-v25/Grand-Tour-V25.html",
+  "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "sourceUnchanged": true,
+  "checks": [
+    {
+      "name": "TTT stage 1 race-world-v1 pre-finish absent cutoff remains valid",
+      "pass": true
+    },
+    {
+      "name": "TTT stage 1 race-world-v1 natural first finish raw/compact retains cutoff and timing",
+      "pass": true,
+      "detail": {
+        "t": 270.5,
+        "cutoff": {
+          "winner": 0,
+          "time": 1458.3677737070711,
+          "average": 48.38285737804073,
+          "percent": 0.3,
+          "deadline": 1895.8781058191926,
+          "timeModel": "race-world-v1"
+        },
+        "finished": 1
+      }
+    },
+    {
+      "name": "TTT stage 1 race-world-v1 damaged active cutoff rejects before simulation can retire riders",
+      "pass": true,
+      "detail": {
+        "rejected": [
+          "deadline",
+          "shape",
+          "winner",
+          "time",
+          "clock"
+        ]
+      }
+    },
+    {
+      "name": "TTT stage 1 race-world-v1 natural completed result, optional legacy cutoff metadata",
+      "pass": true,
+      "detail": {
+        "finishers": 184,
+        "OTL": 0
+      }
+    },
+    {
+      "name": "TTT stage 1 race-world-v1 historical cutoff must agree with classified finishers",
+      "pass": true,
+      "detail": {
+        "rejected": [
+          "winner",
+          "late classified finisher",
+          "time"
+        ]
+      }
+    },
+    {
+      "name": "TTT stage 1 race-world-v1 late OTL crossing keeps its legal timing and checkpoint ledger",
+      "pass": true,
+      "detail": {
+        "finishers": 1,
+        "OTL": 183,
+        "legacyVersions": []
+      }
+    },
+    {
+      "name": "TTT stage 1 legacy-sim pre-finish absent cutoff remains valid",
+      "pass": true
+    },
+    {
+      "name": "TTT stage 1 legacy-sim natural first finish raw/compact retains cutoff and timing",
+      "pass": true,
+      "detail": {
+        "t": 252.8,
+        "cutoff": {
+          "winner": 74,
+          "time": 252.76272100760576,
+          "average": 48.46581120243756,
+          "percent": 0.3,
+          "deadline": 328.5915373098875,
+          "timeModel": "legacy-sim"
+        },
+        "finished": 1
+      }
+    },
+    {
+      "name": "TTT stage 1 legacy-sim damaged active cutoff rejects before simulation can retire riders",
+      "pass": true,
+      "detail": {
+        "rejected": [
+          "deadline",
+          "shape",
+          "winner",
+          "time",
+          "clock"
+        ]
+      }
+    },
+    {
+      "name": "TTT stage 1 legacy-sim natural completed result, optional legacy cutoff metadata",
+      "pass": true,
+      "detail": {
+        "finishers": 184,
+        "OTL": 0
+      }
+    },
+    {
+      "name": "TTT stage 1 legacy-sim historical cutoff must agree with classified finishers",
+      "pass": true,
+      "detail": {
+        "rejected": [
+          "winner",
+          "late classified finisher",
+          "time"
+        ]
+      }
+    },
+    {
+      "name": "TTT stage 1 legacy-sim late OTL crossing keeps its legal timing and checkpoint ledger",
+      "pass": true,
+      "detail": {
+        "finishers": 1,
+        "OTL": 183,
+        "legacyVersions": [
+          4,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "name": "Hilly stage 2 race-world-v1 pre-finish absent cutoff remains valid",
+      "pass": true
+    },
+    {
+      "name": "Hilly stage 2 race-world-v1 natural first finish raw/compact retains cutoff and timing",
+      "pass": true,
+      "detail": {
+        "t": 314.1,
+        "cutoff": {
+          "winner": 43,
+          "time": 14039.17137615284,
+          "average": 43.20767827012785,
+          "percent": 0.19,
+          "deadline": 16706.61393762188,
+          "timeModel": "race-world-v1"
+        },
+        "finished": 1
+      }
+    },
+    {
+      "name": "Hilly stage 2 race-world-v1 damaged active cutoff rejects before simulation can retire riders",
+      "pass": true,
+      "detail": {
+        "rejected": [
+          "deadline",
+          "shape",
+          "winner",
+          "time",
+          "clock"
+        ]
+      }
+    },
+    {
+      "name": "Hilly stage 2 race-world-v1 natural completed result, optional legacy cutoff metadata",
+      "pass": true,
+      "detail": {
+        "finishers": 184,
+        "OTL": 0
+      }
+    },
+    {
+      "name": "Hilly stage 2 race-world-v1 historical cutoff must agree with classified finishers",
+      "pass": true,
+      "detail": {
+        "rejected": [
+          "winner",
+          "late classified finisher",
+          "time"
+        ]
+      }
+    },
+    {
+      "name": "Hilly stage 2 race-world-v1 late OTL crossing keeps its legal timing and checkpoint ledger",
+      "pass": true,
+      "detail": {
+        "finishers": 1,
+        "OTL": 183,
+        "legacyVersions": []
+      }
+    },
+    {
+      "name": "Hilly stage 2 legacy-sim pre-finish absent cutoff remains valid",
+      "pass": true
+    },
+    {
+      "name": "Hilly stage 2 legacy-sim natural first finish raw/compact retains cutoff and timing",
+      "pass": true,
+      "detail": {
+        "t": 299.1,
+        "cutoff": {
+          "winner": 67,
+          "time": 299.0516160308238,
+          "average": 45.8643027127513,
+          "percent": 0.2,
+          "deadline": 358.8619392369886,
+          "timeModel": "legacy-sim"
+        },
+        "finished": 1
+      }
+    },
+    {
+      "name": "Hilly stage 2 legacy-sim damaged active cutoff rejects before simulation can retire riders",
+      "pass": true,
+      "detail": {
+        "rejected": [
+          "deadline",
+          "shape",
+          "winner",
+          "time",
+          "clock"
+        ]
+      }
+    },
+    {
+      "name": "Hilly stage 2 legacy-sim natural completed result, optional legacy cutoff metadata",
+      "pass": true,
+      "detail": {
+        "finishers": 184,
+        "OTL": 0
+      }
+    },
+    {
+      "name": "Hilly stage 2 legacy-sim historical cutoff must agree with classified finishers",
+      "pass": true,
+      "detail": {
+        "rejected": [
+          "winner",
+          "late classified finisher",
+          "time"
+        ]
+      }
+    },
+    {
+      "name": "Hilly stage 2 legacy-sim late OTL crossing keeps its legal timing and checkpoint ledger",
+      "pass": true,
+      "detail": {
+        "finishers": 1,
+        "OTL": 183,
+        "legacyVersions": [
+          4,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "name": "ITT stage 16 race-world-v1 pre-finish absent cutoff remains valid",
+      "pass": true
+    },
+    {
+      "name": "ITT stage 16 race-world-v1 natural first finish raw/compact retains cutoff and timing",
+      "pass": true,
+      "detail": {
+        "t": 240.9,
+        "cutoff": {
+          "winner": 43,
+          "time": 2025.3564875122258,
+          "average": 46.391833032520815,
+          "percent": 0.3,
+          "deadline": 2632.9634337658936,
+          "timeModel": "race-world-v1"
+        },
+        "finished": 1
+      }
+    },
+    {
+      "name": "ITT stage 16 race-world-v1 damaged active cutoff rejects before simulation can retire riders",
+      "pass": true,
+      "detail": {
+        "rejected": [
+          "deadline",
+          "shape",
+          "winner",
+          "time",
+          "clock"
+        ]
+      }
+    },
+    {
+      "name": "ITT stage 16 race-world-v1 natural completed result, optional legacy cutoff metadata",
+      "pass": true,
+      "detail": {
+        "finishers": 184,
+        "OTL": 0
+      }
+    },
+    {
+      "name": "ITT stage 16 race-world-v1 historical cutoff must agree with classified finishers",
+      "pass": true,
+      "detail": {
+        "rejected": [
+          "winner",
+          "late classified finisher",
+          "time"
+        ]
+      }
+    },
+    {
+      "name": "ITT stage 16 race-world-v1 late OTL crossing keeps its legal timing and checkpoint ledger",
+      "pass": true,
+      "detail": {
+        "finishers": 1,
+        "OTL": 183,
+        "legacyVersions": []
+      }
+    },
+    {
+      "name": "ITT stage 16 legacy-sim pre-finish absent cutoff remains valid",
+      "pass": true
+    },
+    {
+      "name": "ITT stage 16 legacy-sim natural first finish raw/compact retains cutoff and timing",
+      "pass": true,
+      "detail": {
+        "t": 235.85000000000002,
+        "cutoff": {
+          "winner": 43,
+          "time": 235.82441374947192,
+          "average": 51.54193190465131,
+          "percent": 0.3,
+          "deadline": 306.5717378743135,
+          "timeModel": "legacy-sim"
+        },
+        "finished": 1
+      }
+    },
+    {
+      "name": "ITT stage 16 legacy-sim damaged active cutoff rejects before simulation can retire riders",
+      "pass": true,
+      "detail": {
+        "rejected": [
+          "deadline",
+          "shape",
+          "winner",
+          "time",
+          "clock"
+        ]
+      }
+    },
+    {
+      "name": "ITT stage 16 legacy-sim natural completed result, optional legacy cutoff metadata",
+      "pass": true,
+      "detail": {
+        "finishers": 184,
+        "OTL": 0
+      }
+    },
+    {
+      "name": "ITT stage 16 legacy-sim historical cutoff must agree with classified finishers",
+      "pass": true,
+      "detail": {
+        "rejected": [
+          "winner",
+          "late classified finisher",
+          "time"
+        ]
+      }
+    },
+    {
+      "name": "ITT stage 16 legacy-sim late OTL crossing keeps its legal timing and checkpoint ledger",
+      "pass": true,
+      "detail": {
+        "finishers": 1,
+        "OTL": 183,
+        "legacyVersions": [
+          4,
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "name": "recovery isolates invalid active seed while strict import stays atomic",
+      "pass": true,
+      "detail": {
+        "retainedStages": 1,
+        "active": null,
+        "issues": [
+          "进行中比赛无法恢复：比赛种子无效"
+        ],
+        "settingsPreserved": true,
+        "inputUnchanged": true
+      }
+    },
+    {
+      "name": "recovery isolates unsupported active version while strict import stays atomic",
+      "pass": true,
+      "detail": {
+        "retainedStages": 1,
+        "active": null,
+        "issues": [
+          "进行中比赛无法恢复：不支持的比赛状态版本"
+        ],
+        "settingsPreserved": true,
+        "inputUnchanged": true
+      }
+    },
+    {
+      "name": "recovery isolates invalid active course version while strict import stays atomic",
+      "pass": true,
+      "detail": {
+        "retainedStages": 1,
+        "active": null,
+        "issues": [
+          "进行中比赛无法恢复：赛道几何版本无效"
+        ],
+        "settingsPreserved": true,
+        "inputUnchanged": true
+      }
+    },
+    {
+      "name": "recovery isolates missing compact audit summary while strict import stays atomic",
+      "pass": true,
+      "detail": {
+        "retainedStages": 1,
+        "active": null,
+        "issues": [
+          "进行中比赛无法恢复：比赛统计缺失"
+        ],
+        "settingsPreserved": true,
+        "inputUnchanged": true
+      }
+    },
+    {
+      "name": "active recovery cannot conceal invalid top-level identity or seed",
+      "pass": true
+    },
+    {
+      "name": "active migration fallback still validates and truncates a damaged record suffix",
+      "pass": true
+    },
+    {
+      "name": "loadStore backs up the original damaged bytes before exposing retained progress",
+      "pass": true
+    }
+  ],
+  "passed": 43,
+  "failed": 0
+}

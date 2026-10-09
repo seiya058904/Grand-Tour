@@ -1,0 +1,26 @@
+{
+  "sourceSHA256": "558fdfbae82449fe4fbdcd55e1ce61bb3de6be4ec7997bbc0a49ed20dbcccc95",
+  "tool": "impeccable static HTML/CSS design detector",
+  "exitCode": 2,
+  "originalEvidenceSHA256": "590de36e5a3093f2d9c82daad46d6c5404b080dcc2308e25edfad072b1d282a3",
+  "total": 92,
+  "severity": {
+    "warning": 84,
+    "advisory": 8
+  },
+  "categories": {
+    "side-tab": 3,
+    "hero-eyebrow-chip": 1,
+    "undersized-ui-text": 64,
+    "tiny-text": 6,
+    "wide-tracking": 2,
+    "cramped-padding": 3,
+    "gpt-thin-border-wide-shadow": 7,
+    "overused-font": 1,
+    "kicker-above-heading": 2,
+    "dark-glow": 1,
+    "radial-halo": 1,
+    "repeating-stripes-gradient": 1
+  },
+  "interpretation": "Heuristic prompts, not 92 independent runtime failures. No ignores added. Full viewport/interaction manual review is separate; small secondary type is retained as a P3 limitation. This is not a PASS or accessibility certification."
+}

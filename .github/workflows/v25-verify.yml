@@ -1,0 +1,59 @@
+name: Grand Tour V25 candidate verification
+on:
+  workflow_dispatch:
+  push:
+    paths: ['Grand-Tour-V25.html', 'Grand-Tour-V24.html', 'index.html', 'tests/**', 'archive/**', 'V25-*.md', 'AGENTS.md', 'README.md', 'CLOUD-HANDOFF.md', '.github/workflows/v25-verify.yml']
+  pull_request:
+    paths: ['Grand-Tour-V25.html', 'Grand-Tour-V24.html', 'index.html', 'tests/**', 'archive/**', 'V25-*.md', 'AGENTS.md', 'README.md', 'CLOUD-HANDOFF.md', '.github/workflows/v25-verify.yml']
+permissions:
+  contents: read
+jobs:
+  candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright==1.56.0
+      - run: python -m playwright install --with-deps chromium
+      - name: Exact baseline, engine and storage gates
+        run: |
+          mkdir -p /tmp/gt-v25-evidence
+          python tests/v25/static_verify.py --out /tmp/gt-v25-evidence/static.json
+          node tests/v25/core-parity.cjs Grand-Tour-V24.html Grand-Tour-V25.html /tmp/gt-v25-evidence/core.json
+          node tests/v25/focused.cjs Grand-Tour-V25.html archive/v22/Grand-Tour-V22.html /tmp/gt-v25-evidence/focused.json
+          node tests/v24/save-finish-boundary.cjs Grand-Tour-V25.html /tmp/gt-v25-evidence/boundary.json
+          node tests/v23/storage-ownership.cjs Grand-Tour-V25.html
+          node tests/v23/ttt-wheel.cjs Grand-Tour-V25.html /tmp/gt-v25-evidence/ttt.json
+          node tests/v25/storage-first-settings.cjs Grand-Tour-V25.html /tmp/gt-v25-evidence/first-settings.json
+          node tests/v25/storage-validation.cjs Grand-Tour-V25.html /tmp/gt-v25-evidence/storage.json /tmp/gt-v25-evidence/fixtures
+          node tests/v25/simulation-live-standings.cjs Grand-Tour-V25.html /tmp/gt-v25-evidence/live.json
+          node tests/v25/render-continuity.cjs Grand-Tour-V25.html /tmp/gt-v25-evidence/continuity.json
+          node tests/v25/render-score-parity.cjs Grand-Tour-V24.html Grand-Tour-V25.html /tmp/gt-v25-evidence/score.json
+      - name: Both complete Tours with exact V9 object parity
+        run: |
+          node tests/v23/tour-simulation.cjs Grand-Tour-V24.html /tmp/gt-v25-evidence/v24.json 314159
+          node tests/v23/tour-simulation.cjs Grand-Tour-V25.html /tmp/gt-v25-evidence/v25.json 314159
+          node tests/v25/simulation-tour-parity.cjs /tmp/gt-v25-evidence/v24-tour.json /tmp/gt-v25-evidence/v25-tour.json /tmp/gt-v25-evidence/v24.json /tmp/gt-v25-evidence/v25.json /tmp/gt-v25-evidence/tour-parity.json
+          node tests/v25/full-tour-compatibility.cjs Grand-Tour-V24.html Grand-Tour-V25.html /tmp/gt-v25-evidence/v24-tour.json /tmp/gt-v25-evidence/full-tour-compatibility.json
+      - name: Native browser, storage and presentation
+        run: |
+          python tests/v25/storage-first-settings-browser.py --source Grand-Tour-V25.html --validation-fixtures /tmp/gt-v25-evidence/fixtures --out /tmp/gt-v25-evidence/storage-browser
+          python tests/v24/browser_verify.py --source Grand-Tour-V25.html --out /tmp/gt-v25-evidence/browser
+          python tests/v25/ui_verify.py --out /tmp/gt-v25-evidence/ui
+          python tests/v25/legacy_browser.py presentation --out /tmp/gt-v25-evidence/presentation
+          python tests/v25/legacy_browser.py sequence --record /tmp/gt-v25-evidence/browser/stage-05-physical.json --tour /tmp/gt-v25-evidence/v25-tour.json --out /tmp/gt-v25-evidence/sequence
+      - name: Build and actually play the extracted offline source package
+        run: |
+          python tests/v25/package_source.py --out /tmp/gt-v25-evidence/Grand-Tour-V25-Source.zip
+          python tests/v25/package_verify.py /tmp/gt-v25-evidence/Grand-Tour-V25-Source.zip --out /tmp/gt-v25-evidence/package
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: grand-tour-v25-verification
+          path: /tmp/gt-v25-evidence

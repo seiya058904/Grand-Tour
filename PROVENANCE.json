@@ -1,0 +1,13 @@
+{
+  "kind": "Grand Tour V25 unpublished source candidate",
+  "authoritativeV24Commit": "3e92128c0cb353d267c12ceeaf143bda663a7b26",
+  "inputZIP": "Grand-Tour-V24-Cloud-Handoff-20261009.zip",
+  "inputZIP_SHA256": "2cecea547fb5290284a58a6e6a79fe2fbdb3f35c028f1658e30824a11771f9c8",
+  "V24_SHA256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+  "V25_SHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "historicalFilesPreserved": 65,
+  "entry": "index.html -> Grand-Tour-V25.html",
+  "saveSchema": 9,
+  "deployment": "None. No commit, push, Pages/Sites deployment, PR, Issue or Release was performed.",
+  "evidence": "V25-AUDIT-REPORT.md and tests/v25/evidence; historical reports are baseline evidence only."
+}

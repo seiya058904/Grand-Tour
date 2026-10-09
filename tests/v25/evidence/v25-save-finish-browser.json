@@ -1,0 +1,122 @@
+{
+  "source": "/workspace/scratch/018887db1a18/grand-tour-v25/Grand-Tour-V25.html",
+  "source_sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "production_query": true,
+  "cases": [
+    {
+      "width": 1440,
+      "height": 1000,
+      "natural": {
+        "t": 270.5,
+        "finished": 1,
+        "first": 0
+      },
+      "rejected": [
+        {
+          "field": "finishedTime",
+          "toast": "导入未完成：完赛状态与计时或终点不一致；当前进度未被清空。",
+          "protected": {
+            "canonical": true,
+            "importBackup": true,
+            "recoveryBackup": true
+          },
+          "confirmationDialogs": 0
+        },
+        {
+          "field": "finishRaceTime",
+          "toast": "导入未完成：完赛状态与计时或终点不一致；当前进度未被清空。",
+          "protected": {
+            "canonical": true,
+            "importBackup": true,
+            "recoveryBackup": true
+          },
+          "confirmationDialogs": 0
+        },
+        {
+          "field": "lastFinishWorld",
+          "toast": "导入未完成：末次完赛锚点与过点账本不一致；当前进度未被清空。",
+          "protected": {
+            "canonical": true,
+            "importBackup": true,
+            "recoveryBackup": true
+          },
+          "confirmationDialogs": 0
+        }
+      ],
+      "settled": {
+        "results": 1,
+        "active": null,
+        "issues": [],
+        "validTimes": true
+      },
+      "afterReload": {
+        "results": 1,
+        "active": null,
+        "warningVisible": false,
+        "recoveryBackup": "preexisting-recovery-backup"
+      },
+      "continuedStage": 2,
+      "pass": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "natural": {
+        "t": 270.5,
+        "finished": 1,
+        "first": 0
+      },
+      "rejected": [
+        {
+          "field": "finishedTime",
+          "toast": "导入未完成：完赛状态与计时或终点不一致；当前进度未被清空。",
+          "protected": {
+            "canonical": true,
+            "importBackup": true,
+            "recoveryBackup": true
+          },
+          "confirmationDialogs": 0
+        },
+        {
+          "field": "finishRaceTime",
+          "toast": "导入未完成：完赛状态与计时或终点不一致；当前进度未被清空。",
+          "protected": {
+            "canonical": true,
+            "importBackup": true,
+            "recoveryBackup": true
+          },
+          "confirmationDialogs": 0
+        },
+        {
+          "field": "lastFinishWorld",
+          "toast": "导入未完成：末次完赛锚点与过点账本不一致；当前进度未被清空。",
+          "protected": {
+            "canonical": true,
+            "importBackup": true,
+            "recoveryBackup": true
+          },
+          "confirmationDialogs": 0
+        }
+      ],
+      "settled": {
+        "results": 1,
+        "active": null,
+        "issues": [],
+        "validTimes": true
+      },
+      "afterReload": {
+        "results": 1,
+        "active": null,
+        "warningVisible": false,
+        "recoveryBackup": "preexisting-recovery-backup"
+      },
+      "continuedStage": 2,
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "console": [],
+  "network": [],
+  "pass": true,
+  "browser": "141.0.7390.37"
+}

@@ -1,0 +1,4067 @@
+{
+  "source": "Grand-Tour-V25.html",
+  "sha256": "558fdfbae82449fe4fbdcd55e1ce61bb3de6be4ec7997bbc0a49ed20dbcccc95",
+  "policy": "public GC controls; feed below 65%; preserve on flat; respond to late GC moves; ITT threshold/downhill recovery",
+  "cases": [
+    {
+      "seed": 12345,
+      "stage": 1,
+      "type": "TTT",
+      "conditions": {
+        "version": 1,
+        "kind": "cloud",
+        "temperature": 30,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -1.57
+          },
+          {
+            "at": 1,
+            "wind": -3.2
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-04",
+        "stageContext": "TTT",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 390,
+      "wallMs": 5053,
+      "starting": 184,
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 8,
+        "energy": 85.33753243181837,
+        "meanDraft": 0.1700589263361732
+      },
+      "winner": {
+        "id": 74,
+        "name": "Egan Bernal",
+        "role": "GC"
+      },
+      "objectives": [
+        "ttt"
+      ],
+      "states": [
+        "follow",
+        "moving-up",
+        "peel",
+        "protect",
+        "pull",
+        "recover",
+        "rejoin",
+        "sprint",
+        "tt"
+      ],
+      "attacks": 0,
+      "chases": 0,
+      "rotations": 282,
+      "breakAttempts": 0,
+      "gcAttacks": 0,
+      "peakGroups": 3,
+      "lowEnergyHelperSamples": 0,
+      "maxLaneDeltaPer5s": 2.4240000000000004,
+      "firstCrossings": [
+        {
+          "id": 74,
+          "role": "GC",
+          "power": 328.0721218567516,
+          "cp": 341.7417492607227,
+          "energy": 69.80921352342487,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 1,
+          "role": "GC",
+          "power": 357.9823510110162,
+          "cp": 372.8982313869027,
+          "energy": 85.33502745280154,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 75,
+          "role": "GC",
+          "power": 366.3626094924764,
+          "cp": 389.74729038428154,
+          "energy": 73.34299161398121,
+          "sprint": null,
+          "ai": "recover"
+        },
+        {
+          "id": 9,
+          "role": "GC",
+          "power": 356.49732415137566,
+          "cp": 371.35127458629466,
+          "energy": 83.56123633502087,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 6,
+          "role": "GC",
+          "power": 372.2055883821732,
+          "cp": 387.714126714496,
+          "energy": 81.15117081956035,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 3,
+          "role": "GC",
+          "power": 366.46766091563796,
+          "cp": 381.7369550149745,
+          "energy": 80.77429396109913,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 59,
+          "role": "GC",
+          "power": 337.56914754997337,
+          "cp": 351.6344836366751,
+          "energy": 78.11708450920334,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 0,
+          "role": "GC",
+          "power": 397.01908301531563,
+          "cp": 413.56135775739443,
+          "energy": 85.33753243181837,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 39,
+          "role": "GC",
+          "power": 323.91475296867907,
+          "cp": 344.5900345415449,
+          "energy": 70.91140356273004,
+          "sprint": null,
+          "ai": "recover"
+        },
+        {
+          "id": 114,
+          "role": "GC",
+          "power": 340.4754303770022,
+          "cp": 354.6618192912723,
+          "energy": 77.3054485191586,
+          "sprint": null,
+          "ai": "tt"
+        }
+      ],
+      "restoreChecks": 6,
+      "resultHash": "29e48e7ed7488aecef6528b790ff08b1f531ab75ee6d6c2592305a883a1afc31",
+      "parity": null
+    },
+    {
+      "seed": 12345,
+      "stage": 3,
+      "type": "Mountain",
+      "conditions": {
+        "version": 1,
+        "kind": "rain",
+        "temperature": 25,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -1.72
+          },
+          {
+            "at": 1,
+            "wind": -3.35
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-06",
+        "stageContext": "Mountain",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 657.7,
+      "wallMs": 48880,
+      "starting": 184,
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 8,
+        "energy": 33.93820862109349,
+        "meanDraft": 0.1718225150314674
+      },
+      "winner": {
+        "id": 29,
+        "name": "Brandon McNulty",
+        "role": "TT"
+      },
+      "objectives": [
+        "gc-chase",
+        "launch",
+        "mountain",
+        "protect",
+        "sit-in"
+      ],
+      "states": [
+        "attack",
+        "breakaway",
+        "bridge",
+        "climb-pace",
+        "follow",
+        "follow-move",
+        "gc-rejoin",
+        "grupetto",
+        "moving-up",
+        "peel",
+        "points-position",
+        "protect",
+        "pull",
+        "recover",
+        "rejoin",
+        "sprint"
+      ],
+      "attacks": 223,
+      "chases": 14,
+      "rotations": 101,
+      "breakAttempts": 7,
+      "gcAttacks": 20,
+      "peakGroups": 28,
+      "lowEnergyHelperSamples": 0,
+      "maxLaneDeltaPer5s": 2.099999999999995,
+      "firstCrossings": [
+        {
+          "id": 29,
+          "role": "TT",
+          "power": 750.957477699937,
+          "cp": 390.8232256143304,
+          "energy": 57.88486096652985,
+          "sprint": 510.15000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 25,
+          "role": "GC",
+          "power": 737.2288515283614,
+          "cp": 396.3200978545667,
+          "energy": 68.77144306097148,
+          "sprint": 510.40000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 6,
+          "role": "GC",
+          "power": 551.297724634638,
+          "cp": 370.882900393723,
+          "energy": 27.7051327121902,
+          "sprint": 517.65,
+          "ai": "sprint"
+        },
+        {
+          "id": 5,
+          "role": "GC",
+          "power": 755.8710719709273,
+          "cp": 377.51340029507634,
+          "energy": 61.34549329716966,
+          "sprint": 524.15,
+          "ai": "sprint"
+        },
+        {
+          "id": 45,
+          "role": "Allround",
+          "power": 772.9902113560754,
+          "cp": 346.8841923783235,
+          "energy": 44.01514980084028,
+          "sprint": 530,
+          "ai": "sprint"
+        },
+        {
+          "id": 1,
+          "role": "GC",
+          "power": 666.3614270228676,
+          "cp": 363.0512220731727,
+          "energy": 52.71391397725008,
+          "sprint": 530.0500000000001,
+          "ai": "sprint"
+        },
+        {
+          "id": 2,
+          "role": "GC",
+          "power": 895.5004705772956,
+          "cp": 379.0403859003129,
+          "energy": 65.4340012708201,
+          "sprint": 538,
+          "ai": "sprint"
+        },
+        {
+          "id": 0,
+          "role": "GC",
+          "power": 698.5697791579958,
+          "cp": 396.3540977293352,
+          "energy": 33.93820862109349,
+          "sprint": 538.2,
+          "ai": "sprint"
+        },
+        {
+          "id": 9,
+          "role": "GC",
+          "power": 692.2406761909481,
+          "cp": 367.6391245067295,
+          "energy": 71.23015050069615,
+          "sprint": 538.95,
+          "ai": "sprint"
+        },
+        {
+          "id": 121,
+          "role": "GC",
+          "power": 492.5834686484644,
+          "cp": 354.25446415610617,
+          "energy": 50.96029560407007,
+          "sprint": 538.85,
+          "ai": "sprint"
+        }
+      ],
+      "restoreChecks": 10,
+      "resultHash": "1e9fb692d7fbc2552a5ff6a2633ea3dfbe5eb744147b61baac9836b6d9640b2b",
+      "parity": null
+    },
+    {
+      "seed": 12345,
+      "stage": 5,
+      "type": "Flat",
+      "conditions": {
+        "version": 1,
+        "kind": "cloud",
+        "temperature": 29,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -2.25
+          },
+          {
+            "at": 1,
+            "wind": -3.87
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-08",
+        "stageContext": "Flat",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 340.25,
+      "wallMs": 30143,
+      "starting": 184,
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 15,
+        "energy": 55.68136532745935,
+        "meanDraft": 0.23699002962841403
+      },
+      "winner": {
+        "id": 35,
+        "name": "Per Strand Hagenes",
+        "role": "Allround"
+      },
+      "objectives": [
+        "gc-chase",
+        "leadout",
+        "protect",
+        "sit-in"
+      ],
+      "states": [
+        "attack",
+        "breakaway",
+        "bridge",
+        "climb-pace",
+        "follow",
+        "follow-move",
+        "gc-rejoin",
+        "moving-up",
+        "peel",
+        "points-position",
+        "positioning",
+        "protect",
+        "pull",
+        "recover",
+        "sprint"
+      ],
+      "attacks": 250,
+      "chases": 11,
+      "rotations": 45,
+      "breakAttempts": 6,
+      "gcAttacks": 14,
+      "peakGroups": 3,
+      "lowEnergyHelperSamples": 0,
+      "maxLaneDeltaPer5s": 2.099999999999995,
+      "firstCrossings": [
+        {
+          "id": 35,
+          "role": "Allround",
+          "power": 954.3285162662736,
+          "cp": 381.8428139114751,
+          "energy": 67.30047791212422,
+          "sprint": 306.5,
+          "ai": "sprint"
+        },
+        {
+          "id": 73,
+          "role": "Allround",
+          "power": 952.4170354953948,
+          "cp": 377.324685924245,
+          "energy": 67.88356440592928,
+          "sprint": 306.2,
+          "ai": "sprint"
+        },
+        {
+          "id": 33,
+          "role": "TT",
+          "power": 944.7575752265647,
+          "cp": 397.2514492922593,
+          "energy": 70.65956640935141,
+          "sprint": 306.8,
+          "ai": "sprint"
+        },
+        {
+          "id": 45,
+          "role": "Allround",
+          "power": 1007.6669921986926,
+          "cp": 374.58683858138943,
+          "energy": 76.19166245937444,
+          "sprint": 305.75,
+          "ai": "sprint"
+        },
+        {
+          "id": 7,
+          "role": "Climber",
+          "power": 750.8313746435359,
+          "cp": 360.69076807426114,
+          "energy": 68.38524548797855,
+          "sprint": 307.65000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 81,
+          "role": "Allround",
+          "power": 857.9891188546299,
+          "cp": 361.23729016847807,
+          "energy": 72.46121884425733,
+          "sprint": 306.1,
+          "ai": "sprint"
+        },
+        {
+          "id": 25,
+          "role": "GC",
+          "power": 667.7579993715103,
+          "cp": 387.26738709268477,
+          "energy": 40.93236697424432,
+          "sprint": 307.6,
+          "ai": "sprint"
+        },
+        {
+          "id": 60,
+          "role": "Sprinter",
+          "power": 981.6864897316775,
+          "cp": 331.33228746546877,
+          "energy": 71.00636595470512,
+          "sprint": 306.05,
+          "ai": "sprint"
+        },
+        {
+          "id": 104,
+          "role": "Allround",
+          "power": 750.1868059648369,
+          "cp": 346.4833360506209,
+          "energy": 42.48384494080642,
+          "sprint": 306.05,
+          "ai": "sprint"
+        },
+        {
+          "id": 48,
+          "role": "Sprinter",
+          "power": 818.4424592142203,
+          "cp": 350.0451458749549,
+          "energy": 26.47997511210371,
+          "sprint": 305.95,
+          "ai": "sprint"
+        }
+      ],
+      "restoreChecks": 5,
+      "resultHash": "28dcde11cc6710d7b2e2101f171a8e7f36c3d2814d0e1bffc3d700fd5a31a1cd",
+      "parity": null
+    },
+    {
+      "seed": 12345,
+      "stage": 7,
+      "type": "Flat",
+      "conditions": {
+        "version": 1,
+        "kind": "rain",
+        "temperature": 25,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -1.34
+          },
+          {
+            "at": 1,
+            "wind": -2.97
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-10",
+        "stageContext": "Flat",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 344.45000000000005,
+      "wallMs": 32674,
+      "starting": 184,
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 2,
+        "energy": 65.36673397955663,
+        "meanDraft": 0.15235911839978938
+      },
+      "winner": {
+        "id": 6,
+        "name": "Juan Ayuso",
+        "role": "GC"
+      },
+      "objectives": [
+        "gc-chase",
+        "leadout",
+        "protect",
+        "sit-in"
+      ],
+      "states": [
+        "attack",
+        "breakaway",
+        "bridge",
+        "follow",
+        "follow-move",
+        "gc-rejoin",
+        "moving-up",
+        "peel",
+        "points-position",
+        "positioning",
+        "protect",
+        "pull",
+        "recover",
+        "sprint"
+      ],
+      "attacks": 257,
+      "chases": 8,
+      "rotations": 62,
+      "breakAttempts": 7,
+      "gcAttacks": 18,
+      "peakGroups": 8,
+      "lowEnergyHelperSamples": 2,
+      "maxLaneDeltaPer5s": 2.0999999999999948,
+      "firstCrossings": [
+        {
+          "id": 6,
+          "role": "GC",
+          "power": 671.3059238148171,
+          "cp": 376.10306645847476,
+          "energy": 44.28129829313706,
+          "sprint": 299.75,
+          "ai": "sprint"
+        },
+        {
+          "id": 0,
+          "role": "GC",
+          "power": 952.8759844809315,
+          "cp": 406.87561373474006,
+          "energy": 65.36673397955663,
+          "sprint": 302.95,
+          "ai": "sprint"
+        },
+        {
+          "id": 31,
+          "role": "Allround",
+          "power": 703.9240883095956,
+          "cp": 385.2625376470286,
+          "energy": 33.23875198718855,
+          "sprint": 301.65000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 1,
+          "role": "GC",
+          "power": 685.984229445188,
+          "cp": 360.9522085765652,
+          "energy": 45.76031463779648,
+          "sprint": 303,
+          "ai": "sprint"
+        },
+        {
+          "id": 25,
+          "role": "GC",
+          "power": 545.8813682481749,
+          "cp": 329.96121272288036,
+          "energy": 15.570781200435665,
+          "sprint": 304.5,
+          "ai": "sprint"
+        },
+        {
+          "id": 3,
+          "role": "GC",
+          "power": 656.5686562701663,
+          "cp": 372.24505657916063,
+          "energy": 50.171061965310216,
+          "sprint": 303.90000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 18,
+          "role": "GC",
+          "power": 560.1382953016914,
+          "cp": 358.58003706519054,
+          "energy": 26.984300745718336,
+          "sprint": 303.90000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 9,
+          "role": "GC",
+          "power": 565.4332221755006,
+          "cp": 337.89037237173665,
+          "energy": 21.906483479181325,
+          "sprint": 308.05,
+          "ai": "sprint"
+        },
+        {
+          "id": 40,
+          "role": "Allround",
+          "power": 626.3663616896873,
+          "cp": 321.3416600726733,
+          "energy": 22.309294860315465,
+          "sprint": 308.05,
+          "ai": "sprint"
+        },
+        {
+          "id": 11,
+          "role": "Climber",
+          "power": 574.2742205552206,
+          "cp": 344.36457523419745,
+          "energy": 52.82705743076227,
+          "sprint": 308.05,
+          "ai": "sprint"
+        }
+      ],
+      "restoreChecks": 5,
+      "resultHash": "87adcf1a97123246228b48923c98d3d431873e64a2e45e48ea008f2c0f704c8f",
+      "parity": null
+    },
+    {
+      "seed": 12345,
+      "stage": 16,
+      "type": "ITT",
+      "conditions": {
+        "version": 1,
+        "kind": "rain",
+        "temperature": 24,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -1.34
+          },
+          {
+            "at": 1,
+            "wind": -2.97
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-21",
+        "stageContext": "ITT",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 321,
+      "wallMs": 3778,
+      "starting": 184,
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 4,
+        "energy": 84.39890891811855,
+        "meanDraft": 0
+      },
+      "winner": {
+        "id": 43,
+        "name": "Derek James Gee",
+        "role": "GC"
+      },
+      "objectives": [
+        "tt"
+      ],
+      "states": [
+        "follow",
+        "tt-finish",
+        "tt-pace",
+        "tt-recover"
+      ],
+      "attacks": 0,
+      "chases": 0,
+      "rotations": 0,
+      "breakAttempts": 0,
+      "gcAttacks": 0,
+      "peakGroups": 9,
+      "lowEnergyHelperSamples": 0,
+      "maxLaneDeltaPer5s": 0,
+      "firstCrossings": [
+        {
+          "id": 43,
+          "role": "GC",
+          "power": 701.6323135707144,
+          "cp": 438.51988967239765,
+          "energy": 78.81514995179604,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 1,
+          "role": "GC",
+          "power": 593.4877981210075,
+          "cp": 370.928072115493,
+          "energy": 78.80829561880687,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 29,
+          "role": "TT",
+          "power": 636.1460666122045,
+          "cp": 397.5910282771848,
+          "energy": 78.80154616511562,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 0,
+          "role": "GC",
+          "power": 413.24717177664365,
+          "cp": 413.24712913197203,
+          "energy": 84.39890891811855,
+          "sprint": null,
+          "ai": "follow"
+        },
+        {
+          "id": 6,
+          "role": "GC",
+          "power": 619.170195903507,
+          "cp": 386.9809046539576,
+          "energy": 78.82289042918073,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 9,
+          "role": "GC",
+          "power": 591.9063019829985,
+          "cp": 369.9402871241675,
+          "energy": 78.87419321076136,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 10,
+          "role": "TT",
+          "power": 666.5235964979202,
+          "cp": 416.5752283554849,
+          "energy": 78.61141118688082,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 98,
+          "role": "TT",
+          "power": 636.7055618572438,
+          "cp": 397.9407391237202,
+          "energy": 78.7541716475758,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 25,
+          "role": "GC",
+          "power": 639.3675002978207,
+          "cp": 399.6043458285843,
+          "energy": 78.87122771567842,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 76,
+          "role": "TT",
+          "power": 644.2058254740352,
+          "cp": 402.62662338984234,
+          "energy": 78.77055605627119,
+          "sprint": null,
+          "ai": "tt-finish"
+        }
+      ],
+      "restoreChecks": 5,
+      "resultHash": "93d049d363601d4882ac149839430812e9a426e953c2110dc717168c5f680211",
+      "parity": null
+    },
+    {
+      "seed": 12345,
+      "stage": 19,
+      "type": "Mountain",
+      "conditions": {
+        "version": 1,
+        "kind": "rain",
+        "temperature": 23,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -1.95
+          },
+          {
+            "at": 1,
+            "wind": -3.57
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-24",
+        "stageContext": "Mountain",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 775.35,
+      "wallMs": 40264,
+      "starting": 164,
+      "account": {
+        "racing": 0,
+        "finished": 163,
+        "exited": 1,
+        "dns": 20,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 3,
+        "energy": 77.95430309708014,
+        "meanDraft": 0.15965999024531993
+      },
+      "winner": {
+        "id": 5,
+        "name": "Mattias Skjelmose",
+        "role": "GC"
+      },
+      "objectives": [
+        "gc-chase",
+        "launch",
+        "mountain",
+        "protect",
+        "sit-in"
+      ],
+      "states": [
+        "attack",
+        "breakaway",
+        "bridge",
+        "climb-pace",
+        "follow",
+        "follow-move",
+        "gc-rejoin",
+        "grupetto",
+        "moving-up",
+        "peel",
+        "points-position",
+        "positioning",
+        "protect",
+        "pull",
+        "recover",
+        "rejoin",
+        "sprint"
+      ],
+      "attacks": 176,
+      "chases": 20,
+      "rotations": 142,
+      "breakAttempts": 5,
+      "gcAttacks": 9,
+      "peakGroups": 25,
+      "lowEnergyHelperSamples": 122,
+      "maxLaneDeltaPer5s": 2.099999999999995,
+      "firstCrossings": [
+        {
+          "id": 5,
+          "role": "GC",
+          "power": 665.7173705077959,
+          "cp": 360.9549937083358,
+          "energy": 55.65833265632346,
+          "sprint": 584.6,
+          "ai": "sprint"
+        },
+        {
+          "id": 6,
+          "role": "GC",
+          "power": 734.9248060985321,
+          "cp": 374.8705398473396,
+          "energy": 75.25567653849023,
+          "sprint": 584.95,
+          "ai": "sprint"
+        },
+        {
+          "id": 0,
+          "role": "GC",
+          "power": 942.3227012572979,
+          "cp": 408.7598259864172,
+          "energy": 77.95430309708014,
+          "sprint": 584.7,
+          "ai": "sprint"
+        },
+        {
+          "id": 9,
+          "role": "GC",
+          "power": 639.547859446748,
+          "cp": 353.50033799322586,
+          "energy": 59.801075098923924,
+          "sprint": 585.2,
+          "ai": "sprint"
+        },
+        {
+          "id": 3,
+          "role": "GC",
+          "power": 598.0300768421662,
+          "cp": 357.05145088409404,
+          "energy": 46.60028562534503,
+          "sprint": 587.85,
+          "ai": "sprint"
+        },
+        {
+          "id": 43,
+          "role": "GC",
+          "power": 864.787577012321,
+          "cp": 421.84492368498564,
+          "energy": 67.52506037865895,
+          "sprint": 595.45,
+          "ai": "sprint"
+        },
+        {
+          "id": 1,
+          "role": "GC",
+          "power": 499.7475408750045,
+          "cp": 326.2149061736465,
+          "energy": 21.348125636696192,
+          "sprint": 598.8000000000001,
+          "ai": "sprint"
+        },
+        {
+          "id": 47,
+          "role": "Allround",
+          "power": 635.8762741373325,
+          "cp": 342.96888983368785,
+          "energy": 22.547344460833195,
+          "sprint": 610.1,
+          "ai": "sprint"
+        },
+        {
+          "id": 44,
+          "role": "Puncheur",
+          "power": 571.7439595203227,
+          "cp": 340.4517315093702,
+          "energy": 30.77656797833128,
+          "sprint": 610.65,
+          "ai": "sprint"
+        },
+        {
+          "id": 53,
+          "role": "Climber",
+          "power": 372.1107230505034,
+          "cp": 302.2330176317107,
+          "energy": 23.670388606162014,
+          "sprint": 611.75,
+          "ai": "sprint"
+        }
+      ],
+      "restoreChecks": 12,
+      "resultHash": "51dd445c96c245b3b7c9166ee0198924d368e5af2d1b0bd9df7e547a7cec084a",
+      "parity": null
+    },
+    {
+      "seed": 12345,
+      "stage": 21,
+      "type": "Flat",
+      "conditions": {
+        "version": 1,
+        "kind": "rain",
+        "temperature": 27,
+        "bands": [
+          {
+            "at": 0,
+            "wind": -1.49
+          },
+          {
+            "at": 1,
+            "wind": -3.12
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-26",
+        "stageContext": "Flat",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 294.35,
+      "wallMs": 25270,
+      "starting": 184,
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 38,
+        "energy": 63.518307070314336,
+        "meanDraft": 0.19937298273459447
+      },
+      "winner": {
+        "id": 49,
+        "name": "Daan Hoole",
+        "role": "TT"
+      },
+      "objectives": [
+        "gc-chase",
+        "leadout",
+        "protect",
+        "sit-in",
+        "sprint-chase"
+      ],
+      "states": [
+        "attack",
+        "breakaway",
+        "bridge",
+        "climb-pace",
+        "follow",
+        "follow-move",
+        "gc-rejoin",
+        "moving-up",
+        "peel",
+        "points-position",
+        "positioning",
+        "protect",
+        "pull",
+        "recover",
+        "sprint"
+      ],
+      "attacks": 283,
+      "chases": 10,
+      "rotations": 40,
+      "breakAttempts": 7,
+      "gcAttacks": 14,
+      "peakGroups": 3,
+      "lowEnergyHelperSamples": 0,
+      "maxLaneDeltaPer5s": 2.099999999999995,
+      "firstCrossings": [
+        {
+          "id": 49,
+          "role": "TT",
+          "power": 899.1323487606915,
+          "cp": 386.49025317664183,
+          "energy": 72.45145868118007,
+          "sprint": 259.1,
+          "ai": "sprint"
+        },
+        {
+          "id": 33,
+          "role": "TT",
+          "power": 915.8413074649786,
+          "cp": 396.16283578439925,
+          "energy": 67.31451507005667,
+          "sprint": 258.5,
+          "ai": "sprint"
+        },
+        {
+          "id": 25,
+          "role": "GC",
+          "power": 694.0440847218874,
+          "cp": 396.20553105933834,
+          "energy": 68.41912497490124,
+          "sprint": 258.15000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 7,
+          "role": "Climber",
+          "power": 667.7202757041441,
+          "cp": 358.21616914402983,
+          "energy": 60.0262435617818,
+          "sprint": 259.65000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 35,
+          "role": "Allround",
+          "power": 945.4534796619276,
+          "cp": 383.0891694738775,
+          "energy": 71.27381240078284,
+          "sprint": 257.75,
+          "ai": "sprint"
+        },
+        {
+          "id": 41,
+          "role": "TT",
+          "power": 961.17340651306,
+          "cp": 387.1709845436653,
+          "energy": 69.6666599787843,
+          "sprint": 257.6,
+          "ai": "sprint"
+        },
+        {
+          "id": 31,
+          "role": "Allround",
+          "power": 966.3702335710989,
+          "cp": 397.7651871684353,
+          "energy": 71.63755272860969,
+          "sprint": 257.65000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 84,
+          "role": "Allround",
+          "power": 777.7710733365021,
+          "cp": 342.6468956208614,
+          "energy": 29.89730038450358,
+          "sprint": 257.40000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 48,
+          "role": "Sprinter",
+          "power": 843.8379984120486,
+          "cp": 352.07841518040493,
+          "energy": 33.31366685175875,
+          "sprint": 257.75,
+          "ai": "sprint"
+        },
+        {
+          "id": 90,
+          "role": "Allround",
+          "power": 802.3065365571118,
+          "cp": 328.3995720963563,
+          "energy": 32.31412765105237,
+          "sprint": 257.75,
+          "ai": "sprint"
+        }
+      ],
+      "restoreChecks": 4,
+      "resultHash": "58671d0ae278169b660d9324ebe53cad3da4ae3026956fb9f9941951da67ecf0",
+      "parity": null
+    },
+    {
+      "seed": 271828,
+      "stage": 1,
+      "type": "TTT",
+      "conditions": {
+        "version": 1,
+        "kind": "rain",
+        "temperature": 24,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.45
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -1.13
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": -0.87
+          },
+          {
+            "at": 1,
+            "wind": 0.16
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-04",
+        "stageContext": "TTT",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 351.40000000000003,
+      "wallMs": 7547,
+      "starting": 184,
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 28,
+        "energy": 84.6384714803615,
+        "meanDraft": 0.17847968853846075
+      },
+      "winner": {
+        "id": 9,
+        "name": "Jonas Vingegaard",
+        "role": "GC"
+      },
+      "objectives": [
+        "ttt"
+      ],
+      "states": [
+        "follow",
+        "moving-up",
+        "peel",
+        "protect",
+        "pull",
+        "recover",
+        "rejoin",
+        "sprint",
+        "tt"
+      ],
+      "attacks": 0,
+      "chases": 0,
+      "rotations": 273,
+      "breakAttempts": 0,
+      "gcAttacks": 0,
+      "peakGroups": 2,
+      "lowEnergyHelperSamples": 0,
+      "maxLaneDeltaPer5s": 2.495999999999981,
+      "firstCrossings": [
+        {
+          "id": 9,
+          "role": "GC",
+          "power": 355.17247414764927,
+          "cp": 369.9712957991493,
+          "energy": 78.97719837612713,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 1,
+          "role": "GC",
+          "power": 357.98153069047214,
+          "cp": 372.8973255065935,
+          "energy": 85.3320264579392,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 76,
+          "role": "TT",
+          "power": 0,
+          "cp": 395.2193628019335,
+          "energy": 78.5362136265517,
+          "sprint": null,
+          "ai": "recover"
+        },
+        {
+          "id": 74,
+          "role": "GC",
+          "power": 328.1919810639521,
+          "cp": 341.86649742801393,
+          "energy": 70.2544882496214,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 18,
+          "role": "GC",
+          "power": 349.5341488188431,
+          "cp": 371.8446289296353,
+          "energy": 70.52330115418917,
+          "sprint": null,
+          "ai": "recover"
+        },
+        {
+          "id": 70,
+          "role": "TT",
+          "power": 334.36507673176214,
+          "cp": 348.29683184363154,
+          "energy": 77.25014765060538,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 21,
+          "role": "GC",
+          "power": 365.0673832726449,
+          "cp": 388.36933399266553,
+          "energy": 69.01784725500175,
+          "sprint": null,
+          "ai": "recover"
+        },
+        {
+          "id": 158,
+          "role": "GC",
+          "power": 344.07768097462764,
+          "cp": 358.4141493478775,
+          "energy": 77.3952760430308,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 3,
+          "role": "GC",
+          "power": 366.71731282573023,
+          "cp": 381.9971199659326,
+          "energy": 81.61310280478654,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 121,
+          "role": "GC",
+          "power": 348.1068830356629,
+          "cp": 362.61116159769455,
+          "energy": 79.2903883627635,
+          "sprint": null,
+          "ai": "tt"
+        }
+      ],
+      "restoreChecks": 5,
+      "resultHash": "9113936555f0a662f75da4f152fe2e977a16ca606a9dc5c4895f3cdc99acc039",
+      "parity": null
+    },
+    {
+      "seed": 271828,
+      "stage": 3,
+      "type": "Mountain",
+      "conditions": {
+        "version": 1,
+        "kind": "rain",
+        "temperature": 20,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.42
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -1.16
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": -0.9
+          },
+          {
+            "at": 1,
+            "wind": 0.13
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-06",
+        "stageContext": "Mountain",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 619.8000000000001,
+      "wallMs": 43338,
+      "starting": 184,
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 3,
+        "energy": 69.86000890049533,
+        "meanDraft": 0.1281153923077265
+      },
+      "winner": {
+        "id": 30,
+        "name": "Nils Politt",
+        "role": "Allround"
+      },
+      "objectives": [
+        "gc-chase",
+        "mountain",
+        "protect",
+        "sit-in"
+      ],
+      "states": [
+        "attack",
+        "breakaway",
+        "bridge",
+        "climb-pace",
+        "follow",
+        "follow-move",
+        "gc-rejoin",
+        "grupetto",
+        "moving-up",
+        "peel",
+        "points-position",
+        "positioning",
+        "protect",
+        "pull",
+        "recover",
+        "sprint"
+      ],
+      "attacks": 239,
+      "chases": 11,
+      "rotations": 101,
+      "breakAttempts": 8,
+      "gcAttacks": 19,
+      "peakGroups": 28,
+      "lowEnergyHelperSamples": 0,
+      "maxLaneDeltaPer5s": 2.0999999999999943,
+      "firstCrossings": [
+        {
+          "id": 30,
+          "role": "Allround",
+          "power": 803.1200934099409,
+          "cp": 369.67294776798684,
+          "energy": 53.66337602625533,
+          "sprint": 481.15000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 25,
+          "role": "GC",
+          "power": 724.6720473183485,
+          "cp": 392.29092481890814,
+          "energy": 56.38085004892103,
+          "sprint": 481.15000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 0,
+          "role": "GC",
+          "power": 1028.0020581745237,
+          "cp": 408.37985433967225,
+          "energy": 69.86000890049533,
+          "sprint": 481.95000000000005,
+          "ai": "sprint"
+        },
+        {
+          "id": 4,
+          "role": "Climber",
+          "power": 550.2400701845503,
+          "cp": 308.4750148519076,
+          "energy": 42.238478031304204,
+          "sprint": 482.65000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 1,
+          "role": "GC",
+          "power": 829.7960745863584,
+          "cp": 366.3987483291017,
+          "energy": 63.80357890777752,
+          "sprint": 482.95000000000005,
+          "ai": "sprint"
+        },
+        {
+          "id": 22,
+          "role": "GC",
+          "power": 642.4693110974688,
+          "cp": 373.0281543902222,
+          "energy": 48.87691513434821,
+          "sprint": 483.3,
+          "ai": "sprint"
+        },
+        {
+          "id": 3,
+          "role": "GC",
+          "power": 607.2398845609201,
+          "cp": 366.39934611078917,
+          "energy": 31.323659113970724,
+          "sprint": 484.8,
+          "ai": "sprint"
+        },
+        {
+          "id": 9,
+          "role": "GC",
+          "power": 736.6575688993828,
+          "cp": 367.20574506012656,
+          "energy": 69.79054298474163,
+          "sprint": 485.3,
+          "ai": "sprint"
+        },
+        {
+          "id": 55,
+          "role": "Climber",
+          "power": 737.8655054613308,
+          "cp": 369.41702175741,
+          "energy": 62.427703245933614,
+          "sprint": 485.45000000000005,
+          "ai": "sprint"
+        },
+        {
+          "id": 6,
+          "role": "GC",
+          "power": 714.4240284880926,
+          "cp": 379.3243832620883,
+          "energy": 54.51029868566066,
+          "sprint": 485.65000000000003,
+          "ai": "sprint"
+        }
+      ],
+      "restoreChecks": 10,
+      "resultHash": "8e44569891f539592bf4a54be129ae99e87b20c965c3c5d7b2b4f3654ab9928a",
+      "parity": null
+    },
+    {
+      "seed": 271828,
+      "stage": 5,
+      "type": "Flat",
+      "conditions": {
+        "version": 1,
+        "kind": "rain",
+        "temperature": 22,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.33
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -1.25
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": -1
+          },
+          {
+            "at": 1,
+            "wind": 0.04
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-08",
+        "stageContext": "Flat",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 298.25,
+      "wallMs": 26887,
+      "starting": 184,
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 19,
+        "energy": 76.05320172219706,
+        "meanDraft": 0.15836507849591308
+      },
+      "winner": {
+        "id": 45,
+        "name": "Mathias Vacek",
+        "role": "Allround"
+      },
+      "objectives": [
+        "gc-chase",
+        "leadout",
+        "protect",
+        "sit-in",
+        "sprint-chase"
+      ],
+      "states": [
+        "attack",
+        "breakaway",
+        "bridge",
+        "climb-pace",
+        "follow",
+        "follow-move",
+        "gc-rejoin",
+        "moving-up",
+        "peel",
+        "points-position",
+        "positioning",
+        "protect",
+        "pull",
+        "recover",
+        "sprint"
+      ],
+      "attacks": 236,
+      "chases": 27,
+      "rotations": 33,
+      "breakAttempts": 6,
+      "gcAttacks": 4,
+      "peakGroups": 4,
+      "lowEnergyHelperSamples": 1,
+      "maxLaneDeltaPer5s": 2.099999999999995,
+      "firstCrossings": [
+        {
+          "id": 45,
+          "role": "Allround",
+          "power": 742.0589114418498,
+          "cp": 359.5503356993315,
+          "energy": 26.970407018709537,
+          "sprint": 264.90000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 41,
+          "role": "TT",
+          "power": 863.0556054472341,
+          "cp": 381.80577689042934,
+          "energy": 52.76517417599967,
+          "sprint": 264.5,
+          "ai": "sprint"
+        },
+        {
+          "id": 33,
+          "role": "TT",
+          "power": 860.7000094581449,
+          "cp": 395.78041326771915,
+          "energy": 66.13942129953053,
+          "sprint": 264.45,
+          "ai": "sprint"
+        },
+        {
+          "id": 48,
+          "role": "Sprinter",
+          "power": 862.8254479605476,
+          "cp": 353.24709084833574,
+          "energy": 37.24151312222968,
+          "sprint": 264.2,
+          "ai": "sprint"
+        },
+        {
+          "id": 31,
+          "role": "Allround",
+          "power": 932.1270288261798,
+          "cp": 398.4697272444054,
+          "energy": 73.80137360075365,
+          "sprint": 264.5,
+          "ai": "sprint"
+        },
+        {
+          "id": 35,
+          "role": "Allround",
+          "power": 941.2100925308948,
+          "cp": 384.3233412926353,
+          "energy": 75.20830557458339,
+          "sprint": 264.40000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 63,
+          "role": "Allround",
+          "power": 719.1748321737757,
+          "cp": 346.6993220683318,
+          "energy": 62.57457354620817,
+          "sprint": 264.85,
+          "ai": "sprint"
+        },
+        {
+          "id": 14,
+          "role": "Allround",
+          "power": 957.1314593970172,
+          "cp": 388.41711900668514,
+          "energy": 76.86965876170323,
+          "sprint": 264.55,
+          "ai": "sprint"
+        },
+        {
+          "id": 113,
+          "role": "Allround",
+          "power": 862.4537828998574,
+          "cp": 344.23549457905204,
+          "energy": 55.71163478988767,
+          "sprint": 264.55,
+          "ai": "sprint"
+        },
+        {
+          "id": 38,
+          "role": "Allround",
+          "power": 889.5690094625736,
+          "cp": 353.14410930477067,
+          "energy": 64.25465321825214,
+          "sprint": 264.7,
+          "ai": "sprint"
+        }
+      ],
+      "restoreChecks": 4,
+      "resultHash": "6b9720823fad8d37747b9226aada07ef6743e25ac19841a25460026d74474ddd",
+      "parity": null
+    },
+    {
+      "seed": 271828,
+      "stage": 7,
+      "type": "Flat",
+      "conditions": {
+        "version": 1,
+        "kind": "rain",
+        "temperature": 21,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.49
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -1.09
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": -0.83
+          },
+          {
+            "at": 1,
+            "wind": 0.2
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-10",
+        "stageContext": "Flat",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 311.25,
+      "wallMs": 31782,
+      "starting": 184,
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 4,
+        "energy": 27.491723923935215,
+        "meanDraft": 0.1553046271366484
+      },
+      "winner": {
+        "id": 45,
+        "name": "Mathias Vacek",
+        "role": "Allround"
+      },
+      "objectives": [
+        "gc-chase",
+        "leadout",
+        "protect",
+        "sit-in",
+        "sprint-chase"
+      ],
+      "states": [
+        "attack",
+        "breakaway",
+        "bridge",
+        "climb-pace",
+        "follow",
+        "follow-move",
+        "gc-rejoin",
+        "moving-up",
+        "peel",
+        "points-position",
+        "positioning",
+        "protect",
+        "pull",
+        "recover",
+        "sprint"
+      ],
+      "attacks": 235,
+      "chases": 30,
+      "rotations": 48,
+      "breakAttempts": 8,
+      "gcAttacks": 4,
+      "peakGroups": 3,
+      "lowEnergyHelperSamples": 0,
+      "maxLaneDeltaPer5s": 2.099999999999995,
+      "firstCrossings": [
+        {
+          "id": 45,
+          "role": "Allround",
+          "power": 883.5668066335561,
+          "cp": 370.3832314946197,
+          "energy": 62.43136062503149,
+          "sprint": 277.85,
+          "ai": "sprint"
+        },
+        {
+          "id": 48,
+          "role": "Sprinter",
+          "power": 894.7991924543587,
+          "cp": 358.52302446770835,
+          "energy": 54.97359804429817,
+          "sprint": 277.45,
+          "ai": "sprint"
+        },
+        {
+          "id": 33,
+          "role": "TT",
+          "power": 947.7898134699951,
+          "cp": 397.81205965306566,
+          "energy": 72.38218919943986,
+          "sprint": 278.95,
+          "ai": "sprint"
+        },
+        {
+          "id": 0,
+          "role": "GC",
+          "power": 703.5167065861885,
+          "cp": 394.19596936835933,
+          "energy": 27.491723923935215,
+          "sprint": 278.15000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 60,
+          "role": "Sprinter",
+          "power": 933.8924424923248,
+          "cp": 329.1220346587811,
+          "energy": 62.861271590437575,
+          "sprint": 278.45,
+          "ai": "sprint"
+        },
+        {
+          "id": 30,
+          "role": "Allround",
+          "power": 862.4508417336601,
+          "cp": 400.0485029194023,
+          "energy": 61.38718180536059,
+          "sprint": 279.05,
+          "ai": "sprint"
+        },
+        {
+          "id": 61,
+          "role": "TT",
+          "power": 970.676002733932,
+          "cp": 374.61155528613955,
+          "energy": 71.9047403161964,
+          "sprint": 279.05,
+          "ai": "sprint"
+        },
+        {
+          "id": 35,
+          "role": "Allround",
+          "power": 1001.4926329897982,
+          "cp": 384.60020168099425,
+          "energy": 76.09092604244533,
+          "sprint": 279.15000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 41,
+          "role": "TT",
+          "power": 712.9685017441764,
+          "cp": 339.93272800380055,
+          "energy": 18.87391929624506,
+          "sprint": 278.6,
+          "ai": "sprint"
+        },
+        {
+          "id": 2,
+          "role": "GC",
+          "power": 881.1589980026121,
+          "cp": 379.6416858615855,
+          "energy": 67.36213464414818,
+          "sprint": 278.85,
+          "ai": "sprint"
+        }
+      ],
+      "restoreChecks": 5,
+      "resultHash": "038fd95b49d4cc6ed28788386483fba16f29d995f9db5d245d1e0200b6f9c0ce",
+      "parity": null
+    },
+    {
+      "seed": 271828,
+      "stage": 16,
+      "type": "ITT",
+      "conditions": {
+        "version": 1,
+        "kind": "rain",
+        "temperature": 20,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.49
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -1.09
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": -0.83
+          },
+          {
+            "at": 1,
+            "wind": 0.2
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-21",
+        "stageContext": "ITT",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 300.65000000000003,
+      "wallMs": 3479,
+      "starting": 184,
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 4,
+        "energy": 84.54900329717493,
+        "meanDraft": 0
+      },
+      "winner": {
+        "id": 43,
+        "name": "Derek James Gee",
+        "role": "GC"
+      },
+      "objectives": [
+        "tt"
+      ],
+      "states": [
+        "follow",
+        "tt-finish",
+        "tt-pace",
+        "tt-recover"
+      ],
+      "attacks": 0,
+      "chases": 0,
+      "rotations": 0,
+      "breakAttempts": 0,
+      "gcAttacks": 0,
+      "peakGroups": 10,
+      "lowEnergyHelperSamples": 0,
+      "maxLaneDeltaPer5s": 0,
+      "firstCrossings": [
+        {
+          "id": 43,
+          "role": "GC",
+          "power": 701.4631984068324,
+          "cp": 438.4138909040115,
+          "energy": 78.51812148048433,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 1,
+          "role": "GC",
+          "power": 593.343738425974,
+          "cp": 370.8380051676041,
+          "energy": 78.50992237329902,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 29,
+          "role": "TT",
+          "power": 635.996733810259,
+          "cp": 397.49553874385,
+          "energy": 78.50642460084666,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 0,
+          "role": "GC",
+          "power": 413.2977175800907,
+          "cp": 413.297377127815,
+          "energy": 84.54900329717493,
+          "sprint": null,
+          "ai": "follow"
+        },
+        {
+          "id": 6,
+          "role": "GC",
+          "power": 619.02677889132,
+          "cp": 386.88987168646975,
+          "energy": 78.53382346776858,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 9,
+          "role": "GC",
+          "power": 591.7681090173189,
+          "cp": 369.8531185035188,
+          "energy": 78.58463494392365,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 25,
+          "role": "GC",
+          "power": 639.2203484863553,
+          "cp": 399.5117118813873,
+          "energy": 78.5863579598601,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 98,
+          "role": "TT",
+          "power": 636.555287352625,
+          "cp": 397.8463382292133,
+          "energy": 78.46110863026915,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 76,
+          "role": "TT",
+          "power": 644.0514862755153,
+          "cp": 402.5310213687468,
+          "energy": 78.47725582924899,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 10,
+          "role": "TT",
+          "power": 666.3616791277043,
+          "cp": 416.4753205777338,
+          "energy": 78.3105358588883,
+          "sprint": null,
+          "ai": "tt-finish"
+        }
+      ],
+      "restoreChecks": 5,
+      "resultHash": "1964354e8e197a188d8d6589cef9f624395ef3c42d1fb167a680c434e4fd8a16",
+      "parity": null
+    },
+    {
+      "seed": 271828,
+      "stage": 19,
+      "type": "Mountain",
+      "conditions": {
+        "version": 1,
+        "kind": "rain",
+        "temperature": 18,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.38
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -1.2
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": -0.94
+          },
+          {
+            "at": 1,
+            "wind": 0.09
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-24",
+        "stageContext": "Mountain",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 701.85,
+      "wallMs": 40931,
+      "starting": 164,
+      "account": {
+        "racing": 0,
+        "finished": 163,
+        "exited": 1,
+        "dns": 20,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 2,
+        "energy": 72.87983733559734,
+        "meanDraft": 0.15212547572756333
+      },
+      "winner": {
+        "id": 1,
+        "name": "Remco Evenepoel",
+        "role": "GC"
+      },
+      "objectives": [
+        "gc-chase",
+        "mountain",
+        "protect",
+        "sit-in"
+      ],
+      "states": [
+        "attack",
+        "breakaway",
+        "bridge",
+        "climb-pace",
+        "follow",
+        "follow-move",
+        "gc-rejoin",
+        "grupetto",
+        "moving-up",
+        "peel",
+        "points-position",
+        "positioning",
+        "protect",
+        "pull",
+        "recover",
+        "sprint"
+      ],
+      "attacks": 187,
+      "chases": 8,
+      "rotations": 80,
+      "breakAttempts": 7,
+      "gcAttacks": 6,
+      "peakGroups": 25,
+      "lowEnergyHelperSamples": 110,
+      "maxLaneDeltaPer5s": 2.0999999999999956,
+      "firstCrossings": [
+        {
+          "id": 1,
+          "role": "GC",
+          "power": 699.72655500362,
+          "cp": 355.8986743116287,
+          "energy": 64.18758511983104,
+          "sprint": 509.5,
+          "ai": "sprint"
+        },
+        {
+          "id": 0,
+          "role": "GC",
+          "power": 954.364597687316,
+          "cp": 407.07064444569846,
+          "energy": 72.87983733559734,
+          "sprint": 510.6,
+          "ai": "sprint"
+        },
+        {
+          "id": 25,
+          "role": "GC",
+          "power": 551.9857332518233,
+          "cp": 371.86430199339327,
+          "energy": 27.77573746795032,
+          "sprint": 513.95,
+          "ai": "sprint"
+        },
+        {
+          "id": 6,
+          "role": "GC",
+          "power": 550.3681902064185,
+          "cp": 364.1049264919972,
+          "energy": 40.06851864546521,
+          "sprint": 513.25,
+          "ai": "sprint"
+        },
+        {
+          "id": 9,
+          "role": "GC",
+          "power": 512.2147465137433,
+          "cp": 345.536266715374,
+          "energy": 32.545253933925984,
+          "sprint": 529.4,
+          "ai": "sprint"
+        },
+        {
+          "id": 3,
+          "role": "GC",
+          "power": 532.4902211720463,
+          "cp": 333.18803621914293,
+          "energy": 21.56622967816509,
+          "sprint": 529.35,
+          "ai": "sprint"
+        },
+        {
+          "id": 2,
+          "role": "GC",
+          "power": 691.4706415227976,
+          "cp": 356.64112584752894,
+          "energy": 42.68766848448135,
+          "sprint": 535.75,
+          "ai": "sprint"
+        },
+        {
+          "id": 5,
+          "role": "GC",
+          "power": 514.5175860687199,
+          "cp": 301.77220258250975,
+          "energy": 15.175091395538955,
+          "sprint": 545.3000000000001,
+          "ai": "sprint"
+        },
+        {
+          "id": 11,
+          "role": "Climber",
+          "power": 410.9079198000682,
+          "cp": 306.3739237999036,
+          "energy": 21.98263750249917,
+          "sprint": 547.0500000000001,
+          "ai": "sprint"
+        },
+        {
+          "id": 43,
+          "role": "GC",
+          "power": 870.9295591382917,
+          "cp": 422.17247586490413,
+          "energy": 68.470438562065,
+          "sprint": 546.4,
+          "ai": "sprint"
+        }
+      ],
+      "restoreChecks": 11,
+      "resultHash": "dfe67f395c65caa3baa7c64382e0132f3446d685ebbf1da6d2ed786c637dca9d",
+      "parity": null
+    },
+    {
+      "seed": 271828,
+      "stage": 21,
+      "type": "Flat",
+      "conditions": {
+        "version": 1,
+        "kind": "rain",
+        "temperature": 22,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.47
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -1.11
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": -0.86
+          },
+          {
+            "at": 1,
+            "wind": 0.18
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-26",
+        "stageContext": "Flat",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 267.2,
+      "wallMs": 24344,
+      "starting": 184,
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 13,
+        "energy": 73.4539267998983,
+        "meanDraft": 0.24452027163645282
+      },
+      "winner": {
+        "id": 61,
+        "name": "Kasper Asgreen",
+        "role": "TT"
+      },
+      "objectives": [
+        "gc-chase",
+        "leadout",
+        "protect",
+        "sit-in",
+        "sprint-chase"
+      ],
+      "states": [
+        "attack",
+        "breakaway",
+        "bridge",
+        "climb-pace",
+        "follow",
+        "follow-move",
+        "gc-rejoin",
+        "moving-up",
+        "peel",
+        "points-position",
+        "positioning",
+        "protect",
+        "pull",
+        "recover",
+        "sprint"
+      ],
+      "attacks": 263,
+      "chases": 19,
+      "rotations": 34,
+      "breakAttempts": 7,
+      "gcAttacks": 17,
+      "peakGroups": 5,
+      "lowEnergyHelperSamples": 0,
+      "maxLaneDeltaPer5s": 2.099999999999993,
+      "firstCrossings": [
+        {
+          "id": 61,
+          "role": "TT",
+          "power": 804.7740894387139,
+          "cp": 368.23963472738365,
+          "energy": 51.1208647902134,
+          "sprint": 228.85000000000002,
+          "ai": "sprint"
+        },
+        {
+          "id": 84,
+          "role": "Allround",
+          "power": 787.9434811984166,
+          "cp": 343.3704740970545,
+          "energy": 32.38892748396878,
+          "sprint": 228.45000000000002,
+          "ai": "sprint"
+        },
+        {
+          "id": 25,
+          "role": "GC",
+          "power": 705.9195552230926,
+          "cp": 397.0208806104068,
+          "energy": 70.9265041220456,
+          "sprint": 228.9,
+          "ai": "sprint"
+        },
+        {
+          "id": 41,
+          "role": "TT",
+          "power": 921.9542850857276,
+          "cp": 386.5107935154281,
+          "energy": 67.58692513680701,
+          "sprint": 228.8,
+          "ai": "sprint"
+        },
+        {
+          "id": 90,
+          "role": "Allround",
+          "power": 735.0215187571431,
+          "cp": 298.03761728692086,
+          "energy": 19.000240852644875,
+          "sprint": 228.8,
+          "ai": "sprint"
+        },
+        {
+          "id": 63,
+          "role": "Allround",
+          "power": 712.6726072097254,
+          "cp": 347.397980623997,
+          "energy": 65.01811913821008,
+          "sprint": 229.3,
+          "ai": "sprint"
+        },
+        {
+          "id": 113,
+          "role": "Allround",
+          "power": 760.3611340147597,
+          "cp": 342.5553568176569,
+          "energy": 49.82682140235141,
+          "sprint": 229,
+          "ai": "sprint"
+        },
+        {
+          "id": 35,
+          "role": "Allround",
+          "power": 893.1334606971677,
+          "cp": 380.96435081566835,
+          "energy": 64.4999707206975,
+          "sprint": 229.5,
+          "ai": "sprint"
+        },
+        {
+          "id": 31,
+          "role": "Allround",
+          "power": 932.8159565788883,
+          "cp": 395.90179534622484,
+          "energy": 65.91460487169788,
+          "sprint": 229.5,
+          "ai": "sprint"
+        },
+        {
+          "id": 81,
+          "role": "Allround",
+          "power": 789.7622934539656,
+          "cp": 360.76166514218863,
+          "energy": 70.8516586876096,
+          "sprint": 230.05,
+          "ai": "sprint"
+        }
+      ],
+      "restoreChecks": 4,
+      "resultHash": "455f968ab118c527832bbc78fa3be306becb251cbdc3841a1097306d7d8cc31d",
+      "parity": null
+    },
+    {
+      "seed": 2058765,
+      "stage": 1,
+      "type": "TTT",
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 24,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.46
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -0.47
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": 0.27
+          },
+          {
+            "at": 1,
+            "wind": 0.49
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-04",
+        "stageContext": "TTT",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 354.95000000000005,
+      "wallMs": 6792,
+      "starting": 184,
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 2,
+        "energy": 82.78558373598669,
+        "meanDraft": 0.17904203318370635
+      },
+      "winner": {
+        "id": 74,
+        "name": "Egan Bernal",
+        "role": "GC"
+      },
+      "objectives": [
+        "ttt"
+      ],
+      "states": [
+        "follow",
+        "moving-up",
+        "peel",
+        "protect",
+        "pull",
+        "recover",
+        "rejoin",
+        "sprint",
+        "tt"
+      ],
+      "attacks": 0,
+      "chases": 0,
+      "rotations": 263,
+      "breakAttempts": 0,
+      "gcAttacks": 0,
+      "peakGroups": 3,
+      "lowEnergyHelperSamples": 0,
+      "maxLaneDeltaPer5s": 2.495999999999981,
+      "firstCrossings": [
+        {
+          "id": 74,
+          "role": "GC",
+          "power": 328.192936330708,
+          "cp": 341.8675642459497,
+          "energy": 70.25829613774185,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 0,
+          "role": "GC",
+          "power": 396.1989388238547,
+          "cp": 412.7070265807987,
+          "energy": 82.78558373598669,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 9,
+          "role": "GC",
+          "power": 356.105885666157,
+          "cp": 370.94355030172625,
+          "energy": 82.2068505903743,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 21,
+          "role": "GC",
+          "power": 367.00319495173886,
+          "cp": 390.42881554921735,
+          "energy": 75.4821701399198,
+          "sprint": null,
+          "ai": "recover"
+        },
+        {
+          "id": 1,
+          "role": "GC",
+          "power": 357.8809790915075,
+          "cp": 372.7925769360477,
+          "energy": 84.98501602082979,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 29,
+          "role": "TT",
+          "power": 371.7162869679678,
+          "cp": 395.44275403331756,
+          "energy": 72.16205350883165,
+          "sprint": null,
+          "ai": "recover"
+        },
+        {
+          "id": 18,
+          "role": "GC",
+          "power": 350.22196763080086,
+          "cp": 372.5765261326359,
+          "energy": 72.92564213430009,
+          "sprint": null,
+          "ai": "recover"
+        },
+        {
+          "id": 6,
+          "role": "GC",
+          "power": 371.67779095658125,
+          "cp": 387.1643354848546,
+          "energy": 79.40535845565394,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 158,
+          "role": "GC",
+          "power": 344.38544073821475,
+          "cp": 358.7346460705447,
+          "energy": 78.4928224543674,
+          "sprint": null,
+          "ai": "tt"
+        },
+        {
+          "id": 121,
+          "role": "GC",
+          "power": 347.5643473646022,
+          "cp": 362.0461249551158,
+          "energy": 77.37485407326626,
+          "sprint": null,
+          "ai": "tt"
+        }
+      ],
+      "restoreChecks": 5,
+      "resultHash": "ce170a9a527b33295f55b0e208771ae4d00ad93310c4e8922a696d0fe5e89d0e",
+      "parity": null
+    },
+    {
+      "seed": 2058765,
+      "stage": 3,
+      "type": "Mountain",
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 19,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.49
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -0.44
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": 0.3
+          },
+          {
+            "at": 1,
+            "wind": 0.52
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-06",
+        "stageContext": "Mountain",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 586.45,
+      "wallMs": 40429,
+      "starting": 184,
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 2,
+        "energy": 68.02390322928798,
+        "meanDraft": 0.12797122144564752
+      },
+      "winner": {
+        "id": 25,
+        "name": "Florian Lipowitz",
+        "role": "GC"
+      },
+      "objectives": [
+        "gc-chase",
+        "launch",
+        "mountain",
+        "protect",
+        "sit-in"
+      ],
+      "states": [
+        "attack",
+        "breakaway",
+        "bridge",
+        "climb-pace",
+        "follow",
+        "follow-move",
+        "gc-rejoin",
+        "grupetto",
+        "moving-up",
+        "peel",
+        "points-position",
+        "protect",
+        "pull",
+        "recover",
+        "rejoin",
+        "sprint"
+      ],
+      "attacks": 237,
+      "chases": 10,
+      "rotations": 90,
+      "breakAttempts": 5,
+      "gcAttacks": 20,
+      "peakGroups": 31,
+      "lowEnergyHelperSamples": 0,
+      "maxLaneDeltaPer5s": 2.0999999999999948,
+      "firstCrossings": [
+        {
+          "id": 25,
+          "role": "GC",
+          "power": 709.8509362015552,
+          "cp": 391.6329500207487,
+          "energy": 54.357432870252396,
+          "sprint": 460.5,
+          "ai": "sprint"
+        },
+        {
+          "id": 0,
+          "role": "GC",
+          "power": 1006.6871575802724,
+          "cp": 407.7651702274881,
+          "energy": 68.02390322928798,
+          "sprint": 461.1,
+          "ai": "sprint"
+        },
+        {
+          "id": 9,
+          "role": "GC",
+          "power": 549.2422659450704,
+          "cp": 354.5629334662333,
+          "energy": 27.79342767151633,
+          "sprint": 466,
+          "ai": "sprint"
+        },
+        {
+          "id": 3,
+          "role": "GC",
+          "power": 665.2482431586067,
+          "cp": 374.07004441904735,
+          "energy": 56.05508259945625,
+          "sprint": 466.20000000000005,
+          "ai": "sprint"
+        },
+        {
+          "id": 17,
+          "role": "TT",
+          "power": 876.5340084185289,
+          "cp": 369.19062912263956,
+          "energy": 65.99421157123489,
+          "sprint": 466.55,
+          "ai": "sprint"
+        },
+        {
+          "id": 1,
+          "role": "GC",
+          "power": 661.4959234470598,
+          "cp": 358.55465506743076,
+          "energy": 37.81771373295819,
+          "sprint": 466.5,
+          "ai": "sprint"
+        },
+        {
+          "id": 22,
+          "role": "GC",
+          "power": 517.4705887886597,
+          "cp": 367.0334964443169,
+          "energy": 29.61065616464474,
+          "sprint": 466.40000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 59,
+          "role": "GC",
+          "power": 486.87117117760533,
+          "cp": 327.9368900675141,
+          "energy": 23.255939481023724,
+          "sprint": 467,
+          "ai": "sprint"
+        },
+        {
+          "id": 121,
+          "role": "GC",
+          "power": 516.983987785326,
+          "cp": 354.0339120693479,
+          "energy": 50.21260058224364,
+          "sprint": 467.1,
+          "ai": "sprint"
+        },
+        {
+          "id": 21,
+          "role": "GC",
+          "power": 597.0702492672652,
+          "cp": 375.09190960419886,
+          "energy": 27.342524621455826,
+          "sprint": 467.20000000000005,
+          "ai": "sprint"
+        }
+      ],
+      "restoreChecks": 9,
+      "resultHash": "2835ce3d4dc2189dc44536fca110cb4a6505095624dad7183a6915e4b4a2fb4c",
+      "parity": null
+    },
+    {
+      "seed": 2058765,
+      "stage": 5,
+      "type": "Flat",
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 22,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.57
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -0.36
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": 0.38
+          },
+          {
+            "at": 1,
+            "wind": 0.6
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-08",
+        "stageContext": "Flat",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 299.25,
+      "wallMs": 24730,
+      "starting": 184,
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 24,
+        "energy": 65.51016864597717,
+        "meanDraft": 0.2258631536920189
+      },
+      "winner": {
+        "id": 41,
+        "name": "Tim van Dijke",
+        "role": "TT"
+      },
+      "objectives": [
+        "gc-chase",
+        "leadout",
+        "protect",
+        "sit-in",
+        "sprint-chase"
+      ],
+      "states": [
+        "attack",
+        "breakaway",
+        "bridge",
+        "climb-pace",
+        "follow",
+        "follow-move",
+        "gc-rejoin",
+        "moving-up",
+        "peel",
+        "points-position",
+        "positioning",
+        "protect",
+        "pull",
+        "recover",
+        "sprint"
+      ],
+      "attacks": 244,
+      "chases": 16,
+      "rotations": 35,
+      "breakAttempts": 7,
+      "gcAttacks": 10,
+      "peakGroups": 4,
+      "lowEnergyHelperSamples": 0,
+      "maxLaneDeltaPer5s": 2.0999999999999934,
+      "firstCrossings": [
+        {
+          "id": 41,
+          "role": "TT",
+          "power": 999.0684575722958,
+          "cp": 388.32736265803476,
+          "energy": 73.30948417979695,
+          "sprint": 259.5,
+          "ai": "sprint"
+        },
+        {
+          "id": 17,
+          "role": "TT",
+          "power": 833.161778638972,
+          "cp": 384.15860754006417,
+          "energy": 71.00859292382083,
+          "sprint": 259.5,
+          "ai": "sprint"
+        },
+        {
+          "id": 38,
+          "role": "Allround",
+          "power": 923.683851880212,
+          "cp": 355.1548071913116,
+          "energy": 71.16825930885058,
+          "sprint": 259.5,
+          "ai": "sprint"
+        },
+        {
+          "id": 72,
+          "role": "Allround",
+          "power": 916.7214468495133,
+          "cp": 372.42527871418866,
+          "energy": 73.07152287089893,
+          "sprint": 259.5,
+          "ai": "sprint"
+        },
+        {
+          "id": 14,
+          "role": "Allround",
+          "power": 915.2794242230503,
+          "cp": 384.1692072004207,
+          "energy": 63.45203669208548,
+          "sprint": 259.6,
+          "ai": "sprint"
+        },
+        {
+          "id": 35,
+          "role": "Allround",
+          "power": 981.5098336404918,
+          "cp": 384.97723799625686,
+          "energy": 77.29290358408838,
+          "sprint": 259.45,
+          "ai": "sprint"
+        },
+        {
+          "id": 45,
+          "role": "Allround",
+          "power": 945.601076626877,
+          "cp": 370.4906956014553,
+          "energy": 62.78313911333751,
+          "sprint": 259.45,
+          "ai": "sprint"
+        },
+        {
+          "id": 88,
+          "role": "Allround",
+          "power": 725.4498888519196,
+          "cp": 326.73103769525403,
+          "energy": 17.730620387896625,
+          "sprint": 259.55,
+          "ai": "sprint"
+        },
+        {
+          "id": 31,
+          "role": "Allround",
+          "power": 1009.9851088837939,
+          "cp": 399.20418284989455,
+          "energy": 76.05707263481129,
+          "sprint": 259.55,
+          "ai": "sprint"
+        },
+        {
+          "id": 33,
+          "role": "TT",
+          "power": 924.8601564238315,
+          "cp": 399.78760619442363,
+          "energy": 78.45257557283576,
+          "sprint": 259.5,
+          "ai": "sprint"
+        }
+      ],
+      "restoreChecks": 4,
+      "resultHash": "9af6a00b9730b45600d376bad8fae60c6e04185b2318f5f3ff7357f94b345fb7",
+      "parity": null
+    },
+    {
+      "seed": 2058765,
+      "stage": 7,
+      "type": "Flat",
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 21,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.43
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -0.5
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": 0.24
+          },
+          {
+            "at": 1,
+            "wind": 0.46
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-10",
+        "stageContext": "Flat",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 314.8,
+      "wallMs": 29103,
+      "starting": 184,
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 37,
+        "energy": 66.62486378358611,
+        "meanDraft": 0.23379153585169166
+      },
+      "winner": {
+        "id": 7,
+        "name": "Richard Carapaz",
+        "role": "Climber"
+      },
+      "objectives": [
+        "gc-chase",
+        "leadout",
+        "protect",
+        "sit-in",
+        "sprint-chase"
+      ],
+      "states": [
+        "attack",
+        "breakaway",
+        "bridge",
+        "climb-pace",
+        "follow",
+        "follow-move",
+        "moving-up",
+        "peel",
+        "points-position",
+        "positioning",
+        "protect",
+        "pull",
+        "recover",
+        "sprint"
+      ],
+      "attacks": 241,
+      "chases": 11,
+      "rotations": 38,
+      "breakAttempts": 8,
+      "gcAttacks": 3,
+      "peakGroups": 3,
+      "lowEnergyHelperSamples": 25,
+      "maxLaneDeltaPer5s": 2.099999999999995,
+      "firstCrossings": [
+        {
+          "id": 7,
+          "role": "Climber",
+          "power": 563.018258058585,
+          "cp": 337.2597954740268,
+          "energy": 22.89630882035552,
+          "sprint": 273.45,
+          "ai": "sprint"
+        },
+        {
+          "id": 27,
+          "role": "Climber",
+          "power": 535.7695753444978,
+          "cp": 328.3573814911345,
+          "energy": 16.90116892793913,
+          "sprint": 273.65000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 15,
+          "role": "Sprinter",
+          "power": 929.2772464121928,
+          "cp": 365.7307477945471,
+          "energy": 55.6633650065507,
+          "sprint": 282.8,
+          "ai": "sprint"
+        },
+        {
+          "id": 44,
+          "role": "Puncheur",
+          "power": 638.7928452464815,
+          "cp": 348.56278035769753,
+          "energy": 36.68557426495768,
+          "sprint": 283.6,
+          "ai": "sprint"
+        },
+        {
+          "id": 45,
+          "role": "Allround",
+          "power": 992.9400097777019,
+          "cp": 373.2089580644296,
+          "energy": 71.68123809913835,
+          "sprint": 284.15000000000003,
+          "ai": "sprint"
+        },
+        {
+          "id": 48,
+          "role": "Sprinter",
+          "power": 1023.907372381238,
+          "cp": 360.36745445387567,
+          "energy": 61.172612570833756,
+          "sprint": 283.95,
+          "ai": "sprint"
+        },
+        {
+          "id": 61,
+          "role": "TT",
+          "power": 932.1465686639357,
+          "cp": 372.6949347926544,
+          "energy": 65.65312411981988,
+          "sprint": 284.45,
+          "ai": "sprint"
+        },
+        {
+          "id": 60,
+          "role": "Sprinter",
+          "power": 1015.571604230623,
+          "cp": 331.66925133550836,
+          "energy": 72.24812549936745,
+          "sprint": 284.95,
+          "ai": "sprint"
+        },
+        {
+          "id": 93,
+          "role": "Sprinter",
+          "power": 860.4862289287579,
+          "cp": 320.7674797585678,
+          "energy": 31.934175504686312,
+          "sprint": 284.05,
+          "ai": "sprint"
+        },
+        {
+          "id": 49,
+          "role": "TT",
+          "power": 884.3287407903459,
+          "cp": 385.15314987614727,
+          "energy": 68.22226048882628,
+          "sprint": 285.55,
+          "ai": "sprint"
+        }
+      ],
+      "restoreChecks": 5,
+      "resultHash": "62d1bb42545043d65a8d45a20c8665d868bda1d8db9295eba8885e6df52ef649",
+      "parity": null
+    },
+    {
+      "seed": 2058765,
+      "stage": 16,
+      "type": "ITT",
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 20,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.43
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -0.5
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": 0.24
+          },
+          {
+            "at": 1,
+            "wind": 0.46
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-21",
+        "stageContext": "ITT",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 293.2,
+      "wallMs": 3044,
+      "starting": 184,
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 4,
+        "energy": 84.63759984978365,
+        "meanDraft": 0
+      },
+      "winner": {
+        "id": 43,
+        "name": "Derek James Gee",
+        "role": "GC"
+      },
+      "objectives": [
+        "tt"
+      ],
+      "states": [
+        "follow",
+        "tt-finish",
+        "tt-pace",
+        "tt-recover"
+      ],
+      "attacks": 0,
+      "chases": 0,
+      "rotations": 0,
+      "breakAttempts": 0,
+      "gcAttacks": 0,
+      "peakGroups": 11,
+      "lowEnergyHelperSamples": 0,
+      "maxLaneDeltaPer5s": 0,
+      "firstCrossings": [
+        {
+          "id": 43,
+          "role": "GC",
+          "power": 701.436584786394,
+          "cp": 438.3960027207162,
+          "energy": 78.46799542883632,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 1,
+          "role": "GC",
+          "power": 593.3212281296837,
+          "cp": 370.8247110026693,
+          "energy": 78.465881543329,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 29,
+          "role": "TT",
+          "power": 635.9697603192272,
+          "cp": 397.4809064783459,
+          "energy": 78.46120187398283,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 0,
+          "role": "GC",
+          "power": 413.32718477072103,
+          "cp": 413.32703712731114,
+          "energy": 84.63759984978365,
+          "sprint": null,
+          "ai": "follow"
+        },
+        {
+          "id": 6,
+          "role": "GC",
+          "power": 619.0128357575107,
+          "cp": 386.88176666392997,
+          "energy": 78.50808670116183,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 9,
+          "role": "GC",
+          "power": 591.7481307900304,
+          "cp": 369.8416849120885,
+          "energy": 78.54665463755177,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 25,
+          "role": "GC",
+          "power": 639.2037833624504,
+          "cp": 399.50184443490014,
+          "energy": 78.55601339227549,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 98,
+          "role": "TT",
+          "power": 636.5335983574868,
+          "cp": 397.8309837529425,
+          "energy": 78.41318631720284,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 76,
+          "role": "TT",
+          "power": 644.0289301864078,
+          "cp": 402.5154961461673,
+          "energy": 78.42936357077572,
+          "sprint": null,
+          "ai": "tt-finish"
+        },
+        {
+          "id": 10,
+          "role": "TT",
+          "power": 666.3267833866809,
+          "cp": 416.45403120467904,
+          "energy": 78.24637942323652,
+          "sprint": null,
+          "ai": "tt-finish"
+        }
+      ],
+      "restoreChecks": 4,
+      "resultHash": "3664d86e2c2bbd28325b4baf5436dac7189068b8ac6608e93305956bf9b02fed",
+      "parity": null
+    },
+    {
+      "seed": 2058765,
+      "stage": 19,
+      "type": "Mountain",
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 17,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.52
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -0.41
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": 0.33
+          },
+          {
+            "at": 1,
+            "wind": 0.55
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-24",
+        "stageContext": "Mountain",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 688.4000000000001,
+      "wallMs": 36293,
+      "starting": 164,
+      "account": {
+        "racing": 0,
+        "finished": 163,
+        "exited": 1,
+        "dns": 20,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 1,
+        "energy": 68.24284056974231,
+        "meanDraft": 0.027804255283185954
+      },
+      "winner": {
+        "id": 0,
+        "name": "Tadej Pogačar",
+        "role": "GC"
+      },
+      "objectives": [
+        "gc-chase",
+        "mountain",
+        "protect",
+        "sit-in"
+      ],
+      "states": [
+        "attack",
+        "breakaway",
+        "bridge",
+        "climb-pace",
+        "follow",
+        "follow-move",
+        "gc-rejoin",
+        "grupetto",
+        "moving-up",
+        "peel",
+        "points-position",
+        "positioning",
+        "protect",
+        "pull",
+        "recover",
+        "sprint"
+      ],
+      "attacks": 182,
+      "chases": 13,
+      "rotations": 105,
+      "breakAttempts": 3,
+      "gcAttacks": 7,
+      "peakGroups": 26,
+      "lowEnergyHelperSamples": 45,
+      "maxLaneDeltaPer5s": 2.099999999999995,
+      "firstCrossings": [
+        {
+          "id": 0,
+          "role": "GC",
+          "power": 980.5971696344791,
+          "cp": 405.5270870133657,
+          "energy": 68.24284056974231,
+          "sprint": 510.3,
+          "ai": "sprint"
+        },
+        {
+          "id": 25,
+          "role": "GC",
+          "power": 618.8573095391779,
+          "cp": 374.34289321696366,
+          "energy": 35.62597904955311,
+          "sprint": 518.4,
+          "ai": "sprint"
+        },
+        {
+          "id": 18,
+          "role": "GC",
+          "power": 658.8755206596054,
+          "cp": 363.89334817967523,
+          "energy": 61.49739868432535,
+          "sprint": 536.95,
+          "ai": "sprint"
+        },
+        {
+          "id": 9,
+          "role": "GC",
+          "power": 455.2100466553328,
+          "cp": 343.7781366730192,
+          "energy": 26.52832159524947,
+          "sprint": 537.25,
+          "ai": "sprint"
+        },
+        {
+          "id": 1,
+          "role": "GC",
+          "power": 502.54638830833693,
+          "cp": 322.4073550382963,
+          "energy": 20.58401500767203,
+          "sprint": 537.0500000000001,
+          "ai": "sprint"
+        },
+        {
+          "id": 39,
+          "role": "GC",
+          "power": 478.31176279946555,
+          "cp": 326.9825384400899,
+          "energy": 34.85319257639305,
+          "sprint": 542.35,
+          "ai": "sprint"
+        },
+        {
+          "id": 8,
+          "role": "Puncheur",
+          "power": 796.238042152045,
+          "cp": 321.1976333257674,
+          "energy": 62.790068970539636,
+          "sprint": 546.1,
+          "ai": "sprint"
+        },
+        {
+          "id": 52,
+          "role": "Climber",
+          "power": 498.925342130785,
+          "cp": 333.8427141858266,
+          "energy": 36.480342660026174,
+          "sprint": 548.9,
+          "ai": "sprint"
+        },
+        {
+          "id": 3,
+          "role": "GC",
+          "power": 485.4822455773201,
+          "cp": 300.5478107100914,
+          "energy": 15.13161523842587,
+          "sprint": 548.5500000000001,
+          "ai": "sprint"
+        },
+        {
+          "id": 51,
+          "role": "Climber",
+          "power": 624.9119685112958,
+          "cp": 326.8850165272753,
+          "energy": 40.75514364640729,
+          "sprint": 548.95,
+          "ai": "sprint"
+        }
+      ],
+      "restoreChecks": 11,
+      "resultHash": "dc476124f8e212225590346e4f0e5dbb39d597ad1f84f89c493990c63be2dfcb",
+      "parity": null
+    },
+    {
+      "seed": 2058765,
+      "stage": 21,
+      "type": "Flat",
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 22,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.45
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -0.48
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": 0.26
+          },
+          {
+            "at": 1,
+            "wind": 0.48
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-26",
+        "stageContext": "Flat",
+        "temperatureReferenceAltitude": 250
+      },
+      "seconds": 261.25,
+      "wallMs": 21796,
+      "starting": 184,
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "player": {
+        "status": "FINISHED",
+        "place": 29,
+        "energy": 81.40267768464552,
+        "meanDraft": 0.23330502277068005
+      },
+      "winner": {
+        "id": 33,
+        "name": "Edoardo Affini",
+        "role": "TT"
+      },
+      "objectives": [
+        "gc-chase",
+        "leadout",
+        "protect",
+        "sit-in",
+        "sprint-chase"
+      ],
+      "states": [
+        "attack",
+        "breakaway",
+        "bridge",
+        "climb-pace",
+        "follow",
+        "follow-move",
+        "gc-rejoin",
+        "moving-up",
+        "peel",
+        "points-position",
+        "positioning",
+        "protect",
+        "pull",
+        "recover",
+        "sprint"
+      ],
+      "attacks": 264,
+      "chases": 31,
+      "rotations": 46,
+      "breakAttempts": 5,
+      "gcAttacks": 12,
+      "peakGroups": 3,
+      "lowEnergyHelperSamples": 0,
+      "maxLaneDeltaPer5s": 2.0999999999999948,
+      "firstCrossings": [
+        {
+          "id": 33,
+          "role": "TT",
+          "power": 916.1907096863588,
+          "cp": 396.95269729115375,
+          "energy": 69.7415723056593,
+          "sprint": 231.4,
+          "ai": "sprint"
+        },
+        {
+          "id": 35,
+          "role": "Allround",
+          "power": 954.5428695937549,
+          "cp": 382.8008140398797,
+          "energy": 70.35454616130995,
+          "sprint": 231.20000000000002,
+          "ai": "sprint"
+        },
+        {
+          "id": 41,
+          "role": "TT",
+          "power": 955.7960714178573,
+          "cp": 385.5703817958408,
+          "energy": 64.62443862097018,
+          "sprint": 230.95000000000002,
+          "ai": "sprint"
+        },
+        {
+          "id": 181,
+          "role": "Puncheur",
+          "power": 822.711550269386,
+          "cp": 328.47421922588757,
+          "energy": 55.79937457192626,
+          "sprint": 231.25,
+          "ai": "sprint"
+        },
+        {
+          "id": 15,
+          "role": "Sprinter",
+          "power": 894.3448410094468,
+          "cp": 364.9569483993418,
+          "energy": 53.11246769127401,
+          "sprint": 230.8,
+          "ai": "sprint"
+        },
+        {
+          "id": 48,
+          "role": "Sprinter",
+          "power": 806.4987178829233,
+          "cp": 350.6205891592763,
+          "energy": 28.414004218905447,
+          "sprint": 230.85000000000002,
+          "ai": "sprint"
+        },
+        {
+          "id": 45,
+          "role": "Allround",
+          "power": 964.9207269703425,
+          "cp": 372.2605870680983,
+          "energy": 68.57679210999548,
+          "sprint": 231.3,
+          "ai": "sprint"
+        },
+        {
+          "id": 60,
+          "role": "Sprinter",
+          "power": 908.2566616358085,
+          "cp": 330.2555727245275,
+          "energy": 67.03851976904296,
+          "sprint": 231.05,
+          "ai": "sprint"
+        },
+        {
+          "id": 31,
+          "role": "Allround",
+          "power": 932.4227808682751,
+          "cp": 395.5159443694273,
+          "energy": 64.72955887416242,
+          "sprint": 231.05,
+          "ai": "sprint"
+        },
+        {
+          "id": 17,
+          "role": "TT",
+          "power": 801.6493722510352,
+          "cp": 384.2355862873247,
+          "energy": 71.25326194862649,
+          "sprint": 231.65,
+          "ai": "sprint"
+        }
+      ],
+      "restoreChecks": 4,
+      "resultHash": "8ff2c9af5427c0903028e07cfb44e9a1fc1c70fbf702f62390282f457e781cfc",
+      "parity": null
+    }
+  ],
+  "snapshots": [
+    {
+      "name": "ttt",
+      "file": "scenes/ttt-snapshot.json",
+      "stage": 1,
+      "seed": 2058765,
+      "t": 10,
+      "why": "actual TTT handovers",
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 24,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.46
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -0.47
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": 0.27
+          },
+          {
+            "at": 1,
+            "wind": 0.49
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-04",
+        "stageContext": "TTT",
+        "temperatureReferenceAltitude": 250
+      }
+    },
+    {
+      "name": "descent",
+      "file": "scenes/descent-snapshot.json",
+      "stage": 3,
+      "seed": 2058765,
+      "t": 345,
+      "why": "real mountain descent at over 43.2 km/h",
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 19,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.49
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -0.44
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": 0.3
+          },
+          {
+            "at": 1,
+            "wind": 0.52
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-06",
+        "stageContext": "Mountain",
+        "temperatureReferenceAltitude": 250
+      }
+    },
+    {
+      "name": "peloton",
+      "file": "scenes/peloton-snapshot.json",
+      "stage": 5,
+      "seed": 2058765,
+      "t": 40,
+      "why": "unmodified road peloton after 40 simulation seconds",
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 22,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.57
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -0.36
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": 0.38
+          },
+          {
+            "at": 1,
+            "wind": 0.6
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-08",
+        "stageContext": "Flat",
+        "temperatureReferenceAltitude": 250
+      }
+    },
+    {
+      "name": "breakaway",
+      "file": "scenes/breakaway-snapshot.json",
+      "stage": 5,
+      "seed": 2058765,
+      "t": 110,
+      "why": "natural multi-rider breakaway",
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 22,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.57
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -0.36
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": 0.38
+          },
+          {
+            "at": 1,
+            "wind": 0.6
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-08",
+        "stageContext": "Flat",
+        "temperatureReferenceAltitude": 250
+      }
+    },
+    {
+      "name": "leadout",
+      "file": "scenes/leadout-snapshot.json",
+      "stage": 5,
+      "seed": 2058765,
+      "t": 255,
+      "why": "a team actually entered its leadout objective",
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 22,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.57
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -0.36
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": 0.38
+          },
+          {
+            "at": 1,
+            "wind": 0.6
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-08",
+        "stageContext": "Flat",
+        "temperatureReferenceAltitude": 250
+      }
+    },
+    {
+      "name": "sprint",
+      "file": "scenes/sprint-snapshot.json",
+      "stage": 5,
+      "seed": 2058765,
+      "t": 260,
+      "why": "an actual rider entered the sprint state",
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 22,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.57
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -0.36
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": 0.38
+          },
+          {
+            "at": 1,
+            "wind": 0.6
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-08",
+        "stageContext": "Flat",
+        "temperatureReferenceAltitude": 250
+      }
+    },
+    {
+      "name": "itt",
+      "file": "scenes/itt-snapshot.json",
+      "stage": 16,
+      "seed": 2058765,
+      "t": 35,
+      "why": "individual time trial on actual lakeside stage",
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 20,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.43
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -0.5
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": 0.24
+          },
+          {
+            "at": 1,
+            "wind": 0.46
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-21",
+        "stageContext": "ITT",
+        "temperatureReferenceAltitude": 250
+      }
+    },
+    {
+      "name": "climb",
+      "file": "scenes/climb-snapshot.json",
+      "stage": 19,
+      "seed": 2058765,
+      "t": 60,
+      "why": "real final Alpine stage terrain and load",
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 17,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.52
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -0.41
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": 0.33
+          },
+          {
+            "at": 1,
+            "wind": 0.55
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-24",
+        "stageContext": "Mountain",
+        "temperatureReferenceAltitude": 250
+      }
+    },
+    {
+      "name": "gc-battle",
+      "file": "scenes/gc-battle-snapshot.json",
+      "stage": 19,
+      "seed": 2058765,
+      "t": 280,
+      "why": "natural GC attack with stage-18 Tour history",
+      "conditions": {
+        "version": 1,
+        "kind": "sun",
+        "temperature": 17,
+        "bands": [
+          {
+            "at": 0,
+            "wind": 0.52
+          },
+          {
+            "at": 0.3333333333333333,
+            "wind": -0.41
+          },
+          {
+            "at": 0.6666666666666666,
+            "wind": 0.33
+          },
+          {
+            "at": 1,
+            "wind": 0.55
+          }
+        ],
+        "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+        "legacy": false,
+        "calendarDate": "2026-07-24",
+        "stageContext": "Mountain",
+        "temperatureReferenceAltitude": 250
+      }
+    }
+  ],
+  "pass": true
+}

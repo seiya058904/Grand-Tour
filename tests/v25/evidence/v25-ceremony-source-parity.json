@@ -1,0 +1,11 @@
+{
+  "baselineSHA256": "558fdfbae82449fe4fbdcd55e1ce61bb3de6be4ec7997bbc0a49ed20dbcccc95",
+  "candidateSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "baselinePath": "/workspace/scratch/018887db1a18/evidence/final-cache/Grand-Tour-V25-before-cache.html",
+  "candidatePath": "/workspace/scratch/018887db1a18/grand-tour-v25/Grand-Tour-V25.html",
+  "onlyExactCacheAllocationReplacement": true,
+  "historicalFullPlaybackReport": "/workspace/scratch/018887db1a18/evidence/v25/sequence-played/sequence.json",
+  "scope": "Whole source is byte-identical after precisely reversing one cache allocation expression. Ceremony implementation and playback controllers therefore remain unchanged. The retained 1x whole playback belongs to the previous source hash; the final hash receives a separate non-play geometry and interaction rerun.",
+  "historicalFullPlaybackSHA256": "558fdfbae82449fe4fbdcd55e1ce61bb3de6be4ec7997bbc0a49ed20dbcccc95",
+  "pass": true
+}

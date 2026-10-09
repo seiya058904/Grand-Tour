@@ -1,0 +1,19 @@
+{
+  "sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "mode": "native-file",
+  "errors": [],
+  "descent": {
+    "grade": -0.060412387396995844,
+    "speed": 13.807988906614328,
+    "t": 350.90000000000003,
+    "complete": false
+  },
+  "pose": {
+    "power": 59.51634315764905,
+    "tuck": 0.96,
+    "coast": 0,
+    "stand": 0,
+    "pass": true
+  },
+  "pass": true
+}

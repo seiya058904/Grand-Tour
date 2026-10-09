@@ -1,0 +1,62 @@
+{
+  "source": "Grand-Tour-V24.html",
+  "sourceSha256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+  "roster": 184,
+  "roleStats": [
+    {
+      "role": "GC",
+      "count": 20,
+      "sprintRatingMedian": 75,
+      "peakWattsMedian": 1242,
+      "ftpWattsMedian": 384.2625,
+      "massKgMedian": 64.5,
+      "cdaMedian": 0.27575000000000005
+    },
+    {
+      "role": "Climber",
+      "count": 43,
+      "sprintRatingMedian": 69,
+      "peakWattsMedian": 1107,
+      "ftpWattsMedian": 342.07,
+      "massKgMedian": 63,
+      "cdaMedian": 0.28500000000000003
+    },
+    {
+      "role": "Puncheur",
+      "count": 20,
+      "sprintRatingMedian": 83,
+      "peakWattsMedian": 1432.5,
+      "ftpWattsMedian": 354.15250000000003,
+      "massKgMedian": 66.5,
+      "cdaMedian": 0.28185000000000004
+    },
+    {
+      "role": "TT",
+      "count": 24,
+      "sprintRatingMedian": 76,
+      "peakWattsMedian": 1336,
+      "ftpWattsMedian": 387.375,
+      "massKgMedian": 73.5,
+      "cdaMedian": 0.27090000000000003
+    },
+    {
+      "role": "Sprinter",
+      "count": 22,
+      "sprintRatingMedian": 94,
+      "peakWattsMedian": 1719.5,
+      "ftpWattsMedian": 338.86,
+      "massKgMedian": 74,
+      "cdaMedian": 0.281
+    },
+    {
+      "role": "Allround",
+      "count": 55,
+      "sprintRatingMedian": 82,
+      "peakWattsMedian": 1455,
+      "ftpWattsMedian": 364.99,
+      "massKgMedian": 73,
+      "cdaMedian": 0.2908
+    }
+  ],
+  "scope": "Static in-game simulation attributes, not measurements of the real athletes; identical roster at every fresh isolated survey start. Count-normalized wins are not used as an expected competitive distribution."
+}

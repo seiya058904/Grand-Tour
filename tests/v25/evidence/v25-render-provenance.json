@@ -1,0 +1,73 @@
+{
+  "purpose": "Final cache render/browser validation source inputs; historical tests not edited.",
+  "files": {
+    "Grand-Tour-V25.html": {
+      "bytes": 1783282,
+      "sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec"
+    },
+    "Grand-Tour-V24.html": {
+      "bytes": 1779383,
+      "sha256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f"
+    },
+    "tests/v25/README.md": {
+      "bytes": 21060,
+      "sha256": "a2fad1b152130b4aa3cbe1d9ebc79d67c3460271d3558e8df0f7eebabfdef70f"
+    },
+    "tests/v25/render_cache_source.py": {
+      "bytes": 1788,
+      "sha256": "c26387f7feb6a25e2b1b6e2edb5380be23b44f4f311de9e394a70bdf79e2c1e6"
+    },
+    "tests/v25/render_cache_probe.py": {
+      "bytes": 7617,
+      "sha256": "af44a6ebb8467434acaacd3d1e0e712453246da30e21fb01a2c5dd6b84481f64"
+    },
+    "tests/v25/render_cache_pixels.py": {
+      "bytes": 8524,
+      "sha256": "1a1556a0e13dce7b75d344d565cb2f6d8989183310762e348a011fbf0bd57488"
+    },
+    "tests/v25/render-continuity.cjs": {
+      "bytes": 10053,
+      "sha256": "8553aa5e16f0993727f29d7e2cf1e6eea74174988ecb3056329a6a76aa740e15"
+    },
+    "tests/v25/render-score-parity.cjs": {
+      "bytes": 3054,
+      "sha256": "b22a453cb1e804449763429a621e5b33c2be6ad3afef28c26178257fc0b15010"
+    },
+    "tests/v25/legacy_browser.py": {
+      "bytes": 1786,
+      "sha256": "a256e25e32aa5b228d4eafee40daf3a500f85ee651d30a1b52113e3e96d39990"
+    },
+    "tests/v24/browser_verify.py": {
+      "bytes": 13521,
+      "sha256": "4f0476b62bdec00f69c3c13cc5071bcd1abe26319dda8e9c2b381b4adb521e9d"
+    },
+    "tests/v24/scene_verify.py": {
+      "bytes": 5534,
+      "sha256": "6c125a34acbece76d0b717695831a72bc111ff60ca5835ef879069466623eb8b"
+    },
+    "tests/v24/presentation_verify.py": {
+      "bytes": 9753,
+      "sha256": "0ff7a17a35a1134c099690a337b203bfc6000293f0359b2818b7fac6ac5f1052"
+    },
+    "tests/v24/sequence_verify.py": {
+      "bytes": 14773,
+      "sha256": "aca02bee532cdeb904f080b5d9a26b7947e35d065060b5b3fa6a132a57631358"
+    },
+    "tests/v24/finish_motion_verify.py": {
+      "bytes": 4664,
+      "sha256": "3566fa1a0ae0b316d250cf35cc26ea3c27f4b9e8f586914475466897fcb0915f"
+    },
+    "tests/v24/downhill_verify.py": {
+      "bytes": 2712,
+      "sha256": "3ecc75d1a10c021c34cb5924f5d66b82e63199082d205417dea624b4236530e6"
+    },
+    "tests/v24/weather_verify.py": {
+      "bytes": 2636,
+      "sha256": "503f1679cbc2b239a9a625fac65c12df677c5ddf1fbe3495795862b0ff2857ec"
+    },
+    "tests/v25/ui_verify.py": {
+      "bytes": 7693,
+      "sha256": "20d4d1656e62c424d70e3b4a966966c4ccd42a39d7dba4d3f6309cbd6aa4479f"
+    }
+  }
+}

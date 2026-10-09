@@ -1,0 +1,10 @@
+{
+  "source": "Grand-Tour-V25.html",
+  "sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "bytes": 1783282,
+  "expectedChanges": "one Canvas body cache reuse change; production simulation code intended unchanged",
+  "previousCandidateSha256": "558fdfbae82449fe4fbdcd55e1ce61bb3de6be4ec7997bbc0a49ed20dbcccc95",
+  "endSha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "sourceUnchangedThroughFullRun": true,
+  "bytesAtEnd": 1783282
+}

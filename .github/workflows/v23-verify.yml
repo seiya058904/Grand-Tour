@@ -72,7 +72,7 @@ jobs:
           assert.deepEqual(read('v24-tour.json'), read('baseline-tour.json'));
           console.log('PASS all 21 stages and complete V9 Tour store match V23');
           JS
-      - name: Verify V24 browser, presentation and offline package
+      - name: Verify retained V24 browser and presentation
         run: |
           python -m http.server 4187 --bind 127.0.0.1 > /tmp/gt-v24-evidence/server.log 2>&1 &
           python tests/v24/storage-browser.py --out /tmp/gt-v24-evidence/storage
@@ -80,8 +80,14 @@ jobs:
           python tests/v24/browser_verify.py --out /tmp/gt-v24-evidence/browser
           python tests/v24/presentation_verify.py --out /tmp/gt-v24-evidence/ui
           python tests/v24/sequence_verify.py --record /tmp/gt-v24-evidence/browser/stage-05-physical.json --tour /tmp/gt-v24-evidence/v24-tour.json --out /tmp/gt-v24-evidence/sequence
+      - name: Verify historical V24 package when its sealed input is available
+        if: ${{ hashFiles('Grand-Tour-V24-Final.zip') != '' }}
+        run: |
           python tests/v24/build_candidate.py --out /tmp/gt-v24-evidence/Grand-Tour-V24-candidate.zip
           python tests/v24/package_verify.py /tmp/gt-v24-evidence/Grand-Tour-V24-candidate.zip --out /tmp/gt-v24-evidence/package
+      - name: Explain omitted historical package input
+        if: ${{ hashFiles('Grand-Tour-V24-Final.zip') == '' }}
+        run: echo 'SKIP historical V24 package reconstruction — the cloud handoff intentionally omits its sealed ZIP; V25 has its own source packager.'
       - uses: actions/upload-artifact@v4
         if: always()
         with:

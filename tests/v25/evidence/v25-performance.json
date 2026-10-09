@@ -1,0 +1,2536 @@
+{
+  "protocol": {
+    "order": "V24,V25,V25,V24 for each scene; sequential contexts in one browser",
+    "viewport": [
+      1440,
+      1000
+    ],
+    "DPR": 1,
+    "quality": "full",
+    "speed": "1x real RAF",
+    "warmupSeconds": 2,
+    "sampleSeconds": 8.0,
+    "heap": "CDP JS heap; forced GC only outside ABBA measurement windows",
+    "production": "Native file URL without test mode; normal compact-save restore. Periodic storage writes blocked in both versions; storage I/O is covered separately.",
+    "limitation": "Linux headless Chromium on a shared host; not physical phone or hardware GPU results",
+    "concurrency": "Operator must stop all other test/benchmark processes before this command"
+  },
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "hashes": {
+    "V24": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+    "V25": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec"
+  },
+  "runs": [
+    {
+      "frameMs": {
+        "n": 205,
+        "mean": 39.02243902439024,
+        "p95": 50,
+        "max": 66.69999999999982
+      },
+      "longFrames": {
+        "over33ms": 121,
+        "over50ms": 9
+      },
+      "cpuMs": {
+        "n": 206,
+        "mean": 12.414077669798026,
+        "p95": 18.800000000745058,
+        "max": 29.699999999254942
+      },
+      "debtSeconds": {
+        "n": 206,
+        "mean": 0.03218106796116501,
+        "p95": 0.049800000000000406,
+        "max": 0.04989999999999986
+      },
+      "lastDebt": 0.04959999999999963,
+      "wallSeconds": 8.03010000000149,
+      "simSeconds": 8,
+      "simPerWall": 0.9962516033422394,
+      "inputMs": {
+        "n": 0,
+        "mean": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "visibleRiders": {
+        "n": 206,
+        "mean": 125.65533980582525,
+        "p95": 132,
+        "max": 132
+      },
+      "light": true,
+      "caches": {
+        "bikes": 48,
+        "bodies": 256
+      },
+      "frames": {
+        "n": 205,
+        "p50": 33.399999999999636,
+        "p95": 50,
+        "p99": 50.100000000000364,
+        "max": 66.69999999999982,
+        "mean": 39.02243902439024,
+        "over33": 121,
+        "over50": 9
+      },
+      "cpu": {
+        "n": 206,
+        "p50": 11.800000000745058,
+        "p95": 18.800000000745058,
+        "p99": 22.699999999254942,
+        "max": 29.699999999254942,
+        "mean": 12.414077669798026,
+        "over33": 0,
+        "over50": 0
+      },
+      "debt": {
+        "n": 206,
+        "p50": 0.033000000000000196,
+        "p95": 0.049800000000000406,
+        "p99": 0.04989999999999986,
+        "max": 0.04989999999999986,
+        "mean": 0.03218106796116501,
+        "over33": 0,
+        "over50": 0
+      },
+      "quality": "full",
+      "effectiveLow": false,
+      "longTasks": [
+        {
+          "start": 4272.20000000298,
+          "ms": 50
+        },
+        {
+          "start": 4788.10000000149,
+          "ms": 56
+        },
+        {
+          "start": 5477.900000002235,
+          "ms": 54
+        },
+        {
+          "start": 5532.400000002235,
+          "ms": 50
+        },
+        {
+          "start": 5967.70000000298,
+          "ms": 50
+        },
+        {
+          "start": 6440.70000000298,
+          "ms": 50
+        },
+        {
+          "start": 6974.900000002235,
+          "ms": 51
+        },
+        {
+          "start": 8566.70000000298,
+          "ms": 52
+        },
+        {
+          "start": 10549.300000000745,
+          "ms": 56
+        },
+        {
+          "start": 10605.60000000149,
+          "ms": 55
+        }
+      ],
+      "elapsedSim": 50.550000000000004,
+      "riderStates": 184,
+      "finite": true,
+      "canvas": {
+        "width": 980,
+        "height": 458
+      },
+      "screen": "race",
+      "finished": false,
+      "running": true,
+      "fps": 25.626281314065707,
+      "version": "V24",
+      "scene": "peloton",
+      "order": 0,
+      "sha256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+      "snapshotSHA256": "ace24cfdc531e65dcedccc93ea0b69a5a1f6a4b70289ca935f5b198d354c5a2d",
+      "heapBefore": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2331,
+        "JSHeapUsedSize": 6605864,
+        "JSHeapTotalSize": 8912896
+      },
+      "heapAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 3171,
+        "JSHeapUsedSize": 7931608,
+        "JSHeapTotalSize": 25952256
+      },
+      "heapRetainedAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2388,
+        "JSHeapUsedSize": 7189044,
+        "JSHeapTotalSize": 8388608
+      },
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "frameMs": {
+        "n": 198,
+        "mean": 40.233838383838375,
+        "p95": 50.100000000000364,
+        "max": 83.30000000000109
+      },
+      "longFrames": {
+        "over33ms": 121,
+        "over50ms": 16
+      },
+      "cpuMs": {
+        "n": 199,
+        "mean": 12.223618090583301,
+        "p95": 18.900000002235174,
+        "max": 31.5
+      },
+      "debtSeconds": {
+        "n": 199,
+        "mean": 0.030797487437186074,
+        "p95": 0.04990000000000052,
+        "max": 0.04990000000000055
+      },
+      "lastDebt": 0.03300000000000089,
+      "wallSeconds": 8.008,
+      "simSeconds": 8,
+      "simPerWall": 0.9990009990009991,
+      "inputMs": {
+        "n": 0,
+        "mean": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "visibleRiders": {
+        "n": 199,
+        "mean": 125.35678391959799,
+        "p95": 132,
+        "max": 132
+      },
+      "light": true,
+      "caches": {
+        "bikes": 48,
+        "bodies": 256
+      },
+      "frames": {
+        "n": 198,
+        "p50": 33.399999999999636,
+        "p95": 50.100000000000364,
+        "p99": 66.60000000000036,
+        "max": 83.30000000000109,
+        "mean": 40.233838383838375,
+        "over33": 121,
+        "over50": 16
+      },
+      "cpu": {
+        "n": 199,
+        "p50": 11.300000000745058,
+        "p95": 18.900000002235174,
+        "p99": 24.5,
+        "max": 31.5,
+        "mean": 12.223618090583301,
+        "over33": 0,
+        "over50": 0
+      },
+      "debt": {
+        "n": 199,
+        "p50": 0.03309999999999942,
+        "p95": 0.04990000000000052,
+        "p99": 0.04990000000000054,
+        "max": 0.04990000000000055,
+        "mean": 0.030797487437186074,
+        "over33": 0,
+        "over50": 0
+      },
+      "quality": "full",
+      "effectiveLow": false,
+      "longTasks": [
+        {
+          "start": 3084.89999999851,
+          "ms": 55
+        },
+        {
+          "start": 3342.60000000149,
+          "ms": 52
+        },
+        {
+          "start": 3441.89999999851,
+          "ms": 57
+        },
+        {
+          "start": 3660,
+          "ms": 52
+        },
+        {
+          "start": 3850.199999999255,
+          "ms": 55
+        },
+        {
+          "start": 4199.5,
+          "ms": 51
+        },
+        {
+          "start": 4251.60000000149,
+          "ms": 65
+        },
+        {
+          "start": 4911.60000000149,
+          "ms": 55
+        },
+        {
+          "start": 5441.699999999255,
+          "ms": 52
+        },
+        {
+          "start": 8467.10000000149,
+          "ms": 52
+        },
+        {
+          "start": 10184.89999999851,
+          "ms": 71
+        }
+      ],
+      "elapsedSim": 50.6,
+      "riderStates": 184,
+      "finite": true,
+      "canvas": {
+        "width": 980,
+        "height": 458
+      },
+      "screen": "race",
+      "finished": false,
+      "running": true,
+      "fps": 24.854700425542603,
+      "version": "V25",
+      "scene": "peloton",
+      "order": 1,
+      "sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "snapshotSHA256": "ace24cfdc531e65dcedccc93ea0b69a5a1f6a4b70289ca935f5b198d354c5a2d",
+      "heapBefore": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2332,
+        "JSHeapUsedSize": 7248176,
+        "JSHeapTotalSize": 8388608
+      },
+      "heapAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 3910,
+        "JSHeapUsedSize": 14171468,
+        "JSHeapTotalSize": 27262976
+      },
+      "heapRetainedAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2388,
+        "JSHeapUsedSize": 7247152,
+        "JSHeapTotalSize": 8650752
+      },
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "frameMs": {
+        "n": 192,
+        "mean": 41.57864583333335,
+        "p95": 66.59999999999945,
+        "max": 83.40000000000055
+      },
+      "longFrames": {
+        "over33ms": 128,
+        "over50ms": 17
+      },
+      "cpuMs": {
+        "n": 193,
+        "mean": 12.95181347140222,
+        "p95": 21.100000001490116,
+        "max": 36.20000000298023
+      },
+      "debtSeconds": {
+        "n": 193,
+        "mean": 0.03208704663212443,
+        "p95": 0.049899999999999736,
+        "max": 0.08330000000000028
+      },
+      "lastDebt": 0.049700000000000785,
+      "wallSeconds": 8.023199999999255,
+      "simSeconds": 8.049999999999997,
+      "simPerWall": 1.003340313092126,
+      "inputMs": {
+        "n": 0,
+        "mean": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "visibleRiders": {
+        "n": 193,
+        "mean": 125.42487046632124,
+        "p95": 132,
+        "max": 132
+      },
+      "light": true,
+      "caches": {
+        "bikes": 48,
+        "bodies": 256
+      },
+      "frames": {
+        "n": 192,
+        "p50": 33.400000000000546,
+        "p95": 66.59999999999945,
+        "p99": 66.70000000000073,
+        "max": 83.40000000000055,
+        "mean": 41.57864583333335,
+        "over33": 128,
+        "over50": 17
+      },
+      "cpu": {
+        "n": 193,
+        "p50": 12.100000001490116,
+        "p95": 21.100000001490116,
+        "p99": 29.799999997019768,
+        "max": 36.20000000298023,
+        "mean": 12.95181347140222,
+        "over33": 1,
+        "over50": 0
+      },
+      "debt": {
+        "n": 193,
+        "p50": 0.03310000000000042,
+        "p95": 0.049899999999999736,
+        "p99": 0.0499000000000002,
+        "max": 0.08330000000000028,
+        "mean": 0.03208704663212443,
+        "over33": 0,
+        "over50": 0
+      },
+      "quality": "full",
+      "effectiveLow": false,
+      "longTasks": [
+        {
+          "start": 3158.699999999255,
+          "ms": 54
+        },
+        {
+          "start": 3499.39999999851,
+          "ms": 65
+        },
+        {
+          "start": 3986.2999999970198,
+          "ms": 56
+        },
+        {
+          "start": 4175,
+          "ms": 50
+        },
+        {
+          "start": 4519.89999999851,
+          "ms": 81
+        },
+        {
+          "start": 4601.699999999255,
+          "ms": 53
+        },
+        {
+          "start": 4655.099999997765,
+          "ms": 67
+        },
+        {
+          "start": 4723.199999999255,
+          "ms": 63
+        },
+        {
+          "start": 4787.199999999255,
+          "ms": 60
+        },
+        {
+          "start": 4850.099999997765,
+          "ms": 76
+        },
+        {
+          "start": 4926.599999997765,
+          "ms": 62
+        },
+        {
+          "start": 5033.5,
+          "ms": 50
+        },
+        {
+          "start": 5085.5,
+          "ms": 68
+        },
+        {
+          "start": 5979,
+          "ms": 57
+        },
+        {
+          "start": 6202.099999997765,
+          "ms": 53
+        },
+        {
+          "start": 6296.29999999702,
+          "ms": 51
+        },
+        {
+          "start": 6348.199999999255,
+          "ms": 55
+        },
+        {
+          "start": 6404,
+          "ms": 54
+        },
+        {
+          "start": 6575.599999997765,
+          "ms": 51
+        },
+        {
+          "start": 6909.599999997765,
+          "ms": 54
+        },
+        {
+          "start": 9529.099999997765,
+          "ms": 51
+        },
+        {
+          "start": 10667.199999999255,
+          "ms": 52
+        }
+      ],
+      "elapsedSim": 50.5,
+      "riderStates": 184,
+      "finite": true,
+      "canvas": {
+        "width": 980,
+        "height": 458
+      },
+      "screen": "race",
+      "finished": false,
+      "running": true,
+      "fps": 24.050807330485643,
+      "version": "V25",
+      "scene": "peloton",
+      "order": 2,
+      "sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "snapshotSHA256": "ace24cfdc531e65dcedccc93ea0b69a5a1f6a4b70289ca935f5b198d354c5a2d",
+      "heapBefore": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2330,
+        "JSHeapUsedSize": 7480476,
+        "JSHeapTotalSize": 8388608
+      },
+      "heapAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 3824,
+        "JSHeapUsedSize": 8815580,
+        "JSHeapTotalSize": 28049408
+      },
+      "heapRetainedAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2395,
+        "JSHeapUsedSize": 7182404,
+        "JSHeapTotalSize": 8388608
+      },
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "frameMs": {
+        "n": 196,
+        "mean": 40.56020408163266,
+        "p95": 50.100000000000364,
+        "max": 66.70000000000027
+      },
+      "longFrames": {
+        "over33ms": 128,
+        "over50ms": 17
+      },
+      "cpuMs": {
+        "n": 197,
+        "mean": 13.132994923740625,
+        "p95": 20.199999999254942,
+        "max": 28.899999998509884
+      },
+      "debtSeconds": {
+        "n": 197,
+        "mean": 0.031992385786802066,
+        "p95": 0.049900000000000146,
+        "max": 0.08319999999999987
+      },
+      "lastDebt": 0.03300000000000006,
+      "wallSeconds": 8.006300000000746,
+      "simSeconds": 8.049999999999997,
+      "simPerWall": 1.0054582016660938,
+      "inputMs": {
+        "n": 0,
+        "mean": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "visibleRiders": {
+        "n": 197,
+        "mean": 125.64467005076142,
+        "p95": 132,
+        "max": 132
+      },
+      "light": true,
+      "caches": {
+        "bikes": 48,
+        "bodies": 256
+      },
+      "frames": {
+        "n": 196,
+        "p50": 33.400000000000546,
+        "p95": 50.100000000000364,
+        "p99": 50.100000000000364,
+        "max": 66.70000000000027,
+        "mean": 40.56020408163266,
+        "over33": 128,
+        "over50": 17
+      },
+      "cpu": {
+        "n": 197,
+        "p50": 12.399999998509884,
+        "p95": 20.199999999254942,
+        "p99": 25.199999999254942,
+        "max": 28.899999998509884,
+        "mean": 13.132994923740625,
+        "over33": 0,
+        "over50": 0
+      },
+      "debt": {
+        "n": 197,
+        "p50": 0.03300000000000007,
+        "p95": 0.049900000000000146,
+        "p99": 0.04990000000000015,
+        "max": 0.08319999999999987,
+        "mean": 0.031992385786802066,
+        "over33": 0,
+        "over50": 0
+      },
+      "quality": "full",
+      "effectiveLow": false,
+      "longTasks": [
+        {
+          "start": 3495.599999997765,
+          "ms": 50
+        },
+        {
+          "start": 3684.199999999255,
+          "ms": 51
+        },
+        {
+          "start": 4718.89999999851,
+          "ms": 50
+        },
+        {
+          "start": 6505,
+          "ms": 54
+        },
+        {
+          "start": 9001.89999999851,
+          "ms": 57
+        },
+        {
+          "start": 9102.099999997765,
+          "ms": 56
+        },
+        {
+          "start": 9205.800000000745,
+          "ms": 50
+        }
+      ],
+      "elapsedSim": 50.5,
+      "riderStates": 184,
+      "finite": true,
+      "canvas": {
+        "width": 980,
+        "height": 458
+      },
+      "screen": "race",
+      "finished": false,
+      "running": true,
+      "fps": 24.654708294548286,
+      "version": "V24",
+      "scene": "peloton",
+      "order": 3,
+      "sha256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+      "snapshotSHA256": "ace24cfdc531e65dcedccc93ea0b69a5a1f6a4b70289ca935f5b198d354c5a2d",
+      "heapBefore": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2332,
+        "JSHeapUsedSize": 7359044,
+        "JSHeapTotalSize": 9175040
+      },
+      "heapAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 3660,
+        "JSHeapUsedSize": 7910632,
+        "JSHeapTotalSize": 26738688
+      },
+      "heapRetainedAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2364,
+        "JSHeapUsedSize": 7431672,
+        "JSHeapTotalSize": 8388608
+      },
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "frameMs": {
+        "n": 208,
+        "mean": 38.37980769230767,
+        "p95": 50.09999999999991,
+        "max": 66.69999999999982
+      },
+      "longFrames": {
+        "over33ms": 118,
+        "over50ms": 18
+      },
+      "cpuMs": {
+        "n": 209,
+        "mean": 13.92679425824487,
+        "p95": 21.699999999254942,
+        "max": 30.5
+      },
+      "debtSeconds": {
+        "n": 209,
+        "mean": 0.033566985645933155,
+        "p95": 0.04990000000000029,
+        "max": 0.06660000000000056
+      },
+      "lastDebt": 0.01629999999999944,
+      "wallSeconds": 8.02089999999851,
+      "simSeconds": 8.050000000000004,
+      "simPerWall": 1.0036280217932525,
+      "inputMs": {
+        "n": 0,
+        "mean": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "visibleRiders": {
+        "n": 209,
+        "mean": 101.79425837320574,
+        "p95": 107,
+        "max": 107
+      },
+      "light": true,
+      "caches": {
+        "bikes": 48,
+        "bodies": 256
+      },
+      "frames": {
+        "n": 208,
+        "p50": 33.399999999999636,
+        "p95": 50.09999999999991,
+        "p99": 50.100000000000364,
+        "max": 66.69999999999982,
+        "mean": 38.37980769230767,
+        "over33": 118,
+        "over50": 18
+      },
+      "cpu": {
+        "n": 209,
+        "p50": 14.400000002235174,
+        "p95": 21.699999999254942,
+        "p99": 28.100000001490116,
+        "max": 30.5,
+        "mean": 13.92679425824487,
+        "over33": 0,
+        "over50": 0
+      },
+      "debt": {
+        "n": 209,
+        "p50": 0.03310000000000056,
+        "p95": 0.04990000000000029,
+        "p99": 0.0665000000000002,
+        "max": 0.06660000000000056,
+        "mean": 0.033566985645933155,
+        "over33": 0,
+        "over50": 0
+      },
+      "quality": "full",
+      "effectiveLow": false,
+      "longTasks": [
+        {
+          "start": 3163.89999999851,
+          "ms": 51
+        },
+        {
+          "start": 3524.699999999255,
+          "ms": 54
+        },
+        {
+          "start": 3621.60000000149,
+          "ms": 51
+        },
+        {
+          "start": 3796,
+          "ms": 57
+        },
+        {
+          "start": 3938.10000000149,
+          "ms": 51
+        },
+        {
+          "start": 4086.5,
+          "ms": 61
+        },
+        {
+          "start": 4197.10000000149,
+          "ms": 53
+        },
+        {
+          "start": 4250.39999999851,
+          "ms": 56
+        },
+        {
+          "start": 4527.5,
+          "ms": 53
+        },
+        {
+          "start": 5562.39999999851,
+          "ms": 52
+        },
+        {
+          "start": 6727.10000000149,
+          "ms": 59
+        },
+        {
+          "start": 6867.800000000745,
+          "ms": 56
+        },
+        {
+          "start": 6926.39999999851,
+          "ms": 50
+        },
+        {
+          "start": 7525.199999999255,
+          "ms": 52
+        },
+        {
+          "start": 7577.89999999851,
+          "ms": 51
+        }
+      ],
+      "elapsedSim": 70.60000000000001,
+      "riderStates": 184,
+      "finite": true,
+      "canvas": {
+        "width": 980,
+        "height": 458
+      },
+      "screen": "race",
+      "finished": false,
+      "running": true,
+      "fps": 26.055367656269585,
+      "version": "V24",
+      "scene": "climb",
+      "order": 0,
+      "sha256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+      "snapshotSHA256": "52dc53743adf1b6c67f436cc3e5be4ff29b6f77ca7027e0bf5d3a9c0268c010a",
+      "heapBefore": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2273,
+        "JSHeapUsedSize": 7549956,
+        "JSHeapTotalSize": 8388608
+      },
+      "heapAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 4714,
+        "JSHeapUsedSize": 13428832,
+        "JSHeapTotalSize": 27000832
+      },
+      "heapRetainedAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2337,
+        "JSHeapUsedSize": 7223772,
+        "JSHeapTotalSize": 8650752
+      },
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "frameMs": {
+        "n": 225,
+        "mean": 35.47999999999998,
+        "p95": 50,
+        "max": 66.70000000000073
+      },
+      "longFrames": {
+        "over33ms": 105,
+        "over50ms": 5
+      },
+      "cpuMs": {
+        "n": 226,
+        "mean": 11.734070796470068,
+        "p95": 18.699999999254942,
+        "max": 25.800000000745058
+      },
+      "debtSeconds": {
+        "n": 226,
+        "mean": 0.0320225663716816,
+        "p95": 0.04980000000000002,
+        "max": 0.0499000000000004
+      },
+      "lastDebt": 0.032899999999999444,
+      "wallSeconds": 8.019199999999255,
+      "simSeconds": 8.049999999999997,
+      "simPerWall": 1.003840782122998,
+      "inputMs": {
+        "n": 0,
+        "mean": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "visibleRiders": {
+        "n": 226,
+        "mean": 102.14601769911505,
+        "p95": 107,
+        "max": 107
+      },
+      "light": true,
+      "caches": {
+        "bikes": 48,
+        "bodies": 256
+      },
+      "frames": {
+        "n": 225,
+        "p50": 33.30000000000109,
+        "p95": 50,
+        "p99": 50.100000000000364,
+        "max": 66.70000000000073,
+        "mean": 35.47999999999998,
+        "over33": 105,
+        "over50": 5
+      },
+      "cpu": {
+        "n": 226,
+        "p50": 11.899999998509884,
+        "p95": 18.699999999254942,
+        "p99": 23.199999999254942,
+        "max": 25.800000000745058,
+        "mean": 11.734070796470068,
+        "over33": 0,
+        "over50": 0
+      },
+      "debt": {
+        "n": 226,
+        "p50": 0.03299999999999982,
+        "p95": 0.04980000000000002,
+        "p99": 0.049900000000000395,
+        "max": 0.0499000000000004,
+        "mean": 0.0320225663716816,
+        "over33": 0,
+        "over50": 0
+      },
+      "quality": "full",
+      "effectiveLow": false,
+      "longTasks": [
+        {
+          "start": 3550.10000000149,
+          "ms": 50
+        },
+        {
+          "start": 4139,
+          "ms": 54
+        },
+        {
+          "start": 7793,
+          "ms": 51
+        }
+      ],
+      "elapsedSim": 70.55,
+      "riderStates": 184,
+      "finite": true,
+      "canvas": {
+        "width": 980,
+        "height": 458
+      },
+      "screen": "race",
+      "finished": false,
+      "running": true,
+      "fps": 28.184892897407003,
+      "version": "V25",
+      "scene": "climb",
+      "order": 1,
+      "sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "snapshotSHA256": "52dc53743adf1b6c67f436cc3e5be4ff29b6f77ca7027e0bf5d3a9c0268c010a",
+      "heapBefore": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2273,
+        "JSHeapUsedSize": 7063952,
+        "JSHeapTotalSize": 8388608
+      },
+      "heapAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 3010,
+        "JSHeapUsedSize": 8558332,
+        "JSHeapTotalSize": 27525120
+      },
+      "heapRetainedAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2342,
+        "JSHeapUsedSize": 7254336,
+        "JSHeapTotalSize": 8650752
+      },
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "frameMs": {
+        "n": 195,
+        "mean": 40.93897435897435,
+        "p95": 50.100000000000364,
+        "max": 83.39999999999964
+      },
+      "longFrames": {
+        "over33ms": 124,
+        "over50ms": 20
+      },
+      "cpuMs": {
+        "n": 196,
+        "mean": 14.311224489890952,
+        "p95": 23.199999999254942,
+        "max": 40.900000002235174
+      },
+      "debtSeconds": {
+        "n": 196,
+        "mean": 0.034774489795918295,
+        "p95": 0.04989999999999986,
+        "max": 0.11650000000000017
+      },
+      "lastDebt": 0.0163000000000003,
+      "wallSeconds": 8.01460000000149,
+      "simSeconds": 8.049999999999997,
+      "simPerWall": 1.0044169390859807,
+      "inputMs": {
+        "n": 0,
+        "mean": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "visibleRiders": {
+        "n": 196,
+        "mean": 102.09693877551021,
+        "p95": 107,
+        "max": 107
+      },
+      "light": true,
+      "caches": {
+        "bikes": 48,
+        "bodies": 256
+      },
+      "frames": {
+        "n": 195,
+        "p50": 33.399999999999636,
+        "p95": 50.100000000000364,
+        "p99": 66.70000000000073,
+        "max": 83.39999999999964,
+        "mean": 40.93897435897435,
+        "over33": 124,
+        "over50": 20
+      },
+      "cpu": {
+        "n": 196,
+        "p50": 13.699999999254942,
+        "p95": 23.199999999254942,
+        "p99": 29.699999999254942,
+        "max": 40.900000002235174,
+        "mean": 14.311224489890952,
+        "over33": 2,
+        "over50": 0
+      },
+      "debt": {
+        "n": 196,
+        "p50": 0.033099999999999574,
+        "p95": 0.04989999999999986,
+        "p99": 0.09980000000000035,
+        "max": 0.11650000000000017,
+        "mean": 0.034774489795918295,
+        "over33": 0,
+        "over50": 0
+      },
+      "quality": "full",
+      "effectiveLow": false,
+      "longTasks": [
+        {
+          "start": 4400,
+          "ms": 51
+        },
+        {
+          "start": 4496.400000002235,
+          "ms": 54
+        },
+        {
+          "start": 4550.800000000745,
+          "ms": 56
+        },
+        {
+          "start": 4607.699999999255,
+          "ms": 70
+        },
+        {
+          "start": 4678,
+          "ms": 53
+        },
+        {
+          "start": 4731.300000000745,
+          "ms": 82
+        },
+        {
+          "start": 4814.300000000745,
+          "ms": 60
+        },
+        {
+          "start": 4924.60000000149,
+          "ms": 61
+        },
+        {
+          "start": 4986.60000000149,
+          "ms": 58
+        },
+        {
+          "start": 5303.10000000149,
+          "ms": 51
+        },
+        {
+          "start": 5515.199999999255,
+          "ms": 50
+        },
+        {
+          "start": 5565.5,
+          "ms": 52
+        },
+        {
+          "start": 5618,
+          "ms": 60
+        },
+        {
+          "start": 5678.400000002235,
+          "ms": 56
+        },
+        {
+          "start": 5734.699999999255,
+          "ms": 71
+        },
+        {
+          "start": 6266.60000000149,
+          "ms": 59
+        },
+        {
+          "start": 6326.60000000149,
+          "ms": 54
+        },
+        {
+          "start": 7550,
+          "ms": 50
+        },
+        {
+          "start": 7812.400000002235,
+          "ms": 57
+        }
+      ],
+      "elapsedSim": 70.55,
+      "riderStates": 184,
+      "finite": true,
+      "canvas": {
+        "width": 980,
+        "height": 458
+      },
+      "screen": "race",
+      "finished": false,
+      "running": true,
+      "fps": 24.426601195024496,
+      "version": "V25",
+      "scene": "climb",
+      "order": 2,
+      "sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "snapshotSHA256": "52dc53743adf1b6c67f436cc3e5be4ff29b6f77ca7027e0bf5d3a9c0268c010a",
+      "heapBefore": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2271,
+        "JSHeapUsedSize": 7162884,
+        "JSHeapTotalSize": 8126464
+      },
+      "heapAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2418,
+        "JSHeapUsedSize": 13057968,
+        "JSHeapTotalSize": 28311552
+      },
+      "heapRetainedAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2285,
+        "JSHeapUsedSize": 7249124,
+        "JSHeapTotalSize": 8388608
+      },
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "frameMs": {
+        "n": 192,
+        "mean": 41.49114583333333,
+        "p95": 50.100000000000364,
+        "max": 83.30000000000018
+      },
+      "longFrames": {
+        "over33ms": 128,
+        "over50ms": 17
+      },
+      "cpuMs": {
+        "n": 193,
+        "mean": 15.647668393801686,
+        "p95": 26.199999999254942,
+        "max": 55.600000001490116
+      },
+      "debtSeconds": {
+        "n": 193,
+        "mean": 0.048633678756477235,
+        "p95": 0.1833000000000004,
+        "max": 0.3166000000000005
+      },
+      "lastDebt": 0.03289999999999983,
+      "wallSeconds": 8.009300000000746,
+      "simSeconds": 8.300000000000004,
+      "simPerWall": 1.0362953067058585,
+      "inputMs": {
+        "n": 0,
+        "mean": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "visibleRiders": {
+        "n": 193,
+        "mean": 101.91709844559585,
+        "p95": 107,
+        "max": 107
+      },
+      "light": true,
+      "caches": {
+        "bikes": 48,
+        "bodies": 256
+      },
+      "frames": {
+        "n": 192,
+        "p50": 33.400000000000546,
+        "p95": 50.100000000000364,
+        "p99": 66.70000000000073,
+        "max": 83.30000000000018,
+        "mean": 41.49114583333333,
+        "over33": 128,
+        "over50": 17
+      },
+      "cpu": {
+        "n": 193,
+        "p50": 15.300000000745058,
+        "p95": 26.199999999254942,
+        "p99": 32.5,
+        "max": 55.600000001490116,
+        "mean": 15.647668393801686,
+        "over33": 2,
+        "over50": 1
+      },
+      "debt": {
+        "n": 193,
+        "p50": 0.033000000000000224,
+        "p95": 0.1833000000000004,
+        "p99": 0.2999000000000007,
+        "max": 0.3166000000000005,
+        "mean": 0.048633678756477235,
+        "over33": 0,
+        "over50": 0
+      },
+      "quality": "full",
+      "effectiveLow": false,
+      "longTasks": [
+        {
+          "start": 3260.10000000149,
+          "ms": 51
+        },
+        {
+          "start": 3536.60000000149,
+          "ms": 55
+        },
+        {
+          "start": 3718.300000000745,
+          "ms": 81
+        },
+        {
+          "start": 3886.10000000149,
+          "ms": 50
+        },
+        {
+          "start": 4031.900000002235,
+          "ms": 54
+        },
+        {
+          "start": 4130,
+          "ms": 54
+        },
+        {
+          "start": 4184.800000000745,
+          "ms": 51
+        },
+        {
+          "start": 4665.900000002235,
+          "ms": 50
+        },
+        {
+          "start": 4766.199999999255,
+          "ms": 50
+        },
+        {
+          "start": 4817.5,
+          "ms": 53
+        },
+        {
+          "start": 4870.900000002235,
+          "ms": 50
+        },
+        {
+          "start": 4921.5,
+          "ms": 50
+        },
+        {
+          "start": 4975.10000000149,
+          "ms": 52
+        },
+        {
+          "start": 5370.900000002235,
+          "ms": 50
+        },
+        {
+          "start": 5467.699999999255,
+          "ms": 55
+        },
+        {
+          "start": 5996.60000000149,
+          "ms": 56
+        },
+        {
+          "start": 6269.800000000745,
+          "ms": 51
+        },
+        {
+          "start": 6437.5,
+          "ms": 56
+        },
+        {
+          "start": 6674.699999999255,
+          "ms": 51
+        },
+        {
+          "start": 7214.900000002235,
+          "ms": 59
+        },
+        {
+          "start": 7564.900000002235,
+          "ms": 55
+        },
+        {
+          "start": 8369.10000000149,
+          "ms": 52
+        },
+        {
+          "start": 8814.60000000149,
+          "ms": 62
+        },
+        {
+          "start": 9002.199999999255,
+          "ms": 54
+        },
+        {
+          "start": 9059.5,
+          "ms": 51
+        },
+        {
+          "start": 10760.300000000745,
+          "ms": 59
+        }
+      ],
+      "elapsedSim": 70.60000000000001,
+      "riderStates": 184,
+      "finite": true,
+      "canvas": {
+        "width": 980,
+        "height": 458
+      },
+      "screen": "race",
+      "finished": false,
+      "running": true,
+      "fps": 24.101527685374645,
+      "version": "V24",
+      "scene": "climb",
+      "order": 3,
+      "sha256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+      "snapshotSHA256": "52dc53743adf1b6c67f436cc3e5be4ff29b6f77ca7027e0bf5d3a9c0268c010a",
+      "heapBefore": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2272,
+        "JSHeapUsedSize": 7347668,
+        "JSHeapTotalSize": 8388608
+      },
+      "heapAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 3629,
+        "JSHeapUsedSize": 12173900,
+        "JSHeapTotalSize": 27262976
+      },
+      "heapRetainedAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2287,
+        "JSHeapUsedSize": 7244952,
+        "JSHeapTotalSize": 8388608
+      },
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "frameMs": {
+        "n": 464,
+        "mean": 17.204741379310363,
+        "p95": 16.799999999999272,
+        "max": 83.30000000000018
+      },
+      "longFrames": {
+        "over33ms": 5,
+        "over50ms": 2
+      },
+      "cpuMs": {
+        "n": 465,
+        "mean": 4.99720430103361,
+        "p95": 12.599999997764826,
+        "max": 58.5
+      },
+      "debtSeconds": {
+        "n": 465,
+        "mean": 0.031616559139785096,
+        "p95": 0.04990000000000009,
+        "max": 0.06650000000000045
+      },
+      "lastDebt": 0.016299999999999717,
+      "wallSeconds": 8.005199999999254,
+      "simSeconds": 8,
+      "simPerWall": 0.9993504222256465,
+      "inputMs": {
+        "n": 0,
+        "mean": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "visibleRiders": {
+        "n": 465,
+        "mean": 12.09032258064516,
+        "p95": 13,
+        "max": 13
+      },
+      "light": false,
+      "caches": {
+        "bikes": 48,
+        "bodies": 120
+      },
+      "frames": {
+        "n": 464,
+        "p50": 16.699999999999818,
+        "p95": 16.799999999999272,
+        "p99": 33.30000000000018,
+        "max": 83.30000000000018,
+        "mean": 17.204741379310363,
+        "over33": 5,
+        "over50": 2
+      },
+      "cpu": {
+        "n": 465,
+        "p50": 2.899999998509884,
+        "p95": 12.599999997764826,
+        "p99": 19.099999997764826,
+        "max": 58.5,
+        "mean": 4.99720430103361,
+        "over33": 1,
+        "over50": 1
+      },
+      "debt": {
+        "n": 465,
+        "p50": 0.03310000000000081,
+        "p95": 0.04990000000000009,
+        "p99": 0.04990000000000009,
+        "max": 0.06650000000000045,
+        "mean": 0.031616559139785096,
+        "over33": 0,
+        "over50": 0
+      },
+      "quality": "full",
+      "effectiveLow": false,
+      "longTasks": [
+        {
+          "start": 6165.70000000298,
+          "ms": 78
+        },
+        {
+          "start": 9109.800000000745,
+          "ms": 75
+        }
+      ],
+      "elapsedSim": 265.45,
+      "riderStates": 184,
+      "finite": true,
+      "canvas": {
+        "width": 980,
+        "height": 458
+      },
+      "screen": "race",
+      "finished": false,
+      "running": true,
+      "fps": 58.12351246398591,
+      "version": "V24",
+      "scene": "leadout",
+      "order": 0,
+      "sha256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+      "snapshotSHA256": "39018d15a4d74974df6fc64c944f64c159817187a4d1131b104c35db9fd087d9",
+      "heapBefore": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2188,
+        "JSHeapUsedSize": 7100196,
+        "JSHeapTotalSize": 8650752
+      },
+      "heapAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 3032,
+        "JSHeapUsedSize": 9542088,
+        "JSHeapTotalSize": 27262976
+      },
+      "heapRetainedAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2302,
+        "JSHeapUsedSize": 7452576,
+        "JSHeapTotalSize": 8388608
+      },
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "frameMs": {
+        "n": 475,
+        "mean": 16.841473684210534,
+        "p95": 16.799999999999272,
+        "max": 50
+      },
+      "longFrames": {
+        "over33ms": 2,
+        "over50ms": 0
+      },
+      "cpuMs": {
+        "n": 476,
+        "mean": 4.392436974783655,
+        "p95": 10.699999999254942,
+        "max": 24.5
+      },
+      "debtSeconds": {
+        "n": 476,
+        "mean": 0.033013865546218456,
+        "p95": 0.049899999999999826,
+        "max": 0.04989999999999985
+      },
+      "lastDebt": 0.016300000000000398,
+      "wallSeconds": 8.010199999999255,
+      "simSeconds": 8,
+      "simPerWall": 0.9987266235550603,
+      "inputMs": {
+        "n": 0,
+        "mean": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "visibleRiders": {
+        "n": 476,
+        "mean": 12.094537815126051,
+        "p95": 13,
+        "max": 13
+      },
+      "light": false,
+      "caches": {
+        "bikes": 48,
+        "bodies": 120
+      },
+      "frames": {
+        "n": 475,
+        "p50": 16.699999999999818,
+        "p95": 16.799999999999272,
+        "p99": 16.80000000000109,
+        "max": 50,
+        "mean": 16.841473684210534,
+        "over33": 2,
+        "over50": 0
+      },
+      "cpu": {
+        "n": 476,
+        "p50": 2.5,
+        "p95": 10.699999999254942,
+        "p99": 16.800000000745058,
+        "max": 24.5,
+        "mean": 4.392436974783655,
+        "over33": 0,
+        "over50": 0
+      },
+      "debt": {
+        "n": 476,
+        "p50": 0.03309999999999965,
+        "p95": 0.049899999999999826,
+        "p99": 0.04989999999999984,
+        "max": 0.04989999999999985,
+        "mean": 0.033013865546218456,
+        "over33": 0,
+        "over50": 0
+      },
+      "quality": "full",
+      "effectiveLow": false,
+      "longTasks": [],
+      "elapsedSim": 265.5,
+      "riderStates": 184,
+      "finite": true,
+      "canvas": {
+        "width": 980,
+        "height": 458
+      },
+      "screen": "race",
+      "finished": false,
+      "running": true,
+      "fps": 59.377226645999194,
+      "version": "V25",
+      "scene": "leadout",
+      "order": 1,
+      "sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "snapshotSHA256": "39018d15a4d74974df6fc64c944f64c159817187a4d1131b104c35db9fd087d9",
+      "heapBefore": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2189,
+        "JSHeapUsedSize": 7160944,
+        "JSHeapTotalSize": 8650752
+      },
+      "heapAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 5047,
+        "JSHeapUsedSize": 12782196,
+        "JSHeapTotalSize": 28311552
+      },
+      "heapRetainedAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2302,
+        "JSHeapUsedSize": 7475828,
+        "JSHeapTotalSize": 8650752
+      },
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "frameMs": {
+        "n": 476,
+        "mean": 16.771008403361346,
+        "p95": 16.799999999999272,
+        "max": 33.30000000000018
+      },
+      "longFrames": {
+        "over33ms": 0,
+        "over50ms": 0
+      },
+      "cpuMs": {
+        "n": 477,
+        "mean": 4.269182389910553,
+        "p95": 10.299999997019768,
+        "max": 18.5
+      },
+      "debtSeconds": {
+        "n": 477,
+        "mean": 0.03296163522012576,
+        "p95": 0.049800000000000406,
+        "max": 0.04989999999999986
+      },
+      "lastDebt": 0.04949999999999932,
+      "wallSeconds": 8.00460000000149,
+      "simSeconds": 8,
+      "simPerWall": 0.9994253304348139,
+      "inputMs": {
+        "n": 0,
+        "mean": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "visibleRiders": {
+        "n": 477,
+        "mean": 12.09224318658281,
+        "p95": 13,
+        "max": 13
+      },
+      "light": false,
+      "caches": {
+        "bikes": 48,
+        "bodies": 120
+      },
+      "frames": {
+        "n": 476,
+        "p50": 16.699999999999818,
+        "p95": 16.799999999999272,
+        "p99": 16.80000000000109,
+        "max": 33.30000000000018,
+        "mean": 16.771008403361346,
+        "over33": 0,
+        "over50": 0
+      },
+      "cpu": {
+        "n": 477,
+        "p50": 2.5,
+        "p95": 10.299999997019768,
+        "p99": 15.300000000745058,
+        "max": 18.5,
+        "mean": 4.269182389910553,
+        "over33": 0,
+        "over50": 0
+      },
+      "debt": {
+        "n": 477,
+        "p50": 0.03309999999999968,
+        "p95": 0.049800000000000406,
+        "p99": 0.04989999999999986,
+        "max": 0.04989999999999986,
+        "mean": 0.03296163522012576,
+        "over33": 0,
+        "over50": 0
+      },
+      "quality": "full",
+      "effectiveLow": false,
+      "longTasks": [],
+      "elapsedSim": 265.45,
+      "riderStates": 184,
+      "finite": true,
+      "canvas": {
+        "width": 980,
+        "height": 458
+      },
+      "screen": "race",
+      "finished": false,
+      "running": true,
+      "fps": 59.62670675184767,
+      "version": "V25",
+      "scene": "leadout",
+      "order": 2,
+      "sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "snapshotSHA256": "39018d15a4d74974df6fc64c944f64c159817187a4d1131b104c35db9fd087d9",
+      "heapBefore": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2188,
+        "JSHeapUsedSize": 7514956,
+        "JSHeapTotalSize": 9175040
+      },
+      "heapAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 3289,
+        "JSHeapUsedSize": 8796268,
+        "JSHeapTotalSize": 26738688
+      },
+      "heapRetainedAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2302,
+        "JSHeapUsedSize": 7467888,
+        "JSHeapTotalSize": 8650752
+      },
+      "errors": [],
+      "externalRequests": []
+    },
+    {
+      "frameMs": {
+        "n": 479,
+        "mean": 16.70062630480168,
+        "p95": 16.799999999999272,
+        "max": 33.29999999999927
+      },
+      "longFrames": {
+        "over33ms": 0,
+        "over50ms": 0
+      },
+      "cpuMs": {
+        "n": 480,
+        "mean": 4.313541666666667,
+        "p95": 10.599999997764826,
+        "max": 20.600000001490116
+      },
+      "debtSeconds": {
+        "n": 480,
+        "mean": 0.03288000000000011,
+        "p95": 0.049900000000000055,
+        "max": 0.0499000000000001
+      },
+      "lastDebt": 0.04960000000000078,
+      "wallSeconds": 8.013900000002236,
+      "simSeconds": 8,
+      "simPerWall": 0.9982655136697198,
+      "inputMs": {
+        "n": 0,
+        "mean": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "visibleRiders": {
+        "n": 480,
+        "mean": 12.091666666666667,
+        "p95": 13,
+        "max": 13
+      },
+      "light": false,
+      "caches": {
+        "bikes": 48,
+        "bodies": 120
+      },
+      "frames": {
+        "n": 479,
+        "p50": 16.699999999999818,
+        "p95": 16.799999999999272,
+        "p99": 16.800000000000182,
+        "max": 33.29999999999927,
+        "mean": 16.70062630480168,
+        "over33": 0,
+        "over50": 0
+      },
+      "cpu": {
+        "n": 480,
+        "p50": 2.600000001490116,
+        "p95": 10.599999997764826,
+        "p99": 14.300000000745058,
+        "max": 20.600000001490116,
+        "mean": 4.313541666666667,
+        "over33": 0,
+        "over50": 0
+      },
+      "debt": {
+        "n": 480,
+        "p50": 0.03309999999999987,
+        "p95": 0.049900000000000055,
+        "p99": 0.04990000000000009,
+        "max": 0.0499000000000001,
+        "mean": 0.03288000000000011,
+        "over33": 0,
+        "over50": 0
+      },
+      "quality": "full",
+      "effectiveLow": false,
+      "longTasks": [],
+      "elapsedSim": 265.45,
+      "riderStates": 184,
+      "finite": true,
+      "canvas": {
+        "width": 980,
+        "height": 458
+      },
+      "screen": "race",
+      "finished": false,
+      "running": true,
+      "fps": 59.87799389969495,
+      "version": "V24",
+      "scene": "leadout",
+      "order": 3,
+      "sha256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+      "snapshotSHA256": "39018d15a4d74974df6fc64c944f64c159817187a4d1131b104c35db9fd087d9",
+      "heapBefore": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2188,
+        "JSHeapUsedSize": 7459116,
+        "JSHeapTotalSize": 8650752
+      },
+      "heapAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2338,
+        "JSHeapUsedSize": 11201840,
+        "JSHeapTotalSize": 27000832
+      },
+      "heapRetainedAfter": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2302,
+        "JSHeapUsedSize": 7464796,
+        "JSHeapTotalSize": 8650752
+      },
+      "errors": [],
+      "externalRequests": []
+    }
+  ],
+  "soak": [
+    {
+      "frameMs": {
+        "n": 1194,
+        "mean": 25.13860971524302,
+        "p95": 33.400000000001455,
+        "max": 83.30000000000109
+      },
+      "longFrames": {
+        "over33ms": 230,
+        "over50ms": 13
+      },
+      "cpuMs": {
+        "n": 1195,
+        "mean": 7.829623430967331,
+        "p95": 15,
+        "max": 30.199999999254942
+      },
+      "debtSeconds": {
+        "n": 1195,
+        "mean": 0.031933807531380656,
+        "p95": 0.04960000000000034,
+        "max": 0.0662000000000007
+      },
+      "lastDebt": 0.015400000000001426,
+      "wallSeconds": 30.016199999999255,
+      "simSeconds": 30.050000000000004,
+      "simPerWall": 1.0011260585950503,
+      "inputMs": {
+        "n": 0,
+        "mean": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "visibleRiders": {
+        "n": 1195,
+        "mean": 59.94979079497908,
+        "p95": 105,
+        "max": 107
+      },
+      "light": false,
+      "caches": {
+        "bikes": 48,
+        "bodies": 256
+      },
+      "frames": {
+        "n": 1194,
+        "p50": 16.700000000000728,
+        "p95": 33.400000000001455,
+        "p99": 50.099999999998545,
+        "max": 83.30000000000109,
+        "mean": 25.13860971524302,
+        "over33": 230,
+        "over50": 13
+      },
+      "cpu": {
+        "n": 1195,
+        "p50": 7.700000002980232,
+        "p95": 15,
+        "p99": 19.700000002980232,
+        "max": 30.199999999254942,
+        "mean": 7.829623430967331,
+        "over33": 0,
+        "over50": 0
+      },
+      "debt": {
+        "n": 1195,
+        "p50": 0.03240000000000143,
+        "p95": 0.04960000000000034,
+        "p99": 0.04980000000000016,
+        "max": 0.0662000000000007,
+        "mean": 0.031933807531380656,
+        "over33": 0,
+        "over50": 0
+      },
+      "quality": "full",
+      "effectiveLow": false,
+      "longTasks": [
+        {
+          "start": 7162.800000000745,
+          "ms": 58
+        },
+        {
+          "start": 8053.70000000298,
+          "ms": 53
+        },
+        {
+          "start": 10765.800000000745,
+          "ms": 76
+        },
+        {
+          "start": 15590.70000000298,
+          "ms": 51
+        }
+      ],
+      "elapsedSim": 92.65,
+      "riderStates": 184,
+      "finite": true,
+      "canvas": {
+        "width": 980,
+        "height": 458
+      },
+      "screen": "race",
+      "finished": false,
+      "running": true,
+      "fps": 39.7794472855689,
+      "wallTarget": 30,
+      "heap": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 3488,
+        "JSHeapUsedSize": 24742316,
+        "JSHeapTotalSize": 45613056
+      }
+    },
+    {
+      "frameMs": {
+        "n": 1790,
+        "mean": 16.759106145251394,
+        "p95": 16.700000000004366,
+        "max": 33.400000000001455
+      },
+      "longFrames": {
+        "over33ms": 5,
+        "over50ms": 0
+      },
+      "cpuMs": {
+        "n": 1791,
+        "mean": 3.7085985483207526,
+        "p95": 9.600000001490116,
+        "max": 27
+      },
+      "debtSeconds": {
+        "n": 1791,
+        "mean": 0.03136772752652135,
+        "p95": 0.048499999999999974,
+        "max": 0.048699999999997065
+      },
+      "lastDebt": 0.014099999999998516,
+      "wallSeconds": 30.01439999999851,
+      "simSeconds": 30.049999999999997,
+      "simPerWall": 1.001186097339993,
+      "inputMs": {
+        "n": 0,
+        "mean": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "visibleRiders": {
+        "n": 1791,
+        "mean": 9.736460078168621,
+        "p95": 12,
+        "max": 13
+      },
+      "light": false,
+      "caches": {
+        "bikes": 48,
+        "bodies": 256
+      },
+      "frames": {
+        "n": 1790,
+        "p50": 16.69999999999709,
+        "p95": 16.700000000004366,
+        "p99": 16.80000000000291,
+        "max": 33.400000000001455,
+        "mean": 16.759106145251394,
+        "over33": 5,
+        "over50": 0
+      },
+      "cpu": {
+        "n": 1791,
+        "p50": 2,
+        "p95": 9.600000001490116,
+        "p99": 13.900000002235174,
+        "max": 27,
+        "mean": 3.7085985483207526,
+        "over33": 0,
+        "over50": 0
+      },
+      "debt": {
+        "n": 1791,
+        "p50": 0.03140000000000143,
+        "p95": 0.048499999999999974,
+        "p99": 0.04859999999999852,
+        "max": 0.048699999999997065,
+        "mean": 0.03136772752652135,
+        "over33": 0,
+        "over50": 0
+      },
+      "quality": "full",
+      "effectiveLow": false,
+      "longTasks": [],
+      "elapsedSim": 122.7,
+      "riderStates": 184,
+      "finite": true,
+      "canvas": {
+        "width": 980,
+        "height": 458
+      },
+      "screen": "race",
+      "finished": false,
+      "running": true,
+      "fps": 59.66905342880383,
+      "wallTarget": 60,
+      "heap": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2682,
+        "JSHeapUsedSize": 37499556,
+        "JSHeapTotalSize": 72351744
+      }
+    },
+    {
+      "frameMs": {
+        "n": 1788,
+        "mean": 16.76851230425056,
+        "p95": 16.79999999998836,
+        "max": 33.40000000000873
+      },
+      "longFrames": {
+        "over33ms": 3,
+        "over50ms": 0
+      },
+      "cpuMs": {
+        "n": 1789,
+        "mean": 3.611738401346946,
+        "p95": 10,
+        "max": 30.900000002235174
+      },
+      "debtSeconds": {
+        "n": 1789,
+        "mean": 0.030167523756288023,
+        "p95": 0.047300000000002854,
+        "max": 0.04749999999999997
+      },
+      "lastDebt": 0.046199999999996536,
+      "wallSeconds": 30.004800000000746,
+      "simSeconds": 30.000000000000014,
+      "simPerWall": 0.9998400255958803,
+      "inputMs": {
+        "n": 0,
+        "mean": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "visibleRiders": {
+        "n": 1789,
+        "mean": 5.651201788708776,
+        "p95": 6,
+        "max": 7
+      },
+      "light": false,
+      "caches": {
+        "bikes": 48,
+        "bodies": 256
+      },
+      "frames": {
+        "n": 1788,
+        "p50": 16.69999999999709,
+        "p95": 16.79999999998836,
+        "p99": 16.80000000000291,
+        "max": 33.40000000000873,
+        "mean": 16.76851230425056,
+        "over33": 3,
+        "over50": 0
+      },
+      "cpu": {
+        "n": 1789,
+        "p50": 1.8999999985098839,
+        "p95": 10,
+        "p99": 15.299999997019768,
+        "max": 30.900000002235174,
+        "mean": 3.611738401346946,
+        "over33": 0,
+        "over50": 0
+      },
+      "debt": {
+        "n": 1789,
+        "p50": 0.030199999999996768,
+        "p95": 0.047300000000002854,
+        "p99": 0.04740000000000143,
+        "max": 0.04749999999999997,
+        "mean": 0.030167523756288023,
+        "over33": 0,
+        "over50": 0
+      },
+      "quality": "full",
+      "effectiveLow": false,
+      "longTasks": [],
+      "elapsedSim": 152.70000000000002,
+      "riderStates": 184,
+      "finite": true,
+      "canvas": {
+        "width": 980,
+        "height": 458
+      },
+      "screen": "race",
+      "finished": false,
+      "running": true,
+      "fps": 59.63558256426334,
+      "wallTarget": 90,
+      "heap": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 3007,
+        "JSHeapUsedSize": 21567868,
+        "JSHeapTotalSize": 78643200
+      }
+    },
+    {
+      "frameMs": {
+        "n": 1789,
+        "mean": 16.777752934600333,
+        "p95": 16.79999999998836,
+        "max": 33.40000000000873
+      },
+      "longFrames": {
+        "over33ms": 6,
+        "over50ms": 0
+      },
+      "cpuMs": {
+        "n": 1790,
+        "mean": 3.3218435754801807,
+        "p95": 8.300000000745058,
+        "max": 32
+      },
+      "debtSeconds": {
+        "n": 1790,
+        "mean": 0.028972569832401086,
+        "p95": 0.046100000000005095,
+        "max": 0.04630000000000235
+      },
+      "lastDebt": 0.044999999999998264,
+      "wallSeconds": 30.017,
+      "simSeconds": 30,
+      "simPerWall": 0.9994336542625846,
+      "inputMs": {
+        "n": 0,
+        "mean": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "visibleRiders": {
+        "n": 1790,
+        "mean": 1.6418994413407821,
+        "p95": 4,
+        "max": 6
+      },
+      "light": false,
+      "caches": {
+        "bikes": 48,
+        "bodies": 256
+      },
+      "frames": {
+        "n": 1789,
+        "p50": 16.69999999999709,
+        "p95": 16.79999999998836,
+        "p99": 16.80000000000291,
+        "max": 33.40000000000873,
+        "mean": 16.777752934600333,
+        "over33": 6,
+        "over50": 0
+      },
+      "cpu": {
+        "n": 1790,
+        "p50": 1.7999999970197678,
+        "p95": 8.300000000745058,
+        "p99": 13.299999997019768,
+        "max": 32,
+        "mean": 3.3218435754801807,
+        "over33": 0,
+        "over50": 0
+      },
+      "debt": {
+        "n": 1790,
+        "p50": 0.02899999999999887,
+        "p95": 0.046100000000005095,
+        "p99": 0.04619999999999651,
+        "max": 0.04630000000000235,
+        "mean": 0.028972569832401086,
+        "over33": 0,
+        "over50": 0
+      },
+      "quality": "full",
+      "effectiveLow": false,
+      "longTasks": [],
+      "elapsedSim": 182.75,
+      "riderStates": 184,
+      "finite": true,
+      "canvas": {
+        "width": 980,
+        "height": 458
+      },
+      "screen": "race",
+      "finished": false,
+      "running": true,
+      "fps": 59.60273726153908,
+      "wallTarget": 120,
+      "heap": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 3957,
+        "JSHeapUsedSize": 24605200,
+        "JSHeapTotalSize": 79953920
+      }
+    },
+    {
+      "frameMs": {
+        "n": 1796,
+        "mean": 16.703118040089098,
+        "p95": 16.79999999998836,
+        "max": 33.39999999999418
+      },
+      "longFrames": {
+        "over33ms": 1,
+        "over50ms": 0
+      },
+      "cpuMs": {
+        "n": 1797,
+        "mean": 2.8115748469414616,
+        "p95": 6.900000002235174,
+        "max": 27.699999999254942
+      },
+      "debtSeconds": {
+        "n": 1797,
+        "mean": 0.02778313856427193,
+        "p95": 0.04489999999999216,
+        "max": 0.04510000000000408
+      },
+      "lastDebt": 0.027200000000009515,
+      "wallSeconds": 30.023199999999257,
+      "simSeconds": 30,
+      "simPerWall": 0.9992272642490055,
+      "inputMs": {
+        "n": 0,
+        "mean": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "visibleRiders": {
+        "n": 1797,
+        "mean": 1,
+        "p95": 1,
+        "max": 1
+      },
+      "light": false,
+      "caches": {
+        "bikes": 48,
+        "bodies": 256
+      },
+      "frames": {
+        "n": 1796,
+        "p50": 16.699999999982538,
+        "p95": 16.79999999998836,
+        "p99": 16.800000000017462,
+        "max": 33.39999999999418,
+        "mean": 16.703118040089098,
+        "over33": 1,
+        "over50": 0
+      },
+      "cpu": {
+        "n": 1797,
+        "p50": 1.5,
+        "p95": 6.900000002235174,
+        "p99": 10.699999999254942,
+        "max": 27.699999999254942,
+        "mean": 2.8115748469414616,
+        "over33": 0,
+        "over50": 0
+      },
+      "debt": {
+        "n": 1797,
+        "p50": 0.027799999999986256,
+        "p95": 0.04489999999999216,
+        "p99": 0.04499999999999821,
+        "max": 0.04510000000000408,
+        "mean": 0.02778313856427193,
+        "over33": 0,
+        "over50": 0
+      },
+      "quality": "full",
+      "effectiveLow": false,
+      "longTasks": [],
+      "elapsedSim": 212.8,
+      "riderStates": 184,
+      "finite": true,
+      "canvas": {
+        "width": 980,
+        "height": 458
+      },
+      "screen": "race",
+      "finished": false,
+      "running": true,
+      "fps": 59.86906142912379,
+      "wallTarget": 150,
+      "heap": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 3628,
+        "JSHeapUsedSize": 31770252,
+        "JSHeapTotalSize": 80478208
+      }
+    },
+    {
+      "frameMs": {
+        "n": 1790,
+        "mean": 16.75910614525139,
+        "p95": 16.70000000001164,
+        "max": 50
+      },
+      "longFrames": {
+        "over33ms": 3,
+        "over50ms": 0
+      },
+      "cpuMs": {
+        "n": 1791,
+        "mean": 2.9585147962381826,
+        "p95": 7.899999998509884,
+        "max": 48.5
+      },
+      "debtSeconds": {
+        "n": 1791,
+        "mean": 0.02658950307090805,
+        "p95": 0.04370000000000952,
+        "max": 0.043899999999992056
+      },
+      "lastDebt": 0.025999999999997893,
+      "wallSeconds": 30.006800000000744,
+      "simSeconds": 30,
+      "simPerWall": 0.9997733846994433,
+      "inputMs": {
+        "n": 0,
+        "mean": 0,
+        "p95": 0,
+        "max": 0
+      },
+      "visibleRiders": {
+        "n": 1791,
+        "mean": 1,
+        "p95": 1,
+        "max": 1
+      },
+      "light": false,
+      "caches": {
+        "bikes": 48,
+        "bodies": 256
+      },
+      "frames": {
+        "n": 1790,
+        "p50": 16.699999999982538,
+        "p95": 16.70000000001164,
+        "p99": 16.800000000017462,
+        "max": 50,
+        "mean": 16.75910614525139,
+        "over33": 3,
+        "over50": 0
+      },
+      "cpu": {
+        "n": 1791,
+        "p50": 1.6000000014901161,
+        "p95": 7.899999998509884,
+        "p99": 11.099999997764826,
+        "max": 48.5,
+        "mean": 2.9585147962381826,
+        "over33": 2,
+        "over50": 0
+      },
+      "debt": {
+        "n": 1791,
+        "p50": 0.026600000000003697,
+        "p95": 0.04370000000000952,
+        "p99": 0.04379999999998624,
+        "max": 0.043899999999992056,
+        "mean": 0.02658950307090805,
+        "over33": 0,
+        "over50": 0
+      },
+      "quality": "full",
+      "effectiveLow": false,
+      "longTasks": [
+        {
+          "start": 165668.30000000075,
+          "ms": 58
+        },
+        {
+          "start": 165751.6000000015,
+          "ms": 56
+        },
+        {
+          "start": 175583.6000000015,
+          "ms": 53
+        }
+      ],
+      "elapsedSim": 242.85000000000002,
+      "riderStates": 184,
+      "finite": true,
+      "canvas": {
+        "width": 980,
+        "height": 458
+      },
+      "screen": "race",
+      "finished": false,
+      "running": true,
+      "fps": 59.66905342880384,
+      "wallTarget": 180,
+      "heap": {
+        "Documents": 2,
+        "JSEventListeners": 110,
+        "Nodes": 2424,
+        "JSHeapUsedSize": 15637912,
+        "JSHeapTotalSize": 79691776
+      }
+    }
+  ],
+  "browser": "141.0.7390.37",
+  "soakErrors": [],
+  "soakHeapBefore": {
+    "Documents": 2,
+    "JSEventListeners": 110,
+    "Nodes": 2272,
+    "JSHeapUsedSize": 7380696,
+    "JSHeapTotalSize": 8650752
+  },
+  "soakStartSim": 62.5,
+  "soakElapsed": {
+    "wallSeconds": 180.28090000000225,
+    "simEnd": 242.85000000000002
+  },
+  "soakHeapRetainedAfter": {
+    "Documents": 2,
+    "JSEventListeners": 110,
+    "Nodes": 2391,
+    "JSHeapUsedSize": 8718288,
+    "JSHeapTotalSize": 10485760
+  },
+  "sourceUnchanged": true,
+  "pass": true,
+  "soakSimPerWall": 1.000383290742379
+}

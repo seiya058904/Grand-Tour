@@ -1,0 +1,39 @@
+{
+  "source": "Grand-Tour-V24.html",
+  "sha256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+  "passed": 1,
+  "failed": 4,
+  "skipped": 0,
+  "checks": [
+    {
+      "name": "Natural stage 5: buildings remain at fixed world locations",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: Interior object popped between simulation 8.5s and 9s\n+ actual - expected\n\n+ [\n+   {\n+     key: '69:47.7022200:38.2908622',\n+     kind: 'disappeared',\n+     x: 1168.0572348290455\n+   }\n+ ]\n- []\n\n    at /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/render-continuity.cjs:33:14\n    at test (/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/render-continuity.cjs:17:49)\n    at Object.<anonymous> (/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/render-continuity.cjs:26:3)\n    at Module._compile (node:internal/modules/cjs/loader:1872:14)\n    at Object..js (node:internal/modules/cjs/loader:2003:10)\n    at Module.load (node:internal/modules/cjs/loader:1594:32)\n    at Module._load (node:internal/modules/cjs/loader:1396:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47"
+    },
+    {
+      "name": "Natural stage 19: buildings remain at fixed world locations",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: Interior object popped between simulation 182.5s and 183s\n+ actual - expected\n\n+ [\n+   {\n+     key: '255:49.3590966:39.7636415',\n+     kind: 'appeared',\n+     x: 869.1690782547304\n+   }\n+ ]\n- []\n\n    at /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/render-continuity.cjs:33:14\n    at test (/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/render-continuity.cjs:17:49)\n    at Object.<anonymous> (/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/render-continuity.cjs:26:3)\n    at Module._compile (node:internal/modules/cjs/loader:1872:14)\n    at Object..js (node:internal/modules/cjs/loader:2003:10)\n    at Module.load (node:internal/modules/cjs/loader:1594:32)\n    at Module._load (node:internal/modules/cjs/loader:1396:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47"
+    },
+    {
+      "name": "Natural stage 19: trees remain at fixed world locations",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: Interior object popped between simulation 127s and 127.5s\n+ actual - expected\n\n+ [\n+   {\n+     key: 'pine:2:103.0007897',\n+     kind: 'disappeared',\n+     x: 312.84567131471715\n+   }\n+ ]\n- []\n\n    at /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/render-continuity.cjs:33:14\n    at test (/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/render-continuity.cjs:17:49)\n    at Object.<anonymous> (/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/render-continuity.cjs:26:3)\n    at Module._compile (node:internal/modules/cjs/loader:1872:14)\n    at Object..js (node:internal/modules/cjs/loader:2003:10)\n    at Module.load (node:internal/modules/cjs/loader:1594:32)\n    at Module._load (node:internal/modules/cjs/loader:1396:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47"
+    },
+    {
+      "name": "Finish spectators enter with the roadside instead of appearing across the viewport",
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: The finish corridor should already be visible ahead\n    at /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/render-continuity.cjs:42:3\n    at test (/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/render-continuity.cjs:17:49)\n    at Object.<anonymous> (/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/render-continuity.cjs:40:1)\n    at Module._compile (node:internal/modules/cjs/loader:1872:14)\n    at Object..js (node:internal/modules/cjs/loader:2003:10)\n    at Module.load (node:internal/modules/cjs/loader:1594:32)\n    at Module._load (node:internal/modules/cjs/loader:1396:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47"
+    },
+    {
+      "name": "Scenery remains deterministic and cannot change the simulation snapshot",
+      "pass": true,
+      "detail": {
+        "buildings": 0,
+        "trees": 19,
+        "seed": 2058765
+      }
+    }
+  ],
+  "scope": "Production scenery painter call recorder; browser rasterization and visual QA run separately."
+}

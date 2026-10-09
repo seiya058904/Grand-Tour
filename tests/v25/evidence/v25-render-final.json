@@ -1,0 +1,184 @@
+{
+  "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "sourceBytes": 1783282,
+  "sourceUnchanged": true,
+  "browser": "141.0.7390.37",
+  "suites": [
+    {
+      "name": "scenery-continuity",
+      "report": "render-continuity.json",
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "checks",
+      "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "pass": true
+    },
+    {
+      "name": "depth-score-parity",
+      "report": "render-score-parity.json",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "checks",
+      "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "pass": true
+    },
+    {
+      "name": "cache-rgba-equivalence",
+      "report": "cache-pixels/pixel-parity.json",
+      "passed": 98,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "full Canvas frames and two LRU stress checks; exact count parity is an additional whole-suite gate",
+      "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "pass": true
+    },
+    {
+      "name": "original-browser",
+      "report": "browser/verification.json",
+      "passed": 16,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "checks",
+      "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "pass": true
+    },
+    {
+      "name": "browser-natural-races",
+      "report": "browser/verification.json",
+      "passed": 4,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "natural stages 5,1,16,3; 184 finished each",
+      "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "pass": true
+    },
+    {
+      "name": "responsive-ui",
+      "report": "ui/ui.json",
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "checks",
+      "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "pass": true
+    },
+    {
+      "name": "natural-scene-playback",
+      "report": "scenes-played/scenes.json",
+      "passed": 9,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "natural scene playback cases",
+      "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "pass": true
+    },
+    {
+      "name": "regional-background-purity",
+      "report": "scenes-played/scenes.json",
+      "passed": 21,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "stage backgrounds",
+      "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "pass": true
+    },
+    {
+      "name": "presentation",
+      "report": "presentation/presentation.json",
+      "passed": 22,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "checks",
+      "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "pass": true
+    },
+    {
+      "name": "finish",
+      "report": "finish/finish-verification.json",
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "post-finish projection, retirement, ceremony checks; two approach screenshots are observations",
+      "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "pass": true
+    },
+    {
+      "name": "downhill",
+      "report": "downhill/downhill-verification.json",
+      "passed": 1,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "natural descent pose check",
+      "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "pass": true
+    },
+    {
+      "name": "weather",
+      "report": "weather/weather.json",
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "natural sun/cloud/rain cases",
+      "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "pass": true
+    },
+    {
+      "name": "ceremony-geometry-and-controls",
+      "report": "sequence-geometry/sequence.json",
+      "passed": 17,
+      "failed": 0,
+      "skipped": 0,
+      "unit": "non-play sequence checks; not full-speed playback",
+      "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "pass": true
+    }
+  ],
+  "ceremonySourceEquality": {
+    "baselineSHA256": "558fdfbae82449fe4fbdcd55e1ce61bb3de6be4ec7997bbc0a49ed20dbcccc95",
+    "candidateSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+    "baselinePath": "/workspace/scratch/018887db1a18/evidence/final-cache/Grand-Tour-V25-before-cache.html",
+    "candidatePath": "/workspace/scratch/018887db1a18/grand-tour-v25/Grand-Tour-V25.html",
+    "onlyExactCacheAllocationReplacement": true,
+    "historicalFullPlaybackReport": "/workspace/scratch/018887db1a18/evidence/v25/sequence-played/sequence.json",
+    "scope": "Whole source is byte-identical after precisely reversing one cache allocation expression. Ceremony implementation and playback controllers therefore remain unchanged. The retained 1x whole playback belongs to the previous source hash; the final hash receives a separate non-play geometry and interaction rerun.",
+    "historicalFullPlaybackSHA256": "558fdfbae82449fe4fbdcd55e1ce61bb3de6be4ec7997bbc0a49ed20dbcccc95",
+    "pass": true
+  },
+  "browserErrors": {
+    "browser": [],
+    "ui": [],
+    "scenes": [],
+    "presentation": [],
+    "finish": [],
+    "downhill": [],
+    "weather": [],
+    "sequence": []
+  },
+  "loadStopped": true,
+  "notes": [
+    "No performance benchmark ran in this final regression batch. Root will perform exclusive ABBA and soak.",
+    "Full 1x ceremony playback remains historical SHA558f evidence; final SHA1f5a has separate 17 non-play checks and exact source isolation proof.",
+    "The nine natural scene snapshots and complete Tour fixture are reused production states; input hashes are recorded in browser-run-index.json.",
+    "21-case multi-seed audit was not rerun for this render-only allocation expression. Final full Tour is owned by simulation QA."
+  ],
+  "pass": true,
+  "notRerunOnFinalHash": [
+    {
+      "scope": "sequence --play",
+      "checks": [
+        "whole_stage_playback",
+        "ttt_team_playback",
+        "whole_final_playback"
+      ],
+      "count": 3,
+      "reason": "Only cache allocation expression changed; exact full-source isolation proof and new 17-check non-play sequence regression are present. Prior actual full-speed playback remains historical SHA558f evidence."
+    },
+    {
+      "scope": "21-case multi-seed natural race audit",
+      "count": 21,
+      "reason": "The last change affects renderer allocation only, and final full 21-stage Tour is being rerun separately by simulation QA."
+    }
+  ]
+}

@@ -1,0 +1,307 @@
+{
+  "sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "mode": "native-file",
+  "checks": {
+    "identity": {
+      "title": "环法 · Grand Tour V25 · 公路自行车竞赛游戏",
+      "build": "2500",
+      "internal": 250,
+      "fatal": false
+    },
+    "profiles": {
+      "stages": 21,
+      "cases": 504,
+      "pass": true
+    },
+    "rig": {
+      "cases": 6144,
+      "limbError": 1.4210854715202004e-14,
+      "spineError": 7.105427357601002e-15,
+      "pass": true
+    },
+    "all_stage_starts": [
+      {
+        "stage": 1,
+        "type": "TTT",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 2,
+        "type": "Hilly",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 3,
+        "type": "Mountain",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 4,
+        "type": "Hilly",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 5,
+        "type": "Flat",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 6,
+        "type": "Mountain",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 7,
+        "type": "Flat",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 8,
+        "type": "Flat",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 9,
+        "type": "Hilly",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 10,
+        "type": "Mountain",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 11,
+        "type": "Flat",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 12,
+        "type": "Flat",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 13,
+        "type": "Hilly",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 14,
+        "type": "Mountain",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 15,
+        "type": "Mountain",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 16,
+        "type": "ITT",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 17,
+        "type": "Flat",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 18,
+        "type": "Mountain",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 19,
+        "type": "Mountain",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 20,
+        "type": "Mountain",
+        "t": 5,
+        "pass": true
+      },
+      {
+        "stage": 21,
+        "type": "Flat",
+        "t": 5,
+        "pass": true
+      }
+    ],
+    "restore_determinism": {
+      "repeat": true,
+      "resume": true,
+      "reject": true,
+      "pass": true,
+      "ticks": 900
+    },
+    "render_purity": {
+      "pure": true,
+      "projectionError": 0,
+      "frames": 40,
+      "visible": 132,
+      "pass": true
+    },
+    "attack_control": {
+      "power": 708.6713079539945,
+      "cp": 415.27834168214775,
+      "ai": "attack",
+      "pass": true
+    },
+    "ceremony": {
+      "recorded": true,
+      "settleCount": 1,
+      "visible": true,
+      "pending": true
+    },
+    "results": {
+      "screen": "results",
+      "rows": 184,
+      "title": "抵达终点。",
+      "pass": true
+    },
+    "next_stage": {
+      "index": 5,
+      "visible": true
+    },
+    "tour_storage_roundtrip": {
+      "pass": true,
+      "immediate": true,
+      "continuedTicks": 200,
+      "t": 25
+    },
+    "v22_import": {
+      "exact": true,
+      "continued": true,
+      "pass": true
+    },
+    "mobile": {
+      "overflow": 0,
+      "canvas": {
+        "x": 15,
+        "y": 201.890625,
+        "width": 360,
+        "height": 284.953125
+      },
+      "reduced": false,
+      "lens": 0.94,
+      "pass": true
+    },
+    "mobile_centre": {
+      "visible": true,
+      "count": 1,
+      "mounted": true
+    },
+    "reduced": {
+      "overflow": 0,
+      "canvas": {
+        "x": 15,
+        "y": 201.890625,
+        "width": 360,
+        "height": 284.953125
+      },
+      "reduced": true,
+      "lens": 1,
+      "pass": true
+    },
+    "reduced_centre": {
+      "visible": true,
+      "count": 1,
+      "mounted": true
+    }
+  },
+  "stages": {
+    "5": {
+      "type": "Flat",
+      "seed": 2058765,
+      "length": 3520.751054934053,
+      "t": 298.5,
+      "complete": true,
+      "finished": 184,
+      "exited": 0,
+      "rotations": 35,
+      "top10Watts": 917.5321023590957,
+      "top10PowerCp": 2.4351840987587403,
+      "invariantFailures": []
+    },
+    "1": {
+      "type": "TTT",
+      "seed": 2026001,
+      "length": 3413.9206912342415,
+      "t": 337.45000000000005,
+      "complete": true,
+      "finished": 184,
+      "exited": 0,
+      "rotations": 255,
+      "top10Watts": 359.3659463156553,
+      "top10PowerCp": 0.9540003048051902,
+      "invariantFailures": []
+    },
+    "16": {
+      "type": "ITT",
+      "seed": 2148866,
+      "length": 3297.434547127887,
+      "t": 266.75,
+      "complete": true,
+      "finished": 184,
+      "exited": 0,
+      "rotations": 0,
+      "top10Watts": 609.9373624242482,
+      "top10PowerCp": 1.5400057015395683,
+      "invariantFailures": []
+    },
+    "3": {
+      "type": "Mountain",
+      "seed": 2042383,
+      "length": 5187.071069236579,
+      "t": 600.5,
+      "complete": true,
+      "finished": 184,
+      "exited": 0,
+      "rotations": 72,
+      "top10Watts": 690.0268170049076,
+      "top10PowerCp": 1.8748926793038412,
+      "invariantFailures": []
+    }
+  },
+  "errors": [],
+  "screenshots": [
+    "desktop-peloton.png",
+    "stage-05-early.png",
+    "stage-05-finale.png",
+    "ceremony.png",
+    "results.png",
+    "stage-01-early.png",
+    "stage-01-finale.png",
+    "stage-16-early.png",
+    "stage-03-climb.png",
+    "mobile.png",
+    "mobile-centre.png",
+    "reduced.png",
+    "reduced-centre.png"
+  ],
+  "not_verified": [
+    "Physical mobile-device FPS; Safari/Firefox; subjective human audio review.",
+    "An uninterrupted human-played 21-stage Tour."
+  ],
+  "pass": true
+}

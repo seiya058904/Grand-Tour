@@ -1,0 +1,89 @@
+{
+  "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "method": "Actual inspection of 11 saved final-hash screenshots through the image viewer, independently of the script assertions. No complete video playback was newly watched in this batch.",
+  "images": [
+    {
+      "path": "ui/race-320-dpr1.png",
+      "sha256": "2b8ce54c0efca601596e432ce86f4d32752240d0b931283ad1976f2717646186"
+    },
+    {
+      "path": "ui/race-390-dpr1.png",
+      "sha256": "5c0a704f175bcf82f8f19ad32a5a1db0d7f5e41dde0356c8531414c9f4ce004d"
+    },
+    {
+      "path": "ui/race-3840-dpr1.png",
+      "sha256": "7614e05cdef731ae0013ad2e9d88ff908086bfe17bd7e4f5366f86840755f003"
+    },
+    {
+      "path": "ui/mobile-race-centre.png",
+      "sha256": "e27088d25900306f191e21a29ff9832612247d83ee5709dd111dd433e5de7453"
+    },
+    {
+      "path": "scenes-played/peloton.png",
+      "sha256": "3d908e648f10aa47f26c4aea9e52e36e2a97e9361e593d9665c5b6e72537bf00"
+    },
+    {
+      "path": "scenes-played/climb.png",
+      "sha256": "116fee97261f80fa997ac87635a8dce951fd8e9ce45c2010d944fc41c93c6ada"
+    },
+    {
+      "path": "scenes-played/sprint.png",
+      "sha256": "ff33a1d3c5554e14698638104d8a94e9d3e301189df867d720d68aefe46da17e"
+    },
+    {
+      "path": "scenes-played/descent.png",
+      "sha256": "e19e3bd64d0af883e8d0b70b4b81797b36cc289854530c7acdfdc3ae283bbb65"
+    },
+    {
+      "path": "finish/finish-sprint.png",
+      "sha256": "1d3aaea4100494349c7f409481957b098818da1f34197e22aa92fffc33d0b3a4"
+    },
+    {
+      "path": "finish/finish-lunge.png",
+      "sha256": "ee3f3b6aaaaf3afefd73e6c657fe5bc9d3326772d72a9f9681fff55be4645542"
+    },
+    {
+      "path": "finish/ceremony-winner.png",
+      "sha256": "cf23ae1fd7f2fc28a1927d6a34ad8ac2717f286dd76544b304924212649903b3"
+    }
+  ],
+  "observations": [
+    {
+      "scope": "320 / 390 race layout",
+      "seen": "Main race controls, remaining distance, rider labels, energy and attack controls are present and separated from the scene. No newly missing rider bodies, wrong-colour cache tiles or clipped primary buttons were visible. The compact metrics continue below the viewport through normal page scrolling.",
+      "limitation": "At 320, small speed units and auxiliary button text are tightly packed; this remains a P3 readability limitation rather than a new cache regression."
+    },
+    {
+      "scope": "4K overview",
+      "seen": "The wider scene and two-column data layout remain intact. Script-measured full-quality canvas is 1902×538 CSS pixels; no blank central canvas or geometry break is visible.",
+      "limitation": "Secondary text remains small at the captured 4K scale. A resized overview does not establish comfortable native-panel reading distance or replace physical-device inspection."
+    },
+    {
+      "scope": "Mobile Race Centre",
+      "seen": "Close control, tabs, search, group summary and position rows are readable and aligned in the captured 390-wide view.",
+      "limitation": "This screenshot does not test touch precision or every long rider/team name."
+    },
+    {
+      "scope": "Peloton / climb / sprint / descent",
+      "seen": "Foreground riders and bicycles remain complete; mountain silhouettes, roadside objects, road slope and focus labels show no obvious aliasing corruption from reusing cache canvases. The descent frame shows a low tucked body consistent with coasting. Dense groups preserve the existing overlapping pack aesthetic.",
+      "limitation": "These are single captured frames of automated real-RAF playback; they cannot alone prove smooth cadence, scene continuity between every frame or a particular FPS. Exact cached-raster parity is verified separately."
+    },
+    {
+      "scope": "Sprint approach / finish line / winner ceremony",
+      "seen": "The finish line, remaining-distance emphasis, foreground rider body and winner platform remain intact in three captures. Winner flowers and feet do not visibly separate from their supporting pose/platform in the inspected ceremony frame.",
+      "limitation": "Two approach frames and one award frame do not replace watching the full ceremony. Full 1× playback evidence remains attached to the prior SHA558f source, with exact source-isolation proof for the new hash."
+    }
+  ],
+  "newBlockingVisualDefectsObserved": [],
+  "remainingP3": [
+    "320 auxiliary typography density",
+    "4K secondary typography size",
+    "Individual rider readability in dense packs"
+  ],
+  "notClaimed": [
+    "Universal 60 FPS",
+    "Physical phone/4K-panel acceptance",
+    "Firefox or Safari raster equivalence",
+    "A fresh full-length 1× award playback on the final hash"
+  ]
+}

@@ -1,0 +1,666 @@
+{
+  "status": "completed",
+  "startedAt": "2026-10-09T14:46:04.326934+00:00",
+  "source": "/workspace/scratch/018887db1a18/grand-tour-v25/Grand-Tour-V25.html",
+  "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "sourceBytes": 1783282,
+  "cwd": "/workspace/scratch/018887db1a18/grand-tour-v25",
+  "python": "3.12.14 (main, Aug 25 2026, 14:00:49) [Clang 22.1.3 ]",
+  "node": "v24.19.0",
+  "environment": {
+    "PYTHONPATH": "/workspace/scratch/018887db1a18/tool-deps"
+  },
+  "scope": "Fresh final-source reruns; original 558fdf records preserved; source checked before and after every command. Counts use each suite own units.",
+  "runs": [
+    {
+      "name": "static",
+      "command": [
+        "python",
+        "tests/v25/static_verify.py",
+        "--out",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/storage/static.json"
+      ],
+      "commandText": "python tests/v25/static_verify.py --out /workspace/scratch/018887db1a18/evidence/final-cache/storage/static.json",
+      "cwd": "/workspace/scratch/018887db1a18/grand-tour-v25",
+      "startedAt": "2026-10-09T14:46:04.333307+00:00",
+      "sourceSHA256Before": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "expectedCount": 11,
+      "status": "completed",
+      "exitCode": 0,
+      "endedAt": "2026-10-09T14:46:04.529005+00:00",
+      "wallSeconds": 0.194,
+      "sourceSHA256After": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "result": {
+        "passed": 11,
+        "failed": 0,
+        "skipped": 0,
+        "pass": true
+      },
+      "reportSourceSHA256": [
+        "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec"
+      ],
+      "outputs": [
+        {
+          "file": "static.json",
+          "bytes": 587,
+          "sha256": "f6b0359c62212053820eb676e2e2171bdd6b1bda4d2bb16823fd5fd11082f4e3"
+        },
+        {
+          "file": "static.log",
+          "bytes": 588,
+          "sha256": "6501422af6754d801f9a997d9ca15be0dd53286355c0cbf6a2a2ee818bfa1cd4"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "core-parity",
+      "command": [
+        "node",
+        "tests/v25/core-parity.cjs",
+        "Grand-Tour-V24.html",
+        "Grand-Tour-V25.html",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/storage/core-parity.json"
+      ],
+      "commandText": "node tests/v25/core-parity.cjs Grand-Tour-V24.html Grand-Tour-V25.html /workspace/scratch/018887db1a18/evidence/final-cache/storage/core-parity.json",
+      "cwd": "/workspace/scratch/018887db1a18/grand-tour-v25",
+      "startedAt": "2026-10-09T14:46:04.532031+00:00",
+      "sourceSHA256Before": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "expectedCount": 14,
+      "status": "completed",
+      "exitCode": 0,
+      "endedAt": "2026-10-09T14:46:04.750652+00:00",
+      "wallSeconds": 0.217,
+      "sourceSHA256After": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "result": {
+        "passed": 14,
+        "failed": 0,
+        "skipped": 0,
+        "pass": true
+      },
+      "reportSourceSHA256": [
+        "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec"
+      ],
+      "outputs": [
+        {
+          "file": "core-parity.json",
+          "bytes": 3590,
+          "sha256": "3b943d39f9946dd894f54b7ce7919e97aa568b6768ad54b332fec1bf140cb067"
+        },
+        {
+          "file": "core-parity.log",
+          "bytes": 101,
+          "sha256": "ee67d87364b66f563e77e948565d58de0ff19b8e2ae6a3411a0e8a96b05179ea"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "focused",
+      "command": [
+        "node",
+        "tests/v25/focused.cjs",
+        "Grand-Tour-V25.html",
+        "archive/v22/Grand-Tour-V22.html",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/storage/focused.json"
+      ],
+      "commandText": "node tests/v25/focused.cjs Grand-Tour-V25.html archive/v22/Grand-Tour-V22.html /workspace/scratch/018887db1a18/evidence/final-cache/storage/focused.json",
+      "cwd": "/workspace/scratch/018887db1a18/grand-tour-v25",
+      "startedAt": "2026-10-09T14:46:04.753315+00:00",
+      "sourceSHA256Before": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "expectedCount": 35,
+      "status": "completed",
+      "exitCode": 0,
+      "endedAt": "2026-10-09T14:47:19.208207+00:00",
+      "wallSeconds": 74.45,
+      "sourceSHA256After": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "result": {
+        "passed": 35,
+        "failed": 0
+      },
+      "reportSourceSHA256": [
+        "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec"
+      ],
+      "outputs": [
+        {
+          "file": "focused.json",
+          "bytes": 8374,
+          "sha256": "b96e1391a3cd5a614ba361826d739f0020db6d53f551b81808a089ef418f2e0d"
+        },
+        {
+          "file": "focused.log",
+          "bytes": 2487,
+          "sha256": "1e1663335928dd50b93fc609b84d81aae1713bd88d9c30ee02f9b0656641b118"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "save-finish-boundary",
+      "command": [
+        "node",
+        "tests/v24/save-finish-boundary.cjs",
+        "Grand-Tour-V25.html",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/storage/save-finish-boundary.json"
+      ],
+      "commandText": "node tests/v24/save-finish-boundary.cjs Grand-Tour-V25.html /workspace/scratch/018887db1a18/evidence/final-cache/storage/save-finish-boundary.json",
+      "cwd": "/workspace/scratch/018887db1a18/grand-tour-v25",
+      "startedAt": "2026-10-09T14:47:19.211599+00:00",
+      "sourceSHA256Before": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "expectedCount": 25,
+      "status": "completed",
+      "exitCode": 0,
+      "endedAt": "2026-10-09T14:48:02.795551+00:00",
+      "wallSeconds": 43.582,
+      "sourceSHA256After": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "result": {
+        "passed": 25,
+        "failed": 0
+      },
+      "reportSourceSHA256": [
+        "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec"
+      ],
+      "outputs": [
+        {
+          "file": "save-finish-boundary.json",
+          "bytes": 3268,
+          "sha256": "35bf24e3ba9f802d6e1351f8631b66dd4fc21a4d055b8f1bd06b79f0d072c7c8"
+        },
+        {
+          "file": "save-finish-boundary.log",
+          "bytes": 1758,
+          "sha256": "a7836110b43041549f976e1de881ad0129258ff34aef124da1deafe23d4f13e6"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "storage-ownership",
+      "command": [
+        "node",
+        "tests/v23/storage-ownership.cjs",
+        "Grand-Tour-V25.html"
+      ],
+      "commandText": "node tests/v23/storage-ownership.cjs Grand-Tour-V25.html",
+      "cwd": "/workspace/scratch/018887db1a18/grand-tour-v25",
+      "startedAt": "2026-10-09T14:48:02.798182+00:00",
+      "sourceSHA256Before": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "expectedCount": 3,
+      "status": "completed",
+      "exitCode": 0,
+      "endedAt": "2026-10-09T14:48:12.706436+00:00",
+      "wallSeconds": 9.906,
+      "sourceSHA256After": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "result": {
+        "reportedCount": 3,
+        "passed": 3,
+        "assertedGroups": [
+          "PASS storage ownership, actual settings callbacks, completion, ceremony, replacement, import, failures, codec; Web Locks=false",
+          "PASS storage ownership, actual settings callbacks, completion, ceremony, replacement, import, failures, codec; Web Locks=true",
+          "PASS secondary GC current threat and exit"
+        ],
+        "countBasis": "Printed PASS groups plus process exit code"
+      },
+      "outputs": [
+        {
+          "file": "storage-ownership.log",
+          "bytes": 295,
+          "sha256": "3b183ff665e3ce7b51ef894cbf2390cc059b3ee1e9ef5aea7f6ba69d32c576c5"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "ttt-wheel",
+      "command": [
+        "node",
+        "tests/v23/ttt-wheel.cjs",
+        "Grand-Tour-V25.html",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/storage/ttt-wheel.json"
+      ],
+      "commandText": "node tests/v23/ttt-wheel.cjs Grand-Tour-V25.html /workspace/scratch/018887db1a18/evidence/final-cache/storage/ttt-wheel.json",
+      "cwd": "/workspace/scratch/018887db1a18/grand-tour-v25",
+      "startedAt": "2026-10-09T14:48:12.710825+00:00",
+      "sourceSHA256Before": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "expectedCount": 8,
+      "status": "completed",
+      "exitCode": 0,
+      "endedAt": "2026-10-09T14:48:39.155100+00:00",
+      "wallSeconds": 26.442,
+      "sourceSHA256After": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "result": {
+        "reportedCount": 8,
+        "passed": 8,
+        "countBasis": "Legacy array; completed process exit code enforces assertions"
+      },
+      "reportSourceSHA256": [],
+      "outputs": [
+        {
+          "file": "ttt-wheel.json",
+          "bytes": 1872,
+          "sha256": "3ff6398252fad3ec1e42fb3b224fee0316aec7e5af6cbacf796b576a8a4ed8f3"
+        },
+        {
+          "file": "ttt-wheel.log",
+          "bytes": 1873,
+          "sha256": "50167d64c935770ad4adfae85fdeb792bed0333b428f7d607643579db870629a"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "first-settings",
+      "command": [
+        "node",
+        "tests/v25/storage-first-settings.cjs",
+        "Grand-Tour-V25.html",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/storage/first-settings.json"
+      ],
+      "commandText": "node tests/v25/storage-first-settings.cjs Grand-Tour-V25.html /workspace/scratch/018887db1a18/evidence/final-cache/storage/first-settings.json",
+      "cwd": "/workspace/scratch/018887db1a18/grand-tour-v25",
+      "startedAt": "2026-10-09T14:48:39.157753+00:00",
+      "sourceSHA256Before": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "expectedCount": 10,
+      "status": "completed",
+      "exitCode": 0,
+      "endedAt": "2026-10-09T14:48:40.631371+00:00",
+      "wallSeconds": 1.471,
+      "sourceSHA256After": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "result": {
+        "passed": 10,
+        "failed": 0,
+        "sourceUnchanged": true
+      },
+      "reportSourceSHA256": [
+        "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec"
+      ],
+      "outputs": [
+        {
+          "file": "first-settings.json",
+          "bytes": 2707,
+          "sha256": "cfe143134ceb51064afe888990528b9c2e77b65039eb547d076ba55aeaf9e49a"
+        },
+        {
+          "file": "first-settings.log",
+          "bytes": 858,
+          "sha256": "72a998aa90ad5fd5f4b6374e5193cb83d83b9c2d7737dd1c980c5dc66ee9d59f"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "storage-validation",
+      "command": [
+        "node",
+        "tests/v25/storage-validation.cjs",
+        "Grand-Tour-V25.html",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/storage/storage-validation.json",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/storage/validation-fixtures"
+      ],
+      "commandText": "node tests/v25/storage-validation.cjs Grand-Tour-V25.html /workspace/scratch/018887db1a18/evidence/final-cache/storage/storage-validation.json /workspace/scratch/018887db1a18/evidence/final-cache/storage/validation-fixtures",
+      "cwd": "/workspace/scratch/018887db1a18/grand-tour-v25",
+      "startedAt": "2026-10-09T14:48:40.634203+00:00",
+      "sourceSHA256Before": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "expectedCount": 43,
+      "status": "completed",
+      "exitCode": 0,
+      "endedAt": "2026-10-09T14:49:50.308997+00:00",
+      "wallSeconds": 69.673,
+      "sourceSHA256After": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "result": {
+        "passed": 43,
+        "failed": 0,
+        "sourceUnchanged": true
+      },
+      "reportSourceSHA256": [
+        "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec"
+      ],
+      "outputs": [
+        {
+          "file": "storage-validation.json",
+          "bytes": 11571,
+          "sha256": "b3fcb043ea583b2e7e14b09164c263b32d09276e24073596e49089e58c1187cf"
+        },
+        {
+          "file": "storage-validation.log",
+          "bytes": 3721,
+          "sha256": "34d322b5661b379c25a69017b93f5488bd920217b88989fd2b45a5b84c0cd002"
+        },
+        {
+          "file": "validation-fixtures/natural-completed-record.json",
+          "bytes": 56998,
+          "sha256": "c642054cdd59eb9ad3d84c3c7f032f7233c4a3a656c2be02e332e469f1ffa03b"
+        },
+        {
+          "file": "validation-fixtures/natural-first-finish.json",
+          "bytes": 493326,
+          "sha256": "e7c6d486e6f669fe0e01351e5ebf64e70569efd7689b8beb805c6588e1a1f07c"
+        },
+        {
+          "file": "validation-fixtures/natural-second-stage-save.json",
+          "bytes": 430844,
+          "sha256": "88f181db6c7ef296b986dbcccaa4a910ceee16dbbb8a6c827e85b2319a608af9"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "storage-browser",
+      "command": [
+        "python",
+        "tests/v25/storage-first-settings-browser.py",
+        "--source",
+        "Grand-Tour-V25.html",
+        "--validation-fixtures",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/storage/validation-fixtures",
+        "--out",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/storage/storage-browser"
+      ],
+      "commandText": "python tests/v25/storage-first-settings-browser.py --source Grand-Tour-V25.html --validation-fixtures /workspace/scratch/018887db1a18/evidence/final-cache/storage/validation-fixtures --out /workspace/scratch/018887db1a18/evidence/final-cache/storage/storage-browser",
+      "cwd": "/workspace/scratch/018887db1a18/grand-tour-v25",
+      "startedAt": "2026-10-09T14:49:50.314013+00:00",
+      "sourceSHA256Before": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "expectedCount": 12,
+      "status": "completed",
+      "exitCode": 0,
+      "endedAt": "2026-10-09T14:50:09.849698+00:00",
+      "wallSeconds": 19.533,
+      "sourceSHA256After": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "result": {
+        "passed": 12,
+        "failed": 0,
+        "pass": true
+      },
+      "reportSourceSHA256": [
+        "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec"
+      ],
+      "outputs": [
+        {
+          "file": "storage-browser/first-settings-False-1440.png",
+          "bytes": 324740,
+          "sha256": "05b32e1b73834565e927164fb253ef8b6f2020eb4b49c9a3cceb3ef0ccfb5c6b"
+        },
+        {
+          "file": "storage-browser/first-settings-False-390.png",
+          "bytes": 120936,
+          "sha256": "05b221fc14c8c5042810b2573284e98e120e50928d6e855f0ebba5e9a3113c22"
+        },
+        {
+          "file": "storage-browser/first-settings-True-1440.png",
+          "bytes": 324732,
+          "sha256": "d41e204bc5a059d6da14cf0308afd46c34dbd5cde7b71f6aea828bf6bdc94dab"
+        },
+        {
+          "file": "storage-browser/first-settings-True-390.png",
+          "bytes": 120936,
+          "sha256": "05b221fc14c8c5042810b2573284e98e120e50928d6e855f0ebba5e9a3113c22"
+        },
+        {
+          "file": "storage-browser/legacy-settings-False.png",
+          "bytes": 246184,
+          "sha256": "58c93fe74cc3e5e2529ab66cd7315f6cdf9739397aec3319bd7a4f4f5e4b31a7"
+        },
+        {
+          "file": "storage-browser/legacy-settings-True.png",
+          "bytes": 246184,
+          "sha256": "58c93fe74cc3e5e2529ab66cd7315f6cdf9739397aec3319bd7a4f4f5e4b31a7"
+        },
+        {
+          "file": "storage-browser/recovered-prefix-False-1440.png",
+          "bytes": 244703,
+          "sha256": "dad43eb58825aa6415ee89235f3b251acf5e2f1922e21b998407e99b16438174"
+        },
+        {
+          "file": "storage-browser/recovered-prefix-False-390.png",
+          "bytes": 97100,
+          "sha256": "e465c7ee3f0d72935e18600dfb1365ef2555566d20ac01dc3fca7b9e7159acc5"
+        },
+        {
+          "file": "storage-browser/recovered-prefix-True-1440.png",
+          "bytes": 244703,
+          "sha256": "dad43eb58825aa6415ee89235f3b251acf5e2f1922e21b998407e99b16438174"
+        },
+        {
+          "file": "storage-browser/recovered-prefix-True-390.png",
+          "bytes": 97100,
+          "sha256": "e465c7ee3f0d72935e18600dfb1365ef2555566d20ac01dc3fca7b9e7159acc5"
+        },
+        {
+          "file": "storage-browser/rejected-imports-False-1440.png",
+          "bytes": 253502,
+          "sha256": "863ae9d95940ab2d9c10ae44d44b2360ae5b3e7a1ce2fefb4371f3fe8efc8b67"
+        },
+        {
+          "file": "storage-browser/rejected-imports-False-390.png",
+          "bytes": 102409,
+          "sha256": "b83b05511cf6b6c51b5a79e155a602425837bc517294d43b5cb7a08dbec2c7c8"
+        },
+        {
+          "file": "storage-browser/rejected-imports-True-1440.png",
+          "bytes": 253502,
+          "sha256": "863ae9d95940ab2d9c10ae44d44b2360ae5b3e7a1ce2fefb4371f3fe8efc8b67"
+        },
+        {
+          "file": "storage-browser/rejected-imports-True-390.png",
+          "bytes": 102364,
+          "sha256": "9d807fa001c1533d9e12db735f9024057bac7464008b9d4b88bd4db0f8822372"
+        },
+        {
+          "file": "storage-browser/storage-first-settings-browser.json",
+          "bytes": 9418,
+          "sha256": "be81906328b894a04c86cb2df7ca1a779030971ad38d4f9d72b10c725b0750b7"
+        },
+        {
+          "file": "storage-browser/two-empty-pages-False.png",
+          "bytes": 284532,
+          "sha256": "6b239326a11b42007f5d7b420488f5dd07f3325b09cfd2581ad28b83177f42cc"
+        },
+        {
+          "file": "storage-browser/two-empty-pages-True.png",
+          "bytes": 284539,
+          "sha256": "adb75456c646db297a70664689326485d56563d8920c2e9ae7fdbce22996ecb1"
+        },
+        {
+          "file": "storage-browser.log",
+          "bytes": 6218,
+          "sha256": "0c3420b307cdec789d797d562dadee7f19a26596dbd3d4f3c9bd74b1e23b8b8b"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "save-finish-browser",
+      "command": [
+        "python",
+        "tests/v24/save-finish-browser.py",
+        "--source",
+        "Grand-Tour-V25.html",
+        "--out",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/storage/save-finish-browser"
+      ],
+      "commandText": "python tests/v24/save-finish-browser.py --source Grand-Tour-V25.html --out /workspace/scratch/018887db1a18/evidence/final-cache/storage/save-finish-browser",
+      "cwd": "/workspace/scratch/018887db1a18/grand-tour-v25",
+      "startedAt": "2026-10-09T14:50:09.864700+00:00",
+      "sourceSHA256Before": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "expectedCount": 2,
+      "status": "completed",
+      "exitCode": 0,
+      "endedAt": "2026-10-09T14:50:24.721039+00:00",
+      "wallSeconds": 14.85,
+      "sourceSHA256After": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "result": {
+        "reportedCount": 2,
+        "passed": 2,
+        "failed": 0,
+        "pass": true
+      },
+      "reportSourceSHA256": [
+        "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec"
+      ],
+      "outputs": [
+        {
+          "file": "save-finish-browser/rejected-finishRaceTime-1440.png",
+          "bytes": 254133,
+          "sha256": "73183d015e03e05568169637c524a5b89a386d6706114cb00e2e544a702499e8"
+        },
+        {
+          "file": "save-finish-browser/rejected-finishRaceTime-390.png",
+          "bytes": 103420,
+          "sha256": "5b8f5f59689d7715219d2fb2f4c505dd691e548a4ca9ff8f0732963a6acfa4ae"
+        },
+        {
+          "file": "save-finish-browser/rejected-finishedTime-1440.png",
+          "bytes": 254133,
+          "sha256": "73183d015e03e05568169637c524a5b89a386d6706114cb00e2e544a702499e8"
+        },
+        {
+          "file": "save-finish-browser/rejected-finishedTime-390.png",
+          "bytes": 103420,
+          "sha256": "5b8f5f59689d7715219d2fb2f4c505dd691e548a4ca9ff8f0732963a6acfa4ae"
+        },
+        {
+          "file": "save-finish-browser/rejected-lastFinishWorld-1440.png",
+          "bytes": 254004,
+          "sha256": "aa930ecb2fec747641c5936c6e68f876a1f2481681bb4430034e45e88e2d7bcc"
+        },
+        {
+          "file": "save-finish-browser/rejected-lastFinishWorld-390.png",
+          "bytes": 103296,
+          "sha256": "8cd151a22aba3635be7f6f310c7d2cd1303df222c6a6e5e84686ffa0ee858c99"
+        },
+        {
+          "file": "save-finish-browser/resumed-stage2-1440.png",
+          "bytes": 457350,
+          "sha256": "8711f3943cb53304c3ac811afa5af125afca0dea3efd5b979d0c730c4cb2dd8b"
+        },
+        {
+          "file": "save-finish-browser/resumed-stage2-390.png",
+          "bytes": 166465,
+          "sha256": "7ff1426dcd5281cd0e09d76d25918d061bf8766312ce08fb0ad7de32bded4942"
+        },
+        {
+          "file": "save-finish-browser/save-finish-browser.json",
+          "bytes": 3380,
+          "sha256": "be9618f2aa5a0d663301360ca4b69e7b21ed6daeb4f7b94bfac91606a7113424"
+        },
+        {
+          "file": "save-finish-browser/settled-1440.png",
+          "bytes": 127027,
+          "sha256": "8264cc734bf973c1256e0340db5c557d3df12e4b0ef6dcb3ec68aae6f6957cac"
+        },
+        {
+          "file": "save-finish-browser/settled-390.png",
+          "bytes": 58470,
+          "sha256": "09ac893b233091f5658190188011c64538f3cacc644b98b6678db0bb91d1ca0d"
+        },
+        {
+          "file": "save-finish-browser.log",
+          "bytes": 3381,
+          "sha256": "ef3116c8fb19d79ee82fdd3798b216bca9ec4124a6e7dd43864bdd8eac9312a6"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "full-tour-compatibility",
+      "command": [
+        "node",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/storage/full-tour-compatibility.cjs",
+        "Grand-Tour-V24.html",
+        "Grand-Tour-V25.html",
+        "/workspace/scratch/018887db1a18/evidence/simulation/v24-tour-314159-tour.json",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/storage/full-tour-compatibility.json"
+      ],
+      "commandText": "node /workspace/scratch/018887db1a18/evidence/final-cache/storage/full-tour-compatibility.cjs Grand-Tour-V24.html Grand-Tour-V25.html /workspace/scratch/018887db1a18/evidence/simulation/v24-tour-314159-tour.json /workspace/scratch/018887db1a18/evidence/final-cache/storage/full-tour-compatibility.json",
+      "cwd": "/workspace/scratch/018887db1a18/grand-tour-v25",
+      "startedAt": "2026-10-09T14:52:10.436818+00:00",
+      "sourceSHA256Before": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "expectedCount": 1,
+      "status": "completed",
+      "scope": "Additional requested quick strict decode/normalize of existing full V24 Tour; no simulation.",
+      "exitCode": 0,
+      "endedAt": "2026-10-09T14:52:10.816520+00:00",
+      "wallSeconds": 0.378,
+      "sourceSHA256After": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "result": {
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "pass": true
+      },
+      "pass": true,
+      "outputs": [
+        {
+          "file": "full-tour-compatibility.cjs",
+          "bytes": 2915,
+          "sha256": "f4819177d6c8993f23b5a4c8bc089c6fcf0a193df046977fff379e6f3c5338a2"
+        },
+        {
+          "file": "full-tour-compatibility.json",
+          "bytes": 1184,
+          "sha256": "d4842186b8fd38b157638471db78074c1febca79e9091173cd04ed4bafbcdbb5"
+        },
+        {
+          "file": "full-tour-compatibility.log",
+          "bytes": 1184,
+          "sha256": "d4842186b8fd38b157638471db78074c1febca79e9091173cd04ed4bafbcdbb5"
+        }
+      ]
+    },
+    {
+      "name": "full-tour-compatibility-portable",
+      "gateGroup": "full-tour-compatibility",
+      "command": [
+        "node",
+        "tests/v25/full-tour-compatibility.cjs",
+        "Grand-Tour-V24.html",
+        "Grand-Tour-V25.html",
+        "/workspace/scratch/018887db1a18/evidence/simulation/v24-tour-314159-tour.json",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/storage/full-tour-compatibility-portable.json"
+      ],
+      "commandText": "node tests/v25/full-tour-compatibility.cjs Grand-Tour-V24.html Grand-Tour-V25.html /workspace/scratch/018887db1a18/evidence/simulation/v24-tour-314159-tour.json /workspace/scratch/018887db1a18/evidence/final-cache/storage/full-tour-compatibility-portable.json",
+      "cwd": "/workspace/scratch/018887db1a18/grand-tour-v25",
+      "startedAt": "2026-10-09T14:54:18.109705+00:00",
+      "sourceSHA256Before": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "script": {
+        "file": "tests/v25/full-tour-compatibility.cjs",
+        "sha256": "63597fc2993d1b1a840bf7c93d0e6fc99233157e3af2d693e50d604bf9c661fe"
+      },
+      "expectedCount": 1,
+      "status": "completed",
+      "scope": "Same strict fixture compatibility check rerun through packaged portable test. This is not additional fixture coverage.",
+      "exitCode": 0,
+      "endedAt": "2026-10-09T14:54:18.497004+00:00",
+      "wallSeconds": 0.385,
+      "sourceSHA256After": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "result": {
+        "passed": 1,
+        "failed": 0,
+        "skipped": 0,
+        "pass": true
+      },
+      "pass": true,
+      "outputs": [
+        {
+          "file": "full-tour-compatibility-portable.json",
+          "bytes": 1379,
+          "sha256": "fd484fefc3482351c417d85fc741c0125dad1483c0181cf777ce1d592efd5344"
+        },
+        {
+          "file": "full-tour-compatibility-portable.log",
+          "bytes": 1379,
+          "sha256": "fd484fefc3482351c417d85fc741c0125dad1483c0181cf777ce1d592efd5344"
+        }
+      ]
+    }
+  ],
+  "endedAt": "2026-10-09T14:54:18.499139+00:00",
+  "sourceSHA256AtEnd": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "passedSuites": 11,
+  "failedSuites": 0,
+  "skippedSuites": 0,
+  "pass": true,
+  "passedRuns": 12,
+  "failedRuns": 0,
+  "countingNote": "The portable full-tour compatibility rerun repeats the same seed 314159 fixture check; 12 command executions represent 11 distinct gate groups (10 required suites plus one compatibility fixture)."
+}

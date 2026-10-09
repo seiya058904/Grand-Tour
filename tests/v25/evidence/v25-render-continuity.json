@@ -1,0 +1,52 @@
+{
+  "source": "Grand-Tour-V25.html",
+  "sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "passed": 5,
+  "failed": 0,
+  "skipped": 0,
+  "checks": [
+    {
+      "name": "Natural stage 5: buildings remain at fixed world locations",
+      "pass": true,
+      "detail": {
+        "pairs": 9,
+        "recordedObjects": 132
+      }
+    },
+    {
+      "name": "Natural stage 19: buildings remain at fixed world locations",
+      "pass": true,
+      "detail": {
+        "pairs": 12,
+        "recordedObjects": 24
+      }
+    },
+    {
+      "name": "Natural stage 19: trees remain at fixed world locations",
+      "pass": true,
+      "detail": {
+        "pairs": 10,
+        "recordedObjects": 230
+      }
+    },
+    {
+      "name": "Finish spectators enter with the roadside instead of appearing across the viewport",
+      "pass": true,
+      "detail": {
+        "before": 16,
+        "after": 16,
+        "cameraTravelMetres": 0.2
+      }
+    },
+    {
+      "name": "Scenery remains deterministic and cannot change the simulation snapshot",
+      "pass": true,
+      "detail": {
+        "buildings": 0,
+        "trees": 19,
+        "seed": 2058765
+      }
+    }
+  ],
+  "scope": "Production scenery painter call recorder; browser rasterization and visual QA run separately."
+}

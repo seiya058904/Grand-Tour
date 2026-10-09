@@ -1,0 +1,40 @@
+{
+  "baseline": "Grand-Tour-V24.html",
+  "baselineSha256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+  "candidate": "Grand-Tour-V25.html",
+  "candidateSha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "passed": 4,
+  "failed": 0,
+  "skipped": 0,
+  "checks": [
+    {
+      "name": "Stage 5: V24/V25 depth targets and every pose field match",
+      "pass": true,
+      "seed": 2058765,
+      "updates": 244,
+      "comparedRiders": 44896
+    },
+    {
+      "name": "Stage 19: V24/V25 depth targets and every pose field match",
+      "pass": true,
+      "seed": 2058765,
+      "updates": 244,
+      "comparedRiders": 44896
+    },
+    {
+      "name": "Stage 1: V24/V25 depth targets and every pose field match",
+      "pass": true,
+      "seed": 2058765,
+      "updates": 244,
+      "comparedRiders": 1952
+    },
+    {
+      "name": "Stage 16: V24/V25 depth targets and every pose field match",
+      "pass": true,
+      "seed": 2058765,
+      "updates": 244,
+      "comparedRiders": 244
+    }
+  ],
+  "scope": "Exact view-state parity on natural race trajectories; not a frame-rate benchmark."
+}

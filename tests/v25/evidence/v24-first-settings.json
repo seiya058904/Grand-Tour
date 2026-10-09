@@ -1,0 +1,74 @@
+{
+  "source": "/workspace/scratch/018887db1a18/grand-tour-v25/Grand-Tour-V24.html",
+  "sourceSHA256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+  "checks": [
+    {
+      "name": "first settings change cannot prevent the first tour save",
+      "locks": false,
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: the same page must still own empty progress after changing settings\n\nfalse !== true\n\n    at /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:28:11\n    at async test (/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:22:81)\n    at async /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:25:3"
+    },
+    {
+      "name": "two empty pages can merge settings before exactly one claims progress",
+      "locks": false,
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n-   true,\n    false,\n+   false\n  ]\n\n    at /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:37:11\n    at async test (/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:22:81)\n    at async /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:34:3"
+    },
+    {
+      "name": "settings before legacy-key promotion retain the loaded tour ownership",
+      "locks": false,
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: promoting the loaded legacy progress through a setting is still owned by this page\n\nfalse !== true\n\n    at /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:51:11\n    at async test (/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:22:81)\n    at async /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:44:3"
+    },
+    {
+      "name": "a revision-bearing empty store is distinct from never-saved progress",
+      "locks": false,
+      "pass": true,
+      "detail": {
+        "revision": 2,
+        "staleRejected": true
+      }
+    },
+    {
+      "name": "a stale setting cannot republish a tour after canonical storage disappears",
+      "locks": false,
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: creating canonical progress again requires ownership of its absence\n\ntrue !== false\n\n    at /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:64:11\n    at async test (/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:22:81)\n    at async /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:62:3"
+    },
+    {
+      "name": "first settings change cannot prevent the first tour save",
+      "locks": true,
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: the same page must still own empty progress after changing settings\n\nfalse !== true\n\n    at /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:28:11\n    at async test (/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:22:81)\n    at async /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:25:3"
+    },
+    {
+      "name": "two empty pages can merge settings before exactly one claims progress",
+      "locks": true,
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:\n+ actual - expected\n\n  [\n-   true,\n    false,\n+   false\n  ]\n\n    at /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:37:11\n    at async test (/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:22:81)\n    at async /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:34:3"
+    },
+    {
+      "name": "settings before legacy-key promotion retain the loaded tour ownership",
+      "locks": true,
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: promoting the loaded legacy progress through a setting is still owned by this page\n\nfalse !== true\n\n    at /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:51:11\n    at async test (/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:22:81)\n    at async /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:44:3"
+    },
+    {
+      "name": "a revision-bearing empty store is distinct from never-saved progress",
+      "locks": true,
+      "pass": true,
+      "detail": {
+        "revision": 2,
+        "staleRejected": true
+      }
+    },
+    {
+      "name": "a stale setting cannot republish a tour after canonical storage disappears",
+      "locks": true,
+      "pass": false,
+      "error": "AssertionError [ERR_ASSERTION]: creating canonical progress again requires ownership of its absence\n\ntrue !== false\n\n    at /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:64:11\n    at async test (/workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:22:81)\n    at async /workspace/scratch/018887db1a18/grand-tour-v25/tests/v25/storage-first-settings.cjs:62:3"
+    }
+  ],
+  "passed": 2,
+  "failed": 8
+}

@@ -10,7 +10,7 @@
 </p>
 
 <p align="center">
-  <a href="https://seiya058904.github.io/Grand-Tour/"><strong>▶ Start Racing</strong></a>
+  <a href="Grand-Tour-V25.html"><strong>▶ Open V25 Offline</strong></a>
   &nbsp;·&nbsp;
   <a href="#inside-the-race">🏁 The Race</a>
   &nbsp;·&nbsp;
@@ -23,7 +23,7 @@
 
 <p align="center">
   <sub>21 STAGES &nbsp;·&nbsp; 184-RIDER START LIST &nbsp;·&nbsp; SIX RIDER ROLES &nbsp;·&nbsp; ONE SELF-CONTAINED HTML GAME</sub><br>
-  <sub>CURRENT EDITION: V24</sub>
+  <sub>CURRENT SOURCE CANDIDATE: V25 · NOT DEPLOYED</sub>
 </p>
 
 <p align="center">
@@ -103,7 +103,7 @@ The game also provides a **Race Centre**, team-radio-style information, feeding 
 
 ## 🎬 From Roadside to Podium
 
-V24 concentrates on making the race **feel continuous and readable** while preserving the established simulation.
+V25 improves save ownership and recovery, provisional standings, and scenery continuity while preserving the established simulation. The existing riding and award systems have been retained and rechecked.
 
 <table>
   <tr>
@@ -129,7 +129,7 @@ V24 concentrates on making the race **feel continuous and readable** while prese
 </table>
 
 > [!NOTE]
-> **V24 is primarily a presentation refinement.** Its riding motion, scenery, camera, and HUD improvements preserve the prior race rules and outcomes. The project does not claim a general physics rewrite or guaranteed higher frame rates.
+> **V25 is an audited source candidate.** Its local fixes address confirmed storage and presentation faults. Race physics, AI, timing and seeded results remain unchanged; the expanded flat-stage survey still identifies an unresolved Sprinter balance signal. See [V25-AUDIT-REPORT.md](V25-AUDIT-REPORT.md) for evidence and limits.
 
 <a id="play-online-or-offline"></a>
 ## 🚀 Play Online or Offline
@@ -137,43 +137,43 @@ V24 concentrates on making the race **feel continuous and readable** while prese
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>🌐 Browser — Play Now</h3>
-      <p><sub>GITHUB PAGES · NO INSTALLATION</sub></p>
-      <p>Open the official website and enter the current V24 race. The root landing page redirects to the standalone game.</p>
-      <p><strong><a href="https://seiya058904.github.io/Grand-Tour/">▶ Launch Grand Tour →</a></strong></p>
+      <h3>📦 V25 Source Candidate</h3>
+      <p><sub>LOCAL DELIVERY · NO BUILD</sub></p>
+      <p>Extract the source package and open its index.html. This V25 candidate has not been deployed to the project website or any hosting service.</p>
+      <p><strong><a href="index.html">Open the packaged entry →</a></strong></p>
     </td>
     <td width="50%" valign="top">
       <h3>📄 Single HTML — Play Offline</h3>
       <p><sub>SELF-CONTAINED · NO BUILD · NO SERVER</sub></p>
-      <p>Download <a href="Grand-Tour-V24.html"><code>Grand-Tour-V24.html</code></a> and open it in a modern browser. The game does not require npm or external runtime libraries.</p>
-      <p><strong><a href="Grand-Tour-V24.html">Get the standalone HTML →</a></strong></p>
+      <p>Open <a href="Grand-Tour-V25.html"><code>Grand-Tour-V25.html</code></a> and open it in a modern browser. The game does not require npm or external runtime libraries.</p>
+      <p><strong><a href="Grand-Tour-V25.html">Open the standalone HTML →</a></strong></p>
     </td>
   </tr>
 </table>
 
-### 📦 The Frozen V24 Package
+### 📦 Source Package and Historical Baseline
 
-The [V24 Final ZIP](Grand-Tour-V24-Final.zip) is a preserved delivery package containing the game and its supporting verification material. After extracting it, open **`Grand-Tour-V24/index.html`**.
+`Grand-Tour-V25-Source.zip` contains the V25 entry, unchanged latest V24 HTML, required V20–V23 baselines, retained V22–V24 tests, V25 tests and audit documentation. It includes a full SHA-256 manifest and opens at **`Grand-Tour-V25/index.html`** after extraction.
 
-> [!IMPORTANT]
-> **The standalone HTML and frozen ZIP are not interchangeable version pointers.** The ZIP preserves its delivered contents and evidence; any later change to the repository's HTML does not automatically change the package. Do not overwrite the historical ZIP just to update documentation.
+The authoritative V24 input came from commit `3e92128c0cb353d267c12ceeaf143bda663a7b26`; its HTML SHA-256 is `b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f`. The older sealed V24 Final ZIP was intentionally omitted from the cloud handoff. Its absence is not a missing game dependency. The V25 packager builds directly from this source tree.
 
 ### 💾 Progress and Compatibility
 
 The game retains its existing **V9-format save compatibility** and historical-tour migration behavior. Browser and file origins may keep different local storage, so preserve a backup before clearing browser data or changing where you play. Current development treats save integrity and recovery as part of the simulation contract.
 
-## 🗂️ V24 and the Versions Before It
+## 🗂️ Current Source and Preserved Baselines
 
 | Resource | Purpose |
 | --- | --- |
-| [`Grand-Tour-V24.html`](Grand-Tour-V24.html) | Current official, offline-capable game |
-| [`Grand-Tour-V24-Final.zip`](Grand-Tour-V24-Final.zip) | Frozen V24 package and verification material |
-| [`V24-REPORT.md`](V24-REPORT.md) | V24 design changes, verification scope, and limitations |
-| [`tests/v24/README.md`](tests/v24/README.md) | Current reproduction and test instructions |
-| [`archive/README.md`](archive/README.md) | Historical HTML versions, reports, and recoverable packages |
-| [GitHub Actions verification](https://github.com/seiya058904/Grand-Tour/actions/workflows/v23-verify.yml) | Retained V23 checks and current V24 regression gates |
+| [`Grand-Tour-V25.html`](Grand-Tour-V25.html) | Current offline source candidate |
+| [`V25-AUDIT-REPORT.md`](V25-AUDIT-REPORT.md) | Findings, fixes, actual verification and unresolved risks |
+| [`V25-CHANGELOG.md`](V25-CHANGELOG.md) | Concise change history |
+| [`tests/v25/README.md`](tests/v25/README.md) | Current reproduction and packaging commands |
+| [`Grand-Tour-V24.html`](Grand-Tour-V24.html) | Unchanged latest authoritative V24 baseline |
+| [`V24-REPORT.md`](V24-REPORT.md) | Original V24 evidence, not V25 acceptance |
+| [`archive/README.md`](archive/README.md) | Historical source and report index; some old evidence is intentionally outside this handoff |
 
-The V22/V23 baselines remain important even though the public entry is V24. They protect simulation behavior, save compatibility, and visual changes from accidental regression.
+All 65 retained historical source, report and test files have explicit baseline hashes in `tests/v25/baseline-hashes.json`. V22/V23 remain necessary compatibility references.
 
 <a id="for-developers"></a>
 ## ⚙️ For Developers
@@ -191,21 +191,21 @@ For browser-based inspection from the repository root:
 python -m http.server 4187 --bind 127.0.0.1
 ```
 
-Open **http://127.0.0.1:4187/**. To use the offline edition itself, simply open `Grand-Tour-V24.html` as a file instead.
+Open **http://127.0.0.1:4187/**. To use the offline edition itself, simply open `Grand-Tour-V25.html` as a file instead.
 
 ### Focused regression checks
 
 The engineering checks use Node.js and Python; real-browser acceptance additionally requires Python Playwright with Chromium. Create an evidence directory outside the repository and set `$evidence` to that absolute path before running tests.
 
 ```powershell
-python tests/v24/static_verify.py --out "$evidence/static.json"
-node tests/v24/core-parity.cjs archive/v23/Grand-Tour-V23.html Grand-Tour-V24.html "$evidence/core-parity.json"
-node tests/v24/focused.cjs Grand-Tour-V24.html archive/v22/Grand-Tour-V22.html "$evidence/focused.json"
-node tests/v24/save-finish-boundary.cjs Grand-Tour-V24.html "$evidence/save-finish-boundary.json"
-python tests/v24/browser_verify.py --out "$evidence/browser"
+python tests/v25/static_verify.py --out "$evidence/static.json"
+node tests/v25/core-parity.cjs Grand-Tour-V24.html Grand-Tour-V25.html "$evidence/core-parity.json"
+node tests/v25/focused.cjs Grand-Tour-V25.html archive/v22/Grand-Tour-V22.html "$evidence/focused.json"
+node tests/v24/save-finish-boundary.cjs Grand-Tour-V25.html "$evidence/save-finish-boundary.json"
+python tests/v24/browser_verify.py --source Grand-Tour-V25.html --out "$evidence/browser"
 ```
 
-Additional checks cover full-tour results, save ownership, TTT positioning, race animation, weather, ceremonies, and offline-package integrity. The exact workflows and prerequisites live in [`tests/v24/README.md`](tests/v24/README.md).
+Additional checks cover full-tour results, save ownership, TTT positioning, race animation, weather, ceremonies, and offline-package integrity. The exact workflows and prerequisites live in [`tests/v25/README.md`](tests/v25/README.md).
 
 ### Engineering priorities
 

@@ -1,0 +1,117 @@
+{
+  "sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "cases": [
+    {
+      "stage": 5,
+      "seed": 2058765,
+      "before": {
+        "t": 40,
+        "kind": "sun",
+        "conditions": {
+          "version": 1,
+          "kind": "sun",
+          "temperature": 22,
+          "bands": [
+            {
+              "at": 0,
+              "wind": 0.57
+            },
+            {
+              "at": 0.3333333333333333,
+              "wind": -0.36
+            },
+            {
+              "at": 0.6666666666666666,
+              "wind": 0.38
+            },
+            {
+              "at": 1,
+              "wind": 0.6
+            }
+          ],
+          "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+          "legacy": false,
+          "calendarDate": "2026-07-08",
+          "stageContext": "Flat",
+          "temperatureReferenceAltitude": 250
+        }
+      },
+      "after": {
+        "t": 45.95,
+        "kind": "sun",
+        "pure": true,
+        "riders": 184
+      }
+    },
+    {
+      "stage": 5,
+      "seed": 12345,
+      "before": {
+        "t": 40,
+        "kind": "cloud",
+        "conditions": {
+          "version": 1,
+          "kind": "cloud",
+          "temperature": 29,
+          "bands": [
+            {
+              "at": 0,
+              "wind": -2.25
+            },
+            {
+              "at": 1,
+              "wind": -3.87
+            }
+          ],
+          "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+          "legacy": false,
+          "calendarDate": "2026-07-08",
+          "stageContext": "Flat",
+          "temperatureReferenceAltitude": 250
+        }
+      },
+      "after": {
+        "t": 46.2,
+        "kind": "cloud",
+        "pure": true,
+        "riders": 184
+      }
+    },
+    {
+      "stage": 7,
+      "seed": 12345,
+      "before": {
+        "t": 40,
+        "kind": "rain",
+        "conditions": {
+          "version": 1,
+          "kind": "rain",
+          "temperature": 25,
+          "bands": [
+            {
+              "at": 0,
+              "wind": -1.34
+            },
+            {
+              "at": 1,
+              "wind": -2.97
+            }
+          ],
+          "source": "本作模拟 · 地区 / 日期 / 赛型 / 海拔 · 非实况",
+          "legacy": false,
+          "calendarDate": "2026-07-10",
+          "stageContext": "Flat",
+          "temperatureReferenceAltitude": 250
+        }
+      },
+      "after": {
+        "t": 46.150000000000006,
+        "kind": "rain",
+        "pure": true,
+        "riders": 184
+      }
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

@@ -1,0 +1,255 @@
+{
+  "source_sha256": "558fdfbae82449fe4fbdcd55e1ce61bb3de6be4ec7997bbc0a49ed20dbcccc95",
+  "tour": "/workspace/scratch/018887db1a18/evidence/simulation/v25-tour-314159-tour.json",
+  "errors": [],
+  "console": [],
+  "checks": {
+    "paused_chapter_preview": {
+      "pass": true,
+      "chapters": [
+        {
+          "kind": "winner",
+          "age": 12.9,
+          "pass": true,
+          "ids": [
+            41
+          ]
+        },
+        {
+          "kind": "green",
+          "age": 12.899999999999999,
+          "pass": true,
+          "ids": [
+            41
+          ]
+        },
+        {
+          "kind": "polka",
+          "age": 12.900000000000006,
+          "pass": true,
+          "ids": [
+            88
+          ]
+        },
+        {
+          "kind": "white",
+          "age": 12.900000000000006,
+          "pass": true,
+          "ids": [
+            45
+          ]
+        },
+        {
+          "kind": "yellow",
+          "age": 12.900000000000002,
+          "pass": true,
+          "ids": [
+            41
+          ]
+        }
+      ]
+    },
+    "stage_geometry": {
+      "samples": 4875,
+      "limbError": 3.552713678800501e-14,
+      "plantedError": 0,
+      "handError": 0,
+      "staffError": 0,
+      "details": [],
+      "pass": true
+    },
+    "whole_stage_playback": {
+      "pass": true,
+      "seconds": 109.19999999999999,
+      "rate": 1
+    },
+    "stage_ledger_unchanged": {
+      "pass": true
+    },
+    "ttt_geometry": {
+      "samples": 6030,
+      "limbError": 2.842170943040401e-14,
+      "plantedError": 0,
+      "handError": 0,
+      "staffError": 0,
+      "details": [],
+      "pass": true
+    },
+    "ttt_team_playback": {
+      "pass": true,
+      "rate": 1
+    },
+    "four_jerseys_worn": {
+      "pass": true,
+      "outfits": [
+        {
+          "kind": "yellow",
+          "worn": "yellow",
+          "prop": "flowers",
+          "pass": true
+        },
+        {
+          "kind": "green",
+          "worn": "green",
+          "prop": "flowers",
+          "pass": true
+        },
+        {
+          "kind": "polka",
+          "worn": "polka",
+          "prop": "flowers",
+          "pass": true
+        },
+        {
+          "kind": "white",
+          "worn": "white",
+          "prop": "flowers",
+          "pass": true
+        }
+      ]
+    },
+    "gc_order": {
+      "pass": true,
+      "order": [
+        0,
+        6,
+        1
+      ],
+      "kinds": [
+        "winner",
+        "green",
+        "polka",
+        "white",
+        "team-final",
+        "gc-final",
+        "complete"
+      ],
+      "seconds": 133.39999999999998
+    },
+    "final_geometry": {
+      "samples": 8811,
+      "limbError": 3.197442310920451e-14,
+      "plantedError": 0,
+      "handError": 1.4210854715202004e-14,
+      "staffError": 0,
+      "details": [
+        {
+          "width": 1280,
+          "kind": "gc-final",
+          "age": 13.029999999999985,
+          "error": 1.4210854715202004e-14
+        }
+      ],
+      "pass": true
+    },
+    "gc_trophy_arm_posture": {
+      "pass": true,
+      "count": 421,
+      "minElbowOut": 5.341799109412403,
+      "minElbowRise": 20.37706154621418,
+      "minForearmRise": 21.968919448001117,
+      "maxElbowStep": 0.686212509851005,
+      "maxElbowStepAt": {
+        "age": 13.583333333333238,
+        "side": 0
+      },
+      "maxGripError": 1.4210854715202004e-14
+    },
+    "gc_clothing_and_final_hold": {
+      "pass": true,
+      "jerseys": [
+        "yellow",
+        "white",
+        null
+      ],
+      "trophyHeld": 1
+    },
+    "layout_390": {
+      "pass": true,
+      "canvas": [
+        364,
+        455.75
+      ],
+      "overflow": 0,
+      "controlsBottom": 678.875
+    },
+    "layout_320": {
+      "pass": true,
+      "canvas": [
+        294,
+        399.59375
+      ],
+      "overflow": 0,
+      "controlsBottom": 634.984375
+    },
+    "layout_768": {
+      "pass": true,
+      "canvas": [
+        670,
+        376.875
+      ],
+      "overflow": 0,
+      "controlsBottom": 529.671875
+    },
+    "whole_final_playback": {
+      "pass": true,
+      "seconds": 133.39999999999998,
+      "rate": 1
+    },
+    "tour_ledger_unchanged": {
+      "pass": true
+    },
+    "keyboard_return_focus": {
+      "pass": true,
+      "focus": "replayCeremony"
+    },
+    "archive": {
+      "pass": true,
+      "screen": "history"
+    },
+    "reduced_motion_static_pose": {
+      "pass": true,
+      "seconds": 34.1
+    },
+    "console": {
+      "pass": true,
+      "errors": [],
+      "console": []
+    }
+  },
+  "screenshots": [
+    "paused-selected-yellow.png",
+    "stage-winner-7.75.png",
+    "stage-winner-13.4.png",
+    "stage-green-13.4.png",
+    "stage-polka-13.4.png",
+    "stage-white-13.4.png",
+    "stage-yellow-13.4.png",
+    "ttt-team-stage.png",
+    "stage-18-yellow.png",
+    "stage-18-green.png",
+    "stage-18-polka.png",
+    "stage-18-white.png",
+    "stage-18-white-mobile.png",
+    "gc-5.5.png",
+    "gc-7.2.png",
+    "gc-9.2.png",
+    "gc-10.8.png",
+    "gc-12.6.png",
+    "gc-12.9.png",
+    "gc-13.2.png",
+    "gc-13.5.png",
+    "gc-13.8.png",
+    "gc-14.4.png",
+    "gc-15.5.png",
+    "gc-21.5.png",
+    "gc-26.5.png",
+    "team-final.png",
+    "tour-complete.png",
+    "gc-390.png",
+    "gc-320.png",
+    "gc-768.png",
+    "gc-reduced.png"
+  ],
+  "pass": true
+}
