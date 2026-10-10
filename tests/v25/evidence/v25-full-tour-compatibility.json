@@ -1,0 +1,36 @@
+{
+  "input": "/workspace/scratch/018887db1a18/evidence/simulation/v24-tour-314159-tour.json",
+  "inputSHA256": "3e83c50c18c06d77f0f41abd871c0c28d08b36ef8c0aec6077ac7a6601575fed",
+  "sources": [
+    {
+      "source": "Grand-Tour-V24.html",
+      "sourceSHA256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+      "issues": [],
+      "retainedStages": 21,
+      "normalizedOutputSHA256": "dc7ad58f06d0205af5c7526d8ccade84ece4db19efcb8757793abca23166cf86"
+    },
+    {
+      "source": "Grand-Tour-V25.html",
+      "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+      "issues": [],
+      "retainedStages": 21,
+      "normalizedOutputSHA256": "dc7ad58f06d0205af5c7526d8ccade84ece4db19efcb8757793abca23166cf86"
+    }
+  ],
+  "fixture": {
+    "tourSeed": 314159,
+    "policy": "standard-GC-v2",
+    "expectedStages": 21,
+    "expectedFinalFinishers": 162
+  },
+  "normalization": "Both versions add the same default settings to the simulation export's empty settings object.",
+  "scope": "Strict decode and encode of the existing natural V24 seed 314159 Tour fixture; 162 final finishers applies only to this fixture. No new race simulation.",
+  "passed": 1,
+  "failed": 0,
+  "skipped": 0,
+  "pass": true,
+  "retainedStages": 21,
+  "finalFinishers": 162,
+  "normalizedOutputsIdentical": true,
+  "originalInputUnchanged": true
+}

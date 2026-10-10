@@ -1,0 +1,35 @@
+{
+  "source": "Grand-Tour-V24.html",
+  "activeCutoff": {
+    "accepted": true,
+    "issues": [],
+    "before": {
+      "finished": 1,
+      "OTL": 0,
+      "t": 270.5
+    },
+    "after": {
+      "finished": 0,
+      "OTL": 184,
+      "complete": true
+    },
+    "settlement": "关门线账本损坏"
+  },
+  "historicalCutoff": {
+    "accepted": true,
+    "issues": [],
+    "cutoff": {
+      "winner": 1,
+      "time": 1,
+      "average": 48.38285737804073,
+      "percent": 0.5,
+      "deadline": 1.5,
+      "timeModel": "race-world-v1"
+    },
+    "finished": 184
+  },
+  "activeMigrationRecovery": {
+    "threw": true,
+    "error": "比赛种子无效"
+  }
+}

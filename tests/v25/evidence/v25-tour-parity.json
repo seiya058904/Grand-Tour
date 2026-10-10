@@ -1,0 +1,27 @@
+{
+  "baseline": {
+    "file": "v24-tour-314159-tour.json",
+    "sha256": "3e83c50c18c06d77f0f41abd871c0c28d08b36ef8c0aec6077ac7a6601575fed",
+    "source": "Grand-Tour-V24.html",
+    "sourceSha256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+    "seed": 314159,
+    "stages": 21,
+    "snapshotRestores": 367
+  },
+  "candidate": {
+    "file": "v25-tour-314159-tour.json",
+    "sha256": "3e83c50c18c06d77f0f41abd871c0c28d08b36ef8c0aec6077ac7a6601575fed",
+    "source": "Grand-Tour-V25.html",
+    "sourceSha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+    "seed": 314159,
+    "stages": 21,
+    "snapshotRestores": 367
+  },
+  "pass": true,
+  "checkedStages": 21,
+  "finalField": {
+    "starting": 162,
+    "finished": 162,
+    "priorExits": 22
+  }
+}

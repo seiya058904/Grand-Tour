@@ -24,6 +24,7 @@ node_modules/
 # Logs and temporary files
 *.log
 *.tmp
+*.orig
 
 # Operating system files
 .DS_Store
@@ -42,3 +43,5 @@ __pycache__/
 /Grand-Tour History version/
 /Grand-Tour-V*-Final.zip
 !/Grand-Tour-V24-Final.zip
+
+/Grand-Tour-V*-Source.zip

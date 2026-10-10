@@ -1,0 +1,8 @@
+{
+  "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "command": "node tests/v23/storage-ownership.cjs Grand-Tour-V25.html",
+  "exitCode": 0,
+  "logSHA256": "3b183ff665e3ce7b51ef894cbf2390cc059b3ee1e9ef5aea7f6ba69d32c576c5",
+  "log": "PASS storage ownership, actual settings callbacks, completion, ceremony, replacement, import, failures, codec; Web Locks=false\nPASS storage ownership, actual settings callbacks, completion, ceremony, replacement, import, failures, codec; Web Locks=true\nPASS secondary GC current threat and exit\n",
+  "unit": "3 printed assertion groups, verified with successful exit; detailed execution in v25-storage-run-index.json"
+}

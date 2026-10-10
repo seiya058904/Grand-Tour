@@ -1,0 +1,1249 @@
+{
+  "source": "Grand-Tour-V24.html",
+  "sourceSha256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+  "policy": "Fresh isolated natural stages. Player GC uses auto wheel and feeds under 65%; no deliberate flat-stage attack. All AI, weather and physics are production code.",
+  "seeds": [
+    42,
+    2026,
+    65537,
+    3735928559
+  ],
+  "stages": [
+    5,
+    7,
+    8,
+    11,
+    12,
+    17,
+    21
+  ],
+  "pass": true,
+  "cases": 28,
+  "roleWins": {
+    "Allround": 5,
+    "TT": 14,
+    "Puncheur": 1,
+    "Sprinter": 1,
+    "GC": 6,
+    "Climber": 1
+  },
+  "restoreChecks": 14,
+  "invariantSamples": 1616,
+  "at300mSummary": {
+    "casesWithoutEligibleSprinter": 12,
+    "medianClosestSprinterLocalGapMetres": 41.051926861670836,
+    "casesClosestSprinterOver60LocalMetresBehind": 13
+  },
+  "freshStageBreakWinners": 10,
+  "sourceEvidence": {
+    "file": "v24-flat-survey.json",
+    "sha256": "b1d6fd4be152a9d6517da25c013b26fb523c8539a35e59a62f4bf2110c28cdb5",
+    "bytes": 9792182
+  },
+  "results": [
+    {
+      "stage": 5,
+      "seed": 42,
+      "winner": {
+        "id": 30,
+        "name": "Nils Politt",
+        "role": "Allround",
+        "inBreak": false,
+        "seconds": 12181.583225345681
+      },
+      "bestSprinter": {
+        "id": 15,
+        "name": "Mads Pedersen",
+        "place": 14,
+        "secondsBehind": 9.254578330008371
+      },
+      "at300m": {
+        "eligibleSprinters": 0,
+        "closestSprinter": {
+          "id": 15,
+          "name": "Mads Pedersen",
+          "gap": 72.77845702804825,
+          "energy": 47.80011168513069,
+          "w": 0.7692951187603569,
+          "ai": "protect",
+          "group": 1,
+          "eligible": false
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 2,
+      "invariantSamples": 58,
+      "resultHash": "d8d981fd101e8c8e9899a713dbe5da46b76b111dc5807ddceb1a2b10554ef8f6"
+    },
+    {
+      "stage": 7,
+      "seed": 42,
+      "winner": {
+        "id": 61,
+        "name": "Kasper Asgreen",
+        "role": "TT",
+        "inBreak": true,
+        "seconds": 14051.460184265678
+      },
+      "bestSprinter": {
+        "id": 15,
+        "name": "Mads Pedersen",
+        "place": 22,
+        "secondsBehind": 31.13705864808071
+      },
+      "at300m": {
+        "eligibleSprinters": 0,
+        "closestSprinter": {
+          "id": 15,
+          "name": "Mads Pedersen",
+          "gap": 124.62730333703348,
+          "energy": 60.34492556287036,
+          "w": 0.7998939281614372,
+          "ai": "protect",
+          "group": 1,
+          "eligible": false
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 2,
+      "invariantSamples": 61,
+      "resultHash": "cc131e6a741b416519d6f63231d96685ba03318a9c0e522562a3317f1f037dcb"
+    },
+    {
+      "stage": 8,
+      "seed": 42,
+      "winner": {
+        "id": 32,
+        "name": "Tim Wellens",
+        "role": "Puncheur",
+        "inBreak": false,
+        "seconds": 15099.108004947611
+      },
+      "bestSprinter": {
+        "id": 48,
+        "name": "Cees Bol",
+        "place": 8,
+        "secondsBehind": 0.4117846679073409
+      },
+      "at300m": {
+        "eligibleSprinters": 2,
+        "closestSprinter": {
+          "id": 48,
+          "name": "Cees Bol",
+          "gap": 8.277572945065003,
+          "energy": 35.32285853617987,
+          "w": 0.8697089851335208,
+          "ai": "follow",
+          "group": 4,
+          "eligible": true
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 2,
+      "invariantSamples": 64,
+      "resultHash": "f80f23f35e2e22dd9660b95759053f17de3147b711a619e567e9f61e491a06fc"
+    },
+    {
+      "stage": 11,
+      "seed": 42,
+      "winner": {
+        "id": 96,
+        "name": "Michael Matthews",
+        "role": "Sprinter",
+        "inBreak": false,
+        "seconds": 13114.3943190666
+      },
+      "bestSprinter": {
+        "id": 96,
+        "name": "Michael Matthews",
+        "place": 1,
+        "secondsBehind": 0.0
+      },
+      "at300m": {
+        "eligibleSprinters": 5,
+        "closestSprinter": {
+          "id": 96,
+          "name": "Michael Matthews",
+          "gap": 0,
+          "energy": 25.31639224710976,
+          "w": 0.8307595088850772,
+          "ai": "follow",
+          "group": 4,
+          "eligible": true
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 2,
+      "invariantSamples": 61,
+      "resultHash": "f340b05a30796f11743a7655c302da3d8b4c052f4e9b3a7e5b27121abf8f2c3d"
+    },
+    {
+      "stage": 12,
+      "seed": 42,
+      "winner": {
+        "id": 33,
+        "name": "Edoardo Affini",
+        "role": "TT",
+        "inBreak": false,
+        "seconds": 15052.88562138935
+      },
+      "bestSprinter": {
+        "id": 60,
+        "name": "Vlad van Mechelen",
+        "place": 12,
+        "secondsBehind": 25.4627119059096
+      },
+      "at300m": {
+        "eligibleSprinters": 0,
+        "closestSprinter": {
+          "id": 96,
+          "name": "Michael Matthews",
+          "gap": 109.80077195495005,
+          "energy": 0,
+          "w": 0.8332059298135515,
+          "ai": "follow",
+          "group": 1,
+          "eligible": false
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 2,
+      "invariantSamples": 63,
+      "resultHash": "9fed40a38fbcfb663dababf867644f95b036a2213617ce4b2b236d08162a6233"
+    },
+    {
+      "stage": 17,
+      "seed": 42,
+      "winner": {
+        "id": 33,
+        "name": "Edoardo Affini",
+        "role": "TT",
+        "inBreak": false,
+        "seconds": 13873.466547639406
+      },
+      "bestSprinter": {
+        "id": 48,
+        "name": "Cees Bol",
+        "place": 19,
+        "secondsBehind": 2.5327447384443076
+      },
+      "at300m": {
+        "eligibleSprinters": 4,
+        "closestSprinter": {
+          "id": 48,
+          "name": "Cees Bol",
+          "gap": 33.29011815603735,
+          "energy": 29.00603124522088,
+          "w": 0.8494643813362265,
+          "ai": "follow",
+          "group": 5,
+          "eligible": true
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 2,
+      "invariantSamples": 62,
+      "resultHash": "ac0b58fa422c83326482025194a4dea82ba5a16c15ba51354624e707c8156169"
+    },
+    {
+      "stage": 21,
+      "seed": 42,
+      "winner": {
+        "id": 14,
+        "name": "Quinn Simmons",
+        "role": "Allround",
+        "inBreak": false,
+        "seconds": 7261.064076900512
+      },
+      "bestSprinter": {
+        "id": 60,
+        "name": "Vlad van Mechelen",
+        "place": 2,
+        "secondsBehind": 0.9218233598812731
+      },
+      "at300m": {
+        "eligibleSprinters": 3,
+        "closestSprinter": {
+          "id": 15,
+          "name": "Mads Pedersen",
+          "gap": 16.878776321003897,
+          "energy": 64.29143659809596,
+          "w": 0.6908038642130985,
+          "ai": "protect",
+          "group": 1,
+          "eligible": true
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 2,
+      "invariantSamples": 53,
+      "resultHash": "f8042c2de2d60735ac81a4dfa44f4d618876a317a1f25c17d6b12014db33a777"
+    },
+    {
+      "stage": 5,
+      "seed": 2026,
+      "winner": {
+        "id": 45,
+        "name": "Mathias Vacek",
+        "role": "Allround",
+        "inBreak": false,
+        "seconds": 11846.951278855266
+      },
+      "bestSprinter": {
+        "id": 48,
+        "name": "Cees Bol",
+        "place": 13,
+        "secondsBehind": 1.0090423219953664
+      },
+      "at300m": {
+        "eligibleSprinters": 3,
+        "closestSprinter": {
+          "id": 48,
+          "name": "Cees Bol",
+          "gap": 15.39950432975047,
+          "energy": 37.8098176055884,
+          "w": 0.8775530121927746,
+          "ai": "follow",
+          "group": 11,
+          "eligible": true
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 61,
+      "resultHash": "1653996e84859fd038a1ddf6aec2380a6731ccade868ffb61dfdcb9bbc347262"
+    },
+    {
+      "stage": 7,
+      "seed": 2026,
+      "winner": {
+        "id": 94,
+        "name": "Luke Durbridge",
+        "role": "TT",
+        "inBreak": true,
+        "seconds": 13640.040754982292
+      },
+      "bestSprinter": {
+        "id": 50,
+        "name": "Olav Kooij",
+        "place": 3,
+        "secondsBehind": 11.224129970814829
+      },
+      "at300m": {
+        "eligibleSprinters": 0,
+        "closestSprinter": {
+          "id": 50,
+          "name": "Olav Kooij",
+          "gap": 113.9200258845517,
+          "energy": 49.6563585252087,
+          "w": 0.7489957067390787,
+          "ai": "protect",
+          "group": 1,
+          "eligible": false
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 59,
+      "resultHash": "dccc3a3188ec99b168cc8d015add2956ffec2a79a00d6090b457d2dfce9097b0"
+    },
+    {
+      "stage": 8,
+      "seed": 2026,
+      "winner": {
+        "id": 94,
+        "name": "Luke Durbridge",
+        "role": "TT",
+        "inBreak": true,
+        "seconds": 13897.860501476915
+      },
+      "bestSprinter": {
+        "id": 93,
+        "name": "Pascal Ackermann",
+        "place": 11,
+        "secondsBehind": 11.507417124459607
+      },
+      "at300m": {
+        "eligibleSprinters": 0,
+        "closestSprinter": {
+          "id": 96,
+          "name": "Michael Matthews",
+          "gap": 64.74839494421713,
+          "energy": 21.449282266934905,
+          "w": 0.8697829792879209,
+          "ai": "follow",
+          "group": 1,
+          "eligible": false
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 58,
+      "resultHash": "184d613c32221a9792c7359fbadb7ebe51e3d8ad455d6f2178c07b39139257a8"
+    },
+    {
+      "stage": 11,
+      "seed": 2026,
+      "winner": {
+        "id": 33,
+        "name": "Edoardo Affini",
+        "role": "TT",
+        "inBreak": false,
+        "seconds": 12487.939259002353
+      },
+      "bestSprinter": {
+        "id": 48,
+        "name": "Cees Bol",
+        "place": 25,
+        "secondsBehind": 17.831838980557222
+      },
+      "at300m": {
+        "eligibleSprinters": 0,
+        "closestSprinter": {
+          "id": 48,
+          "name": "Cees Bol",
+          "gap": 165.1257246195928,
+          "energy": 69.78419657279845,
+          "w": 0.9053805851108685,
+          "ai": "follow-move",
+          "group": 12,
+          "eligible": false
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 59,
+      "resultHash": "10a6a13730b98a96f30680408e8f24ffd6622ac39066a750894319601b629cc0"
+    },
+    {
+      "stage": 12,
+      "seed": 2026,
+      "winner": {
+        "id": 94,
+        "name": "Luke Durbridge",
+        "role": "TT",
+        "inBreak": true,
+        "seconds": 14335.454522559787
+      },
+      "bestSprinter": {
+        "id": 96,
+        "name": "Michael Matthews",
+        "place": 3,
+        "secondsBehind": 0.07184878001498873
+      },
+      "at300m": {
+        "eligibleSprinters": 1,
+        "closestSprinter": {
+          "id": 96,
+          "name": "Michael Matthews",
+          "gap": 3.3227648530455554,
+          "energy": 23.95017802745656,
+          "w": 0.8723198758293158,
+          "ai": "sprint",
+          "group": 3,
+          "eligible": true
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 62,
+      "resultHash": "fc716f82ab018e10c0c7ab38337da22c7f5ede9d208aedf9251ad1d39b4bb00e"
+    },
+    {
+      "stage": 17,
+      "seed": 2026,
+      "winner": {
+        "id": 43,
+        "name": "Derek James Gee",
+        "role": "GC",
+        "inBreak": false,
+        "seconds": 12775.30505747929
+      },
+      "bestSprinter": {
+        "id": 48,
+        "name": "Cees Bol",
+        "place": 17,
+        "secondsBehind": 25.77026786584065
+      },
+      "at300m": {
+        "eligibleSprinters": 0,
+        "closestSprinter": {
+          "id": 48,
+          "name": "Cees Bol",
+          "gap": 104.73951590100387,
+          "energy": 35.11848246591527,
+          "w": 0.8408668286264982,
+          "ai": "follow",
+          "group": 4,
+          "eligible": false
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 57,
+      "resultHash": "7a774dbe8ef2ba425af3bc54913d4d8e61204eb2b37835741194a2faaddd2278"
+    },
+    {
+      "stage": 21,
+      "seed": 2026,
+      "winner": {
+        "id": 4,
+        "name": "Lenny Martinez",
+        "role": "Climber",
+        "inBreak": false,
+        "seconds": 7154.465740705197
+      },
+      "bestSprinter": {
+        "id": 153,
+        "name": "Arnaud De Lie",
+        "place": 4,
+        "secondsBehind": 4.889068995945308
+      },
+      "at300m": {
+        "eligibleSprinters": 12,
+        "closestSprinter": {
+          "id": 141,
+          "name": "Milan Fretin",
+          "gap": 48.81373556730432,
+          "energy": 14.757341949868438,
+          "w": 0.7743110996310082,
+          "ai": "follow",
+          "group": 1,
+          "eligible": true
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 52,
+      "resultHash": "3a452117fb32070bf0b7b5e94c062d9199cbccfd68cc5c4cc13fd12e3df859c8"
+    },
+    {
+      "stage": 5,
+      "seed": 65537,
+      "winner": {
+        "id": 61,
+        "name": "Kasper Asgreen",
+        "role": "TT",
+        "inBreak": true,
+        "seconds": 10909.366620310433
+      },
+      "bestSprinter": {
+        "id": 93,
+        "name": "Pascal Ackermann",
+        "place": 9,
+        "secondsBehind": 0.4285423967321549
+      },
+      "at300m": {
+        "eligibleSprinters": 3,
+        "closestSprinter": {
+          "id": 93,
+          "name": "Pascal Ackermann",
+          "gap": 13.327334680758213,
+          "energy": 51.53133114594645,
+          "w": 0.8704546308066688,
+          "ai": "sprint",
+          "group": 5,
+          "eligible": true
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 52,
+      "resultHash": "87571861d3bb20cc00baa7d940cdc1628837ea1ea7244d66644fcdebe2907776"
+    },
+    {
+      "stage": 7,
+      "seed": 65537,
+      "winner": {
+        "id": 61,
+        "name": "Kasper Asgreen",
+        "role": "TT",
+        "inBreak": true,
+        "seconds": 13294.495546201786
+      },
+      "bestSprinter": {
+        "id": 60,
+        "name": "Vlad van Mechelen",
+        "place": 8,
+        "secondsBehind": 0.7197397131312755
+      },
+      "at300m": {
+        "eligibleSprinters": 2,
+        "closestSprinter": {
+          "id": 60,
+          "name": "Vlad van Mechelen",
+          "gap": 25.7641389321725,
+          "energy": 81.53376928840657,
+          "w": 0.980662519082224,
+          "ai": "follow",
+          "group": 1,
+          "eligible": true
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 57,
+      "resultHash": "e51fee7d86b329735aa65fd6a143d72483d988ba63a7505584abfaacae330b8e"
+    },
+    {
+      "stage": 8,
+      "seed": 65537,
+      "winner": {
+        "id": 61,
+        "name": "Kasper Asgreen",
+        "role": "TT",
+        "inBreak": true,
+        "seconds": 13044.140518728556
+      },
+      "bestSprinter": {
+        "id": 60,
+        "name": "Vlad van Mechelen",
+        "place": 36,
+        "secondsBehind": 7.346691825479866
+      },
+      "at300m": {
+        "eligibleSprinters": 0,
+        "closestSprinter": {
+          "id": 60,
+          "name": "Vlad van Mechelen",
+          "gap": 91.61215743520279,
+          "energy": 56.011179922681784,
+          "w": 0.90710347997372,
+          "ai": "follow",
+          "group": 1,
+          "eligible": false
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 54,
+      "resultHash": "366633dfcc968c158fb87c8e5755eaf910bb6610df452a70adeaa9d0315d7107"
+    },
+    {
+      "stage": 11,
+      "seed": 65537,
+      "winner": {
+        "id": 30,
+        "name": "Nils Politt",
+        "role": "Allround",
+        "inBreak": false,
+        "seconds": 11697.266881317859
+      },
+      "bestSprinter": {
+        "id": 93,
+        "name": "Pascal Ackermann",
+        "place": 4,
+        "secondsBehind": 0.14532153953405214
+      },
+      "at300m": {
+        "eligibleSprinters": 8,
+        "closestSprinter": {
+          "id": 93,
+          "name": "Pascal Ackermann",
+          "gap": 4.716688019234425,
+          "energy": 69.01117090213614,
+          "w": 0.9435701548207724,
+          "ai": "sprint",
+          "group": 3,
+          "eligible": true
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 54,
+      "resultHash": "89cde1f97c6a6eead737f97072187f97670f47dd1202644a7b274dcdf8864ccf"
+    },
+    {
+      "stage": 12,
+      "seed": 65537,
+      "winner": {
+        "id": 33,
+        "name": "Edoardo Affini",
+        "role": "TT",
+        "inBreak": false,
+        "seconds": 12830.712091980518
+      },
+      "bestSprinter": {
+        "id": 60,
+        "name": "Vlad van Mechelen",
+        "place": 7,
+        "secondsBehind": 0.9559237086086796
+      },
+      "at300m": {
+        "eligibleSprinters": 2,
+        "closestSprinter": {
+          "id": 48,
+          "name": "Cees Bol",
+          "gap": 13.874633491938312,
+          "energy": 1.303103286359103,
+          "w": 0.8423313094822313,
+          "ai": "sprint",
+          "group": 2,
+          "eligible": true
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 54,
+      "resultHash": "7fbaa97802cf136ed9528ac07b44b37424b2b030e2f3522aba699c20e323dfd7"
+    },
+    {
+      "stage": 17,
+      "seed": 65537,
+      "winner": {
+        "id": 6,
+        "name": "Juan Ayuso",
+        "role": "GC",
+        "inBreak": false,
+        "seconds": 12071.627514491287
+      },
+      "bestSprinter": {
+        "id": 96,
+        "name": "Michael Matthews",
+        "place": 10,
+        "secondsBehind": 0.27019929548077926
+      },
+      "at300m": {
+        "eligibleSprinters": 3,
+        "closestSprinter": {
+          "id": 96,
+          "name": "Michael Matthews",
+          "gap": 4.1282548008780395,
+          "energy": 26.60213152502067,
+          "w": 0.8501086878682446,
+          "ai": "sprint",
+          "group": 1,
+          "eligible": true
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 51,
+      "resultHash": "8f9349be82a61b6891b9ceeacd84ff062a762f718ac772f385f51564da90b7ba"
+    },
+    {
+      "stage": 21,
+      "seed": 65537,
+      "winner": {
+        "id": 5,
+        "name": "Mattias Skjelmose",
+        "role": "GC",
+        "inBreak": false,
+        "seconds": 6465.862016154777
+      },
+      "bestSprinter": {
+        "id": 15,
+        "name": "Mads Pedersen",
+        "place": 2,
+        "secondsBehind": 0.06501337491863524
+      },
+      "at300m": {
+        "eligibleSprinters": 3,
+        "closestSprinter": {
+          "id": 15,
+          "name": "Mads Pedersen",
+          "gap": 4.40356792691091,
+          "energy": 60.58749720303803,
+          "w": 0.5838130973199558,
+          "ai": "sprint",
+          "group": 1,
+          "eligible": true
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 46,
+      "resultHash": "47918bce546275984125ee1438811eb3661bf4e93defc46c675e0eeddd0fe53f"
+    },
+    {
+      "stage": 5,
+      "seed": 3735928559,
+      "winner": {
+        "id": 49,
+        "name": "Daan Hoole",
+        "role": "TT",
+        "inBreak": true,
+        "seconds": 12022.926226595304
+      },
+      "bestSprinter": {
+        "id": 60,
+        "name": "Vlad van Mechelen",
+        "place": 10,
+        "secondsBehind": 10.33261199460685
+      },
+      "at300m": {
+        "eligibleSprinters": 0,
+        "closestSprinter": {
+          "id": 48,
+          "name": "Cees Bol",
+          "gap": 79.42015300599314,
+          "energy": 14.65830556697364,
+          "w": 0.8159054315407522,
+          "ai": "follow",
+          "group": 1,
+          "eligible": false
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 58,
+      "resultHash": "12cc32d0ea6097ba20b342f1612f56fbdf7c4755b65e2c96aab063a3f9da8ad8"
+    },
+    {
+      "stage": 7,
+      "seed": 3735928559,
+      "winner": {
+        "id": 49,
+        "name": "Daan Hoole",
+        "role": "TT",
+        "inBreak": true,
+        "seconds": 13837.407178106032
+      },
+      "bestSprinter": {
+        "id": 15,
+        "name": "Mads Pedersen",
+        "place": 7,
+        "secondsBehind": 5.864418023944381
+      },
+      "at300m": {
+        "eligibleSprinters": 0,
+        "closestSprinter": {
+          "id": 15,
+          "name": "Mads Pedersen",
+          "gap": 119.7445935676792,
+          "energy": 31.291084312701255,
+          "w": 0.6998908178038357,
+          "ai": "protect",
+          "group": 1,
+          "eligible": false
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 60,
+      "resultHash": "cb7c90431b040ac58e77febf70bd335fd96c27948f31044f910704c75e6072c5"
+    },
+    {
+      "stage": 8,
+      "seed": 3735928559,
+      "winner": {
+        "id": 75,
+        "name": "Thymen Arensman",
+        "role": "GC",
+        "inBreak": false,
+        "seconds": 14909.595514961971
+      },
+      "bestSprinter": {
+        "id": 15,
+        "name": "Mads Pedersen",
+        "place": 24,
+        "secondsBehind": 3.682655732072817
+      },
+      "at300m": {
+        "eligibleSprinters": 5,
+        "closestSprinter": {
+          "id": 15,
+          "name": "Mads Pedersen",
+          "gap": 64.5912457605782,
+          "energy": 27.170963315178295,
+          "w": 0.7946816538283253,
+          "ai": "protect",
+          "group": 5,
+          "eligible": true
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 64,
+      "resultHash": "a68cdf780f3a79002f5a9d82d161efd3e1dd2d7b871b8722d3d3fd574e602100"
+    },
+    {
+      "stage": 11,
+      "seed": 3735928559,
+      "winner": {
+        "id": 25,
+        "name": "Florian Lipowitz",
+        "role": "GC",
+        "inBreak": false,
+        "seconds": 12940.257476017201
+      },
+      "bestSprinter": {
+        "id": 96,
+        "name": "Michael Matthews",
+        "place": 11,
+        "secondsBehind": 2.0475435789194307
+      },
+      "at300m": {
+        "eligibleSprinters": 1,
+        "closestSprinter": {
+          "id": 96,
+          "name": "Michael Matthews",
+          "gap": 20.41533543010337,
+          "energy": 4.370311162000219,
+          "w": 0.7902831146098652,
+          "ai": "follow",
+          "group": 2,
+          "eligible": true
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 62,
+      "resultHash": "3a963f7a62211e97f5c919eaecadefea8929b0cdbc3bd1b34f3961fb2ecb6c44"
+    },
+    {
+      "stage": 12,
+      "seed": 3735928559,
+      "winner": {
+        "id": 49,
+        "name": "Daan Hoole",
+        "role": "TT",
+        "inBreak": true,
+        "seconds": 14189.77625955964
+      },
+      "bestSprinter": {
+        "id": 15,
+        "name": "Mads Pedersen",
+        "place": 3,
+        "secondsBehind": 85.39247994092693
+      },
+      "at300m": {
+        "eligibleSprinters": 0,
+        "closestSprinter": {
+          "id": 50,
+          "name": "Olav Kooij",
+          "gap": 198.5060315248138,
+          "energy": 53.32603282615513,
+          "w": 0.8317790483512255,
+          "ai": "moving-up",
+          "group": 1,
+          "eligible": false
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 62,
+      "resultHash": "adb786f012b03131a6484018dd59c80d892fe12da058d0d649c3b8c79946e1e2"
+    },
+    {
+      "stage": 17,
+      "seed": 3735928559,
+      "winner": {
+        "id": 25,
+        "name": "Florian Lipowitz",
+        "role": "GC",
+        "inBreak": false,
+        "seconds": 13682.653723555422
+      },
+      "bestSprinter": {
+        "id": 96,
+        "name": "Michael Matthews",
+        "place": 28,
+        "secondsBehind": 5.907528747149627
+      },
+      "at300m": {
+        "eligibleSprinters": 0,
+        "closestSprinter": {
+          "id": 96,
+          "name": "Michael Matthews",
+          "gap": 60.20071804711097,
+          "energy": 39.1463260688538,
+          "w": 0.8314323220389374,
+          "ai": "moving-up",
+          "group": 1,
+          "eligible": false
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 60,
+      "resultHash": "f839bf4f08015ab560c92b3a16f940a050a38da62df3d4d6bf1a266495f6d6dd"
+    },
+    {
+      "stage": 21,
+      "seed": 3735928559,
+      "winner": {
+        "id": 35,
+        "name": "Per Strand Hagenes",
+        "role": "Allround",
+        "inBreak": false,
+        "seconds": 7192.89447474018
+      },
+      "bestSprinter": {
+        "id": 48,
+        "name": "Cees Bol",
+        "place": 5,
+        "secondsBehind": 0.6022539908299223
+      },
+      "at300m": {
+        "eligibleSprinters": 7,
+        "closestSprinter": {
+          "id": 48,
+          "name": "Cees Bol",
+          "gap": 7.716351092419245,
+          "energy": 31.567451681954406,
+          "w": 0.7705249207830488,
+          "ai": "follow",
+          "group": 1,
+          "eligible": true
+        }
+      },
+      "account": {
+        "racing": 0,
+        "finished": 184,
+        "exited": 0,
+        "dns": 0,
+        "total": 184,
+        "assigned": 0,
+        "groups": 0,
+        "closed": true
+      },
+      "restoreChecks": 0,
+      "invariantSamples": 52,
+      "resultHash": "2362dd042de6ad622cb5efe0f3b3867133fe5bd6d95b46e7bdc4d87cc4c9f669"
+    }
+  ]
+}

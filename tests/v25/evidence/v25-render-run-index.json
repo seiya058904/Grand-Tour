@@ -1,0 +1,135 @@
+{
+  "source": "/workspace/scratch/018887db1a18/grand-tour-v25/Grand-Tour-V25.html",
+  "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "startedUTC": "2026-10-09T14:50:07.744636+00:00",
+  "suiteScope": "Final hash functional browser reruns only. Not a performance sample. sequence intentionally omits --play; historical 1x playback remains bound to SHA558f, with exact source-isolation proof stored alongside.",
+  "tourInputSHA256": "3e83c50c18c06d77f0f41abd871c0c28d08b36ef8c0aec6077ac7a6601575fed",
+  "sceneInputHashes": {
+    "breakaway-snapshot.json": "25a89f2c2abe6d020440617315df3b78fd01193b8181054aa4f4149010d47cbf",
+    "climb-snapshot.json": "52dc53743adf1b6c67f436cc3e5be4ff29b6f77ca7027e0bf5d3a9c0268c010a",
+    "descent-snapshot.json": "e74f395d7de2f34736c4f8bece089511e160c9f518ef54a0f22b507bd7513432",
+    "gc-battle-snapshot.json": "0e7af9fd01138f2e84f0efe1a0c40d897a507e7fdc0d34cf5d96dd0eb1e08e3a",
+    "itt-snapshot.json": "dd26a0d05a13d0a145b7a1830040f8912c0066b6edd33de509964183d7932e81",
+    "leadout-snapshot.json": "39018d15a4d74974df6fc64c944f64c159817187a4d1131b104c35db9fd087d9",
+    "peloton-snapshot.json": "ace24cfdc531e65dcedccc93ea0b69a5a1f6a4b70289ca935f5b198d354c5a2d",
+    "sprint-snapshot.json": "30ff641ef0fe9b58d847d83abd625a68f6a8b5b3ef09734c886ed556e33d7a73",
+    "ttt-snapshot.json": "c8ee9b2d7440cd9195fa5475cc32b10dd89c3bd56c4e19ba0f39726f9de0b7f3"
+  },
+  "runs": [
+    {
+      "name": "browser",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tests/v24/browser_verify.py",
+        "--source",
+        "/workspace/scratch/018887db1a18/grand-tour-v25/Grand-Tour-V25.html",
+        "--out",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/render/browser"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 116.75242834599703,
+      "log": "/workspace/scratch/018887db1a18/evidence/final-cache/render/browser.log"
+    },
+    {
+      "name": "ui",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tests/v25/ui_verify.py",
+        "--source",
+        "/workspace/scratch/018887db1a18/grand-tour-v25/Grand-Tour-V25.html",
+        "--out",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/render/ui"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 26.093841603000328,
+      "log": "/workspace/scratch/018887db1a18/evidence/final-cache/render/ui.log"
+    },
+    {
+      "name": "scenes",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tests/v25/legacy_browser.py",
+        "scenes",
+        "--scenes",
+        "/workspace/scratch/018887db1a18/evidence/v25/scenes",
+        "--out",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/render/scenes-played"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 126.28843030999997,
+      "log": "/workspace/scratch/018887db1a18/evidence/final-cache/render/scenes.log"
+    },
+    {
+      "name": "presentation",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tests/v25/legacy_browser.py",
+        "presentation",
+        "--out",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/render/presentation"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 18.712720442999853,
+      "log": "/workspace/scratch/018887db1a18/evidence/final-cache/render/presentation.log"
+    },
+    {
+      "name": "finish",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tests/v25/legacy_browser.py",
+        "finish",
+        "--out",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/render/finish"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 29.872879549999197,
+      "log": "/workspace/scratch/018887db1a18/evidence/final-cache/render/finish.log"
+    },
+    {
+      "name": "downhill",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tests/v25/legacy_browser.py",
+        "downhill",
+        "--out",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/render/downhill"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 21.388367902000027,
+      "log": "/workspace/scratch/018887db1a18/evidence/final-cache/render/downhill.log"
+    },
+    {
+      "name": "weather",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tests/v25/legacy_browser.py",
+        "weather",
+        "--out",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/render/weather"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 20.43278983900018,
+      "log": "/workspace/scratch/018887db1a18/evidence/final-cache/render/weather.log"
+    },
+    {
+      "name": "sequence-geometry",
+      "command": [
+        "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python",
+        "tests/v25/legacy_browser.py",
+        "sequence",
+        "--record",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/render/browser/stage-05-physical.json",
+        "--tour",
+        "/workspace/scratch/018887db1a18/evidence/simulation/v25-tour-314159-tour.json",
+        "--out",
+        "/workspace/scratch/018887db1a18/evidence/final-cache/render/sequence-geometry"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 17.756308432999504,
+      "log": "/workspace/scratch/018887db1a18/evidence/final-cache/render/sequence-geometry.log"
+    }
+  ],
+  "sourceUnchanged": true,
+  "pass": true,
+  "finishedUTC": "2026-10-09T14:56:25.057493+00:00"
+}

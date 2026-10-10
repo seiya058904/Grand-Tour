@@ -1,0 +1,133 @@
+{
+  "source_sha256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+  "checks": {
+    "offline_identity": {
+      "pass": true
+    },
+    "contrast-normal": {
+      "color": "rgb(237, 219, 152)",
+      "background": "rgb(41, 47, 34)",
+      "ratio": 9.965243225235984,
+      "pass": true
+    },
+    "contrast-normal-hover": {
+      "color": "rgb(245, 229, 166)",
+      "background": "rgb(59, 65, 41)",
+      "ratio": 8.429594316184566,
+      "pass": true
+    },
+    "contrast-attacking": {
+      "color": "rgb(24, 43, 33)",
+      "background": "rgb(229, 204, 114)",
+      "ratio": 9.39434068350989,
+      "pass": true
+    },
+    "contrast-attacking-hover": {
+      "color": "rgb(24, 43, 33)",
+      "background": "rgb(240, 219, 141)",
+      "ratio": 10.823961932058676,
+      "pass": true
+    },
+    "contrast-cancelled": {
+      "color": "rgb(237, 219, 152)",
+      "background": "rgb(41, 47, 34)",
+      "ratio": 9.965243225235984,
+      "pass": true
+    },
+    "pause_clock": {
+      "pass": true,
+      "owner": "pauseBackdrop"
+    },
+    "close_focus": {
+      "hidden": true,
+      "paused": false,
+      "inert": false,
+      "focus": "pauseButton",
+      "stack": [],
+      "animation": {
+        "playState": "finished",
+        "currentTime": 130,
+        "startTime": 10332.46599999984,
+        "duration": 130
+      },
+      "pass": true
+    },
+    "interrupted_exit": {
+      "hidden": true,
+      "paused": false,
+      "inert": false,
+      "focus": "pauseButton",
+      "stack": [],
+      "animation": {
+        "playState": "finished",
+        "currentTime": 130,
+        "startTime": 11349.092000000383,
+        "duration": 130
+      },
+      "pass": true
+    },
+    "nested_modal": {
+      "pass": true
+    },
+    "layout-1440": {
+      "overflow": 0,
+      "labelOverlap": false,
+      "controlsBottom": 857.53125,
+      "pass": true
+    },
+    "layout-1280": {
+      "overflow": 0,
+      "labelOverlap": false,
+      "controlsBottom": 705.53125,
+      "pass": true
+    },
+    "layout-1024": {
+      "overflow": 0,
+      "labelOverlap": false,
+      "controlsBottom": 717.921875,
+      "pass": true
+    },
+    "layout-768": {
+      "overflow": 0,
+      "labelOverlap": false,
+      "controlsBottom": 874.921875,
+      "pass": true
+    },
+    "layout-390": {
+      "overflow": 0,
+      "labelOverlap": false,
+      "controlsBottom": 602.84375,
+      "pass": true
+    },
+    "live_mobile_centre": {
+      "pass": true
+    },
+    "layout-320": {
+      "overflow": 0,
+      "labelOverlap": false,
+      "controlsBottom": 579.890625,
+      "pass": true
+    },
+    "reduced_motion": {
+      "pass": true
+    },
+    "reduced_exit": {
+      "pass": true
+    },
+    "v22_file_import": {
+      "pass": true
+    },
+    "process_restart_persistence": {
+      "pass": true,
+      "t": 25
+    },
+    "console": {
+      "pass": true,
+      "errors": [],
+      "warnings": []
+    }
+  },
+  "errors": [],
+  "console": [],
+  "pass": true
+}

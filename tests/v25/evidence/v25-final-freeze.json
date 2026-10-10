@@ -1,0 +1,11 @@
+{
+  "parentSHA256": "558fdfbae82449fe4fbdcd55e1ce61bb3de6be4ec7997bbc0a49ed20dbcccc95",
+  "finalSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "parentBytes": 1783216,
+  "finalBytes": 1783282,
+  "exactSingleReplacement": true,
+  "old": "sprite=document.createElement('canvas');sprite.width=108;sprite.height=132;const c=sprite.getContext('2d')",
+  "new": "sprite=RiderBodySprites.size>=256?RiderBodySprites.values().next().value:document.createElement('canvas');sprite.width=108;sprite.height=132;const c=sprite.getContext('2d')",
+  "inverseReplacementSHA256": "558fdfbae82449fe4fbdcd55e1ce61bb3de6be4ec7997bbc0a49ed20dbcccc95",
+  "scope": "Only cachedCyclistBody allocation at full LRU capacity. The rest of the HTML is byte-for-byte identical to the audited parent, including simulation, storage, HUD, scenery and complete award state machine/painters. Old reports retain their real parent SHA; final functional/production/render/complete-Tour reruns are recorded separately."
+}

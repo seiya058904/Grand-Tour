@@ -1,0 +1,109 @@
+{
+  "source": "/workspace/scratch/018887db1a18/grand-tour-v25/Grand-Tour-V25.html",
+  "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "sourceUnchanged": true,
+  "checks": [
+    {
+      "name": "first settings change cannot prevent the first tour save",
+      "locks": false,
+      "pass": true,
+      "detail": {
+        "revision": 1,
+        "tour": "first-tour",
+        "quality": "low"
+      }
+    },
+    {
+      "name": "two empty pages can merge settings before exactly one claims progress",
+      "locks": false,
+      "pass": true,
+      "detail": {
+        "firstClaims": [
+          true,
+          false
+        ],
+        "staleSettingsMerged": true,
+        "staleProgressRejected": true
+      }
+    },
+    {
+      "name": "settings before legacy-key promotion retain the loaded tour ownership",
+      "locks": false,
+      "pass": true,
+      "detail": {
+        "canonicalTime": 0.05,
+        "legacyUnchanged": true
+      }
+    },
+    {
+      "name": "a revision-bearing empty store is distinct from never-saved progress",
+      "locks": false,
+      "pass": true,
+      "detail": {
+        "revision": 2,
+        "staleRejected": true
+      }
+    },
+    {
+      "name": "a stale setting cannot republish a tour after canonical storage disappears",
+      "locks": false,
+      "pass": true,
+      "detail": {
+        "staleRejected": true,
+        "inMemoryPreserved": true
+      }
+    },
+    {
+      "name": "first settings change cannot prevent the first tour save",
+      "locks": true,
+      "pass": true,
+      "detail": {
+        "revision": 1,
+        "tour": "first-tour",
+        "quality": "low"
+      }
+    },
+    {
+      "name": "two empty pages can merge settings before exactly one claims progress",
+      "locks": true,
+      "pass": true,
+      "detail": {
+        "firstClaims": [
+          true,
+          false
+        ],
+        "staleSettingsMerged": true,
+        "staleProgressRejected": true
+      }
+    },
+    {
+      "name": "settings before legacy-key promotion retain the loaded tour ownership",
+      "locks": true,
+      "pass": true,
+      "detail": {
+        "canonicalTime": 0.05,
+        "legacyUnchanged": true
+      }
+    },
+    {
+      "name": "a revision-bearing empty store is distinct from never-saved progress",
+      "locks": true,
+      "pass": true,
+      "detail": {
+        "revision": 2,
+        "staleRejected": true
+      }
+    },
+    {
+      "name": "a stale setting cannot republish a tour after canonical storage disappears",
+      "locks": true,
+      "pass": true,
+      "detail": {
+        "staleRejected": true,
+        "inMemoryPreserved": true
+      }
+    }
+  ],
+  "passed": 10,
+  "failed": 0
+}

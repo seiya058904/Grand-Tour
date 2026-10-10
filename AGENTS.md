@@ -1,37 +1,42 @@
-# Grand Tour 仓库指南
+# Grand Tour 仓库指南 · V25
 
-## 入口与边界
+## 入口与设计边界
 
-- 当前权威游戏为根目录 `Grand-Tour-V24.html`：自包含、离线可运行的 HTML，无 npm 构建或外部运行时库。`index.html` 只是跳转入口；GitHub Pages 从 `main` 根目录发布。
-- `Grand-Tour-V24-Final.zip` 是保留原始字节的封板交付包；当前 HTML 的后续修复不等于包内历史 HTML。不要覆盖原包或把旧证据当作新修复的验证。
-- 历史 HTML、报告在 `archive/<版本>/`，索引与旧 ZIP 的 Git 恢复方法见 `archive/README.md`。`archive/v22/`、`archive/v23/` 仍是核心回归基线，不能当作过期产物删除。
-- 保持单 HTML 结构、比赛物理、AI、计时、排名、路线、V9 存档与确定性。纯整理须保持正式 HTML/ZIP 字节不变；发现新 Bug 只记录，除非任务授权修复。
-- `Race.restore` 的完赛校验须交叉检查车手完赛时间、赛事时钟、首末锚点与存在的终点过点账本；不能猜测或重建损坏的运行时锚点。严格导入拒绝非法进行中比赛；恢复模式丢弃该比赛并保留有效的已完成成绩。
-- 终点过点账本可保留合法 OTL 过线，而车手完赛字段已清空；部分公路/TT 路线没有终点 checkpoint。V4/V7 迁移的末次锚点可早于账本里后续 OTL 过点，原生 `legacy-sim` 的首锚点也可为空；不能把这些合法状态当作损坏档。
+- 当前候选入口为 `Grand-Tour-V25.html`，`index.html` 跳转到它。自包含、离线运行，无 npm 构建、外部运行时库或在线服务依赖。
+- `Grand-Tour-V24.html` 是本次交接的最新 V24 基线，源自 commit `3e92128c0cb353d267c12ceeaf143bda663a7b26`；不能用旧封板 HTML 替换。V20–V23、V24 报告及 V22–V24 测试共 65 个文件由 `tests/v25/baseline-hashes.json` 保护。
+- 本源码包没有 `.git`，也没有旧 `Grand-Tour-V24-Final.zip`；这是交接包的既定裁剪。V25 打包器不依赖旧 ZIP，不要修改历史基线以掩盖失败。
+- 保持单 HTML 产品形态、固定 0.05 秒步长、V9 保存键/格式、确定性物理和 AI。局部修复须有根因和回归；不为结构美观重写成熟模块。
+- V25 没有部署、提交、推送、创建 PR、Issue 或 Release。后续远端操作须获得明确授权。
+
+## 必须保留的存档边界
+
+- `Race.restore` 的完赛校验交叉检查车手完赛字段、赛事时钟、首末锚点及存在的终点过点账本；不能猜测或重建损坏锚点。
+- 合法 OTL 过线仍可留在终点账本，而车手完赛字段已清空；部分公路/TT 路线没有终点 checkpoint；V4/V7 迁移末锚点可早于后续 OTL 过点；原生 `legacy-sim` 首锚点可为空。
+- 旧档可以没有 `cutoff` 或其 `timeModel`。仅对存在的关门线验证形状、首位实际过线人和用时、截止时间及 FINISHED 合法性；不要重新计算历史百分比或改写旧结果。
+- 严格导入遇到损坏 active 仍原子拒绝。恢复模式仅在外层存档重新迁移成功后隔离坏 active，保留逐站验证通过的成绩前缀；loadStore 在可写回前保留原始字节备份。
+- `progressRevision:0` 且无 tour/active/pending 的纯设置档才与无进度同义。已有 canonical 的设置合并不得接管另一页进度；写失败不得更新所有权。无 Web Locks 的跨进程同时写不保证原子 CAS，不得宣称已解决。
 
 ## 运行与验证
 
-从仓库根目录运行；需要 Node.js、Python，浏览器测试另需已安装 Chromium 的 Python Playwright。先创建仓库外的证据目录，以下 `$evidence` 为其绝对路径。
+从根目录执行，证据放仓库外。完整说明见 `tests/v25/README.md`。测试需要 Node.js、Python；真实浏览器另需 Python Playwright 和 Chromium；游戏本身不需要这些依赖。
 
-```powershell
-python -m http.server 4187 --bind 127.0.0.1
-# 另一个终端运行所需回归：
-python tests/v24/static_verify.py --out "$evidence/static.json"
-node tests/v24/core-parity.cjs archive/v23/Grand-Tour-V23.html Grand-Tour-V24.html "$evidence/core-parity.json"
-node tests/v24/focused.cjs Grand-Tour-V24.html archive/v22/Grand-Tour-V22.html "$evidence/focused.json"
-node tests/v24/save-finish-boundary.cjs Grand-Tour-V24.html "$evidence/save-finish-boundary.json"
-python tests/v24/save-finish-browser.py --out "$evidence/save-finish-browser"
-python tests/v24/browser_verify.py --out "$evidence/browser"
+```bash
+mkdir -p /tmp/gt-v25
+python tests/v25/static_verify.py --out /tmp/gt-v25/static.json
+node tests/v25/core-parity.cjs Grand-Tour-V24.html Grand-Tour-V25.html /tmp/gt-v25/core.json
+node tests/v25/focused.cjs Grand-Tour-V25.html archive/v22/Grand-Tour-V22.html /tmp/gt-v25/focused.json
+node tests/v24/save-finish-boundary.cjs Grand-Tour-V25.html /tmp/gt-v25/boundary.json
+node tests/v25/storage-validation.cjs Grand-Tour-V25.html /tmp/gt-v25/storage.json /tmp/gt-v25/fixtures
+python tests/v24/browser_verify.py --source Grand-Tour-V25.html --out /tmp/gt-v25/browser
 ```
 
-- 按变更选测试；完整 Tour 对照、存档所有权、TTT、领奖、性能与离线打包命令见 `tests/v24/README.md`。性能采样单独运行，避免并行测试干扰。
-- CI 为 `.github/workflows/v23-verify.yml`，同时保留 V23/V24 回归。发布后核对对应提交的 CI/Pages 与线上 HTML/ZIP，而不是旧成功记录。
-- 修复候选包使用 `tests/v24/build_candidate.py --out <仓库外新ZIP>`，再用 `tests/v24/package_verify.py <候选ZIP> --out <新目录>`。它们校验原包、生成清单并试玩离线入口；`static_verify.py --manifest` 只用于带清单的解压包。
-- 完成前检查 `git diff --check`、最终 diff/status、入口和关键引用；说明未运行的验证。
+原 35 项定向回归只通过薄适配器更新版本断言，行为断言不变。V25 核心签名门禁要求 13 族完全相等，SaveCodec 仅允许已审查的 decode 恢复入口文本差异；不是笼统豁免整个编解码器。
 
-## 目录与交付卫生
+完整 Tour 比较必须新跑两版并比较整份 V9 对象；不能拿历史 PASS 当新版本结果。场景播放、领奖和性能分别验证，状态断言不等于视觉质量。ABBA 性能采样必须停止其他模拟/浏览器测试，画质固定 full，记录环境和源码哈希。
 
-- 根目录只保留当前 HTML/Final ZIP/报告、入口、README、`AGENTS.md`、必要配置、`.github/`、`tests/`、`archive/`。历史资料优先按版本归档，不为美观重构成熟测试体系。
-- 旧 Final ZIP 只有在确认无有效引用、可从 Git 历史完整恢复并记录恢复依据后，才从当前 tree 移除；唯一历史副本保留。
-- 新截图、日志、缓存、临时验证产物放仓库外或忽略的 `output/`；已归档的正式验证证据保留。
-- 新版本封板同步核对入口、README、报告、ZIP、`.gitignore` 当前包例外和 CI/Pages 引用。提交、推送、发布和部署须有明确授权；不改正式 tag/Release，不改写历史。
+## 目录、CI 与交付
+
+- 新测试在 `tests/v25/`，紧凑机器证据在其 `evidence/`；截图、录像、自然快照、大日志、依赖和临时文件在仓库外。
+- `tests/v25/package_source.py` 构建新的轻量 ZIP，`tests/v25/package_verify.py` 核验解压清单、基线、正式入口和实际离线存档/控件。禁止覆盖原始 V24 包。
+- 新 CI 配置 `.github/workflows/v25-verify.yml` 不包含部署。旧 V23/V24 工作流保留；仅依赖被裁剪旧 ZIP 的历史打包步骤明确标注可选输入缺失，不伪造 PASS。
+- 完成前核验最终 diff、空白错误、入口、README、报告、CI 和打包引用。有 Git 时运行 `git diff --check`；本交接目录没有 Git 时与原 ZIP 逐文件对照。所有未跑或失败的验收须如实记录。

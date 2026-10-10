@@ -1,0 +1,354 @@
+{
+  "source": "Grand-Tour-V25.html",
+  "sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "checks": [
+    {
+      "name": "V25 retains storage key and schema V9",
+      "pass": true
+    },
+    {
+      "name": "V22 road snapshot import preserves every physical field and RNG",
+      "pass": true
+    },
+    {
+      "name": "TT unchanged production trajectory, stage 1",
+      "pass": true
+    },
+    {
+      "name": "TT unchanged production trajectory, stage 16",
+      "pass": true
+    },
+    {
+      "name": "Road snapshot resume is deterministic with optional seam/response state",
+      "pass": true
+    },
+    {
+      "name": "Moderate gap requires persistence; capture requires close physical contact",
+      "pass": true
+    },
+    {
+      "name": "Coherent accelerating separation recognised within 1.2s",
+      "pass": true,
+      "detail": {
+        "gapMetres": 10,
+        "relativeSpeed": 2,
+        "recognitionSeconds": 1.2
+      }
+    },
+    {
+      "name": "Climbing-speed 4.4m paceline can rejoin, not remain separate forever",
+      "pass": true
+    },
+    {
+      "name": "Brief transient gap does not flicker group identity",
+      "pass": true
+    },
+    {
+      "name": "Largest fragment retains UID when a small break leaves its front",
+      "pass": true
+    },
+    {
+      "name": "All 184 riders accounted for across many groups and terminal statuses",
+      "pass": true,
+      "detail": {
+        "racing": 180,
+        "finished": 1,
+        "exited": 2,
+        "dns": 1,
+        "total": 184,
+        "assigned": 180,
+        "groups": 21,
+        "closed": true
+      }
+    },
+    {
+      "name": "Finished rider leaves groups in the same simulation tick",
+      "pass": true
+    },
+    {
+      "name": "Several GC teams organise pursuit of a real separated GC threat",
+      "pass": true,
+      "detail": [
+        {
+          "team": 1,
+          "target": 0,
+          "worker": null
+        },
+        {
+          "team": 2,
+          "target": 0,
+          "worker": null
+        },
+        {
+          "team": 3,
+          "target": 0,
+          "worker": null
+        },
+        {
+          "team": 4,
+          "target": 0,
+          "worker": null
+        }
+      ]
+    },
+    {
+      "name": "Harmless early break is not treated as a GC threat",
+      "pass": true
+    },
+    {
+      "name": "Response chain selects a real nearer wheel and never a wheel behind",
+      "pass": true,
+      "detail": {
+        "root": 0,
+        "intermediate": [
+          9,
+          1,
+          6
+        ]
+      }
+    },
+    {
+      "name": "Relevant riders contest sprint without pulling all GC helpers away",
+      "pass": true,
+      "detail": [
+        {
+          "id": 12,
+          "role": "Puncheur",
+          "team": 9
+        },
+        {
+          "id": 13,
+          "role": "Sprinter",
+          "team": 9
+        },
+        {
+          "id": 16,
+          "role": "Sprinter",
+          "team": 10
+        },
+        {
+          "id": 24,
+          "role": "Sprinter",
+          "team": 20
+        },
+        {
+          "id": 101,
+          "role": "Sprinter",
+          "team": 12
+        },
+        {
+          "id": 147,
+          "role": "Sprinter",
+          "team": 18
+        }
+      ]
+    },
+    {
+      "name": "Relevant riders contest kom without pulling all GC helpers away",
+      "pass": true,
+      "detail": [
+        {
+          "id": 2,
+          "role": "GC",
+          "team": 0
+        },
+        {
+          "id": 4,
+          "role": "Climber",
+          "team": 5
+        },
+        {
+          "id": 7,
+          "role": "Climber",
+          "team": 6
+        },
+        {
+          "id": 11,
+          "role": "Climber",
+          "team": 1
+        },
+        {
+          "id": 25,
+          "role": "GC",
+          "team": 2
+        },
+        {
+          "id": 100,
+          "role": "Puncheur",
+          "team": 12
+        }
+      ]
+    },
+    {
+      "name": "Floating role is separate from team job; protected GC and working helper are distinct",
+      "pass": true
+    },
+    {
+      "name": "Highest priority actual status wins over a generic attacking label",
+      "pass": true
+    },
+    {
+      "name": "Sparse label budgets and all fixed slots remain non-overlapping",
+      "pass": true
+    },
+    {
+      "name": "Minimum dwell survives a new ordinary candidate but explicit inspection wins",
+      "pass": true
+    },
+    {
+      "name": "Depth decluttering has no physical or RNG effect and never shifts progress",
+      "pass": true,
+      "detail": {
+        "riders": 184,
+        "maxDepthOffset": 0.4077664807731347
+      }
+    },
+    {
+      "name": "Classification, physiology and fatigue remain unchanged",
+      "pass": true
+    },
+    {
+      "name": "Timing and unchanged save codec helpers remain identical to V22",
+      "pass": true,
+      "detail": {
+        "functions": 14
+      }
+    },
+    {
+      "name": "Intermediate sprint contender recognises a rival with the same mission",
+      "pass": true,
+      "detail": {
+        "id": 7,
+        "target": 8,
+        "interest": 0.65
+      }
+    },
+    {
+      "name": "A break works under capture risk but will not chase its own team-mate",
+      "pass": true,
+      "detail": {
+        "work": {
+          "willingness": 0.92,
+          "reason": "DEFEND_BREAK",
+          "skip": false
+        },
+        "sit": {
+          "willingness": 0.15,
+          "reason": "TEAMMATE_AHEAD",
+          "skip": true
+        }
+      }
+    },
+    {
+      "name": "GC standings change risk appetite while a short crest remains ineligible",
+      "pass": true,
+      "detail": {
+        "defend": {
+          "score": 0.7335774291723967,
+          "deficit": 0,
+          "defending": true,
+          "runway": 67.2531939167546,
+          "exposed": 1,
+          "commit": false,
+          "reason": "DEFEND_GC"
+        },
+        "gain": {
+          "score": 1.0435774291723967,
+          "deficit": 240,
+          "defending": false,
+          "runway": 67.2531939167546,
+          "exposed": 1,
+          "commit": true,
+          "reason": "GAIN_TIME"
+        }
+      }
+    },
+    {
+      "name": "Post-sprint passive bunch recovers through power without changing timing rules",
+      "pass": true,
+      "detail": {
+        "source": "actual stage 21, seed 477979, t=150.05; corrected sprint mission exposed passive pace feedback",
+        "slowBefore": 66,
+        "slowAfter": 0,
+        "seconds": 20
+      }
+    },
+    {
+      "name": "Open-road cruise preserves an intentional rescue and a real slow wheel",
+      "pass": true,
+      "detail": {
+        "cruiseWatts": 263.59184123076926,
+        "rescueWatts": 0
+      }
+    },
+    {
+      "name": "Nominated sprinter buys local position, respects a fast train and low reserves",
+      "pass": true,
+      "detail": {
+        "id": 15,
+        "watts": 344.8464393846154
+      }
+    },
+    {
+      "name": "A recalled helper cannot invalidate a race save; old V9 metadata is repaired",
+      "pass": true,
+      "detail": {
+        "stage": 3,
+        "time": 350.5,
+        "helper": 12,
+        "continuedSeconds": 30
+      }
+    },
+    {
+      "name": "Road grade has inertia with no physical-coordinate or snapshot changes",
+      "pass": true,
+      "detail": {
+        "settledGrade": -0.05999879826636385
+      }
+    },
+    {
+      "name": "Awards are record-derived and the final GC is the last presentation",
+      "pass": true,
+      "detail": {
+        "ordinary": 109.19999999999999,
+        "final": 133.39999999999998,
+        "order": [
+          {
+            "id": 41,
+            "entry": 8.6,
+            "x": 302.22222222222223
+          },
+          {
+            "id": 72,
+            "entry": 7.2,
+            "x": 157.22222222222223
+          },
+          {
+            "id": 17,
+            "entry": 5.9,
+            "x": 447.22222222222223
+          }
+        ]
+      }
+    },
+    {
+      "name": "A naturally reached sprint drives the label and standing pose without changing physics",
+      "pass": true,
+      "detail": {
+        "t": 259.35,
+        "ids": [
+          48
+        ]
+      }
+    },
+    {
+      "name": "Breathing phase stays continuous when real load changes",
+      "pass": true,
+      "detail": {
+        "maximumPhaseStep": 0.07982052447342802
+      }
+    }
+  ],
+  "passed": 35,
+  "failed": 0
+}

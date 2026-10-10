@@ -1,0 +1,160 @@
+{
+  "source": "Grand-Tour-V25.html",
+  "sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "platform": "Linux-6.18.44-x86_64-with-glibc2.39",
+  "checks": [
+    {
+      "name": "layout-320-dpr1",
+      "viewport": [
+        320,
+        740
+      ],
+      "dpr": 1,
+      "overflow": 0,
+      "labelOverlap": false,
+      "canvas": {
+        "width": 290,
+        "height": 262,
+        "backingWidth": 290,
+        "backingHeight": 262
+      },
+      "buttonMinWidth": 86.140625,
+      "buttonMinHeight": 42,
+      "full": true,
+      "pass": true
+    },
+    {
+      "name": "layout-390-dpr1",
+      "viewport": [
+        390,
+        844
+      ],
+      "dpr": 1,
+      "overflow": 0,
+      "labelOverlap": false,
+      "canvas": {
+        "width": 360,
+        "height": 284.953125,
+        "backingWidth": 360,
+        "backingHeight": 285
+      },
+      "buttonMinWidth": 107.6875,
+      "buttonMinHeight": 42,
+      "full": true,
+      "pass": true
+    },
+    {
+      "name": "mobile-live-centre-single-dom",
+      "pass": true
+    },
+    {
+      "name": "layout-768-dpr1",
+      "viewport": [
+        768,
+        900
+      ],
+      "dpr": 1,
+      "overflow": 0,
+      "labelOverlap": false,
+      "canvas": {
+        "width": 719.9375,
+        "height": 398,
+        "backingWidth": 720,
+        "backingHeight": 398
+      },
+      "buttonMinWidth": 218.4375,
+      "buttonMinHeight": 40,
+      "full": true,
+      "pass": true
+    },
+    {
+      "name": "layout-1920-dpr1",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "dpr": 1,
+      "overflow": 0,
+      "labelOverlap": false,
+      "canvas": {
+        "width": 1300,
+        "height": 458,
+        "backingWidth": 1300,
+        "backingHeight": 458
+      },
+      "buttonMinWidth": 396.921875,
+      "buttonMinHeight": 40,
+      "full": true,
+      "pass": true
+    },
+    {
+      "name": "keyboard-effort-attack-nested-pause",
+      "pass": true
+    },
+    {
+      "name": "layout-3840-dpr1",
+      "viewport": [
+        3840,
+        2160
+      ],
+      "dpr": 1,
+      "overflow": 0,
+      "labelOverlap": false,
+      "canvas": {
+        "width": 1902,
+        "height": 538,
+        "backingWidth": 1902,
+        "backingHeight": 538
+      },
+      "buttonMinWidth": 582.140625,
+      "buttonMinHeight": 44,
+      "full": true,
+      "pass": true
+    },
+    {
+      "name": "layout-1920-dpr2",
+      "viewport": [
+        1920,
+        1080
+      ],
+      "dpr": 2,
+      "overflow": 0,
+      "labelOverlap": false,
+      "canvas": {
+        "width": 1300,
+        "height": 458,
+        "backingWidth": 1950,
+        "backingHeight": 687
+      },
+      "buttonMinWidth": 396.921875,
+      "buttonMinHeight": 40,
+      "full": true,
+      "pass": true
+    },
+    {
+      "name": "offline-root-entry-production-mode",
+      "pass": true
+    },
+    {
+      "name": "console-offline-health",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "console": [],
+  "externalRequests": [],
+  "screenshots": [
+    "race-320-dpr1.png",
+    "race-390-dpr1.png",
+    "mobile-race-centre.png",
+    "race-768-dpr1.png",
+    "race-1920-dpr1.png",
+    "race-3840-dpr1.png",
+    "race-1920-dpr2.png"
+  ],
+  "browser": "141.0.7390.37",
+  "passed": 10,
+  "failed": 0,
+  "skipped": 0,
+  "pass": true
+}

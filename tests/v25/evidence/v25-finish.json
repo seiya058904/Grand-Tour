@@ -1,0 +1,74 @@
+{
+  "sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "mode": "native-file",
+  "errors": [],
+  "finish-sprint.png": {
+    "t": 275.85,
+    "actualLeft": 24.421752233375628,
+    "power": 928.3944523453997,
+    "speed": 16.451668200555645,
+    "stand": 0.94,
+    "sprint": "sprint",
+    "lens": 0.8200162892417414
+  },
+  "finish-lunge.png": {
+    "t": 277.25,
+    "actualLeft": 1.1872698600272997,
+    "power": 886.0881517465622,
+    "speed": 16.725634986687318,
+    "stand": 0.94,
+    "sprint": "sprint",
+    "lens": 0.8200017341283133
+  },
+  "finished_projection": {
+    "pass": true,
+    "finished": 184,
+    "maxWorldError": 0,
+    "complete": true
+  },
+  "terminal_retirement": {
+    "pass": true,
+    "finishedRetired": 184,
+    "finishedDrawn": 0,
+    "retainedActualState": 184
+  },
+  "ceremony_winner": {
+    "pass": true,
+    "elapsed": 14.716200000001573,
+    "settled": 1,
+    "phase": "ceremony",
+    "plan": [
+      {
+        "kind": "winner",
+        "start": 1.6,
+        "end": 22.400000000000002
+      },
+      {
+        "kind": "yellow",
+        "start": 22.400000000000002,
+        "end": 43.2
+      },
+      {
+        "kind": "green",
+        "start": 43.2,
+        "end": 64
+      },
+      {
+        "kind": "polka",
+        "start": 64,
+        "end": 84.8
+      },
+      {
+        "kind": "white",
+        "start": 84.8,
+        "end": 105.6
+      },
+      {
+        "kind": "complete",
+        "start": 105.6,
+        "end": 108.19999999999999
+      }
+    ]
+  },
+  "pass": true
+}

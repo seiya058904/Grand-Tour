@@ -1,0 +1,22 @@
+{
+  "source_sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "checks": {
+    "v25_identity": true,
+    "latest_v24_preserved": true,
+    "historical_sources_tests_preserved": true,
+    "unique_dom_ids": true,
+    "offline_assets": true,
+    "no_remote_css": true,
+    "original_race_class_preserved": true,
+    "v9_storage_identity": true,
+    "finish_guard_preserved": true,
+    "entry_targets_v25": true,
+    "javascript_syntax": true
+  },
+  "preserved_files": 65,
+  "changed_baselines": [],
+  "passed": 11,
+  "failed": 0,
+  "skipped": 0,
+  "pass": true
+}

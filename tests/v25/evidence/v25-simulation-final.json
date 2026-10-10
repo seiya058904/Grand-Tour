@@ -1,0 +1,47 @@
+{
+  "candidate": {
+    "source": "Grand-Tour-V25.html",
+    "sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+    "bytes": 1783282,
+    "sourceUnchangedThroughFullRun": true
+  },
+  "baselineSourceSha256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+  "tour": {
+    "seed": 314159,
+    "stagesPassed": 21,
+    "naturalRestoreChecksPassed": 367,
+    "recordNormalizationsPassed": 21,
+    "failed": 0,
+    "skipped": 0,
+    "finalField": {
+      "starting": 162,
+      "finished": 162,
+      "priorExits": 22
+    }
+  },
+  "wholeV9TourParity": {
+    "pass": true,
+    "omittedRaceFields": 0,
+    "byteIdentical": true,
+    "sharedSha256": "3e83c50c18c06d77f0f41abd871c0c28d08b36ef8c0aec6077ac7a6601575fed"
+  },
+  "runtimeSimulationSource": {
+    "familiesChecked": 18,
+    "familiesIdentical": 18,
+    "configurationDifferences": [
+      {
+        "field": "buildVersion",
+        "baseline": 240,
+        "candidate": 250
+      }
+    ],
+    "scope": "18 exported production engine families/functions/data: final Race.prototype overrides, physics/timing/classification/fatigue/conditions modules and rider/stage data. Function source/own properties compared. Unexported dependencies and RaceView Canvas cache are outside this assertion."
+  },
+  "liveStandings": {
+    "passed": 6,
+    "failed": 0,
+    "skipped": 0
+  },
+  "previousCandidateEvidence": "Existing 558fdf... results remain unchanged in evidence/simulation/. This is a new full run for the 1f5a338... Canvas reuse candidate.",
+  "limits": "One fixed-seed full Tour, not proof of every possible race. Node runtime is not browser frame-time evidence. Baseline 28 flat-stage role survey was not rerun and retains its V24 provenance."
+}

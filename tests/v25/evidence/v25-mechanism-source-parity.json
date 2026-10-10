@@ -1,0 +1,88 @@
+{
+  "baselineSha256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+  "candidateSha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+  "sourceUnchangedDuringRun": true,
+  "scope": "18 exported production engine families/functions/data: final Race.prototype overrides, physics/timing/classification/fatigue/conditions modules and rider/stage data. Function source/own properties compared. Unexported dependencies and RaceView Canvas cache are outside this assertion.",
+  "comparisons": [
+    {
+      "name": "Race",
+      "identical": true
+    },
+    {
+      "name": "Physics",
+      "identical": true
+    },
+    {
+      "name": "Weather",
+      "identical": true
+    },
+    {
+      "name": "RaceTiming",
+      "identical": true
+    },
+    {
+      "name": "TeamClassification",
+      "identical": true
+    },
+    {
+      "name": "riderAttributes",
+      "identical": true
+    },
+    {
+      "name": "timingDifference",
+      "identical": true
+    },
+    {
+      "name": "Classification",
+      "identical": true
+    },
+    {
+      "name": "Fatigue",
+      "identical": true
+    },
+    {
+      "name": "Physiology",
+      "identical": true
+    },
+    {
+      "name": "TimeLimits",
+      "identical": true
+    },
+    {
+      "name": "SimulationClock",
+      "identical": true
+    },
+    {
+      "name": "CompactCourse",
+      "identical": true
+    },
+    {
+      "name": "isRacing",
+      "identical": true
+    },
+    {
+      "name": "fieldAccounting",
+      "identical": true
+    },
+    {
+      "name": "seedForStage",
+      "identical": true
+    },
+    {
+      "name": "RIDER_DATA",
+      "identical": true
+    },
+    {
+      "name": "STAGE_DATA",
+      "identical": true
+    }
+  ],
+  "configurationDifferences": [
+    {
+      "field": "buildVersion",
+      "baseline": 240,
+      "candidate": 250
+    }
+  ],
+  "pass": true
+}

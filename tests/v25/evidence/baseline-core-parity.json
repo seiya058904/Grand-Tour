@@ -1,0 +1,79 @@
+{
+  "source": "Grand-Tour-V24.html",
+  "sha256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+  "baseline": "archive/v23/Grand-Tour-V23.html",
+  "restoreBoundaryException": "validateFinishState(s,race.stage.length);",
+  "checks": [
+    {
+      "name": "Race",
+      "sha256": "81d26075cc13c8978d658abbe34318f478cb3b485a793441efd9755b17af32cf",
+      "pass": true
+    },
+    {
+      "name": "Physics",
+      "sha256": "e96d7f4f2090fad5ae1290279e2758e2e14e5ee686a528b8c769548021489fff",
+      "pass": true
+    },
+    {
+      "name": "Physiology",
+      "sha256": "a583c4e778a8a7d09fc60366db3e40c9d2587af85461afe8cf5f382c0b85f0b8",
+      "pass": true
+    },
+    {
+      "name": "Fatigue",
+      "sha256": "12f5331be2505a8f93d25a67d8210206b963717cebf4c51058093a97aa91a243",
+      "pass": true
+    },
+    {
+      "name": "Weather",
+      "sha256": "3a319d43ba4c45197dad0d8b1df87b972c9c9b753f226a732fe9a04fdb4667c5",
+      "pass": true
+    },
+    {
+      "name": "RaceTiming",
+      "sha256": "faa01c5e4bec9b7126b20a27f19a4a768f17a52516e84efd4fee3f35251e22ff",
+      "pass": true
+    },
+    {
+      "name": "TeamClassification",
+      "sha256": "3d9f8ac94ede6d29da475c76b2122f2311d71c44d213b78e91a8b6c41b21deea",
+      "pass": true
+    },
+    {
+      "name": "Classification",
+      "sha256": "912269ef51bcf3f1255e11d7cb49735709ac48a1a446a4777ed9d36ea42bd859",
+      "pass": true
+    },
+    {
+      "name": "TimeLimits",
+      "sha256": "0665a25580aea2c0bef06b1da1429b90ae2ac0865698036477c781c0781370c1",
+      "pass": true
+    },
+    {
+      "name": "CompactCourse",
+      "sha256": "bd9e01ea5b39c004047bd83f225be314ac514696c3af94b1f9d2b3c047fdb1f0",
+      "pass": true
+    },
+    {
+      "name": "SaveCodec",
+      "sha256": "ec1e27e068d8bc711d6f2d69864ff2ac8fff7e5eb66a20706b42ec176161ecfa",
+      "pass": true
+    },
+    {
+      "name": "SimulationClock",
+      "sha256": "85431b12248df76a2f6ef0871ae96d4dd7c8d21dd3d11760725a5cc57d5fe48e",
+      "pass": true
+    },
+    {
+      "name": "RIDER_DATA",
+      "sha256": "be89cdf2998ea243acd343b177e2e6af4beaed6eca7ad97aed9fe2782211177b",
+      "pass": true
+    },
+    {
+      "name": "STAGE_DATA",
+      "sha256": "9193cfea293efdf9850467a30d1d8d27c1f090a50b2b41d04fdd3d329d5a6bf8",
+      "pass": true
+    }
+  ],
+  "pass": true
+}

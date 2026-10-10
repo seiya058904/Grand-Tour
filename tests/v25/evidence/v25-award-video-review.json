@@ -1,0 +1,52 @@
+{
+  "kind": "Manual observation of frames extracted from actual recorded playback, not posed screenshot assertion",
+  "sourceSHA256": "558fdfbae82449fe4fbdcd55e1ce61bb3de6be4ec7997bbc0a49ed20dbcccc95",
+  "videoSHA256": "96e3620bd1a979c8cde908eef8406d9fc5940d66539d624041431b02ccffb972",
+  "videoBytes": 37312500,
+  "encodedVideoSeconds": 313.92,
+  "videoSize": [
+    1440,
+    1000
+  ],
+  "videoFrameRate": 25,
+  "frameRateCaution": "Recording output rate is not measured browser FPS.",
+  "overviewTimesSeconds": [
+    10,
+    30,
+    75,
+    124,
+    147,
+    173,
+    243,
+    290
+  ],
+  "walkingTimesSeconds": [
+    10,
+    10.5,
+    11,
+    11.5,
+    12,
+    12.5
+  ],
+  "trophyTimesSeconds": [
+    287,
+    287.5,
+    288,
+    288.5,
+    289,
+    289.5,
+    290,
+    290.5,
+    291,
+    291.5,
+    292,
+    292.5
+  ],
+  "observations": [
+    "Walking actor advances across the stage with alternating legs and steps onto the podium; no visible teleport or detached foot within these samples.",
+    "The trophy passes from presenter to winner, settles at chest and rises over the head; hands remain visually attached in the sampled sequence.",
+    "The full 292.5-second frame confirms the raised trophy fits within the stage and does not clip at the canvas top.",
+    "TTT team line and final podium positions are legible in overview frames; no visible overlap with transport controls."
+  ],
+  "limits": "This is a finite visual sample, not manual uninterrupted viewing of every frame. The original suite separately ran full 1x playback until automatic completion. The later final cache edit does not touch ceremony code; see v25-final-freeze.json."
+}

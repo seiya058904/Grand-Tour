@@ -1,0 +1,34 @@
+{
+  "source": "/workspace/scratch/018887db1a18/grand-tour-v25/Grand-Tour-V24.html",
+  "sourceSHA256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+  "originalEvidenceSHA256": "dc76637355b44937db9051f15b432fe38b76a3d7f6d2a7d585014fd8d50e0dff",
+  "originalEvidenceBytes": 19953,
+  "method": "Natural production paths sampled at 0.5 simulated seconds; records viewport-interior object existence changes, not ordinary edge entry. Full raw geometry is outside the lightweight package.",
+  "stages": [
+    {
+      "stage": 5,
+      "seed": 2058765,
+      "buildingPairsWithPops": 9,
+      "treePairsWithPops": 0,
+      "buildingObjectPops": 9,
+      "treeObjectPops": 0,
+      "naturalSamplesChecked": 597
+    },
+    {
+      "stage": 19,
+      "seed": 2058765,
+      "buildingPairsWithPops": 12,
+      "treePairsWithPops": 10,
+      "buildingObjectPops": 12,
+      "treeObjectPops": 10,
+      "naturalSamplesChecked": 1461
+    }
+  ],
+  "finishCrowd": {
+    "stage": 5,
+    "localFinishDistanceBefore": 140.1,
+    "localFinishDistanceAfter": 139.9,
+    "paintedHeadsBefore": 0,
+    "paintedHeadsAfter": 24
+  }
+}

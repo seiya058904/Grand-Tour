@@ -1,0 +1,1789 @@
+{
+  "protocol": "Identical actual production painters in isolated Chromium contexts; manual natural ticks + fixed presentation clock, full quality; no performance conclusions. Separate >256-key single-task delayed-readback stress and poisoned evicted-context state.",
+  "provenance": {
+    "mode": "Current source with ONLY cachedCyclistBody replaced by the retained reference function; all scenery, layout, simulation and body painter remain current. This is not a whole-V24 comparison.",
+    "source": "/workspace/scratch/018887db1a18/grand-tour-v25/Grand-Tour-V25.html",
+    "sourceSHA256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec",
+    "reference": "/workspace/scratch/018887db1a18/grand-tour-v25/Grand-Tour-V24.html",
+    "referenceSHA256": "b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f",
+    "referenceFunctionSHA256": "f12d4efe1bc67368f5b56b83f195ff17d529447f66a81059fc5eef71663d7491",
+    "candidateFunctionSHA256": "33656099cd846e9c80ad7f31d6556ae279a3b3c3813986d86fa55715c336fabe",
+    "mixedSHA256": "558fdfbae82449fe4fbdcd55e1ce61bb3de6be4ec7997bbc0a49ed20dbcccc95"
+  },
+  "sources": {
+    "reference": {
+      "path": "/tmp/grand-tour-cache-reference-rd3z5luu/mixed-cache-reference.html",
+      "sha256": "558fdfbae82449fe4fbdcd55e1ce61bb3de6be4ec7997bbc0a49ed20dbcccc95"
+    },
+    "candidate": {
+      "path": "/workspace/scratch/018887db1a18/grand-tour-v25/Grand-Tour-V25.html",
+      "sha256": "1f5a338355180489b53e2c8fbe3cb8537103ebbf20bf79a1bc45054a3dfee4ec"
+    }
+  },
+  "checks": [
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "3d0b07006d866e03e057194693bffe181d1a9dc0fee181ae5bca9c253cc7be4a",
+      "differentBounds": null,
+      "name": "peloton-0",
+      "scene": "peloton",
+      "frame": 0,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 132
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "44e680a6de961eb5955d869bedff70586a1ad7141f8b7edabdf9c297769e6ed8",
+      "differentBounds": null,
+      "name": "peloton-1",
+      "scene": "peloton",
+      "frame": 1,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 131
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "474c24df28d18ad5529c76b6027cbcc96e8b21cc824a622687c028f79290f7db",
+      "differentBounds": null,
+      "name": "peloton-2",
+      "scene": "peloton",
+      "frame": 2,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 131
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "309de24679ae83be849c57f5e5c6274f67c38b5985f6f78f436aba94d859ea63",
+      "differentBounds": null,
+      "name": "peloton-3",
+      "scene": "peloton",
+      "frame": 3,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 131
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "b50d80538ffab527b73f646d03a8df73bdbbf340fe4f8c01d2fff0343702fc18",
+      "differentBounds": null,
+      "name": "peloton-4",
+      "scene": "peloton",
+      "frame": 4,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 131
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "f2c1710f83cf200f1ed629d7b97d3d8475ba9aa16b87ab91ba8f7ab5f993cf2b",
+      "differentBounds": null,
+      "name": "peloton-5",
+      "scene": "peloton",
+      "frame": 5,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 131
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "8f516742215f438db375eedd74b1e35f011d35a2c8fa1204d5cec644a2f62996",
+      "differentBounds": null,
+      "name": "peloton-6",
+      "scene": "peloton",
+      "frame": 6,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 131
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "6a8196d4e7f7b404c9b7e569cff552174fdff2e722a39b344fc158b290efb31c",
+      "differentBounds": null,
+      "name": "peloton-7",
+      "scene": "peloton",
+      "frame": 7,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 131
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "0085ff930f522b63ef1c33b63196d11afd398e1a86010c524efee448e197c79c",
+      "differentBounds": null,
+      "name": "peloton-8",
+      "scene": "peloton",
+      "frame": 8,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 131
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "a042d339c522c7f7e21027afc833f53e66d9160f44b0c49e64db68c46903869f",
+      "differentBounds": null,
+      "name": "peloton-9",
+      "scene": "peloton",
+      "frame": 9,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 132
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "7329028eb58702c3e4d24d6b73e12c49c9b334fb4d65ad30143b2a61ccbb3259",
+      "differentBounds": null,
+      "name": "peloton-10",
+      "scene": "peloton",
+      "frame": 10,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 132
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "ad010ec95db82c6a5cda62263c49be333b037654c8c1d20e1c6572e282eaadb7",
+      "differentBounds": null,
+      "name": "peloton-11",
+      "scene": "peloton",
+      "frame": 11,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 132
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "9fff8c923b2005c7a590673177c5920febb80af7d222b14170dd1bf698240076",
+      "differentBounds": null,
+      "name": "peloton-12",
+      "scene": "peloton",
+      "frame": 12,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 132
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "adacdce96e33e2dc3ccf44e1c7d07f191b6e396936bfb73327bfa57a0ee3fcbd",
+      "differentBounds": null,
+      "name": "peloton-13",
+      "scene": "peloton",
+      "frame": 13,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 133
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "24a316706518dd7ac73d35889e29f8dbb8fb8458b08addbc6dea6265396e2f96",
+      "differentBounds": null,
+      "name": "peloton-14",
+      "scene": "peloton",
+      "frame": 14,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 133
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "c3ec74401e375a2a12f50454e07ece1f215cb5c28954f35cac1303ea0eebb987",
+      "differentBounds": null,
+      "name": "peloton-15",
+      "scene": "peloton",
+      "frame": 15,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 133
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "18ff61caeb7fb6067392b5e2efe5f3e54db7968a979cd22f11d3da9d41455b18",
+      "differentBounds": null,
+      "name": "peloton-16",
+      "scene": "peloton",
+      "frame": 16,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 133
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "778b8ef9a69696f7fd1b703a0e2d3c3bf006b945a75cb5c9ead242854051c502",
+      "differentBounds": null,
+      "name": "peloton-17",
+      "scene": "peloton",
+      "frame": 17,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 133
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "8005e3769f86a58fb9fb8199430931e8230938397fa5e6d42e05ba2b7d74f8ed",
+      "differentBounds": null,
+      "name": "peloton-18",
+      "scene": "peloton",
+      "frame": 18,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 133
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "c964fbf42a78c418d281f88e0ba04255f9c7b910b39c5ea129220423775276bc",
+      "differentBounds": null,
+      "name": "peloton-19",
+      "scene": "peloton",
+      "frame": 19,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 133
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "b7f595b7c6b7fa12799d46cba5fdc920f763a8a881f3db959d86914149ce68cd",
+      "differentBounds": null,
+      "name": "peloton-20",
+      "scene": "peloton",
+      "frame": 20,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 133
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "5ce328a01f5795f12cf6d2e9d5a2600616259d27c2bf9e1cef33f6ff3edf300b",
+      "differentBounds": null,
+      "name": "peloton-21",
+      "scene": "peloton",
+      "frame": 21,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 133
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "7cdd916ea802919797e1b111c7e233046e732f0b6463d69a18ecc88bd65ba098",
+      "differentBounds": null,
+      "name": "peloton-22",
+      "scene": "peloton",
+      "frame": 22,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 133
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "13ee2828dc632ea3da0651e86134c0a030c219e33912e9386e5c584c8ced0ade",
+      "differentBounds": null,
+      "name": "peloton-23",
+      "scene": "peloton",
+      "frame": 23,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 133
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "6ee24bc4274097d4d705a4677b879b64defbd47550755bea90becc7d0eb58380",
+      "differentBounds": null,
+      "name": "peloton-24",
+      "scene": "peloton",
+      "frame": 24,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 132
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "8aeb153c58ead306527b2a05ef6b97200d7cb8e658b6c0cc82324b890d07bbd1",
+      "differentBounds": null,
+      "name": "peloton-25",
+      "scene": "peloton",
+      "frame": 25,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 132
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "2bb0f96efa849452a4bab157ff5c3078d7385a63cd20f913a941aef8ea6f95f7",
+      "differentBounds": null,
+      "name": "peloton-26",
+      "scene": "peloton",
+      "frame": 26,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 132
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "c287df554683431aabe2fced01d45f80a7dbf3ac2cbc6d597282af7ff6333b5b",
+      "differentBounds": null,
+      "name": "peloton-27",
+      "scene": "peloton",
+      "frame": 27,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 132
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "ebc2eab02046b926ee07652052b0e810b13a0cc221e2a719fe3ef9574fc19627",
+      "differentBounds": null,
+      "name": "peloton-28",
+      "scene": "peloton",
+      "frame": 28,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 132
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "2013307deb75541886cc3ae193fa82d5ecd0ca19440f5ba25623694dc1069bf5",
+      "differentBounds": null,
+      "name": "peloton-29",
+      "scene": "peloton",
+      "frame": 29,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 132
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "cce34e22d4c7c724b77f59292a826dda8c513165f87a94d396c7198a170aadb3",
+      "differentBounds": null,
+      "name": "peloton-30",
+      "scene": "peloton",
+      "frame": 30,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 132
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "ce6144beaaba3eb7a67b3eeab00ff11bd60f9981d77ad254bf8b67e1698db078",
+      "differentBounds": null,
+      "name": "peloton-31",
+      "scene": "peloton",
+      "frame": 31,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 131
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "c9c9d1874191a7740f8366488295f515577bbd82843dda4a198d33698bf3697f",
+      "differentBounds": null,
+      "name": "peloton-32",
+      "scene": "peloton",
+      "frame": 32,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 130
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "36a8ad519e03be8671f78250021cd43e268427a5ef11f075dd73585a0ed99ee3",
+      "differentBounds": null,
+      "name": "peloton-33",
+      "scene": "peloton",
+      "frame": 33,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 130
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "498b61bc8369c6a32ff467e5dc27bc9172f8dfe18f9d4f75d0178e8a27625795",
+      "differentBounds": null,
+      "name": "peloton-34",
+      "scene": "peloton",
+      "frame": 34,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 130
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "881dbea1ad2995b8e4ddec176812a22bf38d41dfabf7f8d242e6812f7e31d40f",
+      "differentBounds": null,
+      "name": "peloton-35",
+      "scene": "peloton",
+      "frame": 35,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 130
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "2eef9c00da02fcea194bc8372ba7846de78a6e1713935284f939054e21bb484a",
+      "differentBounds": null,
+      "name": "peloton-36",
+      "scene": "peloton",
+      "frame": 36,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 130
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "b93081ff98d257c7fe537a68fe68832463c57aed551ddf3fb9e90dea3dd058ef",
+      "differentBounds": null,
+      "name": "peloton-37",
+      "scene": "peloton",
+      "frame": 37,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 130
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "7e421dcfa23ab3a3dc1754821c50b35f8285b38af4385531dd566de9f9cc852d",
+      "differentBounds": null,
+      "name": "peloton-38",
+      "scene": "peloton",
+      "frame": 38,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 130
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "bdb40e606dfbbf1939bfb4cfc594c5662140675ae66be2bf5c8936583e7937de",
+      "differentBounds": null,
+      "name": "peloton-39",
+      "scene": "peloton",
+      "frame": 39,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 130
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "4964a613217b3c346f4c795521ee07de0f6b4c5f31dffbcca65225e27904d68a",
+      "differentBounds": null,
+      "name": "peloton-40",
+      "scene": "peloton",
+      "frame": 40,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 129
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "e29ce64fa0487a6c964edd6bb917f4bc0f714db63382927de473c1311e3aec18",
+      "differentBounds": null,
+      "name": "peloton-41",
+      "scene": "peloton",
+      "frame": 41,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 129
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "ba87545e5374b3748867c5dc03d1d4cc210d35eadf5548405c16ed5ce8604417",
+      "differentBounds": null,
+      "name": "peloton-42",
+      "scene": "peloton",
+      "frame": 42,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 129
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "899c2db4bf4e0e26d4b3d79f66feb81ee9f37471b51470904d6ee976980fa2e6",
+      "differentBounds": null,
+      "name": "peloton-43",
+      "scene": "peloton",
+      "frame": 43,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 129
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "36c20e4ae016628cdef03d72a84e667fed4d4d8a8b4309271c054a186240cd2d",
+      "differentBounds": null,
+      "name": "peloton-44",
+      "scene": "peloton",
+      "frame": 44,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 129
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "9d18829bc40e65f3366347431a38ba197881d52a8102c659fe0f28d331edb7fe",
+      "differentBounds": null,
+      "name": "peloton-45",
+      "scene": "peloton",
+      "frame": 45,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 129
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "065b352af2627e77c9a04b55411681ec64702b420383bf495b18bab67d882e85",
+      "differentBounds": null,
+      "name": "peloton-46",
+      "scene": "peloton",
+      "frame": 46,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 128
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "9ab1635bf46c99c44fb3345ad5d3355d8d0a7659d233c48eba975148dcdfbb14",
+      "differentBounds": null,
+      "name": "peloton-47",
+      "scene": "peloton",
+      "frame": 47,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 128
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "3ce26c4a0d66d6e88618ce6848fdbdb4ec4d5541a0435f1e419c45efe6b8e833",
+      "differentBounds": null,
+      "name": "climb-0",
+      "scene": "climb",
+      "frame": 0,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 99
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "516be6d585a05accb52ca6db5421a561807d855f3eb42c8eb1867e92d15a7ff9",
+      "differentBounds": null,
+      "name": "climb-1",
+      "scene": "climb",
+      "frame": 1,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 99
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "def1cb108e23f2d58a2e721073336e5f87ea4e59a6510d6a273247477f44a794",
+      "differentBounds": null,
+      "name": "climb-2",
+      "scene": "climb",
+      "frame": 2,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 100
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "b5673f5c25c4dd898263ff284a88c1e29e4f72650927e6913665440d7d52963f",
+      "differentBounds": null,
+      "name": "climb-3",
+      "scene": "climb",
+      "frame": 3,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 100
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "768ef7978efdf0d3f1b25a9d30efb92380a511453304922cebce67be82ce7d3f",
+      "differentBounds": null,
+      "name": "climb-4",
+      "scene": "climb",
+      "frame": 4,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 100
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "2809353bf43b0996f65a1f367cdc0d0503295c46ac584cdb0b2ef3af6e8c35f1",
+      "differentBounds": null,
+      "name": "climb-5",
+      "scene": "climb",
+      "frame": 5,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 100
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "67b741dbd220785ac7068cdf5e6ac91eed7d9c8744da873fee1541743b087a42",
+      "differentBounds": null,
+      "name": "climb-6",
+      "scene": "climb",
+      "frame": 6,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 100
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "31268b7edf478062b012f665aa55019e7bbc14b09e596ac50920d906036be5d0",
+      "differentBounds": null,
+      "name": "climb-7",
+      "scene": "climb",
+      "frame": 7,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 100
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "e12158078870ce697a023372f7eca76019e3dbe65a5d8a4b232d0f5ffc572a16",
+      "differentBounds": null,
+      "name": "climb-8",
+      "scene": "climb",
+      "frame": 8,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 101
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "b68eb58235972546df73aaa70b857dd2fe00553e19cc0f04104a6f1b2ea07bb0",
+      "differentBounds": null,
+      "name": "climb-9",
+      "scene": "climb",
+      "frame": 9,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 101
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "06b13b73ebc65021a1b359809809410a06565578fee50f7958322c30641055d4",
+      "differentBounds": null,
+      "name": "climb-10",
+      "scene": "climb",
+      "frame": 10,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 101
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "83597a30b63e9a470ddafb5d488a982075db30310d045c5344e272c0c1440154",
+      "differentBounds": null,
+      "name": "climb-11",
+      "scene": "climb",
+      "frame": 11,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 102
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "04590a866857169856e4de7519235d339160e0fd73c0d724287df28329bf0ce8",
+      "differentBounds": null,
+      "name": "climb-12",
+      "scene": "climb",
+      "frame": 12,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 102
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "0f9025b1f01afc822593dcd4cae5a8a0d63ad60f41858b673a7584d0860cfa3f",
+      "differentBounds": null,
+      "name": "climb-13",
+      "scene": "climb",
+      "frame": 13,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 102
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "085874cf4bd97d2988fa26446221cbf424f058606be9f27b9555eb913d664959",
+      "differentBounds": null,
+      "name": "climb-14",
+      "scene": "climb",
+      "frame": 14,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 103
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "1e5a010f91029afe675f8827238439ec56485d8bf959a65bf05d524ec29fd4fd",
+      "differentBounds": null,
+      "name": "climb-15",
+      "scene": "climb",
+      "frame": 15,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 103
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "b91f4e5f1a1c6991a5d241cffd3da550438d558b42d0f2c16b51437ddef64e44",
+      "differentBounds": null,
+      "name": "climb-16",
+      "scene": "climb",
+      "frame": 16,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 103
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "566094f77ecf1ec7e1178ba6f5c521434f126b6ef2686e417a2dbcf4af33092c",
+      "differentBounds": null,
+      "name": "climb-17",
+      "scene": "climb",
+      "frame": 17,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 103
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "9dfe64650ede321825cda5bca5763a6f079835167d28143da60af945b713bdcb",
+      "differentBounds": null,
+      "name": "climb-18",
+      "scene": "climb",
+      "frame": 18,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 103
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "b9e71f87fe1afd13cd71989d874d91d84aaa2771e17d3d1b6ab7e150978e15f6",
+      "differentBounds": null,
+      "name": "climb-19",
+      "scene": "climb",
+      "frame": 19,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 103
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "57e0de4e23ad57d1d3293f95b5e4470b08e7313996b4296f38fe65e1dfd100e4",
+      "differentBounds": null,
+      "name": "climb-20",
+      "scene": "climb",
+      "frame": 20,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 105
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "8ac8ced3f20a04580aca3df9542444c3ac507a1d20670204b02ec1980750d940",
+      "differentBounds": null,
+      "name": "climb-21",
+      "scene": "climb",
+      "frame": 21,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 105
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "38c8ab30f9a35e48bd7628de415116fc56d76e060d1fca388021c68099dc5f94",
+      "differentBounds": null,
+      "name": "climb-22",
+      "scene": "climb",
+      "frame": 22,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 105
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "057db77954f371e034c037b7fd88050ed4cc50a6d03580011910e1e87109dbe3",
+      "differentBounds": null,
+      "name": "climb-23",
+      "scene": "climb",
+      "frame": 23,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 105
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "502e3fe9f8f93124db6fda21e74e47f299d4248b6cf1d4bd34393d1b24756783",
+      "differentBounds": null,
+      "name": "climb-24",
+      "scene": "climb",
+      "frame": 24,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 105
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "56e2d52e446d0cf23cf3fcbbfdcc9d06a156d58d98d31205a35af102f143aa9b",
+      "differentBounds": null,
+      "name": "climb-25",
+      "scene": "climb",
+      "frame": 25,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 105
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "5a7787b95a5ac23d864e653af7225868855e082279c2c90da5cfb5523f99ce0f",
+      "differentBounds": null,
+      "name": "climb-26",
+      "scene": "climb",
+      "frame": 26,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 105
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "58f7c19377530ea82686076a503a3f6e9a273ee3d30b1f684890c67fa36d3b78",
+      "differentBounds": null,
+      "name": "climb-27",
+      "scene": "climb",
+      "frame": 27,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 105
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "20a165a8530423f8a94c6c4d0b0c4bb5c4283536764fc21f064dbafa0125c671",
+      "differentBounds": null,
+      "name": "climb-28",
+      "scene": "climb",
+      "frame": 28,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 105
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "02065267127a39e6e5a32dcccc987ccc309d639557103afaa8941f7088ef25e1",
+      "differentBounds": null,
+      "name": "climb-29",
+      "scene": "climb",
+      "frame": 29,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 105
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "8deb86fe4359d7594ace4ec36f8c1b860609f2185ba6fd19d798876d4dcfe761",
+      "differentBounds": null,
+      "name": "climb-30",
+      "scene": "climb",
+      "frame": 30,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 105
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "f0fcf9df96c9babb5efd3b9550fefe6cf2a20eb4f0cfa3a800a46b797ba94516",
+      "differentBounds": null,
+      "name": "climb-31",
+      "scene": "climb",
+      "frame": 31,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 105
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "1b2b368c26ffe96b9fdf7e5703ef5ed852220ad640f8aaea9b9cebe0eb0cd9ea",
+      "differentBounds": null,
+      "name": "climb-32",
+      "scene": "climb",
+      "frame": 32,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 105
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "cf3c6d5c1515b5f95659a87cd8199ee4b5ffb4b06e2a523f983c300168824e55",
+      "differentBounds": null,
+      "name": "climb-33",
+      "scene": "climb",
+      "frame": 33,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 105
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "0c48ed5aa8d9bef672eea0f16fe56e0825ac37d450cecf86e1d410426b550ac1",
+      "differentBounds": null,
+      "name": "climb-34",
+      "scene": "climb",
+      "frame": 34,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 105
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "f386f40f72a8a1569bee2ddad67de2059b1954468f9620eeb33fda5c7b186dfc",
+      "differentBounds": null,
+      "name": "climb-35",
+      "scene": "climb",
+      "frame": 35,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 105
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "f0d51c45460b712e7816e79cc770775bbecf71ab962e46dc448f8bb210bd8af6",
+      "differentBounds": null,
+      "name": "climb-36",
+      "scene": "climb",
+      "frame": 36,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 105
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "9a53654869f483d2bbbd098b7bfd03fbc3f868cb84a48487312f0ba12d3a7a78",
+      "differentBounds": null,
+      "name": "climb-37",
+      "scene": "climb",
+      "frame": 37,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 106
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "572beb2839d852aaefbb21eaf39a513f6cb863e4ad961abdbd80595d51401a67",
+      "differentBounds": null,
+      "name": "climb-38",
+      "scene": "climb",
+      "frame": 38,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 106
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "4879ed803cbe562fa2fcda30f3c8db2e9e257b4c8a5fe2f301b5a89a74801f04",
+      "differentBounds": null,
+      "name": "climb-39",
+      "scene": "climb",
+      "frame": 39,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 106
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "4d01b060cdcb33cb99256a24fc9912189290454a8dcc873d2372dafd679377d8",
+      "differentBounds": null,
+      "name": "climb-40",
+      "scene": "climb",
+      "frame": 40,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 106
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "4564d9929d6ee81deb47c5602946bea07a873dcef82e970a1526aa54d2eae408",
+      "differentBounds": null,
+      "name": "climb-41",
+      "scene": "climb",
+      "frame": 41,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 106
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "da64c07be56db6611cb718b1e267b55d6c6c7d29481e5f1578b7d9fa1228a550",
+      "differentBounds": null,
+      "name": "climb-42",
+      "scene": "climb",
+      "frame": 42,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 107
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "68d50efa373e41103e421860346779e5cbd8631034c782c8c3d0ed5b7bc0cd64",
+      "differentBounds": null,
+      "name": "climb-43",
+      "scene": "climb",
+      "frame": 43,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 107
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "f5ada25353aed1150c0414247b2c87f101458f8ef1ef77ed7117f99245e9da37",
+      "differentBounds": null,
+      "name": "climb-44",
+      "scene": "climb",
+      "frame": 44,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 107
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "cfd47fd5a41885b4cb294ea63bb07786bc2072d8f2d696c9f05fb56265aa479f",
+      "differentBounds": null,
+      "name": "climb-45",
+      "scene": "climb",
+      "frame": 45,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 107
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "24c2c31d4dc6d219050a0263088872b03d12b8ce6297194e31eeb1cc6a6c5d27",
+      "differentBounds": null,
+      "name": "climb-46",
+      "scene": "climb",
+      "frame": 46,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 107
+    },
+    {
+      "pass": true,
+      "size": [
+        980,
+        458
+      ],
+      "pixelSHA256": "ea64931ff94bcc95ca76fbf4bc412a19b5ac0c9ac77771b01bd431831ea75ac0",
+      "differentBounds": null,
+      "name": "climb-47",
+      "scene": "climb",
+      "frame": 47,
+      "pure": true,
+      "full": true,
+      "sameT": true,
+      "sameDrawn": true,
+      "drawn": 107
+    },
+    {
+      "pass": true,
+      "size": [
+        2048,
+        960
+      ],
+      "pixelSHA256": "c29dff36e9be11e7a4b673e8388926fcd1255a3212da178059a4ff548957caa9",
+      "differentBounds": null,
+      "name": "same-task-recycle",
+      "baselineCounts": {
+        "requests": 320,
+        "hits": 0,
+        "misses": 320,
+        "evictions": 64,
+        "newBodyCanvases": 320,
+        "bodyPaints": 320,
+        "directPaints": 0,
+        "maxSize": 256,
+        "finalSize": 256
+      },
+      "candidateCounts": {
+        "requests": 320,
+        "hits": 0,
+        "misses": 320,
+        "evictions": 64,
+        "newBodyCanvases": 256,
+        "bodyPaints": 320,
+        "directPaints": 0,
+        "maxSize": 256,
+        "finalSize": 256
+      },
+      "cacheSize": 256
+    },
+    {
+      "pass": true,
+      "size": [
+        2048,
+        960
+      ],
+      "pixelSHA256": "c29dff36e9be11e7a4b673e8388926fcd1255a3212da178059a4ff548957caa9",
+      "differentBounds": null,
+      "name": "same-task-recycle-poison",
+      "baselineCounts": {
+        "requests": 320,
+        "hits": 0,
+        "misses": 320,
+        "evictions": 64,
+        "newBodyCanvases": 320,
+        "bodyPaints": 320,
+        "directPaints": 0,
+        "maxSize": 256,
+        "finalSize": 256
+      },
+      "candidateCounts": {
+        "requests": 320,
+        "hits": 0,
+        "misses": 320,
+        "evictions": 64,
+        "newBodyCanvases": 256,
+        "bodyPaints": 320,
+        "directPaints": 0,
+        "maxSize": 256,
+        "finalSize": 256
+      },
+      "cacheSize": 256
+    }
+  ],
+  "errors": [],
+  "snapshots": {
+    "peloton": "ace24cfdc531e65dcedccc93ea0b69a5a1f6a4b70289ca935f5b198d354c5a2d",
+    "climb": "52dc53743adf1b6c67f436cc3e5be4ff29b6f77ca7027e0bf5d3a9c0268c010a"
+  },
+  "browser": "141.0.7390.37",
+  "naturalCounts": [
+    {
+      "version": "reference",
+      "scene": "peloton",
+      "requests": 635,
+      "hits": 225,
+      "misses": 410,
+      "evictions": 166,
+      "newBodyCanvases": 410,
+      "bodyPaints": 410,
+      "directPaints": 5661,
+      "maxSize": 256,
+      "finalSize": 256
+    },
+    {
+      "version": "reference",
+      "scene": "climb",
+      "requests": 1248,
+      "hits": 378,
+      "misses": 870,
+      "evictions": 641,
+      "newBodyCanvases": 870,
+      "bodyPaints": 870,
+      "directPaints": 3734,
+      "maxSize": 256,
+      "finalSize": 256
+    },
+    {
+      "version": "candidate",
+      "scene": "peloton",
+      "requests": 635,
+      "hits": 225,
+      "misses": 410,
+      "evictions": 166,
+      "newBodyCanvases": 244,
+      "bodyPaints": 410,
+      "directPaints": 5661,
+      "maxSize": 256,
+      "finalSize": 256
+    },
+    {
+      "version": "candidate",
+      "scene": "climb",
+      "requests": 1248,
+      "hits": 378,
+      "misses": 870,
+      "evictions": 641,
+      "newBodyCanvases": 229,
+      "bodyPaints": 870,
+      "directPaints": 3734,
+      "maxSize": 256,
+      "finalSize": 256
+    }
+  ],
+  "sourceUnchanged": true,
+  "naturalCountParity": true,
+  "passed": 98,
+  "failed": 0,
+  "skipped": 0,
+  "pass": true
+}
