@@ -41,7 +41,7 @@ def main(args):
         if name in baseline:
             assert sha(data) == baseline[name], 'Historical baseline changed: ' + name
         payload[name] = data
-    provenance = {'kind': 'Grand Tour V25 unpublished source candidate',
+    provenance = {'kind': 'Grand Tour V25 released source',
                   'authoritativeV24Commit': '3e92128c0cb353d267c12ceeaf143bda663a7b26',
                   'inputZIP': 'Grand-Tour-V24-Cloud-Handoff-20261009.zip',
                   'inputZIP_SHA256': '2cecea547fb5290284a58a6e6a79fe2fbdb3f35c028f1658e30824a11771f9c8',
@@ -49,8 +49,13 @@ def main(args):
                   'V25_SHA256': sha(payload['Grand-Tour-V25.html']),
                   'historicalFilesPreserved': len(baseline),
                   'entry': 'index.html -> Grand-Tour-V25.html', 'saveSchema': 9,
-                  'deployment': 'None. No commit, push, Pages/Sites deployment, PR, Issue or Release was performed.',
-                  'evidence': 'V25-AUDIT-REPORT.md and tests/v25/evidence; historical reports are baseline evidence only.'}
+                  'deployment': 'Released. V25 was merged into main via pull request #13 (merge commit '
+                                '735cdabcd5e82623ba0ba4ffcf32df8ab6fb35e4) and deployed to GitHub Pages at '
+                                'https://seiya058904.github.io/Grand-Tour/. The pre-release candidate source ZIP '
+                                '(4619981 bytes, sha256 22cca5118a8813d63620d332728bc705e45f5bd3d2f089e35d57fbaf024867b9) '
+                                'remains a frozen historical artifact and is not reproduced by this packager.',
+                  'evidence': 'V25-AUDIT-REPORT.md and tests/v25/evidence document the pre-release candidate '
+                              'acceptance; historical reports are baseline evidence only.'}
     payload['PROVENANCE.json'] = (json.dumps(provenance, ensure_ascii=False, indent=2) + '\n').encode('utf-8')
     payload['SHA256SUMS.txt'] = ''.join(f'{sha(data)}  {name}\n' for name, data in sorted(payload.items())).encode('utf-8')
     output.parent.mkdir(parents=True, exist_ok=True)

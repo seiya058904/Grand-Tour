@@ -23,7 +23,7 @@
 
 <p align="center">
   <sub>21 STAGES &nbsp;·&nbsp; 184-RIDER START LIST &nbsp;·&nbsp; SIX RIDER ROLES &nbsp;·&nbsp; ONE SELF-CONTAINED HTML GAME</sub><br>
-  <sub>CURRENT SOURCE CANDIDATE: V25 · NOT DEPLOYED</sub>
+  <sub>CURRENT RELEASE: V25 · LIVE ON GITHUB PAGES</sub>
 </p>
 
 <p align="center">
@@ -129,7 +129,7 @@ V25 improves save ownership and recovery, provisional standings, and scenery con
 </table>
 
 > [!NOTE]
-> **V25 is an audited source candidate.** Its local fixes address confirmed storage and presentation faults. Race physics, AI, timing and seeded results remain unchanged; the expanded flat-stage survey still identifies an unresolved Sprinter balance signal. See [V25-AUDIT-REPORT.md](V25-AUDIT-REPORT.md) for evidence and limits.
+> **V25 is a released, audited source.** Its local fixes address confirmed storage and presentation faults; the audited candidate was subsequently merged into `main` and deployed to GitHub Pages. Race physics, AI, timing and seeded results remain unchanged, and the expanded flat-stage survey still identifies an unresolved Sprinter balance signal. [V25-AUDIT-REPORT.md](V25-AUDIT-REPORT.md) records the evidence and limits exactly as observed during the **pre-release candidate audit** and is retained unmodified.
 
 <a id="play-online-or-offline"></a>
 ## 🚀 Play Online or Offline
@@ -137,10 +137,10 @@ V25 improves save ownership and recovery, provisional standings, and scenery con
 <table>
   <tr>
     <td width="50%" valign="top">
-      <h3>📦 V25 Source Candidate</h3>
-      <p><sub>LOCAL DELIVERY · NO BUILD</sub></p>
-      <p>Extract the source package and open its index.html. This V25 candidate has not been deployed to the project website or any hosting service.</p>
-      <p><strong><a href="index.html">Open the packaged entry →</a></strong></p>
+      <h3>🌐 V25 Release — Play Online</h3>
+      <p><sub>GITHUB PAGES · NO BUILD</sub></p>
+      <p>V25 is live at <a href="https://seiya058904.github.io/Grand-Tour/"><code>seiya058904.github.io/Grand-Tour</code></a>. The packaged <a href="index.html"><code>index.html</code></a> entry redirects to the released <code>Grand-Tour-V25.html</code>.</p>
+      <p><strong><a href="https://seiya058904.github.io/Grand-Tour/">Open the live game →</a></strong></p>
     </td>
     <td width="50%" valign="top">
       <h3>📄 Single HTML — Play Offline</h3>
@@ -165,7 +165,7 @@ The game retains its existing **V9-format save compatibility** and historical-to
 
 | Resource | Purpose |
 | --- | --- |
-| [`Grand-Tour-V25.html`](Grand-Tour-V25.html) | Current offline source candidate |
+| [`Grand-Tour-V25.html`](Grand-Tour-V25.html) | Current released source (also playable offline) |
 | [`V25-AUDIT-REPORT.md`](V25-AUDIT-REPORT.md) | Findings, fixes, actual verification and unresolved risks |
 | [`V25-CHANGELOG.md`](V25-CHANGELOG.md) | Concise change history |
 | [`tests/v25/README.md`](tests/v25/README.md) | Current reproduction and packaging commands |

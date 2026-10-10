@@ -2,11 +2,11 @@
 
 ## 入口与设计边界
 
-- 当前候选入口为 `Grand-Tour-V25.html`，`index.html` 跳转到它。自包含、离线运行，无 npm 构建、外部运行时库或在线服务依赖。
+- 当前发布入口为 `Grand-Tour-V25.html`。该版本已合并进入 `main` 并部署到 GitHub Pages；线上 `index.html` 跳转到它。自包含、离线运行，无 npm 构建、外部运行时库或在线服务依赖。
 - `Grand-Tour-V24.html` 是本次交接的最新 V24 基线，源自 commit `3e92128c0cb353d267c12ceeaf143bda663a7b26`；不能用旧封板 HTML 替换。V20–V23、V24 报告及 V22–V24 测试共 65 个文件由 `tests/v25/baseline-hashes.json` 保护。
-- 本源码包没有 `.git`，也没有旧 `Grand-Tour-V24-Final.zip`；这是交接包的既定裁剪。V25 打包器不依赖旧 ZIP，不要修改历史基线以掩盖失败。
+- 冻结的历史交接包没有 `.git`，也没有旧 `Grand-Tour-V24-Final.zip`；这是交接包的既定裁剪。V25 打包器不依赖旧 ZIP，不要修改历史基线以掩盖失败。
 - 保持单 HTML 产品形态、固定 0.05 秒步长、V9 保存键/格式、确定性物理和 AI。局部修复须有根因和回归；不为结构美观重写成熟模块。
-- V25 没有部署、提交、推送、创建 PR、Issue 或 Release。后续远端操作须获得明确授权。
+- V25 已通过 PR #13 合并进入 `main`（合并提交 `735cdabcd5e82623ba0ba4ffcf32df8ab6fb35e4`）并部署到 GitHub Pages。不得改写既有历史；后续远端变更仍须获得明确授权。
 
 ## 必须保留的存档边界
 
@@ -38,5 +38,5 @@ python tests/v24/browser_verify.py --source Grand-Tour-V25.html --out /tmp/gt-v2
 
 - 新测试在 `tests/v25/`，紧凑机器证据在其 `evidence/`；截图、录像、自然快照、大日志、依赖和临时文件在仓库外。
 - `tests/v25/package_source.py` 构建新的轻量 ZIP，`tests/v25/package_verify.py` 核验解压清单、基线、正式入口和实际离线存档/控件。禁止覆盖原始 V24 包。
-- 新 CI 配置 `.github/workflows/v25-verify.yml` 不包含部署。旧 V23/V24 工作流保留；仅依赖被裁剪旧 ZIP 的历史打包步骤明确标注可选输入缺失，不伪造 PASS。
+- `.github/workflows/v25-verify.yml` 只执行验证、不含部署步骤（线上由 `main` 的 GitHub Pages 流程发布）。旧 V23/V24 工作流保留；仅依赖被裁剪旧 ZIP 的历史打包步骤明确标注可选输入缺失，不伪造 PASS。
 - 完成前核验最终 diff、空白错误、入口、README、报告、CI 和打包引用。有 Git 时运行 `git diff --check`；本交接目录没有 Git 时与原 ZIP 逐文件对照。所有未跑或失败的验收须如实记录。
