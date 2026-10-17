@@ -23,7 +23,7 @@ def main():
     prior = (ROOT / 'Grand-Tour-V24.html').read_text(encoding='utf-8')
     inv = Inventory()
     inv.feed(text)
-    baseline_hashes = json.loads((ROOT / 'tests/v25/baseline-hashes.json').read_text())
+    baseline_hashes = json.loads((ROOT / 'tests/v25/baseline-hashes.json').read_text(encoding='utf-8'))
     preserved = {
         name: hashlib.sha256((ROOT / name).read_bytes()).hexdigest() == digest
         for name, digest in baseline_hashes.items()
@@ -42,8 +42,8 @@ def main():
         'original_race_class_preserved': core(text) == core(prior),
         'v9_storage_identity': "saveKey:'tour-cycling-2026-cinematic-v10',saveVersion:9" in text,
         'finish_guard_preserved': '  validateFinishState(s,race.stage.length);\n' in core(text),
-        'entry_targets_v25': '"./Grand-Tour-V25.html"' in (ROOT / 'index.html').read_text()
-            and 'Grand-Tour-V24.html' not in (ROOT / 'index.html').read_text(),
+        'entry_targets_v25': '"./Grand-Tour-V25.html"' in (ROOT / 'index.html').read_text(encoding='utf-8')
+            and 'Grand-Tour-V24.html' not in (ROOT / 'index.html').read_text(encoding='utf-8'),
     }
     with tempfile.TemporaryDirectory(prefix='grand-tour-v25-syntax-') as td:
         for i, script in enumerate(inv.scripts):

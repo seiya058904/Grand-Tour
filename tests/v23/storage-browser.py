@@ -3,8 +3,10 @@
 Run a static server from the repository at http://127.0.0.1:4187 first.
 Only race pacing is accelerated through the production tick(true).
 """
-import asyncio,json
+import asyncio,json,os,tempfile
 from playwright.async_api import async_playwright
+EVIDENCE=os.path.join(tempfile.gettempdir(),'gt-evidence')
+os.makedirs(EVIDENCE,exist_ok=True)
 async def main():
  async with async_playwright() as pw:
   browser=await pw.chromium.launch(headless=True,args=['--no-sandbox'])
@@ -29,7 +31,7 @@ async def main():
    target=await b.evaluate("""()=>{const r=new Race(18);for(const y of r.riders){y.x=0;y.v=10}const x=r.riders.find(x=>x.d.teamId!==0&&!r.gcIds.includes(x.id)&&x.d.role==='GC'&&x.d.climb>=90);x.x=300;x.inBreak=true;r.relations();initializeRace(r);r.paused=true;Desk.tab='gc';updateDesk(r,true);return x.id}""")
    assert await b.locator(f'#deskContent tr[data-id="{target}"]').count()==1
    await b.locator('#deskFreeze').click();await b.locator('#deskFreeze').click()
-   await b.screenshot(path=f'/tmp/gt-evidence/two-page-locks-{locks}.png')
+   await b.screenshot(path=os.path.join(EVIDENCE,f'two-page-locks-{locks}.png'))
    assert not errors, errors
    print(json.dumps({'locks':locks,'results':1,'active':None,'quality':'low','staleRejected':True,'gcRow':target,'errors':errors}))
    await ctx.close()

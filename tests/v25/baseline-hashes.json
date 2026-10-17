@@ -35,7 +35,7 @@
   "tests/v23/sequence_verify.py": "6224964aeafd532ec4151353d3e4d56706fa2b67385369ac62d3b51ea60383a4",
   "tests/v23/showcase.cjs": "24dcae6db77eb30a62e2f2fabdcf4dc5248444d5645c638af6b7d88e51273917",
   "tests/v23/static_verify.py": "37d2210c7df3ee0f674b13ad10cbe3dffb02e3b295d9025735f19eac258f8c6a",
-  "tests/v23/storage-browser.py": "3e7424c3ad24d3aaceee274b2b68080c3eda8c0cf0c4dda58750269bc4e66608",
+  "tests/v23/storage-browser.py": "27365585ffdf5d64ab729682dfdfd83ca3def66c6bdbc591af3490f2144b1dd4",
   "tests/v23/storage-ownership.cjs": "832d5294f8c17abb869b3f8993eb0b56b2388aca752feed6858869b6fded3828",
   "tests/v23/tour-simulation.cjs": "79f1d9d58b73d01fe1cca405bd7b53bb0e1af05925a40d576b7c24bf301818ac",
   "tests/v23/ttt-wheel-browser.py": "1995cdbf49990f4f9fc55be02858cba578d122b7d82a0f04e3d153fa4add445b",

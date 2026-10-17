@@ -66,7 +66,7 @@ async def run(args, sources, provenance):
             await page.evaluate('document.fonts.ready')
             await page.evaluate(INSTALL)
             for scene in ['peloton','climb']:
-                snap=json.loads((args.scenes/(scene+'-snapshot.json')).read_text())
+                snap=json.loads((args.scenes/(scene+'-snapshot.json')).read_text(encoding='utf-8'))
                 await page.evaluate("s=>{pixelClock=1000;App.testingFreeze=true;App.blockStoreWrite=true;Store.settings.quality='full';RiderBodySprites.clear();initializeRace(Race.restore(SaveCodec.compactSnapshot(s)));App.race.paused=true;viewFor(App.race).alpha=1;cacheAudit.start();}",snap)
                 for i in range(48):
                     sample=await page.evaluate(FRAME)
