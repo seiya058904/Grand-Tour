@@ -1,0 +1,59 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Verify V25 source identity and storage contracts
+        run: |
+          python3 tests/v25/static_verify.py --out "$RUNNER_TEMP/static.json"
+          node tests/v25/core-parity.cjs Grand-Tour-V24.html Grand-Tour-V25.html "$RUNNER_TEMP/core.json"
+          node tests/v25/focused.cjs Grand-Tour-V25.html archive/v22/Grand-Tour-V22.html "$RUNNER_TEMP/focused.json"
+          node tests/v24/save-finish-boundary.cjs Grand-Tour-V25.html "$RUNNER_TEMP/boundary.json"
+          node tests/v25/storage-validation.cjs Grand-Tour-V25.html "$RUNNER_TEMP/storage.json" "$RUNNER_TEMP/fixtures"
+
+      - name: Prepare the published site
+        run: |
+          mkdir -p _site
+          rsync -a --exclude='.git' --exclude='_site' ./ _site/
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
