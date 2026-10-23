@@ -47,6 +47,7 @@ jobs:
           python tests/v24/browser_verify.py --source Grand-Tour-V25.html --out /tmp/gt-v25-evidence/browser
           python tests/v25/ui_verify.py --out /tmp/gt-v25-evidence/ui
           python tests/v25/legacy_browser.py presentation --out /tmp/gt-v25-evidence/presentation
+          python tests/v25/ceremony-transport-browser.py --out /tmp/gt-v25-evidence/ceremony-transport
           python tests/v25/legacy_browser.py sequence --record /tmp/gt-v25-evidence/browser/stage-05-physical.json --tour /tmp/gt-v25-evidence/v25-tour.json --out /tmp/gt-v25-evidence/sequence
       - name: Build and actually play the extracted offline source package
         run: |

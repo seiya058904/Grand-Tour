@@ -5751,7 +5751,7 @@ const CeremonyGeometry={
 
 const CeremonyStage={
  font:'system-ui, -apple-system, "Segoe UI", "Microsoft YaHei", sans-serif',
- gold:'#ead06e',ivory:'#f5f1de',ink:'#183632',cache:null,
+  gold:'#ead06e',ivory:'#f5f1de',ink:'#183632',cache:null,lastFrame:null,
  ease(v){const x=clamp(v,0,1);return x*x*x*(x*(x*6-15)+10);},
  blend(a,b,t){return Ceremony.tint(a,b,clamp(t,0,1));},
  poly(c,p,fill,stroke=null,width=1){c.beginPath();p.forEach((q,i)=>i?c.lineTo(...q):c.moveTo(...q));c.closePath();if(fill){c.fillStyle=fill;c.fill();}if(stroke){c.strokeStyle=stroke;c.lineWidth=width;c.stroke();}},
@@ -5794,8 +5794,16 @@ const CeremonyStage={
   // Subtle repeated, original event monogram reads as a protocol wall.
   const cols=m.mobile?4:8,cell=(sw-36)/cols;
   for(let row=0;row<3;row++)for(let j=0;j<cols;j++){const x=left+18+(j+.5)*cell,y=122+row*35;c.save();c.globalAlpha=.30;this.text(c,'GT',x,y,9,'#d7dfc8','center',cell,800);this.line(c,[[x-12,y+5],[x+12,y+5]],'#cfce9a',.65);c.restore();}
-  c.fillStyle='#dbc86f';c.fillRect(left+10,65,sw-20,29);this.text(c,'GRAND TOUR',cx,85,m.mobile?16:21,'#163b35','center',sw-44,800);
-  this.text(c,STAGE_DATA[rec?.stage??0].finish.toUpperCase(),cx,107,m.mobile?7:8,'#cdd7be','center',sw-40,600);
+  // A restrained event masthead leaves the athlete, rather than the sign, as
+  // the focal point. The venue stays in the set when the camera moves.
+  c.fillStyle='#173b34';c.fillRect(left+10,65,sw-20,29);
+  this.line(c,[[left+22,66],[right-22,66]],'#c7b477',.8);
+  this.line(c,[[left+22,94],[right-22,94]],'#7f8d66',.6);
+  this.text(c,'GRAND TOUR',cx,85,m.mobile?13:17,'#e9d793','center',sw-54,750);
+  this.text(c,STAGE_DATA[rec?.stage??0].finish.toUpperCase(),cx,108,m.mobile?7:8,'#d8dfc6','center',sw-40,600);
+  const light=c.createRadialGradient(cx,148,8,cx,148,sw*.52);
+  light.addColorStop(0,'#f2dfa514');light.addColorStop(1,'#f2dfa500');
+  c.fillStyle=light;c.fillRect(left+10,95,sw-20,143);
   // Lighting instruments, speaker stacks and road-case bases.
   for(const x of [left+24,left+sw*.32,right-sw*.32,right-24]){this.line(c,[[x,53],[x,61]],'#b8c4ab',1);c.fillStyle='#1c302d';c.fillRect(x-6,57,12,6);c.fillStyle='#f7edc0';c.fillRect(x-4,62,8,1.5);}
   for(const x of [left-10,right+10]){c.fillStyle='#172b2a';c.fillRect(x-9,126,18,91);c.strokeStyle='#71877b';c.lineWidth=.6;c.strokeRect(x-8,127,16,89);for(let y=132;y<211;y+=3)this.line(c,[[x-6,y],[x+6,y]],'#496258',.4);c.fillStyle='#132b28';c.fillRect(x-11,219,22,29);}
@@ -5838,7 +5846,7 @@ const CeremonyStage={
    const a=t-b.start,q=this.cue(b),gc=b.kind==='gc-final',team=b.teamId!==undefined,focus=m.cx+(gc||team?0:m.stageW*.045);
    // Keep the original stage in frame and hold the recognition shot before
    // returning gently to the wide view for the departure.
-   const points=[{t:0,x:m.cx,y:170,z:1},{t:q.entry+.15,x:m.cx,y:170,z:1},{t:q.share,x:lerp(m.cx,focus,.55),y:163,z:m.mobile?1.018:1.06},{t:q.release+.48,x:lerp(m.cx,focus,.65),y:161,z:m.mobile?1.025:1.10},{t:q.display,x:focus,y:gc?153:159,z:m.mobile?1.025:1.16},{t:q.display+(gc?3:1.4),x:focus,y:gc?153:159,z:m.mobile?1.025:1.16},{t:q.exit+.35,x:m.cx,y:170,z:1},{t:b.seconds,x:m.cx,y:170,z:1}];
+   const points=[{t:0,x:m.cx,y:170,z:1},{t:q.entry+.15,x:m.cx,y:170,z:1},{t:q.share,x:lerp(m.cx,focus,.55),y:163,z:m.mobile?1.018:1.035},{t:q.release+.48,x:lerp(m.cx,focus,.65),y:161,z:m.mobile?1.025:1.065},{t:q.display,x:focus,y:gc?153:159,z:m.mobile?1.025:1.09},{t:q.display+(gc?3:1.4),x:focus,y:gc?153:159,z:m.mobile?1.025:1.09},{t:q.exit+.35,x:m.cx,y:170,z:1},{t:b.seconds,x:m.cx,y:170,z:1}];
    if(team)return {x:m.cx,y:166,z:1+.045*this.ease((a-q.entry)/1.5)*(1-this.ease((a-b.seconds+1.6)/1.6))};
    return {x:this.cameraSpline(points,a,'x'),y:this.cameraSpline(points,a,'y'),z:this.cameraSpline(points,a,'z')};
  },
@@ -5929,9 +5937,17 @@ const CeremonyStage={
    hands.push(hand);elbows.push(elbow);limbs.push({kind:'arm',a,joint:elbow,b:hand,depth:elbowDepth,handDepth,lengths:[24.5,24.5],mode:waving?'wave':'ik'});
   }
   c.save();c.globalAlpha*=alpha;c.translate(p.x,p.y);c.scale(sc,sc);c.lineCap='round';c.lineJoin='round';
-  this.ellipse(c,0,3,staff?16:20,2.2,'#0d2a294d');
+   this.ellipse(c,0,4,staff?17:21,3.1,'#0d2a2928');
+   this.ellipse(c,0,3,staff?13:16,1.6,'#0d2a294d');
   const drawLeg=j=>{const a=hips[j],f=feet[j],k=this.knee(a,f,44.7,45.1,-dir);limbs.push({kind:'leg',a,joint:k,b:f,lengths:[44.7,45.1]});
-   this.line(c,[a,k,f],edge,staff?7.1:6.1);this.line(c,[a,k,f],staff?(j?'#354a41':'#243a33'):(j?skin:shadowSkin),staff?5.9:5.2);
+   this.line(c,[a,k,f],edge,staff?7.1:6.7);this.line(c,[a,k,f],staff?(j?'#354a41':'#243a33'):(j?skin:shadowSkin),staff?5.9:5.8);
+   if(!staff){
+    // Tapered quadriceps and calf contours follow the same solved joints.
+    // Silhouette detail must never move the ankle or lengthen the limb.
+    this.line(c,[[lerp(a[0],k[0],.38),lerp(a[1],k[1],.38)],[lerp(a[0],k[0],.76),lerp(a[1],k[1],.76)]],j?skin:shadowSkin,8.1);
+    this.line(c,[[lerp(k[0],f[0],.16),lerp(k[1],f[1],.16)],[lerp(k[0],f[0],.48),lerp(k[1],f[1],.48)]],j?skin:shadowSkin,7.2);
+    if(j)this.line(c,[[k[0]+.8,k[1]+3],[lerp(k[0],f[0],.60)+.7,lerp(k[1],f[1],.60)]],'#ecc29b',.85);
+   }
    if(!staff){this.line(c,[a,[lerp(a[0],k[0],.48),lerp(a[1],k[1],.48)]],j?'#273b3b':'#1c3032',9.2);
     this.line(c,[[lerp(k[0],f[0],.76),lerp(k[1],f[1],.76)],f],this.ivory,5.4);
     this.line(c,[[lerp(k[0],f[0],.73),lerp(k[1],f[1],.73)],[lerp(k[0],f[0],.77),lerp(k[1],f[1],.77)]],'#acb9ac',.8);
@@ -5977,7 +5993,7 @@ const CeremonyStage={
    const hand=hands[j],angle=p.handAngles?.[j]??(j===1&&pose.salute&&!requested[j]?-.08+(pose.waveMotion||0)*.14:pose.clap?(j?-.40:.40):Math.atan2(hand[1]-elbows[j][1],hand[0]-elbows[j][0])-Math.PI/2);
    c.save();c.translate(...hand);c.rotate(angle);this.ellipse(c,0,-.5,2.6,3.7,j?skin:shadowSkin);this.line(c,[[-1.6,-1],[1.5,-1]],'#edc29b',.65);c.restore();
   }
-  const gaze=pose.gaze||0,headX=torsoX+dir*(1-front)*3+gaze*1.8,headY=shoulderY-17+(pose.nod||0)*1.6;
+  const gaze=pose.gaze||0,headX=torsoX+dir*(1-front)*3+gaze*1.8,headY=shoulderY-17+(pose.nod||0)*2.3;
   this.line(c,[[torsoX,shoulderY-1],[headX,headY+8]],skin,5.4);
   this.poly(c,[[torsoX-5,shoulderY-2],[torsoX,shoulderY+2],[torsoX+5,shoulderY-2]],staff?'#f6f0df':this.blend(kit,'#263e34',.25));
   this.ellipse(c,headX,headY,lerp(6.4,7.3,front),10.1,skin);
@@ -5985,7 +6001,7 @@ const CeremonyStage={
   if(front<.5||Math.abs(gaze)>.5){const facing=front<.5?dir:Math.sign(gaze);this.poly(c,[[headX+facing*5,headY-2],[headX+facing*9,headY+2],[headX+facing*5,headY+3]],skin);this.line(c,[[headX+facing*2.5,headY-1],[headX+facing*5,headY-1]],'#30483d',.7);}
   else{this.line(c,[[headX-4.7,headY-1],[headX-2.1,headY-1]],'#38493e',.65);this.line(c,[[headX+2,headY-1],[headX+4.6,headY-1]],'#38493e',.65);}
   const blink=!reducedMotion&&(time+p.id*.37)%5.7<.13;if(!blink&&front>.5&&Math.abs(gaze)<.5){circle(c,headX-3.2,headY-.3,.7,'#35483e');circle(c,headX+3.1,headY-.3,.7,'#35483e');}
-  this.line(c,[[headX-1,headY+5.8],[headX+2.5,headY+5.4]],'#85644f',.6);
+  c.beginPath();c.moveTo(headX-2,headY+5.4);c.quadraticCurveTo(headX+.3,headY+5.8+(pose.smile||0)*1.3,headX+2.7,headY+5.2);c.strokeStyle='#85644f';c.lineWidth=.65;c.stroke();
   this.poly(c,[[headX-6,headY-2],[headX-7,headY-7],[headX-3,headY-11],[headX+4,headY-10],[headX+7,headY-5],[headX+5,headY-4],[headX+1,headY-7],[headX-4,headY-6]],staff?'#5e4d3e':p.id%3?'#354137':'#514236');
   if(!staff){c.fillStyle=p.jersey==='yellow'?'#dfbf3b':'#edeada';c.beginPath();c.ellipse(headX,headY-8,7.8,4.4,0,Math.PI,Math.PI*2);c.lineTo(headX+7.8,headY-6.8);c.lineTo(headX-7.8,headY-6.8);c.fill();this.line(c,[[headX-7,headY-7],[headX+dir*(9+(1-front)*2),headY-7]],edge,1.1);this.line(c,[[headX,headY-12],[headX,headY-8]],kit,1.6);}
   c.restore();
@@ -6026,8 +6042,9 @@ walk(p,age,duration,m,depart=false){return CeremonyGeometry.sample(p,age,duratio
    const wa=age-cue.salute,raise=this.ease((wa-.18)/.42),recover=this.ease((wa-1.52)/.42),wave=raise*(1-recover);
    const waveMotion=wa>.60&&wa<1.52?Math.sin((wa-.60)/.92*Math.PI*4)*Math.sin(Math.PI*clamp((wa-.60)/.92,0,1))*motif:0;
    const recognition=this.ease((age-cue.entry+.04)/.42)*(1-this.ease((age-cue.lift)/.5));
-   const pose={receive:reach*(1-lift)*(1-withdraw),anticipation:this.ease((age-cue.ready+.2)/.2)*(1-reach),lift:secondary||team?0:lift,salute:gc?0:team?wave*(i%3===1?0:1):wave,waveMotion,
-    gaze:secondary?-Math.sign(p.x-m.cx)*.8:recognition*(gc?1:-1)+(shown.kind==='polka'?wave*.7:0),nod:Math.sin(Math.PI*clamp((age-cue.entry-.2)/.6,0,1)),clap:secondary||team&&i%3===1?this.ease((age-cue.display-i*.16)/.48)*(1-this.ease((age-cue.exit+.6)/.6)):0};
+   const acknowledge=this.ease((age-cue.display-.35)/.55)*(1-this.ease((age-cue.exit+.1)/.6));
+   const pose={receive:reach*(1-lift)*(1-withdraw),anticipation:this.ease((age-cue.ready+.2)/.2)*(1-reach),lift:secondary||team?0:lift,salute:gc?0:team?wave*(i%3===1?0:1):wave,waveMotion,smile:acknowledge,
+    gaze:secondary?-Math.sign(p.x-m.cx)*.8:recognition*(gc?1:-1)+(shown.kind==='polka'?wave*.7:0)+(gc?0:acknowledge*Math.sin(clamp((age-cue.display)/3,0,1)*Math.PI)*.35),nod:Math.sin(Math.PI*clamp((age-cue.entry-.2)/.6,0,1))+(team||secondary?0:.45*Math.sin(Math.PI*clamp((age-cue.display-.15)/1.1,0,1))),clap:secondary||team&&i%3===1?this.ease((age-cue.display-i*.16)/.48)*(1-this.ease((age-cue.exit+.6)/.6)):0};
    actors.push({...p,...state,role:'rider',awardAge:age,entryAt:entry,entryStart:start,championMix:0,bouquetMix:0,pose,handTargets:[null,null],handAngles:[null,null],exiting,behindPodium:state.walking>0&&!state.feet.some(f=>f.level==='podium'&&f.plant),kitMix:1});
   }
   const focus=actors[0];let staff=null,prop=null;
@@ -6157,7 +6174,12 @@ walk(p,age,duration,m,depart=false){return CeremonyGeometry.sample(p,age,duratio
   c.fillStyle='#d5c575';c.fillRect(0,h-2,w*clamp(t/plan.duration,0,1),2);
  },
  draw(f){
-  const {ctx:c,width:w,height:h}=fitCanvas($('ceremonyCanvas')),m=this.metrics(w,h),b=this.beatAt(f.plan,f.elapsed),i=f.plan.beats.indexOf(b),prev=f.plan.beats[i-1],camera=this.camera(f.plan,f.elapsed,m);
+   const canvas=$('ceremonyCanvas'),{ctx:c,width:w,height:h}=fitCanvas(canvas),last=this.lastFrame;
+   // A paused pose is entirely determined by presentation time. Keep its
+   // pixels until a seek, resize, DPR change, motion preference or new replay.
+   if(f.paused&&last?.flow===f&&last.plan===f.plan&&last.snapshot===f.snapshot&&last.time===f.elapsed&&last.saved===f.saved&&last.w===w&&last.h===h&&last.pw===canvas.width&&last.ph===canvas.height&&last.reduced===reducedMotion)return;
+   this.lastFrame={flow:f,plan:f.plan,snapshot:f.snapshot,time:f.elapsed,saved:f.saved,w,h,pw:canvas.width,ph:canvas.height,reduced:reducedMotion};
+   const m=this.metrics(w,h),b=this.beatAt(f.plan,f.elapsed),i=f.plan.beats.indexOf(b),prev=f.plan.beats[i-1],camera=this.camera(f.plan,f.elapsed,m);
   c.save();c.scale(m.scale,m.scale);c.translate(m.W/2,170);c.scale(camera.z,camera.z);c.translate(-camera.x,-camera.y);
   this.staticSet(c,m,f.snapshot);this.actors(c,m,f.plan,b,f.elapsed);c.save();if(!reducedMotion)c.translate((camera.x-m.cx)*-.10,0);this.foreground(c,m,f.elapsed);c.restore();c.restore();
   if(b&&!reducedMotion){const age=f.elapsed-b.start,next=f.plan.beats[i+1];const enter=1-this.ease(age/.28),leave=next&&next.kind!=='complete'?this.ease((age-b.seconds+.24)/.24):0;const dip=b.kind==='complete'?0:Math.max(enter,leave)*.96;if(dip>.001){c.fillStyle=`rgba(13,35,27,${dip})`;c.fillRect(0,0,w,h);}}
@@ -6170,7 +6192,7 @@ walk(p,age,duration,m,depart=false){return CeremonyGeometry.sample(p,age,duratio
 /* V15 playback is a read-only consumer of the frozen presentation record.
    Replaying/seeking never calls Race.tick, persist, or the result ledger. */
 const CeremonyPlayer={
- mounted:false,returnFocus:null,overflow:'',
+  mounted:false,returnFocus:null,overflow:'',lastUI:null,
  mount(f){
   if(!this.mounted){this.returnFocus=document.activeElement;this.overflow=document.body.style.overflow;this.mounted=true;}
   closeMusic();document.querySelector('.shell').inert=true;document.body.style.overflow='hidden';
@@ -6181,19 +6203,25 @@ const CeremonyPlayer={
   f.rate=1;f.paused=false;$('ceremonySpeed').value='1';
   const labels={winner:'赛段冠军',yellow:'黄衫',green:'绿衫',polka:'圆点衫',white:'白衫','gc-final':'总成绩前三','team-stage':'赛段车队','team-final':'车队总冠',complete:'完成'};
   $('ceremonyChapters').innerHTML=f.plan.beats.map((b,i)=>`<button class="ceremony-chapter" data-beat="${i}" type="button" aria-label="观看${escapeHTML(b.title)}"><small>${String(i+1).padStart(2,'0')}</small>${labels[b.kind]||escapeHTML(b.title)}</button>`).join('');
-  this.update(f);requestAnimationFrame(()=>{if(this.mounted)(blocked?$('ceremonyRetrySave'):$('ceremonyPause')).focus({preventScroll:true});});
+   this.lastUI=null;this.update(f);requestAnimationFrame(()=>{if(this.mounted)(blocked?$('ceremonyRetrySave'):$('ceremonyPause')).focus({preventScroll:true});});
  },
  unmount(){
-  if(!this.mounted)return;this.mounted=false;$('ceremonyLayer').hidden=true;document.querySelector('.shell').inert=Boolean(App.modalStack.length);document.body.style.overflow=App.modalStack.length?'hidden':this.overflow;
+   if(!this.mounted)return;this.mounted=false;CeremonyStage.lastFrame=null;$('ceremonyLayer').hidden=true;document.querySelector('.shell').inert=Boolean(App.modalStack.length);document.body.style.overflow=App.modalStack.length?'hidden':this.overflow;
  },
  update(f){
   if(!this.mounted||!f?.plan)return;
   const fmt=n=>`${String(Math.floor(n/60)).padStart(2,'0')}:${String(Math.floor(n%60)).padStart(2,'0')}`;
   const index=f.plan.beats.findIndex(b=>f.elapsed>=b.start&&f.elapsed<b.end);
-  $('ceremonyTime').textContent=fmt(f.elapsed)+' / '+fmt(f.plan.duration);
-  $('ceremonyPause').textContent=f.paused?'▶ 继续':'Ⅱ 暂停';$('ceremonyPause').setAttribute('aria-pressed',String(!!f.paused));$('ceremonyLayer').dataset.paused=String(!!f.paused);
-  $('ceremonyNext').textContent=index>=f.plan.beats.length-2?'查看成绩 →':'下一项 →';
-  for(const b of $('ceremonyChapters').children){if(Number(b.dataset.beat)===index)b.setAttribute('aria-current','step');else b.removeAttribute('aria-current');}
+   const time=fmt(f.elapsed)+' / '+fmt(f.plan.duration),paused=!!f.paused,previous=this.lastUI;
+   // RAF owns playback, but unchanged transport text and ARIA state need no
+   // DOM writes. Reset on mount so replay and new chapter nodes always paint.
+   if(previous?.time!==time)$('ceremonyTime').textContent=time;
+   if(previous?.paused!==paused){$('ceremonyPause').textContent=paused?'▶ 继续':'Ⅱ 暂停';$('ceremonyPause').setAttribute('aria-pressed',String(paused));$('ceremonyLayer').dataset.paused=String(paused);}
+   if(previous?.index!==index){
+    $('ceremonyNext').textContent=index>=f.plan.beats.length-2?'查看成绩 →':'下一项 →';
+    for(const b of $('ceremonyChapters').children){if(Number(b.dataset.beat)===index)b.setAttribute('aria-current','step');else if(b.hasAttribute('aria-current'))b.removeAttribute('aria-current');}
+   }
+   this.lastUI={time,paused,index};
  },
  toggle(){const f=App.finishFlow;if(f?.phase!=='ceremony')return;f.paused=!f.paused;f.last=performance.now();this.update(f);},
  seek(index){const f=App.finishFlow,b=f?.plan?.beats[index];if(f?.phase!=='ceremony'||!b)return;

@@ -105,6 +105,8 @@ The game also provides a **Race Centre**, team-radio-style information, feeding 
 
 V25 improves save ownership and recovery, provisional standings, and scenery continuity while preserving the established simulation. The existing riding and award systems have been retained and rechecked.
 
+The current source also refines the award stage: a quieter event backdrop, a wider recognition shot, articulated athlete silhouettes, and a brief acknowledgment of the crowd. Playback controls update only when their displayed state changes; pause, chapter selection, replay and the frozen race results retain their existing behavior. See the [2026-10-24 presentation review](V25-PRESENTATION-20261024.md) for the measured scope and remaining limits.
+
 <table>
   <tr>
     <td width="50%" valign="top">

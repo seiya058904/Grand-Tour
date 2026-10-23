@@ -125,6 +125,7 @@ CLI 为 `source out [逗号分隔种子] [flat|逗号分隔的一基赛段编号
 ```bash
 python tests/v24/browser_verify.py --source Grand-Tour-V25.html --out "$GT25_EVIDENCE/browser"
 python tests/v25/ui_verify.py --source Grand-Tour-V25.html --out "$GT25_EVIDENCE/ui"
+python tests/v25/ceremony-transport-browser.py --source Grand-Tour-V25.html --out "$GT25_EVIDENCE/ceremony-transport"
 python tests/v25/legacy_browser.py presentation --out "$GT25_EVIDENCE/presentation"
 python tests/v25/legacy_browser.py scenes --scenes "$GT25_EVIDENCE/scenes" --out "$GT25_EVIDENCE/scenes-played"
 python tests/v25/legacy_browser.py finish --out "$GT25_EVIDENCE/finish"
@@ -135,6 +136,8 @@ python tests/v25/continuity_browser.py --out "$GT25_EVIDENCE/continuity-playback
 ```
 
 `ui_verify.py` 检查 320、390、768、1920×1080、3840×2160 和 1920 DPR2，包含主要控件、名牌几何、移动 Race Centre、键盘/嵌套暂停、原生离线入口及 console。`legacy_browser.py suite ...` 只在内存中把保留 V24 浏览器套件的文件目标和精确版本标题替换为 V25，其他断言、等待和交互不变；所有后续参数原样转交。合法 suite 是 `presentation`、`finish`、`downhill`、`scenes`、`weather`、`sequence`、`live`。未列的 suite 会拒绝。
+
+`ceremony-transport-browser.py` 从正常入口选择第 5 站并使用快速完赛，验证暂停、章节选择、继续、重播、键盘返回及成绩不变。独立的 MutationObserver 检查同一状态连续 240 次更新不产生重复 DOM 写入；这是工作量指标，不是 FPS 承诺。脚本可用 `--executable-path` 明确选择本机已有的 Chromium，不自动安装或更新浏览器。
 
 `sequence --play` 用真实 1× 播放普通及 Tour 最终领奖；省略 `--play` 只运行其余断言，不能声称看过整段播放。该命令依赖前面浏览器生成的自然第 5 站成绩和完整 Tour。原 `browser_verify.py`、`finish`、`downhill` 保留可选 `--injected` 诊断模式；正式原生入口验收不要加此开关。
 

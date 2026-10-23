@@ -13,7 +13,8 @@ from pathlib import Path, PurePosixPath
 ROOT = Path(__file__).resolve().parents[2]
 PREFIX = 'Grand-Tour-V25/'
 ROOT_FILES = ['Grand-Tour-V25.html', 'index.html', 'README.md', 'AGENTS.md',
-              'CLOUD-HANDOFF.md', 'V25-AUDIT-REPORT.md', 'V25-CHANGELOG.md', '.gitignore', '.gitattributes']
+              'CLOUD-HANDOFF.md', 'V25-AUDIT-REPORT.md', 'V25-CHANGELOG.md',
+              'V25-PRESENTATION-20261024.md', '.gitignore', '.gitattributes']
 
 
 def sha(data):
