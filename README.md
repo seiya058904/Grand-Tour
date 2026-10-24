@@ -10,13 +10,13 @@
 </p>
 
 <p align="center">
-  <a href="Grand-Tour-V25.html"><strong>▶ Open V25 Offline</strong></a>
+  <a href="https://seiya058904.github.io/Grand-Tour/"><strong>▶ Play V25 in Your Browser</strong></a>
   &nbsp;·&nbsp;
   <a href="#inside-the-race">🏁 The Race</a>
   &nbsp;·&nbsp;
   <a href="#read-the-road">🗺️ Race Tactics</a>
   &nbsp;·&nbsp;
-  <a href="#play-online-or-offline">💻 Play Offline</a>
+  <a href="#play-online-or-offline">💻 Online &amp; Offline</a>
   &nbsp;·&nbsp;
   <a href="#for-developers">⚙️ Development</a>
 </p>
@@ -147,15 +147,15 @@ The current source also refines the award stage: a quieter event backdrop, a wid
     <td width="50%" valign="top">
       <h3>📄 Single HTML — Play Offline</h3>
       <p><sub>SELF-CONTAINED · NO BUILD · NO SERVER</sub></p>
-      <p>Open <a href="Grand-Tour-V25.html"><code>Grand-Tour-V25.html</code></a> and open it in a modern browser. The game does not require npm or external runtime libraries.</p>
-      <p><strong><a href="Grand-Tour-V25.html">Open the standalone HTML →</a></strong></p>
+      <p>Visit <a href="Grand-Tour-V25.html"><code>Grand-Tour-V25.html</code></a>, use GitHub's <strong>Download raw file</strong> button, and open the saved HTML in a modern browser. The game does not require npm or external runtime libraries.</p>
+      <p><strong><a href="Grand-Tour-V25.html">View the standalone HTML source →</a></strong></p>
     </td>
   </tr>
 </table>
 
 ### 📦 Source Package and Historical Baseline
 
-`Grand-Tour-V25-Source.zip` contains the V25 entry, unchanged latest V24 HTML, required V20–V23 baselines, retained V22–V24 tests, V25 tests and audit documentation. It includes a full SHA-256 manifest and opens at **`Grand-Tour-V25/index.html`** after extraction.
+The [source packager](tests/v25/package_source.py) can generate `Grand-Tour-V25-Source.zip` from this checkout; see the [packaging instructions](tests/v25/README.md). That package contains the V25 entry, unchanged latest V24 HTML, required V20–V23 baselines, retained V22–V24 tests, V25 tests and audit documentation. It includes a full SHA-256 manifest and opens at **`Grand-Tour-V25/index.html`** after extraction.
 
 The authoritative V24 input came from commit `3e92128c0cb353d267c12ceeaf143bda663a7b26`; its HTML SHA-256 is `b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f`. The older sealed V24 Final ZIP was intentionally omitted from the cloud handoff. Its absence is not a missing game dependency. The V25 packager builds directly from this source tree.
 
