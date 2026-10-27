@@ -1,72 +1,233 @@
-![A peloton follows a mountain road on a stage profile](docs/assets/readme-hero.svg)
+<h1 align="center">🚴 GRAND TOUR</h1>
 
-# Grand Tour
+<p align="center">
+  <strong>One tour. Twenty-one stages. Every decision carries forward.</strong>
+</p>
 
-A playable road-cycling simulation where terrain, timing, fatigue, and the peloton shape a 21-stage tour.
+<p align="center">
+  An independent road-cycling simulation where terrain, timing, fatigue, and race craft<br>
+  turn a grand stage race into something you can actually play.
+</p>
 
-[Play V25 online](https://seiya058904.github.io/Grand-Tour/) · [Open the standalone HTML](Grand-Tour-V25.html) · [How to race](#how-to-race)
+<p align="center">
+  <a href="https://seiya058904.github.io/Grand-Tour/"><strong>▶ Play V25 in Your Browser</strong></a>
+  &nbsp;·&nbsp;
+  <a href="#inside-the-race">🏁 The Race</a>
+  &nbsp;·&nbsp;
+  <a href="#read-the-road">🗺️ Race Tactics</a>
+  &nbsp;·&nbsp;
+  <a href="#play-online-or-offline">💻 Online &amp; Offline</a>
+  &nbsp;·&nbsp;
+  <a href="#for-developers">⚙️ Development</a>
+</p>
 
-The interface is in Chinese. V25 runs as one self-contained HTML file and needs no package installation to play.
+<p align="center">
+  <sub>21 STAGES &nbsp;·&nbsp; 184-RIDER START LIST &nbsp;·&nbsp; SIX RIDER ROLES &nbsp;·&nbsp; ONE SELF-CONTAINED HTML GAME</sub><br>
+  <sub>CURRENT RELEASE: V25 · LIVE ON GITHUB PAGES</sub>
+</p>
 
-![Grand Tour's home screen with tour options and animated riders](docs/assets/readme-race-1280.jpg)
+<p align="center">
+  <img width="760" alt="Grand Tour — original cycling simulation project artwork" src="https://github.com/user-attachments/assets/300cdadc-19bd-47db-8b60-7d4928db8afa" />
+</p>
 
-*The current V25 interface in a local browser.*
+---
 
-## Inside the race
+> **A race is more than its finish line.**
+>
+> A sprinter wants a clean run-in. A climber waits for the road to rise. A general-classification contender has to think beyond today. In Grand Tour, the result emerges from the road, the riders, and the choices made between the start and the line.
 
-- **A complete stage race:** ride flat, hilly, mountain, individual time-trial, and team time-trial stages, with stage results and overall jersey standings.
-- **A moving peloton:** groups form, split, chase, and set up leadouts. Rider roles and team objectives affect how they respond.
-- **Effort and timing:** balance endurance and short bursts, follow other riders, attack, and choose when to recover or feed.
-- **A changing route:** gradient, simulated weather, climbs, and descents influence the race and its presentation. Elevation profiles are simplified, not GPS replays.
-- **Results that carry forward:** stage finishes feed the tour standings and presentation sequences; an in-progress tour can be saved and resumed locally.
-- **Race information:** the Race Centre, rider details, route profile, team communications, and playback controls make the situation visible while riding.
+<a id="inside-the-race"></a>
+## 🏁 Inside the Race
 
-## How to race
+Grand Tour is a **playable, multi-stage road-racing simulation**, not a static cycling animation. Its race engine tracks riders, groups, timing, effort, and results over a complete 21-stage tour.
 
-1. Start a tour or select a stage, then inspect its route and rider preparation.
-2. Use the on-screen controls to adjust effort, follow a rider, attack, feed, or pause. The race canvas also exposes keyboard shortcuts in the in-game guide.
-3. Watch the distance, terrain, energy, groups, and gaps. The demands of a mountain finish differ from a time trial or a sprint.
-4. Finish the stage and review its results and jersey standings before continuing the tour.
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🗺️ Twenty-One Stages</h3>
+      <p><sub>FLAT ROADS · MOUNTAINS · ITT · TTT</sub></p>
+      <p>Move between different terrain profiles and racing formats. A flat-stage finish demands different decisions from a summit battle or a time trial.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🎽 Six Rider Roles</h3>
+      <p><sub>GC · SPRINTER · CLIMBER · PUNCHEUR · ALL-ROUNDER · TT</sub></p>
+      <p>Rider strengths and objectives shape how each race unfolds. There is no universal strategy that works for every specialty.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🚴 A Living Peloton</h3>
+      <p><sub>GROUPS · BREAKAWAYS · CHASES · LEADOUTS</sub></p>
+      <p>Watch riders separate, regroup, cooperate, respond to attacks, and organize for a finish. Position and group behavior are part of the race.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>⚡ Effort Has a Cost</h3>
+      <p><sub>PACING · POWER · ENERGY · FATIGUE</sub></p>
+      <p>Choose when to spend energy, when to follow, and when to recover. The strongest move is not always the earliest one.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🌦️ The Road Changes</h3>
+      <p><sub>GRADIENT · WEATHER · DESCENTS</sub></p>
+      <p>Climbs, descents, shifting conditions, and stage environments influence the situation and how the race looks from the roadside.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🏆 Every Result Matters</h3>
+      <p><sub>STAGE WINS · OVERALL STANDINGS · JERSEYS</sub></p>
+      <p>Follow stage classifications, the general classification, and the familiar yellow, green, polka-dot, and white jersey contests.</p>
+    </td>
+  </tr>
+</table>
 
-The game is a simulation, not a record of actual weather or a replay of an official race. The V25 audit found a remaining flat-stage sprinter balance signal; see the [audit report](V25-AUDIT-REPORT.md) for its scope.
+<a id="read-the-road"></a>
+## 🧭 Read the Road. Make the Move.
 
-## Play locally
+<p align="center"><code>STUDY THE STAGE &nbsp;→&nbsp; MANAGE EFFORT &nbsp;→&nbsp; RESPOND TO THE RACE &nbsp;→&nbsp; FINISH</code></p>
 
-Download [`Grand-Tour-V25.html`](Grand-Tour-V25.html) as a raw file and open it in a modern browser. There is no build step or runtime network dependency. Alternatively, with Python installed, serve the repository locally:
+1. **Understand the course.** The route profile, gradient, race situation, and remaining distance all change what a good move looks like.
+2. **Manage your rider.** Balance pacing and recovery against the moments when accelerating or attacking is worth the cost.
+3. **React to the peloton.** Use following, attacks, automatic riding, and race information to respond to rivals and moving groups.
+4. **Race for the line.** Sprint finishes, climbs, time trials, and team efforts reward different combinations of timing and rider strengths.
 
-```bash
+The game also provides a **Race Centre**, team-radio-style information, feeding decisions, pause controls, and an animated results and ceremony sequence. These are part of playing the event—not merely watching a pre-rendered video.
+
+### 🏔️ Four Kinds of Race, Different Demands
+
+| Race format | What changes |
+| --- | --- |
+| **Road stages** | Peloton positioning, attacks, breakaways, and the finish approach |
+| **Mountain stages** | Sustained climbing effort, gaps, descending, and GC pressure |
+| **Individual Time Trial (ITT)** | A rider's solo effort against the clock |
+| **Team Time Trial (TTT)** | Team formation, pacing, and coordinated rotation |
+
+## 🎬 From Roadside to Podium
+
+V25 improves save ownership and recovery, provisional standings, and scenery continuity while preserving the established simulation. The existing riding and award systems have been retained and rechecked.
+
+The current source also refines the award stage: a quieter event backdrop, a wider recognition shot, articulated athlete silhouettes, and a brief acknowledgment of the crowd. Playback controls update only when their displayed state changes; pause, chapter selection, replay and the frozen race results retain their existing behavior. See the [2026-10-24 presentation review](V25-PRESENTATION-20261024.md) for the measured scope and remaining limits.
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🚴 Riding That Responds</h3>
+      <p>Pedaling, body posture, out-of-saddle efforts, descending stance, and finishing motion respond to the rider's actual state rather than being a disconnected loop.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🌄 A Changing Landscape</h3>
+      <p>Mountains, fields, forests, villages, lakeside roads, and the Paris finale follow the course, weather, and stage surroundings.</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>📡 A Clearer Broadcast</h3>
+      <p>Camera framing and race information respond to peloton density, gradients, and distance to the finish. The HUD gives the racing room to breathe.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🥇 A Proper Ceremony</h3>
+      <p>Stage winners, jersey presentations, and the final overall-classification podium get their own sequences, tied to actual race results.</p>
+    </td>
+  </tr>
+</table>
+
+> [!NOTE]
+> **V25 is a released, audited source.** Its local fixes address confirmed storage and presentation faults; the audited candidate was subsequently merged into `main` and deployed to GitHub Pages. Race physics, AI, timing and seeded results remain unchanged, and the expanded flat-stage survey still identifies an unresolved Sprinter balance signal. [V25-AUDIT-REPORT.md](V25-AUDIT-REPORT.md) records the evidence and limits exactly as observed during the **pre-release candidate audit** and is retained unmodified.
+
+<a id="play-online-or-offline"></a>
+## 🚀 Play Online or Offline
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🌐 V25 Release — Play Online</h3>
+      <p><sub>GITHUB PAGES · NO BUILD</sub></p>
+      <p>V25 is live at <a href="https://seiya058904.github.io/Grand-Tour/"><code>seiya058904.github.io/Grand-Tour</code></a>. The packaged <a href="index.html"><code>index.html</code></a> entry redirects to the released <code>Grand-Tour-V25.html</code>.</p>
+      <p><strong><a href="https://seiya058904.github.io/Grand-Tour/">Open the live game →</a></strong></p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>📄 Single HTML — Play Offline</h3>
+      <p><sub>SELF-CONTAINED · NO BUILD · NO SERVER</sub></p>
+      <p>Visit <a href="Grand-Tour-V25.html"><code>Grand-Tour-V25.html</code></a>, use GitHub's <strong>Download raw file</strong> button, and open the saved HTML in a modern browser. The game does not require npm or external runtime libraries.</p>
+      <p><strong><a href="Grand-Tour-V25.html">View the standalone HTML source →</a></strong></p>
+    </td>
+  </tr>
+</table>
+
+### 📦 Source Package and Historical Baseline
+
+The [source packager](tests/v25/package_source.py) can generate `Grand-Tour-V25-Source.zip` from this checkout; see the [packaging instructions](tests/v25/README.md). That package contains the V25 entry, unchanged latest V24 HTML, required V20–V23 baselines, retained V22–V24 tests, V25 tests and audit documentation. It includes a full SHA-256 manifest and opens at **`Grand-Tour-V25/index.html`** after extraction.
+
+The authoritative V24 input came from commit `3e92128c0cb353d267c12ceeaf143bda663a7b26`; its HTML SHA-256 is `b5d0899fad82ed6576f416e12267ec6d369405a4dfa56559e5629e6fcf00fa1f`. The older sealed V24 Final ZIP was intentionally omitted from the cloud handoff. Its absence is not a missing game dependency. The V25 packager builds directly from this source tree.
+
+### 💾 Progress and Compatibility
+
+The game retains its existing **V9-format save compatibility** and historical-tour migration behavior. Browser and file origins may keep different local storage, so preserve a backup before clearing browser data or changing where you play. Current development treats save integrity and recovery as part of the simulation contract.
+
+## 🗂️ Current Source and Preserved Baselines
+
+| Resource | Purpose |
+| --- | --- |
+| [`Grand-Tour-V25.html`](Grand-Tour-V25.html) | Current released source (also playable offline) |
+| [`V25-AUDIT-REPORT.md`](V25-AUDIT-REPORT.md) | Findings, fixes, actual verification and unresolved risks |
+| [`V25-CHANGELOG.md`](V25-CHANGELOG.md) | Concise change history |
+| [`tests/v25/README.md`](tests/v25/README.md) | Current reproduction and packaging commands |
+| [`Grand-Tour-V24.html`](Grand-Tour-V24.html) | Unchanged latest authoritative V24 baseline |
+| [`V24-REPORT.md`](V24-REPORT.md) | Original V24 evidence, not V25 acceptance |
+| [`archive/README.md`](archive/README.md) | Historical source and report index; some old evidence is intentionally outside this handoff |
+
+All 65 retained historical source, report and test files have explicit baseline hashes in `tests/v25/baseline-hashes.json`. V22/V23 remain necessary compatibility references.
+
+<a id="for-developers"></a>
+## ⚙️ For Developers
+
+Grand Tour is built around **one authoritative HTML game file**, not a conventional frontend framework. The current source, previous baselines, and separate verification scripts are maintained in the same repository.
+
+<details>
+<summary><strong>🛠️ Expand local verification and engineering boundaries</strong></summary>
+
+### Local preview
+
+For browser-based inspection from the repository root:
+
+```powershell
 python -m http.server 4187 --bind 127.0.0.1
 ```
 
-Open <http://127.0.0.1:4187/>. File, local-server, and online origins may hold different browser saves. Export important progress before clearing browser data or changing where you play; local storage is not cloud synchronization.
+Open **http://127.0.0.1:4187/**. To use the offline edition itself, simply open `Grand-Tour-V25.html` as a file instead.
 
-## Model and continuity
+### Focused regression checks
 
-The race advances with a fixed simulation step. Rider states, groups, timings, and classifications are calculated by the game rather than played as a prerecorded animation. V25 retains V9-format saves and historical-tour migration; its recovery behavior preserves the original bytes before a writable repair. Cross-process simultaneous writes without Web Locks are not guaranteed atomic.
-
-V25 is the current entry; [`Grand-Tour-V24.html`](Grand-Tour-V24.html) and the earlier sources are retained comparison baselines. Historical evidence applies to the version and environment in which it was collected, rather than proving every current runtime combination.
-
-## Verification and source
-
-The game itself needs only a browser. The focused checks below require Node.js and Python; use an evidence directory outside the repository. Real-browser verification has additional Playwright and Chromium prerequisites.
+The engineering checks use Node.js and Python; real-browser acceptance additionally requires Python Playwright with Chromium. Create an evidence directory outside the repository and set `$evidence` to that absolute path before running tests.
 
 ```powershell
-$evidence = Join-Path $env:TEMP 'grand-tour-check'
-New-Item -ItemType Directory -Force $evidence | Out-Null
 python tests/v25/static_verify.py --out "$evidence/static.json"
-node tests/v25/core-parity.cjs Grand-Tour-V24.html Grand-Tour-V25.html "$evidence/core.json"
+node tests/v25/core-parity.cjs Grand-Tour-V24.html Grand-Tour-V25.html "$evidence/core-parity.json"
 node tests/v25/focused.cjs Grand-Tour-V25.html archive/v22/Grand-Tour-V22.html "$evidence/focused.json"
-node tests/v24/save-finish-boundary.cjs Grand-Tour-V25.html "$evidence/boundary.json"
+node tests/v24/save-finish-boundary.cjs Grand-Tour-V25.html "$evidence/save-finish-boundary.json"
+python tests/v24/browser_verify.py --source Grand-Tour-V25.html --out "$evidence/browser"
 ```
 
-The [verification and packaging guide](tests/v25/README.md) includes save validation, browser, full-tour, and source-package procedures. See also the [V25 audit](V25-AUDIT-REPORT.md), [changelog](V25-CHANGELOG.md), [presentation review](V25-PRESENTATION-20261024.md), [V24 report](V24-REPORT.md), [archive index](archive/README.md), and [repository guidance](AGENTS.md). The previous V24 final ZIP is intentionally absent from this handoff; the V25 source packager does not require it.
+Additional checks cover full-tour results, save ownership, TTT positioning, race animation, weather, ceremonies, and offline-package integrity. The exact workflows and prerequisites live in [`tests/v25/README.md`](tests/v25/README.md).
 
-## Concept art
+### Engineering priorities
 
-Concept art made for this project. It is an illustration, not a screenshot, and details may differ from the shipped interface.
+- **Preserve determinism.** Race logic, timing, rider states, classification, and saved results must remain internally consistent.
+- **Keep the game standalone.** The current delivery must stay playable without a package manager or network runtime.
+- **Respect save history.** Maintain V9 compatibility, the existing restore rules, and prior valid snapshots.
+- **Do not rewrite the baseline.** Historical HTML, tests, evidence, and the frozen ZIP are comparison artifacts, not disposable duplicates.
+- **Verify presentation separately.** More natural riding or prettier scenery should not silently change the underlying race outcome.
 
-![A concept render of the race view over a stage profile.](docs/assets/concept-art.jpg)
+See [`AGENTS.md`](AGENTS.md) for the complete repository-specific guardrails.
 
-## Rights
+</details>
 
-Grand Tour is an independent, unofficial cycling simulation. It is not affiliated with or endorsed by the Tour de France organizers, teams, or represented riders. No project-wide open-source license is declared; public source access is not blanket permission to redistribute the game or its artwork.
+## 📜 Independent Project & Rights
+
+Grand Tour is an **independent, unofficial cycling simulation**. It is not affiliated with the Tour de France organizers, teams, or represented riders. No project-wide open-source license is declared; a publicly viewable repository is not a blanket permission to redistribute the game or its artwork.
+
+---
+
+<p align="center">
+  <sub>READ THE ROAD. CHOOSE YOUR MOMENT. RACE THE WHOLE TOUR.</sub><br>
+  <sub>Grand Tour · Twenty-one stages of tactics, endurance, and spectacle.</sub>
+</p>
