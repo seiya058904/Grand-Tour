@@ -23,7 +23,12 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install playwright==1.55.0
-      - run: python -m playwright install --with-deps chromium
+      - run: |
+          for i in 1 2 3; do
+            timeout 180 python -m playwright install --with-deps chromium && break
+            [ "$i" = 3 ] && exit 1
+            sleep 5
+          done
       - run: |
           mkdir -p /tmp/gt-evidence
           python tests/v23/static_verify.py --out /tmp/gt-evidence/static.json
@@ -55,7 +60,12 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install playwright==1.55.0
-      - run: python -m playwright install --with-deps chromium
+      - run: |
+          for i in 1 2 3; do
+            timeout 180 python -m playwright install --with-deps chromium && break
+            [ "$i" = 3 ] && exit 1
+            sleep 5
+          done
       - name: Verify V24 core, saves and complete Tour parity
         run: |
           mkdir -p /tmp/gt-v24-evidence

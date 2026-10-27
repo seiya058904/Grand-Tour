@@ -27,7 +27,12 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install playwright==1.56.0
-      - run: python -m playwright install --with-deps chromium
+      - run: |
+          for i in 1 2 3; do
+            timeout 180 python -m playwright install --with-deps chromium && break
+            [ "$i" = 3 ] && exit 1
+            sleep 5
+          done
       - name: Exact baseline, engine and storage gates
         run: |
           mkdir -p /tmp/gt-v25-evidence
@@ -59,15 +64,21 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install playwright==1.56.0
-      - run: python -m playwright install --with-deps chromium
-      # The simulation is deterministic: the same game file, scripts, seed and workflow always
-      # give the same result. Reuse the saved result when none of them changed; any change to
-      # them misses the cache and runs the full 21-stage simulation again.
+      - run: |
+          for i in 1 2 3; do
+            timeout 180 python -m playwright install --with-deps chromium && break
+            [ "$i" = 3 ] && exit 1
+            sleep 5
+          done
+      # The simulation is deterministic: the same game file, scripts and seed always give the
+      # same result. Reuse the saved result when none of them changed; any change to the game
+      # file or the simulation scripts misses the cache and runs the full 21-stage simulation
+      # again. The seed is part of the key: change it here and in the command together.
       - uses: actions/cache@v4
         id: tour-cache
         with:
           path: /tmp/gt-v25-evidence/v24*.json
-          key: gt-tour-v24-${{ hashFiles('Grand-Tour-V24.html', 'tests/v23/*.cjs', '.github/workflows/v25-verify.yml') }}
+          key: gt-tour-v24-seed314159-${{ hashFiles('Grand-Tour-V24.html', 'tests/v23/*.cjs') }}
       - name: Complete V24 Tour (seed 314159)
         if: steps.tour-cache.outputs.cache-hit != 'true'
         run: |
@@ -90,15 +101,21 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install playwright==1.56.0
-      - run: python -m playwright install --with-deps chromium
-      # The simulation is deterministic: the same game file, scripts, seed and workflow always
-      # give the same result. Reuse the saved result when none of them changed; any change to
-      # them misses the cache and runs the full 21-stage simulation again.
+      - run: |
+          for i in 1 2 3; do
+            timeout 180 python -m playwright install --with-deps chromium && break
+            [ "$i" = 3 ] && exit 1
+            sleep 5
+          done
+      # The simulation is deterministic: the same game file, scripts and seed always give the
+      # same result. Reuse the saved result when none of them changed; any change to the game
+      # file or the simulation scripts misses the cache and runs the full 21-stage simulation
+      # again. The seed is part of the key: change it here and in the command together.
       - uses: actions/cache@v4
         id: tour-cache
         with:
           path: /tmp/gt-v25-evidence/v25*.json
-          key: gt-tour-v25-${{ hashFiles('Grand-Tour-V25.html', 'tests/v23/*.cjs', '.github/workflows/v25-verify.yml') }}
+          key: gt-tour-v25-seed314159-${{ hashFiles('Grand-Tour-V25.html', 'tests/v23/*.cjs') }}
       - name: Complete V25 Tour (seed 314159)
         if: steps.tour-cache.outputs.cache-hit != 'true'
         run: |
@@ -122,7 +139,12 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install playwright==1.56.0
-      - run: python -m playwright install --with-deps chromium
+      - run: |
+          for i in 1 2 3; do
+            timeout 180 python -m playwright install --with-deps chromium && break
+            [ "$i" = 3 ] && exit 1
+            sleep 5
+          done
       - uses: actions/download-artifact@v4
         with:
           pattern: tour-*
@@ -150,7 +172,12 @@ jobs:
         with:
           python-version: '3.12'
       - run: pip install playwright==1.56.0
-      - run: python -m playwright install --with-deps chromium
+      - run: |
+          for i in 1 2 3; do
+            timeout 180 python -m playwright install --with-deps chromium && break
+            [ "$i" = 3 ] && exit 1
+            sleep 5
+          done
       - uses: actions/download-artifact@v4
         with:
           name: gt-v25-gates
