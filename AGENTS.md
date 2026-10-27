@@ -40,3 +40,11 @@ python tests/v24/browser_verify.py --source Grand-Tour-V25.html --out /tmp/gt-v2
 - `tests/v25/package_source.py` 构建新的轻量 ZIP，`tests/v25/package_verify.py` 核验解压清单、基线、正式入口和实际离线存档/控件。禁止覆盖原始 V24 包。
 - `.github/workflows/v25-verify.yml` 只执行验证、不含部署步骤（线上由 `main` 的 GitHub Pages 流程发布）。旧 V23/V24 工作流保留；仅依赖被裁剪旧 ZIP 的历史打包步骤明确标注可选输入缺失，不伪造 PASS。
 - 完成前核验最终 diff、空白错误、入口、README、报告、CI 和打包引用。有 Git 时运行 `git diff --check`；本交接目录没有 Git 时与原 ZIP 逐文件对照。所有未跑或失败的验收须如实记录。
+
+## CI policy (minimal-test principle)
+
+The owner decided on 2026-10-27 that CI should run the smallest set of checks relevant to a change and keep heavy suites for schedules and manual runs. Do not undo this by restoring broad push triggers.
+
+- Documentation-only changes (README, AGENTS, handoff and V25 report files) do not start verification.
+- `v25-verify.yml` splits the work into parallel jobs. The two complete-Tour simulations are cached by the game file, the `tests/v23` scripts and the seed; a change to any of them runs the full 21-stage simulation again. If you change the seed, change it in both the cache key and the command.
+- `v23-verify.yml` (the frozen V22-V24 regression, about 30 minutes) runs only manually and on the monthly schedule. Keep the file and the monthly run.
