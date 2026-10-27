@@ -1,16 +1,23 @@
 name: Grand Tour V25 candidate verification
+# Documentation-only changes (README, AGENTS, handoff and V25 report files) no longer start this
+# run: the verification reads none of them except to list them in the source package.
+# The two complete-Tour simulations are independent, so they run in parallel jobs and the
+# comparison and browser checks start as soon as their inputs exist.
 on:
   workflow_dispatch:
   push:
-    paths: ['Grand-Tour-V25.html', 'Grand-Tour-V24.html', 'index.html', 'tests/**', 'archive/**', 'V25-*.md', 'AGENTS.md', 'README.md', 'CLOUD-HANDOFF.md', '.github/workflows/v25-verify.yml']
+    paths: ['Grand-Tour-V25.html', 'Grand-Tour-V24.html', 'index.html', 'tests/**', 'archive/**', '.github/workflows/v25-verify.yml']
   pull_request:
-    paths: ['Grand-Tour-V25.html', 'Grand-Tour-V24.html', 'index.html', 'tests/**', 'archive/**', 'V25-*.md', 'AGENTS.md', 'README.md', 'CLOUD-HANDOFF.md', '.github/workflows/v25-verify.yml']
+    paths: ['Grand-Tour-V25.html', 'Grand-Tour-V24.html', 'index.html', 'tests/**', 'archive/**', '.github/workflows/v25-verify.yml']
 permissions:
   contents: read
+concurrency:
+  group: gt-v25-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
-  candidate:
+  gates:
     runs-on: ubuntu-24.04
-    timeout-minutes: 60
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -35,12 +42,105 @@ jobs:
           node tests/v25/simulation-live-standings.cjs Grand-Tour-V25.html /tmp/gt-v25-evidence/live.json
           node tests/v25/render-continuity.cjs Grand-Tour-V25.html /tmp/gt-v25-evidence/continuity.json
           node tests/v25/render-score-parity.cjs Grand-Tour-V24.html Grand-Tour-V25.html /tmp/gt-v25-evidence/score.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gt-v25-gates
+          path: /tmp/gt-v25-evidence
+  tour-v24:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright==1.56.0
+      - run: python -m playwright install --with-deps chromium
+      - name: Complete V24 Tour (seed 314159)
+        run: |
+          mkdir -p /tmp/gt-v25-evidence
+          node tests/v23/tour-simulation.cjs Grand-Tour-V24.html /tmp/gt-v25-evidence/v24.json 314159
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tour-v24
+          path: /tmp/gt-v25-evidence/v24*.json
+  tour-v25:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright==1.56.0
+      - run: python -m playwright install --with-deps chromium
+      - name: Complete V25 Tour (seed 314159)
+        run: |
+          mkdir -p /tmp/gt-v25-evidence
+          node tests/v23/tour-simulation.cjs Grand-Tour-V25.html /tmp/gt-v25-evidence/v25.json 314159
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: tour-v25
+          path: /tmp/gt-v25-evidence/v25*.json
+  compare:
+    needs: [tour-v24, tour-v25]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright==1.56.0
+      - run: python -m playwright install --with-deps chromium
+      - uses: actions/download-artifact@v4
+        with:
+          pattern: tour-*
+          merge-multiple: true
+          path: /tmp/gt-v25-evidence
       - name: Both complete Tours with exact V9 object parity
         run: |
-          node tests/v23/tour-simulation.cjs Grand-Tour-V24.html /tmp/gt-v25-evidence/v24.json 314159
-          node tests/v23/tour-simulation.cjs Grand-Tour-V25.html /tmp/gt-v25-evidence/v25.json 314159
           node tests/v25/simulation-tour-parity.cjs /tmp/gt-v25-evidence/v24-tour.json /tmp/gt-v25-evidence/v25-tour.json /tmp/gt-v25-evidence/v24.json /tmp/gt-v25-evidence/v25.json /tmp/gt-v25-evidence/tour-parity.json
           node tests/v25/full-tour-compatibility.cjs Grand-Tour-V24.html Grand-Tour-V25.html /tmp/gt-v25-evidence/v24-tour.json /tmp/gt-v25-evidence/full-tour-compatibility.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gt-v25-compare
+          path: /tmp/gt-v25-evidence
+  native:
+    needs: [gates, tour-v25]
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright==1.56.0
+      - run: python -m playwright install --with-deps chromium
+      - uses: actions/download-artifact@v4
+        with:
+          name: gt-v25-gates
+          path: /tmp/gt-v25-evidence
+      - uses: actions/download-artifact@v4
+        with:
+          name: tour-v25
+          path: /tmp/gt-v25-evidence
       - name: Native browser, storage and presentation
         run: |
           python tests/v25/storage-first-settings-browser.py --source Grand-Tour-V25.html --validation-fixtures /tmp/gt-v25-evidence/fixtures --out /tmp/gt-v25-evidence/storage-browser
@@ -56,5 +156,16 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: grand-tour-v25-verification
+          name: gt-v25-native
           path: /tmp/gt-v25-evidence
+  candidate:
+    needs: [gates, tour-v24, tour-v25, compare, native]
+    if: always()
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - env:
+          RESULTS: ${{ needs.gates.result }} ${{ needs.tour-v24.result }} ${{ needs.tour-v25.result }} ${{ needs.compare.result }} ${{ needs.native.result }}
+        run: |
+          echo "$RESULTS"
+          for r in $RESULTS; do test "$r" = success || exit 1; done
