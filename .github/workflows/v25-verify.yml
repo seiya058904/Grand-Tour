@@ -60,7 +60,16 @@ jobs:
           python-version: '3.12'
       - run: pip install playwright==1.56.0
       - run: python -m playwright install --with-deps chromium
+      # The simulation is deterministic: the same game file, scripts, seed and workflow always
+      # give the same result. Reuse the saved result when none of them changed; any change to
+      # them misses the cache and runs the full 21-stage simulation again.
+      - uses: actions/cache@v4
+        id: tour-cache
+        with:
+          path: /tmp/gt-v25-evidence/v24*.json
+          key: gt-tour-v24-${{ hashFiles('Grand-Tour-V24.html', 'tests/v23/*.cjs', '.github/workflows/v25-verify.yml') }}
       - name: Complete V24 Tour (seed 314159)
+        if: steps.tour-cache.outputs.cache-hit != 'true'
         run: |
           mkdir -p /tmp/gt-v25-evidence
           node tests/v23/tour-simulation.cjs Grand-Tour-V24.html /tmp/gt-v25-evidence/v24.json 314159
@@ -82,7 +91,16 @@ jobs:
           python-version: '3.12'
       - run: pip install playwright==1.56.0
       - run: python -m playwright install --with-deps chromium
+      # The simulation is deterministic: the same game file, scripts, seed and workflow always
+      # give the same result. Reuse the saved result when none of them changed; any change to
+      # them misses the cache and runs the full 21-stage simulation again.
+      - uses: actions/cache@v4
+        id: tour-cache
+        with:
+          path: /tmp/gt-v25-evidence/v25*.json
+          key: gt-tour-v25-${{ hashFiles('Grand-Tour-V25.html', 'tests/v23/*.cjs', '.github/workflows/v25-verify.yml') }}
       - name: Complete V25 Tour (seed 314159)
+        if: steps.tour-cache.outputs.cache-hit != 'true'
         run: |
           mkdir -p /tmp/gt-v25-evidence
           node tests/v23/tour-simulation.cjs Grand-Tour-V25.html /tmp/gt-v25-evidence/v25.json 314159
