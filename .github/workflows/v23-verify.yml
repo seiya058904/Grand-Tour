@@ -1,10 +1,11 @@
 name: Grand Tour regression verification
+# These jobs re-verify the frozen V22-V24 baselines (about 30 minutes). Nothing on the push
+# path changes them and V25's own verification already compares against V24 and V22, so they
+# run on demand and once a month instead of on every related push.
 on:
-  push:
-    branches: [main]
-    paths: ['archive/v22/Grand-Tour-V22.html', 'archive/v23/Grand-Tour-V23.html', 'Grand-Tour-V24.html', 'Grand-Tour-V24-Final.zip', 'index.html', 'tests/v22/**', 'tests/v23/**', 'tests/v24/**', '.github/workflows/v23-verify.yml']
-  pull_request:
-    paths: ['archive/v22/Grand-Tour-V22.html', 'archive/v23/Grand-Tour-V23.html', 'Grand-Tour-V24.html', 'Grand-Tour-V24-Final.zip', 'index.html', 'tests/v22/**', 'tests/v23/**', 'tests/v24/**', '.github/workflows/v23-verify.yml']
+  workflow_dispatch:
+  schedule:
+    - cron: '41 3 1 * *'
 permissions:
   contents: read
 jobs:
