@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/readme-cover.svg" width="100%" alt="GRAND TOUR — illustrated project cover" />
+</p>
+
 <h1 align="center">🚴 GRAND TOUR</h1>
 
 <p align="center">
