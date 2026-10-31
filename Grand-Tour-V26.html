@@ -6324,7 +6324,7 @@ const CeremonyStage={
    if(clapW>0){const cl=Math.abs(Math.sin(age*9)),gap=lerp(9,2,cl*clapW);staff.handTargets=[{to:[-gap,-96],w:clapW},{to:[gap,-96],w:clapW}];staff.pose.cheer=.5*clapW;staff.pose.gaze=lerp(-.6,-.8,clapW);}
    if(!gc&&base.jersey&&age>cue.drape-.1&&age<cue.drape+1.5){const ta=this.pulse(age,cue.drape-.1,1.6);staff.handTargets[1]={to:[30,-138],w:ta};staff.pose.cheer=ta*.7;}
    const owner=age>=cue.release?'rider':'staff',shared=age>=cue.share&&age<cue.release;
-   const riderGrip=1,idleR=[19,-70];
+   const riderGrip=1;
    let riderTarget=null;
    if(age>=cue.ready&&age<cue.share)riderTarget={to:local(grip,{x:base.x,y:rootY,height:focus.height}),w:clamp((age-cue.ready)/(cue.share-cue.ready),0,1)};
    else if(age>=cue.share&&age<cue.release)riderTarget=local(grip,{x:base.x,y:rootY,height:focus.height});

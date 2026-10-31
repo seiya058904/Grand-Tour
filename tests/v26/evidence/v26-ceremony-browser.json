@@ -1,5 +1,5 @@
 {
-  "sha256": "e54f81703b70525338d4b6013ee4ae68272002fbaf20d9152e07c35e1e1c2106",
+  "sha256": "51602ea4ea67f299399a8d6f1103f3c768b7931a54abb6228a2426155509467b",
   "checks": {
     "identity": {
       "pass": true
@@ -46,10 +46,10 @@
     "playback_cost_desktop": {
       "frames": 480,
       "paintP50": 0.8,
-      "paintP95": 1.3,
-      "paintMax": 23.5,
-      "frameGapP50": 16.6,
-      "frameGapP95": 17.7,
+      "paintP95": 1.2,
+      "paintMax": 23.6,
+      "frameGapP50": 16.7,
+      "frameGapP95": 17.6,
       "viewport": "1280x900",
       "pass": true,
       "target": "paint p95 < 16.7 ms (recorded; headless timing is indicative only)"
@@ -57,9 +57,9 @@
     "pixel_determinism_any_seek_order": {
       "pass": true,
       "hashes": [
-        "fcced219993196f626fb2ff98d2102386f4501ae607de7b66219636e6ca19585",
-        "ae44c3a6fd000b2224c054de435d15dbfc57e1f7a109e16aa70d14fd4941d757",
-        "5b4a4dc6214b89cb2812cd0e19ef85090279ad17131c145064d2b656c7875c17"
+        "6ab83d4bd7a3e44d4d8a65b92f2dbf4eb0c13e798b0cf9351bebc5a3adacbabd",
+        "4cd0b47cbd079ceffb77f4d989e6190c25973aab2be7a8e8961534b20a807fe0",
+        "d6c25cb0490096131b9a53b02f22c3310dec7d61351f05f76115ebd3a11a99b5"
       ]
     },
     "narrow_layout": {
@@ -70,12 +70,12 @@
       ]
     },
     "playback_cost_mobile": {
-      "frames": 181,
+      "frames": 180,
       "paintP50": 0.6,
       "paintP95": 1,
-      "paintMax": 1.3,
-      "frameGapP50": 16.7,
-      "frameGapP95": 17.5,
+      "paintMax": 1.4,
+      "frameGapP50": 16.6,
+      "frameGapP95": 17.6,
       "viewport": "390x844",
       "pass": true
     },
@@ -83,7 +83,7 @@
       "pass": true,
       "pausedBySpace": true,
       "rate": 2,
-      "resultPlace": "22"
+      "resultPlace": "51"
     },
     "replay_read_only": {
       "pass": true

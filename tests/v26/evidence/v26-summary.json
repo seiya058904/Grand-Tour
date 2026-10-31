@@ -1,6 +1,6 @@
 {
   "source": "Grand-Tour-V26.html",
-  "sha256": "e54f81703b70525338d4b6013ee4ae68272002fbaf20d9152e07c35e1e1c2106",
+  "sha256": "51602ea4ea67f299399a8d6f1103f3c768b7931a54abb6228a2426155509467b",
   "date": "2026-10-31",
   "runs": {
     "tests/v26/core-parity.cjs": "15/15 (14 families + CONFIG)",
