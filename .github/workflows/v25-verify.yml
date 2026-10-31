@@ -62,18 +62,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - run: pip install playwright==1.56.0
-      - run: |
-          # Wait for another apt process (a fresh runner often has one) instead of failing on its lock.
-          echo 'DPkg::Lock::Timeout "240";' | sudo tee /etc/apt/apt.conf.d/99-lock-timeout >/dev/null
-          for i in 1 2 3; do
-            timeout 300 python -m playwright install --with-deps chromium && break
-            [ "$i" = 3 ] && exit 1
-            sleep 5
-          done
       # The simulation is deterministic: the same game file, scripts and seed always give the
       # same result. Reuse the saved result when none of them changed; any change to the game
       # file or the simulation scripts misses the cache and runs the full 21-stage simulation
@@ -101,18 +89,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - run: pip install playwright==1.56.0
-      - run: |
-          # Wait for another apt process (a fresh runner often has one) instead of failing on its lock.
-          echo 'DPkg::Lock::Timeout "240";' | sudo tee /etc/apt/apt.conf.d/99-lock-timeout >/dev/null
-          for i in 1 2 3; do
-            timeout 300 python -m playwright install --with-deps chromium && break
-            [ "$i" = 3 ] && exit 1
-            sleep 5
-          done
       # The simulation is deterministic: the same game file, scripts and seed always give the
       # same result. Reuse the saved result when none of them changed; any change to the game
       # file or the simulation scripts misses the cache and runs the full 21-stage simulation
@@ -141,18 +117,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '24'
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.12'
-      - run: pip install playwright==1.56.0
-      - run: |
-          # Wait for another apt process (a fresh runner often has one) instead of failing on its lock.
-          echo 'DPkg::Lock::Timeout "240";' | sudo tee /etc/apt/apt.conf.d/99-lock-timeout >/dev/null
-          for i in 1 2 3; do
-            timeout 300 python -m playwright install --with-deps chromium && break
-            [ "$i" = 3 ] && exit 1
-            sleep 5
-          done
       - uses: actions/download-artifact@v4
         with:
           pattern: tour-*
