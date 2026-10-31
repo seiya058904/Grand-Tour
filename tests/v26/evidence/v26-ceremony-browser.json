@@ -1,0 +1,113 @@
+{
+  "sha256": "950902849b91749ec63fb35cffcdf11e70075e41eb0c702c3a3005f3e9828ff3",
+  "checks": {
+    "identity": {
+      "pass": true
+    },
+    "ordinary_timing": {
+      "pass": true,
+      "duration": 58.1,
+      "beats": [
+        {
+          "kind": "winner",
+          "start": 1.6,
+          "seconds": 10.5
+        },
+        {
+          "kind": "yellow",
+          "start": 12.1,
+          "seconds": 10.5
+        },
+        {
+          "kind": "green",
+          "start": 22.6,
+          "seconds": 10.5
+        },
+        {
+          "kind": "polka",
+          "start": 33.1,
+          "seconds": 10.5
+        },
+        {
+          "kind": "white",
+          "start": 43.6,
+          "seconds": 10.5
+        },
+        {
+          "kind": "complete",
+          "start": 54.1,
+          "seconds": 3
+        }
+      ]
+    },
+    "playback_cost_desktop": {
+      "frames": 480,
+      "paintP50": 0.8,
+      "paintP95": 1.2,
+      "paintMax": 23.6,
+      "frameGapP50": 16.7,
+      "frameGapP95": 18,
+      "viewport": "1280x900",
+      "pass": true,
+      "target": "paint p95 < 16.7 ms (recorded; headless timing is indicative only)"
+    },
+    "pixel_determinism_any_seek_order": {
+      "pass": true,
+      "hashes": [
+        "4edc1eca02f495c0a428c2e79411b3eb0ed898d6893a4c2b9d1baf41f80542a2",
+        "5fa76db22655e1c2ad6b7275aaf3bbea395e0c78e316c37abd8290651e4a574a",
+        "ea5e99345a7ce7636e25adf55989ff143cf034394a10406c246ca296059b0cbf"
+      ]
+    },
+    "narrow_layout": {
+      "pass": true,
+      "canvas": [
+        364,
+        455.75
+      ]
+    },
+    "playback_cost_mobile": {
+      "frames": 181,
+      "paintP50": 0.7,
+      "paintP95": 0.9,
+      "paintMax": 1.1,
+      "frameGapP50": 16.7,
+      "frameGapP95": 18.1,
+      "viewport": "390x844",
+      "pass": true
+    },
+    "controls_and_record": {
+      "pass": true,
+      "pausedBySpace": true,
+      "rate": 2,
+      "resultPlace": "18"
+    },
+    "replay_read_only": {
+      "pass": true
+    },
+    "reduced_motion": {
+      "pass": true,
+      "reduced": true,
+      "seconds": [
+        4.5,
+        4.5,
+        4.5,
+        4.5,
+        4.5,
+        3
+      ],
+      "static": true
+    },
+    "final_frames_rendered": {
+      "pass": true,
+      "note": "synthetic stage-20 identity fixture, painter only"
+    },
+    "console": {
+      "pass": true,
+      "errors": []
+    }
+  },
+  "errors": [],
+  "browser": "156.0.8078.4",
+  "pass": true
+}

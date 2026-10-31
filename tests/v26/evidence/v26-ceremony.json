@@ -1,0 +1,97 @@
+{
+  "source": "Grand-Tour-V26.html",
+  "sha256": "950902849b91749ec63fb35cffcdf11e70075e41eb0c702c3a3005f3e9828ff3",
+  "checks": [
+    {
+      "name": "Compact cinematic timing replaces the 20.8s awards",
+      "pass": true,
+      "detail": {
+        "ordinary": 58.1,
+        "final": 73.6
+      }
+    },
+    {
+      "name": "Awards are record-derived; jersey, bouquet and GC order are preserved",
+      "pass": true,
+      "detail": {
+        "order": [
+          {
+            "id": 41,
+            "entry": 4.6,
+            "x": 302.22222222222223
+          },
+          {
+            "id": 72,
+            "entry": 3.2,
+            "x": 157.22222222222223
+          },
+          {
+            "id": 17,
+            "entry": 2.1,
+            "x": 447.22222222222223
+          }
+        ]
+      }
+    },
+    {
+      "name": "Hand-off: presenter and awardee hold the very same grip during the shared hold",
+      "pass": true,
+      "detail": {
+        "samples": 77
+      }
+    },
+    {
+      "name": "Props are painted at the solved hand, never floating away from it",
+      "pass": true,
+      "detail": {
+        "checked": 34
+      }
+    },
+    {
+      "name": "Standing feet stay on their surface (no penetration) during celebrations",
+      "pass": true,
+      "detail": {
+        "feet": 828
+      }
+    },
+    {
+      "name": "Camera is one continuous track: no resets between awards",
+      "pass": true,
+      "detail": {
+        "pass": true
+      }
+    },
+    {
+      "name": "Whip-pan replaces the black dip at every award boundary",
+      "pass": true,
+      "detail": {
+        "boundaries": 4
+      }
+    },
+    {
+      "name": "Same time ⇒ same scene and same paint, regardless of seek order or cache",
+      "pass": true,
+      "detail": {
+        "frames": 47,
+        "repeats": 63
+      }
+    },
+    {
+      "name": "Particles are analytic, capped and never use Math.random or Race.rng",
+      "pass": true,
+      "detail": {
+        "peakLiveConfetti": 174
+      }
+    },
+    {
+      "name": "Ceremony is a read-only consumer of the frozen record",
+      "pass": true,
+      "detail": {
+        "pass": true
+      }
+    }
+  ],
+  "passed": 10,
+  "failed": 0,
+  "pass": true
+}
