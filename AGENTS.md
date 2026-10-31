@@ -64,3 +64,8 @@ The owner decided on 2026-10-27 that CI should run the smallest set of checks re
 - Documentation-only changes (README, AGENTS, handoff and V25 report files) do not start verification.
 - `v25-verify.yml` splits the work into parallel jobs. The two complete-Tour simulations are cached by the game file, the `tests/v23` scripts and the seed; a change to any of them runs the full 21-stage simulation again. If you change the seed, change it in both the cache key and the command.
 - `v23-verify.yml` (the frozen V22-V24 regression, about 30 minutes) runs only manually and on the monthly schedule. Keep the file and the monthly run.
+
+## Browser tool selection
+
+- Prefer Ego Browser for exploratory navigation, visual review and interactive checks when available. Use Playwright for repeatable regression, CI, isolation, request interception or other automation requiring its APIs; combine tools when useful. If Ego is unavailable, use a suitable existing browser tool.
+- Keep this repository's required browser commands, versions, profiles and safety boundaries; an exploratory check does not replace required automated tests. Do not alter real user data or production state for testing. Report the tools, coverage and any untested paths.
