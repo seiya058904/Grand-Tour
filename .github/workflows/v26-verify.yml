@@ -1,0 +1,67 @@
+name: Grand Tour V26 presentation verification
+# Verification only; no deployment. Runs only when the V26 game file, its V25
+# baseline, the V26 tests or this workflow change (minimal-test policy).
+# V26 changes presentation code only, so no complete-Tour simulation runs here:
+# core-parity proves the 14 engine/data families are identical to V25.
+on:
+  workflow_dispatch:
+  push:
+    paths: ['Grand-Tour-V26.html', 'Grand-Tour-V25.html', 'tests/v26/**', '.github/workflows/v26-verify.yml']
+  pull_request:
+    paths: ['Grand-Tour-V26.html', 'Grand-Tour-V25.html', 'tests/v26/**', '.github/workflows/v26-verify.yml']
+permissions:
+  contents: read
+concurrency:
+  group: gt-v26-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  gates:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Engine parity, regressions and ceremony director
+        run: |
+          mkdir -p /tmp/gt-v26-evidence
+          node tests/v26/core-parity.cjs Grand-Tour-V25.html Grand-Tour-V26.html /tmp/gt-v26-evidence/core.json
+          node tests/v26/focused.cjs Grand-Tour-V26.html archive/v22/Grand-Tour-V22.html /tmp/gt-v26-evidence/focused.json
+          node tests/v24/save-finish-boundary.cjs Grand-Tour-V26.html /tmp/gt-v26-evidence/boundary.json
+          node tests/v25/storage-first-settings.cjs Grand-Tour-V26.html /tmp/gt-v26-evidence/first-settings.json
+          node tests/v25/storage-validation.cjs Grand-Tour-V26.html /tmp/gt-v26-evidence/storage.json /tmp/gt-v26-evidence/fixtures
+          node tests/v25/render-continuity.cjs Grand-Tour-V26.html /tmp/gt-v26-evidence/continuity.json
+          node tests/v25/render-score-parity.cjs Grand-Tour-V25.html Grand-Tour-V26.html /tmp/gt-v26-evidence/score.json
+          node tests/v26/ceremony.cjs Grand-Tour-V26.html /tmp/gt-v26-evidence/ceremony.json
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gt-v26-gates
+          path: /tmp/gt-v26-evidence
+  browser:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install playwright==1.56.0
+      - run: |
+          echo 'DPkg::Lock::Timeout "240";' | sudo tee /etc/apt/apt.conf.d/99-lock-timeout >/dev/null
+          for i in 1 2 3; do
+            timeout 300 python -m playwright install --with-deps chromium && break
+            [ "$i" = 3 ] && exit 1
+            sleep 5
+          done
+      - name: Ceremony transport and V26 browser acceptance
+        run: |
+          mkdir -p /tmp/gt-v26-browser
+          python tests/v25/ceremony-transport-browser.py --source Grand-Tour-V26.html --out /tmp/gt-v26-browser/transport
+          python tests/v26/ceremony_browser.py --source Grand-Tour-V26.html --out /tmp/gt-v26-browser/ceremony --final-stage
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: gt-v26-browser
+          path: /tmp/gt-v26-browser

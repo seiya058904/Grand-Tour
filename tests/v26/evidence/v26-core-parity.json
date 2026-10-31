@@ -1,0 +1,86 @@
+{
+  "source": "Grand-Tour-V26.html",
+  "sourceSHA256": "94e337bc5cdfa4b7a9300d7029817653bfb29d64bee223de54030b1bbf90098d",
+  "baseline": "Grand-Tour-V25.html",
+  "baselineSHA256": "29417c79c80e767ba94cb6d5c5d78765f21cbe74e80efcc346023a222b8905f0",
+  "exceptions": [],
+  "checks": [
+    {
+      "name": "Race",
+      "pass": true,
+      "sha256": "757bc138433d24406102754ccb56945d3c2b844724a952a431e0e7fd18081bbe"
+    },
+    {
+      "name": "Physics",
+      "pass": true,
+      "sha256": "e96d7f4f2090fad5ae1290279e2758e2e14e5ee686a528b8c769548021489fff"
+    },
+    {
+      "name": "Physiology",
+      "pass": true,
+      "sha256": "a583c4e778a8a7d09fc60366db3e40c9d2587af85461afe8cf5f382c0b85f0b8"
+    },
+    {
+      "name": "Fatigue",
+      "pass": true,
+      "sha256": "12f5331be2505a8f93d25a67d8210206b963717cebf4c51058093a97aa91a243"
+    },
+    {
+      "name": "Weather",
+      "pass": true,
+      "sha256": "3a319d43ba4c45197dad0d8b1df87b972c9c9b753f226a732fe9a04fdb4667c5"
+    },
+    {
+      "name": "RaceTiming",
+      "pass": true,
+      "sha256": "faa01c5e4bec9b7126b20a27f19a4a768f17a52516e84efd4fee3f35251e22ff"
+    },
+    {
+      "name": "TeamClassification",
+      "pass": true,
+      "sha256": "3d9f8ac94ede6d29da475c76b2122f2311d71c44d213b78e91a8b6c41b21deea"
+    },
+    {
+      "name": "Classification",
+      "pass": true,
+      "sha256": "912269ef51bcf3f1255e11d7cb49735709ac48a1a446a4777ed9d36ea42bd859"
+    },
+    {
+      "name": "TimeLimits",
+      "pass": true,
+      "sha256": "0665a25580aea2c0bef06b1da1429b90ae2ac0865698036477c781c0781370c1"
+    },
+    {
+      "name": "CompactCourse",
+      "pass": true,
+      "sha256": "bd9e01ea5b39c004047bd83f225be314ac514696c3af94b1f9d2b3c047fdb1f0"
+    },
+    {
+      "name": "SaveCodec",
+      "pass": true,
+      "sha256": "da1f7a5b1d553c6574c2a0c4c19efe227d76b85932a981459fe31682db39d57b"
+    },
+    {
+      "name": "SimulationClock",
+      "pass": true,
+      "sha256": "85431b12248df76a2f6ef0871ae96d4dd7c8d21dd3d11760725a5cc57d5fe48e"
+    },
+    {
+      "name": "RIDER_DATA",
+      "pass": true,
+      "sha256": "be89cdf2998ea243acd343b177e2e6af4beaed6eca7ad97aed9fe2782211177b"
+    },
+    {
+      "name": "STAGE_DATA",
+      "pass": true,
+      "sha256": "9193cfea293efdf9850467a30d1d8d27c1f090a50b2b41d04fdd3d329d5a6bf8"
+    },
+    {
+      "name": "CONFIG except buildVersion 250→260",
+      "pass": true
+    }
+  ],
+  "passed": 15,
+  "failed": 0,
+  "pass": true
+}
