@@ -1,5 +1,5 @@
 {
-  "sha256": "94e337bc5cdfa4b7a9300d7029817653bfb29d64bee223de54030b1bbf90098d",
+  "sha256": "51602ea4ea67f299399a8d6f1103f3c768b7931a54abb6228a2426155509467b",
   "checks": {
     "identity": {
       "pass": true
@@ -47,9 +47,9 @@
       "frames": 480,
       "paintP50": 0.8,
       "paintP95": 1.2,
-      "paintMax": 23.8,
-      "frameGapP50": 16.9,
-      "frameGapP95": 18,
+      "paintMax": 23.6,
+      "frameGapP50": 16.7,
+      "frameGapP95": 17.6,
       "viewport": "1280x900",
       "pass": true,
       "target": "paint p95 < 16.7 ms (recorded; headless timing is indicative only)"
@@ -57,9 +57,9 @@
     "pixel_determinism_any_seek_order": {
       "pass": true,
       "hashes": [
-        "6acc6115d92a35b2efec5d33a1630fddc0841ebb3823337d15de18d1f68c0836",
-        "9c4906bc19756cad14469ac0fe0541064057ae8e85dd86bd7123a1d00dd9848f",
-        "dec08662443f72a99c3340210554f3a3472034410762fec4928f8aecdf33a071"
+        "6ab83d4bd7a3e44d4d8a65b92f2dbf4eb0c13e798b0cf9351bebc5a3adacbabd",
+        "4cd0b47cbd079ceffb77f4d989e6190c25973aab2be7a8e8961534b20a807fe0",
+        "d6c25cb0490096131b9a53b02f22c3310dec7d61351f05f76115ebd3a11a99b5"
       ]
     },
     "narrow_layout": {
@@ -73,9 +73,9 @@
       "frames": 180,
       "paintP50": 0.6,
       "paintP95": 1,
-      "paintMax": 1.1,
-      "frameGapP50": 16.7,
-      "frameGapP95": 18.1,
+      "paintMax": 1.4,
+      "frameGapP50": 16.6,
+      "frameGapP95": 17.6,
       "viewport": "390x844",
       "pass": true
     },
@@ -83,7 +83,7 @@
       "pass": true,
       "pausedBySpace": true,
       "rate": 2,
-      "resultPlace": "28"
+      "resultPlace": "51"
     },
     "replay_read_only": {
       "pass": true

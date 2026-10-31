@@ -61,6 +61,16 @@ The ceremony still only reads the frozen snapshot. It never calls `Race.tick`,
 writes the ledger or uses the race RNG, and `Ceremony.plan` award selection has
 not changed.
 
+### Refinement pass (2026-10-31)
+
+- **Turning faces.** Faces now turn continuously. The eyes, brows, cheeks, mouth, nose, ears, helmet and hair sit on a sphere that rotates with the head, so a half-turned rider keeps both eyes and the mouth moves toward the side they face. A full profile shows one eye and a nose bump. Before, a rider seen side-on showed one eye with a mouth still drawn face-on.
+- **Running.** Riders now run on and off half-turned toward the audience instead of nearly side-on. Their stride is longer and their steps a little slower, and the arm and leg on the far side are drawn behind the body.
+- **Turning to camera.** After landing on the podium, the head turns to the camera first and the body follows. A short, fading sway settles the landing.
+- **Podium hop.** The hop now happens on the real step onto the podium, with a crouch beforehand. Before, an extra hop was added near the end of the walk.
+- **Arm movement.** Every pose change now blends in over about 0.3 s instead of snapping. This covers celebrations, the wave, the reach, the presenter's applause and gestures, and the runners-up switching between clapping and champagne. The worst hand movement in a 20 ms frame fell from 60.7 to 6.6 world units. Raised arms also start from rest instead of jumping.
+- **Trophy.** As the champion lifts the trophy, their hands slide down to its base, so the cup ends up above the head instead of covering the face.
+- **New tests.** `tests/v26/ceremony.cjs` adds checks for how the face turns, for continuous body and head turning, and that hands never jump between poses.
+
 ## Front-end polish (DOM/CSS only)
 
 - Buttons lift on hover and press down on click. They have a yellow

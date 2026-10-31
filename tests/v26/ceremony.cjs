@@ -111,7 +111,7 @@ test('Props are painted at the solved hand, never floating away from it', () => 
   }
   const b = final.beats.at(-2);
   for (const a of [6.6, 8.4, 11, 15]) { paintHash(final, finalRecord, b.start + a); const s = S.lastScene, r = s.results[s.prop.id];
-    assert(s.prop.twoHand); const mid = [(r.left[0] + r.right[0]) / 2, (r.left[1] + r.right[1]) / 2 + 20 * s.prop.scale];
+    assert(s.prop.twoHand); const mid = [(r.left[0] + r.right[0]) / 2, (r.left[1] + r.right[1]) / 2 + (s.prop.handDrop ?? 20) * s.prop.scale];
     assert(Math.hypot(s.prop.drawnAnchor[0] - mid[0], s.prop.drawnAnchor[1] - mid[1]) < 1e-9); n++; }
   return {checked: n};
 });
@@ -179,6 +179,58 @@ test('Ceremony is a read-only consumer of the frozen record', () => {
   assert.equal(JSON.stringify(record), recordJSON); assert.equal(race.rng.state, rngState);
   assert(Object.isFrozen(ordinary) && Object.isFrozen(ordinary.beats[0]));
   return {pass: true};
+});
+
+test('Turned faces keep both eyes in 3/4 and move the mouth toward the facing side', () => {
+  const R = S.rig.head, f1 = S.faceLayout(1, 1);
+  assert(Math.abs(f1.eyes[0].x + f1.eyes[1].x) < 1e-9 && Math.abs(f1.mouth.x) < 1e-9, 'front view is symmetric');
+  for (const dir of [1, -1]) {
+    const q = S.faceLayout(.5, dir);
+    assert(q.eyes.every(e => e.alpha > .95), '3/4 view shows both eyes');
+    assert(Math.sign(q.mouth.x) === dir && Math.abs(q.mouth.x) > .3 * R, 'mouth follows the turn');
+    assert(q.eyes.every(e => Math.sign(e.x - f1.eyes[e.side > 0 ? 1 : 0].x) === dir), 'eyes rotate with the head');
+    const side = S.faceLayout(0, dir);
+    assert(side.ears.find(e => e.side === dir).depth < 0, 'far ear is behind the head in profile');
+    assert(side.eyes.filter(e => e.alpha > .5).length === 1, 'profile shows one eye');
+  }
+  return {R, threeQuarterMouth: S.faceLayout(.5, 1).mouth.x};
+});
+
+test('Running is a 3/4 view and the turn to camera is continuous', () => {
+  let worst = 0, runFronts = [];
+  for (const plan of [ordinary, final]) {
+    let prev = new Map();
+    for (let t = 0; t < plan.duration; t += .01) {
+      const s = S.scene(plan, t, m), bi = plan.beats.indexOf(s.beat), now = new Map();
+      for (const a of s.actors) { if (a.alpha < .5) continue; now.set(bi + ':' + a.id, [a.front, a.headFront]); if (a.walking > .99) runFronts.push(a.front); }
+      for (const [k, v] of now) { const q = prev.get(k); if (q) worst = Math.max(worst, Math.abs(v[0] - q[0]), Math.abs(v[1] - q[1])); }
+      prev = now;
+    }
+  }
+  assert(worst < .05, 'front/headFront step ' + worst);
+  assert(runFronts.length && runFronts.every(f => f >= .4 && f <= .6), '3/4 run');
+  return {maxStepPer10ms: +worst.toFixed(4), runSamples: runFronts.length};
+});
+
+test('Hands never snap between poses (relative to the body, 50 Hz)', () => {
+  const limit = 9, worst = {d: 0};
+  for (const [plan, rec] of [[ordinary, record], [final, finalRecord]]) {
+    const whip = t => plan.beats.some((b, i) => i && Math.abs(t - b.start) < .4);
+    let prev = new Map();
+    for (let t = 0; t < plan.duration; t += .02) {
+      paintHash(plan, rec, t); const s = S.lastScene, now = new Map();
+      if (s?.results) {
+        const bi = plan.beats.indexOf(s.beat), rel = (r, a) => ({left: [r.left[0] - a.x, r.left[1] - a.y], right: [r.right[0] - a.x, r.right[1] - a.y]});
+        for (const a of s.actors) { const r = s.results[a.id]; if (r && a.alpha > .5 && !(a.walking > 0)) now.set(bi + ':' + a.id, rel(r, a)); }
+        if (s.staffResult) now.set(bi + ':staff', rel(s.staffResult, s.staff));
+        if (!whip(t)) for (const [k, v] of now) { const q = prev.get(k); if (!q) continue;
+          for (const h of ['left', 'right']) { const d = Math.hypot(v[h][0] - q[h][0], v[h][1] - q[h][1]); if (d > worst.d) Object.assign(worst, {d, t: +t.toFixed(2), k, h}); } }
+      }
+      prev = now;
+    }
+  }
+  assert(worst.d < limit, 'hand jump ' + JSON.stringify(worst));
+  return {maxWorldUnitsPer20ms: +worst.d.toFixed(2), at: worst};
 });
 
 const failed = checks.filter(c => !c.pass).length;

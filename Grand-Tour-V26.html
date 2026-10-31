@@ -5828,6 +5828,8 @@ const CeremonyStage={
  easeOut(v){const x=clamp(v,0,1);return 1-(1-x)*(1-x)*(1-x);},
  easeIn(v){const x=clamp(v,0,1);return x*x*x;},
  // Overshooting spring that still lands exactly on 1 (anticipation/overshoot).
+ // Overshoot that starts from rest: for limbs, so a pose change never snaps.
+ softSpring(v){const x=clamp(v,0,1);return this.ease(x)+.10*Math.sin(Math.PI*clamp((x-.5)/.5,0,1));},
  springEase(v){const x=clamp(v,0,1);return x>=1?1:1-Math.exp(-5.5*x)*Math.cos(10*x)*(1-x);},
  pulse(age,start,dur){const u=(age-start)/dur;return u>0&&u<1?Math.sin(Math.PI*u):0;},
  hop(age,start,dur,height){const u=(age-start)/dur;return u>0&&u<1?4*u*(1-u)*height:0;},
@@ -6037,6 +6039,18 @@ const CeremonyStage={
   return {hand,elbow:score(e[0])>=score(e[1])?e[0]:e[1]};
  },
  kitColor(p,d){return p.jersey?this.jerseyKit[p.jersey]:d.color;},
+ mixT(a,b,u){const k=clamp(u,0,1);return [lerp(a[0],b[0],k),lerp(a[1],b[1],k)];},
+ // Continuous head turn. Features sit on a sphere and rotate with yaw, so a
+ // 3/4 view keeps both eyes (the far one foreshortened), the mouth and nose
+ // move toward the facing side and the far ear slips behind the head.
+ faceLayout(front,dir,gaze=0,look=0,R=this.rig.head){
+  const turn=clamp((1-clamp(front,0,1))*(dir||1)+gaze*.25,-1,1),yaw=turn*1.13,r=R*.95,ey=look*3,a0=Math.asin(7.5/r);
+  const eyes=[-1,1].map(side=>{const ang=side*a0+yaw,depth=Math.cos(ang);return {side,x:r*Math.sin(ang),y:ey,scale:clamp(depth*1.05,.25,1),alpha:clamp((depth-.08)/.22,0,1)};});
+  const ears=[-1,1].map(side=>{const ang=side*Math.PI/2+yaw;return {side,x:R*Math.sin(ang)*.98,depth:Math.cos(ang)};});
+  const mouthScale=clamp(Math.cos(yaw),.45,1);
+  return {turn,yaw,eyes,ears,mouth:{x:R*.9*Math.sin(yaw*.95),y:11+ey*.6,scale:mouthScale},nose:{x:R*Math.sin(yaw)*1.06,y:4.5+ey*.5,profile:clamp((Math.abs(turn)-.3)/.4,0,1)},
+   blush:eyes.map(e=>({x:e.x+e.side*5*e.scale,y:7.5+ey*.5,scale:e.scale,alpha:e.alpha})),shift:R*Math.sin(yaw)};
+ },
  // Chunky ~4-head cartoon cast. Legs keep fixed-length IK to the planted
  // CeremonyGeometry feet (no sliding or penetration); squash bends the knees.
  person(c,p,t,age,walking=0,alpha=1){
@@ -6059,8 +6073,11 @@ const CeremonyStage={
   const requested=p.handTargets||[],hands=[],elbows=[],limbs=[];
   for(let j=0;j<2;j++){
    const side=j?1:-1,a=shoulders[j];let target=requested[j];
-   if(!target){const armSwing=travel*swing*(j?1:-1);target=[torsoX+side*lerp(9,20,front)+armSwing*16*dir,shoulderY+36-Math.abs(armSwing)*6+breath*.4];}
-   const solved=this.arm(a,target,side);hands.push(solved.hand);elbows.push(solved.elbow);limbs.push({kind:'arm',a,joint:solved.elbow,b:solved.hand,lengths:[R.upper,R.fore],mode:requested[j]?'target':'idle'});
+   const armSwing=travel*swing*(j?1:-1),idle=[torsoX+side*lerp(9,20,front)+armSwing*16*dir,shoulderY+36-Math.abs(armSwing)*6+breath*.4];
+   // {to,w}: a requested pose fades in from (or out to) the natural idle arm.
+   if(target&&!Array.isArray(target))target=target.w>=.999?target.to:target.w<=.001?null:this.mixT(idle,target.to,this.ease(target.w));
+   if(!target)target=idle;
+   const solved=this.arm(a,target,side);hands.push(solved.hand);elbows.push(solved.elbow);limbs.push({kind:'arm',a,joint:solved.elbow,b:solved.hand,lengths:[R.upper,R.fore],mode:Array.isArray(requested[j])||requested[j]?.w>0?'target':'idle'});
   }
   c.save();c.globalAlpha*=alpha;c.translate(p.x,p.y);c.scale(sc,sc);c.lineCap='round';c.lineJoin='round';
   // Contact shadow stays on the surface during hops.
@@ -6073,7 +6090,17 @@ const CeremonyStage={
    c.save();c.translate(...f);c.rotate(p.feet?.[j]?.angle||0);const toeDir=lerp(dir,j?1:-1,front*.6),toe=toeDir*lerp(9,5,front);
    this.round(c,Math.min(-4,toe-2)+(toeDir<0?-2:0),-3.6,Math.abs(toe)+9,7.4,3.6,staff?'#1d2b3a':this.blend(kitTo,'#1d2b3a',.35),O,2);c.restore();
   };
-  drawLeg(dir>0?0:1);drawLeg(dir>0?1:0);
+  // In a turned stance the limbs on the far side (screen side the body
+  // turns toward) sit behind the torso; the near side stays in front.
+  const farSide=dir>0?1:0,turned=front<.75;
+  drawLeg(farSide);drawLeg(1-farSide);
+  const drawArm=j=>{const a=shoulders[j],k=elbows[j],h=hands[j];
+   this.line(c,[a,k,h],O,10);this.line(c,[a,k,h],j?skin:skinShade,7.6);
+   const sl=[lerp(a[0],k[0],staff?.98:.62),lerp(a[1],k[1],staff?.98:.62)];this.line(c,[a,sl],O,11.4);this.line(c,[a,sl],transition&&a[1]>cut?kitFrom:kitTo,9);
+   if(staff){this.line(c,[k,[lerp(k[0],h[0],.7),lerp(k[1],h[1],.7)]],O,10.4);this.line(c,[k,[lerp(k[0],h[0],.7),lerp(k[1],h[1],.7)]],kitTo,8);}
+  };
+  const drawHand=j=>{const h=hands[j],fist=pose.fist?.[j];this.blob(c,h[0],h[1],fist?5.6:5,fist?5.2:5.6,j?skin:skinShade,O,2);if(fist)this.line(c,[[h[0]-3,h[1]-1],[h[0]+3,h[1]-1]],O,1.2);};
+  if(turned){drawArm(farSide);drawHand(farSide);}
   // Torso: jersey with cel shade; a kit wipe reveals the award jersey.
   const waist=lerp(8,12.5,front)*widen,top=shW+3;
   const torso=[[hipX-waist,hipY+3],[hipX+waist,hipY+3],[torsoX+top,shoulderY+9],[torsoX+top-4,shoulderY-1],[torsoX-top+4,shoulderY-1],[torsoX-top,shoulderY+9]];
@@ -6106,56 +6133,61 @@ const CeremonyStage={
    }
    this.poly(c,[[hipX-waist,hipY+3],[hipX+waist,hipY+3],[hipX+waist+hem*.3,hipY+8],[hipX-waist+hem,hipY+8]],legColor);
   }
+  if(front<.95){const seam=torsoX+(1-front)*dir*top*.55;c.save();this.poly(c,torso,null);c.clip();this.line(c,[[seam,shoulderY+2],[lerp(seam,hipX,.6)+(1-front)*dir*waist*.4,hipY+2]],'#1d2b3a40',1.6);c.restore();}
   this.poly(c,torso,null,O,2.4);
   // Head: big round face, helmet/hair, expression system.
   const gaze=clamp(pose.gaze||0,-1,1),look=clamp(pose.look||0,-1,1),tilt=(pose.tilt||0)+(reducedMotion?0:Math.sin(time*1.7+seed)*.02);
-  const headR=R.head,headX=torsoX+dir*(1-front)*2+gaze*1.5,headY=shoulderY-headR+1+(pose.nod||0)*2.6+look*1.4;
+  const hf=clamp(p.headFront??front,0,1),F=this.faceLayout(hf,dir,gaze,look),headR=R.head;
+  const headX=torsoX+F.shift*.12+gaze*1.5,headY=shoulderY-headR+1+(pose.nod||0)*2.6+look*1.4;
   this.line(c,[[torsoX,shoulderY+2],[headX,headY+headR-4]],O,9.4);this.line(c,[[torsoX,shoulderY+2],[headX,headY+headR-4]],skinShade,7);
   c.save();c.translate(headX,headY);c.rotate(tilt);
   const hairCol=staff?(role==='host'?'#2d2350':'#6b3f2a'):['#3a2a20','#6b3f2a','#d8a24a','#1d2b3a','#a04a2a'][seed%5];
   const hairSway=reducedMotion?0:Math.sin(time*3.3+seed)*1.2+(pose.squash||0)*-3+travel*-dir*2.5;
-  if(staff&&role==='presenter'){this.blob(c,-dir*2,-headR-4+hairSway*.2,9,8,hairCol,O,2);}
-  this.blob(c,-headR+1,1,4.2,5.2,skin,O,2);this.blob(c,headR-1,1,4.2,5.2,skin,O,2);
+  if(staff&&role==='presenter'){this.blob(c,-F.shift*.9-dir*2,-headR-4+hairSway*.2,9,8,hairCol,O,2);}
+  const ear=e=>this.blob(c,e.x,1,4.2*clamp(.45+Math.abs(e.depth),.45,1),5.2,skin,O,2);
+  for(const e of F.ears)if(e.depth<=.2)ear(e);
   this.blob(c,0,0,headR,headR*.96,skin,O,2.4);
+  for(const e of F.ears)if(e.depth>.2)ear(e);
   this.poly(c,[[-headR*.72,headR*.42],[headR*.72,headR*.42],[headR*.3,headR*.82],[-headR*.3,headR*.82]],'#8a4b3a14');
-  const ex=dir*(1-front)*6+gaze*3,ey=look*3,eyeSpace=lerp(4.5,7.5,front);
-  // Hair fringe / helmet.
-  if(staff){this.poly(c,[[-headR,-2],[-headR+2,-headR*.75],[0,-headR-3],[headR-2,-headR*.75],[headR,-2],[headR*.5,-headR*.55+hairSway*.3],[-headR*.2,-headR*.45],[-headR*.6,-headR*.5]],hairCol,O,2);}
+  // Hair fringe / helmet, offset toward the back of the turned head.
+  const back=-F.shift*.45;
+  if(staff){c.save();c.translate(back*.5,0);this.poly(c,[[-headR,-2],[-headR+2,-headR*.75],[0,-headR-3],[headR-2,-headR*.75],[headR,-2],[headR*.5,-headR*.55+hairSway*.3],[-headR*.2,-headR*.45],[-headR*.6,-headR*.5]],hairCol,O,2);c.restore();}
   else{
-   for(let k=-1;k<=1;k++)this.poly(c,[[k*7-4,-headR*.62],[k*7+hairSway+1,-headR*.25+2],[k*7+4,-headR*.62]],hairCol,O,1.4);
+   for(let k=-1;k<=1;k++)this.poly(c,[[k*7-4+back,-headR*.62],[k*7+back+hairSway+1,-headR*.25+2],[k*7+4+back,-headR*.62]],hairCol,O,1.4);
    const helmet=this.blend(kitTo,'#ffffff',kitTo==='#ffffff'?0:.08);
    c.beginPath();c.ellipse(0,-headR*.45,headR*1.08,headR*.78,0,Math.PI,Math.PI*2);c.lineTo(headR*1.08,-headR*.38);c.lineTo(-headR*1.08,-headR*.38);c.closePath();c.fillStyle=helmet;c.fill();c.strokeStyle=O;c.lineWidth=2.2;c.stroke();
-   for(const v of [-.45,0,.45])this.line(c,[[v*headR,-headR*1.12],[v*headR*.9,-headR*.55]],this.blend(helmet,'#1d2b3a',.35),2.2);
+   for(const v of [-.45,0,.45]){const a=Math.asin(v)+F.yaw*.8,x=headR*Math.sin(a);if(Math.cos(a)>.1)this.line(c,[[x,-headR*1.12],[x*.9,-headR*.55]],this.blend(helmet,'#1d2b3a',.35),2.2);}
    this.line(c,[[-headR*1.05,-headR*.4],[headR*1.05,-headR*.4]],O,2.4);
-   if(p.jersey==='polka'&&!staff)for(const v of [-.6,.2,.7])circle(c,v*headR,-headR*.82,2,'#ff4d5e');
+   if(Math.abs(F.turn)>.15){const vx=F.shift*1.02,d=Math.sign(F.turn);this.poly(c,[[vx-d*6,-headR*.42],[vx+d*7,-headR*.36],[vx+d*2,-headR*.28]],helmet,O,1.6);}
+   if(p.jersey==='polka'&&!staff)for(const v of [-.6,.2,.7])circle(c,v*headR+F.shift*.4,-headR*.82,2,'#ff4d5e');
   }
-  // Brows, eyes (with highlights and blinks) and mouth.
+  // Brows, eyes (with highlights and blinks), cheeks, nose and mouth.
   const cheer=clamp(pose.cheer||0,0,1),surprise=clamp(pose.surprise||0,0,1),smile=clamp(pose.smile??.45,0,1),grit=clamp(pose.grit||0,0,1),blush=clamp(pose.blush??.3,0,1);
   const blink=!reducedMotion&&(time+seed*.37)%4.3<.12,squint=Math.max(cheer*.55,grit*.6);
   const brow=-8-surprise*3-cheer*1.5+grit*1.5;
-  for(const s of [-1,1]){
-   if(front<.45&&s===-dir)continue;
-   const x=ex+s*eyeSpace;
-   this.line(c,[[x-3.4,brow+ey-(grit?s*-1.2:0)],[x+3.4,brow+ey+(grit?s*1.2:0)-surprise*.6]],O,2.1);
-   if(blink||squint>.5){c.beginPath();c.arc(x,ey+.5,3.4,Math.PI*1.1,Math.PI*1.9);c.strokeStyle=O;c.lineWidth=2.1;c.stroke();}
-   else{this.blob(c,x,ey,3.0+surprise*.8,4.2+surprise*1.2,O);circle(c,x+1,ey-1.6,1.25,'#ffffff');circle(c,x-1,ey+1.4,.55,'#ffffff');}
+  c.save();c.beginPath();c.ellipse(0,0,headR,headR*.96,0,0,Math.PI*2);c.clip();
+  for(const e of F.eyes){
+   if(e.alpha<=.01)continue;c.save();c.globalAlpha*=e.alpha;const x=e.x,w=e.scale,s=e.side,ey=e.y;
+   this.line(c,[[x-3.4*w,brow+ey-(grit?s*-1.2:0)],[x+3.4*w,brow+ey+(grit?s*1.2:0)-surprise*.6]],O,2.1);
+   if(blink||squint>.5){c.beginPath();c.ellipse(x,ey+.5,3.4*w,3.4,0,Math.PI*1.1,Math.PI*1.9);c.strokeStyle=O;c.lineWidth=2.1;c.stroke();}
+   else{this.blob(c,x,ey,(3.0+surprise*.8)*w,4.2+surprise*1.2,O);circle(c,x+1*w,ey-1.6,1.25*Math.max(.6,w),'#ffffff');circle(c,x-1*w,ey+1.4,.55,'#ffffff');}
+   c.restore();
   }
-  c.save();c.globalAlpha*=.35+blush*.45;for(const s of [-1,1]){if(front<.45&&s===-dir)continue;this.ellipse(c,ex+s*(eyeSpace+5),7.5+ey*.5,4.2,2.4,'#ff7b8a');}c.restore();
-  const mx=ex*.9,my=11+ey*.6;
-  if(surprise>.5){this.blob(c,mx,my+1,3.2,4.2,'#7a2531',O,1.8);}
-  else if(cheer>.15){const wide=5+cheer*3,deep=3+cheer*6;c.beginPath();c.moveTo(mx-wide,my-1);c.quadraticCurveTo(mx,my-2,mx+wide,my-1);c.quadraticCurveTo(mx+wide*.6,my+deep,mx,my+deep);c.quadraticCurveTo(mx-wide*.6,my+deep,mx-wide,my-1);c.closePath();c.fillStyle='#7a2531';c.fill();c.strokeStyle=O;c.lineWidth=1.8;c.stroke();
+  c.save();c.globalAlpha*=.35+blush*.45;for(const b of F.blush)if(b.alpha>.01){c.save();c.globalAlpha*=b.alpha;this.ellipse(c,b.x,b.y,4.2*b.scale,2.4,'#ff7b8a');c.restore();}c.restore();
+  const M=F.mouth,mx=M.x,my=M.y,ms=M.scale;
+  if(surprise>.5){this.blob(c,mx,my+1,3.2*ms,4.2,'#7a2531',O,1.8);}
+  else if(cheer>.15){const wide=(5+cheer*3)*ms,deep=3+cheer*6;c.beginPath();c.moveTo(mx-wide,my-1);c.quadraticCurveTo(mx,my-2,mx+wide,my-1);c.quadraticCurveTo(mx+wide*.6,my+deep,mx,my+deep);c.quadraticCurveTo(mx-wide*.6,my+deep,mx-wide,my-1);c.closePath();c.fillStyle='#7a2531';c.fill();c.strokeStyle=O;c.lineWidth=1.8;c.stroke();
    c.save();c.clip();this.ellipse(c,mx,my+deep,wide*.6,deep*.45,'#ff8fa0');c.fillStyle='#ffffff';c.fillRect(mx-wide,my-2.5,wide*2,2.4);c.restore();}
-  else if(grit>.3){this.round(c,mx-5.5,my-2,11,5,2,'#ffffff',O,1.6);this.line(c,[[mx-5,my+.5],[mx+5,my+.5]],O,.9);}
-  else{c.beginPath();c.moveTo(mx-5,my);c.quadraticCurveTo(mx,my+1+smile*4.2,mx+5,my);c.strokeStyle=O;c.lineWidth=2;c.stroke();}
-  if(front>.4)this.line(c,[[ex*.95-1,4+ey*.5],[ex*.95+1,5.5+ey*.5]],this.blend(skin,'#8a4b3a',.5),1.6);
+  else if(grit>.3){this.round(c,mx-5.5*ms,my-2,11*ms,5,2,'#ffffff',O,1.6);this.line(c,[[mx-5*ms,my+.5],[mx+5*ms,my+.5]],O,.9);}
+  else{c.beginPath();c.moveTo(mx-5*ms,my);c.quadraticCurveTo(mx,my+1+smile*4.2,mx+5*ms,my);c.strokeStyle=O;c.lineWidth=2;c.stroke();}
   c.restore();
-  // Arms over the torso, then mitten hands (fists when requested).
-  for(let j=0;j<2;j++){const a=shoulders[j],k=elbows[j],h=hands[j];
-   this.line(c,[a,k,h],O,10);this.line(c,[a,k,h],j?skin:skinShade,7.6);
-   const sl=[lerp(a[0],k[0],staff?.98:.62),lerp(a[1],k[1],staff?.98:.62)];this.line(c,[a,sl],O,11.4);this.line(c,[a,sl],transition&&a[1]>cut?kitFrom:kitTo,9);
-   if(staff){this.line(c,[k,[lerp(k[0],h[0],.7),lerp(k[1],h[1],.7)]],O,10.4);this.line(c,[k,[lerp(k[0],h[0],.7),lerp(k[1],h[1],.7)]],kitTo,8);}
-  }
-  for(let j=0;j<2;j++){const h=hands[j],fist=pose.fist?.[j];this.blob(c,h[0],h[1],fist?5.6:5,fist?5.2:5.6,j?skin:skinShade,O,2);if(fist)this.line(c,[[h[0]-3,h[1]-1],[h[0]+3,h[1]-1]],O,1.2);}
+  const N=F.nose,nd=Math.sign(F.turn)||1;
+  if(N.profile>.01){c.save();c.globalAlpha*=N.profile;this.ellipse(c,N.x,N.y,3.2,2.8,skin);c.beginPath();c.ellipse(N.x,N.y,3.2,2.8,0,nd>0?-Math.PI*.55:Math.PI*.45,nd>0?Math.PI*.55:Math.PI*1.55);c.strokeStyle=O;c.lineWidth=1.8;c.stroke();c.restore();}
+  if(N.profile<.99){c.save();c.globalAlpha*=1-N.profile;this.line(c,[[N.x-1,N.y-.5],[N.x+1,N.y+1]],this.blend(skin,'#8a4b3a',.5),1.6);c.restore();}
+  c.restore();
+  // Near arms (or both when facing camera) over the torso, then mitten hands.
+  for(const j of turned?[1-farSide]:[0,1])drawArm(j);
+  for(const j of turned?[1-farSide]:[0,1])drawHand(j);
   if(role==='host'){const h=hands[1];this.line(c,[[h[0],h[1]],[h[0]-2,h[1]-11]],O,3.4);this.blob(c,h[0]-2.5,h[1]-14,4,4.6,'#2b3a55',O,1.6);this.round(c,h[0]-4,h[1]-7,6,4,1.5,'#ffd23f',O,1);}
   c.restore();
   const W=q=>[p.x+sc*q[0],p.y+sc*q[1]];
@@ -6194,9 +6226,17 @@ const CeremonyStage={
  cue(b){const gc=b?.kind==='gc-final',team=b?.teamId!==undefined;
   if(team)return {whip:.6,start:.45,entry:2.25,ready:2.6,share:2.6,release:2.6,chest:2.6,lift:3.9,display:4.4,celebrate:3.9,salute:6.6,exit:b?.seconds||9};
   if(gc)return {whip:.6,start:2.7,entry:4.6,ready:5.2,share:5.7,release:6.4,chest:6.8,lift:7.2,display:8.2,celebrate:8.2,spray:8.9,salute:12.6,exit:b?.seconds||16};
-  return {whip:.6,start:.5,entry:2.4,ready:2.55,share:3.0,release:3.5,drape:2.6,chest:3.9,lift:4.5,display:5.0,celebrate:4.5,salute:7.5,exit:b?.seconds||10.5};
+  return {whip:.6,start:.4,entry:2.4,ready:2.55,share:3.0,release:3.5,drape:2.6,chest:3.9,lift:4.5,display:5.0,celebrate:4.5,salute:7.5,exit:b?.seconds||10.5};
  },
  walk(p,age,duration,m,depart=false){return CeremonyGeometry.sample(p,age,duration,m,depart);},
+ // Seconds (from walk start) of the first and last upward steps onto a
+ // raised block, inverting the walk's analytic start/stop ramp.
+ stepUp(p,m,duration){
+  const plan=CeremonyGeometry.plan(p,m),ups=plan.steps.filter(q=>q.rise>2&&q.b.y<q.a.y);if(!ups.length)return null;
+  const ramp=.14,area=1-ramp,f=a=>a<ramp?a*a/(2*ramp*area):a>1-ramp?1-(1-a)*(1-a)/(2*ramp*area):(a-ramp/2)/area;
+  const inv=x=>{let lo=0,hi=1;for(let k=0;k<22;k++){const mid=(lo+hi)/2;if(f(mid)<x)lo=mid;else hi=mid;}return lo*duration;};
+  return {t0:inv(ups[0].start/plan.duration),t1:inv(ups.at(-1).end/plan.duration),rise:ups.reduce((a,q)=>a+q.rise,0)};
+ },
  standing(p,level='podium'){const sc=p.height/180;return {x:p.x,y:p.y-3*sc,walking:0,alpha:1,front:1,direction:p.entrySide==='right'?-1:1,stepPhase:0,feet:[-7,7].map(dx=>({world:[p.x+dx*sc,p.y-3*sc],local:[dx,0],plant:true,phase:'LOAD',surface:p.y,level,angle:0}))};},
  // Award-specific celebration: free (left) hand, bouquet hand, body and face.
  celebration(kind,u,i=0){
@@ -6209,10 +6249,11 @@ const CeremonyStage={
   }else if(kind==='yellow'){
    const w=s(u*6)*3;out.L=[-42,-130+w];out.R=[40,-134-w];out.jump=this.hop(u,.5,.42,11);out.squash=pre(.5)+land(.92);out.cheer=1;out.look=-.5;out.shrug=.6;out.lean=s(u*2.2)*.04;
   }else if(kind==='green'){
-   if(u<.62){out.squash=.36*this.ease(u/.2);out.lean=.22;out.L=[-14,-82];out.R=[26,-68];out.grit=1;out.smile=0;out.gaze=.6;}
-   else{const pop=this.springEase((u-.62)/.45);out.squash=lerp(.36,-.22,pop)*(1-this.ease((u-1.6)/.5))+land(1.95)*.4;out.lean=lerp(.22,.10,pop);out.R=[34,-142];out.L=[-36,-80];out.cheer=pop;out.gaze=.3;out.jump=this.hop(u,.62,.44,14);}
+   const crouch=this.ease(u/.2),pop=u<.62?0:this.softSpring((u-.62)/.5),settle=1-this.ease((u-1.6)/.5);
+   out.squash=lerp(.36*crouch,-.22,clamp(pop,0,1.2))*settle+land(1.95)*.4;out.lean=lerp(.22*crouch,.10,clamp(pop,0,1));
+   out.L=this.mixT([-14,-82],[-36,-80],pop);out.R=this.mixT([26,-68],[34,-142],pop);out.grit=1-clamp(pop,0,1);out.smile=clamp(pop,0,1)*.8;out.cheer=clamp(pop,0,1);out.gaze=lerp(.6,.3,clamp(pop,0,1));out.jump=this.hop(u,.62,.44,14);
   }else if(kind==='polka'){
-   out.L=[-50,-142];out.R=u<1.4?[24,-74]:[34,-138];out.gaze=-1;out.look=-.7;out.surprise=u<.7?1:0;out.cheer=u>=.7&&u<1.4?.6:0;out.smile=1;out.jump=this.hop(u,1.4,.45,12);out.squash=pre(1.4)+land(1.85);out.lean=-.05;
+   out.L=[-50,-142];out.R=this.mixT([24,-74],[34,-138],this.softSpring((u-1.25)/.5));out.gaze=-1;out.look=-.7;out.surprise=1-this.ease((u-.5)/.3);out.cheer=.6*this.ease((u-.55)/.3);out.smile=1;out.jump=this.hop(u,1.4,.45,12);out.squash=pre(1.4)+land(1.85);out.lean=-.05;
   }else if(kind==='white'){
    const w=s(u*9);out.L=[-24+w*3,-118];out.R=[24,-74];out.tilt=.2;out.blush=1;out.smile=.9;out.look=.2;out.jump=this.hop(u,1.7,.36,7);out.squash=land(2.06)*.6;out.sway=s(u*2.6)*.4;
   }else if(kind==='team'){
@@ -6230,34 +6271,38 @@ const CeremonyStage={
   const before=!complete&&previous&&previous.kind!=='complete'?previous:null,beforeLayout=before?this.arrangement(before,m):[];
   const local=(point,actor)=>[(point[0]-actor.x)/(actor.height/180),(point[1]-actor.y)/(actor.height/180)];
   for(let i=0;i<layout.length;i++){
-   const p={...layout[i],entrySide:gc&&i===2?'right':'left',wing:true,stride:team?46:52},sc=p.height/180;
+   const p={...layout[i],entrySide:gc&&i===2?'right':'left',wing:true,stride:team?50:54},sc=p.height/180;
    const prior=beforeLayout.find(q=>q.id===p.id&&Math.abs(q.x-p.x)<.5&&Math.abs(q.y-p.y)<.5),stay=!!prior&&!gc&&!team;
    const start=team?.45+i*.28:gc?[2.7,1.5,.5][i]:cue.start,entry=team?2.25+i*.28:gc?[4.6,3.2,2.1][i]:cue.entry;
-   let state=this.standing(p),jump=0,squash=0,alpha=1;
+   let state=this.standing(p),jump=0,squash=0,alpha=1,headFront=1,sway=0;
    if(!reducedMotion&&!stay&&!complete){
-    if(age<entry){state=this.walk(p,Math.max(0,age-start),entry-start,m);state.front=.22;alpha=this.ease((age-start+.02)/.22);
-     squash+=this.pulse(age,start-.3,.32)*.3;jump+=this.hop(age,entry-.34,.34,10*sc);}
-    else{const settle=this.ease((age-entry)/.38);state.front=lerp(.22,1,settle);state.walking=1-settle;squash+=this.pulse(age,entry,.3)*.42;}
-   }else if(stay&&!reducedMotion&&!complete){jump+=this.hop(age,.7,.42,9*sc);squash+=this.pulse(age,1.12,.24)*.3;}
+    const up=this.stepUp(p,m,entry-start),w=age-start;
+    if(age<entry){state=this.walk(p,Math.max(0,w),entry-start,m);state.front=.5;headFront=.55;alpha=this.ease((w+.02)/.22);
+     squash+=this.pulse(w,-.3,.32)*.3;
+     if(up){squash+=this.pulse(w,up.t0-.14,.14)*.32;jump+=this.hop(w,up.t0,up.t1-up.t0+.06,(5+up.rise*.22)*sc);}}
+    else{const a=age-entry;state.front=lerp(.5,1,this.ease(a/.6));headFront=lerp(.55,1,this.ease(a/.25));state.walking=1-this.ease(a/.38);
+     squash+=this.pulse(a,0,.26)*.34;sway=Math.sin(a*13)*Math.exp(-a*5)*.45;}
+    if(up&&w>=up.t1&&w<up.t1+.24)squash+=this.pulse(w,up.t1,.24)*.3;
+   }else if(stay&&!reducedMotion&&!complete){jump+=this.hop(age,.7,.42,9*sc);squash+=this.pulse(age,.56,.14)*.28+this.pulse(age,1.12,.24)*.3;}
    const kindKey=gc?(i===0?'champion':'runner'):team?'team':shown.kind,cele=kindKey==='runner'?null:this.celebration(kindKey,age-(team?cue.celebrate:gc?cue.display:cue.celebrate),i);
-   const pose={squash,lean:0,tilt:0,look:0,gaze:0,cheer:0,smile:.55,blush:.3,surprise:0,grit:0,shrug:0,fist:[false,false],lift:0,sway:0};
+   const pose={squash,lean:0,tilt:0,look:0,gaze:0,cheer:0,smile:.55,blush:.3,surprise:0,grit:0,shrug:0,fist:[false,false],lift:0,sway};
    const arrived=reducedMotion||stay||complete||age>=entry;
    if(arrived)pose.gaze=Math.sin(age*.7+i)*.25;
-   if(cele&&(reducedMotion||age>=(team?cue.celebrate:gc?cue.display:cue.celebrate))){Object.assign(pose,{...cele,squash:squash+cele.squash});jump+=cele.jump*sc;}
+   if(cele&&(reducedMotion||age>=(team?cue.celebrate:gc?cue.display:cue.celebrate))){Object.assign(pose,{...cele,squash:squash+cele.squash,sway:sway+cele.sway});jump+=cele.jump*sc;}
    const salute=this.ease((age-cue.salute)/.4);
-   actors.push({...p,...state,y:state.y-jump,jump,alpha:state.alpha*alpha,role:'rider',awardAge:age,entryAt:entry,entryStart:start,championMix:0,bouquetMix:0,pose,handTargets:[null,null],handAngles:[null,null],exiting:false,salute,
+   actors.push({...p,...state,y:state.y-jump,jump,alpha:state.alpha*alpha,role:'rider',awardAge:age,entryAt:entry,entryStart:start,championMix:0,bouquetMix:0,pose,headFront:Math.max(headFront,state.front),handTargets:[null,null],handAngles:[null,null],exiting:false,salute,
     behindPodium:state.walking>0&&!state.feet.some(f=>f.level==='podium'&&f.plant),kitMix:1,fromJersey:undefined});
-   if(team&&pose.L)actors.at(-1).handTargets=[pose.L,pose.R];
+   if(team&&pose.L){const w=reducedMotion?1:clamp((age-cue.celebrate)/.35,0,1);actors.at(-1).handTargets=[{to:pose.L,w},{to:pose.R,w}];}
   }
   // The previous awardee jogs off into the right wing while the next arrives.
   if(before&&!reducedMotion&&age<2.4){
    beforeLayout.forEach((q,i)=>{
     if(layout.some(p=>p.id===q.id))return;
-    const p={...q,entrySide:'left',wing:true,stride:52,exitSide:before.kind==='team-final'&&gc?'left':'right'},sc=p.height/180,go=.35+i*.12,dur=1.7;
-    let state=age<go?this.standing(p):this.walk(p,age-go,dur,m,true);state.front=age<go?1:lerp(1,.22,this.ease((age-go)/.25));
+    const p={...q,entrySide:'left',wing:true,stride:54,exitSide:before.kind==='team-final'&&gc?'left':'right'},sc=p.height/180,go=.35+i*.12,dur=1.7;
+    let state=age<go?this.standing(p):this.walk(p,age-go,dur,m,true);state.front=lerp(1,.5,this.ease((age-go)/.45));const headFront=lerp(1,.55,this.ease((age-go+.12)/.3));
     const jump=this.hop(age,go-.05,.36,9*sc),alpha=1-this.ease((age-go-dur+.3)/.3);if(alpha<=.001)return;
-    const handTargets=before.teamId===undefined&&before.kind!=='gc-final'?[age<go+.2?[-30,-146+Math.sin(age*14)*4]:null,[12,-92]]:[null,null];
-    const actor={...p,...state,y:state.y-jump,jump,alpha,role:'rider',awardAge:age,pose:{smile:.8,cheer:.4,squash:this.pulse(age,go-.25,.25)*.3,fist:[false,false]},handTargets,handAngles:[null,null],behindPodium:state.walking>0&&!state.feet.some(f=>f.level==='podium'&&f.plant)};
+    const handTargets=before.teamId===undefined&&before.kind!=='gc-final'?[{to:[-30,-146+Math.sin(age*14)*4],w:1-clamp((age-go-.05)/.35,0,1)},[24,-70]]:[null,null];
+    const actor={...p,...state,headFront,y:state.y-jump,jump,alpha,role:'rider',awardAge:age,pose:{smile:.8,cheer:.4,squash:this.pulse(age,go-.25,.25)*.3,fist:[false,false]},handTargets,handAngles:[null,null],behindPodium:state.walking>0&&!state.feet.some(f=>f.level==='podium'&&f.plant)};
     leaving.push(actor);if(handTargets[1])extras.push({type:'flowers',owner:actor,side:1});
    });
   }
@@ -6274,20 +6319,20 @@ const CeremonyStage={
    // Staff and rider converge on the very same physical grip during shared hold.
    let staffGrip=age<cue.ready?rest:age<cue.release?[lerp(rest[0],grip[0],reach),lerp(rest[1],grip[1],reach)]:null;
    if(staffGrip)staff.handTargets[0]=local(staffGrip,staff);
-   else{const idle=[sp.x-15*ss,sp.y-3*ss-68*ss];staff.handTargets[0]=relax<1?local([lerp(grip[0],idle[0],relax),lerp(grip[1],idle[1],relax)],staff):null;}
-   const clapping=!reducedMotion&&age>(gc?cue.display:cue.celebrate)&&age<(gc?cue.salute:cue.salute-.2);
-   if(clapping){const cl=Math.abs(Math.sin(age*9)),gap=lerp(9,2,cl);staff.handTargets=[[-gap,-96],[gap,-96]];staff.pose.cheer=.5;staff.pose.gaze=-.8;}
-   if(!gc&&base.jersey&&age>cue.drape-.1&&age<cue.drape+1.5){const ta=this.pulse(age,cue.drape-.1,1.6);staff.handTargets[1]=[lerp(18,30,ta),lerp(-70,-138,ta)];staff.pose.cheer=ta*.7;}
+   else staff.handTargets[0]={to:local(grip,staff),w:1-clamp((age-cue.release)/.45,0,1)};
+   const c0=gc?cue.display:cue.celebrate,c1=gc?cue.salute:cue.salute-.2,clapW=reducedMotion?0:clamp((age-c0)/.3,0,1)*clamp((c1-age)/.3,0,1);
+   if(clapW>0){const cl=Math.abs(Math.sin(age*9)),gap=lerp(9,2,cl*clapW);staff.handTargets=[{to:[-gap,-96],w:clapW},{to:[gap,-96],w:clapW}];staff.pose.cheer=.5*clapW;staff.pose.gaze=lerp(-.6,-.8,clapW);}
+   if(!gc&&base.jersey&&age>cue.drape-.1&&age<cue.drape+1.5){const ta=this.pulse(age,cue.drape-.1,1.6);staff.handTargets[1]={to:[30,-138],w:ta};staff.pose.cheer=ta*.7;}
    const owner=age>=cue.release?'rider':'staff',shared=age>=cue.share&&age<cue.release;
-   const riderGrip=1,idleR=[19,-70];
+   const riderGrip=1;
    let riderTarget=null;
-   if(age>=cue.ready&&age<cue.share)riderTarget=(()=>{const g=local(grip,{x:base.x,y:rootY,height:focus.height}),u=this.ease((age-cue.ready)/(cue.share-cue.ready));return [lerp(idleR[0],g[0],u),lerp(idleR[1],g[1],u)];})();
+   if(age>=cue.ready&&age<cue.share)riderTarget={to:local(grip,{x:base.x,y:rootY,height:focus.height}),w:clamp((age-cue.ready)/(cue.share-cue.ready),0,1)};
    else if(age>=cue.share&&age<cue.release)riderTarget=local(grip,{x:base.x,y:rootY,height:focus.height});
    else if(age>=cue.release){
     const g=local(grip,{x:base.x,y:rootY,height:focus.height}),chest=gc?[15,-92]:[10,-88],show=gc?[15,-155]:[33,-138],hold=gc?show:[22,-124];
-    const toChest=this.ease((age-cue.release)/(cue.chest-cue.release)),up=this.springEase((age-cue.lift)/(cue.display-cue.lift)),down=gc?0:this.ease((age-cue.salute)/.5);
+    const toChest=this.ease((age-cue.release)/(cue.chest-cue.release)),up=this.softSpring((age-cue.lift)/(cue.display-cue.lift)),down=gc?0:this.ease((age-cue.salute)/.5);
     let q=[lerp(g[0],chest[0],toChest),lerp(g[1],chest[1],toChest)];
-    if(age>=cue.lift){q=[lerp(chest[0],show[0],up),lerp(chest[1],show[1],up)];if(focus.pose.R&&!gc&&age<cue.salute)q=focus.pose.R;if(down>0)q=[lerp(q[0],hold[0],down),lerp(q[1],hold[1],down)];}
+    if(age>=cue.lift){q=[lerp(chest[0],show[0],up),lerp(chest[1],show[1],up)];if(focus.pose.R&&!gc)q=this.mixT(q,focus.pose.R,this.ease((age-cue.celebrate-.05)/.35));if(down>0)q=[lerp(q[0],hold[0],down),lerp(q[1],hold[1],down)];}
     riderTarget=q;
    }
    if(reducedMotion){riderTarget=gc?[15,-155]:[22,-124];}
@@ -6295,28 +6340,29 @@ const CeremonyStage={
    if(gc){
     const lift=reducedMotion||complete?1:this.springEase((age-cue.lift)/(cue.display-cue.lift));focus.pose.lift=lift;
     const two=reducedMotion||complete||age>=cue.share+.42;
-    if(age>=cue.share+.1||reducedMotion||complete){const r=focus.handTargets[1],u=reducedMotion||complete?1:this.ease((age-(cue.share+.1))/.32);focus.handTargets[0]=[lerp(-18,r[0]-30,u),lerp(-70,r[1],u)];}
-    else if(age>=cue.entry+.2&&age<cue.ready){focus.handTargets[0]=[-30,-146+Math.sin(age*12)*4];}
-    prop={type:'trophy',owner,shared,side:riderGrip,staffHand:0,id:focus.id,alpha:1,scale:sc,anchor:toAnchor(staffGrip||grip),grips:[[-15,-20],[15,-20]].map(o=>[toAnchor(staffGrip||grip)[0]+o[0]*sc,toAnchor(staffGrip||grip)[1]+o[1]*sc]),twoHand:two};
+    if(age>=cue.share+.1||reducedMotion||complete){const r=focus.handTargets[1],u=reducedMotion||complete?1:clamp((age-(cue.share+.1))/.32,0,1);focus.handTargets[0]={to:[r[0]-30,r[1]],w:u};}
+    else if(age>=cue.entry+.2&&age<cue.ready){focus.handTargets[0]={to:[-30,-146+Math.sin(age*12)*4],w:clamp((age-cue.entry-.15)/.35,0,1)*clamp((cue.ready-age)/.4,0,1)};}
+    prop={type:'trophy',owner,shared,side:riderGrip,staffHand:0,id:focus.id,alpha:1,scale:sc,anchor:toAnchor(staffGrip||grip),grips:[[-15,-20],[15,-20]].map(o=>[toAnchor(staffGrip||grip)[0]+o[0]*sc,toAnchor(staffGrip||grip)[1]+o[1]*sc]),twoHand:two,handDrop:lerp(20,-2,clamp(lift,0,1))};
     if(age>=cue.lift||complete)focus.pose.shrug=Math.max(focus.pose.shrug||0,lift);
    }else{
     const lift=reducedMotion?1:this.springEase((age-cue.lift)/(cue.display-cue.lift))*(1-this.ease((age-cue.salute)/.5)*.6);focus.pose.lift=lift;
-    if(age>=cue.salute&&!reducedMotion){const w=Math.sin((age-cue.salute)*11);focus.handTargets[0]=[-30-w*5,-146];focus.pose.cheer=.5;focus.pose.smile=1;focus.pose.fist=[false,false];}
+    if(age>=cue.salute&&!reducedMotion){const w=Math.sin((age-cue.salute)*11),wave=[-30-w*5,-146],k=this.ease((age-cue.salute)/.35);focus.handTargets[0]=focus.pose.L?this.mixT(focus.pose.L,wave,k):{to:wave,w:k};focus.pose.cheer=lerp(focus.pose.cheer||0,.5,k);focus.pose.smile=1;focus.pose.fist=[false,false];}
     prop={type:'flowers',owner,shared,side:riderGrip,staffHand:0,id:focus.id,alpha:1,scale:sc,anchor:staffGrip||grip,grips:[staffGrip||grip],twoHand:false,sway:reducedMotion?0:Math.sin(age*3.1)*.08};
    }
-   if(owner==='rider'){const T=focus.handTargets,w=q=>[focus.x+q[0]*sc,focus.y+q[1]*sc];if(gc&&T[0]&&T[1]){const a=w(T[0]),c2=w(T[1]);prop.anchor=[(a[0]+c2[0])/2,(a[1]+c2[1])/2+20*sc];}else if(T[1])prop.anchor=w(T[1]);}
+   if(owner==='rider'){const T=focus.handTargets.map(q=>q&&!Array.isArray(q)?q.to:q),w=q=>[focus.x+q[0]*sc,focus.y+q[1]*sc];if(gc&&T[0]&&T[1]){const a=w(T[0]),c2=w(T[1]);prop.anchor=[(a[0]+c2[0])/2,(a[1]+c2[1])/2+(prop.handDrop??20)*sc];}else if(T[1])prop.anchor=w(T[1]);}
    // Free hand celebration for the stage winner and jersey holders.
-   if(!gc&&focus.pose.L&&age>=cue.celebrate&&age<cue.salute)focus.handTargets[0]=focus.pose.L;
+   if(!gc&&focus.pose.L&&age>=cue.celebrate&&age<cue.salute)focus.handTargets[0]={to:focus.pose.L,w:reducedMotion?1:clamp((age-cue.celebrate)/.35,0,1)};
    if(!gc&&!reducedMotion&&age<cue.entry+.1&&age>=cue.start)focus.handTargets=[null,null];
   }
   if(gc){
    // Runners-up applaud, then spray original-label champagne at the champion.
    for(const i of [1,2]){const a=actors[i];if(!a)continue;const side=i===1?1:-1,j=i===1?1:0;
     if(reducedMotion||age<cue.entry-.2)continue;
-    if(age<cue.spray){if(age>=cue.entry+.3){const cl=Math.abs(Math.sin(age*8+i)),gap=lerp(9,2,cl);a.handTargets=[[-gap,-98],[gap,-98]];a.pose.smile=.9;a.pose.gaze=side*.7;}}
-    else if(age<cue.salute){const shake=Math.sin(age*30+i)*1.5,target=[side*30,-136+shake];a.handTargets[j]=target;a.handTargets[1-j]=[-side*22,-70];a.pose.cheer=1;a.pose.gaze=side*.8;a.pose.look=-.3;
+    const cl=Math.abs(Math.sin(age*8+i)),gap=lerp(9,2,cl),clap=[[-gap,-98],[gap,-98]];
+    if(age<cue.spray){if(age>=cue.entry+.3){const w=clamp((age-cue.entry-.3)/.3,0,1);a.handTargets=[{to:clap[0],w},{to:clap[1],w}];a.pose.smile=.9;a.pose.gaze=side*.7*w;}}
+    else if(age<cue.salute){const k=this.ease((age-cue.spray)/.3),shake=Math.sin(age*30+i)*1.5,target=[side*30,-136+shake];a.handTargets[j]=this.mixT(clap[j],target,k);a.handTargets[1-j]=this.mixT(clap[1-j],[-side*22,-70],k);a.pose.cheer=k;a.pose.gaze=side*lerp(.7,.8,k);a.pose.look=-.3*k;
      extras.push({type:'bottle',owner:a,side:j,angle:side*.75,spray:true});}
-    else{const w=Math.sin((age-cue.salute)*10+i);a.handTargets[j]=[side*30+w*4,-146];a.pose.cheer=.6;a.pose.smile=1;extras.push({type:'bottle',owner:a,side:1-j,angle:Math.PI*.95,spray:false});a.handTargets[1-j]=[-side*16,-78];}
+    else{const k=this.ease((age-cue.salute)/.35),w=Math.sin((age-cue.salute)*10+i);a.handTargets[j]=this.mixT([side*30,-136],[side*30+w*4,-146],k);a.pose.cheer=lerp(1,.6,k);a.pose.smile=1;extras.push({type:'bottle',owner:a,side:k<.5?j:1-j,angle:k<.5?side*.75:Math.PI*.95,spray:false});a.handTargets[1-j]=this.mixT([-side*22,-70],[-side*16,-78],k);}
    }
   }
   return {beat:b,shown,age,cue,actors,staff,prop,leaving,extras};
@@ -6335,7 +6381,7 @@ const CeremonyStage={
   const item=scene.prop;
   if(item){
    const r=item.owner==='rider'?resultById.get(item.id):scene.staffResult,s=item.scale;let anchor=item.anchor;
-   if(r){if(item.type==='trophy'){if(item.owner==='rider'&&item.twoHand)anchor=[(r.left[0]+r.right[0])/2,(r.left[1]+r.right[1])/2+20*s];else{const h=item.owner==='rider'?r.right:r.left;anchor=[h[0]-15*s,h[1]+20*s];}}else anchor=item.owner==='rider'?r.right:r.left;}
+   if(r){if(item.type==='trophy'){if(item.owner==='rider'&&item.twoHand)anchor=[(r.left[0]+r.right[0])/2,(r.left[1]+r.right[1])/2+(item.handDrop??20)*s];else{const h=item.owner==='rider'?r.right:r.left;anchor=[h[0]-15*s,h[1]+20*s];}}else anchor=item.owner==='rider'?r.right:r.left;}
    item.drawnAnchor=anchor;
    if(anchor){c.save();c.translate(...anchor);c.scale(s,s);if(item.type==='trophy')this.trophy(c,0,0,t);else this.flowers(c,0,0,t,item.id,item.sway||0);c.restore();}
   }

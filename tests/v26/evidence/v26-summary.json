@@ -1,6 +1,6 @@
 {
   "source": "Grand-Tour-V26.html",
-  "sha256": "94e337bc5cdfa4b7a9300d7029817653bfb29d64bee223de54030b1bbf90098d",
+  "sha256": "51602ea4ea67f299399a8d6f1103f3c768b7931a54abb6228a2426155509467b",
   "date": "2026-10-31",
   "runs": {
     "tests/v26/core-parity.cjs": "15/15 (14 families + CONFIG)",
@@ -10,7 +10,7 @@
     "tests/v25/storage-validation.cjs": "43/43",
     "tests/v25/render-continuity.cjs": "5/5",
     "tests/v25/render-score-parity.cjs (V25 vs V26)": "4/4",
-    "tests/v26/ceremony.cjs": "10/10",
+    "tests/v26/ceremony.cjs": "13/13",
     "tests/v25/ceremony-transport-browser.py": "9/9",
     "tests/v26/ceremony_browser.py --final-stage": "12/12 (incl. default index.html entry)"
   },
@@ -24,5 +24,9 @@
     "node": "v24.15.0",
     "browser": "156.0.8078.4",
     "os": "Windows 11 (local)"
+  },
+  "refinement": {
+    "handMaxWorldUnitsPer20ms": 6.59,
+    "releasedV26Before": 60.73
   }
 }
