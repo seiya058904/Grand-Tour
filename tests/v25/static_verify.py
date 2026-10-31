@@ -42,7 +42,9 @@ def main():
         'original_race_class_preserved': core(text) == core(prior),
         'v9_storage_identity': "saveKey:'tour-cycling-2026-cinematic-v10',saveVersion:9" in text,
         'finish_guard_preserved': '  validateFinishState(s,race.stage.length);\n' in core(text),
-        'entry_targets_v25': '"./Grand-Tour-V25.html"' in (ROOT / 'index.html').read_text(encoding='utf-8')
+        # V26 became the default entry after V25's release; either released
+        # target is valid, and the entry must never fall back to V24.
+        'entry_targets_v25_or_v26_successor': any(f'"./Grand-Tour-V{v}.html"' in (ROOT / 'index.html').read_text(encoding='utf-8') for v in (25, 26))
             and 'Grand-Tour-V24.html' not in (ROOT / 'index.html').read_text(encoding='utf-8'),
     }
     with tempfile.TemporaryDirectory(prefix='grand-tour-v25-syntax-') as td:

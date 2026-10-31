@@ -12,7 +12,7 @@
     "tests/v25/render-score-parity.cjs (V25 vs V26)": "4/4",
     "tests/v26/ceremony.cjs": "10/10",
     "tests/v25/ceremony-transport-browser.py": "9/9",
-    "tests/v26/ceremony_browser.py --final-stage": "11/11"
+    "tests/v26/ceremony_browser.py --final-stage": "12/12 (incl. default index.html entry)"
   },
   "intendedFailures": {
     "tests/v25/focused.cjs (unmodified)": [

@@ -1,8 +1,10 @@
-# Grand Tour 仓库指南 · V25
+# Grand Tour 仓库指南 · V26
 
 ## 入口与设计边界
 
-- 当前发布入口为 `Grand-Tour-V25.html`。该版本已合并进入 `main` 并部署到 GitHub Pages；线上 `index.html` 跳转到它。自包含、离线运行，无 npm 构建、外部运行时库或在线服务依赖。
+- 当前发布入口为 `Grand-Tour-V26.html`。V26 已通过 PR #14 合并进入 `main`（合并提交 `78a3eb1d22f5d1bcea646cb6585e98d0d3ffa022`）并部署到 GitHub Pages；线上与仓库根 `index.html` 跳转到它。自包含、离线运行，无 npm 构建、外部运行时库或在线服务依赖。
+- V26 只改表现层（颁奖导演/镜头/卡通美术/粒子/字幕/播放器，以及主页、HUD 显示、结果页、按钮与对话框的 DOM/CSS）。`Grand-Tour-V25.html` 冻结为 V26 基线；14 个核心族（`Race`…`STAGE_DATA`，含 `SaveCodec`）必须与 V25 源码完全一致、零例外，`CONFIG` 仅 `buildVersion` 250→260。颁奖仍只读冻结快照：不调用 `Race.tick`、不写账本、不碰 RNG，粒子只用 `sceneNoise`。
+- V25 仍是已发布、已审计的上一版本，可通过 `Grand-Tour-V25.html` 访问；`tests/v25/package_source.py` 生成的 V25 源码包内嵌其原 V25 入口，不跟随根 `index.html`。
 - `Grand-Tour-V24.html` 是本次交接的最新 V24 基线，源自 commit `3e92128c0cb353d267c12ceeaf143bda663a7b26`；不能用旧封板 HTML 替换。V20–V23、V24 报告及 V22–V24 测试共 65 个文件由 `tests/v25/baseline-hashes.json` 保护。
 - 冻结的历史交接包没有 `.git`，也没有旧 `Grand-Tour-V24-Final.zip`；这是交接包的既定裁剪。V25 打包器不依赖旧 ZIP，不要修改历史基线以掩盖失败。
 - 保持单 HTML 产品形态、固定 0.05 秒步长、V9 保存键/格式、确定性物理和 AI。局部修复须有根因和回归；不为结构美观重写成熟模块。
@@ -20,6 +22,20 @@
 
 从根目录执行，证据放仓库外。完整说明见 `tests/v25/README.md`。测试需要 Node.js、Python；真实浏览器另需 Python Playwright 和 Chromium；游戏本身不需要这些依赖。
 
+V26 门禁（完整说明见 `tests/v26/README.md`）：
+
+```bash
+mkdir -p /tmp/gt-v26
+node tests/v26/core-parity.cjs Grand-Tour-V25.html Grand-Tour-V26.html /tmp/gt-v26/core.json
+node tests/v26/focused.cjs Grand-Tour-V26.html archive/v22/Grand-Tour-V22.html /tmp/gt-v26/focused.json
+node tests/v24/save-finish-boundary.cjs Grand-Tour-V26.html /tmp/gt-v26/boundary.json
+node tests/v25/storage-validation.cjs Grand-Tour-V26.html /tmp/gt-v26/storage.json /tmp/gt-v26/fixtures
+node tests/v26/ceremony.cjs Grand-Tour-V26.html /tmp/gt-v26/ceremony.json
+python tests/v26/ceremony_browser.py --source Grand-Tour-V26.html --out /tmp/gt-v26/browser --final-stage
+```
+
+未改动的 `tests/v25/focused.cjs` 在 V26 上有两项有意失败（构建号 250、颁奖 `start+13` 取样点）；`tests/v26/focused.cjs` 仅替换这两处与文件名，行为断言不变。V25 门禁仍适用于未改动的引擎：
+
 ```bash
 mkdir -p /tmp/gt-v25
 python tests/v25/static_verify.py --out /tmp/gt-v25/static.json
@@ -36,9 +52,9 @@ python tests/v24/browser_verify.py --source Grand-Tour-V25.html --out /tmp/gt-v2
 
 ## 目录、CI 与交付
 
-- 新测试在 `tests/v25/`，紧凑机器证据在其 `evidence/`；截图、录像、自然快照、大日志、依赖和临时文件在仓库外。
+- V26 测试在 `tests/v26/`，V25 测试在 `tests/v25/`，紧凑机器证据各在其 `evidence/`；截图、录像、自然快照、大日志、依赖和临时文件在仓库外。
 - `tests/v25/package_source.py` 构建新的轻量 ZIP，`tests/v25/package_verify.py` 核验解压清单、基线、正式入口和实际离线存档/控件。禁止覆盖原始 V24 包。
-- `.github/workflows/v25-verify.yml` 只执行验证、不含部署步骤（线上由 `main` 的 GitHub Pages 流程发布）。旧 V23/V24 工作流保留；仅依赖被裁剪旧 ZIP 的历史打包步骤明确标注可选输入缺失，不伪造 PASS。
+- `.github/workflows/v26-verify.yml` 只在 V26、V25 基线、`index.html`、`tests/v26/**` 或自身变化时运行，只验证不部署；`.github/workflows/v25-verify.yml` 同样只执行验证、不含部署步骤（线上由 `main` 的 GitHub Pages 流程发布）。旧 V23/V24 工作流保留；仅依赖被裁剪旧 ZIP 的历史打包步骤明确标注可选输入缺失，不伪造 PASS。
 - 完成前核验最终 diff、空白错误、入口、README、报告、CI 和打包引用。有 Git 时运行 `git diff --check`；本交接目录没有 Git 时与原 ZIP 逐文件对照。所有未跑或失败的验收须如实记录。
 
 ## CI policy (minimal-test principle)

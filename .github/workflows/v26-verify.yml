@@ -1,14 +1,14 @@
 name: Grand Tour V26 presentation verification
 # Verification only; no deployment. Runs only when the V26 game file, its V25
-# baseline, the V26 tests or this workflow change (minimal-test policy).
+# baseline, the default index.html entry, the V26 tests or this workflow change (minimal-test policy).
 # V26 changes presentation code only, so no complete-Tour simulation runs here:
 # core-parity proves the 14 engine/data families are identical to V25.
 on:
   workflow_dispatch:
   push:
-    paths: ['Grand-Tour-V26.html', 'Grand-Tour-V25.html', 'tests/v26/**', '.github/workflows/v26-verify.yml']
+    paths: ['Grand-Tour-V26.html', 'Grand-Tour-V25.html', 'index.html', 'tests/v26/**', '.github/workflows/v26-verify.yml']
   pull_request:
-    paths: ['Grand-Tour-V26.html', 'Grand-Tour-V25.html', 'tests/v26/**', '.github/workflows/v26-verify.yml']
+    paths: ['Grand-Tour-V26.html', 'Grand-Tour-V25.html', 'index.html', 'tests/v26/**', '.github/workflows/v26-verify.yml']
 permissions:
   contents: read
 concurrency:
