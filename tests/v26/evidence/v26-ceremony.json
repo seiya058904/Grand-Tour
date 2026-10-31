@@ -1,6 +1,6 @@
 {
   "source": "Grand-Tour-V26.html",
-  "sha256": "94e337bc5cdfa4b7a9300d7029817653bfb29d64bee223de54030b1bbf90098d",
+  "sha256": "e54f81703b70525338d4b6013ee4ae68272002fbaf20d9152e07c35e1e1c2106",
   "checks": [
     {
       "name": "Compact cinematic timing replaces the 20.8s awards",
@@ -89,9 +89,38 @@
       "detail": {
         "pass": true
       }
+    },
+    {
+      "name": "Turned faces keep both eyes in 3/4 and move the mouth toward the facing side",
+      "pass": true,
+      "detail": {
+        "R": 21,
+        "threeQuarterMouth": 9.664434260477966
+      }
+    },
+    {
+      "name": "Running is a 3/4 view and the turn to camera is continuous",
+      "pass": true,
+      "detail": {
+        "maxStepPer10ms": 0.0337,
+        "runSamples": 2553
+      }
+    },
+    {
+      "name": "Hands never snap between poses (relative to the body, 50 Hz)",
+      "pass": true,
+      "detail": {
+        "maxWorldUnitsPer20ms": 6.59,
+        "at": {
+          "d": 6.59481200039265,
+          "t": 6.3,
+          "k": "0:41",
+          "h": "left"
+        }
+      }
     }
   ],
-  "passed": 10,
+  "passed": 13,
   "failed": 0,
   "pass": true
 }
