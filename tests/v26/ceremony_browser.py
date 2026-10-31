@@ -61,6 +61,12 @@ async def main(args):
             page.on("console", lambda m: m.type == "error" and report["errors"].append(m.text))
             await page.goto(source.as_uri())
             check("identity", {"pass": await page.evaluate("CONFIG.buildVersion===260&&document.title.includes('V26')")})
+            # The repository's default entry must open V26 in production mode.
+            entry = await ctx.new_page()
+            await entry.goto((ROOT / "index.html").as_uri())
+            await entry.wait_for_url("**/Grand-Tour-V26.html")
+            check("default_entry_is_v26", {"pass": await entry.evaluate("CONFIG.buildVersion===260&&typeof window.__TOUR_TEST__==='undefined'")})
+            await entry.close()
             await to_ceremony(page, 4)
             before = await page.evaluate("JSON.stringify(App.result)")
             plan = await page.evaluate("App.finishFlow.plan.beats.map(b=>({kind:b.kind,start:b.start,seconds:b.seconds}))")

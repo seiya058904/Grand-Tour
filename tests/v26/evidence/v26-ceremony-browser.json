@@ -4,6 +4,9 @@
     "identity": {
       "pass": true
     },
+    "default_entry_is_v26": {
+      "pass": true
+    },
     "ordinary_timing": {
       "pass": true,
       "duration": 58.1,
@@ -44,8 +47,8 @@
       "frames": 480,
       "paintP50": 0.8,
       "paintP95": 1.2,
-      "paintMax": 23.2,
-      "frameGapP50": 16.7,
+      "paintMax": 23.8,
+      "frameGapP50": 16.9,
       "frameGapP95": 18,
       "viewport": "1280x900",
       "pass": true,
@@ -54,9 +57,9 @@
     "pixel_determinism_any_seek_order": {
       "pass": true,
       "hashes": [
-        "a66353ae438cb4250b5494d4a09617b25062b517429f8c441d3705f7cf0586fb",
-        "4e7c88936177f5794ceaae2c698bb415829751e142c2d6f2137fd744e00cbff5",
-        "0e9e734334ad12b4d6cfa9e84265f305c76fa5cedbb1442fccb85c62668d78bb"
+        "6acc6115d92a35b2efec5d33a1630fddc0841ebb3823337d15de18d1f68c0836",
+        "9c4906bc19756cad14469ac0fe0541064057ae8e85dd86bd7123a1d00dd9848f",
+        "dec08662443f72a99c3340210554f3a3472034410762fec4928f8aecdf33a071"
       ]
     },
     "narrow_layout": {
@@ -67,12 +70,12 @@
       ]
     },
     "playback_cost_mobile": {
-      "frames": 181,
+      "frames": 180,
       "paintP50": 0.6,
-      "paintP95": 0.9,
-      "paintMax": 1.2,
-      "frameGapP50": 16.6,
-      "frameGapP95": 18,
+      "paintP95": 1,
+      "paintMax": 1.1,
+      "frameGapP50": 16.7,
+      "frameGapP95": 18.1,
       "viewport": "390x844",
       "pass": true
     },
@@ -80,7 +83,7 @@
       "pass": true,
       "pausedBySpace": true,
       "rate": 2,
-      "resultPlace": "37"
+      "resultPlace": "28"
     },
     "replay_read_only": {
       "pass": true

@@ -5,6 +5,7 @@ Uses the production UI and a deterministic naturally advanced race. Screenshots
 are evidence for manual inspection, not an automatic claim of visual quality.
 """
 import argparse
+import re
 import asyncio
 import hashlib
 import json
@@ -107,7 +108,8 @@ async def main(args):
             await context.set_offline(True)
             page = await context.new_page()
             await page.goto((ROOT / 'index.html').as_uri())
-            await page.wait_for_url('**/Grand-Tour-V25.html')
+            # The root entry moved to the V26 successor after V25's release.
+            await page.wait_for_url(re.compile(r'.*/Grand-Tour-V2[56]\.html$'))
             assert await page.locator('#newTour').is_visible()
             assert await page.evaluate("typeof window.__TOUR_TEST__==='undefined'")
             report['checks'].append({'name': 'offline-root-entry-production-mode', 'pass': True})

@@ -11,6 +11,9 @@ import zipfile
 from pathlib import Path, PurePosixPath
 
 ROOT = Path(__file__).resolve().parents[2]
+# The repository root entry moved to V26; the V25 package keeps the exact V25
+# redirect it shipped with, so the extracted package opens its own V25 HTML.
+V25_ENTRY = '<!doctype html>\n<html lang="zh-CN">\n<head>\n  <meta charset="utf-8">\n  <meta name="viewport" content="width=device-width, initial-scale=1">\n  <meta name="description" content="Play Grand Tour V25, an unofficial browser-based road-cycling stage-racing game.">\n  <title>Grand Tour V25</title>\n  <script>\n    window.location.replace("./Grand-Tour-V25.html");\n  </script>\n</head>\n<body>\n  <p>正在打开 Grand Tour V25。如果没有自动跳转，<a href="./Grand-Tour-V25.html">点击这里开始游戏</a>。</p>\n</body>\n</html>\n'
 PREFIX = 'Grand-Tour-V25/'
 ROOT_FILES = ['Grand-Tour-V25.html', 'index.html', 'README.md', 'AGENTS.md',
               'CLOUD-HANDOFF.md', 'V25-AUDIT-REPORT.md', 'V25-CHANGELOG.md',
@@ -38,7 +41,7 @@ def main(args):
         assert not PurePosixPath(name).is_absolute() and '..' not in PurePosixPath(name).parts, name
         p = ROOT / name
         assert p.is_file() and not p.is_symlink() and p.resolve().is_relative_to(ROOT.resolve()), name
-        data = p.read_bytes()
+        data = V25_ENTRY.encode('utf-8') if name == 'index.html' else p.read_bytes()
         if name in baseline:
             assert sha(data) == baseline[name], 'Historical baseline changed: ' + name
         payload[name] = data
