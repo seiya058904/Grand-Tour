@@ -1,5 +1,5 @@
 {
-  "sha256": "950902849b91749ec63fb35cffcdf11e70075e41eb0c702c3a3005f3e9828ff3",
+  "sha256": "94e337bc5cdfa4b7a9300d7029817653bfb29d64bee223de54030b1bbf90098d",
   "checks": {
     "identity": {
       "pass": true
@@ -44,7 +44,7 @@
       "frames": 480,
       "paintP50": 0.8,
       "paintP95": 1.2,
-      "paintMax": 23.6,
+      "paintMax": 23.2,
       "frameGapP50": 16.7,
       "frameGapP95": 18,
       "viewport": "1280x900",
@@ -54,9 +54,9 @@
     "pixel_determinism_any_seek_order": {
       "pass": true,
       "hashes": [
-        "4edc1eca02f495c0a428c2e79411b3eb0ed898d6893a4c2b9d1baf41f80542a2",
-        "5fa76db22655e1c2ad6b7275aaf3bbea395e0c78e316c37abd8290651e4a574a",
-        "ea5e99345a7ce7636e25adf55989ff143cf034394a10406c246ca296059b0cbf"
+        "a66353ae438cb4250b5494d4a09617b25062b517429f8c441d3705f7cf0586fb",
+        "4e7c88936177f5794ceaae2c698bb415829751e142c2d6f2137fd744e00cbff5",
+        "0e9e734334ad12b4d6cfa9e84265f305c76fa5cedbb1442fccb85c62668d78bb"
       ]
     },
     "narrow_layout": {
@@ -68,11 +68,11 @@
     },
     "playback_cost_mobile": {
       "frames": 181,
-      "paintP50": 0.7,
+      "paintP50": 0.6,
       "paintP95": 0.9,
-      "paintMax": 1.1,
-      "frameGapP50": 16.7,
-      "frameGapP95": 18.1,
+      "paintMax": 1.2,
+      "frameGapP50": 16.6,
+      "frameGapP95": 18,
       "viewport": "390x844",
       "pass": true
     },
@@ -80,7 +80,7 @@
       "pass": true,
       "pausedBySpace": true,
       "rate": 2,
-      "resultPlace": "18"
+      "resultPlace": "37"
     },
     "replay_read_only": {
       "pass": true

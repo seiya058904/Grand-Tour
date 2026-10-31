@@ -1,9 +1,9 @@
 {
   "source": "Grand-Tour-V26.html",
-  "sha256": "950902849b91749ec63fb35cffcdf11e70075e41eb0c702c3a3005f3e9828ff3",
+  "sha256": "94e337bc5cdfa4b7a9300d7029817653bfb29d64bee223de54030b1bbf90098d",
   "date": "2026-10-31",
   "runs": {
-    "tests/v26/core-parity.cjs": "15/15",
+    "tests/v26/core-parity.cjs": "15/14+CONFIG",
     "tests/v26/focused.cjs (+V22 baseline)": "35/35",
     "tests/v24/save-finish-boundary.cjs": "25/25",
     "tests/v25/storage-first-settings.cjs": "10/10",
