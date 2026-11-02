@@ -238,3 +238,7 @@ Grand Tour is an **independent, unofficial cycling simulation**. It is not affil
   <sub>READ THE ROAD. CHOOSE YOUR MOMENT. RACE THE WHOLE TOUR.</sub><br>
   <sub>Grand Tour · Twenty-one stages of tactics, endurance, and spectacle.</sub>
 </p>
+
+## Website analytics
+
+The public website uses Cloudflare Web Analytics for aggregate page visits and performance. The beacon loads only on `seiya058904.github.io`; local previews and offline copies do not load it. No game saves, journal entries, map contents, or form values are passed to the analytics integration. Statistics start after deployment and do not recover earlier traffic. See [Cloudflare's privacy policy](https://www.cloudflare.com/privacypolicy/).
