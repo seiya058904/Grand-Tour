@@ -3,7 +3,7 @@
 ## 入口与冻结边界
 - 现行入口为 `Grand-Tour-V26.html`（离线单 HTML、无构建/无外链，根 `index.html` 跳转至它）；`Grand-Tour-V25.html` 冻结为 V26 基线，`Grand-Tour-V24.html` 及 V20–V24 共 65 文件由 `tests/v25/baseline-hashes.json` 保护，严禁覆盖或改写历史基线/旧交接包。
 - **V26 仅改表现层**：14 个核心族（`Race`…`STAGE_DATA` 含 `SaveCodec`）必须与 V25 源码逐字一致（`CONFIG` 仅 `buildVersion` 250→260）；颁奖只读冻结快照，不调 `Race.tick`/不写账本/不碰 RNG，粒子仅用 `sceneNoise`。
-- 保持单 HTML、0.05s 固定步长、V9 存档格式、确定性物理与 AI；不为美观重写成熟模块。历史提交不可改写，远端发布/推送须获明确授权。
+- 保持单 HTML、0.05s 固定步长、V9 存档格式、确定性物理与 AI；不为美观重写成熟模块。历史提交不可改写。
 
 ## 必须保留的存档边界
 - `Race.restore` 完赛校验交叉核对完赛字段、时钟、首末锚点与终点账本；严禁猜测或重建损坏锚点。
