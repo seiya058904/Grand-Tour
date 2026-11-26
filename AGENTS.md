@@ -1,71 +1,16 @@
 # Grand Tour 仓库指南 · V26
 
-## 入口与设计边界
-
-- 当前发布入口为 `Grand-Tour-V26.html`。V26 已通过 PR #14 合并进入 `main`（合并提交 `78a3eb1d22f5d1bcea646cb6585e98d0d3ffa022`）并部署到 GitHub Pages；线上与仓库根 `index.html` 跳转到它。自包含、离线运行，无 npm 构建、外部运行时库或在线服务依赖。
-- V26 只改表现层（颁奖导演/镜头/卡通美术/粒子/字幕/播放器，以及主页、HUD 显示、结果页、按钮与对话框的 DOM/CSS）。`Grand-Tour-V25.html` 冻结为 V26 基线；14 个核心族（`Race`…`STAGE_DATA`，含 `SaveCodec`）必须与 V25 源码完全一致、零例外，`CONFIG` 仅 `buildVersion` 250→260。颁奖仍只读冻结快照：不调用 `Race.tick`、不写账本、不碰 RNG，粒子只用 `sceneNoise`。
-- V25 仍是已发布、已审计的上一版本，可通过 `Grand-Tour-V25.html` 访问；`tests/v25/package_source.py` 生成的 V25 源码包内嵌其原 V25 入口，不跟随根 `index.html`。
-- `Grand-Tour-V24.html` 是本次交接的最新 V24 基线，源自 commit `3e92128c0cb353d267c12ceeaf143bda663a7b26`；不能用旧封板 HTML 替换。V20–V23、V24 报告及 V22–V24 测试共 65 个文件由 `tests/v25/baseline-hashes.json` 保护。
-- 冻结的历史交接包没有 `.git`，也没有旧 `Grand-Tour-V24-Final.zip`；这是交接包的既定裁剪。V25 打包器不依赖旧 ZIP，不要修改历史基线以掩盖失败。
-- 保持单 HTML 产品形态、固定 0.05 秒步长、V9 保存键/格式、确定性物理和 AI。局部修复须有根因和回归；不为结构美观重写成熟模块。
-- V25 已通过 PR #13 合并进入 `main`（合并提交 `735cdabcd5e82623ba0ba4ffcf32df8ab6fb35e4`）并部署到 GitHub Pages。不得改写既有历史；后续远端变更仍须获得明确授权。
+## 入口与冻结边界
+- 现行入口为 `Grand-Tour-V26.html`（离线单 HTML、无构建/无外链，根 `index.html` 跳转至它）；`Grand-Tour-V25.html` 冻结为 V26 基线，`Grand-Tour-V24.html` 及 V20–V24 共 65 文件由 `tests/v25/baseline-hashes.json` 保护，严禁覆盖或改写历史基线/旧交接包。
+- **V26 仅改表现层**：14 个核心族（`Race`…`STAGE_DATA` 含 `SaveCodec`）必须与 V25 源码逐字一致（`CONFIG` 仅 `buildVersion` 250→260）；颁奖只读冻结快照，不调 `Race.tick`/不写账本/不碰 RNG，粒子仅用 `sceneNoise`。
+- 保持单 HTML、0.05s 固定步长、V9 存档格式、确定性物理与 AI；不为美观重写成熟模块。历史提交不可改写，远端发布/推送须获明确授权。
 
 ## 必须保留的存档边界
+- `Race.restore` 完赛校验交叉核对完赛字段、时钟、首末锚点与终点账本；严禁猜测或重建损坏锚点。
+- 允许合法 OTL 留账本而完赛字段清空、无终点 checkpoint 路线、V4/V7 末锚点早于 OTL、原生 `legacy-sim` 首锚点为空、旧档缺 `cutoff`/`timeModel`（不重算历史百分比或改旧结果）。
+- 严格导入遇损坏 active 原子拒绝；恢复模式仅外层重迁移成功后隔离坏 active，`loadStore` 写回前保留原始字节备份。
+- 仅 `progressRevision:0` 且无 tour/active/pending 为纯设置档；设置合并不得接管另一页进度，写失败不更新所有权；无 Web Locks 跨进程同时写不保证原子 CAS，不得宣称已解决。
 
-- `Race.restore` 的完赛校验交叉检查车手完赛字段、赛事时钟、首末锚点及存在的终点过点账本；不能猜测或重建损坏锚点。
-- 合法 OTL 过线仍可留在终点账本，而车手完赛字段已清空；部分公路/TT 路线没有终点 checkpoint；V4/V7 迁移末锚点可早于后续 OTL 过点；原生 `legacy-sim` 首锚点可为空。
-- 旧档可以没有 `cutoff` 或其 `timeModel`。仅对存在的关门线验证形状、首位实际过线人和用时、截止时间及 FINISHED 合法性；不要重新计算历史百分比或改写旧结果。
-- 严格导入遇到损坏 active 仍原子拒绝。恢复模式仅在外层存档重新迁移成功后隔离坏 active，保留逐站验证通过的成绩前缀；loadStore 在可写回前保留原始字节备份。
-- `progressRevision:0` 且无 tour/active/pending 的纯设置档才与无进度同义。已有 canonical 的设置合并不得接管另一页进度；写失败不得更新所有权。无 Web Locks 的跨进程同时写不保证原子 CAS，不得宣称已解决。
-
-## 运行与验证
-
-从根目录执行，证据放仓库外。完整说明见 `tests/v25/README.md`。测试需要 Node.js、Python；真实浏览器另需 Python Playwright 和 Chromium；游戏本身不需要这些依赖。
-
-V26 门禁（完整说明见 `tests/v26/README.md`）：
-
-```bash
-mkdir -p /tmp/gt-v26
-node tests/v26/core-parity.cjs Grand-Tour-V25.html Grand-Tour-V26.html /tmp/gt-v26/core.json
-node tests/v26/focused.cjs Grand-Tour-V26.html archive/v22/Grand-Tour-V22.html /tmp/gt-v26/focused.json
-node tests/v24/save-finish-boundary.cjs Grand-Tour-V26.html /tmp/gt-v26/boundary.json
-node tests/v25/storage-validation.cjs Grand-Tour-V26.html /tmp/gt-v26/storage.json /tmp/gt-v26/fixtures
-node tests/v26/ceremony.cjs Grand-Tour-V26.html /tmp/gt-v26/ceremony.json
-python tests/v26/ceremony_browser.py --source Grand-Tour-V26.html --out /tmp/gt-v26/browser --final-stage
-```
-
-未改动的 `tests/v25/focused.cjs` 在 V26 上有两项有意失败（构建号 250、颁奖 `start+13` 取样点）；`tests/v26/focused.cjs` 仅替换这两处与文件名，行为断言不变。V25 门禁仍适用于未改动的引擎：
-
-```bash
-mkdir -p /tmp/gt-v25
-python tests/v25/static_verify.py --out /tmp/gt-v25/static.json
-node tests/v25/core-parity.cjs Grand-Tour-V24.html Grand-Tour-V25.html /tmp/gt-v25/core.json
-node tests/v25/focused.cjs Grand-Tour-V25.html archive/v22/Grand-Tour-V22.html /tmp/gt-v25/focused.json
-node tests/v24/save-finish-boundary.cjs Grand-Tour-V25.html /tmp/gt-v25/boundary.json
-node tests/v25/storage-validation.cjs Grand-Tour-V25.html /tmp/gt-v25/storage.json /tmp/gt-v25/fixtures
-python tests/v24/browser_verify.py --source Grand-Tour-V25.html --out /tmp/gt-v25/browser
-```
-
-原 35 项定向回归只通过薄适配器更新版本断言，行为断言不变。V25 核心签名门禁要求 13 族完全相等，SaveCodec 仅允许已审查的 decode 恢复入口文本差异；不是笼统豁免整个编解码器。
-
-完整 Tour 比较必须新跑两版并比较整份 V9 对象；不能拿历史 PASS 当新版本结果。场景播放、领奖和性能分别验证，状态断言不等于视觉质量。ABBA 性能采样必须停止其他模拟/浏览器测试，画质固定 full，记录环境和源码哈希。
-
-## 目录、CI 与交付
-
-- V26 测试在 `tests/v26/`，V25 测试在 `tests/v25/`，紧凑机器证据各在其 `evidence/`；截图、录像、自然快照、大日志、依赖和临时文件在仓库外。
-- `tests/v25/package_source.py` 构建新的轻量 ZIP，`tests/v25/package_verify.py` 核验解压清单、基线、正式入口和实际离线存档/控件。禁止覆盖原始 V24 包。
-- `.github/workflows/v26-verify.yml` 只在 V26、V25 基线、`index.html`、`tests/v26/**` 或自身变化时运行，只验证不部署；`.github/workflows/v25-verify.yml` 同样只执行验证、不含部署步骤（线上由 `main` 的 GitHub Pages 流程发布）。旧 V23/V24 工作流保留；仅依赖被裁剪旧 ZIP 的历史打包步骤明确标注可选输入缺失，不伪造 PASS。
-- 完成前核验最终 diff、空白错误、入口、README、报告、CI 和打包引用。有 Git 时运行 `git diff --check`；本交接目录没有 Git 时与原 ZIP 逐文件对照。所有未跑或失败的验收须如实记录。
-
-## CI policy (minimal-test principle)
-
-The owner decided on 2026-10-27 that CI should run the smallest set of checks relevant to a change and keep heavy suites for schedules and manual runs. Do not undo this by restoring broad push triggers.
-
-- Documentation-only changes (README, AGENTS, handoff and V25 report files) do not start verification.
-- `v25-verify.yml` splits the work into parallel jobs. The two complete-Tour simulations are cached by the game file, the `tests/v23` scripts and the seed; a change to any of them runs the full 21-stage simulation again. If you change the seed, change it in both the cache key and the command.
-- `v23-verify.yml` (the frozen V22-V24 regression, about 30 minutes) runs only manually and on the monthly schedule. Keep the file and the monthly run.
-
-## Browser tool selection
-
-- Prefer Ego Browser for exploratory navigation, visual review and interactive checks when available. Use Playwright for repeatable regression, CI, isolation, request interception or other automation requiring its APIs; combine tools when useful. If Ego is unavailable, use a suitable existing browser tool.
-- Keep this repository's required browser commands, versions, profiles and safety boundaries; an exploratory check does not replace required automated tests. Do not alter real user data or production state for testing. Report the tools, coverage and any untested paths.
+## 验证与 CI 最小测试原则
+- 完整 V26/V25 门禁命令、ABBA 性能采样与源码打包校验见 `.agents/skills/grand-tour-verification/SKILL.md`（所有测试证据放仓库外，严禁覆盖原始 V24 包）。
+- **CI 最小测试原则（2026-10-27 决定）**：不恢复宽泛 push 触发；纯文档改动不启动验证；改 `v25-verify.yml` 种子须同步缓存键与命令；保留 `v23-verify.yml` 月度/手动回归。
