@@ -3,6 +3,12 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - 'README.md'
+      - 'AGENTS.md'
+      - 'CLAUDE.md'
+      - 'docs/**'
+      - '**/readme-*'
   workflow_dispatch:
 
 permissions:
@@ -25,18 +31,19 @@ jobs:
         with:
           node-version: 24
 
-      - name: Verify V25 source identity and storage contracts
+      - name: Verify V26 presentation gates and V25 static baselines
         run: |
           python3 tests/v25/static_verify.py --out "$RUNNER_TEMP/static.json"
-          node tests/v25/core-parity.cjs Grand-Tour-V24.html Grand-Tour-V25.html "$RUNNER_TEMP/core.json"
-          node tests/v25/focused.cjs Grand-Tour-V25.html archive/v22/Grand-Tour-V22.html "$RUNNER_TEMP/focused.json"
-          node tests/v24/save-finish-boundary.cjs Grand-Tour-V25.html "$RUNNER_TEMP/boundary.json"
-          node tests/v25/storage-validation.cjs Grand-Tour-V25.html "$RUNNER_TEMP/storage.json" "$RUNNER_TEMP/fixtures"
+          node tests/v26/core-parity.cjs Grand-Tour-V25.html Grand-Tour-V26.html "$RUNNER_TEMP/core.json"
+          node tests/v26/focused.cjs Grand-Tour-V26.html archive/v22/Grand-Tour-V22.html "$RUNNER_TEMP/focused.json"
+          node tests/v24/save-finish-boundary.cjs Grand-Tour-V26.html "$RUNNER_TEMP/boundary.json"
+          node tests/v26/ceremony.cjs Grand-Tour-V26.html "$RUNNER_TEMP/ceremony.json"
 
       - name: Prepare the published site
         run: |
           mkdir -p _site
-          rsync -a --exclude='.git' --exclude='_site' ./ _site/
+          cp index.html Grand-Tour-V26.html Grand-Tour-V25.html _site/
+          touch _site/.nojekyll
 
       - uses: actions/configure-pages@v5
 

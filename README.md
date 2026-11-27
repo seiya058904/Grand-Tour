@@ -107,7 +107,7 @@ The game also provides a **Race Centre**, team-radio-style information, feeding 
 
 ## 🎬 From Roadside to Podium
 
-V26 rebuilds the post-race ceremony as a short, cinematic, cartoon show. Each award is about 10.5 seconds and is filmed by one continuous camera. Riders jog on, hop onto the podium, receive flowers or the trophy, and then celebrate in a way that suits their jersey. Whip-pans link the awards. The final podium ends with a trophy lift, champagne and gold streamers. Buttons, the home screen, the race HUD, the results reveal and dialogs also get lighter motion. Every animation respects reduced-motion settings. See [V26-CHANGELOG.md](V26-CHANGELOG.md).
+V26 rebuilds the post-race ceremony as a short, cinematic, cartoon show. Each award is about 10.5 seconds and is filmed by one continuous camera. Riders jog on, hop onto the podium, receive flowers or the trophy, and then celebrate in a way that suits their jersey. Whip-pans link the awards. The final podium ends with a trophy lift, champagne and gold streamers. Buttons, the home screen, the race HUD, the results reveal and dialogs also get lighter motion. Every animation respects reduced-motion settings. See [V26-CHANGELOG.md](docs/archive/V26-CHANGELOG.md).
 
 V26 changes presentation only. Race physics, AI, timing, data and saves come unchanged from V25, which improved save ownership and recovery, provisional standings and scenery continuity.
 
@@ -172,7 +172,7 @@ The game retains its existing **V9-format save compatibility** and historical-to
 | Resource | Purpose |
 | --- | --- |
 | [`Grand-Tour-V26.html`](Grand-Tour-V26.html) | Current released source (also playable offline) |
-| [`V26-CHANGELOG.md`](V26-CHANGELOG.md) | V26 ceremony and presentation changes |
+| [`V26-CHANGELOG.md`](docs/archive/V26-CHANGELOG.md) | V26 ceremony and presentation changes |
 | [`tests/v26/README.md`](tests/v26/README.md) | V26 verification commands and expected differences |
 | [`Grand-Tour-V25.html`](Grand-Tour-V25.html) | Previous release; frozen V26 baseline |
 | [`V25-AUDIT-REPORT.md`](V25-AUDIT-REPORT.md) | V25 findings, fixes, actual verification and unresolved risks |
